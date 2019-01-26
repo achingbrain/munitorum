@@ -305,9 +305,38 @@ export class Tank extends Upgrade {
 
 export class TransportOption extends MultipleChoiceOption {
   getAvailableUpgrades (detachment) {
-    return this.options.reduce((acc, curr) => {
-      return acc.concat(curr.getAvailableUpgrades(detachment))
+    let upgrades = this.options.reduce((acc, curr) => {
+      return acc.concat(curr.options)
     }, [])
+
+    if (detachment.units.find(unit => upgrades.find(upgrade => upgrade.type === unit.type))) {
+      // a transport option is already present
+      upgrades = []
+    }
+
+    // if Land Raiders have been selected, allow 0-2 Achilles to be added
+    let landRaiders = false
+    let achilles = 0
+
+    detachment.units.forEach(unit => {
+      if (unit.type === LegionLandRaiderPhobosTransport.type) {
+        landRaiders = true
+      }
+
+      if (unit.type === LegionLandRaiderProteusTransport.type) {
+        landRaiders = true
+      }
+
+      if (unit.type === LegionLandRaiderAchillesTransport.type) {
+        achilles++
+      }
+    })
+
+    if (landRaiders && achilles < 2) {
+      upgrades.push(LegionLandRaiderAchillesTransport)
+    }
+
+    return upgrades
   }
 }
 
@@ -352,34 +381,6 @@ export class HeavyTransport extends MultipleChoiceOption {
       LegionSpartan,
       LegionMastodon
     )
-  }
-
-  getAvailableUpgrades (detachment) {
-    const upgrades = super.getAvailableUpgrades(detachment)
-
-    // if Land Raiders have been selected, allow 0-2 Achilles to be added
-    let landRaiders = false
-    let achilles = 0
-
-    detachment.units.forEach(unit => {
-      if (unit.type === LegionLandRaiderPhobosTransport.type) {
-        landRaiders = true
-      }
-
-      if (unit.type === LegionLandRaiderProteusTransport.type) {
-        landRaiders = true
-      }
-
-      if (unit.type === LegionLandRaiderAchillesTransport.type) {
-        achilles++
-      }
-    })
-
-    if (landRaiders && achilles < 2) {
-      upgrades.push(LegionLandRaiderAchillesTransport)
-    }
-
-    return upgrades
   }
 }
 
