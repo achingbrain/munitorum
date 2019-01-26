@@ -155,6 +155,22 @@ if (process.env.NODE_ENV === 'development') {
     })
   )
   config.optimization = {
+    runtimeChunk: 'single',
+    splitChunks: {
+      chunks: 'all',
+      maxInitialRequests: Infinity,
+      minSize: 0,
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendor'
+        },
+        images: {
+          test: /\.svg$/,
+          name: 'images'
+        }
+      },
+    },
     minimizer: [
       new TerserPlugin({
         terserOptions: {
