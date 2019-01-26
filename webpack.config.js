@@ -8,6 +8,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const ImageBuilderPlugin = require('./plugins/image-builder')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const ManifestPlugin = require('webpack-manifest-plugin')
 
 const config = {
   mode: process.env.NODE_ENV || 'production',
@@ -154,7 +155,8 @@ if (process.env.NODE_ENV === 'development') {
       analyzerMode: 'static',
       reportFilename: path.join(__dirname, 'reports', 'bundle-size.html'),
       openAnalyzer: false
-    })
+    }),
+    new ManifestPlugin()
   )
   config.optimization = {
     runtimeChunk: 'single',
