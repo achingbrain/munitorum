@@ -22,6 +22,9 @@ export default {
     'enter-new-detachment-name': 'Enter a new name for your detachment',
     'list-link': 'Share this list',
     'this-is-the-link': 'A link to this list has been copied to your clipboard',
+    'delete-list': 'Delete list',
+    'view-list': 'View List',
+    'share-list': 'Share List',
 
     'cannot-take-primarch-and-lord-commander': 'You cannot take a Primarch and a Lord Commander in the same list',
     'spacecraft-required': 'Spacecraft are required when units have the planetfall special ability',

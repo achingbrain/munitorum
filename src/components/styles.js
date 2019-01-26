@@ -1,6 +1,6 @@
 'use strict'
 
-const drawerWidth = 240
+const drawerWidth = 250
 
 const styles = theme => ({
   root: {
@@ -9,17 +9,20 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper
   },
   drawer: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: drawerWidth,
       flexShrink: 0
     }
+  },
+  flexContainer: {
+    display: 'flex'
   },
   grow: {
     flexGrow: 1
   },
   appBar: {
     marginLeft: drawerWidth,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       width: `calc(100% - ${drawerWidth}px)`
     }
   },
@@ -29,7 +32,7 @@ const styles = theme => ({
   },
   menuButton: {
     marginRight: 20,
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       display: 'none'
     }
   },

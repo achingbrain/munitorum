@@ -8,8 +8,6 @@ import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
-import IconButton from '@material-ui/core/IconButton'
-import ShareIcon from '@material-ui/icons/Share'
 import {
   CopyToClipboard
 } from 'react-copy-to-clipboard'
@@ -37,7 +35,8 @@ class ListLinkDialog extends Component {
     const {
       link,
       classes,
-      t
+      t,
+      children
     } = this.props
     const {
       open
@@ -46,9 +45,7 @@ class ListLinkDialog extends Component {
     return (
       <>
         <CopyToClipboard text={link} onCopy={() => this.setState({ open: true })}>
-          <IconButton color='inherit' className={classes.navButton}>
-            <ShareIcon />
-          </IconButton>
+          {children}
         </CopyToClipboard>
         <Dialog
           open={open}
