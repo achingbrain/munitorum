@@ -34,7 +34,6 @@ class ListLinkDialog extends Component {
   render () {
     const {
       link,
-      classes,
       t,
       children
     } = this.props
