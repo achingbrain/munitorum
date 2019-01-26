@@ -1,14 +1,19 @@
 {
-  "name": "army-builder",
+  "name": "munitorum",
   "version": "1.0.0",
   "description": "Build your army",
   "author": "Alex Potsides",
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "NODE_ENV=production webpack",
     "lint": "standard",
-    "start": "NODE_ENV=development webpack-dev-server --hot --content ./dist --port 9000"
+    "start": "NODE_ENV=development webpack-dev-server --hot --content ./dist --port 9000",
+    "deploy": "run-s build upload invalidate",
+    "build": "NODE_ENV=production run-s clean bundle",
+    "bundle": "webpack",
+    "upload": "s3-deploy './dist/**' --cwd './dist/' --region eu-west-2 --bucket com.munitorum --deleteRemoved --etag",
+    "invalidate": "aws cloudfront create-invalidation --distribution-id E39LOZKFS19ZDJ --invalidation-batch \"{\\\"Paths\\\":{\\\"Quantity\\\":1,\\\"Items\\\":[\\\"/*\\\"]},\\\"CallerReference\\\":\\\"`date +\"%s\"`\\\"}\"",
+    "test": "echo Hello world"
   },
   "dependencies": {
     "@material-ui/core": "^3.7.0",
@@ -21,7 +26,6 @@
     "react": "^16.7.0",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "^16.6.3",
-    "react-hot-loader": "^4.6.1",
     "react-i18next": "^8.4.0",
     "react-icons": "^3.2.2",
     "react-redux": "^6.0.0",
@@ -52,9 +56,12 @@
     "less": "^3.9.0",
     "less-loader": "^4.0.5",
     "normalize.css": "^8.0.0",
+    "npm-run-all": "^4.1.5",
     "react-transform-catch-errors": "^1.0.2",
+    "react-hot-loader": "^4.6.1",
     "redbox-react": "^1.3.1",
     "responsive-loader": "^1.1.0",
+    "s3-deploy": "^1.2.1",
     "sharp": "^0.21.1",
     "standard": "^12.0.1",
     "style-loader": "^0.23.1",
