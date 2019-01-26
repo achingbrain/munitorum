@@ -169,7 +169,7 @@ if (process.env.NODE_ENV === 'development') {
           test: /\.svg$/,
           name: 'images'
         }
-      },
+      }
     },
     minimizer: [
       new TerserPlugin({
