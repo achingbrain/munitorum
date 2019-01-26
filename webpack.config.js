@@ -6,7 +6,7 @@ const LiveReloadPlugin = require('webpack-livereload-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const ImageBuilderPlugin = require('./plugins/image-builder')
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 
 const config = {
   mode: process.env.NODE_ENV || 'production',
