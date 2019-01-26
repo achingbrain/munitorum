@@ -8,7 +8,7 @@ import Divider from '@material-ui/core/Divider'
 import Drawer from '@material-ui/core/Drawer'
 import Hidden from '@material-ui/core/Hidden'
 import IconButton from '@material-ui/core/IconButton'
-import PlayListAddIcon from '@material-ui/icons/PlayListAdd'
+import PlaylistAddIcon from '@material-ui/icons/PlaylistAdd'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
@@ -70,7 +70,7 @@ class Navigation extends Component {
         <List>
           <ListItem button key='New list' onClick={this.handleNewList}>
             <ListItemIcon className={classes.listListIcon}>
-              <PlayListAddIcon className={classes.avatar} />
+              <PlaylistAddIcon className={classes.avatar} />
             </ListItemIcon>
             <ListItemText primary='New list' />
           </ListItem>
