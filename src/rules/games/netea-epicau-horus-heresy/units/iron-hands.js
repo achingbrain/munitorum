@@ -1,0 +1,206 @@
+import {
+  Weapon,
+  AssaultWeapon,
+  MacroWeapon,
+  ExtraAttacks,
+  SmallArms,
+  RangedWeapon,
+  MultipleShot,
+  AntiPersonnel,
+  AntiTank,
+  Disrupt,
+  Lance
+} from '../weapons'
+import {
+  ReinforcedArmour,
+  DemiGod,
+  ThickRearArmour,
+  Fearless,
+  SupremeCommander,
+  Inspiring,
+  InvulnerableSave
+} from '../special-rules'
+import {
+  LegionFellblade,
+  LegionGlaive,
+  LegionPredator,
+  LegionPredatorInfernus,
+  LegionPredatorExecutioner,
+  LegionWhirlwindScorpius
+} from './space-marine-legion'
+import MultipleChoiceUnit from './multiple-choice-unit'
+import PrimarchUnit from './primarch-unit'
+import Unit from './unit'
+import withType from '../../../../utils/with-type'
+
+export class IronHandsPrimarch extends PrimarchUnit {
+  constructor () {
+    super(450, 1)
+
+    this.transportType = 'terminator'
+    this.rules = [
+      new DemiGod(),
+      new ReinforcedArmour(),
+      new ThickRearArmour(),
+      new Fearless(),
+      new SupremeCommander(),
+      new Inspiring(),
+      new InvulnerableSave()
+    ]
+    this.stats = {
+      type: 'INF',
+      speed: 15,
+      armour: 3,
+      cc: 3,
+      ff: 3
+    }
+    this.weapons = [
+      new Weapon('forgebreaker', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+2'))),
+      new Weapon('the-medusan-carapace',
+        new RangedWeapon('15cm', new MacroWeapon('4+')),
+        new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+1'))
+      )
+    ]
+  }
+}
+
+export class IronHandsMedusanImmortalsSquad extends Unit {
+  constructor () {
+    super(250, 4)
+
+    this.transportType = 'breacher'
+    this.rules = [
+      new Fearless()
+    ]
+    this.stats = {
+      type: 'INF',
+      speed: 15,
+      armour: 3,
+      cc: 4,
+      ff: 4
+    }
+    this.weapons = [
+      new Weapon('las-cutters', new AssaultWeapon(new Lance())),
+      new Weapon('bolters', new SmallArms('15cm'))
+    ]
+  }
+}
+
+export class IronHandsGorgonTerminatorSquad extends Unit {
+  constructor () {
+    super(85, 4, 6)
+
+    this.transportType = 'terminator'
+    this.rules = [
+      new ReinforcedArmour(),
+      new ThickRearArmour()
+    ]
+    this.stats = {
+      type: 'INF',
+      speed: 15,
+      armour: 4,
+      cc: 3,
+      ff: 3
+    }
+    this.weapons = [
+      new Weapon('power-axes', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
+      new Weapon('graviton-weapons', new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('5+'), new AntiTank('6+')), new Disrupt()))
+    ]
+  }
+}
+
+export class IronHandsBodyguardSquad extends IronHandsGorgonTerminatorSquad {
+  constructor () {
+    super()
+
+    this.cost = 0
+    this.min = 3
+    this.max = undefined
+    this.quantity = 3
+  }
+}
+
+class IronHandsFellblade extends LegionFellblade {
+  constructor () {
+    super()
+
+    this.cost = 700
+    this.min = 3
+    this.quantity = 3
+  }
+}
+
+class IronHandsGlaive extends LegionGlaive {
+  constructor () {
+    super()
+
+    this.cost = 700
+    this.min = 3
+    this.quantity = 3
+  }
+}
+
+export class IronHandsSuperHeavyTankSquadronUnit extends MultipleChoiceUnit {
+  constructor () {
+    super(
+      new IronHandsFellblade(),
+      new IronHandsGlaive()
+    )
+  }
+}
+
+export class IronHandsPredator extends LegionPredator {
+  constructor () {
+    super()
+
+    this.cost = 50
+  }
+}
+
+class IronHandsPredatorInfernus extends LegionPredatorInfernus {
+  constructor () {
+    super()
+
+    this.cost = 70
+  }
+}
+
+class IronHandsPredatorExecutioner extends LegionPredatorExecutioner {
+  constructor () {
+    super()
+
+    this.cost = 70
+  }
+}
+
+class IronHandsWhirlwindScorpius extends LegionWhirlwindScorpius {
+  constructor () {
+    super()
+
+    this.cost = 70
+  }
+}
+
+export class IronHandsPredatorStrikeSquadronUnit extends MultipleChoiceUnit {
+  constructor () {
+    super(
+      new IronHandsPredator(),
+      new IronHandsPredatorInfernus(),
+      new IronHandsPredatorExecutioner(),
+      new IronHandsWhirlwindScorpius()
+    )
+  }
+}
+
+withType(IronHandsPrimarch)
+withType(IronHandsBodyguardSquad)
+withType(IronHandsMedusanImmortalsSquad)
+withType(IronHandsGorgonTerminatorSquad)
+withType(IronHandsFellblade)
+withType(IronHandsGlaive)
+withType(IronHandsSuperHeavyTankSquadronUnit)
+withType(IronHandsPredator)
+withType(IronHandsPredatorInfernus)
+withType(IronHandsPredatorExecutioner)
+withType(IronHandsWhirlwindScorpius)
+withType(IronHandsPredatorStrikeSquadronUnit)

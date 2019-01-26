@@ -1,0 +1,26 @@
+* {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+/*
+h1, h2, h3, h4, h5, h6,
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+  font-family: 'Libre Baskerville', serif;
+  text-transform: uppercase;
+}
+*/
+html, body, #root {
+  /*background: #262a2c;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-size: 24px;
+  button*/
+  -webkit-font-smoothing: 'antialiased';
+  -moz-osx-font-smoothing: 'grayscale';
+}
+
+* {
+  box-sizing: border-box;
+}

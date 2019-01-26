@@ -1,0 +1,110 @@
+import React, {
+  Component
+} from 'react'
+import PropTypes from 'prop-types'
+import component from '../../component'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
+import CardHeader from '@material-ui/core/CardHeader'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableRow from '@material-ui/core/TableRow'
+import TableCell from '@material-ui/core/TableCell'
+import TableHead from '@material-ui/core/TableHead'
+import UnitViewer from './unit-viewer'
+
+class DetachmentViewer extends Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired
+  }
+
+  render () {
+    const {
+      classes,
+      detachment,
+      t
+    } = this.props
+
+    const units = {}
+
+    // dedupe units
+    detachment.units.forEach(unit => {
+      const key = `${unit.getName()}-${unit.getWeapons().map(weapon => weapon.name).join('-')}`
+
+      units[key] = unit
+    })
+
+    return (
+      <Card className={classes.viewCard}>
+        <CardHeader
+          title={detachment.name || t(detachment.code)}
+          className={classes.viewCardHeader}
+          titleTypographyProps={{ variant: 'subtitle1', component: 'h5' }}
+        />
+        <CardContent className={classes.cardContent}>
+          <Table>
+            <TableHead>
+              <TableRow className={classes.tableViewRow}>
+                <TableCell padding='dense' colSpan={2} className={classes.tableViewNameHeader}>
+                  Name
+                </TableCell>
+                <TableCell padding='dense' className={classes.tableViewCell}>
+                  Type
+                </TableCell>
+                <TableCell padding='dense' className={classes.tableViewCell}>
+                  Speed
+                </TableCell>
+                <TableCell padding='dense' className={classes.tableViewCell}>
+                  Armour
+                </TableCell>
+                <TableCell padding='dense' className={classes.tableViewCell}>
+                  CC
+                </TableCell>
+                <TableCell padding='dense' className={classes.tableViewCell}>
+                  FF
+                </TableCell>
+                <TableCell padding='dense' className={classes.tableViewCell}>
+                  Weapons
+                </TableCell>
+                <TableCell padding='dense' className={classes.tableViewCell}>
+                  Range
+                </TableCell>
+                <TableCell padding='dense' className={classes.tableViewCell}>
+                  Firepower
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {
+                Object.keys(units)
+                  .map(key => units[key])
+                  .map((unit, index) => (
+                    <UnitViewer
+                      key={`unit-${index}`}
+                      unit={unit}
+                    />
+                  ))
+              }
+            </TableBody>
+          </Table>
+        </CardContent>
+      </Card>
+    )
+  }
+}
+
+const mapStateToProps = ({ list }, { type, index }) => {
+  const detachment = list[type][index]
+
+  return {
+    list: list,
+    detachment: detachment,
+    units: detachment.units
+  }
+}
+
+const mapDispatchToProps = {
+
+}
+
+export default component(DetachmentViewer, mapStateToProps, mapDispatchToProps)
