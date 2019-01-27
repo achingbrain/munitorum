@@ -24,6 +24,10 @@ class LegioTitanicus extends Army {
       LegioTitanicusEmperorClassTitanDetachment
     ]
   }
+
+  getStrategyRating (list) {
+    return 3
+  }
 }
 
 export default withType(LegioTitanicus)

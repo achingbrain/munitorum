@@ -51,7 +51,7 @@ class Navigation extends Component {
 
     const drawer = (
       <div>
-        <div className={classes.toolbar}>
+        <div className={classes.appTitleWrapper}>
           <Typography component='h1' variant='h6' className={classes.appTitle}>
             {t('app-name')}
           </Typography>
@@ -123,18 +123,22 @@ class Navigation extends Component {
           </Hidden>
         </nav>
         <main className={classes.content}>
-          <div className={classes.toolbar} />
-          {this.props.children}
+          {this.props.topbar}
+          <div className={classes.contentWrapper}>
+            {this.props.children}
+          </div>
         </main>
       </div>
     )
   }
 }
 
-const mapStateToProps = ({ lists, list }) => ({
-  lists,
-  list
-})
+const mapStateToProps = ({ lists, list }) => {
+  return {
+    lists,
+    list
+  }
+}
 
 const mapDispatchToProps = {
   newList

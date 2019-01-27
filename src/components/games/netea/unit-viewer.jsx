@@ -125,7 +125,8 @@ class UnitViewer extends Component {
                 </TableCell>
                 <TableCell padding='dense' className={classes.tableViewCell}>
                   {
-                    profile.firepower
+                    [profile]
+                      .concat(profile.firepower)
                       .map((fp, fpIndex) => {
                         const output = fp.type || t(fp.name)
 
@@ -143,19 +144,24 @@ class UnitViewer extends Component {
                           )
                         }
 
+                        if (!output) {
+                          return null
+                        }
+
                         return (
                           <Typography key={`fp-${profileIndex}-${fpIndex}`} component='span' title={t(fp.name)} className={classes.fp}>
                             {output}
                           </Typography>
                         )
                       })
-                      .reduce((prev, curr) => {
-                        if (prev.length) {
-                          return [prev, ', ', curr]
-                        }
+                    .filter(Boolean)
+                    .reduce((prev, curr) => {
+                      if (prev.length) {
+                        return [prev, ', ', curr]
+                      }
 
-                        return [curr]
-                      }, [])
+                      return [curr]
+                    }, [])
                   }
                 </TableCell>
               </Fragment>

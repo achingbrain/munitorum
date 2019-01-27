@@ -23,8 +23,10 @@ class EditNavigation extends Component {
           </Toolbar>
         </AppBar>
         <main className={classes.content}>
-          <div className={classes.toolbar} />
-          {children}
+          {this.props.topbar}
+          <div className={classes.contentWrapper}>
+            {children}
+          </div>
         </main>
       </div>
     )

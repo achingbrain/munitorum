@@ -34,6 +34,10 @@ class LegioCustodes extends Army {
       LegioCustodesOrionAssaultDropshipSquadron
     ]
   }
+
+  getStrategyRating (list) {
+    return 5
+  }
 }
 
 export default withType(LegioCustodes)

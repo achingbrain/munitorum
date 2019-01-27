@@ -17,10 +17,10 @@ import {
   LegioCustodesCaladiusGravTank,
   LegioCustodesOrionAssaultDropship
 } from '../units/legio-custodes'
-import Detachment from './detachment'
+import LegioCustodesDetachment from './legio-custodes-detachment'
 import withType from '../../../../utils/with-type'
 
-export class LegioCustodesHykanatoiDetachment extends Detachment {
+export class LegioCustodesHykanatoiDetachment extends LegioCustodesDetachment {
   constructor () {
     super([
       new LegioCustodesHykanatoiUnit()
@@ -37,7 +37,7 @@ export class LegioCustodesHykanatoiDetachment extends Detachment {
   }
 }
 
-export class LegioCustodesAgamatusDetachment extends Detachment {
+export class LegioCustodesAgamatusDetachment extends LegioCustodesDetachment {
   constructor () {
     super([
       new LegioCustodesAgamatus()
@@ -49,7 +49,7 @@ export class LegioCustodesAgamatusDetachment extends Detachment {
   }
 }
 
-export class LegioCustodesAquilionTerminatorDetachment extends Detachment {
+export class LegioCustodesAquilionTerminatorDetachment extends LegioCustodesDetachment {
   constructor () {
     super([
       new LegioCustodesAquilionTerminator()
@@ -66,7 +66,7 @@ export class LegioCustodesAquilionTerminatorDetachment extends Detachment {
   }
 }
 
-export class LegioCustodesEphoroiCustodesDetachment extends Detachment {
+export class LegioCustodesEphoroiCustodesDetachment extends LegioCustodesDetachment {
   constructor () {
     super([
       new LegioCustodesEphoroiCustodes()
@@ -79,7 +79,7 @@ export class LegioCustodesEphoroiCustodesDetachment extends Detachment {
   }
 }
 
-export class LegioCustodesSistersOfSilenceDetachment extends Detachment {
+export class LegioCustodesSistersOfSilenceDetachment extends LegioCustodesDetachment {
   constructor () {
     super([
       new LegioCustodesSistersOfSilence()
@@ -91,7 +91,7 @@ export class LegioCustodesSistersOfSilenceDetachment extends Detachment {
   }
 }
 
-export class LegioCustodesMorotoiDetachment extends Detachment {
+export class LegioCustodesMorotoiDetachment extends LegioCustodesDetachment {
   constructor () {
     super([
       new LegioCustodesDreadnoughtUnit(),
@@ -102,7 +102,7 @@ export class LegioCustodesMorotoiDetachment extends Detachment {
   }
 }
 
-export class LegioCustodesPallasGravAttackSquadron extends Detachment {
+export class LegioCustodesPallasGravAttackSquadron extends LegioCustodesDetachment {
   constructor () {
     super([
       new LegioCustodesPallasGravAttackVehicle()
@@ -110,7 +110,7 @@ export class LegioCustodesPallasGravAttackSquadron extends Detachment {
   }
 }
 
-export class LegioCustodesCaladiusGravTankSquadron extends Detachment {
+export class LegioCustodesCaladiusGravTankSquadron extends LegioCustodesDetachment {
   constructor () {
     super([
       new LegioCustodesCaladiusGravTank()
@@ -118,7 +118,7 @@ export class LegioCustodesCaladiusGravTankSquadron extends Detachment {
   }
 }
 
-export class LegioCustodesOrionAssaultDropshipSquadron extends Detachment {
+export class LegioCustodesOrionAssaultDropshipSquadron extends LegioCustodesDetachment {
   constructor () {
     super([
       new LegioCustodesOrionAssaultDropship()

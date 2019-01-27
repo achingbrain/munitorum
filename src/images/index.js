@@ -46,7 +46,6 @@ import darkAngelsGlaive from './dark-angels-glaive.svg'
 import darkAngelsSuperHeavyTankSquadron from './dark-angels-super-heavy-tank-squadron.svg'
 import darkAngels from './dark-angels.svg'
 import deathGuardDeathshroud from './death-guard-deathshroud.svg'
-import deathGuardDestroyer from './death-guard-destroyer.svg'
 import deathGuardGraveWarden from './death-guard-grave-warden.svg'
 import deathGuardPrimarch from './death-guard-primarch.svg'
 import deathGuard from './death-guard.svg'
@@ -56,7 +55,6 @@ import emperorsChildrenPhoenixTerminator from './emperors-children-phoenix-termi
 import emperorsChildrenPrimarch from './emperors-children-primarch.svg'
 import emperorsChildren from './emperors-children.svg'
 import imperialFistsCastellumStronghold from './imperial-fists-castellum-stronghold.svg'
-import imperialFistsDestroyer from './imperial-fists-destroyer.svg'
 import imperialFistsPhalanxWarder from './imperial-fists-phalanx-warder.svg'
 import imperialFistsPrimarch from './imperial-fists-primarch.svg'
 import imperialFistsPrimusRedoubt from './imperial-fists-primus-redoubt.svg'
@@ -77,18 +75,14 @@ import imperialMilitiaFireSupport from './imperial-militia-fire-support.svg'
 import imperialMilitiaForceCommander from './imperial-militia-force-commander.svg'
 import imperialMilitiaGorgon from './imperial-militia-gorgon.svg'
 import imperialMilitiaGrenedier from './imperial-militia-grenedier.svg'
-import imperialMilitiaHeavyOrdnanceBattery from './imperial-militia-heavy-ordnance-battery.svg'
-import imperialMilitiaInfantry from './imperial-militia-infantry.svg'
 import imperialMilitiaLandRaiderProteus from './imperial-militia-land-raider-proteus.svg'
 import imperialMilitiaLemanRussDemolisher from './imperial-militia-leman-russ-demolisher.svg'
-import imperialMilitiaLemanRuss from './imperial-militia-leman-russ.svg'
 import imperialMilitiaLevy from './imperial-militia-levy.svg'
 import imperialMilitiaMalcador from './imperial-militia-malcador.svg'
 import imperialMilitiaMedusa from './imperial-militia-medusa.svg'
 import imperialMilitiaMotorcycleCommander from './imperial-militia-motorcycle-commander.svg'
 import imperialMilitiaMotorcycle from './imperial-militia-motorcycle.svg'
 import imperialMilitiaOgryn from './imperial-militia-ogryn.svg'
-import imperialMilitiaOrbitalSupport from './imperial-militia-orbital-support.svg'
 import imperialMilitiaPlatoonCommander from './imperial-militia-platoon-commander.svg'
 import imperialMilitiaPrimaris from './imperial-militia-primaris.svg'
 import imperialMilitiaReconAuxiliaries from './imperial-militia-recon-auxiliaries.svg'
@@ -96,9 +90,6 @@ import imperialMilitiaRhino from './imperial-militia-rhino.svg'
 import imperialMilitiaRoguePsyker from './imperial-militia-rogue-psyker.svg'
 import imperialMilitiaSentinel from './imperial-militia-sentinel.svg'
 import imperialMilitiaStormhammer from './imperial-militia-stormhammer.svg'
-import imperialMilitiaSuperHeavyTank from './imperial-militia-super-heavy-tank.svg'
-import imperialMilitiaSupportAuxiliaries from './imperial-militia-support-auxiliaries.svg'
-import ironHandsDestroyer from './iron-hands-destroyer.svg'
 import ironHandsFellblade from './iron-hands-fellblade.svg'
 import ironHandsGlaive from './iron-hands-glaive.svg'
 import ironHandsGorgonTerminator from './iron-hands-gorgon-terminator.svg'
@@ -107,7 +98,6 @@ import ironHandsPredatorExecutioner from './iron-hands-predator-executioner.svg'
 import ironHandsPredatorInfernus from './iron-hands-predator-infernus.svg'
 import ironHandsPredator from './iron-hands-predator.svg'
 import ironHandsPrimarch from './iron-hands-primarch.svg'
-import ironHandsSuperHeavyTank from './iron-hands-super-heavy-tank.svg'
 import ironHandsWhirlwindScorpius from './iron-hands-whirlwind-scorpius.svg'
 import ironHands from './iron-hands.svg'
 import ironWarriorsArtilleryBattery from './iron-warriors-artillery-battery.svg'
@@ -125,8 +115,6 @@ import knightHouseholdCerastusKnightAcheron from './knight-household-cerastus-kn
 import knightHouseholdCerastusKnightAtropos from './knight-household-cerastus-knight-atropos.svg'
 import knightHouseholdCerastusKnightCastigator from './knight-household-cerastus-knight-castigator.svg'
 import knightHouseholdCerastusKnightLancer from './knight-household-cerastus-knight-lancer.svg'
-import knightHouseholdCerastusKnight from './knight-household-cerastus-knight.svg'
-import knightHouseholdCerastusKnights from './knight-household-cerastus-knights.svg'
 import knightHouseholdLordScion from './knight-household-lord-scion.svg'
 import knightHouseholdPreceptor from './knight-household-preceptor.svg'
 import knightHouseholdQuestorisKnightCrusader from './knight-household-questoris-knight-crusader.svg'
@@ -147,14 +135,11 @@ import legioCustodesContemptorAchillus from './legio-custodes-contemptor-achillu
 import legioCustodesContemptorGalatus from './legio-custodes-contemptor-galatus.svg'
 import legioCustodesCoronusGravCarrier from './legio-custodes-coronus-grav-carrier.svg'
 import legioCustodesCustodianGuard from './legio-custodes-custodian-guard.svg'
-import legioCustodesEphoroiCustodes from './legio-custodes-ephoroi-custodes.svg'
-import legioCustodesHykanatoi from './legio-custodes-hykanatoi.svg'
 import legioCustodesMorotoi from './legio-custodes-morotoi.svg'
 import legioCustodesOrionAssaultDropship from './legio-custodes-orion-assault-dropship.svg'
 import legioCustodesPallas from './legio-custodes-pallas.svg'
 import legioCustodesSentinelGuard from './legio-custodes-sentinel-guard.svg'
 import legioCustodesSistersOfSilence from './legio-custodes-sisters-of-silence.svg'
-import legioCustodesTelemonHeavyDreadnought from './legio-custodes-telemon-heavy-dreadnought.svg'
 import legioCustodesTribune from './legio-custodes-tribune.svg'
 import legioCustodes from './legio-custodes.svg'
 import legioTitanicusAirDefence from './legio-titanicus-air-defence.svg'
@@ -171,7 +156,6 @@ import legionAssault from './legion-assault.svg'
 import legionAttackBike from './legion-attack-bike.svg'
 import legionBasilisk from './legion-basilisk.svg'
 import legionBattleBarge from './legion-battle-barge.svg'
-import legionBike from './legion-bike.svg'
 import legionBreacher from './legion-breacher.svg'
 import legionCaestus from './legion-caestus.svg'
 import legionCerberus from './legion-cerberus.svg'
@@ -181,52 +165,42 @@ import legionContemptorDreadnought from './legion-contemptor-dreadnought.svg'
 import legionDamoclesCommandRhino from './legion-damocles-command-rhino.svg'
 import legionDeredeoDreadnought from './legion-deredeo-dreadnought.svg'
 import legionDespoiler from './legion-despoiler.svg'
-import legionDestroyer from './legion-destroyer.svg'
 import legionDreadclaw from './legion-dreadclaw.svg'
 import legionDreadnought from './legion-dreadnought.svg'
 import legionDropPod from './legion-drop-pod.svg'
 import legionFalchion from './legion-falchion.svg'
 import legionFellblade from './legion-fellblade.svg'
-import legionGlaive from './legion-glaive.svg'
 import legionGunship from './legion-gunship.svg'
-import legionHeavySupport from './legion-heavy-support.svg'
 import legionInterceptor from './legion-interceptor.svg'
 import legionJavelin from './legion-javelin.svg'
 import legionKharybdis from './legion-kharybdis.svg'
 import legionLandRaiderAchilles from './legion-land-raider-achilles.svg'
 import legionLandRaiderPhobos from './legion-land-raider-phobos.svg'
-import legionLandRaiderProteus from './legion-land-raider-proteus.svg'
 import legionLandSpeeder from './legion-land-speeder.svg'
 import legionLeviathanDreadnought from './legion-leviathan-dreadnought.svg'
 import legionLibrarian from './legion-librarian.svg'
 import legionLieutenantCommander from './legion-lieutenant-commander.svg'
-import legionLordChampion from './legion-lord-champion.svg'
 import legionLordCommander from './legion-lord-commander.svg'
 import legionMastodon from './legion-mastodon.svg'
 import legionMedusa from './legion-medusa.svg'
 import legionOutrider from './legion-outrider.svg'
 import legionPredatorAnnihilator from './legion-predator-annihilator.svg'
-import legionPredatorExecutioner from './legion-predator-executioner.svg'
 import legionPredatorInfernus from './legion-predator-infernus.svg'
 import legionPredator from './legion-predator.svg'
 import legionRapierLaserDestroyer from './legion-rapier-laser-destroyer.svg'
 import legionRapierMortar from './legion-rapier-mortar.svg'
 import legionRapier from './legion-rapier.svg'
 import legionReconnaissance from './legion-reconnaissance.svg'
-import legionRhino from './legion-rhino.svg'
 import legionScimitar from './legion-scimitar.svg'
 import legionSicaranOmega from './legion-sicaran-omega.svg'
 import legionSicaranPunisher from './legion-sicaran-punisher.svg'
 import legionSicaranVenator from './legion-sicaran-venator.svg'
 import legionSicaran from './legion-sicaran.svg'
-import legionSkyHunter from './legion-sky-hunter.svg'
-import legionSpacecraft from './legion-spacecraft.svg'
 import legionSpartan from './legion-spartan.svg'
 import legionStormEagle from './legion-storm-eagle.svg'
 import legionStormbird from './legion-stormbird.svg'
 import legionStrikeCruiser from './legion-strike-cruiser.svg'
 import legionSuperHeavyTankDestroyer from './legion-super-heavy-tank-destroyer.svg'
-import legionSuperHeavyTank from './legion-super-heavy-tank.svg'
 import legionTactical from './legion-tactical.svg'
 import legionTerminator from './legion-terminator.svg'
 import legionThunderhawkTransporter from './legion-thunderhawk-transporter.svg'
@@ -235,14 +209,11 @@ import legionTyphon from './legion-typhon.svg'
 import legionVindicatorLaserDestroyer from './legion-vindicator-laser-destroyer.svg'
 import legionVindicator from './legion-vindicator.svg'
 import legionWhirlwindHyperios from './legion-whirlwind-hyperios.svg'
-import legionWhirlwindScorpius from './legion-whirlwind-scorpius.svg'
 import legionWhirlwind from './legion-whirlwind.svg'
 import legion from './legion.svg'
 import mechanicumTaghmataAdsecularis from './mechanicum-taghmata-adsecularis.svg'
 import mechanicumTaghmataArchmagosPrime from './mechanicum-taghmata-archmagos-prime.svg'
-import mechanicumTaghmataAvenger from './mechanicum-taghmata-avenger.svg'
 import mechanicumTaghmataCastellax from './mechanicum-taghmata-castellax.svg'
-import mechanicumTaghmataFalchion from './mechanicum-taghmata-falchion.svg'
 import mechanicumTaghmataHyperios from './mechanicum-taghmata-hyperios.svg'
 import mechanicumTaghmataKaracnos from './mechanicum-taghmata-karacnos.svg'
 import mechanicumTaghmataKrios from './mechanicum-taghmata-krios.svg'
@@ -258,20 +229,16 @@ import mechanicumTaghmataScyllax from './mechanicum-taghmata-scyllax.svg'
 import mechanicumTaghmataSuperHeavyTankDestroyer from './mechanicum-taghmata-super-heavy-tank-destroyer.svg'
 import mechanicumTaghmataTarantula from './mechanicum-taghmata-tarantula.svg'
 import mechanicumTaghmataTechPriest from './mechanicum-taghmata-tech-priest.svg'
-import mechanicumTaghmataTechThrall from './mechanicum-taghmata-tech-thrall.svg'
 import mechanicumTaghmataThallax from './mechanicum-taghmata-thallax.svg'
 import mechanicumTaghmataThanatar from './mechanicum-taghmata-thanatar.svg'
 import mechanicumTaghmataTriaros from './mechanicum-taghmata-triaros.svg'
 import mechanicumTaghmataUrsarax from './mechanicum-taghmata-ursarax.svg'
 import mechanicumTaghmataVorax from './mechanicum-taghmata-vorax.svg'
 import mechanicumTaghmata from './mechanicum-taghmata.svg'
-import nightLordsDestroyer from './night-lords-destroyer.svg'
 import nightLordsNightRaptor from './night-lords-night-raptor.svg'
 import nightLordsPrimarch from './night-lords-primarch.svg'
 import nightLords from './night-lords.svg'
 import ravenGuardDarkFury from './raven-guard-dark-fury.svg'
-import ravenGuardDarkwing from './raven-guard-darkwing.svg'
-import ravenGuardDestroyer from './raven-guard-destroyer.svg'
 import ravenGuardMorDeythan from './raven-guard-mor-deythan.svg'
 import ravenGuardPrimarch from './raven-guard-primarch.svg'
 import ravenGuard from './raven-guard.svg'
@@ -282,41 +249,24 @@ import salamanders from './salamanders.svg'
 import skitarii from './skitarii.svg'
 import skull from './skull.svg'
 import solarAuxiliaArtilleryTank from './solar-auxilia-artillery-tank.svg'
-import solarAuxiliaArvusLighter from './solar-auxilia-arvus-lighter.svg'
 import solarAuxiliaAssaultGun from './solar-auxilia-assault-gun.svg'
-import solarAuxiliaAvenger from './solar-auxilia-avenger.svg'
-import solarAuxiliaBaneblade from './solar-auxilia-baneblade.svg'
 import solarAuxiliaBasilisk from './solar-auxilia-basilisk.svg'
-import solarAuxiliaBombard from './solar-auxilia-bombard.svg'
-import solarAuxiliaCloseSupportSquadron from './solar-auxilia-close-support-squadron.svg'
 import solarAuxiliaCloseSupport from './solar-auxilia-close-support.svg'
 import solarAuxiliaCommandDetachment from './solar-auxilia-command-detachment.svg'
-import solarAuxiliaDauntlessClassLightCruiser from './solar-auxilia-dauntless-class-light-cruiser.svg'
 import solarAuxiliaDracosan from './solar-auxilia-dracosan.svg'
 import solarAuxiliaEmperorClassBattleship from './solar-auxilia-emperor-class-battleship.svg'
-import solarAuxiliaInfantrySupportTankUnit from './solar-auxilia-infantry-support-tank-unit.svg'
 import solarAuxiliaInfantry from './solar-auxilia-infantry.svg'
-import solarAuxiliaLemanRussDemolisher from './solar-auxilia-leman-russ-demolisher.svg'
-import solarAuxiliaLemanRuss from './solar-auxilia-leman-russ.svg'
 import solarAuxiliaLordMarshall from './solar-auxilia-lord-marshall.svg'
 import solarAuxiliaMalcador from './solar-auxilia-malcador.svg'
 import solarAuxiliaMedusa from './solar-auxilia-medusa.svg'
 import solarAuxiliaOgrynCharonite from './solar-auxilia-ogryn-charonite.svg'
-import solarAuxiliaOrbitalSupport from './solar-auxilia-orbital-support.svg'
-import solarAuxiliaPrimaris from './solar-auxilia-primaris.svg'
-import solarAuxiliaRapier from './solar-auxilia-rapier.svg'
 import solarAuxiliaShadowsword from './solar-auxilia-shadowsword.svg'
 import solarAuxiliaStormblade from './solar-auxilia-stormblade.svg'
-import solarAuxiliaStormhammer from './solar-auxilia-stormhammer.svg'
 import solarAuxiliaStormlord from './solar-auxilia-stormlord.svg'
 import solarAuxiliaStormsword from './solar-auxilia-stormsword.svg'
-import solarAuxiliaStrikeCompany from './solar-auxilia-strike-company.svg'
-import solarAuxiliaSuperHeavyTank from './solar-auxilia-super-heavy-tank.svg'
 import solarAuxiliaTacticalCommmand from './solar-auxilia-tactical-commmand.svg'
 import solarAuxiliaTankHunter from './solar-auxilia-tank-hunter.svg'
-import solarAuxiliaTarantulaHyperios from './solar-auxilia-tarantula-hyperios.svg'
 import solarAuxiliaTarantula from './solar-auxilia-tarantula.svg'
-import solarAuxiliaValdor from './solar-auxilia-valdor.svg'
 import solarAuxiliaVeletaris from './solar-auxilia-veletaris.svg'
 import solarAuxilia from './solar-auxilia.svg'
 import sonsOfHorusJustaerinTerminator from './sons-of-horus-justaerin-terminator.svg'
@@ -333,24 +283,18 @@ import thousandSonsKhenetai from './thousand-sons-khenetai.svg'
 import thousandSonsPrimarch from './thousand-sons-primarch.svg'
 import thousandSonsSekhmetTerminator from './thousand-sons-sekhmet-terminator.svg'
 import thousandSons from './thousand-sons.svg'
-import ultramarinesDestroyer from './ultramarines-destroyer.svg'
-import ultramarinesFulmentarusTerminator from './ultramarines-fulmentarus-terminator.svg'
 import ultramarinesInvictarusSuzerain from './ultramarines-invictarus-suzerain.svg'
-import ultramarinesLoctarus from './ultramarines-loctarus.svg'
 import ultramarinesPrimarch from './ultramarines-primarch.svg'
 import ultramarines from './ultramarines.svg'
 import whiteScarsAttackBike from './white-scars-attack-bike.svg'
-import whiteScarsBike from './white-scars-bike.svg'
 import whiteScarsOutrider from './white-scars-outrider.svg'
 import whiteScarsSkyHunter from './white-scars-sky-hunter.svg'
 import whiteScars from './white-scars.svg'
 import wordBearersAshenCircle from './word-bearers-ashen-circle.svg'
-import wordBearersDestroyer from './word-bearers-destroyer.svg'
 import wordBearersGalVorbak from './word-bearers-gal-vorbak.svg'
 import wordBearersMharaGal from './word-bearers-mhara-gal.svg'
 import wordBearersPrimarch from './word-bearers-primarch.svg'
 import wordBearers from './word-bearers.svg'
-import worldEatersDestroyer from './world-eaters-destroyer.svg'
 import worldEatersPrimarch from './world-eaters-primarch.svg'
 import worldEatersRampager from './world-eaters-rampager.svg'
 import worldEatersRedButcher from './world-eaters-red-butcher.svg'
@@ -404,7 +348,7 @@ const IMAGES = {
   'dark-angels-super-heavy-tank-squadron': darkAngelsSuperHeavyTankSquadron,
   'dark-angels': darkAngels,
   'death-guard-deathshroud': deathGuardDeathshroud,
-  'death-guard-destroyer': deathGuardDestroyer,
+  'death-guard-destroyer': darkAngelsDestroyer,
   'death-guard-grave-warden': deathGuardGraveWarden,
   'death-guard-primarch': deathGuardPrimarch,
   'death-guard': deathGuard,
@@ -414,7 +358,7 @@ const IMAGES = {
   'emperors-children-primarch': emperorsChildrenPrimarch,
   'emperors-children': emperorsChildren,
   'imperial-fists-castellum-stronghold': imperialFistsCastellumStronghold,
-  'imperial-fists-destroyer': imperialFistsDestroyer,
+  'imperial-fists-destroyer': darkAngelsDestroyer,
   'imperial-fists-phalanx-warder': imperialFistsPhalanxWarder,
   'imperial-fists-primarch': imperialFistsPrimarch,
   'imperial-fists-primus-redoubt': imperialFistsPrimusRedoubt,
@@ -435,18 +379,18 @@ const IMAGES = {
   'imperial-militia-force-commander': imperialMilitiaForceCommander,
   'imperial-militia-gorgon': imperialMilitiaGorgon,
   'imperial-militia-grenedier': imperialMilitiaGrenedier,
-  'imperial-militia-heavy-ordnance-battery': imperialMilitiaHeavyOrdnanceBattery,
-  'imperial-militia-infantry': imperialMilitiaInfantry,
+  'imperial-militia-heavy-ordnance-battery': imperialMilitiaBasilisk,
+  'imperial-militia-infantry': imperialMilitiaAuxiliaries,
   'imperial-militia-land-raider-proteus': imperialMilitiaLandRaiderProteus,
   'imperial-militia-leman-russ-demolisher': imperialMilitiaLemanRussDemolisher,
-  'imperial-militia-leman-russ': imperialMilitiaLemanRuss,
+  'imperial-militia-leman-russ': imperialMilitiaBattleTank,
   'imperial-militia-levy': imperialMilitiaLevy,
   'imperial-militia-malcador': imperialMilitiaMalcador,
   'imperial-militia-medusa': imperialMilitiaMedusa,
   'imperial-militia-motorcycle-commander': imperialMilitiaMotorcycleCommander,
   'imperial-militia-motorcycle': imperialMilitiaMotorcycle,
   'imperial-militia-ogryn': imperialMilitiaOgryn,
-  'imperial-militia-orbital-support': imperialMilitiaOrbitalSupport,
+  'imperial-militia-orbital-support': imperialMilitiaEmperorClassBattleship,
   'imperial-militia-platoon-commander': imperialMilitiaPlatoonCommander,
   'imperial-militia-primaris': imperialMilitiaPrimaris,
   'imperial-militia-recon-auxiliaries': imperialMilitiaReconAuxiliaries,
@@ -454,9 +398,9 @@ const IMAGES = {
   'imperial-militia-rogue-psyker': imperialMilitiaRoguePsyker,
   'imperial-militia-sentinel': imperialMilitiaSentinel,
   'imperial-militia-stormhammer': imperialMilitiaStormhammer,
-  'imperial-militia-super-heavy-tank': imperialMilitiaSuperHeavyTank,
-  'imperial-militia-support-auxiliaries': imperialMilitiaSupportAuxiliaries,
-  'iron-hands-destroyer': ironHandsDestroyer,
+  'imperial-militia-super-heavy-tank': imperialMilitiaBaneblade,
+  'imperial-militia-support-auxiliaries': imperialMilitiaAuxiliaries,
+  'iron-hands-destroyer': darkAngelsDestroyer,
   'iron-hands-fellblade': ironHandsFellblade,
   'iron-hands-glaive': ironHandsGlaive,
   'iron-hands-gorgon-terminator': ironHandsGorgonTerminator,
@@ -465,7 +409,7 @@ const IMAGES = {
   'iron-hands-predator-infernus': ironHandsPredatorInfernus,
   'iron-hands-predator': ironHandsPredator,
   'iron-hands-primarch': ironHandsPrimarch,
-  'iron-hands-super-heavy-tank': ironHandsSuperHeavyTank,
+  'iron-hands-super-heavy-tank': ironHandsFellblade,
   'iron-hands-whirlwind-scorpius': ironHandsWhirlwindScorpius,
   'iron-hands': ironHands,
   'iron-warriors-artillery-battery': ironWarriorsArtilleryBattery,
@@ -483,8 +427,8 @@ const IMAGES = {
   'knight-household-cerastus-knight-atropos': knightHouseholdCerastusKnightAtropos,
   'knight-household-cerastus-knight-castigator': knightHouseholdCerastusKnightCastigator,
   'knight-household-cerastus-knight-lancer': knightHouseholdCerastusKnightLancer,
-  'knight-household-cerastus-knight': knightHouseholdCerastusKnight,
-  'knight-household-cerastus-knights': knightHouseholdCerastusKnights,
+  'knight-household-cerastus-knight': knightHouseholdCerastusKnightLancer,
+  'knight-household-cerastus-knights': knightHouseholdCerastusKnightLancer,
   'knight-household-lord-scion': knightHouseholdLordScion,
   'knight-household-preceptor': knightHouseholdPreceptor,
   'knight-household-questoris-knight-crusader': knightHouseholdQuestorisKnightCrusader,
@@ -505,14 +449,14 @@ const IMAGES = {
   'legio-custodes-contemptor-galatus': legioCustodesContemptorGalatus,
   'legio-custodes-coronus-grav-carrier': legioCustodesCoronusGravCarrier,
   'legio-custodes-custodian-guard': legioCustodesCustodianGuard,
-  'legio-custodes-ephoroi-custodes': legioCustodesEphoroiCustodes,
-  'legio-custodes-hykanatoi': legioCustodesHykanatoi,
+  'legio-custodes-ephoroi-custodes': legioCustodesCustodianGuard,
+  'legio-custodes-hykanatoi': legioCustodesCustodianGuard,
   'legio-custodes-morotoi': legioCustodesMorotoi,
   'legio-custodes-orion-assault-dropship': legioCustodesOrionAssaultDropship,
   'legio-custodes-pallas': legioCustodesPallas,
   'legio-custodes-sentinel-guard': legioCustodesSentinelGuard,
   'legio-custodes-sisters-of-silence': legioCustodesSistersOfSilence,
-  'legio-custodes-telemon-heavy-dreadnought': legioCustodesTelemonHeavyDreadnought,
+  'legio-custodes-telemon-heavy-dreadnought': legioCustodesMorotoi,
   'legio-custodes-tribune': legioCustodesTribune,
   'legio-custodes': legioCustodes,
   'legio-titanicus-air-defence': legioTitanicusAirDefence,
@@ -529,7 +473,7 @@ const IMAGES = {
   'legion-attack-bike': legionAttackBike,
   'legion-basilisk': legionBasilisk,
   'legion-battle-barge': legionBattleBarge,
-  'legion-bike': legionBike,
+  'legion-bike': legionAttackBike,
   'legion-breacher': legionBreacher,
   'legion-caestus': legionCaestus,
   'legion-cerberus': legionCerberus,
@@ -539,52 +483,52 @@ const IMAGES = {
   'legion-damocles-command-rhino': legionDamoclesCommandRhino,
   'legion-deredeo-dreadnought': legionDeredeoDreadnought,
   'legion-despoiler': legionDespoiler,
-  'legion-destroyer': legionDestroyer,
+  'legion-destroyer': darkAngelsDestroyer,
   'legion-dreadclaw': legionDreadclaw,
   'legion-dreadnought': legionDreadnought,
   'legion-drop-pod': legionDropPod,
   'legion-falchion': legionFalchion,
   'legion-fellblade': legionFellblade,
-  'legion-glaive': legionGlaive,
+  'legion-glaive': ironHandsGlaive,
   'legion-gunship': legionGunship,
-  'legion-heavy-support': legionHeavySupport,
+  'legion-heavy-support': ironWarriorsIronHavoc,
   'legion-interceptor': legionInterceptor,
   'legion-javelin': legionJavelin,
   'legion-kharybdis': legionKharybdis,
   'legion-land-raider-achilles': legionLandRaiderAchilles,
   'legion-land-raider-phobos': legionLandRaiderPhobos,
-  'legion-land-raider-proteus': legionLandRaiderProteus,
+  'legion-land-raider-proteus': imperialMilitiaLandRaiderProteus,
   'legion-land-speeder': legionLandSpeeder,
   'legion-leviathan-dreadnought': legionLeviathanDreadnought,
   'legion-librarian': legionLibrarian,
   'legion-lieutenant-commander': legionLieutenantCommander,
-  'legion-lord-champion': legionLordChampion,
+  'legion-lord-champion': legionLieutenantCommander,
   'legion-lord-commander': legionLordCommander,
   'legion-mastodon': legionMastodon,
   'legion-medusa': legionMedusa,
   'legion-outrider': legionOutrider,
   'legion-predator-annihilator': legionPredatorAnnihilator,
-  'legion-predator-executioner': legionPredatorExecutioner,
+  'legion-predator-executioner': ironHandsPredatorExecutioner,
   'legion-predator-infernus': legionPredatorInfernus,
   'legion-predator': legionPredator,
   'legion-rapier-laser-destroyer': legionRapierLaserDestroyer,
   'legion-rapier-mortar': legionRapierMortar,
   'legion-rapier': legionRapier,
   'legion-reconnaissance': legionReconnaissance,
-  'legion-rhino': legionRhino,
+  'legion-rhino': imperialMilitiaRhino,
   'legion-scimitar': legionScimitar,
   'legion-sicaran-omega': legionSicaranOmega,
   'legion-sicaran-punisher': legionSicaranPunisher,
   'legion-sicaran-venator': legionSicaranVenator,
   'legion-sicaran': legionSicaran,
-  'legion-sky-hunter': legionSkyHunter,
-  'legion-spacecraft': legionSpacecraft,
+  'legion-sky-hunter': legionScimitar,
+  'legion-spacecraft': legionBattleBarge,
   'legion-spartan': legionSpartan,
   'legion-storm-eagle': legionStormEagle,
   'legion-stormbird': legionStormbird,
   'legion-strike-cruiser': legionStrikeCruiser,
   'legion-super-heavy-tank-destroyer': legionSuperHeavyTankDestroyer,
-  'legion-super-heavy-tank': legionSuperHeavyTank,
+  'legion-super-heavy-tank': ironWarriorsSuperHeavyTankSquadron,
   'legion-tactical': legionTactical,
   'legion-terminator': legionTerminator,
   'legion-thunderhawk-transporter': legionThunderhawkTransporter,
@@ -593,14 +537,14 @@ const IMAGES = {
   'legion-vindicator-laser-destroyer': legionVindicatorLaserDestroyer,
   'legion-vindicator': legionVindicator,
   'legion-whirlwind-hyperios': legionWhirlwindHyperios,
-  'legion-whirlwind-scorpius': legionWhirlwindScorpius,
+  'legion-whirlwind-scorpius': ironHandsWhirlwindScorpius,
   'legion-whirlwind': legionWhirlwind,
   'legion': legion,
   'mechanicum-taghmata-adsecularis': mechanicumTaghmataAdsecularis,
   'mechanicum-taghmata-archmagos-prime': mechanicumTaghmataArchmagosPrime,
-  'mechanicum-taghmata-avenger': mechanicumTaghmataAvenger,
+  'mechanicum-taghmata-avenger': imperialMilitiaAvenger,
   'mechanicum-taghmata-castellax': mechanicumTaghmataCastellax,
-  'mechanicum-taghmata-falchion': mechanicumTaghmataFalchion,
+  'mechanicum-taghmata-falchion': legionFalchion,
   'mechanicum-taghmata-hyperios': mechanicumTaghmataHyperios,
   'mechanicum-taghmata-karacnos': mechanicumTaghmataKaracnos,
   'mechanicum-taghmata-krios': mechanicumTaghmataKrios,
@@ -616,20 +560,20 @@ const IMAGES = {
   'mechanicum-taghmata-super-heavy-tank-destroyer': mechanicumTaghmataSuperHeavyTankDestroyer,
   'mechanicum-taghmata-tarantula': mechanicumTaghmataTarantula,
   'mechanicum-taghmata-tech-priest': mechanicumTaghmataTechPriest,
-  'mechanicum-taghmata-tech-thrall': mechanicumTaghmataTechThrall,
+  'mechanicum-taghmata-tech-thrall': mechanicumTaghmataAdsecularis,
   'mechanicum-taghmata-thallax': mechanicumTaghmataThallax,
   'mechanicum-taghmata-thanatar': mechanicumTaghmataThanatar,
   'mechanicum-taghmata-triaros': mechanicumTaghmataTriaros,
   'mechanicum-taghmata-ursarax': mechanicumTaghmataUrsarax,
   'mechanicum-taghmata-vorax': mechanicumTaghmataVorax,
   'mechanicum-taghmata': mechanicumTaghmata,
-  'night-lords-destroyer': nightLordsDestroyer,
+  'night-lords-destroyer': darkAngelsDestroyer,
   'night-lords-night-raptor': nightLordsNightRaptor,
   'night-lords-primarch': nightLordsPrimarch,
   'night-lords': nightLords,
   'raven-guard-dark-fury': ravenGuardDarkFury,
-  'raven-guard-darkwing': ravenGuardDarkwing,
-  'raven-guard-destroyer': ravenGuardDestroyer,
+  'raven-guard-darkwing': legionStormEagle,
+  'raven-guard-destroyer': darkAngelsDestroyer,
   'raven-guard-mor-deythan': ravenGuardMorDeythan,
   'raven-guard-primarch': ravenGuardPrimarch,
   'raven-guard': ravenGuard,
@@ -640,41 +584,41 @@ const IMAGES = {
   'skitarii': skitarii,
   'skull': skull,
   'solar-auxilia-artillery-tank': solarAuxiliaArtilleryTank,
-  'solar-auxilia-arvus-lighter': solarAuxiliaArvusLighter,
+  'solar-auxilia-arvus-lighter': imperialMilitiaArvusLighter,
   'solar-auxilia-assault-gun': solarAuxiliaAssaultGun,
-  'solar-auxilia-avenger': solarAuxiliaAvenger,
-  'solar-auxilia-baneblade': solarAuxiliaBaneblade,
+  'solar-auxilia-avenger': imperialMilitiaAvenger,
+  'solar-auxilia-baneblade': imperialMilitiaBaneblade,
   'solar-auxilia-basilisk': solarAuxiliaBasilisk,
-  'solar-auxilia-bombard': solarAuxiliaBombard,
-  'solar-auxilia-close-support-squadron': solarAuxiliaCloseSupportSquadron,
+  'solar-auxilia-bombard': solarAuxiliaArtilleryTank,
+  'solar-auxilia-close-support-squadron': imperialMilitiaBattleTank,
   'solar-auxilia-close-support': solarAuxiliaCloseSupport,
   'solar-auxilia-command-detachment': solarAuxiliaCommandDetachment,
-  'solar-auxilia-dauntless-class-light-cruiser': solarAuxiliaDauntlessClassLightCruiser,
+  'solar-auxilia-dauntless-class-light-cruiser': imperialMilitiaDauntlessClassLightCruiser,
   'solar-auxilia-dracosan': solarAuxiliaDracosan,
   'solar-auxilia-emperor-class-battleship': solarAuxiliaEmperorClassBattleship,
-  'solar-auxilia-infantry-support-tank-unit': solarAuxiliaInfantrySupportTankUnit,
+  'solar-auxilia-infantry-support-tank-unit': imperialMilitiaLemanRussDemolisher,
   'solar-auxilia-infantry': solarAuxiliaInfantry,
-  'solar-auxilia-leman-russ-demolisher': solarAuxiliaLemanRussDemolisher,
-  'solar-auxilia-leman-russ': solarAuxiliaLemanRuss,
+  'solar-auxilia-leman-russ-demolisher': imperialMilitiaLemanRussDemolisher,
+  'solar-auxilia-leman-russ': imperialMilitiaBattleTank,
   'solar-auxilia-lord-marshall': solarAuxiliaLordMarshall,
   'solar-auxilia-malcador': solarAuxiliaMalcador,
   'solar-auxilia-medusa': solarAuxiliaMedusa,
   'solar-auxilia-ogryn-charonite': solarAuxiliaOgrynCharonite,
-  'solar-auxilia-orbital-support': solarAuxiliaOrbitalSupport,
-  'solar-auxilia-primaris': solarAuxiliaPrimaris,
-  'solar-auxilia-rapier': solarAuxiliaRapier,
+  'solar-auxilia-orbital-support': imperialMilitiaEmperorClassBattleship,
+  'solar-auxilia-primaris': imperialMilitiaPrimaris,
+  'solar-auxilia-rapier': legionRapier,
   'solar-auxilia-shadowsword': solarAuxiliaShadowsword,
   'solar-auxilia-stormblade': solarAuxiliaStormblade,
-  'solar-auxilia-stormhammer': solarAuxiliaStormhammer,
+  'solar-auxilia-stormhammer': imperialMilitiaStormhammer,
   'solar-auxilia-stormlord': solarAuxiliaStormlord,
   'solar-auxilia-stormsword': solarAuxiliaStormsword,
-  'solar-auxilia-strike-company': solarAuxiliaStrikeCompany,
-  'solar-auxilia-super-heavy-tank': solarAuxiliaSuperHeavyTank,
+  'solar-auxilia-strike-company': imperialMilitiaBattleTank,
+  'solar-auxilia-super-heavy-tank': imperialMilitiaBaneblade,
   'solar-auxilia-tactical-commmand': solarAuxiliaTacticalCommmand,
   'solar-auxilia-tank-hunter': solarAuxiliaTankHunter,
-  'solar-auxilia-tarantula-hyperios': solarAuxiliaTarantulaHyperios,
+  'solar-auxilia-tarantula-hyperios': mechanicumTaghmataHyperios,
   'solar-auxilia-tarantula': solarAuxiliaTarantula,
-  'solar-auxilia-valdor': solarAuxiliaValdor,
+  'solar-auxilia-valdor': solarAuxiliaTankHunter,
   'solar-auxilia-veletaris': solarAuxiliaVeletaris,
   'solar-auxilia': solarAuxilia,
   'sons-of-horus-justaerin-terminator': sonsOfHorusJustaerinTerminator,
@@ -691,24 +635,24 @@ const IMAGES = {
   'thousand-sons-primarch': thousandSonsPrimarch,
   'thousand-sons-sekhmet-terminator': thousandSonsSekhmetTerminator,
   'thousand-sons': thousandSons,
-  'ultramarines-destroyer': ultramarinesDestroyer,
-  'ultramarines-fulmentarus-terminator': ultramarinesFulmentarusTerminator,
+  'ultramarines-destroyer': darkAngelsDestroyer,
+  'ultramarines-fulmentarus-terminator': ironWarriorsTyrantSiegeTerminator,
   'ultramarines-invictarus-suzerain': ultramarinesInvictarusSuzerain,
-  'ultramarines-loctarus': ultramarinesLoctarus,
+  'ultramarines-loctarus': legionAssault,
   'ultramarines-primarch': ultramarinesPrimarch,
   'ultramarines': ultramarines,
   'white-scars-attack-bike': whiteScarsAttackBike,
-  'white-scars-bike': whiteScarsBike,
+  'white-scars-bike': whiteScarsAttackBike,
   'white-scars-outrider': whiteScarsOutrider,
   'white-scars-sky-hunter': whiteScarsSkyHunter,
   'white-scars': whiteScars,
   'word-bearers-ashen-circle': wordBearersAshenCircle,
-  'word-bearers-destroyer': wordBearersDestroyer,
+  'word-bearers-destroyer': darkAngelsDestroyer,
   'word-bearers-gal-vorbak': wordBearersGalVorbak,
   'word-bearers-mhara-gal': wordBearersMharaGal,
   'word-bearers-primarch': wordBearersPrimarch,
   'word-bearers': wordBearers,
-  'world-eaters-destroyer': worldEatersDestroyer,
+  'world-eaters-destroyer': darkAngelsDestroyer,
   'world-eaters-primarch': worldEatersPrimarch,
   'world-eaters-rampager': worldEatersRampager,
   'world-eaters-red-butcher': worldEatersRedButcher,

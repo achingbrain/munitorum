@@ -145,6 +145,10 @@ class SpaceMarineLegion extends Army {
 
     return errors
   }
+
+  getStrategyRating (list) {
+    return 5
+  }
 }
 
 export default SpaceMarineLegion

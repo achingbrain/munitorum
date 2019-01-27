@@ -31,4 +31,8 @@ export default class SpaceMarineLegionDetachment extends Detachment {
     this.units = this.units
       .filter(item => item.id !== unit.id)
   }
+
+  getInitiativeRating () {
+    return 1
+  }
 }

@@ -208,6 +208,10 @@ class ImperialMilitia extends Army {
 
     return errors
   }
+
+  getStrategyRating (list) {
+    return 2
+  }
 }
 
 export default withType(ImperialMilitia)

@@ -75,20 +75,17 @@ class EditListHeader extends Component {
       classes,
       t,
       list,
-      cost,
+      name,
       theme
     } = this.props
 
     return (
       <>
         <Typography variant='h6' color='inherit' className={classes.grow} noWrap>
-          {t(list.name)}
+          {name}
           <ListNameDialog />
         </Typography>
         <Hidden only={['xs', 'sm']} className={classes.flexContainer}>
-          <Typography variant='h6' color='inherit' noWrap>
-            <Trans i18nKey='cost'>{{ cost }} pts</Trans>
-          </Typography>
           <ListLinkDialog>
             <IconButton color='inherit' className={classes.navButton}>
               <ShareIcon />
@@ -133,10 +130,6 @@ class EditListHeader extends Component {
             }}
           >
             <List>
-              <ListItem>
-                <ListItemText primary={<Trans i18nKey='cost'>{{ cost }} pts</Trans>} />
-              </ListItem>
-              <Divider />
               <ListLinkDialog>
                 <ListItem button>
                   <ListItemIcon className={classes.listListIcon}>
@@ -174,7 +167,7 @@ class EditListHeader extends Component {
 const mapStateToProps = ({ list }) => {
   return {
     list,
-    cost: list.getCost()
+    name: list.name
   }
 }
 

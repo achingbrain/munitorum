@@ -31,13 +31,13 @@ import {
   ImperialMilitiaDisciplineMaster,
   ImperialMilitiaRoguePsyker
 } from '../units/imperial-militia'
-import Detachment from './detachment'
+import ImperialMilitiaDetachment from './imperial-militia-detachment'
 import {
   Unique
 } from '../constraints'
 import withType from '../../../../utils/with-type'
 
-export class ImperialMilitiaCommandSquad extends Detachment {
+export class ImperialMilitiaCommandSquad extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaForceCommander(),
@@ -61,7 +61,7 @@ export class ImperialMilitiaCommandSquad extends Detachment {
   }
 }
 
-export class ImperialMilitiaInfantrySquad extends Detachment {
+export class ImperialMilitiaInfantrySquad extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaPlatoonCommander(),
@@ -82,7 +82,7 @@ export class ImperialMilitiaInfantrySquad extends Detachment {
   }
 }
 
-export class ImperialMilitiaLevySquad extends Detachment {
+export class ImperialMilitiaLevySquad extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaLevyAuxiliaries()
@@ -96,7 +96,7 @@ export class ImperialMilitiaLevySquad extends Detachment {
   }
 }
 
-export class ImperialMilitiaMotorcycleSquad extends Detachment {
+export class ImperialMilitiaMotorcycleSquad extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaMotorcycleCommander(),
@@ -110,7 +110,7 @@ export class ImperialMilitiaMotorcycleSquad extends Detachment {
   }
 }
 
-export class ImperialMilitiaGrenedierSquad extends Detachment {
+export class ImperialMilitiaGrenedierSquad extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaGrenedier()
@@ -127,7 +127,7 @@ export class ImperialMilitiaGrenedierSquad extends Detachment {
   }
 }
 
-export class ImperialMilitiaOrbitalSupport extends Detachment {
+export class ImperialMilitiaOrbitalSupport extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaOrbitalSupportUnit()
@@ -137,7 +137,7 @@ export class ImperialMilitiaOrbitalSupport extends Detachment {
   }
 }
 
-export class ImperialMilitiaCavalrySquad extends Detachment {
+export class ImperialMilitiaCavalrySquad extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaCavalryAuxiliary()
@@ -150,7 +150,7 @@ export class ImperialMilitiaCavalrySquad extends Detachment {
   }
 }
 
-export class ImperialMilitiaHeavyOrdnanceBattery extends Detachment {
+export class ImperialMilitiaHeavyOrdnanceBattery extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaHeavyOrdnanceBatteryUnit()
@@ -158,7 +158,7 @@ export class ImperialMilitiaHeavyOrdnanceBattery extends Detachment {
   }
 }
 
-export class ImperialMilitiaMalcadorHeavyTankSquadron extends Detachment {
+export class ImperialMilitiaMalcadorHeavyTankSquadron extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaMalcadorUnit(),
@@ -170,7 +170,7 @@ export class ImperialMilitiaMalcadorHeavyTankSquadron extends Detachment {
   }
 }
 
-export class ImperialMilitiaRapierBattery extends Detachment {
+export class ImperialMilitiaRapierBattery extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaRapier()
@@ -178,7 +178,7 @@ export class ImperialMilitiaRapierBattery extends Detachment {
   }
 }
 
-export class ImperialMilitiaSentinelScoutSquadron extends Detachment {
+export class ImperialMilitiaSentinelScoutSquadron extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaSentinel()
@@ -186,7 +186,7 @@ export class ImperialMilitiaSentinelScoutSquadron extends Detachment {
   }
 }
 
-export class ImperialMilitiaSuperHeavyTank extends Detachment {
+export class ImperialMilitiaSuperHeavyTank extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaSuperHeavyTankUnit()
@@ -194,7 +194,7 @@ export class ImperialMilitiaSuperHeavyTank extends Detachment {
   }
 }
 
-export class ImperialMilitiaBattleTankSquadron extends Detachment {
+export class ImperialMilitiaBattleTankSquadron extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaBattleTankUnitWithVanquisher(),
@@ -206,7 +206,7 @@ export class ImperialMilitiaBattleTankSquadron extends Detachment {
   }
 }
 
-export class ImperialMilitiaSuperHeavyTankPlatoon extends Detachment {
+export class ImperialMilitiaSuperHeavyTankPlatoon extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaSuperHeavyTankPlatoonUnit()
@@ -214,7 +214,7 @@ export class ImperialMilitiaSuperHeavyTankPlatoon extends Detachment {
   }
 }
 
-export class ImperialMilitiaAvengerWing extends Detachment {
+export class ImperialMilitiaAvengerWing extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaAvengerStrikeFighter()
@@ -222,7 +222,7 @@ export class ImperialMilitiaAvengerWing extends Detachment {
   }
 }
 
-export class ImperialMilitiaPrimarisWing extends Detachment {
+export class ImperialMilitiaPrimarisWing extends ImperialMilitiaDetachment {
   constructor () {
     super([
       new ImperialMilitiaPrimarisStrikeFighter()

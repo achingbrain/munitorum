@@ -25,13 +25,13 @@ import {
   MechanicumTaghmataFalchion,
   MechanicumTaghmataOrdinatusMajoris
 } from '../units/mechanicum-taghmata'
-import Detachment from './detachment'
+import MechanicumTaghmataDetachment from './mechanicum-taghmata-detachment'
 import {
   Unique
 } from '../constraints'
 import withType from '../../../../utils/with-type'
 
-export class MechanicumTaghmataAdsecularisCovenent extends Detachment {
+export class MechanicumTaghmataAdsecularisCovenent extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataTechPriest(),
@@ -45,7 +45,7 @@ export class MechanicumTaghmataAdsecularisCovenent extends Detachment {
   }
 }
 
-export class MechanicumTaghmataThallaxCohort extends Detachment {
+export class MechanicumTaghmataThallaxCohort extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataThallax()
@@ -59,7 +59,7 @@ export class MechanicumTaghmataThallaxCohort extends Detachment {
   }
 }
 
-export class MechanicumTaghmataUrsaraxCohort extends Detachment {
+export class MechanicumTaghmataUrsaraxCohort extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataUrsarax()
@@ -70,7 +70,7 @@ export class MechanicumTaghmataUrsaraxCohort extends Detachment {
   }
 }
 
-export class MechanicumTaghmataVoraxManiple extends Detachment {
+export class MechanicumTaghmataVoraxManiple extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataVorax()
@@ -80,7 +80,7 @@ export class MechanicumTaghmataVoraxManiple extends Detachment {
   }
 }
 
-export class MechanicumTaghmataCastellaxManiple extends Detachment {
+export class MechanicumTaghmataCastellaxManiple extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataTechPriest(),
@@ -93,7 +93,7 @@ export class MechanicumTaghmataCastellaxManiple extends Detachment {
   }
 }
 
-export class MechanicumTaghmataThanatarManiple extends Detachment {
+export class MechanicumTaghmataThanatarManiple extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataThanatar()
@@ -105,7 +105,7 @@ export class MechanicumTaghmataThanatarManiple extends Detachment {
   }
 }
 
-export class MechanicumTaghmataKriosSquadron extends Detachment {
+export class MechanicumTaghmataKriosSquadron extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataKrios()
@@ -115,7 +115,7 @@ export class MechanicumTaghmataKriosSquadron extends Detachment {
   }
 }
 
-export class MechanicumTaghmataKaracnosSquadron extends Detachment {
+export class MechanicumTaghmataKaracnosSquadron extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataKaracnos()
@@ -125,7 +125,7 @@ export class MechanicumTaghmataKaracnosSquadron extends Detachment {
   }
 }
 
-export class MechanicumTaghmataMyrmidonSect extends Detachment {
+export class MechanicumTaghmataMyrmidonSect extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataMyrmidonUnit()
@@ -138,7 +138,7 @@ export class MechanicumTaghmataMyrmidonSect extends Detachment {
   }
 }
 
-export class MechanicumTaghmataTarantulaBattery extends Detachment {
+export class MechanicumTaghmataTarantulaBattery extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataTarantulaUnit()
@@ -146,7 +146,7 @@ export class MechanicumTaghmataTarantulaBattery extends Detachment {
   }
 }
 
-export class MechanicumTaghmataMinotaurBattery extends Detachment {
+export class MechanicumTaghmataMinotaurBattery extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataMinotaur()
@@ -154,7 +154,7 @@ export class MechanicumTaghmataMinotaurBattery extends Detachment {
   }
 }
 
-export class MechanicumTaghmataOrdinatusMinorisTormenta extends Detachment {
+export class MechanicumTaghmataOrdinatusMinorisTormenta extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataOrdinatusMinoris()
@@ -164,7 +164,7 @@ export class MechanicumTaghmataOrdinatusMinorisTormenta extends Detachment {
   }
 }
 
-export class MechanicumTaghmataAvengerWing extends Detachment {
+export class MechanicumTaghmataAvengerWing extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataAvengerStrikeFighter()
@@ -172,7 +172,7 @@ export class MechanicumTaghmataAvengerWing extends Detachment {
   }
 }
 
-export class MechanicumTaghmataPrimarisWing extends Detachment {
+export class MechanicumTaghmataPrimarisWing extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataPrimarisStrikeFighter()
@@ -180,7 +180,7 @@ export class MechanicumTaghmataPrimarisWing extends Detachment {
   }
 }
 
-export class MechanicumTaghmataSuperHeavyTankDestroyer extends Detachment {
+export class MechanicumTaghmataSuperHeavyTankDestroyer extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataFalchion()
@@ -188,7 +188,7 @@ export class MechanicumTaghmataSuperHeavyTankDestroyer extends Detachment {
   }
 }
 
-export class MechanicumTaghmataOrdinatusMajorisDetachment extends Detachment {
+export class MechanicumTaghmataOrdinatusMajorisDetachment extends MechanicumTaghmataDetachment {
   constructor () {
     super([
       new MechanicumTaghmataOrdinatusMajoris()

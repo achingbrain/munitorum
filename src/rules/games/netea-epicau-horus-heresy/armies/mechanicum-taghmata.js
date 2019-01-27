@@ -67,6 +67,10 @@ class MechanicumTaghmata extends Army {
 
     return errors
   }
+
+  getStrategyRating (list) {
+    return 3
+  }
 }
 
 export default withType(MechanicumTaghmata)

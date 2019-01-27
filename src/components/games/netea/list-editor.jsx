@@ -42,6 +42,10 @@ class ListEditor extends Component {
           type={'lordsOfWar'}
           onAddDetachment={this.handleAddDetachment}
         />
+        <EditDetachments
+          type={'allies'}
+          onAddDetachment={this.handleAddDetachment}
+        />
       </>
     )
   }

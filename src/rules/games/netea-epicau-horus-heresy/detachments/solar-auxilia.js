@@ -30,13 +30,13 @@ import {
   SolarAuxiliaAvengerStrikeFighter,
   SolarAuxiliaPrimarisStrikeFighter
 } from '../units/solar-auxilia'
-import Detachment from './detachment'
+import SolarAuxiliaDetachment from './solar-auxilia-detachment'
 import {
   Unique
 } from '../constraints'
 import withType from '../../../../utils/with-type'
 
-export class SolarAuxiliaCommandDetachment extends Detachment {
+export class SolarAuxiliaCommandDetachment extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaLordMarshall(),
@@ -59,7 +59,7 @@ export class SolarAuxiliaCommandDetachment extends Detachment {
   }
 }
 
-export class SolarAuxiliaVeletarisStormCohort extends Detachment {
+export class SolarAuxiliaVeletarisStormCohort extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaTacticalCommmandSection(),
@@ -76,7 +76,7 @@ export class SolarAuxiliaVeletarisStormCohort extends Detachment {
   }
 }
 
-export class SolarAuxiliaInfantryTercio extends Detachment {
+export class SolarAuxiliaInfantryTercio extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaTacticalCommmandSection(),
@@ -98,7 +98,7 @@ export class SolarAuxiliaInfantryTercio extends Detachment {
   }
 }
 
-export class SolarAuxiliaStrikeCompany extends Detachment {
+export class SolarAuxiliaStrikeCompany extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaBattleTankUnitWithVanquisher(),
@@ -115,7 +115,7 @@ export class SolarAuxiliaStrikeCompany extends Detachment {
   }
 }
 
-export class SolarAuxiliaOrbitalSupport extends Detachment {
+export class SolarAuxiliaOrbitalSupport extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaOrbitalSupportUnit()
@@ -125,7 +125,7 @@ export class SolarAuxiliaOrbitalSupport extends Detachment {
   }
 }
 
-export class SolarAuxiliaAssaultGunPlatoon extends Detachment {
+export class SolarAuxiliaAssaultGunPlatoon extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaMedusa()
@@ -133,7 +133,7 @@ export class SolarAuxiliaAssaultGunPlatoon extends Detachment {
   }
 }
 
-export class SolarAuxiliaArtilleryTankBattery extends Detachment {
+export class SolarAuxiliaArtilleryTankBattery extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaArtilleryTankBatteryUnit()
@@ -141,7 +141,7 @@ export class SolarAuxiliaArtilleryTankBattery extends Detachment {
   }
 }
 
-export class SolarAuxiliaMalcadorSquadron extends Detachment {
+export class SolarAuxiliaMalcadorSquadron extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaMalcadorUnit(),
@@ -153,7 +153,7 @@ export class SolarAuxiliaMalcadorSquadron extends Detachment {
   }
 }
 
-export class SolarAuxiliaSuperHeavyTank extends Detachment {
+export class SolarAuxiliaSuperHeavyTank extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaSuperHeavyTankUnit()
@@ -161,7 +161,7 @@ export class SolarAuxiliaSuperHeavyTank extends Detachment {
   }
 }
 
-export class SolarAuxiliaSuperHeavyTankSquadron extends Detachment {
+export class SolarAuxiliaSuperHeavyTankSquadron extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaSuperHeavyTankSquadronUnit()
@@ -169,7 +169,7 @@ export class SolarAuxiliaSuperHeavyTankSquadron extends Detachment {
   }
 }
 
-export class SolarAuxiliaCloseSupportSquadron extends Detachment {
+export class SolarAuxiliaCloseSupportSquadron extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaCloseSupportTankUnitWithExecutioner(),
@@ -181,7 +181,7 @@ export class SolarAuxiliaCloseSupportSquadron extends Detachment {
   }
 }
 
-export class SolarAuxiliaTankHunterSquadron extends Detachment {
+export class SolarAuxiliaTankHunterSquadron extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaValdor()
@@ -189,7 +189,7 @@ export class SolarAuxiliaTankHunterSquadron extends Detachment {
   }
 }
 
-export class SolarAuxiliaTarantulaBattery extends Detachment {
+export class SolarAuxiliaTarantulaBattery extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaTarantula(),
@@ -198,7 +198,7 @@ export class SolarAuxiliaTarantulaBattery extends Detachment {
   }
 }
 
-export class SolarAuxiliaAvengerWing extends Detachment {
+export class SolarAuxiliaAvengerWing extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaAvengerStrikeFighter()
@@ -206,7 +206,7 @@ export class SolarAuxiliaAvengerWing extends Detachment {
   }
 }
 
-export class SolarAuxiliaPrimarisWing extends Detachment {
+export class SolarAuxiliaPrimarisWing extends SolarAuxiliaDetachment {
   constructor () {
     super([
       new SolarAuxiliaPrimarisStrikeFighter()

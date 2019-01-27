@@ -123,6 +123,7 @@ export class AntiAircraft {
 export class Radiation {
   constructor () {
     this.name = 'radiation'
+    this.type = 'RAD'
     this.link = 'http://epicau.com/mw/index.php/Legion_Astartes#Special_Rules'
   }
 }
@@ -138,6 +139,7 @@ export class AssaultWeapon {
   constructor (...firepower) {
     this.range = 'Base contact'
     this.firepower = firepower
+    this.type = '(assault weapons)'
     this.link = 'http://tp.net-armageddon.org/tournament-pack#faq-resolve-attacks'
   }
 }
@@ -151,6 +153,7 @@ export class SmallArms {
     }
 
     this.firepower = firepower
+    this.type = '(small arms)'
     this.link = 'http://tp.net-armageddon.org/tournament-pack#faq-resolve-attacks'
   }
 }

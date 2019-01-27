@@ -10,7 +10,7 @@ import {
   KnightHouseholdCerastusKnight,
   KnightHouseholdAcastusKnightPorphyrion
 } from '../units/knight-household'
-import Detachment from './detachment'
+import KnightHouseholdDetachment from './knight-household-detachment'
 import withType from '../../../../utils/with-type'
 
 class KnightHouseholdQuestorisKnightsUpgrade extends Upgrade {
@@ -25,7 +25,7 @@ class KnightHouseholdQuestorisKnightsUpgrade extends Upgrade {
   }
 }
 
-export class KnightHouseholdQuestorisKnights extends Detachment {
+export class KnightHouseholdQuestorisKnights extends KnightHouseholdDetachment {
   constructor () {
     super([
       new KnightHouseholdQuestorisKnight(),
@@ -53,7 +53,7 @@ class KnightHouseholdCerastusKnightsUpgrade extends Upgrade {
   }
 }
 
-export class KnightHouseholdCerastusKnights extends Detachment {
+export class KnightHouseholdCerastusKnights extends KnightHouseholdDetachment {
   constructor () {
     super([
       new KnightHouseholdCerastusKnight(),
@@ -67,7 +67,7 @@ export class KnightHouseholdCerastusKnights extends Detachment {
   }
 }
 
-export class KnightHouseholdAcastusKnightPorphyrions extends Detachment {
+export class KnightHouseholdAcastusKnightPorphyrions extends KnightHouseholdDetachment {
   KnightHouseholdAcastusKnightPorphyrion
 
   constructor () {

@@ -2,6 +2,7 @@
 
 import ListEditor from '../../../../components/games/netea/list-editor'
 import ListViewer from '../../../../components/games/netea/list-viewer'
+import TopBar from '../../../../components/games/netea/top-bar'
 import {
   LimitedPerPoints,
   Unique
@@ -12,6 +13,7 @@ class Army {
     this.lineDetachments = []
     this.supportDetachments = []
     this.lordsOfWar = []
+    this.allies = []
   }
 
   getEditor () {
@@ -20,6 +22,10 @@ class Army {
 
   getViewer () {
     return ListViewer
+  }
+
+  getTopBar () {
+    return TopBar
   }
 
   validate (list, t) {
@@ -76,6 +82,10 @@ class Army {
     })
 
     return errors
+  }
+
+  getStrategyRating (list) {
+    return 1
   }
 }
 

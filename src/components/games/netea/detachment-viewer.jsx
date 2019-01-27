@@ -2,7 +2,9 @@ import React, {
   Component
 } from 'react'
 import PropTypes from 'prop-types'
+import { Trans } from 'react-i18next'
 import component from '../../component'
+import Typography from '@material-ui/core/Typography'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardHeader from '@material-ui/core/CardHeader'
@@ -34,10 +36,21 @@ class DetachmentViewer extends Component {
       units[key] = unit
     })
 
+    const initiativeRating = detachment.getInitiativeRating()
+
     return (
       <Card className={classes.viewCard}>
         <CardHeader
-          title={detachment.name || t(detachment.code)}
+          title={
+            <div className={classes.flexContainer}>
+              <Typography variant='body1' color='inherit' className={classes.grow} noWrap>
+                {detachment.name || t(detachment.code)}
+              </Typography>
+              <Typography variant='body1' color='inherit' noWrap>
+                <Trans i18nKey='intitative-rating'>Initiative Rating {{ initiativeRating }}+</Trans>
+              </Typography>
+            </div>
+          }
           className={classes.viewCardHeader}
           titleTypographyProps={{ variant: 'subtitle1', component: 'h5' }}
         />

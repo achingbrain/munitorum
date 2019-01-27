@@ -30,6 +30,8 @@ export default {
     'really-remove-list': 'Really remove this list?',
     'remove': 'Remove',
     'list': 'List',
+    'strategy-rating': 'Strategy Rating {{ strategyRating }}',
+    'intitative-rating': 'Initiative Rating {{ initiativeRating }}+',
 
     'cannot-take-primarch-and-lord-commander': 'You cannot take a Primarch and a Lord Commander in the same list',
     'spacecraft-required': 'Spacecraft are required when units have the planetfall special ability',

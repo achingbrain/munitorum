@@ -51,13 +51,13 @@ import {
   DaemonicHordesSoulGrinderManipleUnit,
   DaemonicHordesChaosAltar
 } from '../units/daemonic-hordes'
-import Detachment from './detachment'
+import DaemonicHordesDetachment from './daemonic-hordes-detachment'
 import {
   Unique
 } from '../constraints'
 import withType from '../../../../utils/with-type'
 
-export class DaemonicHordesWarpRiftDetachment extends Detachment {
+export class DaemonicHordesWarpRiftDetachment extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesWarpRift()
@@ -67,7 +67,7 @@ export class DaemonicHordesWarpRiftDetachment extends Detachment {
   }
 }
 
-export class DaemonicHordesKhorneHorde extends Detachment {
+export class DaemonicHordesKhorneHorde extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesKhorneHordeLeader(),
@@ -85,7 +85,7 @@ export class DaemonicHordesKhorneHorde extends Detachment {
   }
 }
 
-export class DaemonicHordesNurgleHorde extends Detachment {
+export class DaemonicHordesNurgleHorde extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesNurgleHordeLeader(),
@@ -103,7 +103,7 @@ export class DaemonicHordesNurgleHorde extends Detachment {
   }
 }
 
-export class DaemonicHordesSlaaneshHorde extends Detachment {
+export class DaemonicHordesSlaaneshHorde extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesSlaaneshHordeLeader(),
@@ -121,7 +121,7 @@ export class DaemonicHordesSlaaneshHorde extends Detachment {
   }
 }
 
-export class DaemonicHordesTzeenchHorde extends Detachment {
+export class DaemonicHordesTzeenchHorde extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesTzeenchHordeLeader(),
@@ -139,7 +139,7 @@ export class DaemonicHordesTzeenchHorde extends Detachment {
   }
 }
 
-export class DaemonicHordesKhorneGreaterDaemonHorde extends Detachment {
+export class DaemonicHordesKhorneGreaterDaemonHorde extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesBloodThirsterHordeUnit()
@@ -149,7 +149,7 @@ export class DaemonicHordesKhorneGreaterDaemonHorde extends Detachment {
   }
 }
 
-export class DaemonicHordesNurgleGreaterDaemonHorde extends Detachment {
+export class DaemonicHordesNurgleGreaterDaemonHorde extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesGreatUncleanOneHordeUnit()
@@ -159,7 +159,7 @@ export class DaemonicHordesNurgleGreaterDaemonHorde extends Detachment {
   }
 }
 
-export class DaemonicHordesSlaaneshGreaterDaemonHorde extends Detachment {
+export class DaemonicHordesSlaaneshGreaterDaemonHorde extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesKeeperOfSecretsHordeUnit()
@@ -169,7 +169,7 @@ export class DaemonicHordesSlaaneshGreaterDaemonHorde extends Detachment {
   }
 }
 
-export class DaemonicHordesTzeenchGreaterDaemonHorde extends Detachment {
+export class DaemonicHordesTzeenchGreaterDaemonHorde extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesLordOfChangeHordeUnit()
@@ -179,7 +179,7 @@ export class DaemonicHordesTzeenchGreaterDaemonHorde extends Detachment {
   }
 }
 
-export class DaemonicHordesKhorneFollowers extends Detachment {
+export class DaemonicHordesKhorneFollowers extends DaemonicHordesDetachment {
   constructor () {
     super([
 
@@ -195,7 +195,7 @@ export class DaemonicHordesKhorneFollowers extends Detachment {
   }
 }
 
-export class DaemonicHordesNurgleFollowers extends Detachment {
+export class DaemonicHordesNurgleFollowers extends DaemonicHordesDetachment {
   constructor () {
     super([], [
       new AdditionalUnitOption(DaemonicHordesBeastsOfNurgleFollowerUnit),
@@ -209,7 +209,7 @@ export class DaemonicHordesNurgleFollowers extends Detachment {
   }
 }
 
-export class DaemonicHordesSlaaneshFollowers extends Detachment {
+export class DaemonicHordesSlaaneshFollowers extends DaemonicHordesDetachment {
   constructor () {
     super([], [
       new AdditionalUnitOption(DaemonicHordesSeekersOfSlaaneshFollowerUnit),
@@ -223,7 +223,7 @@ export class DaemonicHordesSlaaneshFollowers extends Detachment {
   }
 }
 
-export class DaemonicHordesTzeenchFollowers extends Detachment {
+export class DaemonicHordesTzeenchFollowers extends DaemonicHordesDetachment {
   constructor () {
     super([], [
       new AdditionalUnitOption(DaemonicHordesFlamersOfTzeenchFollowerUnit),
@@ -237,7 +237,7 @@ export class DaemonicHordesTzeenchFollowers extends Detachment {
   }
 }
 
-export class DaemonicHordesChaosFuryFlight extends Detachment {
+export class DaemonicHordesChaosFuryFlight extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesChaosFuryFlightUnit()
@@ -250,7 +250,7 @@ export class DaemonicHordesChaosFuryFlight extends Detachment {
   }
 }
 
-export class DaemonicHordesChaosSpawnPack extends Detachment {
+export class DaemonicHordesChaosSpawnPack extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesChaosSpawnPackUnit()
@@ -263,7 +263,7 @@ export class DaemonicHordesChaosSpawnPack extends Detachment {
   }
 }
 
-export class DaemonicHordesSoulGrinderManiple extends Detachment {
+export class DaemonicHordesSoulGrinderManiple extends DaemonicHordesDetachment {
   constructor () {
     super([
       new DaemonicHordesSoulGrinderManipleUnit()

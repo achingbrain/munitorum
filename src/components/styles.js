@@ -44,12 +44,28 @@ const styles = theme => ({
       display: 'none'
     }
   },
-  toolbar: theme.mixins.toolbar,
+  appTitleWrapper: {
+    ...theme.mixins.toolbar
+  },
+  topBar: {
+    marginTop: 64,
+    [theme.breakpoints.down('xs')]: {
+      marginTop: 56,
+    },
+    color: 'white',
+    backgroundColor: '#424242',
+    display: 'flex',
+    padding: theme.spacing.unit,
+    paddingLeft: theme.spacing.unit * 3,
+    paddingRight: theme.spacing.unit * 3
+  },
   drawerPaper: {
     width: drawerWidth
   },
   content: {
-    flexGrow: 1,
+    flexGrow: 1
+  },
+  contentWrapper: {
     padding: theme.spacing.unit
   },
   viewContent: {
@@ -178,15 +194,15 @@ const styles = theme => ({
   },
   avatar: {
     fontSize: 24,
-    color: 'black'
+    color: 'white'
   },
   detachmentAvatar: {
     fontSize: 36,
-    color: 'black'
+    color: 'white'
   },
   unitAvatar: {
     fontSize: 36,
-    color: 'black',
+    color: 'white',
     display: 'inline-block',
     float: 'left',
     marginTop: theme.spacing.unit,

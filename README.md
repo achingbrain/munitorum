@@ -27,6 +27,7 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons/) for the 
 - Ephoroi Custodes have the 'Carrier' upgrade, what do they count as for transport purposes?
 - Custodes Telemon Heavy Dreadnought does not have the 'Walker' special rule
 - Custodes Vehicles/War Engines have their Speed/Type columns the wrong way round
+- What are the strategy and initiative ratings for Custodes?
 - Imperial Militia Gorgon has One Shot special rule - is that the same as the Single Shot rule?
 - Imperial Militia Infantry Squad only has Heavy Transport upgrade option but command and grenedier squads also have Transport option
 - Do extra Militia Auxiliary units added via the 'Militia Auxiliary' upgrade have to have the same weapons as the other Militia Auxiliary units in the Militia Infantry Squad?

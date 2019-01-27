@@ -4,24 +4,21 @@ import React from 'react'
 import component from './component'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
-import BackIcon from '@material-ui/icons/ChevronLeft'
+import EditIcon from '@material-ui/icons/Edit'
 import { Trans } from 'react-i18next'
 
 const ViewListHeader = ({ classes, t, list, cost, onEdit }) => {
   return (
     <>
+      <Typography variant='h6' color='inherit' className={classes.grow} noWrap>
+        {t(list.name)}
+      </Typography>
       <IconButton
         color='inherit'
         onClick={onEdit}
       >
-        <BackIcon />
+        <EditIcon />
       </IconButton>
-      <Typography variant='h6' color='inherit' className={classes.grow} noWrap>
-        {t(list.name)}
-      </Typography>
-      <Typography variant='h6' color='inherit'>
-        <Trans i18nKey='cost'>{{ cost }} pts</Trans>
-      </Typography>
     </>
   )
 }

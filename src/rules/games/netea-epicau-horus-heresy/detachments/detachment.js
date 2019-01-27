@@ -44,6 +44,10 @@ export default class Detachment {
     }, 0)
   }
 
+  getInitiativeRating () {
+    return 1
+  }
+
   toJSON () {
     return {
       id: this.id,

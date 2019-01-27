@@ -26,6 +26,10 @@ export default class NetEaEpicAuHorusHeresyList {
     return this.army.getViewer()
   }
 
+  getTopBar () {
+    return this.army.getTopBar()
+  }
+
   getCost () {
     let cost = 0
 
@@ -35,6 +39,10 @@ export default class NetEaEpicAuHorusHeresyList {
     cost += this.allies.reduce((curr, ally) => curr + ally.getCost(), 0)
 
     return cost
+  }
+
+  getStrategyRating () {
+    return this.army.getStrategyRating(this)
   }
 
   addDetachment ({ type, detachment }) {

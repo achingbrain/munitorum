@@ -14,10 +14,10 @@ import {
 import {
   LimitedPerPoints
 } from '../constraints'
-import Detachment from './detachment'
+import LegioTitanicusDetachment from './legio-titanicus-detachment'
 import withType from '../../../../utils/with-type'
 
-export class LegioTitanicusWarhoundTitanDetachment extends Detachment {
+export class LegioTitanicusWarhoundTitanDetachment extends LegioTitanicusDetachment {
   constructor () {
     super([
       new LegioTitanicusWarhoundScountTitan()
@@ -29,7 +29,7 @@ export class LegioTitanicusWarhoundTitanDetachment extends Detachment {
   }
 }
 
-export class LegioTitanicusWarhoundTitanPackDetachment extends Detachment {
+export class LegioTitanicusWarhoundTitanPackDetachment extends LegioTitanicusDetachment {
   constructor () {
     super([
       new LegioTitanicusWarhoundScountTitanPackUnit(),
@@ -40,7 +40,7 @@ export class LegioTitanicusWarhoundTitanPackDetachment extends Detachment {
   }
 }
 
-export class LegioTitanicusReaverTitanDetachment extends Detachment {
+export class LegioTitanicusReaverTitanDetachment extends LegioTitanicusDetachment {
   constructor () {
     super([
       new LegioTitanicusReaverBattleTitan()
@@ -53,7 +53,7 @@ export class LegioTitanicusReaverTitanDetachment extends Detachment {
   }
 }
 
-export class LegioTitanicusWarlordTitanDetachment extends Detachment {
+export class LegioTitanicusWarlordTitanDetachment extends LegioTitanicusDetachment {
   constructor () {
     super([
       new LegioTitanicusWarlordBattleTitan()
@@ -66,7 +66,7 @@ export class LegioTitanicusWarlordTitanDetachment extends Detachment {
   }
 }
 
-export class LegioTitanicusEmperorClassTitanDetachment extends Detachment {
+export class LegioTitanicusEmperorClassTitanDetachment extends LegioTitanicusDetachment {
   constructor () {
     super([
       new LegioTitanicusEmperorClassTitanUnit()

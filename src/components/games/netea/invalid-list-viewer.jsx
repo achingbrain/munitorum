@@ -33,10 +33,10 @@ class InvalidListViewer extends Component {
 
     let message = ''
 
-    if (list && list.error && list.error.stack) {
+    if (list && list.error && list.error.message) {
       message = (
         <Typography component='pre' className={classes.errorDisplay}>
-          {list.error.stack}
+          {list.error.message}
         </Typography>
       )
     }
