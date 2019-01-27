@@ -5,7 +5,6 @@ import component from './component'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import EditIcon from '@material-ui/icons/Edit'
-import { Trans } from 'react-i18next'
 
 const ViewListHeader = ({ classes, t, list, cost, onEdit }) => {
   return (

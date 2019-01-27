@@ -50,7 +50,7 @@ const styles = theme => ({
   topBar: {
     marginTop: 64,
     [theme.breakpoints.down('xs')]: {
-      marginTop: 56,
+      marginTop: 56
     },
     color: 'white',
     backgroundColor: '#424242',

@@ -154,14 +154,14 @@ class UnitViewer extends Component {
                           </Typography>
                         )
                       })
-                    .filter(Boolean)
-                    .reduce((prev, curr) => {
-                      if (prev.length) {
-                        return [prev, ', ', curr]
-                      }
+                      .filter(Boolean)
+                      .reduce((prev, curr) => {
+                        if (prev.length) {
+                          return [prev, ', ', curr]
+                        }
 
-                      return [curr]
-                    }, [])
+                        return [curr]
+                      }, [])
                   }
                 </TableCell>
               </Fragment>

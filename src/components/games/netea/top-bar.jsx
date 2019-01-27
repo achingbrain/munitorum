@@ -7,8 +7,6 @@ class TopBar extends Component {
   render () {
     const {
       classes,
-      t,
-      list,
       cost,
       strategyRating
     } = this.props
@@ -28,7 +26,6 @@ class TopBar extends Component {
 
 const mapStateToProps = ({ list }) => {
   return {
-    list,
     cost: list.getCost(),
     strategyRating: list.getStrategyRating()
   }

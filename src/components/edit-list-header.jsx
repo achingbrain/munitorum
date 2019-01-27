@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Trans } from 'react-i18next'
 import component from './component'
 import Drawer from '@material-ui/core/Drawer'
 import IconButton from '@material-ui/core/IconButton'
@@ -20,7 +19,6 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import ShareIcon from '@material-ui/icons/Share'
-import Divider from '@material-ui/core/Divider'
 
 class EditListHeader extends Component {
   static propTypes = {
@@ -74,7 +72,6 @@ class EditListHeader extends Component {
     const {
       classes,
       t,
-      list,
       name,
       theme
     } = this.props

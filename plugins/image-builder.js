@@ -1,7 +1,6 @@
 const fs = require('fs')
 const path = require('path')
 const crypto = require('crypto')
-const kebab = require('../src/utils/kebab-case')
 
 const camel = (kebab) => {
   return kebab
@@ -66,8 +65,8 @@ class ImageBuilderPlugin {
           .filter(fileName => fileName.endsWith('.svg'))
           .map(fileName => {
             const hash = crypto.createHmac('sha1', 'super secret')
-                   .update(fs.readFileSync(path.join(INPUT_DIR, fileName), 'utf8'))
-                   .digest('hex')
+              .update(fs.readFileSync(path.join(INPUT_DIR, fileName), 'utf8'))
+              .digest('hex')
             const name = fileName.replace(/\.svg$/, '')
 
             if (!contents[hash]) {
