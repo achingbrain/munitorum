@@ -17,15 +17,21 @@ const config = {
     }
 
     const lists = data.lists
-      .map(list => {
-        const game = games.find(item => item.type === list.game)
+      .map(json => {
+        const game = games.find(item => item.type === json.game)
 
         if (!game) {
           return
         }
 
         try {
-          return game.listFromJSON(list)
+          const list = game.listFromJSON(json)
+
+          if (!list.id) {
+            return null
+          }
+
+          return list
         } catch (error) {
           console.error(error)
         }

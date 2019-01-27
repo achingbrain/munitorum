@@ -3,7 +3,6 @@ import React, {
 } from 'react'
 import component from './component'
 import AppBar from '@material-ui/core/AppBar'
-import Paper from '@material-ui/core/Paper'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Toolbar from '@material-ui/core/Toolbar'
 
@@ -23,9 +22,10 @@ class EditNavigation extends Component {
             {toolbar}
           </Toolbar>
         </AppBar>
-        <Paper className={classes.viewContent}>
+        <main className={classes.content}>
+          <div className={classes.toolbar} />
           {children}
-        </Paper>
+        </main>
       </div>
     )
   }

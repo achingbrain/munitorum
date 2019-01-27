@@ -2,7 +2,9 @@
 
 import withType from '../../../utils/with-type'
 import Game from '../game'
-import NetEaEpicAuHorusHeresyList from './list'
+import NetEaEpicAuHorusHeresyList, {
+  InvalidList
+} from './list'
 import Detachment from './detachments/detachment'
 import DarkAngels from './armies/dark-angels'
 import EmperorsChildren from './armies/emperors-children'
@@ -68,15 +70,41 @@ class NetEaEpicAuHorusHeresy extends Game {
   }
 
   listFromJSON (json) {
-    const army = this.armies.find(item => item.type === json.army)
+    try {
+      const army = this.armies.find(item => item.type === json.army)
 
-    const list = new NetEaEpicAuHorusHeresyList(this, json.name, army)
-    list.id = json.id
-    list.lineDetachments = json.lineDetachments.map(item => Detachment.fromJSON(item))
-    list.supportDetachments = json.supportDetachments.map(item => Detachment.fromJSON(item))
-    list.lordsOfWar = json.lordsOfWar.map(item => Detachment.fromJSON(item))
+      const list = new NetEaEpicAuHorusHeresyList(this, json.name, army)
+      list.id = json.id
 
-    return list
+      if (json.lineDetachments) {
+        list.lineDetachments = json.lineDetachments.map(item => Detachment.fromJSON(item))
+      } else {
+        list.lineDetachments = []
+      }
+
+      if (json.supportDetachments) {
+        list.supportDetachments = json.supportDetachments.map(item => Detachment.fromJSON(item))
+      } else {
+        list.supportDetachments = []
+      }
+
+      if (json.lordsOfWar) {
+        list.lordsOfWar = json.lordsOfWar.map(item => Detachment.fromJSON(item))
+      } else {
+        list.lordsOfWar = []
+      }
+
+      if (json.allies) {
+        list.allies = json.allies.map(item => this.listFromJSON(item))
+      } else {
+        list.allies = []
+      }
+
+      return list
+    } catch (error) {
+      console.error(error)
+      return new InvalidList(json, error)
+    }
   }
 
   toJSON () {

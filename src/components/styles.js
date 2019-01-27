@@ -5,8 +5,16 @@ const drawerWidth = 250
 const styles = theme => ({
   root: {
     display: 'flex',
-    width: '100%',
-    backgroundColor: theme.palette.background.paper
+    width: '100%'
+  },
+  errorDisplay: {
+    marginTop: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
+    padding: theme.spacing.unit,
+    color: theme.palette.getContrastText(theme.palette.text.secondary),
+    backgroundColor: theme.palette.text.secondary,
+    borderWidth: 1,
+    borderColor: theme.palette.getContrastText(theme.palette.text.secondary)
   },
   drawer: {
     [theme.breakpoints.up('md')]: {
@@ -42,18 +50,18 @@ const styles = theme => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing.unit * 3
+    padding: theme.spacing.unit
   },
   viewContent: {
     flexGrow: 1,
-    padding: theme.spacing.unit * 3,
+    padding: theme.spacing.unit,
     paddingTop: theme.spacing.unit * 9
   },
   editCard: {
-    marginBottom: theme.spacing.unit * 2
+    marginBottom: theme.spacing.unit
   },
   viewCard: {
-    marginBottom: theme.spacing.unit * 2
+    marginBottom: theme.spacing.unit
   },
   cardHeader: {
     paddingRight: 36
@@ -74,7 +82,7 @@ const styles = theme => ({
     fontSize: 14
   },
   detachmentTypeWrapper: {
-    marginTop: theme.spacing.unit * 2
+    marginBottom: theme.spacing.unit * 2
   },
   detachmentType: {
     marginBottom: theme.spacing.unit
@@ -128,7 +136,8 @@ const styles = theme => ({
   },
   errorSnackbar: {
     backgroundColor: theme.palette.error.dark,
-    marginBottom: 20,
+    color: theme.palette.getContrastText(theme.palette.error.dark),
+    marginBottom: theme.spacing.unit,
     width: '100%',
     minWidth: '100%',
     maxWidth: '100%'

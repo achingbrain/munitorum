@@ -25,6 +25,11 @@ export default {
     'delete-list': 'Delete list',
     'view-list': 'View List',
     'share-list': 'Share List',
+    'invalid-message': '{{name}} was invalid',
+    'remove-list': 'Remove this list?',
+    'really-remove-list': 'Really remove this list?',
+    'remove': 'Remove',
+    'list': 'List',
 
     'cannot-take-primarch-and-lord-commander': 'You cannot take a Primarch and a Lord Commander in the same list',
     'spacecraft-required': 'Spacecraft are required when units have the planetfall special ability',

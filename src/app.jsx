@@ -10,6 +10,7 @@ import configureStore from './store/configure-store'
 import i18n from 'i18next'
 import { withI18n, reactI18nextModule } from 'react-i18next'
 import * as localisation from './localisation'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
 i18n
   .use(reactI18nextModule) // passes i18n down to react-i18next
@@ -23,14 +24,25 @@ i18n
     }
   })
 
+const theme = createMuiTheme({
+  palette: {
+    type: 'dark'
+  },
+  typography: {
+    useNextVariants: true
+  }
+})
+
 const App = () => {
   return (
     <Provider store={configureStore()}>
-      <Router>
-        <div>
-          <Route path='/' component={Page} />
-        </div>
-      </Router>
+      <MuiThemeProvider theme={theme}>
+        <Router>
+          <div>
+            <Route path='/' component={Page} />
+          </div>
+        </Router>
+      </MuiThemeProvider>
     </Provider>
   )
 }
