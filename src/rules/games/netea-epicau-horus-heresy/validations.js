@@ -303,7 +303,7 @@ export class PrimarchsOrLordCommanders extends Rule {
   }
 }
 
-export class RequireSpacecraftForPlanetfall extends Rule {
+export class RequireSpacecraftForDropPods extends Rule {
   reset () {
     this.spacecraft = 0
     this.planetfall = 0
