@@ -9,6 +9,8 @@ import CardContent from '@material-ui/core/CardContent'
 import CardHeader from '@material-ui/core/CardHeader'
 import IconButton from '@material-ui/core/IconButton'
 import DeleteIcon from '@material-ui/icons/Delete'
+import DownIcon from '@material-ui/icons/ArrowDownward'
+import UpIcon from '@material-ui/icons/ArrowUpward'
 import { Trans } from 'react-i18next'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -16,7 +18,9 @@ import {
   removeDetachment,
   addUnit,
   removeUnit,
-  updateUnit
+  updateUnit,
+  moveDetachmentUp,
+  moveDetachmentDown
 } from '../../../store/actions'
 import PopOverMenu from '../../pop-over-menu'
 import Confirm from '../../confirm'
@@ -74,6 +78,24 @@ class DetachmentEditor extends Component {
     updateUnit(unit)
   }
 
+  handleMoveUp = () => {
+    const {
+      moveDetachmentUp,
+      detachment
+    } = this.props
+
+    moveDetachmentUp(detachment)
+  }
+
+  handleMoveDown = () => {
+    const {
+      moveDetachmentDown,
+      detachment
+    } = this.props
+
+    moveDetachmentDown(detachment)
+  }
+
   render () {
     const {
       classes,
@@ -81,7 +103,10 @@ class DetachmentEditor extends Component {
       upgrades,
       units,
       image,
-      detachment
+      detachment,
+      t,
+      isFirst,
+      isLast
     } = this.props
 
     return (
@@ -91,11 +116,27 @@ class DetachmentEditor extends Component {
             <Icon src={image} className={classes.detachmentAvatar} />
           }
           action={
-            <Confirm title={'Remove this detachment?'} text={'Really remove this detachment?'} onConfirm={this.handleRemoveDetachment} button={(onClick) => (
-              <IconButton aria-label='Delete' onClick={onClick}>
-                <DeleteIcon />
+            <>
+              <IconButton
+                aria-label={t('move-up')}
+                onClick={this.handleMoveUp}
+                disabled={isFirst}
+              >
+                <UpIcon />
               </IconButton>
-            )} />
+              <IconButton
+                aria-label={t('move-down')}
+                onClick={this.handleMoveDown}
+                disabled={isLast}
+              >
+                <DownIcon />
+              </IconButton>
+              <Confirm title={t('remove-detachment')} text={t('really-remove-detachment')} onConfirm={this.handleRemoveDetachment} button={(onClick) => (
+                <IconButton aria-label='Delete' onClick={onClick}>
+                  <DeleteIcon />
+                </IconButton>
+              )} />
+            </>
           }
           title={(
             <DetachmentNameDialog detachment={detachment} />
@@ -111,13 +152,15 @@ class DetachmentEditor extends Component {
                   <UnitEditor
                     key={`unit-${unitIndex}`}
                     unit={unit}
+                    isFirst={unitIndex === 0}
+                    isLast={unitIndex === units.length - 1}
                   />
                 ))
               }
             </TableBody>
           </Table>
         </CardContent>
-        <CardActions>
+        <CardActions className={classes.cardFooter}>
           <PopOverMenu text='' items={upgrades} onSelect={this.handleAddUnit} />
         </CardActions>
       </Card>
@@ -141,7 +184,9 @@ const mapDispatchToProps = {
   removeDetachment,
   addUnit,
   removeUnit,
-  updateUnit
+  updateUnit,
+  moveDetachmentUp,
+  moveDetachmentDown
 }
 
 export default component(DetachmentEditor, mapStateToProps, mapDispatchToProps)

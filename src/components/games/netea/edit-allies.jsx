@@ -56,6 +56,8 @@ class EditAllies extends Component {
               key={`allies-${index}`}
               list={ally}
               onRemoveAlly={this.handleRemoveAlly}
+              isFirst={index === 0}
+              isLast={index === list.allies.length - 1}
             />
           ))
         }

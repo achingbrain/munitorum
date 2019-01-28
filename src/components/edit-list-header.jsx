@@ -112,7 +112,7 @@ class EditListHeader extends Component {
             color='inherit'
             aria-label='Open drawer'
             onClick={this.handleDrawerToggle}
-            className={classes.menuButton}
+            className={classes.menuButtonLeft}
           >
             <DownIcon />
           </IconButton>

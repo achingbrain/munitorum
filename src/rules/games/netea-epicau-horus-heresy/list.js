@@ -51,6 +51,52 @@ export default class NetEaEpicAuHorusHeresyList {
     }
 
     this[type] = this[type].concat(detachment)
+
+    if (type === 'allies') {
+      detachment.list = this
+    }
+  }
+
+  moveDetachmentUp (detachment) {
+    const move = (type) => {
+      const index = this[type].findIndex(item => item.id === detachment.id)
+
+      if (index !== -1) {
+        const a = this[type][index - 1]
+        const b = this[type][index]
+
+        this[type][index - 1] = b
+        this[type][index] = a
+
+        this[type] = this[type].slice()
+      }
+    }
+
+    move('lineDetachments')
+    move('supportDetachments')
+    move('lordsOfWar')
+    move('allies')
+  }
+
+  moveDetachmentDown (detachment) {
+    const move = (type) => {
+      const index = this[type].findIndex(item => item.id === detachment.id)
+
+      if (index !== -1) {
+        const a = this[type][index]
+        const b = this[type][index + 1]
+
+        this[type][index] = b
+        this[type][index + 1] = a
+
+        this[type] = this[type].slice()
+      }
+    }
+
+    move('lineDetachments')
+    move('supportDetachments')
+    move('lordsOfWar')
+    move('allies')
   }
 
   removeDetachment (detachment) {

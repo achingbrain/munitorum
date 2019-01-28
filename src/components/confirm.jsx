@@ -3,6 +3,7 @@
 import React, {
   Component
 } from 'react'
+import component from './component'
 import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
 import Dialog from '@material-ui/core/Dialog'
@@ -11,7 +12,7 @@ import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 
-class AlertDialog extends Component {
+class Confirm extends Component {
   static propTypes = {
     onConfirm: PropTypes.func.isRequired,
     title: PropTypes.string.isRequired,
@@ -44,11 +45,12 @@ class AlertDialog extends Component {
     const {
       title,
       text,
-      button
+      button,
+      classes
     } = this.props
 
     return (
-      <div>
+      <div className={classes.confirmButton}>
         {button(this.handleClickOpen)}
         <Dialog
           open={this.state.open}
@@ -76,4 +78,4 @@ class AlertDialog extends Component {
   }
 }
 
-export default AlertDialog
+export default component(Confirm)

@@ -51,7 +51,9 @@ class EditDetachments extends Component {
               detachment={detachment}
             >
               <DetachmentEditor
-                detachment={detachment} />
+                detachment={detachment}
+                isFirst={index === 0}
+                isLast={index === detachments.length - 1} />
             </InvalidDetachment>
           ))
         }

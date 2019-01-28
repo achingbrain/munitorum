@@ -13,9 +13,13 @@ import CardHeader from '@material-ui/core/CardHeader'
 import Icon from '../../icon'
 import IconButton from '@material-ui/core/IconButton'
 import DeleteIcon from '@material-ui/icons/Delete'
+import DownIcon from '@material-ui/icons/ArrowDownward'
+import UpIcon from '@material-ui/icons/ArrowUpward'
 import Confirm from '../../confirm'
 import {
-  addDetachment
+  addDetachment,
+  moveDetachmentUp,
+  moveDetachmentDown
 } from '../../../store/actions'
 
 class AllyEditor extends Component {
@@ -43,11 +47,32 @@ class AllyEditor extends Component {
     onRemoveAlly(list)
   }
 
+  handleMoveUp = () => {
+    const {
+      moveDetachmentUp,
+      list
+    } = this.props
+
+    moveDetachmentUp(list)
+  }
+
+  handleMoveDown = () => {
+    const {
+      moveDetachmentDown,
+      list
+    } = this.props
+
+    moveDetachmentDown(list)
+  }
+
   render () {
     const {
       list,
       cost,
-      classes
+      classes,
+      isFirst,
+      isLast,
+      t
     } = this.props
 
     return (
@@ -57,11 +82,27 @@ class AllyEditor extends Component {
             <Icon src={list.army.image} className={classes.detachmentAvatar} />
           }
           action={
-            <Confirm title={'Remove this ally?'} text={'Really remove this ally?'} onConfirm={this.handleRemoveAlly} button={(onClick) => (
-              <IconButton aria-label='Delete' onClick={onClick}>
-                <DeleteIcon />
+            <>
+              <IconButton
+                aria-label={t('move-up')}
+                onClick={this.handleMoveUp}
+                disabled={isFirst}
+              >
+                <UpIcon />
               </IconButton>
-            )} />
+              <IconButton
+                aria-label={t('move-down')}
+                onClick={this.handleMoveDown}
+                disabled={isLast}
+              >
+                <DownIcon />
+              </IconButton>
+              <Confirm title={'Remove this ally?'} text={'Really remove this ally?'} onConfirm={this.handleRemoveAlly} button={(onClick) => (
+                <IconButton aria-label='Delete' onClick={onClick}>
+                  <DeleteIcon />
+                </IconButton>
+              )} />
+            </>
           }
           title={(
             <DetachmentNameDialog detachment={list} />
@@ -106,7 +147,9 @@ const mapStateToProps = (state, { list }) => ({
 })
 
 const mapDispatchToProps = {
-  addDetachment
+  addDetachment,
+  moveDetachmentUp,
+  moveDetachmentDown
 }
 
 export default component(AllyEditor, mapStateToProps, mapDispatchToProps)

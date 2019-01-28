@@ -61,11 +61,17 @@ class PopOverMenu extends Component {
 
     return (
       <div>
-        <Typography variant={textVariant || 'h5'} component={textComponent || 'h5'} color={textColour || 'default'} className={textClassName} noWrap>
+        <Typography
+          variant={textVariant || 'h5'}
+          component={textComponent || 'h5'}
+          color={textColour || 'default'}
+          className={textClassName}
+          onClick={this.handleClick}
+          noWrap
+        >
           {text}<InlineButton
             aria-owns={anchorEl ? 'simple-menu' : undefined}
             aria-haspopup='true'
-            onClick={this.handleClick}
             disabled={!items.length}
             size={buttonSize}
           >{button || <AddIcon />}</InlineButton>

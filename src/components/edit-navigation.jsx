@@ -87,7 +87,7 @@ class Navigation extends Component {
               color='inherit'
               aria-label='Open drawer'
               onClick={this.handleDrawerToggle}
-              className={classes.menuButton}
+              className={classes.menuButtonLeft}
             >
               <MenuIcon />
             </IconButton>

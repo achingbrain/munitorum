@@ -9,7 +9,11 @@ import {
   REMOVE_DETACHMENT,
   ADD_UNIT,
   REMOVE_UNIT,
-  UPDATE_UNIT
+  UPDATE_UNIT,
+  MOVE_DETACHMENT_UP,
+  MOVE_DETACHMENT_DOWN,
+  MOVE_UNIT_UP,
+  MOVE_UNIT_DOWN
 } from './actions'
 
 const initialState = {
@@ -96,6 +100,26 @@ const removeDetachment = (state, { list, detachment }) => {
   }
 }
 
+const moveDetachmentUp = (state, detachment) => {
+  const list = detachment.list
+
+  list.moveDetachmentUp(detachment)
+
+  return {
+    ...state
+  }
+}
+
+const moveDetachmentDown = (state, detachment) => {
+  const list = detachment.list
+
+  list.moveDetachmentDown(detachment)
+
+  return {
+    ...state
+  }
+}
+
 const addUnit = (state, { detachment, unit }) => {
   detachment.addUnit(unit)
 
@@ -120,6 +144,26 @@ const updateUnit = (state, { unit, operation }) => {
   }
 }
 
+const moveUnitUp = (state, unit) => {
+  const detachment = unit.detachment
+
+  detachment.moveUnitUp(unit)
+
+  return {
+    ...state
+  }
+}
+
+const moveUnitDown = (state, unit) => {
+  const detachment = unit.detachment
+
+  detachment.moveUnitDown(unit)
+
+  return {
+    ...state
+  }
+}
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_LIST:
@@ -138,12 +182,20 @@ const reducer = (state = initialState, action) => {
       return addDetachment(state, action.payload)
     case REMOVE_DETACHMENT:
       return removeDetachment(state, action.payload)
+    case MOVE_DETACHMENT_UP:
+      return moveDetachmentUp(state, action.payload)
+    case MOVE_DETACHMENT_DOWN:
+      return moveDetachmentDown(state, action.payload)
     case ADD_UNIT:
       return addUnit(state, action.payload)
     case REMOVE_UNIT:
       return removeUnit(state, action.payload)
     case UPDATE_UNIT:
       return updateUnit(state, action.payload)
+    case MOVE_UNIT_UP:
+      return moveUnitUp(state, action.payload)
+    case MOVE_UNIT_DOWN:
+      return moveUnitDown(state, action.payload)
     default:
       return state
   }

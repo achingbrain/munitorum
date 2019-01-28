@@ -595,25 +595,25 @@ export class AllUnitsInDetachmentMustSelectSameProvenance extends Rule {
 
     if (unit instanceof ImperialMilitiaUnit) {
       this.provenances[unit.detachment.id].eligible++
+
+      unit.getChosenWeapons().forEach(weapon => {
+        if (weapon instanceof WarriorElite) {
+          this.provenances[unit.detachment.id].provenances.warriors++
+        }
+
+        if (weapon instanceof SurvivorsOfTheDarkAge) {
+          this.provenances[unit.detachment.id].provenances.survivors++
+        }
+
+        if (weapon instanceof FeralWarriors) {
+          this.provenances[unit.detachment.id].provenances.feral++
+        }
+
+        if (weapon instanceof Traitors) {
+          this.provenances[unit.detachment.id].provenances.traitors++
+        }
+      })
     }
-
-    unit.getChosenWeapons().forEach(weapon => {
-      if (weapon instanceof WarriorElite) {
-        this.provenances[unit.detachment.id].provenances.warriors++
-      }
-
-      if (weapon instanceof SurvivorsOfTheDarkAge) {
-        this.provenances[unit.detachment.id].provenances.survivors++
-      }
-
-      if (weapon instanceof FeralWarriors) {
-        this.provenances[unit.detachment.id].provenances.feral++
-      }
-
-      if (weapon instanceof Traitors) {
-        this.provenances[unit.detachment.id].provenances.traitors++
-      }
-    })
   }
 
   getErrors (list, t) {
@@ -624,7 +624,7 @@ export class AllUnitsInDetachmentMustSelectSameProvenance extends Rule {
         const provenances = Object.values(detachment.provenances)
           .reduce((acc, curr) => acc + curr, 0)
 
-        if (detachment.eligible !== provenances) {
+        if (provenances && detachment.eligible !== provenances) {
           errors.push('all-detachment-units-must-select-provenance')
         }
       })

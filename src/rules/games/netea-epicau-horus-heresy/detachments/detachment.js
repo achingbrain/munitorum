@@ -69,6 +69,34 @@ export default class Detachment {
     return 1
   }
 
+  moveUnitUp (unit) {
+    const index = this.units.findIndex(item => item.id === unit.id)
+
+    if (index !== -1) {
+      const a = this.units[index - 1]
+      const b = this.units[index]
+
+      this.units[index - 1] = b
+      this.units[index] = a
+
+      this.units = this.units.slice()
+    }
+  }
+
+  moveUnitDown (unit) {
+    const index = this.units.findIndex(item => item.id === unit.id)
+
+    if (index !== -1) {
+      const a = this.units[index]
+      const b = this.units[index + 1]
+
+      this.units[index] = b
+      this.units[index + 1] = a
+
+      this.units = this.units.slice()
+    }
+  }
+
   toJSON () {
     return {
       id: this.id,

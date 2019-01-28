@@ -9,21 +9,16 @@ export const IMPORT_LIST = 'LIST/IMPORT'
 export const ADD_DETACHMENT = 'LIST/DETACHMENTS/ADD'
 export const UPDATE_DETACHMENT = 'LIST/DETACHMENTS/UPDATE'
 export const REMOVE_DETACHMENT = 'LIST/DETACHMENTS/REMOVE'
+export const MOVE_DETACHMENT_UP = 'LIST/DETACHMENTS/MOVE_UP'
+export const MOVE_DETACHMENT_DOWN = 'LIST/DETACHMENTS/MOVE_DOWN'
 export const ADD_UPGRADE = 'LIST/DETACHMENTS/UPGRADES/ADD'
 export const UPDATE_UPGRADE = 'LIST/DETACHMENTS/UPGRADES/UPDATE'
 export const REMOVE_UPGRADE = 'LIST/DETACHMENTS/UPGRADES/REMOVE'
 export const ADD_UNIT = 'LIST/DETACHMENTS/UNITS/ADD'
 export const UPDATE_UNIT = 'LIST/DETACHMENTS/UNITS/UPDATE'
 export const REMOVE_UNIT = 'LIST/DETACHMENTS/UNITS/REMOVE'
-export const ADD_ALLY = 'LIST/ALLIES/ADD'
-export const UPDATE_ALLY = 'LIST/ALLIES/UPDATE'
-export const REMOVE_ALLY = 'LIST/ALLIES/REMOVE'
-export const ADD_ALLIED_DETACHMENT = 'LIST/ALLIES/DETACHMENTS/ADD'
-export const UPDATE_ALLIED_DETACHMENT = 'LIST/ALLIES/DETACHMENTS/UPDATE'
-export const REMOVE_ALLIED_DETACHMENT = 'LIST/ALLIES/DETACHMENTS/REMOVE'
-export const ADD_ALLIED_UNIT = 'LIST/ALLIES/DETACHMENTS/UNITS/ADD'
-export const UPDATE_ALLIED_UNIT = 'LIST/ALLIES/DETACHMENTS/UNITS/UPDATE'
-export const REMOVE_ALLIED_UNIT = 'LIST/ALLIES/DETACHMENTS/UNITS/REMOVE'
+export const MOVE_UNIT_UP = 'LIST/DETACHMENTS/UNITS/MOVE_UP'
+export const MOVE_UNIT_DOWN = 'LIST/DETACHMENTS/UNITS/MOVE_DOWN'
 
 const action = (type) => (payload) => ({
   type,
@@ -43,19 +38,11 @@ export const importList = action(IMPORT_LIST)
 export const addDetachment = action(ADD_DETACHMENT)
 export const updateDetachment = action(UPDATE_DETACHMENT)
 export const removeDetachment = action(REMOVE_DETACHMENT)
+export const moveDetachmentUp = action(MOVE_DETACHMENT_UP)
+export const moveDetachmentDown = action(MOVE_DETACHMENT_DOWN)
 
 export const addUnit = action(ADD_UNIT)
 export const removeUnit = action(REMOVE_UNIT)
 export const updateUnit = action(UPDATE_UNIT)
-
-export const addAlly = action(ADD_ALLY)
-export const removeAlly = action(UPDATE_ALLY)
-export const updateAlly = action(REMOVE_ALLY)
-
-export const addAlliedDetachment = action(ADD_ALLIED_DETACHMENT)
-export const removeAlliedDetachment = action(UPDATE_ALLIED_DETACHMENT)
-export const updateAlliedDetachment = action(REMOVE_ALLIED_DETACHMENT)
-
-export const addAlliedUnit = action(ADD_ALLIED_UNIT)
-export const removeAlliedUnit = action(UPDATE_ALLIED_UNIT)
-export const updateAlliedUnit = action(REMOVE_ALLIED_UNIT)
+export const moveUnitUp = action(MOVE_UNIT_UP)
+export const moveUnitDown = action(MOVE_UNIT_DOWN)

@@ -7,6 +7,8 @@ import PropTypes from 'prop-types'
 import component from '../../component'
 import { Trans } from 'react-i18next'
 import IconButton from '@material-ui/core/IconButton'
+import DownIcon from '@material-ui/icons/ArrowDownward'
+import UpIcon from '@material-ui/icons/ArrowUpward'
 import AddIcon from '@material-ui/icons/Add'
 import DeleteIcon from '@material-ui/icons/Delete'
 import RemoveIcon from '@material-ui/icons/Remove'
@@ -14,6 +16,7 @@ import Typography from '@material-ui/core/Typography'
 import TableCell from '@material-ui/core/TableCell'
 import TableRow from '@material-ui/core/TableRow'
 import MoreIcon from '@material-ui/icons/ExpandMore'
+import Hidden from '@material-ui/core/Hidden'
 import InlineButton from '../../inline-button'
 import Confirm from '../../confirm'
 import PopOverMenu from '../../pop-over-menu'
@@ -22,7 +25,9 @@ import {
 } from '../../../rules/games/netea-epicau-horus-heresy/weapons'
 import {
   removeUnit,
-  updateUnit
+  updateUnit,
+  moveUnitUp,
+  moveUnitDown
 } from '../../../store/actions'
 import EditableMultiChoiceWeapon from './edit-multiple-choice-weapon'
 
@@ -185,6 +190,24 @@ class UnitEditor extends Component {
     })
   }
 
+  handleMoveUp = () => {
+    const {
+      moveUnitUp,
+      unit
+    } = this.props
+
+    moveUnitUp(unit)
+  }
+
+  handleMoveDown = () => {
+    const {
+      moveUnitDown,
+      unit
+    } = this.props
+
+    moveUnitDown(unit)
+  }
+
   render () {
     const {
       name,
@@ -196,7 +219,10 @@ class UnitEditor extends Component {
       mandatory,
       unitOptions,
       classes,
-      unit
+      unit,
+      t,
+      isFirst,
+      isLast
     } = this.props
 
     return (
@@ -234,6 +260,26 @@ class UnitEditor extends Component {
         <TableCell padding='checkbox' className={classes.tablePointsCell}>
           <CostDisplay cost={cost} />
         </TableCell>
+        <Hidden xsDown>
+          <TableCell padding='checkbox' className={classes.tableIconCell}>
+            <IconButton
+              aria-label={t('move-up')}
+              onClick={this.handleMoveUp}
+              disabled={isFirst}
+            >
+              <UpIcon />
+            </IconButton>
+          </TableCell>
+          <TableCell padding='checkbox' className={classes.tableIconCell}>
+            <IconButton
+              aria-label={t('move-down')}
+              onClick={this.handleMoveDown}
+              disabled={isLast}
+            >
+              <DownIcon />
+            </IconButton>
+          </TableCell>
+        </Hidden>
         <TableCell padding='checkbox' className={classes.tableIconCell}>
           <Confirm title={'Remove this unit?'} text={'Really remove this unit?'} onConfirm={this.handleRemoveUnit} button={(onClick) => (
             <IconButton aria-label='Remove' onClick={onClick} disabled={mandatory}>
@@ -263,7 +309,9 @@ const mapStateToProps = (state, { unit }) => {
 
 const mapDispatchToProps = {
   removeUnit,
-  updateUnit
+  updateUnit,
+  moveUnitUp,
+  moveUnitDown
 }
 
 export default component(UnitEditor, mapStateToProps, mapDispatchToProps)

@@ -77,10 +77,13 @@ const styles = theme => ({
     marginBottom: theme.spacing.unit
   },
   cardHeader: {
-    paddingRight: 36
+    paddingRight: 20
   },
   cardContent: {
     padding: 0
+  },
+  cardFooter: {
+    paddingLeft: 15
   },
   allyViewCardContent: {
     padding: 0,
@@ -126,7 +129,8 @@ const styles = theme => ({
     width: 100
   },
   tableIconCell: {
-    width: 88
+    width: 48,
+    padding: 0
   },
   tableViewCell: {
     paddingTop: theme.spacing.unit / 4,
@@ -223,6 +227,9 @@ const styles = theme => ({
   },
   listListIcon: {
     marginRight: 0
+  },
+  confirmButton: {
+    display: 'inline-block'
   }
 })
 
