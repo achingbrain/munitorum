@@ -39,7 +39,7 @@ import {
   LordsOfWarLimit,
   SupportDetachmentsLimit,
   PrimarchsOrLordCommanders,
-  RequireSpacecraftForPlanetfall
+  RequireSpacecraftForDropPods
 } from '../validations'
 
 export default class SpaceMarineLegion extends Army {
@@ -89,7 +89,7 @@ export default class SpaceMarineLegion extends Army {
       new LordsOfWarLimit(1 / 3),
       new SupportDetachmentsLimit(3),
       new PrimarchsOrLordCommanders(),
-      new RequireSpacecraftForPlanetfall()
+      new RequireSpacecraftForDropPods()
     )
   }
 

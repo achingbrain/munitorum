@@ -7,7 +7,9 @@ import {
   Unique
 } from './constraints'
 import {
-  LegionLordCommander
+  LegionLordCommander,
+  LegionDropPod,
+  LegionDreadclaw
 } from './units/space-marine-legion'
 import {
   ImperialMilitiaDisciplineMaster,
@@ -22,7 +24,6 @@ import {
 import SpacecraftUnit from './units/spacecraft-unit'
 import PrimarchUnit from './units/primarch-unit'
 import {
-  Planetfall,
   SupremeCommander
 } from './special-rules'
 
@@ -313,7 +314,7 @@ export class RequireSpacecraftForPlanetfall extends Rule {
       this.spacecraft++
     }
 
-    if (unit.getRules().find(rule => rule instanceof Planetfall)) {
+    if (unit instanceof LegionDropPod || unit instanceof LegionDreadclaw) {
       this.planetfall++
     }
   }
