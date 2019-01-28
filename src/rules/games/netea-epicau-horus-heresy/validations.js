@@ -9,6 +9,16 @@ import {
 import {
   LegionLordCommander
 } from './units/space-marine-legion'
+import {
+  ImperialMilitiaDisciplineMaster,
+  ImperialMilitiaForceCommander,
+  ImperialMilitiaRoguePsyker,
+  ImperialMilitiaUnit,
+  WarriorElite,
+  SurvivorsOfTheDarkAge,
+  FeralWarriors,
+  Traitors
+} from './units/imperial-militia'
 import SpacecraftUnit from './units/spacecraft-unit'
 import PrimarchUnit from './units/primarch-unit'
 import {
@@ -454,6 +464,263 @@ export class NoAlliedSupremeCommanders extends Rule {
 
     if (this.alliedSupremeCommanders > 0) {
       errors.push('no-allied-supreme-commanders')
+    }
+
+    return errors
+  }
+}
+
+export class MaxTwoProvenances extends Rule {
+  reset () {
+    this.armyProvenance = {
+      warriors: 0,
+      survivors: 0,
+      feral: 0,
+      traitors: 0
+    }
+  }
+
+  walkUnit (unit) {
+    unit.getChosenWeapons().forEach(weapon => {
+      if (weapon instanceof WarriorElite) {
+        this.armyProvenance.warriors++
+      }
+
+      if (weapon instanceof SurvivorsOfTheDarkAge) {
+        this.armyProvenance.survivors++
+      }
+
+      if (weapon instanceof FeralWarriors) {
+        this.armyProvenance.feral++
+      }
+
+      if (weapon instanceof Traitors) {
+        this.armyProvenance.traitors++
+      }
+    })
+  }
+
+  getErrors (list, t) {
+    const errors = []
+
+    let provenances = 0
+
+    Object.values(this.armyProvenance)
+      .forEach(provenance => {
+        if (provenance) {
+          provenances++
+        }
+      })
+
+    if (provenances > 2) {
+      errors.push('too-many-provenances')
+    }
+
+    return errors
+  }
+}
+
+export class DaemonicAlliesRequireTraitorProvenance extends Rule {
+  reset () {
+    this.daemonicAllies = false
+    this.traitorProvenance = false
+  }
+
+  walkUnit (unit) {
+    unit.getChosenWeapons().forEach(weapon => {
+      if (weapon instanceof Traitors) {
+        this.traitorProvenance = true
+      }
+    })
+  }
+
+  walkAlly (ally) {
+    if (ally.army.code === 'daemonic-hordes') {
+      this.daemonicAllies = true
+    }
+  }
+
+  getErrors (list, t) {
+    const errors = []
+
+    if (this.daemonicAllies && !this.traitorProvenance) {
+      errors.push('daemonic-allies-require-at-least-one-detachment-with-traitor-provenance')
+    }
+
+    return errors
+  }
+}
+
+export class OneDisciplineMasterPer500Points extends Rule {
+  reset () {
+    this.disciplineMasters = 0
+  }
+
+  walkUnit (unit) {
+    if (unit instanceof ImperialMilitiaDisciplineMaster) {
+      this.disciplineMasters++
+    }
+  }
+
+  getErrors (list, t) {
+    const errors = []
+    const cost = list.getCost()
+
+    if (this.disciplineMasters > Math.ceil(cost / 500)) {
+      errors.push('too-many-discipline-masters')
+    }
+
+    return errors
+  }
+}
+
+export class AllUnitsInDetachmentMustSelectSameProvenance extends Rule {
+  reset () {
+    this.provenances = {}
+  }
+
+  walkUnit (unit) {
+    if (!this.provenances[unit.detachment.id]) {
+      this.provenances[unit.detachment.id] = {
+        eligible: 0,
+        provenances: {
+          warriors: 0,
+          survivors: 0,
+          feral: 0,
+          traitors: 0
+        }
+      }
+    }
+
+    if (unit instanceof ImperialMilitiaUnit) {
+      this.provenances[unit.detachment.id].eligible++
+    }
+
+    unit.getChosenWeapons().forEach(weapon => {
+      if (weapon instanceof WarriorElite) {
+        this.provenances[unit.detachment.id].provenances.warriors++
+      }
+
+      if (weapon instanceof SurvivorsOfTheDarkAge) {
+        this.provenances[unit.detachment.id].provenances.survivors++
+      }
+
+      if (weapon instanceof FeralWarriors) {
+        this.provenances[unit.detachment.id].provenances.feral++
+      }
+
+      if (weapon instanceof Traitors) {
+        this.provenances[unit.detachment.id].provenances.traitors++
+      }
+    })
+  }
+
+  getErrors (list, t) {
+    const errors = []
+
+    Object.values(this.provenances)
+      .forEach(detachment => {
+        const provenances = Object.values(detachment.provenances)
+          .reduce((acc, curr) => acc + curr, 0)
+
+        if (detachment.eligible !== provenances) {
+          errors.push('all-detachment-units-must-select-provenance')
+        }
+      })
+
+    return errors
+  }
+}
+
+export class UnitsWithChaosSpawnMustHaveTraitorProvenance extends Rule {
+  reset () {
+    this.errors = []
+  }
+
+  walkUnit (unit) {
+    let hasChaosSpawnMutations = false
+    let hasTraitorProvenance = false
+
+    unit.getChosenWeapons().forEach(weapon => {
+      if (weapon.name === 'chaos-spawn-mutations') {
+        hasChaosSpawnMutations = true
+      }
+
+      if (weapon instanceof Traitors) {
+        hasTraitorProvenance = true
+      }
+    })
+
+    if (hasChaosSpawnMutations && !hasTraitorProvenance) {
+      this.errors.push('units-with-chaos-spawn-mutations-must-have-traitor-provenance')
+    }
+  }
+
+  getErrors (list, t) {
+    return this.errors.slice()
+  }
+}
+
+export class DetachmentsWithRoguePsykersMustHaveTraitorProvenance extends Rule {
+  reset () {
+    this.detachments = {}
+  }
+
+  walkUnit (unit) {
+    if (unit instanceof ImperialMilitiaRoguePsyker) {
+      this.detachments[unit.detachment.id] = {
+        hasPsyker: true
+      }
+
+      unit.detachments.units.forEach(unit => {
+        unit.getChosenWeapons().forEach(weapon => {
+          if (weapon instanceof Traitors) {
+            this.hasTraitorProvenance = true
+
+            this.detachments[unit.detachment.id] = {
+              isTraitor: true
+            }
+          }
+        })
+      })
+    }
+  }
+
+  getErrors (list, t) {
+    const errors = []
+
+    Object.values(this.detachments)
+      .forEach(detachment => {
+        if (detachment.hasPsyker && !detachment.hasTraitorProvenance) {
+          errors.push('detachment-with-rogue-psyker-must-have-traitor-provenance')
+        }
+      })
+
+    return errors
+  }
+}
+
+export class ForceCommanderShouldHaveFirstDisciplineMaster extends Rule {
+  reset () {
+    this.hasDisiplineMaster = false
+    this.forceCommanderHasDisciplineMaster = false
+  }
+
+  walkUnit (unit) {
+    if (unit instanceof ImperialMilitiaForceCommander && unit.detachment.units.find(unit => unit instanceof ImperialMilitiaDisciplineMaster)) {
+      this.forceCommanderHasDisciplineMaster = true
+    }
+
+    if (unit instanceof ImperialMilitiaDisciplineMaster) {
+      this.hasDisiplineMaster = true
+    }
+  }
+
+  getErrors (list, t) {
+    const errors = []
+
+    if (this.hasDisiplineMaster && !this.forceCommanderHasDisciplineMaster) {
+      errors.push('force-commander-should-have-discipline-master')
     }
 
     return errors

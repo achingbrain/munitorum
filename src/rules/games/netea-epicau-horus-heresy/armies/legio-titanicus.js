@@ -77,9 +77,9 @@ export default class LegioTitanicus extends Army {
     let rating = 3
 
     if (list.allies.find(item =>
-      item.type === ImperialMilitia.type ||
-        item.type === SolarAuxilia.type ||
-        item.type === DaemonicHordes.type
+      item.army.type === ImperialMilitia.type ||
+      item.army.type === SolarAuxilia.type ||
+      item.army.type === DaemonicHordes.type
     )) {
       return rating - 1
     }

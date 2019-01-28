@@ -46,10 +46,10 @@ export default class WordBearers extends SpaceMarineLegion {
     const rating = super.getStrategyRating(list)
 
     if (list.allies.find(item =>
-      item.type === LegioTitanicus.type ||
-        item.type === MechanicumTaghmata.type ||
-        item.type === KnightHousehold.type ||
-        item.type === SolarAuxilia.type
+      item.army.type === LegioTitanicus.type ||
+      item.army.type === MechanicumTaghmata.type ||
+      item.army.type === KnightHousehold.type ||
+      item.army.type === SolarAuxilia.type
     )) {
       return rating - 1
     }

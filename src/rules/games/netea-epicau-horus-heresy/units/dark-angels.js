@@ -25,8 +25,8 @@ import PrimarchUnit from './primarch-unit'
 import withType from '../../../../utils/with-type'
 
 export class DarkAngelsPrimarch extends PrimarchUnit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -53,8 +53,8 @@ export class DarkAngelsPrimarch extends PrimarchUnit {
 }
 
 export class DarkAngelsBodyguardSquad extends LegionTerminatorSquad {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 0
     this.min = 3
@@ -64,8 +64,8 @@ export class DarkAngelsBodyguardSquad extends LegionTerminatorSquad {
 }
 
 class DarkAngelsFellblade extends LegionFellblade {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 700
     this.min = 3
@@ -74,8 +74,8 @@ class DarkAngelsFellblade extends LegionFellblade {
 }
 
 class DarkAngelsGlaive extends LegionGlaive {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 700
     this.min = 3
@@ -84,10 +84,11 @@ class DarkAngelsGlaive extends LegionGlaive {
 }
 
 export class DarkAngelsSuperHeavyTankSquadronUnit extends MultipleChoiceUnit {
-  constructor () {
+  constructor (detachment) {
     super(
-      new DarkAngelsFellblade(),
-      new DarkAngelsGlaive()
+      detachment,
+      new DarkAngelsFellblade(detachment),
+      new DarkAngelsGlaive(detachment)
     )
   }
 }

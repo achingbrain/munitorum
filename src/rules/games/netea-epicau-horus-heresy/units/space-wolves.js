@@ -24,8 +24,8 @@ import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
 export class SpaceWolvesPrimarch extends PrimarchUnit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -53,8 +53,8 @@ export class SpaceWolvesPrimarch extends PrimarchUnit {
 }
 
 export class SpaceWolvesGreySlayerSquad extends Unit {
-  constructor () {
-    super(300, 8)
+  constructor (detachment) {
+    super(detachment, 300, 8)
 
     this.transportType = 'tactical'
     this.rules = [
@@ -75,8 +75,8 @@ export class SpaceWolvesGreySlayerSquad extends Unit {
 }
 
 export class SpaceWolvesDeathswornSquad extends Unit {
-  constructor () {
-    super(250, 4)
+  constructor (detachment) {
+    super(detachment, 250, 4)
 
     this.transportType = 'tactical'
     this.rules = [
@@ -98,8 +98,8 @@ export class SpaceWolvesDeathswornSquad extends Unit {
 }
 
 export class SpaceWolvesVaragyrWolfGuardSquad extends Unit {
-  constructor () {
-    super(340, 4)
+  constructor (detachment) {
+    super(detachment, 340, 4)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -122,8 +122,8 @@ export class SpaceWolvesVaragyrWolfGuardSquad extends Unit {
 }
 
 export class SpaceWolvesBodyguardSquad extends SpaceWolvesVaragyrWolfGuardSquad {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 0
     this.min = 3

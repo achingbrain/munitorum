@@ -37,11 +37,14 @@ import {
 import withType from '../../../../utils/with-type'
 
 export class SolarAuxiliaCommandDetachment extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaLordMarshall(),
-      new SolarAuxiliaVeletarisStormSection()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaLordMarshall(this),
+      new SolarAuxiliaVeletarisStormSection(this)
+    )
+    this.setUpgrades(
       new InfantrySupportTank(),
       new OgrynCharoniteSquad(),
       new MultipleChoiceOption(
@@ -53,18 +56,22 @@ export class SolarAuxiliaCommandDetachment extends SolarAuxiliaDetachment {
         SolarAuxiliaStormlordTransport,
         SolarAuxiliaArvusLighter
       )
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class SolarAuxiliaVeletarisStormCohort extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaTacticalCommmandSection(),
-      new SolarAuxiliaVeletarisStormSection()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaTacticalCommmandSection(this),
+      new SolarAuxiliaVeletarisStormSection(this)
+    )
+    this.setUpgrades(
       new InfantrySupportTank(),
       new OgrynCharoniteSquad(),
       new MultipleChoiceOption(
@@ -72,16 +79,19 @@ export class SolarAuxiliaVeletarisStormCohort extends SolarAuxiliaDetachment {
         SolarAuxiliaStormlordTransport,
         SolarAuxiliaArvusLighter
       )
-    ])
+    )
   }
 }
 
 export class SolarAuxiliaInfantryTercio extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaTacticalCommmandSection(),
-      new SolarAuxiliaInfantrySection()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaTacticalCommmandSection(this),
+      new SolarAuxiliaInfantrySection(this)
+    )
+    this.setUpgrades(
       new InfantrySupportTank(),
       new OgrynCharoniteSquad(),
       new MultipleChoiceOption(
@@ -94,123 +104,148 @@ export class SolarAuxiliaInfantryTercio extends SolarAuxiliaDetachment {
         SolarAuxiliaStormlordTransport,
         SolarAuxiliaArvusLighter
       )
-    ])
+    )
   }
 }
 
 export class SolarAuxiliaStrikeCompany extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaBattleTankUnitWithVanquisher(),
-      new SolarAuxiliaBattleTankUnit(),
-      new SolarAuxiliaBattleTankUnit(),
-      new SolarAuxiliaBattleTankUnit(),
-      new SolarAuxiliaBattleTankUnit(),
-      new SolarAuxiliaBattleTankUnit(),
-      new SolarAuxiliaBattleTankUnit(),
-      new SolarAuxiliaBattleTankUnit(),
-      new SolarAuxiliaBattleTankUnit(),
-      new SolarAuxiliaBattleTankUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaBattleTankUnitWithVanquisher(this),
+      new SolarAuxiliaBattleTankUnit(this),
+      new SolarAuxiliaBattleTankUnit(this),
+      new SolarAuxiliaBattleTankUnit(this),
+      new SolarAuxiliaBattleTankUnit(this),
+      new SolarAuxiliaBattleTankUnit(this),
+      new SolarAuxiliaBattleTankUnit(this),
+      new SolarAuxiliaBattleTankUnit(this),
+      new SolarAuxiliaBattleTankUnit(this),
+      new SolarAuxiliaBattleTankUnit(this)
+    )
   }
 }
 
 export class SolarAuxiliaOrbitalSupport extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaOrbitalSupportUnit()
-    ], [], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaOrbitalSupportUnit(this)
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class SolarAuxiliaAssaultGunPlatoon extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaMedusa()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaMedusa(this)
+    )
   }
 }
 
 export class SolarAuxiliaArtilleryTankBattery extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaArtilleryTankBatteryUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaArtilleryTankBatteryUnit(this)
+    )
   }
 }
 
 export class SolarAuxiliaMalcadorSquadron extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaMalcadorUnit(),
-      new SolarAuxiliaMalcadorUnit(),
-      new SolarAuxiliaMalcadorUnit(),
-      new SolarAuxiliaMalcadorUnit(),
-      new SolarAuxiliaMalcadorUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaMalcadorUnit(this),
+      new SolarAuxiliaMalcadorUnit(this),
+      new SolarAuxiliaMalcadorUnit(this),
+      new SolarAuxiliaMalcadorUnit(this),
+      new SolarAuxiliaMalcadorUnit(this)
+    )
   }
 }
 
 export class SolarAuxiliaSuperHeavyTank extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaSuperHeavyTankUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaSuperHeavyTankUnit(this)
+    )
   }
 }
 
 export class SolarAuxiliaSuperHeavyTankSquadron extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaSuperHeavyTankSquadronUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaSuperHeavyTankSquadronUnit(this)
+    )
   }
 }
 
 export class SolarAuxiliaCloseSupportSquadron extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaCloseSupportTankUnitWithExecutioner(),
-      new SolarAuxiliaCloseSupportTankUnit(),
-      new SolarAuxiliaCloseSupportTankUnit(),
-      new SolarAuxiliaCloseSupportTankUnit(),
-      new SolarAuxiliaCloseSupportTankUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaCloseSupportTankUnitWithExecutioner(this),
+      new SolarAuxiliaCloseSupportTankUnit(this),
+      new SolarAuxiliaCloseSupportTankUnit(this),
+      new SolarAuxiliaCloseSupportTankUnit(this),
+      new SolarAuxiliaCloseSupportTankUnit(this)
+    )
   }
 }
 
 export class SolarAuxiliaTankHunterSquadron extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaValdor()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaValdor(this)
+    )
   }
 }
 
 export class SolarAuxiliaTarantulaBattery extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaTarantula(),
-      new SolarAuxiliaTarantulaHyperios()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaTarantula(this),
+      new SolarAuxiliaTarantulaHyperios(this)
+    )
   }
 }
 
 export class SolarAuxiliaAvengerWing extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaAvengerStrikeFighter()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaAvengerStrikeFighter(this)
+    )
   }
 }
 
 export class SolarAuxiliaPrimarisWing extends SolarAuxiliaDetachment {
-  constructor () {
-    super([
-      new SolarAuxiliaPrimarisStrikeFighter()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SolarAuxiliaPrimarisStrikeFighter(this)
+    )
   }
 }
 

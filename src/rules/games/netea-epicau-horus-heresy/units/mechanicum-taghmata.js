@@ -48,8 +48,8 @@ import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
 export class MechanicumTaghmataTechThrall extends Unit {
-  constructor () {
-    super(150, 10)
+  constructor (detachment) {
+    super(detachment, 150, 10)
 
     this.transportType = 'infantry'
     this.rules = [
@@ -69,8 +69,8 @@ export class MechanicumTaghmataTechThrall extends Unit {
 }
 
 export class MechanicumTaghmataTechPriest extends Unit {
-  constructor () {
-    super(0, 2)
+  constructor (detachment) {
+    super(detachment, 0, 2)
 
     this.transportType = 'infantry'
     this.rules = [
@@ -91,8 +91,8 @@ export class MechanicumTaghmataTechPriest extends Unit {
 }
 
 export class MechanicumTaghmataTechPriestUpgrade extends MechanicumTaghmataTechPriest {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 25
     this.min = 1
@@ -102,8 +102,8 @@ export class MechanicumTaghmataTechPriestUpgrade extends MechanicumTaghmataTechP
 }
 
 export class MechanicumTaghmataArchmagosPrime extends Unit {
-  constructor () {
-    super(100, 1)
+  constructor (detachment) {
+    super(detachment, 100, 1)
 
     this.rules = [
       new SupremeCommander(),
@@ -125,8 +125,8 @@ export class MechanicumTaghmataArchmagosPrime extends Unit {
 }
 
 export class MechanicumTaghmataMagosPrime extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new Commander(),
@@ -147,8 +147,8 @@ export class MechanicumTaghmataMagosPrime extends Unit {
 }
 
 export class MechanicumTaghmataThallax extends Unit {
-  constructor () {
-    super(300, 6)
+  constructor (detachment) {
+    super(detachment, 300, 6)
 
     this.transportType = 'robot'
     this.rules = [
@@ -171,8 +171,8 @@ export class MechanicumTaghmataThallax extends Unit {
 }
 
 export class MechanicumTaghmataUrsarax extends Unit {
-  constructor () {
-    super(250, 6)
+  constructor (detachment) {
+    super(detachment, 250, 6)
 
     this.transportType = 'robot'
     this.rules = [
@@ -192,8 +192,8 @@ export class MechanicumTaghmataUrsarax extends Unit {
 }
 
 export class MechanicumTaghmataVorax extends Unit {
-  constructor () {
-    super(250, 6)
+  constructor (detachment) {
+    super(detachment, 250, 6)
 
     this.rules = [
       new CyberneticaCortex(),
@@ -215,8 +215,8 @@ export class MechanicumTaghmataVorax extends Unit {
 }
 
 export class MechanicumTaghmataCastellax extends Unit {
-  constructor () {
-    super(275, 5)
+  constructor (detachment) {
+    super(detachment, 275, 5)
 
     this.rules = [
       new CyberneticaCortex(),
@@ -239,8 +239,8 @@ export class MechanicumTaghmataCastellax extends Unit {
 }
 
 export class MechanicumTaghmataThanatar extends Unit {
-  constructor () {
-    super(200, 3)
+  constructor (detachment) {
+    super(detachment, 200, 3)
 
     this.rules = [
       new CyberneticaCortex(),
@@ -267,8 +267,8 @@ export class MechanicumTaghmataThanatar extends Unit {
 }
 
 export class MechanicumTaghmataThanatarUpgrade extends MechanicumTaghmataThanatar {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 75
     this.min = 1
@@ -278,8 +278,8 @@ export class MechanicumTaghmataThanatarUpgrade extends MechanicumTaghmataThanata
 }
 
 export class MechanicumTaghmataKrios extends Unit {
-  constructor () {
-    super(300, 5)
+  constructor (detachment) {
+    super(detachment, 300, 5)
 
     this.rules = [
       new InvulnerableSave(),
@@ -300,8 +300,8 @@ export class MechanicumTaghmataKrios extends Unit {
 }
 
 export class MechanicumTaghmataKriosUpgrade extends MechanicumTaghmataKrios {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 50
     this.min = 1
@@ -311,8 +311,8 @@ export class MechanicumTaghmataKriosUpgrade extends MechanicumTaghmataKrios {
 }
 
 export class MechanicumTaghmataKaracnos extends Unit {
-  constructor () {
-    super(300, 4)
+  constructor (detachment) {
+    super(detachment, 300, 4)
 
     this.rules = [
       new InvulnerableSave(),
@@ -335,8 +335,8 @@ export class MechanicumTaghmataKaracnos extends Unit {
 }
 
 class MechanicumTaghmataMyrmidonSecutors extends Unit {
-  constructor () {
-    super(300, 6)
+  constructor (detachment) {
+    super(detachment, 300, 6)
 
     this.transportType = 'robot'
     this.rules = [
@@ -357,8 +357,8 @@ class MechanicumTaghmataMyrmidonSecutors extends Unit {
 }
 
 class MechanicumTaghmataMyrmidonDestructors extends Unit {
-  constructor () {
-    super(300, 6)
+  constructor (detachment) {
+    super(detachment, 300, 6)
 
     this.transportType = 'robot'
     this.rules = [
@@ -379,17 +379,17 @@ class MechanicumTaghmataMyrmidonDestructors extends Unit {
 }
 
 export class MechanicumTaghmataMyrmidonUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new MechanicumTaghmataMyrmidonSecutors(),
-      new MechanicumTaghmataMyrmidonDestructors()
+  constructor (detachment) {
+    super(detachment,
+      new MechanicumTaghmataMyrmidonSecutors(detachment),
+      new MechanicumTaghmataMyrmidonDestructors(detachment)
     )
   }
 }
 
 class MechanicumTaghmataTarantula extends Unit {
-  constructor () {
-    super(125, 5)
+  constructor (detachment) {
+    super(detachment, 125, 5)
 
     this.rules = [
       new Automaton()
@@ -413,8 +413,8 @@ class MechanicumTaghmataTarantula extends Unit {
 }
 
 class MechanicumTaghmataHyperios extends Unit {
-  constructor () {
-    super(125, 5)
+  constructor (detachment) {
+    super(detachment, 125, 5)
 
     this.rules = [
       new Automaton()
@@ -433,17 +433,17 @@ class MechanicumTaghmataHyperios extends Unit {
 }
 
 export class MechanicumTaghmataTarantulaUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new MechanicumTaghmataTarantula(),
-      new MechanicumTaghmataHyperios()
+  constructor (detachment) {
+    super(detachment,
+      new MechanicumTaghmataTarantula(detachment),
+      new MechanicumTaghmataHyperios(detachment)
     )
   }
 }
 
 export class MechanicumTaghmataMinotaur extends Unit {
-  constructor () {
-    super(350, 3)
+  constructor (detachment) {
+    super(detachment, 350, 3)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -463,8 +463,8 @@ export class MechanicumTaghmataMinotaur extends Unit {
 }
 
 export class MechanicumTaghmataOrdinatusMinoris extends Unit {
-  constructor () {
-    super(500, 3)
+  constructor (detachment) {
+    super(detachment, 500, 3)
 
     this.rules = [
       new DamageCapacity(2),
@@ -490,8 +490,8 @@ export class MechanicumTaghmataOrdinatusMinoris extends Unit {
 }
 
 export class MechanicumTaghmataAvengerStrikeFighter extends Unit {
-  constructor () {
-    super(250, 2)
+  constructor (detachment) {
+    super(detachment, 250, 2)
 
     this.rules = []
     this.stats = {
@@ -510,8 +510,8 @@ export class MechanicumTaghmataAvengerStrikeFighter extends Unit {
 }
 
 export class MechanicumTaghmataPrimarisStrikeFighter extends Unit {
-  constructor () {
-    super(225, 2)
+  constructor (detachment) {
+    super(detachment, 225, 2)
 
     this.rules = []
     this.stats = {
@@ -530,8 +530,8 @@ export class MechanicumTaghmataPrimarisStrikeFighter extends Unit {
 }
 
 export class MechanicumTaghmataFalchion extends Unit {
-  constructor () {
-    super(300, 1)
+  constructor (detachment) {
+    super(detachment, 300, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -553,8 +553,8 @@ export class MechanicumTaghmataFalchion extends Unit {
 }
 
 export class MechanicumTaghmataOrdinatusMajoris extends Unit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -582,8 +582,8 @@ export class MechanicumTaghmataOrdinatusMajoris extends Unit {
 }
 
 export class MechanicumTaghmataScyllax extends Unit {
-  constructor () {
-    super(50, 1, 4)
+  constructor (detachment) {
+    super(detachment, 50, 1, 4)
 
     this.transportType = 'infantry'
     this.rules = [
@@ -604,8 +604,8 @@ export class MechanicumTaghmataScyllax extends Unit {
 }
 
 export class MechanicumTaghmataTriaros extends TransportUnit {
-  constructor () {
-    super(75)
+  constructor (detachment) {
+    super(detachment, 75)
 
     this.transportTypes = {
       robot: 2,
@@ -631,8 +631,8 @@ export class MechanicumTaghmataTriaros extends TransportUnit {
 }
 
 export class MechanicumTaghmataLandRaider extends TransportUnit {
-  constructor () {
-    super(75)
+  constructor (detachment) {
+    super(detachment, 75)
 
     this.transportTypes = {
       robot: 1,

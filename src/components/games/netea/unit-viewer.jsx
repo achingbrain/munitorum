@@ -17,6 +17,9 @@ import {
   PlusTransports,
   Notes
 } from '../../../rules/games/netea-epicau-horus-heresy/special-rules'
+import {
+  Unique
+} from '../../../rules/games/netea-epicau-horus-heresy/constraints'
 
 const RulesDisplay = component(({ rules, classes, t }) => {
   return (
@@ -24,7 +27,7 @@ const RulesDisplay = component(({ rules, classes, t }) => {
       {
         rules
           .filter(rule => {
-            return !(rule instanceof Notes) && !(rule instanceof PlusTransports)
+            return !(rule instanceof Notes) && !(rule instanceof PlusTransports) && !(rule instanceof Unique)
           })
           .map((rule, ruleIndex) => {
             const output = rule.type || t(rule.name)

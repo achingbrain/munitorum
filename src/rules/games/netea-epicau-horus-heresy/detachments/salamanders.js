@@ -24,11 +24,14 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class SalamandersPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new SalamandersPrimarch(),
-      new SalamandersBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SalamandersPrimarch(this),
+      new SalamandersBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -37,32 +40,40 @@ export class SalamandersPrimarchDetachment extends SpaceMarineLegionDetachment {
       ),
       new Tank(),
       new Hyperios()
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class SalamandersPyroclastDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new SalamandersPyroclastSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SalamandersPyroclastSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new AssaultRam(),
         new HeavyTransport()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 
 export class SalamandersFiredrakeTerminatorDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new SalamandersFiredrakeTerminatorSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SalamandersFiredrakeTerminatorSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -73,7 +84,7 @@ export class SalamandersFiredrakeTerminatorDetachment extends SpaceMarineLegionD
         new Praetor(),
         new Centurion()
       )
-    ])
+    )
   }
 }
 

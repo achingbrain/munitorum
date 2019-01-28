@@ -85,12 +85,7 @@ export default class NetEaEpicAuHorusHeresy extends Game {
       types.forEach(type => {
         if (json[type]) {
           list[type] = json[type]
-            .map(item => {
-              const detachment = Detachment.fromJSON(item)
-              detachment.list = list
-
-              return detachment
-            })
+            .map(item => Detachment.fromJSON(item, list))
         } else {
           list[type] = []
         }

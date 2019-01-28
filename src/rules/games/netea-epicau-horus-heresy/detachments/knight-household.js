@@ -26,18 +26,21 @@ class KnightHouseholdQuestorisKnightsUpgrade extends Upgrade {
 }
 
 export class KnightHouseholdQuestorisKnights extends KnightHouseholdDetachment {
-  constructor () {
-    super([
-      new KnightHouseholdQuestorisKnight(),
-      new KnightHouseholdQuestorisKnight(),
-      new KnightHouseholdQuestorisKnight()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new KnightHouseholdQuestorisKnight(this),
+      new KnightHouseholdQuestorisKnight(this),
+      new KnightHouseholdQuestorisKnight(this)
+    )
+    this.setUpgrades(
       new Aspirants(),
       new Seneschal(),
       new Noble(),
       new ScionsofUhlan(),
       new KnightHouseholdQuestorisKnightsUpgrade()
-    ])
+    )
   }
 }
 
@@ -54,28 +57,34 @@ class KnightHouseholdCerastusKnightsUpgrade extends Upgrade {
 }
 
 export class KnightHouseholdCerastusKnights extends KnightHouseholdDetachment {
-  constructor () {
-    super([
-      new KnightHouseholdCerastusKnight(),
-      new KnightHouseholdCerastusKnight(),
-      new KnightHouseholdCerastusKnight(),
-      new KnightHouseholdCerastusKnight()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new KnightHouseholdCerastusKnight(this),
+      new KnightHouseholdCerastusKnight(this),
+      new KnightHouseholdCerastusKnight(this),
+      new KnightHouseholdCerastusKnight(this)
+    )
+    this.setUpgrades(
       new Noble(),
       new KnightHouseholdCerastusKnightsUpgrade()
-    ])
+    )
   }
 }
 
 export class KnightHouseholdAcastusKnightPorphyrions extends KnightHouseholdDetachment {
   KnightHouseholdAcastusKnightPorphyrion
 
-  constructor () {
-    super([
-      new KnightHouseholdAcastusKnightPorphyrion()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new KnightHouseholdAcastusKnightPorphyrion(this)
+    )
+    this.setUpgrades(
       new Noble()
-    ])
+    )
   }
 }
 

@@ -31,11 +31,14 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class IronHandsPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new IronHandsPrimarch(),
-      new IronHandsBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new IronHandsPrimarch(this),
+      new IronHandsBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -45,17 +48,21 @@ export class IronHandsPrimarchDetachment extends SpaceMarineLegionDetachment {
       ),
       new Tank(),
       new Hyperios()
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class IronHandsGorgonTerminatorDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new IronHandsGorgonTerminatorSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new IronHandsGorgonTerminatorSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -66,69 +73,83 @@ export class IronHandsGorgonTerminatorDetachment extends SpaceMarineLegionDetach
         new Praetor(),
         new Centurion()
       )
-    ])
+    )
   }
 }
 
 export class IronHandsMedusanImmortalsDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new IronHandsMedusanImmortalsSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new IronHandsMedusanImmortalsSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new HeavyTransport(),
         new AssaultRam()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 1000)
-    ])
+    )
   }
 }
 
 export class IronHandsPredatorDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new IronHandsPredatorStrikeSquadronUnit(),
-      new IronHandsPredatorStrikeSquadronUnit(),
-      new IronHandsPredator(),
-      new IronHandsPredator(),
-      new IronHandsPredator(),
-      new IronHandsPredator()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new IronHandsPredatorStrikeSquadronUnit(this),
+      new IronHandsPredatorStrikeSquadronUnit(this),
+      new IronHandsPredator(this),
+      new IronHandsPredator(this),
+      new IronHandsPredator(this),
+      new IronHandsPredator(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       ),
       new Hyperios()
-    ])
+    )
   }
 }
 
 export class IronHandsDestroyerDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionDestroyerSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionDestroyerSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       ),
       new CommanderOption(
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 
 export class IronHandsSuperHeavyTankSquadron extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new IronHandsSuperHeavyTankSquadronUnit()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new IronHandsSuperHeavyTankSquadronUnit(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       )
-    ], [])
+    )
   }
 }
 

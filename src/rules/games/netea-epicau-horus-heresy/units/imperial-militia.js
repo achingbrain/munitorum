@@ -155,8 +155,8 @@ export class ImperialMilitiaUnit extends Unit {
 }
 
 export class ImperialMilitiaForceCommander extends ImperialMilitiaUnit {
-  constructor () {
-    super(225, 1)
+  constructor (detachment) {
+    super(detachment, 225, 1)
 
     this.transportType = 'infantry'
     this.rules = [
@@ -179,8 +179,8 @@ export class ImperialMilitiaForceCommander extends ImperialMilitiaUnit {
 }
 
 export class ImperialMilitiaPlatoonCommander extends ImperialMilitiaUnit {
-  constructor () {
-    super(125, 1)
+  constructor (detachment) {
+    super(detachment, 125, 1)
 
     this.transportType = 'infantry'
     this.rules = [
@@ -201,8 +201,8 @@ export class ImperialMilitiaPlatoonCommander extends ImperialMilitiaUnit {
 }
 
 export class ImperialMilitiaAuxiliaries extends ImperialMilitiaUnit {
-  constructor () {
-    super(0, 7)
+  constructor (detachment) {
+    super(detachment, 0, 7)
 
     this.transportType = 'infantry'
     this.rules = []
@@ -228,8 +228,8 @@ export class ImperialMilitiaAuxiliaries extends ImperialMilitiaUnit {
 }
 
 export class ImperialMilitiaFireSupport extends ImperialMilitiaUnit {
-  constructor () {
-    super(100, 4)
+  constructor (detachment) {
+    super(detachment, 100, 4)
 
     this.transportType = 'infantry'
     this.rules = []
@@ -248,8 +248,8 @@ export class ImperialMilitiaFireSupport extends ImperialMilitiaUnit {
 }
 
 export class ImperialMilitiaSupportAuxiliaries extends ImperialMilitiaUnit {
-  constructor () {
-    super(50, 4)
+  constructor (detachment) {
+    super(detachment, 50, 4)
 
     this.transportType = 'infantry'
     this.rules = []
@@ -275,8 +275,8 @@ export class ImperialMilitiaSupportAuxiliaries extends ImperialMilitiaUnit {
 }
 
 export class ImperialMilitiaReconAuxiliaries extends ImperialMilitiaUnit {
-  constructor () {
-    super(75, 4)
+  constructor (detachment) {
+    super(detachment, 75, 4)
 
     this.transportType = 'infantry'
     this.rules = [
@@ -297,8 +297,8 @@ export class ImperialMilitiaReconAuxiliaries extends ImperialMilitiaUnit {
 }
 
 export class ImperialMilitiaOgrynBruteSquad extends ImperialMilitiaUnit {
-  constructor () {
-    super(150, 4)
+  constructor (detachment) {
+    super(detachment, 150, 4)
 
     this.transportType = 'ogryn'
     this.rules = []
@@ -328,8 +328,8 @@ export class ImperialMilitiaOgrynBruteSquad extends ImperialMilitiaUnit {
 }
 
 export class ImperialMilitiaLevyAuxiliaries extends ImperialMilitiaUnit {
-  constructor () {
-    super(100, 10)
+  constructor (detachment) {
+    super(detachment, 100, 10)
 
     this.transportType = 'infantry'
     this.rules = []
@@ -348,8 +348,8 @@ export class ImperialMilitiaLevyAuxiliaries extends ImperialMilitiaUnit {
 }
 
 export class ImperialMilitiaMotorcycleCommander extends ImperialMilitiaUnit {
-  constructor () {
-    super(175, 1)
+  constructor (detachment) {
+    super(detachment, 175, 1)
 
     this.rules = [
       new Commander(),
@@ -370,8 +370,8 @@ export class ImperialMilitiaMotorcycleCommander extends ImperialMilitiaUnit {
 }
 
 export class ImperialMilitiaMotorcycle extends ImperialMilitiaUnit {
-  constructor () {
-    super(0, 7)
+  constructor (detachment) {
+    super(detachment, 0, 7)
 
     this.rules = [
       new Mounted()
@@ -391,8 +391,8 @@ export class ImperialMilitiaMotorcycle extends ImperialMilitiaUnit {
 }
 
 export class ImperialMilitiaGrenedier extends ImperialMilitiaUnit {
-  constructor () {
-    super(175, 8)
+  constructor (detachment) {
+    super(detachment, 175, 8)
 
     this.transportType = 'infantry'
     this.rules = []
@@ -412,8 +412,8 @@ export class ImperialMilitiaGrenedier extends ImperialMilitiaUnit {
 }
 
 export class ImperialMilitiaGorgon extends TransportUnit {
-  constructor () {
-    super(125)
+  constructor (detachment) {
+    super(detachment, 125)
 
     this.transportTypes = {
       infantry: 8,
@@ -442,8 +442,8 @@ export class ImperialMilitiaGorgon extends TransportUnit {
 }
 
 export class ImperialMilitiaArvusLighter extends TransportUnit {
-  constructor () {
-    super(25)
+  constructor (detachment) {
+    super(detachment, 25)
 
     this.transportTypes = {
       infantry: 2,
@@ -467,8 +467,8 @@ export class ImperialMilitiaArvusLighter extends TransportUnit {
 }
 
 export class ImperialMilitiaRhino extends TransportUnit {
-  constructor () {
-    super(12.5)
+  constructor (detachment) {
+    super(detachment, 12.5)
 
     this.transportTypes = {
       infantry: 2,
@@ -489,8 +489,8 @@ export class ImperialMilitiaRhino extends TransportUnit {
 }
 
 export class ImperialMilitiaLandRaiderProteus extends TransportUnit {
-  constructor () {
-    super(50)
+  constructor (detachment) {
+    super(detachment, 50)
 
     this.transportTypes = {
       infantry: 2,
@@ -515,8 +515,8 @@ export class ImperialMilitiaLandRaiderProteus extends TransportUnit {
 }
 
 class ImperialMilitiaEmperorClassBattleship extends SpacecraftUnit {
-  constructor () {
-    super(300, 1)
+  constructor (detachment) {
+    super(detachment, 300, 1)
 
     this.rules = [
       new SlowAndSteady()
@@ -535,8 +535,8 @@ class ImperialMilitiaEmperorClassBattleship extends SpacecraftUnit {
 }
 
 class ImperialMilitiaDauntlessClassLightCruiser extends SpacecraftUnit {
-  constructor () {
-    super(150, 1)
+  constructor (detachment) {
+    super(detachment, 150, 1)
 
     this.rules = [
       new PinPointAttack()
@@ -556,17 +556,17 @@ class ImperialMilitiaDauntlessClassLightCruiser extends SpacecraftUnit {
 }
 
 export class ImperialMilitiaOrbitalSupportUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new ImperialMilitiaEmperorClassBattleship(),
-      new ImperialMilitiaDauntlessClassLightCruiser()
+  constructor (detachment) {
+    super(detachment,
+      new ImperialMilitiaEmperorClassBattleship(detachment),
+      new ImperialMilitiaDauntlessClassLightCruiser(detachment)
     )
   }
 }
 
 export class ImperialMilitiaCavalryAuxiliary extends Unit {
-  constructor () {
-    super(175, 6)
+  constructor (detachment) {
+    super(detachment, 175, 6)
 
     this.transportType = 'infantry'
     this.rules = [
@@ -588,8 +588,8 @@ export class ImperialMilitiaCavalryAuxiliary extends Unit {
 }
 
 class ImperialMilitiaBasiliskArtilleryCarriage extends Unit {
-  constructor () {
-    super(200, 3)
+  constructor (detachment) {
+    super(detachment, 200, 3)
 
     this.rules = []
     this.stats = {
@@ -607,8 +607,8 @@ class ImperialMilitiaBasiliskArtilleryCarriage extends Unit {
 }
 
 class ImperialMilitiaMedusaArtilleryCarriage extends Unit {
-  constructor () {
-    super(200, 3)
+  constructor (detachment) {
+    super(detachment, 200, 3)
 
     this.rules = []
     this.stats = {
@@ -626,17 +626,17 @@ class ImperialMilitiaMedusaArtilleryCarriage extends Unit {
 }
 
 export class ImperialMilitiaHeavyOrdnanceBatteryUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new ImperialMilitiaBasiliskArtilleryCarriage(),
-      new ImperialMilitiaMedusaArtilleryCarriage()
+  constructor (detachment) {
+    super(detachment,
+      new ImperialMilitiaBasiliskArtilleryCarriage(detachment),
+      new ImperialMilitiaMedusaArtilleryCarriage(detachment)
     )
   }
 }
 
 class ImperialMilitiaMalcador extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new ReinforcedArmour()
@@ -657,8 +657,8 @@ class ImperialMilitiaMalcador extends Unit {
 }
 
 class ImperialMilitiaMalcadorAnnihalator extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new ReinforcedArmour()
@@ -682,17 +682,17 @@ class ImperialMilitiaMalcadorAnnihalator extends Unit {
 }
 
 export class ImperialMilitiaMalcadorUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new ImperialMilitiaMalcador(),
-      new ImperialMilitiaMalcadorAnnihalator()
+  constructor (detachment) {
+    super(detachment,
+      new ImperialMilitiaMalcador(detachment),
+      new ImperialMilitiaMalcadorAnnihalator(detachment)
     )
   }
 }
 
 export class ImperialMilitiaRapier extends Unit {
-  constructor () {
-    super(100, 4)
+  constructor (detachment) {
+    super(detachment, 100, 4)
 
     this.rules = []
     this.stats = {
@@ -713,8 +713,8 @@ export class ImperialMilitiaRapier extends Unit {
 }
 
 export class ImperialMilitiaSentinel extends Unit {
-  constructor () {
-    super(100, 4)
+  constructor (detachment) {
+    super(detachment, 100, 4)
 
     this.rules = [
       new Scout(),
@@ -737,8 +737,8 @@ export class ImperialMilitiaSentinel extends Unit {
 }
 
 class ImperialMilitiaBaneblade extends Unit {
-  constructor () {
-    super(300, 1)
+  constructor (detachment) {
+    super(detachment, 300, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -766,8 +766,8 @@ class ImperialMilitiaBaneblade extends Unit {
 }
 
 class ImperialMilitiaStormhammer extends Unit {
-  constructor () {
-    super(300, 1)
+  constructor (detachment) {
+    super(detachment, 300, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -791,17 +791,17 @@ class ImperialMilitiaStormhammer extends Unit {
 }
 
 export class ImperialMilitiaSuperHeavyTankUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new ImperialMilitiaBaneblade(),
-      new ImperialMilitiaStormhammer()
+  constructor (detachment) {
+    super(detachment,
+      new ImperialMilitiaBaneblade(detachment),
+      new ImperialMilitiaStormhammer(detachment)
     )
   }
 }
 
 class ImperialMilitiaBanebladePlatoon extends ImperialMilitiaBaneblade {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 500
     this.min = 3
@@ -810,8 +810,8 @@ class ImperialMilitiaBanebladePlatoon extends ImperialMilitiaBaneblade {
 }
 
 class ImperialMilitiaStormhammerPlatoon extends ImperialMilitiaStormhammer {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 500
     this.min = 3
@@ -820,17 +820,17 @@ class ImperialMilitiaStormhammerPlatoon extends ImperialMilitiaStormhammer {
 }
 
 export class ImperialMilitiaSuperHeavyTankPlatoonUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new ImperialMilitiaBanebladePlatoon(),
-      new ImperialMilitiaStormhammerPlatoon()
+  constructor (detachment) {
+    super(detachment,
+      new ImperialMilitiaBanebladePlatoon(detachment),
+      new ImperialMilitiaStormhammerPlatoon(detachment)
     )
   }
 }
 
 class ImperialMilitiaLemanRuss extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new ReinforcedArmour()
@@ -851,8 +851,8 @@ class ImperialMilitiaLemanRuss extends Unit {
 }
 
 class ImperialMilitiaLemanRussDemolisher extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -877,8 +877,8 @@ class ImperialMilitiaLemanRussDemolisher extends Unit {
 }
 
 class ImperialMilitiaLemanRussExterminator extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new ReinforcedArmour()
@@ -899,8 +899,8 @@ class ImperialMilitiaLemanRussExterminator extends Unit {
 }
 
 class ImperialMilitiaLemanRussVanquisher extends Unit {
-  constructor () {
-    super(75, 1)
+  constructor (detachment) {
+    super(detachment, 75, 1)
 
     this.rules = [
       new ReinforcedArmour()
@@ -921,29 +921,29 @@ class ImperialMilitiaLemanRussVanquisher extends Unit {
 }
 
 export class ImperialMilitiaBattleTankUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new ImperialMilitiaLemanRuss(),
-      new ImperialMilitiaLemanRussDemolisher(),
-      new ImperialMilitiaLemanRussExterminator()
+  constructor (detachment) {
+    super(detachment,
+      new ImperialMilitiaLemanRuss(detachment),
+      new ImperialMilitiaLemanRussDemolisher(detachment),
+      new ImperialMilitiaLemanRussExterminator(detachment)
     )
   }
 }
 
 export class ImperialMilitiaBattleTankUnitWithVanquisher extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new ImperialMilitiaLemanRuss(),
-      new ImperialMilitiaLemanRussDemolisher(),
-      new ImperialMilitiaLemanRussExterminator(),
-      new ImperialMilitiaLemanRussVanquisher()
+  constructor (detachment) {
+    super(detachment,
+      new ImperialMilitiaLemanRuss(detachment),
+      new ImperialMilitiaLemanRussDemolisher(detachment),
+      new ImperialMilitiaLemanRussExterminator(detachment),
+      new ImperialMilitiaLemanRussVanquisher(detachment)
     )
   }
 }
 
 export class ImperialMilitiaAvengerStrikeFighter extends Unit {
-  constructor () {
-    super(250, 2)
+  constructor (detachment) {
+    super(detachment, 250, 2)
 
     this.rules = []
     this.stats = {
@@ -962,8 +962,8 @@ export class ImperialMilitiaAvengerStrikeFighter extends Unit {
 }
 
 export class ImperialMilitiaPrimarisStrikeFighter extends Unit {
-  constructor () {
-    super(225, 2)
+  constructor (detachment) {
+    super(detachment, 225, 2)
 
     this.rules = []
     this.stats = {
@@ -982,8 +982,8 @@ export class ImperialMilitiaPrimarisStrikeFighter extends Unit {
 }
 
 export class ImperialMilitiaDisciplineMaster extends Unit {
-  constructor () {
-    super(0, 1)
+  constructor (detachment) {
+    super(detachment, 0, 1)
 
     this.rules = [
       new Inspiring(),
@@ -1003,8 +1003,8 @@ export class ImperialMilitiaDisciplineMaster extends Unit {
 }
 
 export class ImperialMilitiaRoguePsyker extends Unit {
-  constructor () {
-    super(0, 1)
+  constructor (detachment) {
+    super(detachment, 0, 1)
 
     this.rules = [
       new Inspiring(),

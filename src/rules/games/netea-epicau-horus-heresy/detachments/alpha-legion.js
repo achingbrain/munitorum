@@ -28,11 +28,14 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class AlphaLegionPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new AlphaLegionPrimarch(),
-      new AlphaLegionBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits([
+      new AlphaLegionPrimarch(this),
+      new AlphaLegionBodyguardSquad(this)
+    ])
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
@@ -41,19 +44,24 @@ export class AlphaLegionPrimarchDetachment extends SpaceMarineLegionDetachment {
       ),
       new Tank(),
       new Hyperios()
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ], [
+    )
+    this.setRules(
       new PlusTransports()
-    ])
+    )
   }
 }
 
 export class AlphaLegionLernaeanTerminatorDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
       new AlphaLegionLernaeanTerminatorSquad()
-    ], [
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -64,15 +72,18 @@ export class AlphaLegionLernaeanTerminatorDetachment extends SpaceMarineLegionDe
         new Praetor(),
         new Centurion()
       )
-    ])
+    )
   }
 }
 
 export class AlphaLegionHeadHunterKillTeamDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
       new AlphaLegionHeadHunterKillTeamSquad()
-    ], [
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
@@ -83,9 +94,10 @@ export class AlphaLegionHeadHunterKillTeamDetachment extends SpaceMarineLegionDe
         new Centurion()
       ),
       new Tank()
-    ], [], [
+    )
+    this.setRules(
       new PlusTransports()
-    ])
+    )
   }
 }
 

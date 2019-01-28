@@ -24,11 +24,14 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class DarkAngelsPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new DarkAngelsPrimarch(),
-      new DarkAngelsBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DarkAngelsPrimarch(this),
+      new DarkAngelsBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new HeavyTransport(),
@@ -36,38 +39,46 @@ export class DarkAngelsPrimarchDetachment extends SpaceMarineLegionDetachment {
       ),
       new Tank(),
       new Hyperios()
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class DarkAngelsDestroyerDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionDestroyerSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionDestroyerSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       ),
       new CommanderOption(
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 
 export class DarkAngelsSuperHeavyTankSquadron extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new DarkAngelsSuperHeavyTankSquadronUnit()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DarkAngelsSuperHeavyTankSquadronUnit(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       )
-    ], [])
+    )
   }
 }
 

@@ -35,9 +35,9 @@ export default class SonsOfHorus extends SpaceMarineLegion {
     const rating = super.getStrategyRating(list)
 
     if (list.allies.find(item =>
-      item.type === DaemonicHordes.type ||
-        item.type === MechanicumTaghmata.type ||
-        item.type === KnightHousehold.type
+      item.army.type === DaemonicHordes.type ||
+      item.army.type === MechanicumTaghmata.type ||
+      item.army.type === KnightHousehold.type
     )) {
       return rating - 1
     }

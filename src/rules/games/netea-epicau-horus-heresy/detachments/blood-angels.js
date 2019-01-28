@@ -14,18 +14,22 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class BloodAngelsPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new BloodAngelsPrimarch(),
-      new BloodAngelsBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new BloodAngelsPrimarch(this),
+      new BloodAngelsBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultClaw()
       )
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 

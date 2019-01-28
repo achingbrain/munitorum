@@ -21,10 +21,13 @@ import LegioCustodesDetachment from './legio-custodes-detachment'
 import withType from '../../../../utils/with-type'
 
 export class LegioCustodesHykanatoiDetachment extends LegioCustodesDetachment {
-  constructor () {
-    super([
-      new LegioCustodesHykanatoiUnit()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegioCustodesHykanatoiUnit(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Carrier(),
         new Teleport()
@@ -33,27 +36,33 @@ export class LegioCustodesHykanatoiDetachment extends LegioCustodesDetachment {
         new CaptainGeneral(),
         new SeniorOfficer()
       )
-    ])
+    )
   }
 }
 
 export class LegioCustodesAgamatusDetachment extends LegioCustodesDetachment {
-  constructor () {
-    super([
-      new LegioCustodesAgamatus()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegioCustodesAgamatus(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new SeniorOfficer()
       )
-    ])
+    )
   }
 }
 
 export class LegioCustodesAquilionTerminatorDetachment extends LegioCustodesDetachment {
-  constructor () {
-    super([
-      new LegioCustodesAquilionTerminator()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegioCustodesAquilionTerminator(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Carrier(),
         new Teleport()
@@ -62,67 +71,81 @@ export class LegioCustodesAquilionTerminatorDetachment extends LegioCustodesDeta
         new CaptainGeneral(),
         new SeniorOfficer()
       )
-    ])
+    )
   }
 }
 
 export class LegioCustodesEphoroiCustodesDetachment extends LegioCustodesDetachment {
-  constructor () {
-    super([
-      new LegioCustodesEphoroiCustodes()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegioCustodesEphoroiCustodes(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Carrier(),
         new Teleport()
       )
-    ])
+    )
   }
 }
 
 export class LegioCustodesSistersOfSilenceDetachment extends LegioCustodesDetachment {
-  constructor () {
-    super([
-      new LegioCustodesSistersOfSilence()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegioCustodesSistersOfSilence(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Teleport()
       )
-    ])
+    )
   }
 }
 
 export class LegioCustodesMorotoiDetachment extends LegioCustodesDetachment {
-  constructor () {
-    super([
-      new LegioCustodesDreadnoughtUnit(),
-      new LegioCustodesDreadnoughtUnit(),
-      new LegioCustodesDreadnoughtUnit(),
-      new LegioCustodesDreadnoughtUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegioCustodesDreadnoughtUnit(this),
+      new LegioCustodesDreadnoughtUnit(this),
+      new LegioCustodesDreadnoughtUnit(this),
+      new LegioCustodesDreadnoughtUnit(this)
+    )
   }
 }
 
 export class LegioCustodesPallasGravAttackSquadron extends LegioCustodesDetachment {
-  constructor () {
-    super([
-      new LegioCustodesPallasGravAttackVehicle()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegioCustodesPallasGravAttackVehicle(this)
+    )
   }
 }
 
 export class LegioCustodesCaladiusGravTankSquadron extends LegioCustodesDetachment {
-  constructor () {
-    super([
-      new LegioCustodesCaladiusGravTank()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegioCustodesCaladiusGravTank(this)
+    )
   }
 }
 
 export class LegioCustodesOrionAssaultDropshipSquadron extends LegioCustodesDetachment {
-  constructor () {
-    super([
-      new LegioCustodesOrionAssaultDropship()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegioCustodesOrionAssaultDropship(this)
+    )
   }
 }
 

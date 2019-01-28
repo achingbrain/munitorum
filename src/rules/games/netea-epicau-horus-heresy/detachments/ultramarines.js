@@ -31,11 +31,14 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class UltramarinesPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new UltramarinesPrimarch(),
-      new UltramarinesBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new UltramarinesPrimarch(this),
+      new UltramarinesBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
@@ -43,17 +46,21 @@ export class UltramarinesPrimarchDetachment extends SpaceMarineLegionDetachment 
       ),
       new Tank(),
       new Hyperios()
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class UltramarinesFulmentarusTerminatorDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new UltramarinesFulmentarusTerminatorSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new UltramarinesFulmentarusTerminatorSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -64,55 +71,67 @@ export class UltramarinesFulmentarusTerminatorDetachment extends SpaceMarineLegi
         new Praetor(),
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 
 export class UltramarinesLoctarusDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new UltramarinesLoctarusStormSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new UltramarinesLoctarusStormSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultClaw()
       )
-    ])
+    )
   }
 }
 
 export class UltramarinesInvictarusSuzerainDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new UltramarinesInvictarusSuzerainSquad(),
-      new LegionChampion()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new UltramarinesInvictarusSuzerainSquad(this),
+      new LegionChampion(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultClaw()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 4000)
-    ])
+    )
   }
 }
 
 export class UltramarinesDestroyerDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionDestroyerSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionDestroyerSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       ),
       new CommanderOption(
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 

@@ -3,8 +3,8 @@
 import Unit from './unit'
 
 export default class MultipleChoiceUnit extends Unit {
-  constructor (...types) {
-    super()
+  constructor (detachment, ...types) {
+    super(detachment)
 
     this.types = types
     this.choice = 0

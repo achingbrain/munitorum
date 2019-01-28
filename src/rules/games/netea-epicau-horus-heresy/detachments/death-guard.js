@@ -28,11 +28,14 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class DeathGuardPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new DeathGuardPrimarch(),
-      new DeathGuardBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DeathGuardPrimarch(this),
+      new DeathGuardBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new AssaultRam(),
         new HeavyTransport(),
@@ -40,17 +43,21 @@ export class DeathGuardPrimarchDetachment extends SpaceMarineLegionDetachment {
       ),
       new Tank(),
       new Hyperios()
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class DeathGuardDeathshroudTerminatorDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new DeathGuardDeathshroudTerminatorSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DeathGuardDeathshroudTerminatorSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -61,17 +68,21 @@ export class DeathGuardDeathshroudTerminatorDetachment extends SpaceMarineLegion
         new Praetor(),
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 4000)
-    ])
+    )
   }
 }
 
 export class DeathGuardGraveWardenTerminatorDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new DeathGuardGraveWardenTerminatorSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DeathGuardGraveWardenTerminatorSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -81,15 +92,18 @@ export class DeathGuardGraveWardenTerminatorDetachment extends SpaceMarineLegion
       new CommanderOption(
         new Centurion()
       )
-    ])
+    )
   }
 }
 
 export class DeathGuardDestroyerDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionDestroyerSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionDestroyerSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultClaw()
@@ -97,9 +111,10 @@ export class DeathGuardDestroyerDetachment extends SpaceMarineLegionDetachment {
       new CommanderOption(
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 1000)
-    ])
+    )
   }
 }
 

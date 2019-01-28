@@ -26,11 +26,14 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class SonsOfHorusPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new SonsOfHorusPrimarch(),
-      new SonsOfHorusBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SonsOfHorusPrimarch(this),
+      new SonsOfHorusBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -39,17 +42,21 @@ export class SonsOfHorusPrimarchDetachment extends SpaceMarineLegionDetachment {
       ),
       new Hyperios(),
       new Tank()
-    ], [
-      new Unique()
-    ])
+    )
+    this.setConstraints(
+      new Unique(this)
+    )
   }
 }
 
 export class SonsOfHorusReaverAttackDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new SonsOfHorusReaverAttackSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SonsOfHorusReaverAttackSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
@@ -62,17 +69,21 @@ export class SonsOfHorusReaverAttackDetachment extends SpaceMarineLegionDetachme
         new Centurion()
       ),
       new Tank()
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 
 export class SonsOfHorusJustaerinTerminatorDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
       new SonsOfHorusJustaerinTerminatorSquad()
-    ], [
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -84,9 +95,10 @@ export class SonsOfHorusJustaerinTerminatorDetachment extends SpaceMarineLegionD
         new Centurion()
       ),
       new Tank()
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 

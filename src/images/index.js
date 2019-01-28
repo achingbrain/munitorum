@@ -67,6 +67,7 @@ import imperialMilitiaAvenger from './imperial-militia-avenger.svg'
 import imperialMilitiaBaneblade from './imperial-militia-baneblade.svg'
 import imperialMilitiaBasilisk from './imperial-militia-basilisk.svg'
 import imperialMilitiaBattleTank from './imperial-militia-battle-tank.svg'
+import imperialMilitiaCavalry from './imperial-militia-cavalry.svg'
 import imperialMilitiaCommandSquad from './imperial-militia-command-squad.svg'
 import imperialMilitiaDauntlessClassLightCruiser from './imperial-militia-dauntless-class-light-cruiser.svg'
 import imperialMilitiaDisciplineMaster from './imperial-militia-discipline-master.svg'
@@ -85,6 +86,7 @@ import imperialMilitiaMotorcycle from './imperial-militia-motorcycle.svg'
 import imperialMilitiaOgryn from './imperial-militia-ogryn.svg'
 import imperialMilitiaPlatoonCommander from './imperial-militia-platoon-commander.svg'
 import imperialMilitiaPrimaris from './imperial-militia-primaris.svg'
+import imperialMilitiaRapier from './imperial-militia-rapier.svg'
 import imperialMilitiaReconAuxiliaries from './imperial-militia-recon-auxiliaries.svg'
 import imperialMilitiaRhino from './imperial-militia-rhino.svg'
 import imperialMilitiaRoguePsyker from './imperial-militia-rogue-psyker.svg'
@@ -187,7 +189,6 @@ import legionOutrider from './legion-outrider.svg'
 import legionPredatorAnnihilator from './legion-predator-annihilator.svg'
 import legionPredatorInfernus from './legion-predator-infernus.svg'
 import legionPredator from './legion-predator.svg'
-import legionRapierLaserDestroyer from './legion-rapier-laser-destroyer.svg'
 import legionRapierMortar from './legion-rapier-mortar.svg'
 import legionRapier from './legion-rapier.svg'
 import legionReconnaissance from './legion-reconnaissance.svg'
@@ -371,6 +372,7 @@ const IMAGES = {
   'imperial-militia-baneblade': imperialMilitiaBaneblade,
   'imperial-militia-basilisk': imperialMilitiaBasilisk,
   'imperial-militia-battle-tank': imperialMilitiaBattleTank,
+  'imperial-militia-cavalry': imperialMilitiaCavalry,
   'imperial-militia-command-squad': imperialMilitiaCommandSquad,
   'imperial-militia-dauntless-class-light-cruiser': imperialMilitiaDauntlessClassLightCruiser,
   'imperial-militia-discipline-master': imperialMilitiaDisciplineMaster,
@@ -393,6 +395,7 @@ const IMAGES = {
   'imperial-militia-orbital-support': imperialMilitiaEmperorClassBattleship,
   'imperial-militia-platoon-commander': imperialMilitiaPlatoonCommander,
   'imperial-militia-primaris': imperialMilitiaPrimaris,
+  'imperial-militia-rapier': imperialMilitiaRapier,
   'imperial-militia-recon-auxiliaries': imperialMilitiaReconAuxiliaries,
   'imperial-militia-rhino': imperialMilitiaRhino,
   'imperial-militia-rogue-psyker': imperialMilitiaRoguePsyker,
@@ -511,7 +514,7 @@ const IMAGES = {
   'legion-predator-executioner': ironHandsPredatorExecutioner,
   'legion-predator-infernus': legionPredatorInfernus,
   'legion-predator': legionPredator,
-  'legion-rapier-laser-destroyer': legionRapierLaserDestroyer,
+  'legion-rapier-laser-destroyer': imperialMilitiaRapier,
   'legion-rapier-mortar': legionRapierMortar,
   'legion-rapier': legionRapier,
   'legion-reconnaissance': legionReconnaissance,

@@ -25,72 +25,90 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class RavenGuardPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new RavenGuardPrimarch(),
-      new RavenGuardBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new RavenGuardPrimarch(this),
+      new RavenGuardBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultClaw()
       )
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class RavenGuardDarkFuryAssaultDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new RavenGuardDarkFuryAssaultSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new RavenGuardDarkFuryAssaultSquad(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 
 export class RavenGuardMorDeythanStrikeDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new RavenGuardMorDeythanStrikeSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new RavenGuardMorDeythanStrikeSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new HeavyTransport(),
         new AssaultRam()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 1000)
-    ])
+    )
   }
 }
 
 export class RavenGuardDarkwingPatternStormEagleWing extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new RavenGuardDarkwingPatternStormEagle()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new RavenGuardDarkwingPatternStormEagle(this)
+    )
   }
 }
 
 export class RavenGuardDestroyerDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionDestroyerSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionDestroyerSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       ),
       new CommanderOption(
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 

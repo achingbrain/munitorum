@@ -26,8 +26,8 @@ import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../../../../utils/with-type'
 
 export class WhiteScarsPrimarch extends PrimarchUnit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -55,8 +55,8 @@ export class WhiteScarsPrimarch extends PrimarchUnit {
 }
 
 export class WhiteScarsBodyguardSquad extends LegionTerminatorSquad {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 0
     this.min = 3
@@ -66,8 +66,8 @@ export class WhiteScarsBodyguardSquad extends LegionTerminatorSquad {
 }
 
 class WhiteScarsAttackBike extends LegionAttackBike {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 275
     this.min = 8
@@ -77,8 +77,8 @@ class WhiteScarsAttackBike extends LegionAttackBike {
 }
 
 class WhiteScarsBike extends LegionBike {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 275
     this.min = 8
@@ -88,17 +88,18 @@ class WhiteScarsBike extends LegionBike {
 }
 
 export class WhiteScarsOutriderUnit extends MultipleChoiceUnit {
-  constructor () {
+  constructor (detachment) {
     super(
-      new WhiteScarsAttackBike(),
-      new WhiteScarsBike()
+      detachment,
+      new WhiteScarsAttackBike(detachment),
+      new WhiteScarsBike(detachment)
     )
   }
 }
 
 export class WhiteScarsScimitarJetbike extends LegionScimitarJetbike {
-  constructor () {
-    super(1)
+  constructor (detachment) {
+    super(detachment, 1)
 
     this.cost = 275
     this.min = 8

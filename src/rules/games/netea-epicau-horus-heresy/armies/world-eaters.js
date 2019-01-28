@@ -48,10 +48,10 @@ export default class WorldEaters extends SpaceMarineLegion {
     const rating = super.getStrategyRating(list)
 
     if (list.allies.find(item =>
-      item.type === ImperialMilitia.type ||
-        item.type === SolarAuxilia.type ||
-        item.type === KnightHousehold.type ||
-        item.type === MechanicumTaghmata.type
+      item.army.type === ImperialMilitia.type ||
+      item.army.type === SolarAuxilia.type ||
+      item.army.type === KnightHousehold.type ||
+      item.army.type === MechanicumTaghmata.type
     )) {
       return rating - 1
     }

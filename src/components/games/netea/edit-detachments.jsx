@@ -20,11 +20,7 @@ class EditDetachments extends Component {
       onAddDetachment
     } = this.props
 
-    const detachment = new Detachment()
-    detachment.list = list
-    detachment.units.forEach(unit => {
-      unit.detachment = detachment
-    })
+    const detachment = new Detachment(list)
 
     onAddDetachment(type, detachment)
   }

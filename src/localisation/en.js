@@ -50,7 +50,7 @@ export default {
     'greater-daemons-require-patron-hordes': 'Greater Daemon Hordes require a line detachment from the same Patron God to be present',
     'too-many-daemonic-overlords': 'Only one Daemon Prince/Herald may be a Daemonic Overlord',
     'only-one-patron-god': 'You may only include units from the patron god {{ patron }}',
-    'there-can-be-only-one': 'Only 1 {{ type }} is allowed',
+    'there-can-be-only-one': 'Only one {{ type }} is allowed',
     'limited-quantity-per-points': 'Only {{ count }} {{ code }} detachment is allowed per full {{ limit }} points',
     'no-allied-supreme-commanders': 'Supreme Commanders may only come from the primary army list',
 

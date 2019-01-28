@@ -30,11 +30,14 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class WorldEatersPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new WorldEatersPrimarch(),
-      new WorldEatersBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new WorldEatersPrimarch(this),
+      new WorldEatersBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -42,34 +45,42 @@ export class WorldEatersPrimarchDetachment extends SpaceMarineLegionDetachment {
       ),
       new Hyperios(),
       new Tank()
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class WorldEatersDestroyerDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionDestroyerSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionDestroyerSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       ),
       new CommanderOption(
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 1000)
-    ])
+    )
   }
 }
 
 export class WorldEatersRampagerDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new WorldEatersRampagerSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new WorldEatersRampagerSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
@@ -78,26 +89,31 @@ export class WorldEatersRampagerDetachment extends SpaceMarineLegionDetachment {
       new CommanderOption(
         new Centurion()
       )
-    ], [], [
+    )
+    this.setRules(
       new PlusTransports()
-    ])
+    )
   }
 }
 
 export class WorldEatersRedButcherDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new WorldEatersRedButcherSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new WorldEatersRedButcherSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 

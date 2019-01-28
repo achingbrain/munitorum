@@ -34,8 +34,8 @@ import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
 export class IronHandsPrimarch extends PrimarchUnit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -65,8 +65,8 @@ export class IronHandsPrimarch extends PrimarchUnit {
 }
 
 export class IronHandsMedusanImmortalsSquad extends Unit {
-  constructor () {
-    super(250, 4)
+  constructor (detachment) {
+    super(detachment, 250, 4)
 
     this.transportType = 'breacher'
     this.rules = [
@@ -87,8 +87,8 @@ export class IronHandsMedusanImmortalsSquad extends Unit {
 }
 
 export class IronHandsGorgonTerminatorSquad extends Unit {
-  constructor () {
-    super(85, 4, 6)
+  constructor (detachment) {
+    super(detachment, 85, 4, 6)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -110,8 +110,8 @@ export class IronHandsGorgonTerminatorSquad extends Unit {
 }
 
 export class IronHandsBodyguardSquad extends IronHandsGorgonTerminatorSquad {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 0
     this.min = 3
@@ -121,8 +121,8 @@ export class IronHandsBodyguardSquad extends IronHandsGorgonTerminatorSquad {
 }
 
 class IronHandsFellblade extends LegionFellblade {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 700
     this.min = 3
@@ -131,8 +131,8 @@ class IronHandsFellblade extends LegionFellblade {
 }
 
 class IronHandsGlaive extends LegionGlaive {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 700
     this.min = 3
@@ -141,53 +141,53 @@ class IronHandsGlaive extends LegionGlaive {
 }
 
 export class IronHandsSuperHeavyTankSquadronUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new IronHandsFellblade(),
-      new IronHandsGlaive()
+  constructor (detachment) {
+    super(detachment,
+      new IronHandsFellblade(detachment),
+      new IronHandsGlaive(detachment)
     )
   }
 }
 
 export class IronHandsPredator extends LegionPredator {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 50
   }
 }
 
 class IronHandsPredatorInfernus extends LegionPredatorInfernus {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 70
   }
 }
 
 class IronHandsPredatorExecutioner extends LegionPredatorExecutioner {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 70
   }
 }
 
 class IronHandsWhirlwindScorpius extends LegionWhirlwindScorpius {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 70
   }
 }
 
 export class IronHandsPredatorStrikeSquadronUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new IronHandsPredator(),
-      new IronHandsPredatorInfernus(),
-      new IronHandsPredatorExecutioner(),
-      new IronHandsWhirlwindScorpius()
+  constructor (detachment) {
+    super(detachment,
+      new IronHandsPredator(detachment),
+      new IronHandsPredatorInfernus(detachment),
+      new IronHandsPredatorExecutioner(detachment),
+      new IronHandsWhirlwindScorpius(detachment)
     )
   }
 }

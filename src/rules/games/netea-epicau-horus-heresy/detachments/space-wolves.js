@@ -26,25 +26,32 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class SpaceWolvesPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new SpaceWolvesPrimarch(),
-      new SpaceWolvesBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SpaceWolvesPrimarch(this),
+      new SpaceWolvesBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new HeavyTransport()
       )
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class SpaceWolvesGreySlayerDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new SpaceWolvesGreySlayerSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SpaceWolvesGreySlayerSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault()
@@ -53,40 +60,48 @@ export class SpaceWolvesGreySlayerDetachment extends SpaceMarineLegionDetachment
         new Praetor(),
         new Centurion()
       )
-    ], [], [
+    )
+    this.setRules(
       new PlusTransports()
-    ])
+    )
   }
 }
 
 export class SpaceWolvesDeathswornDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new SpaceWolvesDeathswornSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SpaceWolvesDeathswornSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
         new HeavyTransport()
       )
-    ], [], [
+    )
+    this.setRules(
       new PlusTransports()
-    ])
+    )
   }
 }
 
 export class SpaceWolvesVaragyrWolfGuardDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new SpaceWolvesVaragyrWolfGuardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new SpaceWolvesVaragyrWolfGuardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()
       )
-    ])
+    )
   }
 }
 

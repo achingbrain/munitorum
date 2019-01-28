@@ -34,8 +34,8 @@ import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
 export class RavenGuardPrimarch extends PrimarchUnit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.transportType = 'assault'
     this.rules = [
@@ -64,8 +64,8 @@ export class RavenGuardPrimarch extends PrimarchUnit {
 }
 
 export class RavenGuardBodyguardSquad extends LegionAssaultSquad {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 0
     this.min = 5
@@ -75,8 +75,8 @@ export class RavenGuardBodyguardSquad extends LegionAssaultSquad {
 }
 
 export class RavenGuardDarkFuryAssaultSquad extends Unit {
-  constructor () {
-    super(250, 4)
+  constructor (detachment) {
+    super(detachment, 250, 4)
 
     this.transportType = 'assault'
     this.rules = [
@@ -96,8 +96,8 @@ export class RavenGuardDarkFuryAssaultSquad extends Unit {
 }
 
 export class RavenGuardMorDeythanStrikeSquad extends Unit {
-  constructor () {
-    super(225, 4)
+  constructor (detachment) {
+    super(detachment, 225, 4)
 
     this.transportType = 'tactical'
     this.rules = [
@@ -118,8 +118,8 @@ export class RavenGuardMorDeythanStrikeSquad extends Unit {
 }
 
 export class RavenGuardDarkwingPatternStormEagle extends Unit {
-  constructor () {
-    super(125, 1, 3)
+  constructor (detachment) {
+    super(detachment, 125, 1, 3)
 
     this.transportTypes = {
       tactical: 3,

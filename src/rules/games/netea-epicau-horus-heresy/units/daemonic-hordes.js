@@ -101,8 +101,8 @@ class DaemonicHordesDaemonPrince extends DaemonicHordesDaemonicOverlord {
 }
 
 export class DaemonicHordesWarpRift extends Unit {
-  constructor () {
-    super(75, 1)
+  constructor (detachment) {
+    super(detachment, 75, 1)
 
     this.rules = [
       new Notes(null, 'daemonic-hordes-warp-rift-notes-replaces'),
@@ -121,8 +121,8 @@ export class DaemonicHordesWarpRift extends Unit {
 }
 
 class DaemonicHordesHeraldOfKhorne extends DaemonicHordesDaemonicOverlord {
-  constructor () {
-    super(100, 1)
+  constructor (detachment) {
+    super(detachment, 100, 1)
 
     this.rules = [
       new InvulnerableSave()
@@ -145,8 +145,8 @@ class DaemonicHordesHeraldOfKhorne extends DaemonicHordesDaemonicOverlord {
 }
 
 class DaemonicHordesDaemonPrinceOfKhorne extends DaemonicHordesDaemonPrince {
-  constructor () {
-    super(150, 1)
+  constructor (detachment) {
+    super(detachment, 150, 1)
 
     this.rules = [
       new Commander(),
@@ -181,17 +181,18 @@ class DaemonicHordesDaemonPrinceOfKhorne extends DaemonicHordesDaemonPrince {
 }
 
 export class DaemonicHordesKhorneHordeLeader extends MultipleChoiceUnit {
-  constructor () {
+  constructor (detachment) {
     super(
-      new DaemonicHordesHeraldOfKhorne(),
-      new DaemonicHordesDaemonPrinceOfKhorne()
+      detachment,
+      new DaemonicHordesHeraldOfKhorne(detachment),
+      new DaemonicHordesDaemonPrinceOfKhorne(detachment)
     )
   }
 }
 
 export class DaemonicHordesBloodletters extends Unit {
-  constructor () {
-    super(25, 6, 12)
+  constructor (detachment) {
+    super(detachment, 25, 6, 12)
 
     this.rules = [
       new InvulnerableSave()
@@ -210,8 +211,8 @@ export class DaemonicHordesBloodletters extends Unit {
 }
 
 export class DaemonicHordesFleshHounds extends Unit {
-  constructor () {
-    super(25, 1, 6)
+  constructor (detachment) {
+    super(detachment, 25, 1, 6)
 
     this.rules = [
       new InvulnerableSave(),
@@ -231,8 +232,8 @@ export class DaemonicHordesFleshHounds extends Unit {
 }
 
 export class DaemonicHordesFleshHoundsFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(25, 3, 9)
+  constructor (detachment) {
+    super(detachment, 25, 3, 9)
 
     this.rules = [
       new InvulnerableSave(),
@@ -252,8 +253,8 @@ export class DaemonicHordesFleshHoundsFollowerUnit extends DaemonicHordesFollowe
 }
 
 export class DaemonicHordesBloodcrushers extends Unit {
-  constructor () {
-    super(50, 1, 6)
+  constructor (detachment) {
+    super(detachment, 50, 1, 6)
 
     this.rules = [
       new Beserk(),
@@ -275,8 +276,8 @@ export class DaemonicHordesBloodcrushers extends Unit {
 }
 
 export class DaemonicHordesBloodcrushersFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(50, 3, 9)
+  constructor (detachment) {
+    super(detachment, 50, 3, 9)
 
     this.rules = [
       new Beserk(),
@@ -298,8 +299,8 @@ export class DaemonicHordesBloodcrushersFollowerUnit extends DaemonicHordesFollo
 }
 
 export class DaemonicHordesSkullCannonOfKhorne extends Unit {
-  constructor () {
-    super(50, 1, 6)
+  constructor (detachment) {
+    super(detachment, 50, 1, 6)
 
     this.rules = [
       new InvulnerableSave()
@@ -318,8 +319,8 @@ export class DaemonicHordesSkullCannonOfKhorne extends Unit {
 }
 
 export class DaemonicHordesSkullCannonOfKhorneFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(50, 3, 9)
+  constructor (detachment) {
+    super(detachment, 50, 3, 9)
 
     this.rules = [
       new InvulnerableSave()
@@ -338,8 +339,8 @@ export class DaemonicHordesSkullCannonOfKhorneFollowerUnit extends DaemonicHorde
 }
 
 export class DaemonicHordesBloodThirster extends Unit {
-  constructor () {
-    super(200, 1)
+  constructor (detachment) {
+    super(detachment, 200, 1)
 
     this.rules = [
       new DamageCapacity(3),
@@ -369,16 +370,16 @@ export class DaemonicHordesBloodThirster extends Unit {
 }
 
 export class DaemonicHordesBloodThirsterHordeUnit extends DaemonicHordesBloodThirster {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.max = 3
   }
 }
 
 export class DaemonicHordesHeraldOfNurgle extends DaemonicHordesDaemonicOverlord {
-  constructor () {
-    super(100, 1)
+  constructor (detachment) {
+    super(detachment, 100, 1)
 
     this.rules = [
       new InvulnerableSave()
@@ -401,8 +402,8 @@ export class DaemonicHordesHeraldOfNurgle extends DaemonicHordesDaemonicOverlord
 }
 
 export class DaemonicHordesDaemonPrinceOfNurgle extends DaemonicHordesDaemonPrince {
-  constructor () {
-    super(150, 1)
+  constructor (detachment) {
+    super(detachment, 150, 1)
 
     this.rules = [
       new Commander(),
@@ -438,17 +439,18 @@ export class DaemonicHordesDaemonPrinceOfNurgle extends DaemonicHordesDaemonPrin
 }
 
 export class DaemonicHordesNurgleHordeLeader extends MultipleChoiceUnit {
-  constructor () {
+  constructor (detachment) {
     super(
-      new DaemonicHordesHeraldOfNurgle(),
-      new DaemonicHordesDaemonPrinceOfNurgle()
+      detachment,
+      new DaemonicHordesHeraldOfNurgle(detachment),
+      new DaemonicHordesDaemonPrinceOfNurgle(detachment)
     )
   }
 }
 
 export class DaemonicHordesPlagueBearers extends Unit {
-  constructor () {
-    super(25, 6, 12)
+  constructor (detachment) {
+    super(detachment, 25, 6, 12)
 
     this.rules = [
       new InvulnerableSave()
@@ -467,8 +469,8 @@ export class DaemonicHordesPlagueBearers extends Unit {
 }
 
 export class DaemonicHordesNurglings extends Unit {
-  constructor () {
-    super(25, 1, 6)
+  constructor (detachment) {
+    super(detachment, 25, 1, 6)
 
     this.rules = [
       new Scout(),
@@ -488,8 +490,8 @@ export class DaemonicHordesNurglings extends Unit {
 }
 
 export class DaemonicHordesNurglingsFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(25, 3, 9)
+  constructor (detachment) {
+    super(detachment, 25, 3, 9)
 
     this.rules = [
       new Scout(),
@@ -509,8 +511,8 @@ export class DaemonicHordesNurglingsFollowerUnit extends DaemonicHordesFollowerU
 }
 
 export class DaemonicHordesBeastsOfNurgle extends Unit {
-  constructor () {
-    super(50, 1, 6)
+  constructor (detachment) {
+    super(detachment, 50, 1, 6)
 
     this.rules = [
       new Fearless(),
@@ -533,8 +535,8 @@ export class DaemonicHordesBeastsOfNurgle extends Unit {
 }
 
 export class DaemonicHordesBeastsOfNurgleFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(50, 3, 9)
+  constructor (detachment) {
+    super(detachment, 50, 3, 9)
 
     this.rules = [
       new Fearless(),
@@ -557,8 +559,8 @@ export class DaemonicHordesBeastsOfNurgleFollowerUnit extends DaemonicHordesFoll
 }
 
 export class DaemonicHordesPlagueDrones extends Unit {
-  constructor () {
-    super(50, 1, 6)
+  constructor (detachment) {
+    super(detachment, 50, 1, 6)
 
     this.rules = [
       new InvulnerableSave(),
@@ -580,8 +582,8 @@ export class DaemonicHordesPlagueDrones extends Unit {
 }
 
 export class DaemonicHordesPlagueDronesFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(50, 3, 9)
+  constructor (detachment) {
+    super(detachment, 50, 3, 9)
 
     this.rules = [
       new InvulnerableSave(),
@@ -603,8 +605,8 @@ export class DaemonicHordesPlagueDronesFollowerUnit extends DaemonicHordesFollow
 }
 
 export class DaemonicHordesGreatUncleanOne extends Unit {
-  constructor () {
-    super(200, 1)
+  constructor (detachment) {
+    super(detachment, 200, 1)
 
     this.rules = [
       new DamageCapacity(4),
@@ -635,16 +637,16 @@ export class DaemonicHordesGreatUncleanOne extends Unit {
 }
 
 export class DaemonicHordesGreatUncleanOneHordeUnit extends DaemonicHordesGreatUncleanOne {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.max = 3
   }
 }
 
 export class DaemonicHordesHeraldOfSlaanesh extends DaemonicHordesDaemonicOverlord {
-  constructor () {
-    super(100, 1)
+  constructor (detachment) {
+    super(detachment, 100, 1)
 
     this.rules = [
       new InvulnerableSave()
@@ -667,8 +669,8 @@ export class DaemonicHordesHeraldOfSlaanesh extends DaemonicHordesDaemonicOverlo
 }
 
 export class DaemonicHordesDaemonPrinceOfSlaanesh extends DaemonicHordesDaemonPrince {
-  constructor () {
-    super(150, 1)
+  constructor (detachment) {
+    super(detachment, 150, 1)
 
     this.rules = [
       new Commander(),
@@ -704,17 +706,18 @@ export class DaemonicHordesDaemonPrinceOfSlaanesh extends DaemonicHordesDaemonPr
 }
 
 export class DaemonicHordesSlaaneshHordeLeader extends MultipleChoiceUnit {
-  constructor () {
+  constructor (detachment) {
     super(
-      new DaemonicHordesHeraldOfSlaanesh(),
-      new DaemonicHordesDaemonPrinceOfSlaanesh()
+      detachment,
+      new DaemonicHordesHeraldOfSlaanesh(detachment),
+      new DaemonicHordesDaemonPrinceOfSlaanesh(detachment)
     )
   }
 }
 
 export class DaemonicHordesDaemonettes extends Unit {
-  constructor () {
-    super(25, 6, 12)
+  constructor (detachment) {
+    super(detachment, 25, 6, 12)
 
     this.rules = [
       new InvulnerableSave()
@@ -733,8 +736,8 @@ export class DaemonicHordesDaemonettes extends Unit {
 }
 
 export class DaemonicHordesFiendsOfSlaanesh extends Unit {
-  constructor () {
-    super(50, 1, 6)
+  constructor (detachment) {
+    super(detachment, 50, 1, 6)
 
     this.rules = [
       new InvulnerableSave(),
@@ -755,8 +758,8 @@ export class DaemonicHordesFiendsOfSlaanesh extends Unit {
 }
 
 export class DaemonicHordesFiendsOfSlaaneshFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(50, 3, 9)
+  constructor (detachment) {
+    super(detachment, 50, 3, 9)
 
     this.rules = [
       new InvulnerableSave(),
@@ -777,8 +780,8 @@ export class DaemonicHordesFiendsOfSlaaneshFollowerUnit extends DaemonicHordesFo
 }
 
 export class DaemonicHordesSeekersOfSlaanesh extends Unit {
-  constructor () {
-    super(25, 1, 6)
+  constructor (detachment) {
+    super(detachment, 25, 1, 6)
 
     this.rules = [
       new FirstStrike(),
@@ -799,8 +802,8 @@ export class DaemonicHordesSeekersOfSlaanesh extends Unit {
 }
 
 export class DaemonicHordesSeekersOfSlaaneshFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(25, 3, 9)
+  constructor (detachment) {
+    super(detachment, 25, 3, 9)
 
     this.rules = [
       new FirstStrike(),
@@ -821,8 +824,8 @@ export class DaemonicHordesSeekersOfSlaaneshFollowerUnit extends DaemonicHordesF
 }
 
 export class DaemonicHordesSeekerChariot extends Unit {
-  constructor () {
-    super(50, 1, 6)
+  constructor (detachment) {
+    super(detachment, 50, 1, 6)
 
     this.rules = [
       new InvulnerableSave(),
@@ -843,8 +846,8 @@ export class DaemonicHordesSeekerChariot extends Unit {
 }
 
 export class DaemonicHordesSeekerChariotFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(50, 3, 9)
+  constructor (detachment) {
+    super(detachment, 50, 3, 9)
 
     this.rules = [
       new InvulnerableSave(),
@@ -865,8 +868,8 @@ export class DaemonicHordesSeekerChariotFollowerUnit extends DaemonicHordesFollo
 }
 
 export class DaemonicHordesKeeperOfSecrets extends Unit {
-  constructor () {
-    super(200, 1)
+  constructor (detachment) {
+    super(detachment, 200, 1)
 
     this.rules = [
       new DamageCapacity(3),
@@ -894,16 +897,16 @@ export class DaemonicHordesKeeperOfSecrets extends Unit {
 }
 
 export class DaemonicHordesKeeperOfSecretsHordeUnit extends DaemonicHordesKeeperOfSecrets {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.max = 3
   }
 }
 
 export class DaemonicHordesHeraldOfTzeench extends DaemonicHordesDaemonicOverlord {
-  constructor () {
-    super(100, 1)
+  constructor (detachment) {
+    super(detachment, 100, 1)
 
     this.rules = [
       new InvulnerableSave()
@@ -926,8 +929,8 @@ export class DaemonicHordesHeraldOfTzeench extends DaemonicHordesDaemonicOverlor
 }
 
 export class DaemonicHordesDaemonPrinceOfTzeench extends DaemonicHordesDaemonPrince {
-  constructor () {
-    super(150, 1)
+  constructor (detachment) {
+    super(detachment, 150, 1)
 
     this.rules = [
       new Commander(),
@@ -962,17 +965,18 @@ export class DaemonicHordesDaemonPrinceOfTzeench extends DaemonicHordesDaemonPri
 }
 
 export class DaemonicHordesTzeenchHordeLeader extends MultipleChoiceUnit {
-  constructor () {
+  constructor (detachment) {
     super(
-      new DaemonicHordesHeraldOfTzeench(),
-      new DaemonicHordesDaemonPrinceOfTzeench()
+      detachment,
+      new DaemonicHordesHeraldOfTzeench(detachment),
+      new DaemonicHordesDaemonPrinceOfTzeench(detachment)
     )
   }
 }
 
 export class DaemonicHordesHorrorsOfTzeench extends Unit {
-  constructor () {
-    super(25, 6, 12)
+  constructor (detachment) {
+    super(detachment, 25, 6, 12)
 
     this.rules = [
       new InvulnerableSave()
@@ -991,8 +995,8 @@ export class DaemonicHordesHorrorsOfTzeench extends Unit {
 }
 
 export class DaemonicHordesFlamersOfTzeench extends Unit {
-  constructor () {
-    super(25, 1, 6)
+  constructor (detachment) {
+    super(detachment, 25, 1, 6)
 
     this.rules = [
       new InvulnerableSave()
@@ -1011,8 +1015,8 @@ export class DaemonicHordesFlamersOfTzeench extends Unit {
 }
 
 export class DaemonicHordesFlamersOfTzeenchFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(25, 3, 9)
+  constructor (detachment) {
+    super(detachment, 25, 3, 9)
 
     this.rules = [
       new InvulnerableSave()
@@ -1031,8 +1035,8 @@ export class DaemonicHordesFlamersOfTzeenchFollowerUnit extends DaemonicHordesFo
 }
 
 export class DaemonicHordesScreamersOfTzeench extends Unit {
-  constructor () {
-    super(25, 1, 6)
+  constructor (detachment) {
+    super(detachment, 25, 1, 6)
 
     this.rules = [
       new InvulnerableSave(),
@@ -1052,8 +1056,8 @@ export class DaemonicHordesScreamersOfTzeench extends Unit {
 }
 
 export class DaemonicHordesScreamersOfTzeenchFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(25, 3, 9)
+  constructor (detachment) {
+    super(detachment, 25, 3, 9)
 
     this.rules = [
       new InvulnerableSave(),
@@ -1073,8 +1077,8 @@ export class DaemonicHordesScreamersOfTzeenchFollowerUnit extends DaemonicHordes
 }
 
 export class DaemonicHordesBurningChariotOfTzeench extends Unit {
-  constructor () {
-    super(50, 1, 6)
+  constructor (detachment) {
+    super(detachment, 50, 1, 6)
 
     this.rules = [
       new InvulnerableSave(),
@@ -1098,8 +1102,8 @@ export class DaemonicHordesBurningChariotOfTzeench extends Unit {
 }
 
 export class DaemonicHordesBurningChariotOfTzeenchFollowerUnit extends DaemonicHordesFollowerUnit {
-  constructor () {
-    super(50, 3, 9)
+  constructor (detachment) {
+    super(detachment, 50, 3, 9)
 
     this.rules = [
       new InvulnerableSave(),
@@ -1123,8 +1127,8 @@ export class DaemonicHordesBurningChariotOfTzeenchFollowerUnit extends DaemonicH
 }
 
 export class DaemonicHordesLordOfChange extends Unit {
-  constructor () {
-    super(200, 1)
+  constructor (detachment) {
+    super(detachment, 200, 1)
 
     this.rules = [
       new DamageCapacity(3),
@@ -1156,16 +1160,16 @@ export class DaemonicHordesLordOfChange extends Unit {
 }
 
 export class DaemonicHordesLordOfChangeHordeUnit extends DaemonicHordesLordOfChange {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.max = 3
   }
 }
 
 export class DaemonicHordesChaosFury extends Unit {
-  constructor () {
-    super(25, 1, 3)
+  constructor (detachment) {
+    super(detachment, 25, 1, 3)
 
     this.rules = [
       new InvulnerableSave(),
@@ -1187,8 +1191,8 @@ export class DaemonicHordesChaosFury extends Unit {
 }
 
 export class DaemonicHordesChaosUndividedFuryFlightUnit extends DaemonicHordesChaosFury {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.min = 6
     this.max = 8
@@ -1197,8 +1201,8 @@ export class DaemonicHordesChaosUndividedFuryFlightUnit extends DaemonicHordesCh
 }
 
 export class DaemonicHordesChaosSpawn extends Unit {
-  constructor () {
-    super(50, 1, 3)
+  constructor (detachment) {
+    super(detachment, 50, 1, 3)
 
     this.rules = [
       new InvulnerableSave(),
@@ -1218,8 +1222,8 @@ export class DaemonicHordesChaosSpawn extends Unit {
 }
 
 export class DaemonicHordesChaosUndividedSpawnPackUnit extends DaemonicHordesChaosSpawn {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.min = 4
     this.max = 6
@@ -1228,8 +1232,8 @@ export class DaemonicHordesChaosUndividedSpawnPackUnit extends DaemonicHordesCha
 }
 
 export class DaemonicHordesSoulGrinder extends Unit {
-  constructor () {
-    super(75, 1, 3)
+  constructor (detachment) {
+    super(detachment, 75, 1, 3)
 
     this.rules = [
       new InvulnerableSave(),
@@ -1255,8 +1259,8 @@ export class DaemonicHordesSoulGrinder extends Unit {
 }
 
 export class DaemonicHordesChaosUndividedSoulGrinderManipleUnit extends DaemonicHordesSoulGrinder {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.min = 4
     this.max = 6
@@ -1265,8 +1269,8 @@ export class DaemonicHordesChaosUndividedSoulGrinderManipleUnit extends Daemonic
 }
 
 export class DaemonicHordesChaosAltar extends Unit {
-  constructor () {
-    super(100, 1)
+  constructor (detachment) {
+    super(detachment, 100, 1)
 
     this.rules = [
       new DamageCapacity(3),

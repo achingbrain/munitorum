@@ -34,8 +34,8 @@ import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
 export class ImperialFistsPrimarch extends PrimarchUnit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.transportType = 'tactical'
     this.rules = [
@@ -65,8 +65,8 @@ export class ImperialFistsPrimarch extends PrimarchUnit {
 }
 
 export class ImperialFistsBodyguardSquad extends LegionTacticalSquad {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 0
     this.min = 7
@@ -76,8 +76,8 @@ export class ImperialFistsBodyguardSquad extends LegionTacticalSquad {
 }
 
 export class ImperialFistsPhalanxWarderSquad extends Unit {
-  constructor () {
-    super(350, 8)
+  constructor (detachment) {
+    super(detachment, 350, 8)
 
     this.transportType = 'breacher'
     this.rules = [
@@ -98,8 +98,8 @@ export class ImperialFistsPhalanxWarderSquad extends Unit {
 }
 
 export class ImperialFistsTemplarBrethrenSquad extends Unit {
-  constructor () {
-    super(350, 6)
+  constructor (detachment) {
+    super(detachment, 350, 6)
 
     this.transportType = 'tactical'
     this.rules = []
@@ -117,8 +117,8 @@ export class ImperialFistsTemplarBrethrenSquad extends Unit {
 }
 
 export class ImperialFistsFellblade extends LegionFellblade {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 700
     this.min = 3
@@ -127,8 +127,8 @@ export class ImperialFistsFellblade extends LegionFellblade {
 }
 
 export class ImperialFistsCastellumStronghold extends Unit {
-  constructor () {
-    super(250, 1)
+  constructor (detachment) {
+    super(detachment, 250, 1)
 
     this.transportTypes = {
       tactical: 8,
@@ -162,8 +162,8 @@ export class ImperialFistsCastellumStronghold extends Unit {
 }
 
 export class ImperialFistsPrimusRedoubt extends Unit {
-  constructor () {
-    super(300, 1)
+  constructor (detachment) {
+    super(detachment, 300, 1)
 
     this.transportTypes = {
       tactical: 10,

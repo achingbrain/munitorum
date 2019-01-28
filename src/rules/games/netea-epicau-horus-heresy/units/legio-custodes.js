@@ -36,8 +36,8 @@ import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
 class LegioCustodesSentinelGuard extends Unit {
-  constructor () {
-    super(350, 6)
+  constructor (detachment) {
+    super(detachment, 350, 6)
 
     this.transportType = 'sentinel'
     this.rules = [
@@ -57,8 +57,8 @@ class LegioCustodesSentinelGuard extends Unit {
 }
 
 class LegioCustodesCustodianGuard extends Unit {
-  constructor () {
-    super(350, 6)
+  constructor (detachment) {
+    super(detachment, 350, 6)
 
     this.transportType = 'sentinel'
     this.rules = []
@@ -79,17 +79,17 @@ class LegioCustodesCustodianGuard extends Unit {
 }
 
 export class LegioCustodesHykanatoiUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegioCustodesSentinelGuard(),
-      new LegioCustodesCustodianGuard()
+  constructor (detachment) {
+    super(detachment,
+      new LegioCustodesSentinelGuard(detachment),
+      new LegioCustodesCustodianGuard(detachment)
     )
   }
 }
 
 export class LegioCustodesCaptainGeneral extends Unit {
-  constructor () {
-    super(100, 1)
+  constructor (detachment) {
+    super(detachment, 100, 1)
 
     this.rules = [
       new InvulnerableSave(),
@@ -110,8 +110,8 @@ export class LegioCustodesCaptainGeneral extends Unit {
 }
 
 export class LegioCustodesTribune extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new InvulnerableSave(),
@@ -131,8 +131,8 @@ export class LegioCustodesTribune extends Unit {
 }
 
 export class LegioCustodesCoronusGravCarrier extends TransportUnit {
-  constructor () {
-    super(75)
+  constructor (detachment) {
+    super(detachment, 75)
 
     this.transportTypes = {
       sentinel: 2,
@@ -159,8 +159,8 @@ export class LegioCustodesCoronusGravCarrier extends TransportUnit {
 }
 
 export class LegioCustodesAgamatus extends Unit {
-  constructor () {
-    super(300, 6)
+  constructor (detachment) {
+    super(detachment, 300, 6)
 
     this.rules = [
       new Mounted(),
@@ -181,8 +181,8 @@ export class LegioCustodesAgamatus extends Unit {
 }
 
 export class LegioCustodesAquilionTerminator extends Unit {
-  constructor () {
-    super(375, 4)
+  constructor (detachment) {
+    super(detachment, 375, 4)
 
     this.transportType = 'aquilon'
     this.rules = [
@@ -205,8 +205,8 @@ export class LegioCustodesAquilionTerminator extends Unit {
 }
 
 export class LegioCustodesEphoroiCustodes extends Unit {
-  constructor () {
-    super(375, 4)
+  constructor (detachment) {
+    super(detachment, 375, 4)
 
     this.transportType = 'sentinel'
     this.rules = [
@@ -230,8 +230,8 @@ export class LegioCustodesEphoroiCustodes extends Unit {
 }
 
 export class LegioCustodesSistersOfSilence extends Unit {
-  constructor () {
-    super(250, 4)
+  constructor (detachment) {
+    super(detachment, 250, 4)
 
     this.transportType = 'sentinel'
     this.rules = [
@@ -251,8 +251,8 @@ export class LegioCustodesSistersOfSilence extends Unit {
 }
 
 class LegioCustodesContemptorAchillusDreadnought extends Unit {
-  constructor () {
-    super(87.5, 1)
+  constructor (detachment) {
+    super(detachment, 87.5, 1)
 
     this.transportType = 'dreadnought'
     this.rules = [
@@ -273,8 +273,8 @@ class LegioCustodesContemptorAchillusDreadnought extends Unit {
 }
 
 class LegioCustodesContemptorGalatusDreadnought extends Unit {
-  constructor () {
-    super(87.5, 1)
+  constructor (detachment) {
+    super(detachment, 87.5, 1)
 
     this.transportType = 'dreadnought'
     this.rules = [
@@ -299,8 +299,8 @@ class LegioCustodesContemptorGalatusDreadnought extends Unit {
 }
 
 class LegioCustodesTelemonHeavyDreadnought extends Unit {
-  constructor () {
-    super(87.5, 1)
+  constructor (detachment) {
+    super(detachment, 87.5, 1)
 
     this.transportType = 'dreadnought'
     this.rules = [
@@ -329,18 +329,18 @@ class LegioCustodesTelemonHeavyDreadnought extends Unit {
 }
 
 export class LegioCustodesDreadnoughtUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegioCustodesContemptorAchillusDreadnought(),
-      new LegioCustodesContemptorGalatusDreadnought(),
-      new LegioCustodesTelemonHeavyDreadnought()
+  constructor (detachment) {
+    super(detachment,
+      new LegioCustodesContemptorAchillusDreadnought(detachment),
+      new LegioCustodesContemptorGalatusDreadnought(detachment),
+      new LegioCustodesTelemonHeavyDreadnought(detachment)
     )
   }
 }
 
 export class LegioCustodesPallasGravAttackVehicle extends Unit {
-  constructor () {
-    super(250, 3)
+  constructor (detachment) {
+    super(detachment, 250, 3)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -360,8 +360,8 @@ export class LegioCustodesPallasGravAttackVehicle extends Unit {
 }
 
 export class LegioCustodesCaladiusGravTank extends Unit {
-  constructor () {
-    super(325, 3)
+  constructor (detachment) {
+    super(detachment, 325, 3)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -382,8 +382,8 @@ export class LegioCustodesCaladiusGravTank extends Unit {
 }
 
 export class LegioCustodesOrionAssaultDropship extends Unit {
-  constructor () {
-    super(300, 1, 2)
+  constructor (detachment) {
+    super(detachment, 300, 1, 2)
 
     this.transportTypes = {
       sentinel: 6,

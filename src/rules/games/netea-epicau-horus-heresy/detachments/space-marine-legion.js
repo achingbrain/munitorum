@@ -67,50 +67,63 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class LegionArtilleryBattery extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionArtilleryUnit()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionArtilleryUnit(this)
+    )
+    this.setUpgrades(
       new Hyperios()
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 
 export class LegionAssaultDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionAssaultSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionAssaultSquad(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Praetor(),
         new Centurion()
       )
-    ])
+    )
   }
 }
 
 export class LegionAssaultSupportDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionAssaultSupportSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionAssaultSupportSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       ),
       new CommanderOption(
         new Centurion()
       )
-    ])
+    )
   }
 }
 
 export class LegionBreacherDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionBreacherSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionBreacherSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -121,15 +134,18 @@ export class LegionBreacherDetachment extends SpaceMarineLegionDetachment {
         new Praetor(),
         new Centurion()
       )
-    ])
+    )
   }
 }
 
 export class LegionBreacherSupportDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionBreacherSupportSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionBreacherSupportSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -139,7 +155,7 @@ export class LegionBreacherSupportDetachment extends SpaceMarineLegionDetachment
       new CommanderOption(
         new Centurion()
       )
-    ])
+    )
   }
 }
 
@@ -156,32 +172,39 @@ class ContemptorDreadnoughtUpgrade extends Upgrade {
 }
 
 export class LegionContemptorDreadnoughtTalon extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionContemptorDreadnoughtTalonUnit(),
-      new LegionContemptorDreadnoughtTalonUnit(),
-      new LegionContemptorDreadnought(),
-      new LegionContemptorDreadnought()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionContemptorDreadnoughtTalonUnit(this),
+      new LegionContemptorDreadnoughtTalonUnit(this),
+      new LegionContemptorDreadnought(this),
+      new LegionContemptorDreadnought(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       ),
       new ContemptorDreadnoughtUpgrade()
-    ])
+    )
   }
 }
 
 export class LegionDestroyerDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionDestroyerSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionDestroyerSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 4000)
-    ])
+    )
   }
 }
 
@@ -198,52 +221,60 @@ class DreadnoughtUpgrade extends Upgrade {
 }
 
 export class LegionDreadnoughtTalon extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionDreadnought(),
-      new LegionDreadnought(),
-      new LegionDreadnought(),
-      new LegionDreadnought()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionDreadnought(this),
+      new LegionDreadnought(this),
+      new LegionDreadnought(this),
+      new LegionDreadnought(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       ),
       new DreadnoughtUpgrade()
-    ])
-
-    this.units[0].mandatory = true
+    )
   }
 }
 
 export class LegionGunshipWing extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionFireRaptorGunship()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionFireRaptorGunship(this)
+    )
   }
 }
 
 export class LegionInterceptorAttackWing extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionXiphonInterceptor()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionXiphonInterceptor(this)
+    )
   }
 }
 
 export class LegionJavelinAttackSpeederSquadron extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionJavelinAttackSpeeder(),
-      new LegionJavelinAttackSpeeder(),
-      new LegionJavelinAttackSpeeder(),
-      new LegionJavelinAttackSpeeder(),
-      new LegionJavelinAttackSpeeder()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionJavelinAttackSpeeder(this),
+      new LegionJavelinAttackSpeeder(this),
+      new LegionJavelinAttackSpeeder(this),
+      new LegionJavelinAttackSpeeder(this),
+      new LegionJavelinAttackSpeeder(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       )
-    ])
+    )
   }
 }
 
@@ -260,19 +291,22 @@ class LegionLandRaiderPhobosSquadronUpgrade extends Upgrade {
 }
 
 export class LegionLandRaiderPhobosSquadron extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionLandRaiderPhobosSquadronUnit(),
-      new LegionLandRaiderPhobosSquadronUnit(),
-      new LegionLandRaiderPhobos(),
-      new LegionLandRaiderPhobos()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionLandRaiderPhobosSquadronUnit(this),
+      new LegionLandRaiderPhobosSquadronUnit(this),
+      new LegionLandRaiderPhobos(this),
+      new LegionLandRaiderPhobos(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       ),
       new Hyperios(),
       new LegionLandRaiderPhobosSquadronUpgrade()
-    ])
+    )
   }
 }
 
@@ -289,61 +323,73 @@ class LegionLandRaiderProteusSquadronUpgrade extends Upgrade {
 }
 
 export class LegionLandRaiderProteusSquadron extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionLandRaiderProteusSquadronUnit(),
-      new LegionLandRaiderProteusSquadronUnit(),
-      new LegionLandRaiderProteus(),
-      new LegionLandRaiderProteus()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionLandRaiderProteusSquadronUnit(this),
+      new LegionLandRaiderProteusSquadronUnit(this),
+      new LegionLandRaiderProteus(this),
+      new LegionLandRaiderProteus(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       ),
       new Hyperios(),
       new LegionLandRaiderProteusSquadronUpgrade()
-    ])
+    )
   }
 }
 
 export class LegionLandSpeederSquadron extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionLandSpeeder(),
-      new LegionLandSpeeder(),
-      new LegionLandSpeeder(),
-      new LegionLandSpeeder(),
-      new LegionLandSpeeder()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionLandSpeeder(this),
+      new LegionLandSpeeder(this),
+      new LegionLandSpeeder(this),
+      new LegionLandSpeeder(this),
+      new LegionLandSpeeder(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       )
-    ])
+    )
   }
 }
 
 export class LegionLeviathanDreadnoughtTalon extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionLeviathanSupportDreadnought(),
-      new LegionLeviathanSupportDreadnought(),
-      new LegionLeviathanSupportDreadnought()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionLeviathanSupportDreadnought(this),
+      new LegionLeviathanSupportDreadnought(this),
+      new LegionLeviathanSupportDreadnought(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       )
-    ])
+    )
   }
 }
 
 export class LegionOutriderSquadron extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionOutriderUnit()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionOutriderUnit(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       )
-    ])
+    )
   }
 }
 
@@ -360,44 +406,53 @@ class PredatorUpgrade extends Upgrade {
 }
 
 export class LegionPredatorStrikeSquadron extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionPredatorStrikeSquadronUnit(),
-      new LegionPredatorStrikeSquadronUnit(),
-      new LegionPredator(),
-      new LegionPredator()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionPredatorStrikeSquadronUnit(this),
+      new LegionPredatorStrikeSquadronUnit(this),
+      new LegionPredator(this),
+      new LegionPredator(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       ),
       new Hyperios(),
       new PredatorUpgrade()
-    ])
+    )
   }
 }
 
 export class LegionRapierWeaponsBattery extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionRapierSupport(),
-      new LegionRapierSupport(),
-      new LegionRapierSupport(),
-      new LegionRapierSupport(),
-      new LegionRapierSupport(),
-      new LegionRapierSupport()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionRapierSupport(this),
+      new LegionRapierSupport(this),
+      new LegionRapierSupport(this),
+      new LegionRapierSupport(this),
+      new LegionRapierSupport(this),
+      new LegionRapierSupport(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       )
-    ])
+    )
   }
 }
 
 export class LegionReconnaissanceDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionReconnaissanceSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionReconnaissanceSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
@@ -406,7 +461,7 @@ export class LegionReconnaissanceDetachment extends SpaceMarineLegionDetachment 
       new CommanderOption(
         new Centurion()
       )
-    ])
+    )
   }
 }
 
@@ -423,87 +478,108 @@ class LegionSicaranBattleTankSquadronUnitUpgrade extends Upgrade {
 }
 
 export class LegionSicaranBattleTankSquadron extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionSicaranBattleTankSquadronUnit(),
-      new LegionSicaranBattleTankSquadronUnit(),
-      new LegionSicaranBattleTankSquadronUnit(),
-      new LegionSicaranBattleTankSquadronUnit()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionSicaranBattleTankSquadronUnit(this),
+      new LegionSicaranBattleTankSquadronUnit(this),
+      new LegionSicaranBattleTankSquadronUnit(this),
+      new LegionSicaranBattleTankSquadronUnit(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       ),
       new Hyperios(),
       new LegionSicaranBattleTankSquadronUnitUpgrade()
-    ])
+    )
   }
 }
 
 export class LegionSkyHunterAttackSquadron extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionScimitarJetbike()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionScimitarJetbike(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       )
-    ])
+    )
   }
 }
 
 export class LegionSpacecraft extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionSpacecraftUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionSpacecraftUnit(this)
+    )
   }
 }
 
 export class LegionStormEagleAttackWing extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionStormEagleAttackShip()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionStormEagleAttackShip(this)
+    )
   }
 }
 
 export class LegionStormbirdWing extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionStormbird()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionStormbird(this)
+    )
   }
 }
 
 export class LegionSuperHeavyTankBattery extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionSuperHeavyTankBatteryUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionSuperHeavyTankBatteryUnit(this)
+    )
   }
 }
 
 export class LegionSuperHeavyTankDestroyer extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionFalchion()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionFalchion(this)
+    )
   }
 }
 
 export class LegionSuperHeavyTank extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionSuperHeavyTankUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionSuperHeavyTankUnit(this)
+    )
   }
 }
 
 export class LegionTacticalDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionTacticalDetachmentUnit()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionTacticalDetachmentUnit(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
@@ -522,17 +598,21 @@ export class LegionTacticalDetachment extends SpaceMarineLegionDetachment {
         LegionHeavySupportSquad
       ),
       new RapierBattery()
-    ], [], [
+    )
+    this.setConstraints(
       new PlusTransports()
-    ])
+    )
   }
 }
 
 export class LegionTerminatorDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionTerminatorSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionTerminatorSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
@@ -547,38 +627,45 @@ export class LegionTerminatorDetachment extends SpaceMarineLegionDetachment {
       new Hyperios(),
       new Dreadnought(),
       new Tank()
-    ])
+    )
   }
 }
 
 export class LegionThunderhawkGunshipWing extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionThunderhawkGunship()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionThunderhawkGunship(this)
+    )
   }
 }
 
 export class LegionThunderhawkTransporterWing extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionThunderhawkTransporter()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionThunderhawkTransporter(this)
+    )
   }
 }
 
 export class LegionVindicatorSquadron extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionVindicatorSquadronUnit(),
-      new LegionVindicatorSquadronUnit(),
-      new LegionVindicatorSquadronVindicator()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionVindicatorSquadronUnit(this),
+      new LegionVindicatorSquadronUnit(this),
+      new LegionVindicatorSquadronVindicator(this)
+    )
+    this.setUpgrades(
       new CommanderOption(
         new Centurion()
       ),
       new Hyperios()
-    ])
+    )
 
     this.units[2].min = 2
     this.units[2].max = 4

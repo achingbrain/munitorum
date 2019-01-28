@@ -7,17 +7,35 @@ import {
 } from '../../../../utils/with-type'
 
 export default class Detachment {
-  constructor (units = [], upgrades = [], constraints = [], rules = []) {
+  constructor (list) {
     this.id = shortid.generate()
+    this.list = list
+    this.units = []
+    this.upgrades = []
+    this.constraints = []
+    this.rules = []
+  }
 
-    this.units = units
+  setMandatoryUnits (...units) {
+    this.units = this.units.concat(
+      units.map(unit => {
+        unit.mandatory = true
+
+        return unit
+      })
+    )
+  }
+
+  setUpgrades (...upgrades) {
     this.upgrades = upgrades
-    this.constraints = constraints
-    this.rules = rules
+  }
 
-    this.units.forEach(unit => {
-      unit.mandatory = true
-    })
+  setConstraints (...constraints) {
+    this.constraints = constraints
+  }
+
+  setRules (...rules) {
+    this.rules = rules
   }
 
   getName () {
@@ -25,8 +43,7 @@ export default class Detachment {
   }
 
   addUnit (UnitType) {
-    const unit = new UnitType()
-    unit.detachment = this
+    const unit = new UnitType(this)
 
     this.units = this.units.concat(unit)
   }
@@ -61,16 +78,15 @@ export default class Detachment {
     }
   }
 
-  static fromJSON (json) {
+  static fromJSON (json, list) {
     try {
       const DetachmentType = find(json.type)
 
-      const detachment = new DetachmentType()
+      const detachment = new DetachmentType(list)
       detachment.id = json.id
       detachment.name = json.name
       detachment.units = json.units.map(json => {
-        const unit = Unit.fromJSON(json)
-        unit.detachment = detachment
+        const unit = Unit.fromJSON(json, detachment)
 
         if (unit.deserialized) {
           unit.deserialized(json)
@@ -81,14 +97,14 @@ export default class Detachment {
 
       return detachment
     } catch (error) {
-      return new InvalidDetachment(json, error)
+      return new InvalidDetachment(list, json, error)
     }
   }
 }
 
 export class InvalidDetachment extends Detachment {
-  constructor (json, error) {
-    super()
+  constructor (list, json, error) {
+    super(list)
 
     Object.assign(this, json)
 

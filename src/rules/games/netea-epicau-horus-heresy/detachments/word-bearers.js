@@ -34,11 +34,14 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class WordBearersPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new WordBearersPrimarch(),
-      new WordBearersBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new WordBearersPrimarch(this),
+      new WordBearersBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
@@ -46,19 +49,24 @@ export class WordBearersPrimarchDetachment extends SpaceMarineLegionDetachment {
       ),
       new Tank(),
       new Hyperios()
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ], [
+    )
+    this.setRules(
       new PlusTransports()
-    ])
+    )
   }
 }
 
 export class WordBearersGalVorbakDarkBrethrenDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new WordBearersGalVorbakDarkBrethrenSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new WordBearersGalVorbakDarkBrethrenSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
@@ -67,19 +75,24 @@ export class WordBearersGalVorbakDarkBrethrenDetachment extends SpaceMarineLegio
       new CommanderOption(
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 1000)
-    ], [
+    )
+    this.setRules(
       new PlusTransports()
-    ])
+    )
   }
 }
 
 export class WordBearersAshenCircleDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new WordBearersIncendiarySquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new WordBearersIncendiarySquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultClaw()
@@ -89,17 +102,21 @@ export class WordBearersAshenCircleDetachment extends SpaceMarineLegionDetachmen
         new Centurion()
       ),
       new Dreadnought()
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 
 export class WordBearersDestroyerDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionDestroyerSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionDestroyerSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultClaw()
@@ -107,9 +124,10 @@ export class WordBearersDestroyerDetachment extends SpaceMarineLegionDetachment 
       new CommanderOption(
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ])
+    )
   }
 }
 
@@ -126,18 +144,21 @@ class WordBearersMharaGalTainedDreadnoughtUpgrade extends Upgrade {
 }
 
 export class WordBearersMharaGalTaintedDreadnoughtTalon extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new WordBearersMalGharaTaintedContemptorDreadnoughtTalonUnit(),
-      new WordBearersMalGharaTaintedContemptorDreadnoughtTalonUnit(),
-      new WordBearersMalGharaTaintedContemptorDreadnought(),
-      new WordBearersMalGharaTaintedContemptorDreadnought()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new WordBearersMalGharaTaintedContemptorDreadnoughtTalonUnit(this),
+      new WordBearersMalGharaTaintedContemptorDreadnoughtTalonUnit(this),
+      new WordBearersMalGharaTaintedContemptorDreadnought(this),
+      new WordBearersMalGharaTaintedContemptorDreadnought(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault()
       ),
       new WordBearersMharaGalTainedDreadnoughtUpgrade()
-    ])
+    )
   }
 }
 

@@ -38,11 +38,14 @@ import {
 import withType from '../../../../utils/with-type'
 
 export class ImperialMilitiaCommandSquad extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaForceCommander(),
-      new ImperialMilitiaAuxiliaries()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaForceCommander(this),
+      new ImperialMilitiaAuxiliaries(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new ImperialMilitiaHeavyTransport(),
         new ImperialMilitiaTransport()
@@ -55,18 +58,22 @@ export class ImperialMilitiaCommandSquad extends ImperialMilitiaDetachment {
       new MilitiaSupportAuxiliaries(),
       new MilitiaReconAuxiliaries(),
       new MilitiaOgrynBruteSquad()
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class ImperialMilitiaInfantrySquad extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaPlatoonCommander(),
-      new ImperialMilitiaAuxiliaries()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaPlatoonCommander(this),
+      new ImperialMilitiaAuxiliaries(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new ImperialMilitiaHeavyTransport()
       ),
@@ -78,43 +85,52 @@ export class ImperialMilitiaInfantrySquad extends ImperialMilitiaDetachment {
       new MilitiaSupportAuxiliaries(),
       new MilitiaReconAuxiliaries(),
       new MilitiaOgrynBruteSquad()
-    ])
+    )
   }
 }
 
 export class ImperialMilitiaLevySquad extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaLevyAuxiliaries()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaLevyAuxiliaries(this)
+    )
+    this.setUpgrades(
       new MultipleChoiceOption(
         ImperialMilitiaDisciplineMaster,
         ImperialMilitiaRoguePsyker
       ),
       new MilitiaOgrynBruteSquad()
-    ])
+    )
   }
 }
 
 export class ImperialMilitiaMotorcycleSquad extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaMotorcycleCommander(),
-      new ImperialMilitiaMotorcycle()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaMotorcycleCommander(this),
+      new ImperialMilitiaMotorcycle(this)
+    )
+    this.setUpgrades(
       new MultipleChoiceOption(
         ImperialMilitiaDisciplineMaster,
         ImperialMilitiaRoguePsyker
       )
-    ])
+    )
   }
 }
 
 export class ImperialMilitiaGrenedierSquad extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaGrenedier()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaGrenedier(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new ImperialMilitiaHeavyTransport(),
         new ImperialMilitiaTransport()
@@ -123,110 +139,134 @@ export class ImperialMilitiaGrenedierSquad extends ImperialMilitiaDetachment {
         ImperialMilitiaDisciplineMaster,
         ImperialMilitiaRoguePsyker
       )
-    ])
+    )
   }
 }
 
 export class ImperialMilitiaOrbitalSupport extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaOrbitalSupportUnit()
-    ], [], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaOrbitalSupportUnit(this)
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class ImperialMilitiaCavalrySquad extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaCavalryAuxiliary()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaCavalryAuxiliary(this)
+    )
+    this.setUpgrades(
       new MultipleChoiceOption(
         ImperialMilitiaDisciplineMaster,
         ImperialMilitiaRoguePsyker
       )
-    ])
+    )
   }
 }
 
 export class ImperialMilitiaHeavyOrdnanceBattery extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaHeavyOrdnanceBatteryUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaHeavyOrdnanceBatteryUnit(this)
+    )
   }
 }
 
 export class ImperialMilitiaMalcadorHeavyTankSquadron extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaMalcadorUnit(),
-      new ImperialMilitiaMalcadorUnit(),
-      new ImperialMilitiaMalcadorUnit(),
-      new ImperialMilitiaMalcadorUnit(),
-      new ImperialMilitiaMalcadorUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaMalcadorUnit(this),
+      new ImperialMilitiaMalcadorUnit(this),
+      new ImperialMilitiaMalcadorUnit(this),
+      new ImperialMilitiaMalcadorUnit(this),
+      new ImperialMilitiaMalcadorUnit(this)
+    )
   }
 }
 
 export class ImperialMilitiaRapierBattery extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaRapier()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaRapier(this)
+    )
   }
 }
 
 export class ImperialMilitiaSentinelScoutSquadron extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaSentinel()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaSentinel(this)
+    )
   }
 }
 
 export class ImperialMilitiaSuperHeavyTank extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaSuperHeavyTankUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaSuperHeavyTankUnit(this)
+    )
   }
 }
 
 export class ImperialMilitiaBattleTankSquadron extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaBattleTankUnitWithVanquisher(),
-      new ImperialMilitiaBattleTankUnit(),
-      new ImperialMilitiaBattleTankUnit(),
-      new ImperialMilitiaBattleTankUnit(),
-      new ImperialMilitiaBattleTankUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaBattleTankUnitWithVanquisher(this),
+      new ImperialMilitiaBattleTankUnit(this),
+      new ImperialMilitiaBattleTankUnit(this),
+      new ImperialMilitiaBattleTankUnit(this),
+      new ImperialMilitiaBattleTankUnit(this)
+    )
   }
 }
 
 export class ImperialMilitiaSuperHeavyTankPlatoon extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaSuperHeavyTankPlatoonUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaSuperHeavyTankPlatoonUnit(this)
+    )
   }
 }
 
 export class ImperialMilitiaAvengerWing extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaAvengerStrikeFighter()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaAvengerStrikeFighter(this)
+    )
   }
 }
 
 export class ImperialMilitiaPrimarisWing extends ImperialMilitiaDetachment {
-  constructor () {
-    super([
-      new ImperialMilitiaPrimarisStrikeFighter()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new ImperialMilitiaPrimarisStrikeFighter(this)
+    )
   }
 }
 

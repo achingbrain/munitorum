@@ -31,11 +31,14 @@ import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../../../../utils/with-type'
 
 export class NightLordsPrimarchDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new NightLordsPrimarch(),
-      new NightLordsBodyguardSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new NightLordsPrimarch(this),
+      new NightLordsBodyguardSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
@@ -44,19 +47,24 @@ export class NightLordsPrimarchDetachment extends SpaceMarineLegionDetachment {
       ),
       new Hyperios(),
       new Tank()
-    ], [
+    )
+    this.setConstraints(
       new Unique()
-    ], [
+    )
+    this.setRules(
       new PlusTransports()
-    ])
+    )
   }
 }
 
 export class NightLordsTerrorDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new NightLordsTerrorSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new NightLordsTerrorSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
@@ -66,29 +74,37 @@ export class NightLordsTerrorDetachment extends SpaceMarineLegionDetachment {
         new Praetor(),
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    ], [
+    )
+    this.setRules(
       new PlusTransports()
-    ])
+    )
   }
 }
 
 export class NightLordsNightRaptorDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new NightLordsNightRaptorSquad()
-    ], [], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new NightLordsNightRaptorSquad(this)
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 1000)
-    ])
+    )
   }
 }
 
 export class NightLordsDestroyerDetachment extends SpaceMarineLegionDetachment {
-  constructor () {
-    super([
-      new LegionDestroyerSquad()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionDestroyerSquad(this)
+    )
+    this.setUpgrades(
       new TransportOption(
         new DropAssault(),
         new AssaultClaw()
@@ -96,9 +112,10 @@ export class NightLordsDestroyerDetachment extends SpaceMarineLegionDetachment {
       new CommanderOption(
         new Centurion()
       )
-    ], [
+    )
+    this.setConstraints(
       new LimitedPerPoints(1, 1000)
-    ])
+    )
   }
 }
 

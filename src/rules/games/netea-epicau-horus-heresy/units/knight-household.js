@@ -56,8 +56,8 @@ class KnightHouseholdQuestorisKnightUnit extends Unit {
 }
 
 class KnightHouseholdQuestorisKnightPaladin extends KnightHouseholdQuestorisKnightUnit {
-  constructor () {
-    super(110, 1)
+  constructor (detachment) {
+    super(detachment, 110, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -81,8 +81,8 @@ class KnightHouseholdQuestorisKnightPaladin extends KnightHouseholdQuestorisKnig
 }
 
 class KnightHouseholdQuestorisKnightErrant extends KnightHouseholdQuestorisKnightUnit {
-  constructor () {
-    super(110, 1)
+  constructor (detachment) {
+    super(detachment, 110, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -109,8 +109,8 @@ class KnightHouseholdQuestorisKnightErrant extends KnightHouseholdQuestorisKnigh
 }
 
 class KnightHouseholdQuestorisKnightCrusader extends KnightHouseholdQuestorisKnightUnit {
-  constructor () {
-    super(125, 1)
+  constructor (detachment) {
+    super(detachment, 125, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -135,8 +135,8 @@ class KnightHouseholdQuestorisKnightCrusader extends KnightHouseholdQuestorisKni
 }
 
 class KnightHouseholdQuestorisKnightGallant extends KnightHouseholdQuestorisKnightUnit {
-  constructor () {
-    super(125, 1)
+  constructor (detachment) {
+    super(detachment, 125, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -161,8 +161,8 @@ class KnightHouseholdQuestorisKnightGallant extends KnightHouseholdQuestorisKnig
 }
 
 class KnightHouseholdQuestorisKnightMagera extends KnightHouseholdQuestorisKnightUnit {
-  constructor () {
-    super(125, 1)
+  constructor (detachment) {
+    super(detachment, 125, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -191,8 +191,8 @@ class KnightHouseholdQuestorisKnightMagera extends KnightHouseholdQuestorisKnigh
 }
 
 class KnightHouseholdQuestorisKnightStyrix extends KnightHouseholdQuestorisKnightUnit {
-  constructor () {
-    super(125, 1)
+  constructor (detachment) {
+    super(detachment, 125, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -221,8 +221,8 @@ class KnightHouseholdQuestorisKnightStyrix extends KnightHouseholdQuestorisKnigh
 }
 
 class KnightHouseholdQuestorisKnightWarden extends KnightHouseholdQuestorisKnightUnit {
-  constructor () {
-    super(125, 1)
+  constructor (detachment) {
+    super(detachment, 125, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -247,22 +247,22 @@ class KnightHouseholdQuestorisKnightWarden extends KnightHouseholdQuestorisKnigh
 }
 
 export class KnightHouseholdQuestorisKnight extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new KnightHouseholdQuestorisKnightPaladin(),
-      new KnightHouseholdQuestorisKnightErrant(),
-      new KnightHouseholdQuestorisKnightCrusader(),
-      new KnightHouseholdQuestorisKnightGallant(),
-      new KnightHouseholdQuestorisKnightMagera(),
-      new KnightHouseholdQuestorisKnightStyrix(),
-      new KnightHouseholdQuestorisKnightWarden()
+  constructor (detachment) {
+    super(detachment,
+      new KnightHouseholdQuestorisKnightPaladin(detachment),
+      new KnightHouseholdQuestorisKnightErrant(detachment),
+      new KnightHouseholdQuestorisKnightCrusader(detachment),
+      new KnightHouseholdQuestorisKnightGallant(detachment),
+      new KnightHouseholdQuestorisKnightMagera(detachment),
+      new KnightHouseholdQuestorisKnightStyrix(detachment),
+      new KnightHouseholdQuestorisKnightWarden(detachment)
     )
   }
 }
 
 class KnightHouseholdCerastusKnightLancer extends Unit {
-  constructor () {
-    super(105, 1)
+  constructor (detachment) {
+    super(detachment, 105, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -286,8 +286,8 @@ class KnightHouseholdCerastusKnightLancer extends Unit {
 }
 
 class KnightHouseholdCerastusKnightCastigator extends Unit {
-  constructor () {
-    super(105, 1)
+  constructor (detachment) {
+    super(detachment, 105, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -311,8 +311,8 @@ class KnightHouseholdCerastusKnightCastigator extends Unit {
 }
 
 class KnightHouseholdCerastusKnightAtropos extends Unit {
-  constructor () {
-    super(150, 1)
+  constructor (detachment) {
+    super(detachment, 150, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -339,8 +339,8 @@ class KnightHouseholdCerastusKnightAtropos extends Unit {
 }
 
 class KnightHouseholdCerastusKnightAcheron extends Unit {
-  constructor () {
-    super(150, 1)
+  constructor (detachment) {
+    super(detachment, 150, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -368,19 +368,19 @@ class KnightHouseholdCerastusKnightAcheron extends Unit {
 }
 
 export class KnightHouseholdCerastusKnight extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new KnightHouseholdCerastusKnightLancer(),
-      new KnightHouseholdCerastusKnightCastigator(),
-      new KnightHouseholdCerastusKnightAtropos(),
-      new KnightHouseholdCerastusKnightAcheron()
+  constructor (detachment) {
+    super(detachment,
+      new KnightHouseholdCerastusKnightLancer(detachment),
+      new KnightHouseholdCerastusKnightCastigator(detachment),
+      new KnightHouseholdCerastusKnightAtropos(detachment),
+      new KnightHouseholdCerastusKnightAcheron(detachment)
     )
   }
 }
 
 export class KnightHouseholdLordScion extends Unit {
-  constructor () {
-    super(25, 1)
+  constructor (detachment) {
+    super(detachment, 25, 1)
 
     this.rules = [
       new Leader()
@@ -399,8 +399,8 @@ export class KnightHouseholdLordScion extends Unit {
 }
 
 export class KnightHouseholdPreceptor extends Unit {
-  constructor () {
-    super(25, 1)
+  constructor (detachment) {
+    super(detachment, 25, 1)
 
     this.rules = [
       new Commander(),
@@ -418,8 +418,8 @@ export class KnightHouseholdPreceptor extends Unit {
 }
 
 export class KnightHouseholdSeneschal extends Unit {
-  constructor () {
-    super(75, 1)
+  constructor (detachment) {
+    super(detachment, 75, 1)
 
     this.rules = [
       new InvulnerableSave(),
@@ -440,8 +440,8 @@ export class KnightHouseholdSeneschal extends Unit {
 }
 
 export class KnightHouseholdAcastusKnightPorphyrion extends Unit {
-  constructor () {
-    super(250, 1, 2)
+  constructor (detachment) {
+    super(detachment, 250, 1, 2)
 
     this.rules = [
       new DamageCapacity(3),
@@ -467,8 +467,8 @@ export class KnightHouseholdAcastusKnightPorphyrion extends Unit {
 }
 
 export class KnightHouseholdAspirants extends Unit {
-  constructor () {
-    super(-50)
+  constructor (detachment) {
+    super(detachment, -50)
 
     this.rules = [
       new Notes(null, 'knight-household-aspirants-notes')
@@ -485,8 +485,8 @@ export class KnightHouseholdAspirants extends Unit {
 }
 
 export class KnightHouseholdScionsOfUhlan extends Unit {
-  constructor () {
-    super(0)
+  constructor (detachment) {
+    super(detachment, 0)
 
     this.rules = []
     this.stats = {

@@ -37,7 +37,7 @@ export default class AlphaLegion extends SpaceMarineLegion {
     const rating = super.getStrategyRating(list)
 
     if (list.allies.find(item =>
-      item.type === DaemonicHordes.type
+      item.army.type === DaemonicHordes.type
     )) {
       return rating - 1
     }

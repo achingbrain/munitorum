@@ -24,8 +24,8 @@ import PrimarchUnit from './primarch-unit'
 import withType from '../../../../utils/with-type'
 
 export class BloodAngelsPrimarch extends PrimarchUnit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.transportType = 'assault'
     this.rules = [
@@ -53,8 +53,8 @@ export class BloodAngelsPrimarch extends PrimarchUnit {
 }
 
 export class BloodAngelsBodyguardSquad extends LegionAssaultSquad {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 0
     this.min = 5

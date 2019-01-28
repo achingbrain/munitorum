@@ -32,169 +32,212 @@ import {
 import withType from '../../../../utils/with-type'
 
 export class MechanicumTaghmataAdsecularisCovenent extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataTechPriest(),
-      new MechanicumTaghmataTechThrall()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataTechPriest(this),
+      new MechanicumTaghmataTechThrall(this)
+    )
+    this.setUpgrades(
       new Krios(),
       new Magos(),
       new Scyllax(),
       new MechanicumTransport()
-    ])
+    )
   }
 }
 
 export class MechanicumTaghmataThallaxCohort extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataThallax()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataThallax(this)
+    )
+    this.setUpgrades(
       new Krios(),
       new Magos(),
       new Scyllax(),
       new MechanicumTransport(),
       new TechPriest()
-    ])
+    )
   }
 }
 
 export class MechanicumTaghmataUrsaraxCohort extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataUrsarax()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataUrsarax(this)
+    )
+    this.setUpgrades(
       new MechanicumTransport(),
       new TechPriest()
-    ])
+    )
   }
 }
 
 export class MechanicumTaghmataVoraxManiple extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataVorax()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataVorax(this)
+    )
+    this.setUpgrades(
       new TechPriest()
-    ])
+    )
   }
 }
 
 export class MechanicumTaghmataCastellaxManiple extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataTechPriest(),
-      new MechanicumTaghmataCastellax()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataTechPriest(this),
+      new MechanicumTaghmataCastellax(this)
+    )
+    this.setUpgrades(
       new Magos(),
       new Scyllax(),
       new Thanatar()
-    ])
+    )
   }
 }
 
 export class MechanicumTaghmataThanatarManiple extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataThanatar()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataThanatar(this)
+    )
+    this.setUpgrades(
       new Magos(),
       new Scyllax(),
       new TechPriest()
-    ])
+    )
   }
 }
 
 export class MechanicumTaghmataKriosSquadron extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataKrios()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataKrios(this)
+    )
+    this.setUpgrades(
       new Krios()
-    ])
+    )
   }
 }
 
 export class MechanicumTaghmataKaracnosSquadron extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataKaracnos()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataKaracnos(this)
+    )
+    this.setUpgrades(
       new Krios()
-    ])
+    )
   }
 }
 
 export class MechanicumTaghmataMyrmidonSect extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataMyrmidonUnit()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataMyrmidonUnit(this)
+    )
+    this.setUpgrades(
       new Krios(),
       new Magos(),
       new Scyllax(),
       new MechanicumTransport()
-    ])
+    )
   }
 }
 
 export class MechanicumTaghmataTarantulaBattery extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataTarantulaUnit()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataTarantulaUnit(this)
+    )
   }
 }
 
 export class MechanicumTaghmataMinotaurBattery extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataMinotaur()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataMinotaur(this)
+    )
   }
 }
 
 export class MechanicumTaghmataOrdinatusMinorisTormenta extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataOrdinatusMinoris()
-    ], [], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataOrdinatusMinoris(this)
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class MechanicumTaghmataAvengerWing extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataAvengerStrikeFighter()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataAvengerStrikeFighter(this)
+    )
   }
 }
 
 export class MechanicumTaghmataPrimarisWing extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataPrimarisStrikeFighter()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataPrimarisStrikeFighter(this)
+    )
   }
 }
 
 export class MechanicumTaghmataSuperHeavyTankDestroyer extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataFalchion()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataFalchion(this)
+    )
   }
 }
 
 export class MechanicumTaghmataOrdinatusMajorisDetachment extends MechanicumTaghmataDetachment {
-  constructor () {
-    super([
-      new MechanicumTaghmataOrdinatusMajoris()
-    ], [], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataOrdinatusMajoris(this)
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 

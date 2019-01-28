@@ -35,8 +35,8 @@ import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../../../../utils/with-type'
 
 export class WordBearersPrimarch extends PrimarchUnit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.transportType = 'tactical'
     this.rules = [
@@ -64,8 +64,8 @@ export class WordBearersPrimarch extends PrimarchUnit {
 }
 
 export class WordBearersBodyguardSquad extends LegionTacticalSquad {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 0
     this.min = 7
@@ -75,8 +75,8 @@ export class WordBearersBodyguardSquad extends LegionTacticalSquad {
 }
 
 export class WordBearersGalVorbakDarkBrethrenSquad extends Unit {
-  constructor () {
-    super(250, 6)
+  constructor (detachment) {
+    super(detachment, 250, 6)
 
     this.transportType = 'tactical'
     this.rules = [
@@ -98,8 +98,8 @@ export class WordBearersGalVorbakDarkBrethrenSquad extends Unit {
 }
 
 export class WordBearersIncendiarySquad extends Unit {
-  constructor () {
-    super(350, 8)
+  constructor (detachment) {
+    super(detachment, 350, 8)
 
     this.transportType = 'assault'
     this.rules = [
@@ -124,8 +124,8 @@ export class WordBearersIncendiarySquad extends Unit {
 }
 
 export class WordBearersMalGharaTaintedContemptorDreadnought extends Unit {
-  constructor () {
-    super(70, 1)
+  constructor (detachment) {
+    super(detachment, 70, 1)
 
     this.transportType = 'tactical'
     this.rules = [
@@ -150,10 +150,11 @@ export class WordBearersMalGharaTaintedContemptorDreadnought extends Unit {
 }
 
 export class WordBearersMalGharaTaintedContemptorDreadnoughtTalonUnit extends MultipleChoiceUnit {
-  constructor () {
+  constructor (detachment) {
     super(
-      new WordBearersMalGharaTaintedContemptorDreadnought(),
-      new LegionDeredeoDreadnought()
+      detachment,
+      new WordBearersMalGharaTaintedContemptorDreadnought(detachment),
+      new LegionDeredeoDreadnought(detachment)
     )
 
     this.transportType = 'dreadnought'

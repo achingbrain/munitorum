@@ -49,9 +49,9 @@ export default class DeathGuard extends SpaceMarineLegion {
 
     if (list.allies.find(item =>
       item.type === MechanicumTaghmata.type ||
-        item.type === ImperialMilitia.type ||
-        item.type === SolarAuxilia.type ||
-        item.type === KnightHousehold.type
+      item.army.type === ImperialMilitia.type ||
+      item.army.type === SolarAuxilia.type ||
+      item.army.type === KnightHousehold.type
     )) {
       return rating - 1
     }

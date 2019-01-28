@@ -58,21 +58,27 @@ import {
 import withType from '../../../../utils/with-type'
 
 export class DaemonicHordesWarpRiftDetachment extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesWarpRift()
-    ], [], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesWarpRift(this)
+    )
+    this.setConstraints(
       new Unique()
-    ])
+    )
   }
 }
 
 export class DaemonicHordesKhorneHorde extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesKhorneHordeLeader(),
-      new DaemonicHordesBloodletters()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesKhorneHordeLeader(this),
+      new DaemonicHordesBloodletters(this)
+    )
+    this.setUpgrades(
       new AdditionalUnitOption(DaemonicHordesFleshHounds),
       new AdditionalUnitOption(DaemonicHordesBloodcrushers),
       new AdditionalUnitOption(DaemonicHordesSkullCannonOfKhorne),
@@ -81,16 +87,19 @@ export class DaemonicHordesKhorneHorde extends DaemonicHordesDetachment {
       new AdditionalUnitOption(DaemonicHordesChaosAltar),
       new AdditionalUnitOption(DaemonicHordesChaosFury),
       new AdditionalUnitOption(DaemonicHordesSoulGrinder)
-    ])
+    )
   }
 }
 
 export class DaemonicHordesNurgleHorde extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesNurgleHordeLeader(),
-      new DaemonicHordesPlagueBearers()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesNurgleHordeLeader(this),
+      new DaemonicHordesPlagueBearers(this)
+    )
+    this.setUpgrades(
       new AdditionalUnitOption(DaemonicHordesNurglings),
       new AdditionalUnitOption(DaemonicHordesBeastsOfNurgle),
       new AdditionalUnitOption(DaemonicHordesPlagueDrones),
@@ -99,16 +108,19 @@ export class DaemonicHordesNurgleHorde extends DaemonicHordesDetachment {
       new AdditionalUnitOption(DaemonicHordesChaosAltar),
       new AdditionalUnitOption(DaemonicHordesChaosFury),
       new AdditionalUnitOption(DaemonicHordesSoulGrinder)
-    ])
+    )
   }
 }
 
 export class DaemonicHordesSlaaneshHorde extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesSlaaneshHordeLeader(),
-      new DaemonicHordesDaemonettes()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesSlaaneshHordeLeader(this),
+      new DaemonicHordesDaemonettes(this)
+    )
+    this.setUpgrades(
       new AdditionalUnitOption(DaemonicHordesSeekersOfSlaanesh),
       new AdditionalUnitOption(DaemonicHordesSeekerChariot),
       new AdditionalUnitOption(DaemonicHordesFiendsOfSlaanesh),
@@ -117,16 +129,19 @@ export class DaemonicHordesSlaaneshHorde extends DaemonicHordesDetachment {
       new AdditionalUnitOption(DaemonicHordesChaosAltar),
       new AdditionalUnitOption(DaemonicHordesChaosFury),
       new AdditionalUnitOption(DaemonicHordesSoulGrinder)
-    ])
+    )
   }
 }
 
 export class DaemonicHordesTzeenchHorde extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesTzeenchHordeLeader(),
-      new DaemonicHordesHorrorsOfTzeench()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesTzeenchHordeLeader(this),
+      new DaemonicHordesHorrorsOfTzeench(this)
+    )
+    this.setUpgrades(
       new AdditionalUnitOption(DaemonicHordesFlamersOfTzeench),
       new AdditionalUnitOption(DaemonicHordesScreamersOfTzeench),
       new AdditionalUnitOption(DaemonicHordesBurningChariotOfTzeench),
@@ -135,55 +150,55 @@ export class DaemonicHordesTzeenchHorde extends DaemonicHordesDetachment {
       new AdditionalUnitOption(DaemonicHordesChaosAltar),
       new AdditionalUnitOption(DaemonicHordesChaosFury),
       new AdditionalUnitOption(DaemonicHordesSoulGrinder)
-    ])
+    )
   }
 }
 
 export class DaemonicHordesKhorneGreaterDaemonHorde extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesBloodThirsterHordeUnit()
-    ], [], [
-      new Unique()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesBloodThirsterHordeUnit(this)
+    )
   }
 }
 
 export class DaemonicHordesNurgleGreaterDaemonHorde extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesGreatUncleanOneHordeUnit()
-    ], [], [
-      new Unique()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesGreatUncleanOneHordeUnit(this)
+    )
   }
 }
 
 export class DaemonicHordesSlaaneshGreaterDaemonHorde extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesKeeperOfSecretsHordeUnit()
-    ], [], [
-      new Unique()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesKeeperOfSecretsHordeUnit(this)
+    )
   }
 }
 
 export class DaemonicHordesTzeenchGreaterDaemonHorde extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesLordOfChangeHordeUnit()
-    ], [], [
-      new Unique()
-    ])
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesLordOfChangeHordeUnit(this)
+    )
   }
 }
 
 export class DaemonicHordesKhorneFollowers extends DaemonicHordesDetachment {
-  constructor () {
-    super([
+  constructor (list) {
+    super(list)
 
-    ], [
+    this.setUpgrades(
       new AdditionalUnitOption(DaemonicHordesBloodcrushersFollowerUnit),
       new AdditionalUnitOption(DaemonicHordesFleshHoundsFollowerUnit),
       new AdditionalUnitOption(DaemonicHordesSkullCannonOfKhorneFollowerUnit),
@@ -191,13 +206,15 @@ export class DaemonicHordesKhorneFollowers extends DaemonicHordesDetachment {
       new AdditionalUnitOption(DaemonicHordesChaosFury),
       new AdditionalUnitOption(DaemonicHordesChaosAltar),
       new AdditionalUnitOption(DaemonicHordesSoulGrinder)
-    ])
+    )
   }
 }
 
 export class DaemonicHordesNurgleFollowers extends DaemonicHordesDetachment {
-  constructor () {
-    super([], [
+  constructor (list) {
+    super(list)
+
+    this.setUpgrades(
       new AdditionalUnitOption(DaemonicHordesBeastsOfNurgleFollowerUnit),
       new AdditionalUnitOption(DaemonicHordesNurglingsFollowerUnit),
       new AdditionalUnitOption(DaemonicHordesPlagueDronesFollowerUnit),
@@ -205,13 +222,15 @@ export class DaemonicHordesNurgleFollowers extends DaemonicHordesDetachment {
       new AdditionalUnitOption(DaemonicHordesChaosFury),
       new AdditionalUnitOption(DaemonicHordesChaosAltar),
       new AdditionalUnitOption(DaemonicHordesSoulGrinder)
-    ])
+    )
   }
 }
 
 export class DaemonicHordesSlaaneshFollowers extends DaemonicHordesDetachment {
-  constructor () {
-    super([], [
+  constructor (list) {
+    super(list)
+
+    this.setUpgrades(
       new AdditionalUnitOption(DaemonicHordesSeekersOfSlaaneshFollowerUnit),
       new AdditionalUnitOption(DaemonicHordesSeekerChariotFollowerUnit),
       new AdditionalUnitOption(DaemonicHordesFiendsOfSlaaneshFollowerUnit),
@@ -219,13 +238,15 @@ export class DaemonicHordesSlaaneshFollowers extends DaemonicHordesDetachment {
       new AdditionalUnitOption(DaemonicHordesChaosFury),
       new AdditionalUnitOption(DaemonicHordesChaosAltar),
       new AdditionalUnitOption(DaemonicHordesSoulGrinder)
-    ])
+    )
   }
 }
 
 export class DaemonicHordesTzeenchFollowers extends DaemonicHordesDetachment {
-  constructor () {
-    super([], [
+  constructor (list) {
+    super(list)
+
+    this.setUpgrades(
       new AdditionalUnitOption(DaemonicHordesFlamersOfTzeenchFollowerUnit),
       new AdditionalUnitOption(DaemonicHordesScreamersOfTzeenchFollowerUnit),
       new AdditionalUnitOption(DaemonicHordesBurningChariotOfTzeenchFollowerUnit),
@@ -233,46 +254,55 @@ export class DaemonicHordesTzeenchFollowers extends DaemonicHordesDetachment {
       new AdditionalUnitOption(DaemonicHordesChaosFury),
       new AdditionalUnitOption(DaemonicHordesChaosAltar),
       new AdditionalUnitOption(DaemonicHordesSoulGrinder)
-    ])
+    )
   }
 }
 
 export class DaemonicHordesChaosUndividedFuryFlight extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesChaosUndividedFuryFlightUnit()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesChaosUndividedFuryFlightUnit(this)
+    )
+    this.setUpgrades(
       new AdditionalUnitOption(DaemonicHordesChaosSpawn),
       new AdditionalUnitOption(DaemonicHordesChaosFury),
       new AdditionalUnitOption(DaemonicHordesChaosAltar),
       new AdditionalUnitOption(DaemonicHordesSoulGrinder)
-    ])
+    )
   }
 }
 
 export class DaemonicHordesChaosUndividedSpawnPack extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesChaosUndividedSpawnPackUnit()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesChaosUndividedSpawnPackUnit(this)
+    )
+    this.setUpgrades(
       new AdditionalUnitOption(DaemonicHordesChaosSpawn),
       new AdditionalUnitOption(DaemonicHordesChaosFury),
       new AdditionalUnitOption(DaemonicHordesChaosAltar),
       new AdditionalUnitOption(DaemonicHordesSoulGrinder)
-    ])
+    )
   }
 }
 
 export class DaemonicHordesChaosUndividedSoulGrinderManiple extends DaemonicHordesDetachment {
-  constructor () {
-    super([
-      new DaemonicHordesChaosUndividedSoulGrinderManipleUnit()
-    ], [
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DaemonicHordesChaosUndividedSoulGrinderManipleUnit(this)
+    )
+    this.setUpgrades(
       new AdditionalUnitOption(DaemonicHordesChaosSpawn),
       new AdditionalUnitOption(DaemonicHordesChaosFury),
       new AdditionalUnitOption(DaemonicHordesChaosAltar),
       new AdditionalUnitOption(DaemonicHordesSoulGrinder)
-    ])
+    )
   }
 }
 

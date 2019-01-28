@@ -8,14 +8,13 @@ import {
 } from '../weapons'
 
 export default class Unit {
-  constructor (cost, min, max) {
+  constructor (detachment, cost, min, max) {
     this.id = shortid.generate()
-
     this.cost = cost
     this.min = min
     this.max = max
     this.quantity = min
-
+    this.detachment = detachment
     this.weaponOptions = []
   }
 
@@ -134,7 +133,7 @@ export default class Unit {
     }
   }
 
-  static fromJSON (json) {
+  static fromJSON (json, detachment) {
     try {
       const UnitType = find(json.type)
 
@@ -142,20 +141,20 @@ export default class Unit {
         throw new Error('Unknown or invalid unit type')
       }
 
-      const unit = new UnitType()
+      const unit = new UnitType(detachment)
 
       Object.assign(unit, json)
 
       return unit
     } catch (error) {
-      return new InvalidUnit(json, error)
+      return new InvalidUnit(detachment, json, error)
     }
   }
 }
 
 export class InvalidUnit extends Unit {
-  constructor (json, error) {
-    super()
+  constructor (detachment, json, error) {
+    super(detachment)
 
     Object.assign(this, json)
 

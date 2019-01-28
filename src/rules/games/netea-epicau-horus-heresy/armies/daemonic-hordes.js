@@ -93,9 +93,9 @@ export default class DaemonicHordes extends Army {
     const rating = 2
 
     if (list.allies.find(item =>
-      item.type === MechanicumTaghmata.type ||
-      item.type === LegioTitanicus.type ||
-      item.type === KnightHousehold.type
+      item.army.type === MechanicumTaghmata.type ||
+      item.army.type === LegioTitanicus.type ||
+      item.army.type === KnightHousehold.type
     )) {
       return rating - 1
     }

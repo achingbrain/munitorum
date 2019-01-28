@@ -37,8 +37,8 @@ import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../../../../utils/with-type'
 
 export class IronWarriorsPrimarch extends PrimarchUnit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -69,8 +69,8 @@ export class IronWarriorsPrimarch extends PrimarchUnit {
 }
 
 export class IronWarriorsBodyguardSquad extends LegionTerminatorSquad {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 0
     this.min = 3
@@ -80,8 +80,8 @@ export class IronWarriorsBodyguardSquad extends LegionTerminatorSquad {
 }
 
 export class IronWarriorsTyrantSiegeTerminatorSquad extends Unit {
-  constructor () {
-    super(85, 4, 6)
+  constructor (detachment) {
+    super(detachment, 85, 4, 6)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -104,8 +104,8 @@ export class IronWarriorsTyrantSiegeTerminatorSquad extends Unit {
 }
 
 export class IronWarriorsIronHavocSquad extends Unit {
-  constructor () {
-    super(250, 4)
+  constructor (detachment) {
+    super(detachment, 250, 4)
 
     this.transportType = 'tactical'
     this.rules = []
@@ -123,8 +123,8 @@ export class IronWarriorsIronHavocSquad extends Unit {
 }
 
 class IronWarriorsMedusa extends LegionMedusa {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 300
     this.min = 6
@@ -133,8 +133,8 @@ class IronWarriorsMedusa extends LegionMedusa {
 }
 
 class IronWarriorsWhirlwind extends LegionWhirlwind {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 400
     this.min = 6
@@ -143,8 +143,8 @@ class IronWarriorsWhirlwind extends LegionWhirlwind {
 }
 
 class IronWarriorsBasilisk extends LegionBasilisk {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 500
     this.min = 6
@@ -153,18 +153,18 @@ class IronWarriorsBasilisk extends LegionBasilisk {
 }
 
 export class IronWarriorsArtilleryUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new IronWarriorsMedusa(),
-      new IronWarriorsWhirlwind(),
-      new IronWarriorsBasilisk()
+  constructor (detachment) {
+    super(detachment,
+      new IronWarriorsMedusa(detachment),
+      new IronWarriorsWhirlwind(detachment),
+      new IronWarriorsBasilisk(detachment)
     )
   }
 }
 
 class IronWarriorsStormblade extends Unit {
-  constructor () {
-    super(700, 3)
+  constructor (detachment) {
+    super(detachment, 700, 3)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -188,8 +188,8 @@ class IronWarriorsStormblade extends Unit {
 }
 
 class IronWarriorsFellblade extends LegionFellblade {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 700
     this.min = 3
@@ -198,10 +198,10 @@ class IronWarriorsFellblade extends LegionFellblade {
 }
 
 export class IronWarriorsSuperHeavyTankSquadronUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new IronWarriorsFellblade(),
-      new IronWarriorsStormblade()
+  constructor (detachment) {
+    super(detachment,
+      new IronWarriorsFellblade(detachment),
+      new IronWarriorsStormblade(detachment)
     )
   }
 }

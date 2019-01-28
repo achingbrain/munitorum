@@ -29,8 +29,8 @@ import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
 export class SonsOfHorusPrimarch extends PrimarchUnit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -60,8 +60,8 @@ export class SonsOfHorusPrimarch extends PrimarchUnit {
 }
 
 export class SonsOfHorusBodyguardSquad extends LegionTerminatorSquad {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 0
     this.min = 3
@@ -71,8 +71,8 @@ export class SonsOfHorusBodyguardSquad extends LegionTerminatorSquad {
 }
 
 export class SonsOfHorusReaverAttackSquad extends Unit {
-  constructor () {
-    super(300, 6)
+  constructor (detachment) {
+    super(detachment, 300, 6)
 
     this.transportType = 'tactical'
     this.rules = [
@@ -93,8 +93,8 @@ export class SonsOfHorusReaverAttackSquad extends Unit {
 }
 
 export class SonsOfHorusJustaerinTerminatorSquad extends Unit {
-  constructor () {
-    super(350, 4)
+  constructor (detachment) {
+    super(detachment, 350, 4)
 
     this.transportType = 'terminator'
     this.rules = [

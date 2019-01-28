@@ -58,18 +58,18 @@ import SpacecraftUnit from './spacecraft-unit'
 import withType from '../../../../utils/with-type'
 
 export class LegionArtilleryUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionMedusa(),
-      new LegionWhirlwind(),
-      new LegionBasilisk()
+  constructor (detachment) {
+    super(detachment,
+      new LegionMedusa(detachment),
+      new LegionWhirlwind(detachment),
+      new LegionBasilisk(detachment)
     )
   }
 }
 
 export class LegionAssaultSquad extends Unit {
-  constructor () {
-    super(300, 8)
+  constructor (detachment) {
+    super(detachment, 300, 8)
 
     this.transportType = 'assault'
     this.rules = [
@@ -89,8 +89,8 @@ export class LegionAssaultSquad extends Unit {
 }
 
 export class LegionAssaultSupportSquad extends LegionAssaultSquad {
-  constructor () {
-    super(175, 4)
+  constructor (detachment) {
+    super(detachment, 175, 4)
 
     this.cost = 175
     this.min = 4
@@ -99,8 +99,8 @@ export class LegionAssaultSupportSquad extends LegionAssaultSquad {
 }
 
 export class LegionAttackBike extends Unit {
-  constructor () {
-    super(175, 5)
+  constructor (detachment) {
+    super(detachment, 175, 5)
 
     this.rules = []
     this.stats = {
@@ -118,8 +118,8 @@ export class LegionAttackBike extends Unit {
 }
 
 export class LegionBasilisk extends Unit {
-  constructor () {
-    super(325, 4)
+  constructor (detachment) {
+    super(detachment, 325, 4)
 
     this.rules = []
     this.stats = {
@@ -137,8 +137,8 @@ export class LegionBasilisk extends Unit {
 }
 
 export class LegionBattleBarge extends SpacecraftUnit {
-  constructor () {
-    super(300, 1)
+  constructor (detachment) {
+    super(detachment, 300, 1)
 
     this.transportTypes = {
       tactical: 60,
@@ -176,8 +176,8 @@ export class LegionBattleBarge extends SpacecraftUnit {
 }
 
 export class LegionBike extends Unit {
-  constructor () {
-    super(175, 5)
+  constructor (detachment) {
+    super(detachment, 175, 5)
 
     this.rules = [
       new Scout(),
@@ -197,8 +197,8 @@ export class LegionBike extends Unit {
 }
 
 export class LegionBreacherSquad extends Unit {
-  constructor () {
-    super(300, 8)
+  constructor (detachment) {
+    super(detachment, 300, 8)
 
     this.transportType = 'breacher'
     this.rules = []
@@ -216,8 +216,8 @@ export class LegionBreacherSquad extends Unit {
 }
 
 export class LegionBreacherSupportSquad extends LegionBreacherSquad {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 225
     this.min = 4
@@ -226,8 +226,8 @@ export class LegionBreacherSupportSquad extends LegionBreacherSquad {
 }
 
 export class LegionCaestus extends TransportUnit {
-  constructor () {
-    super(75)
+  constructor (detachment) {
+    super(detachment, 75)
 
     this.transportTypes = {
       breacher: 2,
@@ -256,8 +256,8 @@ export class LegionCaestus extends TransportUnit {
 }
 
 export class LegionCerberus extends Unit {
-  constructor () {
-    super(150, 1)
+  constructor (detachment) {
+    super(detachment, 150, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -279,8 +279,8 @@ export class LegionCerberus extends Unit {
 }
 
 export class LegionChampion extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new InvulnerableSave(),
@@ -300,8 +300,8 @@ export class LegionChampion extends Unit {
 }
 
 export class LegionChaplain extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new InvulnerableSave(),
@@ -322,10 +322,10 @@ export class LegionChaplain extends Unit {
 }
 
 export class LegionContemptorDreadnoughtTalonUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionContemptorDreadnought(),
-      new LegionDeredeoDreadnought()
+  constructor (detachment) {
+    super(detachment,
+      new LegionContemptorDreadnought(detachment),
+      new LegionDeredeoDreadnought(detachment)
     )
 
     this.transportType = 'dreadnought'
@@ -333,8 +333,8 @@ export class LegionContemptorDreadnoughtTalonUnit extends MultipleChoiceUnit {
 }
 
 export class LegionContemptorDreadnought extends Unit {
-  constructor () {
-    super(60, 1)
+  constructor (detachment) {
+    super(detachment, 60, 1)
 
     this.transportType = 'dreadnought'
     this.rules = [
@@ -388,8 +388,8 @@ export class LegionContemptorDreadnought extends Unit {
 }
 
 export class LegionDamoclesCommandRhino extends Unit {
-  constructor (cost, min, max) {
-    super(cost, min, max)
+  constructor (detachment, cost, min, max) {
+    super(detachment, cost, min, max)
 
     this.transportTypes = {
       tactical: 2
@@ -411,8 +411,8 @@ export class LegionDamoclesCommandRhino extends Unit {
 }
 
 export class LegionDeredeoDreadnought extends Unit {
-  constructor () {
-    super(100, 1)
+  constructor (detachment) {
+    super(detachment, 100, 1)
 
     this.transportType = 'dreadnought'
     this.rules = [
@@ -439,8 +439,8 @@ export class LegionDeredeoDreadnought extends Unit {
 }
 
 export class LegionDespoilerSquad extends Unit {
-  constructor () {
-    super(275, 8)
+  constructor (detachment) {
+    super(detachment, 275, 8)
 
     this.transportType = 'tactical'
     this.rules = []
@@ -458,17 +458,17 @@ export class LegionDespoilerSquad extends Unit {
 }
 
 export class LegionTacticalDetachmentUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionTacticalSquad(),
-      new LegionDespoilerSquad()
+  constructor (detachment) {
+    super(detachment,
+      new LegionTacticalSquad(detachment),
+      new LegionDespoilerSquad(detachment)
     )
   }
 }
 
 export class LegionDestroyerSquad extends Unit {
-  constructor () {
-    super(225, 4)
+  constructor (detachment) {
+    super(detachment, 225, 4)
 
     this.transportType = 'assault'
     this.rules = [
@@ -488,8 +488,8 @@ export class LegionDestroyerSquad extends Unit {
 }
 
 export class LegionDreadclaw extends TransportUnit {
-  constructor () {
-    super(50)
+  constructor (detachment) {
+    super(detachment, 50)
 
     this.transportTypes = {
       tactical: 2,
@@ -527,8 +527,8 @@ export class LegionDreadclaw extends TransportUnit {
 }
 
 export class LegionDreadnought extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.transportType = 'dreadnought'
     this.rules = [
@@ -561,8 +561,8 @@ export class LegionDreadnought extends Unit {
 }
 
 export class LegionDropPod extends TransportUnit {
-  constructor () {
-    super(50)
+  constructor (detachment) {
+    super(detachment, 50)
 
     this.transportTypes = {
       tactical: 2,
@@ -600,8 +600,8 @@ export class LegionDropPod extends TransportUnit {
 }
 
 export class LegionFalchion extends Unit {
-  constructor () {
-    super(300, 1)
+  constructor (detachment) {
+    super(detachment, 300, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -623,8 +623,8 @@ export class LegionFalchion extends Unit {
 }
 
 export class LegionFellblade extends Unit {
-  constructor () {
-    super(300, 1)
+  constructor (detachment) {
+    super(detachment, 300, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -648,8 +648,8 @@ export class LegionFellblade extends Unit {
 }
 
 export class LegionFireRaptorGunship extends Unit {
-  constructor () {
-    super(300, 2)
+  constructor (detachment) {
+    super(detachment, 300, 2)
 
     this.rules = [
       new ReinforcedArmour()
@@ -673,8 +673,8 @@ export class LegionFireRaptorGunship extends Unit {
 }
 
 export class LegionGlaive extends Unit {
-  constructor () {
-    super(300, 1)
+  constructor (detachment) {
+    super(detachment, 300, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -701,8 +701,8 @@ export class LegionGlaive extends Unit {
 }
 
 export class LegionHeavySupportSquad extends Unit {
-  constructor () {
-    super(50, 1, 4)
+  constructor (detachment) {
+    super(detachment, 50, 1, 4)
 
     this.transportType = 'tactical'
     this.rules = []
@@ -721,8 +721,8 @@ export class LegionHeavySupportSquad extends Unit {
 }
 
 export class LegionJavelinAttackSpeeder extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new Scout(),
@@ -746,8 +746,8 @@ export class LegionJavelinAttackSpeeder extends Unit {
 }
 
 export class LegionKharybdis extends TransportUnit {
-  constructor () {
-    super(100)
+  constructor (detachment) {
+    super(detachment, 100)
 
     this.transportTypes = {
       tactical: 4,
@@ -778,8 +778,8 @@ export class LegionKharybdis extends TransportUnit {
 }
 
 export class LegionLandRaiderAchillesTransport extends Unit {
-  constructor () {
-    super(100, 1)
+  constructor (detachment) {
+    super(detachment, 100, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -811,8 +811,8 @@ export class LegionLandRaiderAchillesTransport extends Unit {
 }
 
 export class LegionLandRaiderAchilles extends Unit {
-  constructor () {
-    super(105, 1)
+  constructor (detachment) {
+    super(detachment, 105, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -839,10 +839,10 @@ export class LegionLandRaiderAchilles extends Unit {
 }
 
 export class LegionLandRaiderPhobosSquadronUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionLandRaiderPhobos(),
-      new LegionLandRaiderAchilles()
+  constructor (detachment) {
+    super(detachment,
+      new LegionLandRaiderPhobos(detachment),
+      new LegionLandRaiderAchilles(detachment)
     )
 
     this.transportType = 'landRaider'
@@ -850,8 +850,8 @@ export class LegionLandRaiderPhobosSquadronUnit extends MultipleChoiceUnit {
 }
 
 export class LegionLandRaiderPhobosTransport extends TransportUnit {
-  constructor () {
-    super(75)
+  constructor (detachment) {
+    super(detachment, 75)
 
     this.transportTypes = {
       tactical: 2,
@@ -883,8 +883,8 @@ export class LegionLandRaiderPhobosTransport extends TransportUnit {
 }
 
 export class LegionLandRaiderPhobos extends Unit {
-  constructor () {
-    super(80, 1)
+  constructor (detachment) {
+    super(detachment, 80, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -905,10 +905,10 @@ export class LegionLandRaiderPhobos extends Unit {
 }
 
 export class LegionLandRaiderProteusSquadronUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionLandRaiderProteus(),
-      new LegionLandRaiderAchilles()
+  constructor (detachment) {
+    super(detachment,
+      new LegionLandRaiderProteus(detachment),
+      new LegionLandRaiderAchilles(detachment)
     )
 
     this.transportType = 'landRaider'
@@ -916,8 +916,8 @@ export class LegionLandRaiderProteusSquadronUnit extends MultipleChoiceUnit {
 }
 
 export class LegionLandRaiderProteusTransport extends TransportUnit {
-  constructor () {
-    super(75)
+  constructor (detachment) {
+    super(detachment, 75)
 
     this.achilles = []
     this.maxAchilles = 2
@@ -951,8 +951,8 @@ export class LegionLandRaiderProteusTransport extends TransportUnit {
 }
 
 export class LegionLandRaiderProteus extends Unit {
-  constructor () {
-    super(80, 1)
+  constructor (detachment) {
+    super(detachment, 80, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -973,8 +973,8 @@ export class LegionLandRaiderProteus extends Unit {
 }
 
 export class LegionLandSpeeder extends Unit {
-  constructor (cost, min, max) {
-    super(40, 1)
+  constructor (detachment) {
+    super(detachment, 40, 1)
 
     this.rules = [
       new Scout(),
@@ -1003,8 +1003,8 @@ export class LegionLandSpeeder extends Unit {
 }
 
 export class LegionLeviathanDreadnought extends Unit {
-  constructor () {
-    super(100, 1)
+  constructor (detachment) {
+    super(detachment, 100, 1)
 
     this.transportType = 'dreadnought'
     this.rules = [
@@ -1039,16 +1039,16 @@ export class LegionLeviathanDreadnought extends Unit {
 }
 
 export class LegionLeviathanSupportDreadnought extends LegionLeviathanDreadnought {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 75
   }
 }
 
 export class LegionLibrarian extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new InvulnerableSave(),
@@ -1069,8 +1069,8 @@ export class LegionLibrarian extends Unit {
 }
 
 export class LegionLieutenantCommander extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new InvulnerableSave(),
@@ -1090,8 +1090,8 @@ export class LegionLieutenantCommander extends Unit {
 }
 
 export class LegionLordCommander extends Unit {
-  constructor () {
-    super(100, 1)
+  constructor (detachment) {
+    super(detachment, 100, 1)
 
     this.rules = [
       new InvulnerableSave(),
@@ -1111,8 +1111,8 @@ export class LegionLordCommander extends Unit {
 }
 
 export class LegionMastodon extends TransportUnit {
-  constructor () {
-    super(200)
+  constructor (detachment) {
+    super(detachment, 200)
 
     this.transportTypes = {
       tactical: 8,
@@ -1143,8 +1143,8 @@ export class LegionMastodon extends TransportUnit {
 }
 
 export class LegionMedusa extends Unit {
-  constructor () {
-    super(250, 4)
+  constructor (detachment) {
+    super(detachment, 250, 4)
 
     this.rules = []
     this.stats = {
@@ -1167,17 +1167,17 @@ export class LegionMedusa extends Unit {
 }
 
 export class LegionOutriderUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionAttackBike(),
-      new LegionBike()
+  constructor (detachment) {
+    super(detachment,
+      new LegionAttackBike(detachment),
+      new LegionBike(detachment)
     )
   }
 }
 
 export class LegionPredatorExecutioner extends Unit {
-  constructor () {
-    super(80, 1)
+  constructor (detachment) {
+    super(detachment, 80, 1)
 
     this.rules = []
     this.stats = {
@@ -1198,8 +1198,8 @@ export class LegionPredatorExecutioner extends Unit {
 }
 
 export class LegionPredatorInfernus extends Unit {
-  constructor () {
-    super(80, 1)
+  constructor (detachment) {
+    super(detachment, 80, 1)
 
     this.rules = []
     this.stats = {
@@ -1217,19 +1217,19 @@ export class LegionPredatorInfernus extends Unit {
 }
 
 export class LegionPredatorStrikeSquadronUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionPredator(),
-      new LegionPredatorInfernus(),
-      new LegionPredatorExecutioner(),
-      new LegionWhirlwindScorpius()
+  constructor (detachment) {
+    super(detachment,
+      new LegionPredator(detachment),
+      new LegionPredatorInfernus(detachment),
+      new LegionPredatorExecutioner(detachment),
+      new LegionWhirlwindScorpius(detachment)
     )
   }
 }
 
 export class LegionPredator extends Unit {
-  constructor () {
-    super(60, 1)
+  constructor (detachment) {
+    super(detachment, 60, 1)
 
     this.rules = []
     this.stats = {
@@ -1259,8 +1259,8 @@ export class LegionPredator extends Unit {
 }
 
 export class LegionRapier extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.transportType = 'rapier'
     this.rules = []
@@ -1283,16 +1283,16 @@ export class LegionRapier extends Unit {
 }
 
 export class LegionRapierSupport extends LegionRapier {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 40
   }
 }
 
 export class LegionReconnaissanceSquad extends Unit {
-  constructor () {
-    super(150, 4)
+  constructor (detachment) {
+    super(detachment, 150, 4)
 
     this.transportType = 'tactical'
     this.rules = [
@@ -1314,8 +1314,8 @@ export class LegionReconnaissanceSquad extends Unit {
 }
 
 export class LegionRhino extends TransportUnit {
-  constructor () {
-    super(0)
+  constructor (detachment) {
+    super(detachment, 0)
 
     this.transportTypes = {
       tactical: 2
@@ -1335,8 +1335,8 @@ export class LegionRhino extends TransportUnit {
 }
 
 export class LegionScimitarJetbike extends Unit {
-  constructor () {
-    super(175, 5)
+  constructor (detachment) {
+    super(detachment, 175, 5)
 
     this.rules = [
       new Skimmer()
@@ -1355,11 +1355,11 @@ export class LegionScimitarJetbike extends Unit {
 }
 
 export class LegionSicaranBattleTankSquadronUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionSicaran(),
-      new LegionSicaranVenator(),
-      new LegionSicaranOmega()
+  constructor (detachment) {
+    super(detachment,
+      new LegionSicaran(detachment),
+      new LegionSicaranVenator(detachment),
+      new LegionSicaranOmega(detachment)
     )
 
     this.types[0].cost = 75
@@ -1367,8 +1367,8 @@ export class LegionSicaranBattleTankSquadronUnit extends MultipleChoiceUnit {
 }
 
 export class LegionSicaranOmega extends Unit {
-  constructor () {
-    super(75, 1)
+  constructor (detachment) {
+    super(detachment, 75, 1)
 
     this.rules = [
       new ReinforcedArmour()
@@ -1388,8 +1388,8 @@ export class LegionSicaranOmega extends Unit {
 }
 
 export class LegionSicaranVenator extends Unit {
-  constructor () {
-    super(75, 1)
+  constructor (detachment) {
+    super(detachment, 75, 1)
 
     this.rules = [
       new ReinforcedArmour()
@@ -1409,8 +1409,8 @@ export class LegionSicaranVenator extends Unit {
 }
 
 export class LegionSicaran extends Unit {
-  constructor () {
-    super(80, 1)
+  constructor (detachment) {
+    super(detachment, 80, 1)
 
     this.rules = [
       new ReinforcedArmour()
@@ -1430,17 +1430,17 @@ export class LegionSicaran extends Unit {
 }
 
 export class LegionSpacecraftUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionStrikeCruiser(),
-      new LegionBattleBarge()
+  constructor (detachment) {
+    super(detachment,
+      new LegionStrikeCruiser(detachment),
+      new LegionBattleBarge(detachment)
     )
   }
 }
 
 export class LegionSpartan extends TransportUnit {
-  constructor () {
-    super(125)
+  constructor (detachment) {
+    super(detachment, 125)
 
     this.transportTypes = {
       tactical: 4,
@@ -1468,8 +1468,8 @@ export class LegionSpartan extends TransportUnit {
 }
 
 export class LegionStormEagleAttackShip extends Unit {
-  constructor () {
-    super(125, 1, 3)
+  constructor (detachment) {
+    super(detachment, 125, 1, 3)
 
     this.transportTypes = {
       tactical: 4,
@@ -1498,8 +1498,8 @@ export class LegionStormEagleAttackShip extends Unit {
 }
 
 export class LegionStormbird extends Unit {
-  constructor () {
-    super(450, 1)
+  constructor (detachment) {
+    super(detachment, 450, 1)
 
     this.transportTypes = {
       tactical: 16,
@@ -1530,8 +1530,8 @@ export class LegionStormbird extends Unit {
 }
 
 export class LegionStrikeCruiser extends SpacecraftUnit {
-  constructor () {
-    super(200, 1)
+  constructor (detachment) {
+    super(detachment, 200, 1)
 
     this.transportTypes = {
       tactical: 20,
@@ -1568,10 +1568,10 @@ export class LegionStrikeCruiser extends SpacecraftUnit {
 }
 
 export class LegionSuperHeavyTankBatteryUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionTyphon(),
-      new LegionCerberus()
+  constructor (detachment) {
+    super(detachment,
+      new LegionTyphon(detachment),
+      new LegionCerberus(detachment)
     )
 
     this.types[0].cost = 400
@@ -1585,17 +1585,17 @@ export class LegionSuperHeavyTankBatteryUnit extends MultipleChoiceUnit {
 }
 
 export class LegionSuperHeavyTankUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionFellblade(),
-      new LegionGlaive()
+  constructor (detachment) {
+    super(detachment,
+      new LegionFellblade(detachment),
+      new LegionGlaive(detachment)
     )
   }
 }
 
 export class LegionTacticalSquad extends Unit {
-  constructor () {
-    super(275, 8)
+  constructor (detachment) {
+    super(detachment, 275, 8)
 
     this.transportType = 'tactical'
     this.rules = []
@@ -1613,8 +1613,8 @@ export class LegionTacticalSquad extends Unit {
 }
 
 export class LegionTacticalSupportSquad extends Unit {
-  constructor () {
-    super(50, 1, 4)
+  constructor (detachment) {
+    super(detachment, 50, 1, 4)
 
     this.transportType = 'tactical'
     this.rules = []
@@ -1635,8 +1635,8 @@ export class LegionTacticalSupportSquad extends Unit {
 }
 
 export class LegionTeleport extends TransportUnit {
-  constructor () {
-    super(50)
+  constructor (detachment) {
+    super(detachment, 50)
 
     this.transportTypes = {
       terminator: Infinity
@@ -1656,8 +1656,8 @@ export class LegionTeleport extends TransportUnit {
 }
 
 export class LegionTerminatorSquad extends Unit {
-  constructor () {
-    super(75, 4, 6)
+  constructor (detachment) {
+    super(detachment, 75, 4, 6)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -1679,8 +1679,8 @@ export class LegionTerminatorSquad extends Unit {
 }
 
 export class LegionThunderhawkGunship extends Unit {
-  constructor () {
-    super(250, 1)
+  constructor (detachment) {
+    super(detachment, 250, 1)
 
     this.transportTypes = {
       tactical: 4,
@@ -1714,8 +1714,8 @@ export class LegionThunderhawkGunship extends Unit {
 }
 
 export class LegionThunderhawkTransporter extends Unit {
-  constructor () {
-    super(250, 1, 3)
+  constructor (detachment) {
+    super(detachment, 250, 1, 3)
 
     this.transportTypes = {
       rhino: 2,
@@ -1746,8 +1746,8 @@ export class LegionThunderhawkTransporter extends Unit {
 }
 
 export class LegionTyphon extends Unit {
-  constructor () {
-    super(150, 1)
+  constructor (detachment) {
+    super(detachment, 150, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -1772,8 +1772,8 @@ export class LegionTyphon extends Unit {
 }
 
 export class LegionVindicatorLaserDestroyer extends Unit {
-  constructor () {
-    super(70, 1)
+  constructor (detachment) {
+    super(detachment, 70, 1)
 
     this.rules = []
     this.stats = {
@@ -1790,17 +1790,17 @@ export class LegionVindicatorLaserDestroyer extends Unit {
 }
 
 export class LegionVindicatorSquadronUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegionVindicator(),
-      new LegionVindicatorLaserDestroyer()
+  constructor (detachment) {
+    super(detachment,
+      new LegionVindicator(detachment),
+      new LegionVindicatorLaserDestroyer(detachment)
     )
   }
 }
 
 export class LegionVindicator extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = []
     this.stats = {
@@ -1820,8 +1820,8 @@ export class LegionVindicator extends Unit {
 }
 
 export class LegionVindicatorSquadronVindicator extends LegionVindicator {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.min = 2
     this.max = 4
@@ -1829,8 +1829,8 @@ export class LegionVindicatorSquadronVindicator extends LegionVindicator {
 }
 
 export class LegionWhirlwindHyperios extends Unit {
-  constructor () {
-    super(75, 1)
+  constructor (detachment) {
+    super(detachment, 75, 1)
 
     this.rules = []
     this.stats = {
@@ -1847,8 +1847,8 @@ export class LegionWhirlwindHyperios extends Unit {
 }
 
 export class LegionWhirlwindScorpius extends Unit {
-  constructor () {
-    super(80, 1)
+  constructor (detachment) {
+    super(detachment, 80, 1)
 
     this.rules = []
     this.stats = {
@@ -1865,8 +1865,8 @@ export class LegionWhirlwindScorpius extends Unit {
 }
 
 export class LegionWhirlwind extends Unit {
-  constructor () {
-    super(300, 4)
+  constructor (detachment) {
+    super(detachment, 300, 4)
 
     this.rules = []
     this.stats = {
@@ -1883,8 +1883,8 @@ export class LegionWhirlwind extends Unit {
 }
 
 export class LegionXiphonInterceptor extends Unit {
-  constructor () {
-    super(250, 2)
+  constructor (detachment) {
+    super(detachment, 250, 2)
 
     this.rules = []
     this.stats = {

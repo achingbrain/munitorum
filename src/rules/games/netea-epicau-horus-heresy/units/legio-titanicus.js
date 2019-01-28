@@ -40,8 +40,8 @@ import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
 export class LegioTitanicusWarhoundScountTitan extends Unit {
-  constructor () {
-    super(275, 1)
+  constructor (detachment) {
+    super(detachment, 275, 1)
 
     this.rules = [
       new DamageCapacity(3),
@@ -74,16 +74,16 @@ export class LegioTitanicusWarhoundScountTitan extends Unit {
 }
 
 export class LegioTitanicusWarhoundScountTitanPackUnit extends LegioTitanicusWarhoundScountTitan {
-  constructor () {
-    super()
+  constructor (detachment) {
+    super(detachment)
 
     this.cost = 250
   }
 }
 
 export class LegioTitanicusReaverBattleTitan extends Unit {
-  constructor () {
-    super(575, 1)
+  constructor (detachment) {
+    super(detachment, 575, 1)
 
     this.rules = [
       new DamageCapacity(6),
@@ -126,8 +126,8 @@ export class LegioTitanicusReaverBattleTitan extends Unit {
 }
 
 export class LegioTitanicusWarlordBattleTitan extends Unit {
-  constructor () {
-    super(725, 1)
+  constructor (detachment) {
+    super(detachment, 725, 1)
 
     this.rules = [
       new DamageCapacity(8),
@@ -176,8 +176,8 @@ export class LegioTitanicusWarlordBattleTitan extends Unit {
 }
 
 class LegioTitanicusImperatorSupportTitan extends Unit {
-  constructor () {
-    super(1350, 1)
+  constructor (detachment) {
+    super(detachment, 1350, 1)
 
     this.rules = [
       new DamageCapacity(12),
@@ -209,8 +209,8 @@ class LegioTitanicusImperatorSupportTitan extends Unit {
 }
 
 class LegioTitanicusWarmongerSupportTitan extends Unit {
-  constructor () {
-    super(1350, 1)
+  constructor (detachment) {
+    super(detachment, 1350, 1)
 
     this.rules = [
       new DamageCapacity(12),
@@ -243,17 +243,17 @@ class LegioTitanicusWarmongerSupportTitan extends Unit {
 }
 
 export class LegioTitanicusEmperorClassTitanUnit extends MultipleChoiceUnit {
-  constructor () {
-    super(
-      new LegioTitanicusImperatorSupportTitan(),
-      new LegioTitanicusWarmongerSupportTitan()
+  constructor (detachment) {
+    super(detachment,
+      new LegioTitanicusImperatorSupportTitan(detachment),
+      new LegioTitanicusWarmongerSupportTitan(detachment)
     )
   }
 }
 
 export class LegioTitanicusVeteranPrinceps extends Unit {
-  constructor () {
-    super(25, 1)
+  constructor (detachment) {
+    super(detachment, 25, 1)
 
     this.rules = [
       new Commander(),
@@ -271,8 +271,8 @@ export class LegioTitanicusVeteranPrinceps extends Unit {
 }
 
 export class LegioTitanicusLegate extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new SupremeCommander()
@@ -289,8 +289,8 @@ export class LegioTitanicusLegate extends Unit {
 }
 
 export class LegioTitanicusAirDefence extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = []
     this.stats = {
@@ -307,8 +307,8 @@ export class LegioTitanicusAirDefence extends Unit {
 }
 
 export class LegioTitanicusSacredIcon extends Unit {
-  constructor () {
-    super(50, 1)
+  constructor (detachment) {
+    super(detachment, 50, 1)
 
     this.rules = [
       new Inspiring()
