@@ -14,7 +14,7 @@ import {
 } from '../detachments/legio-custodes'
 import withType from '../../../../utils/with-type'
 
-class LegioCustodes extends Army {
+export default class LegioCustodes extends Army {
   constructor () {
     super()
 
@@ -40,4 +40,4 @@ class LegioCustodes extends Army {
   }
 }
 
-export default withType(LegioCustodes)
+withType(LegioCustodes)

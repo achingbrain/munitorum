@@ -11,9 +11,15 @@ import {
   WordBearersDestroyerDetachment,
   WordBearersMharaGalTaintedDreadnoughtTalon
 } from '../detachments/word-bearers'
+import LegioTitanicus from './legio-titanicus'
+import ImperialMilitia from './imperial-militia'
+import SolarAuxilia from './solar-auxilia'
+import MechanicumTaghmata from './mechanicum-taghmata'
+import KnightHousehold from './knight-household'
+import DaemonicHordes from './daemonic-hordes'
 import withType from '../../../../utils/with-type'
 
-class WordBearers extends SpaceMarineLegion {
+export default class WordBearers extends SpaceMarineLegion {
   constructor () {
     super()
 
@@ -26,7 +32,30 @@ class WordBearers extends SpaceMarineLegion {
     this.supportDetachments = this.supportDetachments
       .filter(detachment => detachment !== LegionDestroyerDetachment)
     this.lordsOfWar.push(WordBearersPrimarchDetachment)
+    this.allies.push(
+      LegioTitanicus,
+      ImperialMilitia,
+      SolarAuxilia,
+      MechanicumTaghmata,
+      KnightHousehold,
+      DaemonicHordes
+    )
+  }
+
+  getStrategyRating (list) {
+    const rating = super.getStrategyRating(list)
+
+    if (list.allies.find(item =>
+      item.type === LegioTitanicus.type ||
+        item.type === MechanicumTaghmata.type ||
+        item.type === KnightHousehold.type ||
+        item.type === SolarAuxilia.type
+    )) {
+      return rating - 1
+    }
+
+    return rating
   }
 }
 
-export default withType(WordBearers)
+withType(WordBearers)

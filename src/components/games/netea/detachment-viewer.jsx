@@ -39,7 +39,7 @@ class DetachmentViewer extends Component {
     const initiativeRating = detachment.getInitiativeRating()
 
     return (
-      <Card className={classes.viewCard}>
+      <Card className={classes.card}>
         <CardHeader
           title={
             <div className={classes.flexContainer}>
@@ -106,11 +106,8 @@ class DetachmentViewer extends Component {
   }
 }
 
-const mapStateToProps = ({ list }, { type, index }) => {
-  const detachment = list[type][index]
-
+const mapStateToProps = (state, { detachment }) => {
   return {
-    list: list,
     detachment: detachment,
     units: detachment.units
   }

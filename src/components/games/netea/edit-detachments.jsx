@@ -13,11 +13,18 @@ import {
 import kebab from '../../../utils/kebab-case'
 
 class EditDetachments extends Component {
-  handleAddDetachment = (detachment) => {
+  handleAddDetachment = (Detachment) => {
     const {
       type,
+      list,
       onAddDetachment
     } = this.props
+
+    const detachment = new Detachment()
+    detachment.list = list
+    detachment.units.forEach(unit => {
+      unit.detachment = detachment
+    })
 
     onAddDetachment(type, detachment)
   }
@@ -28,14 +35,17 @@ class EditDetachments extends Component {
       type,
       detachments,
       classes,
-      t
+      t,
+      titleTextVariant,
+      titleTextClassName
     } = this.props
 
     return (
       <div className={classes.detachmentTypeWrapper}>
         <PopOverMenu
           text={t(kebab(type))}
-          textClassName={classes.detachmentType}
+          textClassName={titleTextClassName || classes.detachmentType}
+          textVariant={titleTextVariant}
           items={army[type]}
           onSelect={this.handleAddDetachment} />
         {
@@ -45,8 +55,7 @@ class EditDetachments extends Component {
               detachment={detachment}
             >
               <DetachmentEditor
-                type={type}
-                index={index} />
+                detachment={detachment} />
             </InvalidDetachment>
           ))
         }
@@ -55,8 +64,9 @@ class EditDetachments extends Component {
   }
 }
 
-const mapStateToProps = ({ list }, { type }) => {
+const mapStateToProps = (state, { type, list }) => {
   return {
+    list,
     army: list.army,
     detachments: list[type]
   }

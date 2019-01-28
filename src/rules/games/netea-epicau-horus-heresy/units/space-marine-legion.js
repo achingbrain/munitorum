@@ -54,6 +54,7 @@ import {
 import MultipleChoiceUnit from './multiple-choice-unit'
 import TransportUnit from './transport-unit'
 import Unit from './unit'
+import SpacecraftUnit from './spacecraft-unit'
 import withType from '../../../../utils/with-type'
 
 export class LegionArtilleryUnit extends MultipleChoiceUnit {
@@ -135,7 +136,7 @@ export class LegionBasilisk extends Unit {
   }
 }
 
-export class LegionBattleBarge extends Unit {
+export class LegionBattleBarge extends SpacecraftUnit {
   constructor () {
     super(300, 1)
 
@@ -1528,7 +1529,7 @@ export class LegionStormbird extends Unit {
   }
 }
 
-export class LegionStrikeCruiser extends Unit {
+export class LegionStrikeCruiser extends SpacecraftUnit {
   constructor () {
     super(200, 1)
 

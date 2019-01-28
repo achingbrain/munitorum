@@ -32,7 +32,7 @@ import KnightHousehold from './armies/knight-household'
 import SolarAuxilia from './armies/solar-auxilia'
 import DaemonicHordes from './armies/daemonic-hordes'
 
-class NetEaEpicAuHorusHeresy extends Game {
+export default class NetEaEpicAuHorusHeresy extends Game {
   constructor () {
     super('netea-epicau-horus-heresy', 'netea-epicau-horus-heresy-description')
 
@@ -76,26 +76,33 @@ class NetEaEpicAuHorusHeresy extends Game {
       const list = new NetEaEpicAuHorusHeresyList(this, json.name, army)
       list.id = json.id
 
-      if (json.lineDetachments) {
-        list.lineDetachments = json.lineDetachments.map(item => Detachment.fromJSON(item))
-      } else {
-        list.lineDetachments = []
-      }
+      const types = [
+        'lineDetachments',
+        'supportDetachments',
+        'lordsOfWar'
+      ]
 
-      if (json.supportDetachments) {
-        list.supportDetachments = json.supportDetachments.map(item => Detachment.fromJSON(item))
-      } else {
-        list.supportDetachments = []
-      }
+      types.forEach(type => {
+        if (json[type]) {
+          list[type] = json[type]
+            .map(item => {
+              const detachment = Detachment.fromJSON(item)
+              detachment.list = list
 
-      if (json.lordsOfWar) {
-        list.lordsOfWar = json.lordsOfWar.map(item => Detachment.fromJSON(item))
-      } else {
-        list.lordsOfWar = []
-      }
+              return detachment
+            })
+        } else {
+          list[type] = []
+        }
+      })
 
       if (json.allies) {
-        list.allies = json.allies.map(item => this.listFromJSON(item))
+        list.allies = json.allies.map(item => {
+          const ally = this.listFromJSON(item)
+          ally.list = list
+
+          return ally
+        })
       } else {
         list.allies = []
       }
@@ -114,4 +121,4 @@ class NetEaEpicAuHorusHeresy extends Game {
   }
 }
 
-export default withType(NetEaEpicAuHorusHeresy)
+withType(NetEaEpicAuHorusHeresy)

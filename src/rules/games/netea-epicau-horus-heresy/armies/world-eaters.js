@@ -10,9 +10,18 @@ import {
   WorldEatersRedButcherDetachment,
   WorldEatersDestroyerDetachment
 } from '../detachments/world-eaters'
+import LegioTitanicus from './legio-titanicus'
+import ImperialMilitia from './imperial-militia'
+import SolarAuxilia from './solar-auxilia'
+import MechanicumTaghmata from './mechanicum-taghmata'
+import KnightHousehold from './knight-household'
+import DaemonicHordes from './daemonic-hordes'
 import withType from '../../../../utils/with-type'
+import {
+  SingleDaemonicPatron
+} from '../validations'
 
-class WorldEaters extends SpaceMarineLegion {
+export default class WorldEaters extends SpaceMarineLegion {
   constructor () {
     super()
 
@@ -22,7 +31,33 @@ class WorldEaters extends SpaceMarineLegion {
     this.supportDetachments = this.supportDetachments
       .filter(detachment => detachment !== LegionDestroyerDetachment)
     this.lordsOfWar.push(WorldEatersPrimarchDetachment)
+    this.allies.push(
+      LegioTitanicus,
+      ImperialMilitia,
+      SolarAuxilia,
+      MechanicumTaghmata,
+      KnightHousehold,
+      DaemonicHordes
+    )
+    this.validations.push(
+      new SingleDaemonicPatron('khorne')
+    )
+  }
+
+  getStrategyRating (list) {
+    const rating = super.getStrategyRating(list)
+
+    if (list.allies.find(item =>
+      item.type === ImperialMilitia.type ||
+        item.type === SolarAuxilia.type ||
+        item.type === KnightHousehold.type ||
+        item.type === MechanicumTaghmata.type
+    )) {
+      return rating - 1
+    }
+
+    return rating
   }
 }
 
-export default withType(WorldEaters)
+withType(WorldEaters)

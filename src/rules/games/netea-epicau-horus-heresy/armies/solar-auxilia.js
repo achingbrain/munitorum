@@ -19,8 +19,12 @@ import {
   SolarAuxiliaPrimarisWing
 } from '../detachments/solar-auxilia'
 import withType from '../../../../utils/with-type'
+import {
+  LordsOfWarLimit,
+  SupportDetachmentsLimit
+} from '../validations'
 
-class SolarAuxilia extends Army {
+export default class SolarAuxilia extends Army {
   constructor () {
     super()
 
@@ -45,25 +49,10 @@ class SolarAuxilia extends Army {
       SolarAuxiliaAvengerWing,
       SolarAuxiliaPrimarisWing
     ]
-  }
-
-  validate (list, t) {
-    const errors = super.validate(list, t)
-
-    const cost = list.getCost()
-    const lordsOfWarCost = list.lordsOfWar.reduce((acc, curr) => {
-      return acc + curr.getCost()
-    }, 0)
-
-    if (lordsOfWarCost > (cost / 3)) {
-      errors.push('too-many-lords-of-war')
-    }
-
-    if (list.supportDetachments.length > (list.lineDetachments.length * 2)) {
-      errors.push('too-many-support-detachments')
-    }
-
-    return errors
+    this.validations.push(
+      new LordsOfWarLimit(1 / 3),
+      new SupportDetachmentsLimit(2)
+    )
   }
 
   getStrategyRating (list) {
@@ -71,4 +60,4 @@ class SolarAuxilia extends Army {
   }
 }
 
-export default withType(SolarAuxilia)
+withType(SolarAuxilia)

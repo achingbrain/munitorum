@@ -5,6 +5,7 @@ import React, {
 } from 'react'
 import component from '../../component'
 import EditDetachments from './edit-detachments'
+import EditAllies from './edit-allies'
 import Validator from './validator'
 import {
   addDetachment
@@ -21,30 +22,38 @@ class ListEditor extends Component {
       list,
       detachment: {
         type: type,
-        detachment
+        detachment: detachment
       }
     })
   }
 
   render () {
+    const {
+      list
+    } = this.props
+
     return (
       <>
         <Validator />
         <EditDetachments
+          list={list}
           type={'lineDetachments'}
           onAddDetachment={this.handleAddDetachment}
         />
         <EditDetachments
+          list={list}
           type={'supportDetachments'}
           onAddDetachment={this.handleAddDetachment}
         />
         <EditDetachments
+          list={list}
           type={'lordsOfWar'}
           onAddDetachment={this.handleAddDetachment}
         />
-        <EditDetachments
+        <EditAllies
+          list={list}
           type={'allies'}
-          onAddDetachment={this.handleAddDetachment}
+          onAddAlly={this.handleAddDetachment}
         />
       </>
     )
@@ -52,7 +61,11 @@ class ListEditor extends Component {
 }
 
 const mapStateToProps = ({ list }) => ({
-  list
+  list,
+  lineDetachments: list.lineDetachments,
+  supportDetachments: list.supportDetachments,
+  lordsOfWar: list.lordsOfWar,
+  allies: list.allies
 })
 
 const mapDispatchToProps = {

@@ -48,10 +48,6 @@ const styles = theme => ({
     ...theme.mixins.toolbar
   },
   topBar: {
-    marginTop: 64,
-    [theme.breakpoints.down('xs')]: {
-      marginTop: 56
-    },
     color: 'white',
     backgroundColor: '#424242',
     display: 'flex',
@@ -63,7 +59,11 @@ const styles = theme => ({
     width: drawerWidth
   },
   content: {
-    flexGrow: 1
+    flexGrow: 1,
+    marginTop: 64,
+    [theme.breakpoints.down('xs')]: {
+      marginTop: 56
+    }
   },
   contentWrapper: {
     padding: theme.spacing.unit
@@ -73,10 +73,7 @@ const styles = theme => ({
     padding: theme.spacing.unit,
     paddingTop: theme.spacing.unit * 9
   },
-  editCard: {
-    marginBottom: theme.spacing.unit
-  },
-  viewCard: {
+  card: {
     marginBottom: theme.spacing.unit
   },
   cardHeader: {
@@ -84,6 +81,21 @@ const styles = theme => ({
   },
   cardContent: {
     padding: 0
+  },
+  allyViewCardContent: {
+    padding: 0,
+    margin: 0,
+    '&:last-child': {
+      padding: 0
+    }
+  },
+  allyCard: {
+    marginBottom: theme.spacing.unit,
+    backgroundColor: '#3d3d3d'
+  },
+  allyEditorAddDetachment: {
+    paddingLeft: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit * 2
   },
   viewCardHeader: {
     padding: theme.spacing.unit,

@@ -29,9 +29,32 @@ import {
   ImperialMilitiaDisciplineMaster,
   ImperialMilitiaForceCommander
 } from '../units/imperial-militia'
+import AlphaLegion from './alpha-legion'
+import BloodAngels from './blood-angels'
+import DarkAngels from './dark-angels'
+import DeathGuard from './death-guard'
+import EmperorsChildren from './emperors-children'
+import ImperialFists from './imperial-fists'
+import IronHands from './iron-hands'
+import IronWarriors from './iron-warriors'
+import NightLords from './night-lords'
+import RavenGuard from './raven-guard'
+import Salamanders from './salamanders'
+import SonsOfHorus from './sons-of-horus'
+import SpaceWolves from './space-wolves'
+import ThousandSons from './thousand-sons'
+import Ultramarines from './ultramarines'
+import WhiteScars from './white-scars'
+import WordBearers from './word-bearers'
+import WorldEaters from './world-eaters'
+import LegioTitanicus from './legio-titanicus'
+import SolarAuxilia from './solar-auxilia'
+import MechanicumTaghmata from './mechanicum-taghmata'
+import KnightHousehold from './knight-household'
+import DaemonicHordes from './daemonic-hordes'
 import withType from '../../../../utils/with-type'
 
-class ImperialMilitia extends Army {
+export default class ImperialMilitia extends Army {
   constructor () {
     super()
 
@@ -57,6 +80,31 @@ class ImperialMilitia extends Army {
       ImperialMilitiaAvengerWing,
       ImperialMilitiaPrimarisWing
     ]
+    this.allies.push(
+      AlphaLegion,
+      BloodAngels,
+      DarkAngels,
+      DeathGuard,
+      EmperorsChildren,
+      ImperialFists,
+      IronHands,
+      IronWarriors,
+      NightLords,
+      RavenGuard,
+      Salamanders,
+      SonsOfHorus,
+      SpaceWolves,
+      ThousandSons,
+      Ultramarines,
+      WhiteScars,
+      WordBearers,
+      WorldEaters,
+      LegioTitanicus,
+      SolarAuxilia,
+      MechanicumTaghmata,
+      KnightHousehold,
+      DaemonicHordes
+    )
   }
 
   validate (list, t) {
@@ -177,6 +225,14 @@ class ImperialMilitia extends Army {
     list.supportDetachments.forEach(test)
     list.lordsOfWar.forEach(test)
 
+    let daemonicAllies = false
+
+    list.allies.forEach((ally) => {
+      if (ally instanceof DaemonicHordes) {
+        daemonicAllies = true
+      }
+    })
+
     const cost = list.getCost()
     const lordsOfWarCost = list.lordsOfWar.reduce((acc, curr) => {
       return acc + curr.getCost()
@@ -206,6 +262,10 @@ class ImperialMilitia extends Army {
       errors.push('force-commander-should-have-discipline-master')
     }
 
+    if (daemonicAllies && !armyProvenance.traitors) {
+      errors.push('daemonic-allies-require-at-least-one-detachment-with-traitor-provenance')
+    }
+
     return errors
   }
 
@@ -214,4 +274,4 @@ class ImperialMilitia extends Army {
   }
 }
 
-export default withType(ImperialMilitia)
+withType(ImperialMilitia)

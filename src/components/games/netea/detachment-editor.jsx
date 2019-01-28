@@ -77,16 +77,15 @@ class DetachmentEditor extends Component {
   render () {
     const {
       classes,
-      type,
-      index,
       cost,
       upgrades,
       units,
-      image
+      image,
+      detachment
     } = this.props
 
     return (
-      <Card className={classes.editCard}>
+      <Card className={classes.card}>
         <CardHeader
           avatar={
             <Icon src={image} className={classes.detachmentAvatar} />
@@ -99,7 +98,7 @@ class DetachmentEditor extends Component {
             )} />
           }
           title={(
-            <DetachmentNameDialog type={type} index={index} />
+            <DetachmentNameDialog detachment={detachment} />
           )}
           subheader={<Trans i18nKey='cost'>{{ cost }} pts</Trans>}
           className={classes.cardHeader}
@@ -111,9 +110,7 @@ class DetachmentEditor extends Component {
                 units.map((unit, unitIndex) => (
                   <UnitEditor
                     key={`unit-${unitIndex}`}
-                    detachmentType={type}
-                    detachmentIndex={index}
-                    unitIndex={unitIndex}
+                    unit={unit}
                   />
                 ))
               }
@@ -128,11 +125,9 @@ class DetachmentEditor extends Component {
   }
 }
 
-const mapStateToProps = ({ list }, { type, index }) => {
-  const detachment = list[type][index]
-
+const mapStateToProps = (state, { detachment }) => {
   return {
-    list: list,
+    list: detachment.list,
     detachment: detachment,
     cost: detachment.getCost(),
     upgrades: detachment.upgrades

@@ -17,7 +17,7 @@ const initialState = {
   lists: []
 }
 
-const createGame = (state, { name, game, army }) => {
+const createList = (state, { name, game, army }) => {
   const list = game.newList(name, army)
   const lists = state.lists
     .concat(list)
@@ -54,7 +54,7 @@ const updateList = (state, list) => {
     .sort((a, b) => a.name.localeCompare(b.name))
 
   return {
-    list,
+    list: state.lists.find(item => item.id === state.list.id),
     lists
   }
 }
@@ -123,7 +123,7 @@ const updateUnit = (state, { unit, operation }) => {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case CREATE_LIST:
-      return createGame(state, action.payload)
+      return createList(state, action.payload)
     case VIEW_LIST:
       return viewList(state, action.payload)
     case NEW_LIST:

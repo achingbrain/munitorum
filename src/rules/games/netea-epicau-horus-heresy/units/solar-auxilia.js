@@ -38,6 +38,7 @@ import {
 import MultipleChoiceUnit from './multiple-choice-unit'
 import TransportUnit from './transport-unit'
 import Unit from './unit'
+import SpacecraftUnit from './spacecraft-unit'
 import withType from '../../../../utils/with-type'
 
 export class SolarAuxiliaLordMarshall extends Unit {
@@ -499,7 +500,7 @@ export class SolarAuxiliaRapier extends Unit {
   }
 }
 
-class SolarAuxiliaEmperorClassBattleship extends Unit {
+class SolarAuxiliaEmperorClassBattleship extends SpacecraftUnit {
   constructor () {
     super(300, 1)
 
@@ -519,7 +520,7 @@ class SolarAuxiliaEmperorClassBattleship extends Unit {
   }
 }
 
-class SolarAuxiliaDauntlessClassLightCruiser extends Unit {
+class SolarAuxiliaDauntlessClassLightCruiser extends SpacecraftUnit {
   constructor () {
     super(150, 1)
 

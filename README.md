@@ -55,3 +55,4 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons/) for the 
 - Solar Auxilia Stormblade Plasma Blastgun is missing the Slow Firing rule vs the titan version
 - Soul Grinder Harvesting Claws have a range of 15cm but are claws
 - The Khorne Horde says 'May add 1 – 6 Bloodcrushers of Khorne or Skull Cannon of Khorne' - does that mean you can't take Bloodcrushers and Skull Cannons in the same Daemonic Horde detachment?  Same question for all the other Daemon Hordes
+- Do any loyalist legions have different allies effects in the same way as traitor legions?

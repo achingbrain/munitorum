@@ -16,8 +16,7 @@ const ViewDetachments = ({ army, type, detachments, classes, t }) => {
             detachment={detachment}
           >
             <DetachmentViewer
-              type={type}
-              index={index} />
+              detachment={detachment} />
           </InvalidDetachment>
         ))
       }
@@ -25,7 +24,7 @@ const ViewDetachments = ({ army, type, detachments, classes, t }) => {
   )
 }
 
-const mapStateToProps = ({ list }, { type }) => {
+const mapStateToProps = (state, { list, type }) => {
   return {
     army: list.army,
     detachments: list[type]

@@ -20,6 +20,10 @@ export default class Detachment {
     })
   }
 
+  getName () {
+    return this.code
+  }
+
   addUnit (UnitType) {
     const unit = new UnitType()
     unit.detachment = this

@@ -72,10 +72,7 @@ class EditableMultiChoiceWeapon extends Component {
   }
 }
 
-const mapStateToProps = ({ list }, { detachmentType, detachmentIndex, unitIndex }) => {
-  const detachment = list[detachmentType][detachmentIndex]
-  const unit = detachment.units[unitIndex]
-
+const mapStateToProps = (state, { unit }) => {
   return {
     unit: unit,
     weapons: unit.getWeapons(),

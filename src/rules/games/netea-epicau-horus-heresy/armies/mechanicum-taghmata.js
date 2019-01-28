@@ -20,8 +20,12 @@ import {
   MechanicumTaghmataOrdinatusMajorisDetachment
 } from '../detachments/mechanicum-taghmata'
 import withType from '../../../../utils/with-type'
+import {
+  LordsOfWarLimit,
+  SupportDetachmentsLimit
+} from '../validations'
 
-class MechanicumTaghmata extends Army {
+export default class MechanicumTaghmata extends Army {
   constructor () {
     super()
 
@@ -47,25 +51,10 @@ class MechanicumTaghmata extends Army {
       MechanicumTaghmataSuperHeavyTankDestroyer,
       MechanicumTaghmataOrdinatusMajorisDetachment
     ]
-  }
-
-  validate (list, t) {
-    const errors = super.validate(list, t)
-
-    const cost = list.getCost()
-    const lordsOfWarCost = list.lordsOfWar.reduce((acc, curr) => {
-      return acc + curr.getCost()
-    }, 0)
-
-    if (lordsOfWarCost > (cost / 3)) {
-      errors.push('too-many-lords-of-war')
-    }
-
-    if (list.supportDetachments.length > (list.lineDetachments.length * 3)) {
-      errors.push('too-many-support-detachments')
-    }
-
-    return errors
+    this.validations.push(
+      new LordsOfWarLimit(1 / 3),
+      new SupportDetachmentsLimit(3)
+    )
   }
 
   getStrategyRating (list) {
@@ -73,4 +62,4 @@ class MechanicumTaghmata extends Army {
   }
 }
 
-export default withType(MechanicumTaghmata)
+withType(MechanicumTaghmata)

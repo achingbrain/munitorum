@@ -1186,7 +1186,7 @@ export class DaemonicHordesChaosFury extends Unit {
   }
 }
 
-export class DaemonicHordesChaosFuryFlightUnit extends DaemonicHordesChaosFury {
+export class DaemonicHordesChaosUndividedFuryFlightUnit extends DaemonicHordesChaosFury {
   constructor () {
     super()
 
@@ -1217,7 +1217,7 @@ export class DaemonicHordesChaosSpawn extends Unit {
   }
 }
 
-export class DaemonicHordesChaosSpawnPackUnit extends DaemonicHordesChaosSpawn {
+export class DaemonicHordesChaosUndividedSpawnPackUnit extends DaemonicHordesChaosSpawn {
   constructor () {
     super()
 
@@ -1254,7 +1254,7 @@ export class DaemonicHordesSoulGrinder extends Unit {
   }
 }
 
-export class DaemonicHordesSoulGrinderManipleUnit extends DaemonicHordesSoulGrinder {
+export class DaemonicHordesChaosUndividedSoulGrinderManipleUnit extends DaemonicHordesSoulGrinder {
   constructor () {
     super()
 
@@ -1339,9 +1339,9 @@ withType(DaemonicHordesBurningChariotOfTzeenchFollowerUnit)
 withType(DaemonicHordesLordOfChange)
 withType(DaemonicHordesLordOfChangeHordeUnit)
 withType(DaemonicHordesChaosFury)
-withType(DaemonicHordesChaosFuryFlightUnit)
+withType(DaemonicHordesChaosUndividedFuryFlightUnit)
 withType(DaemonicHordesChaosSpawn)
-withType(DaemonicHordesChaosSpawnPackUnit)
+withType(DaemonicHordesChaosUndividedSpawnPackUnit)
 withType(DaemonicHordesSoulGrinder)
-withType(DaemonicHordesSoulGrinderManipleUnit)
+withType(DaemonicHordesChaosUndividedSoulGrinderManipleUnit)
 withType(DaemonicHordesChaosAltar)

@@ -63,10 +63,10 @@ class AlertDialog extends Component {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color='primary'>
+            <Button onClick={this.handleClose}>
               Cancel
             </Button>
-            <Button onClick={this.handleConfirm} color='primary' autoFocus>
+            <Button onClick={this.handleConfirm} autoFocus>
               OK
             </Button>
           </DialogActions>

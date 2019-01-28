@@ -6,9 +6,15 @@ import {
   AlphaLegionLernaeanTerminatorDetachment,
   AlphaLegionPrimarchDetachment
 } from '../detachments/alpha-legion'
+import LegioTitanicus from './legio-titanicus'
+import ImperialMilitia from './imperial-militia'
+import SolarAuxilia from './solar-auxilia'
+import MechanicumTaghmata from './mechanicum-taghmata'
+import KnightHousehold from './knight-household'
+import DaemonicHordes from './daemonic-hordes'
 import withType from '../../../../utils/with-type'
 
-class AlphaLegion extends SpaceMarineLegion {
+export default class AlphaLegion extends SpaceMarineLegion {
   constructor () {
     super()
 
@@ -17,7 +23,27 @@ class AlphaLegion extends SpaceMarineLegion {
       AlphaLegionLernaeanTerminatorDetachment
     )
     this.lordsOfWar.push(AlphaLegionPrimarchDetachment)
+    this.allies.push(
+      LegioTitanicus,
+      ImperialMilitia,
+      SolarAuxilia,
+      MechanicumTaghmata,
+      KnightHousehold,
+      DaemonicHordes
+    )
+  }
+
+  getStrategyRating (list) {
+    const rating = super.getStrategyRating(list)
+
+    if (list.allies.find(item =>
+      item.type === DaemonicHordes.type
+    )) {
+      return rating - 1
+    }
+
+    return rating
   }
 }
 
-export default withType(AlphaLegion)
+withType(AlphaLegion)

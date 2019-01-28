@@ -6,8 +6,8 @@ const LiveReloadPlugin = require('webpack-livereload-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const ImageBuilderPlugin = require('./plugins/image-builder')
-// const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
+const WebappWebpackPlugin = require('webapp-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 
 const config = {
@@ -21,7 +21,7 @@ const config = {
     publicPath: '/'
   },
   plugins: [
-    // new CaseSensitivePathsPlugin(),
+    new CaseSensitivePathsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': `'${process.env.NODE_ENV || 'production'}'`
@@ -33,8 +33,7 @@ const config = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.template.html'
-    }),
-    new FaviconsWebpackPlugin('./src/munitorum.png')
+    })
   ],
   module: {
     rules: [{
@@ -156,7 +155,8 @@ if (process.env.NODE_ENV === 'development') {
       reportFilename: path.join(__dirname, 'reports', 'bundle-size.html'),
       openAnalyzer: false
     }),
-    new ManifestPlugin()
+    new ManifestPlugin(),
+    new WebappWebpackPlugin('./src/images/skull.svg')
   )
   config.optimization = {
     runtimeChunk: 'single',

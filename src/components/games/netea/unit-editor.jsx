@@ -196,9 +196,7 @@ class UnitEditor extends Component {
       mandatory,
       unitOptions,
       classes,
-      detachmentType,
-      detachmentIndex,
-      unitIndex
+      unit
     } = this.props
 
     return (
@@ -219,10 +217,8 @@ class UnitEditor extends Component {
                 return (
                   <EditableMultiChoiceWeapon
                     key={`weapon-${weaponIndex}`}
+                    unit={unit}
                     weapon={weapon}
-                    detachmentType={detachmentType}
-                    detachmentIndex={detachmentIndex}
-                    unitIndex={unitIndex}
                     weaponIndex={weaponIndex} />
                 )
               }
@@ -250,12 +246,9 @@ class UnitEditor extends Component {
   }
 }
 
-const mapStateToProps = ({ list }, { detachmentType, detachmentIndex, unitIndex }) => {
-  const detachment = list[detachmentType][detachmentIndex]
-  const unit = detachment.units[unitIndex]
-
+const mapStateToProps = (state, { unit }) => {
   return {
-    detachment: detachment,
+    detachment: unit.detachment,
     unit: unit,
     name: unit.getName(),
     quantity: unit.getQuantity(),

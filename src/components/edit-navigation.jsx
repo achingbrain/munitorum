@@ -95,8 +95,7 @@ class Navigation extends Component {
           </Toolbar>
         </AppBar>
         <nav className={classes.drawer}>
-          {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-          <Hidden mdUp implementation='css'>
+          <Hidden mdUp>
             <Drawer
               container={this.props.container}
               variant='temporary'
@@ -110,7 +109,7 @@ class Navigation extends Component {
               {drawer}
             </Drawer>
           </Hidden>
-          <Hidden smDown implementation='css'>
+          <Hidden smDown>
             <Drawer
               classes={{
                 paper: classes.drawerPaper

@@ -44,11 +44,11 @@ import {
   DaemonicHordesLordOfChange,
   DaemonicHordesLordOfChangeHordeUnit,
   DaemonicHordesChaosFury,
-  DaemonicHordesChaosFuryFlightUnit,
+  DaemonicHordesChaosUndividedFuryFlightUnit,
   DaemonicHordesChaosSpawn,
-  DaemonicHordesChaosSpawnPackUnit,
+  DaemonicHordesChaosUndividedSpawnPackUnit,
   DaemonicHordesSoulGrinder,
-  DaemonicHordesSoulGrinderManipleUnit,
+  DaemonicHordesChaosUndividedSoulGrinderManipleUnit,
   DaemonicHordesChaosAltar
 } from '../units/daemonic-hordes'
 import DaemonicHordesDetachment from './daemonic-hordes-detachment'
@@ -237,10 +237,10 @@ export class DaemonicHordesTzeenchFollowers extends DaemonicHordesDetachment {
   }
 }
 
-export class DaemonicHordesChaosFuryFlight extends DaemonicHordesDetachment {
+export class DaemonicHordesChaosUndividedFuryFlight extends DaemonicHordesDetachment {
   constructor () {
     super([
-      new DaemonicHordesChaosFuryFlightUnit()
+      new DaemonicHordesChaosUndividedFuryFlightUnit()
     ], [
       new AdditionalUnitOption(DaemonicHordesChaosSpawn),
       new AdditionalUnitOption(DaemonicHordesChaosFury),
@@ -250,10 +250,10 @@ export class DaemonicHordesChaosFuryFlight extends DaemonicHordesDetachment {
   }
 }
 
-export class DaemonicHordesChaosSpawnPack extends DaemonicHordesDetachment {
+export class DaemonicHordesChaosUndividedSpawnPack extends DaemonicHordesDetachment {
   constructor () {
     super([
-      new DaemonicHordesChaosSpawnPackUnit()
+      new DaemonicHordesChaosUndividedSpawnPackUnit()
     ], [
       new AdditionalUnitOption(DaemonicHordesChaosSpawn),
       new AdditionalUnitOption(DaemonicHordesChaosFury),
@@ -263,10 +263,10 @@ export class DaemonicHordesChaosSpawnPack extends DaemonicHordesDetachment {
   }
 }
 
-export class DaemonicHordesSoulGrinderManiple extends DaemonicHordesDetachment {
+export class DaemonicHordesChaosUndividedSoulGrinderManiple extends DaemonicHordesDetachment {
   constructor () {
     super([
-      new DaemonicHordesSoulGrinderManipleUnit()
+      new DaemonicHordesChaosUndividedSoulGrinderManipleUnit()
     ], [
       new AdditionalUnitOption(DaemonicHordesChaosSpawn),
       new AdditionalUnitOption(DaemonicHordesChaosFury),
@@ -289,6 +289,6 @@ withType(DaemonicHordesKhorneFollowers)
 withType(DaemonicHordesNurgleFollowers)
 withType(DaemonicHordesSlaaneshFollowers)
 withType(DaemonicHordesTzeenchFollowers)
-withType(DaemonicHordesChaosFuryFlight)
-withType(DaemonicHordesChaosSpawnPack)
-withType(DaemonicHordesSoulGrinderManiple)
+withType(DaemonicHordesChaosUndividedFuryFlight)
+withType(DaemonicHordesChaosUndividedSpawnPack)
+withType(DaemonicHordesChaosUndividedSoulGrinderManiple)

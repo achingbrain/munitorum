@@ -95,7 +95,7 @@ class ListNameDialog extends Component {
             <Button onClick={this.handleClose}>
               Cancel
             </Button>
-            <Button onClick={this.handleUpdateAndClose} color='primary'>
+            <Button onClick={this.handleUpdateAndClose}>
               Save
             </Button>
           </DialogActions>

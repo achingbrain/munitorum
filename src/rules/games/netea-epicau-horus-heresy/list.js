@@ -50,9 +50,7 @@ export default class NetEaEpicAuHorusHeresyList {
       throw new Error(`Unknown detachment type ${type}`)
     }
 
-    const Detachment = detachment
-
-    this[type] = this[type].concat(new Detachment())
+    this[type] = this[type].concat(detachment)
   }
 
   removeDetachment (detachment) {
@@ -68,7 +66,9 @@ export default class NetEaEpicAuHorusHeresyList {
       this.lordsOfWar = this.lordsOfWar.filter(item => item.id !== detachment.id)
     }
 
-    this.allies.forEach(ally => ally.removeDetachment(detachment))
+    if (this.allies.find(item => item.id === detachment.id)) {
+      this.allies = this.allies.filter(item => item.id !== detachment.id)
+    }
   }
 
   toJSON () {

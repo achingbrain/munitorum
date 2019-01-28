@@ -50,6 +50,7 @@ import {
 import MultipleChoiceUnit from './multiple-choice-unit'
 import TransportUnit from './transport-unit'
 import Unit from './unit'
+import SpacecraftUnit from './spacecraft-unit'
 import withType from '../../../../utils/with-type'
 
 export class Provenance extends WeaponBlank {
@@ -513,7 +514,7 @@ export class ImperialMilitiaLandRaiderProteus extends TransportUnit {
   }
 }
 
-class ImperialMilitiaEmperorClassBattleship extends Unit {
+class ImperialMilitiaEmperorClassBattleship extends SpacecraftUnit {
   constructor () {
     super(300, 1)
 
@@ -533,7 +534,7 @@ class ImperialMilitiaEmperorClassBattleship extends Unit {
   }
 }
 
-class ImperialMilitiaDauntlessClassLightCruiser extends Unit {
+class ImperialMilitiaDauntlessClassLightCruiser extends SpacecraftUnit {
   constructor () {
     super(150, 1)
 

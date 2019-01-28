@@ -250,7 +250,7 @@ class UnitViewer extends Component {
   }
 }
 
-const mapStateToProps = ({ list }, { unit }) => {
+const mapStateToProps = (state, { unit }) => {
   return {
     unit,
     name: unit.getName(),

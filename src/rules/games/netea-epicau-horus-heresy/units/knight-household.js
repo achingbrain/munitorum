@@ -33,6 +33,9 @@ import {
   Scout,
   Notes
 } from '../special-rules'
+import {
+  Unique
+} from '../constraints'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit from './unit'
 import withType from '../../../../utils/with-type'
@@ -420,7 +423,8 @@ export class KnightHouseholdSeneschal extends Unit {
 
     this.rules = [
       new InvulnerableSave(),
-      new SupremeCommander()
+      new SupremeCommander(),
+      new Unique()
     ]
     this.stats = {
       type: 'CH',

@@ -12,23 +12,31 @@ const Validator = ({ army, list, t, classes }) => {
     return null
   }
 
+  // dedupe
+  const dedupedErrors = {}
+
+  errors.forEach(err => {
+    dedupedErrors[err] = err
+  })
+
   return (
     <div>
       {
-        errors.map(err => {
-          return (
-            <SnackbarContent
-              key={err}
-              className={classes.errorSnackbar}
-              message={
-                <p className={classes.snackbarMessage}>
-                  <ErrorIcon className={classes.snackbarIcon} />
-                  {typeof err === 'string' ? t(err) : err}
-                </p>
-              }
-            />
-          )
-        })
+        Object.values(dedupedErrors)
+          .map(err => {
+            return (
+              <SnackbarContent
+                key={err}
+                className={classes.errorSnackbar}
+                message={
+                  <p className={classes.snackbarMessage}>
+                    <ErrorIcon className={classes.snackbarIcon} />
+                    {typeof err === 'string' ? t(err) : err}
+                  </p>
+                }
+              />
+            )
+          })
       }
     </div>
   )

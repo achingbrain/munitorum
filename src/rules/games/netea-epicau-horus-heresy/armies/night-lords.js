@@ -10,9 +10,15 @@ import {
   NightLordsTerrorDetachment,
   NightLordsDestroyerDetachment
 } from '../detachments/night-lords'
+import LegioTitanicus from './legio-titanicus'
+import ImperialMilitia from './imperial-militia'
+import SolarAuxilia from './solar-auxilia'
+import MechanicumTaghmata from './mechanicum-taghmata'
+import KnightHousehold from './knight-household'
+import DaemonicHordes from './daemonic-hordes'
 import withType from '../../../../utils/with-type'
 
-class NightLords extends SpaceMarineLegion {
+export default class NightLords extends SpaceMarineLegion {
   constructor () {
     super()
 
@@ -24,7 +30,31 @@ class NightLords extends SpaceMarineLegion {
     this.supportDetachments = this.supportDetachments
       .filter(detachment => detachment !== LegionDestroyerDetachment)
     this.lordsOfWar.push(NightLordsPrimarchDetachment)
+    this.allies.push(
+      LegioTitanicus,
+      ImperialMilitia,
+      SolarAuxilia,
+      MechanicumTaghmata,
+      KnightHousehold,
+      DaemonicHordes
+    )
+  }
+
+  getStrategyRating (list) {
+    const rating = super.getStrategyRating(list)
+
+    if (list.allies.find(item =>
+      item.type === ImperialMilitia.type ||
+        item.type === SolarAuxilia.type ||
+        item.type === KnightHousehold.type ||
+        item.type === MechanicumTaghmata.type ||
+        item.type === DaemonicHordes.type
+    )) {
+      return rating - 1
+    }
+
+    return rating
   }
 }
 
-export default withType(NightLords)
+withType(NightLords)

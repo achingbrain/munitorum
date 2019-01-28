@@ -4,16 +4,23 @@ import ListEditor from '../../../../components/games/netea/list-editor'
 import ListViewer from '../../../../components/games/netea/list-viewer'
 import TopBar from '../../../../components/games/netea/top-bar'
 import {
-  LimitedPerPoints,
-  Unique
-} from '../constraints'
+  PointsLimitedRule,
+  UniqueRule,
+  NoAlliedSupremeCommanders
+} from '../validations'
 
-class Army {
+export default class Army {
   constructor () {
     this.lineDetachments = []
     this.supportDetachments = []
     this.lordsOfWar = []
     this.allies = []
+
+    this.validations = [
+      new PointsLimitedRule(),
+      new UniqueRule(),
+      new NoAlliedSupremeCommanders()
+    ]
   }
 
   getEditor () {
@@ -29,64 +36,43 @@ class Army {
   }
 
   validate (list, t) {
-    const errors = []
-    let pointsLimited = {}
-    let unique = {}
+    this.validations.forEach(validation => validation.reset())
 
     const test = (detachment) => {
-      detachment.constraints.forEach(constraint => {
-        if (constraint instanceof LimitedPerPoints) {
-          if (!pointsLimited[detachment.type]) {
-            pointsLimited[detachment.type] = {
-              type: detachment,
-              constraint,
-              count: 0
-            }
-          }
-          pointsLimited[detachment.type].count++
-        }
+      this.validations.forEach(validation => {
+        validation.walkDetachment(detachment)
+      })
 
-        if (constraint instanceof Unique) {
-          if (!unique[detachment.type]) {
-            unique[detachment.type] = {
-              type: detachment,
-              constraint,
-              count: 0
-            }
-          }
-          unique[detachment.type].count++
-        }
+      detachment.units.forEach(unit => {
+        this.validations.forEach(validation => {
+          validation.walkUnit(unit)
+        })
       })
     }
+
+    this.validations.forEach(validation => {
+      validation.walkList(list)
+    })
 
     list.lineDetachments.forEach(test)
     list.supportDetachments.forEach(test)
     list.lordsOfWar.forEach(test)
-
-    const cost = list.getCost()
-
-    Object.keys(pointsLimited).forEach(key => {
-      const type = pointsLimited[key]
-
-      if (type.count > Math.floor(cost / type.constraint.limit)) {
-        errors.push(`Only ${t(type.constraint.count)} ${t(type.type.code)} detachment is allowed per full ${type.constraint.limit} points`)
-      }
+    list.allies.forEach(ally => {
+      this.validations.forEach(validation => {
+        validation.walkAlly(ally)
+      })
     })
 
-    Object.keys(unique).forEach(key => {
-      const type = unique[key]
+    const errors = this.validations.reduce((acc, curr) => {
+      return acc.concat(curr.getErrors(list, t))
+    }, [])
 
-      if (type.count > 1) {
-        errors.push(`Only 1 ${t(type.type.code)} is allowed`)
-      }
-    })
-
-    return errors
+    return list.allies.reduce((acc, curr) => {
+      return acc.concat(curr.army.validate(curr, t))
+    }, errors)
   }
 
   getStrategyRating (list) {
     return 1
   }
 }
-
-export default Army

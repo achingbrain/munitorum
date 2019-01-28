@@ -95,7 +95,7 @@ class DetachmentNameDialog extends Component {
             <Button onClick={this.handleClose}>
               Cancel
             </Button>
-            <Button onClick={this.handleUpdateAndClose} color='primary'>
+            <Button onClick={this.handleUpdateAndClose}>
               Save
             </Button>
           </DialogActions>
@@ -105,11 +105,9 @@ class DetachmentNameDialog extends Component {
   }
 }
 
-const mapStateToProps = ({ list }, { type, index }) => {
-  const detachment = list[type][index]
-
+const mapStateToProps = (state, { detachment }) => {
   return {
-    list,
+    list: detachment.list,
     detachment,
     name: detachment.name,
     code: detachment.code
