@@ -46,6 +46,8 @@ export default class ImperialFists extends SpaceMarineLegion {
       KnightHousehold,
       LegioCustodes
     )
+
+    this.colour = '#afaa00'
   }
 
   getStrategyRating (list) {

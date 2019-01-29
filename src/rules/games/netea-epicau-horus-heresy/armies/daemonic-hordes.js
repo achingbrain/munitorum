@@ -87,6 +87,8 @@ export default class DaemonicHordes extends Army {
       new FollowersRequireHordes(),
       new OnlyOneDaemonicOverlord()
     )
+
+    this.colour = '#c00014'
   }
 
   getStrategyRating (list) {

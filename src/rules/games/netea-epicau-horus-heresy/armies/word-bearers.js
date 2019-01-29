@@ -40,6 +40,8 @@ export default class WordBearers extends SpaceMarineLegion {
       KnightHousehold,
       DaemonicHordes
     )
+
+    this.colour = '#54202e'
   }
 
   getStrategyRating (list) {

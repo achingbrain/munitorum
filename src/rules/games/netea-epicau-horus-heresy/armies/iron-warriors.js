@@ -49,6 +49,8 @@ export default class IronWarriors extends SpaceMarineLegion {
       KnightHousehold,
       DaemonicHordes
     )
+
+    this.colour = '#1b1b1b'
   }
 
   getStrategyRating (list) {

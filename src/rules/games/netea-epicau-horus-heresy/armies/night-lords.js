@@ -38,6 +38,8 @@ export default class NightLords extends SpaceMarineLegion {
       KnightHousehold,
       DaemonicHordes
     )
+
+    this.colour = '#091448'
   }
 
   getStrategyRating (list) {

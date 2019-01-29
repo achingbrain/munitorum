@@ -39,6 +39,8 @@ export default class EmperorsChildren extends SpaceMarineLegion {
     this.validations.push(
       new SingleDaemonicPatron('slaanesh')
     )
+
+    this.colour = '#704771'
   }
 
   getStrategyRating (list) {

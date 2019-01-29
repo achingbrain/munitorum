@@ -38,6 +38,8 @@ export default class DarkAngels extends SpaceMarineLegion {
       KnightHousehold,
       LegioCustodes
     )
+
+    this.colour = '#000000'
   }
 
   getStrategyRating (list) {

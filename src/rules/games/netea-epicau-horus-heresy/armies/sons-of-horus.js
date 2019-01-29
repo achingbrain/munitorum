@@ -29,6 +29,8 @@ export default class SonsOfHorus extends SpaceMarineLegion {
       KnightHousehold,
       DaemonicHordes
     )
+
+    this.colour = '#1a4a45'
   }
 
   getStrategyRating (list) {

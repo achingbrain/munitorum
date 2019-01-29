@@ -29,6 +29,8 @@ export default class Salamanders extends SpaceMarineLegion {
       KnightHousehold,
       LegioCustodes
     )
+
+    this.colour = '#223c0d'
   }
 
   getStrategyRating (list) {

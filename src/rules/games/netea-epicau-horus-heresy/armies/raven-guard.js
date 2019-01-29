@@ -40,6 +40,8 @@ export default class RavenGuard extends SpaceMarineLegion {
       KnightHousehold,
       LegioCustodes
     )
+
+    this.colour = '#000000'
   }
 
   getStrategyRating (list) {

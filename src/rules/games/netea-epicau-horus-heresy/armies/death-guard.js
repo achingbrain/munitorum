@@ -42,6 +42,8 @@ export default class DeathGuard extends SpaceMarineLegion {
     this.validations.push(
       new SingleDaemonicPatron('nurgle')
     )
+
+    this.colour = '#6f694b'
   }
 
   getStrategyRating (list) {

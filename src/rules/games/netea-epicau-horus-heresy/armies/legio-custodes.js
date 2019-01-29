@@ -33,6 +33,8 @@ export default class LegioCustodes extends Army {
     this.lordsOfWar = [
       LegioCustodesOrionAssaultDropshipSquadron
     ]
+
+    this.colour = '#bd8301'
   }
 
   getStrategyRating (list) {

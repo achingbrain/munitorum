@@ -31,6 +31,8 @@ export default class AlphaLegion extends SpaceMarineLegion {
       KnightHousehold,
       DaemonicHordes
     )
+
+    this.colour = '#1e5e78'
   }
 
   getStrategyRating (list) {

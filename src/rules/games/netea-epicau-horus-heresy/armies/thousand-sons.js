@@ -39,6 +39,8 @@ export default class ThousandSons extends SpaceMarineLegion {
     this.validations.push(
       new SingleDaemonicPatron('tzeench')
     )
+
+    this.colour = '#ac3125'
   }
 
   getStrategyRating (list) {

@@ -46,6 +46,8 @@ export default class IronHands extends SpaceMarineLegion {
       KnightHousehold,
       LegioCustodes
     )
+
+    this.colour = '#282b2e'
   }
 
   getStrategyRating (list) {

@@ -42,6 +42,8 @@ export default class Ultramarines extends SpaceMarineLegion {
       KnightHousehold,
       LegioCustodes
     )
+
+    this.colour = '#0028b3'
   }
 
   getStrategyRating (list) {

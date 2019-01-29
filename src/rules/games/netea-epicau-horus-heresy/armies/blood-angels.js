@@ -27,6 +27,8 @@ export default class BloodAngels extends SpaceMarineLegion {
       KnightHousehold,
       LegioCustodes
     )
+
+    this.colour = '#b91f18'
   }
 
   getStrategyRating (list) {
