@@ -50,7 +50,7 @@ export class LegioTitanicusWarhoundScountTitan extends Unit {
       new ReinforcedArmour(),
       new Walker(),
       new CortexController(),
-      new CriticalHit('legio-warhound-critical-hit'),
+      new CriticalHit('legio-titanicus-warhound-critical-hit'),
       new Titanic()
     ]
     this.stats = {
@@ -92,7 +92,7 @@ export class LegioTitanicusReaverBattleTitan extends Unit {
       new ReinforcedArmour(),
       new Walker(),
       new CortexController(),
-      new CriticalHit('legio-reaver-critical-hit'),
+      new CriticalHit('legio-titanicus-reaver-critical-hit'),
       new Titanic()
     ]
     this.stats = {
@@ -136,7 +136,7 @@ export class LegioTitanicusWarlordBattleTitan extends Unit {
       new ReinforcedArmour(),
       new Walker(),
       new CortexController(),
-      new CriticalHit('legio-warlord-critical-hit'),
+      new CriticalHit('legio-titanicus-warlord-critical-hit'),
       new Titanic()
     ]
     this.stats = {
@@ -187,7 +187,7 @@ class LegioTitanicusImperatorSupportTitan extends Unit {
       new Walker(),
       new CortexController(),
       new SecondaryTargetingProtocols(),
-      new CriticalHit('legio-imperator-critical-hit'),
+      new CriticalHit('legio-titanicus-imperator-critical-hit'),
       new Titanic()
     ]
     this.stats = {
@@ -220,7 +220,7 @@ class LegioTitanicusWarmongerSupportTitan extends Unit {
       new Walker(),
       new CortexController(),
       new SecondaryTargetingProtocols(),
-      new CriticalHit('legio-warmonger-critical-hit'),
+      new CriticalHit('legio-titanicus-warmonger-critical-hit'),
       new Titanic()
     ]
     this.stats = {
