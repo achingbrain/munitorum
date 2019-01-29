@@ -647,7 +647,7 @@ export class LegionFellblade extends Unit {
   }
 }
 
-export class LegionFireRaptorGunship extends Unit {
+export class LegionGunship extends Unit {
   constructor (detachment) {
     super(detachment, 300, 2)
 
@@ -1925,7 +1925,7 @@ withType(LegionDreadnought)
 withType(LegionDropPod)
 withType(LegionFalchion)
 withType(LegionFellblade)
-withType(LegionFireRaptorGunship)
+withType(LegionGunship)
 withType(LegionGlaive)
 withType(LegionHeavySupportSquad)
 withType(LegionJavelinAttackSpeeder)

@@ -134,7 +134,7 @@ export default {
     'legion-falchion-detachment': 'Falchion Detachment',
     'legion-fellblade': 'Fellblade Super Heavy Tank',
     'legion-fellblade-detachment': 'Fellblade Detachment',
-    'legion-fire-raptor-gunship': 'Fire Raptor Gunship',
+    'legion-gunship': 'Fire Raptor Gunship',
     'legion-glaive': 'Glaive Super Heavy Tank',
     'legion-glaive-detachment': 'Glaive Detachment',
     'legion-gunship-wing': 'Gunship Wing',

@@ -10,7 +10,7 @@ import {
   LegionHeavySupportSquad,
   LegionDestroyerSquad,
   LegionDreadnought,
-  LegionFireRaptorGunship,
+  LegionGunship,
   LegionXiphonInterceptor,
   LegionJavelinAttackSpeeder,
   LegionLandRaiderPhobosSquadronUnit,
@@ -244,7 +244,7 @@ export class LegionGunshipWing extends SpaceMarineLegionDetachment {
     super(list)
 
     this.setMandatoryUnits(
-      new LegionFireRaptorGunship(this)
+      new LegionGunship(this)
     )
   }
 }
