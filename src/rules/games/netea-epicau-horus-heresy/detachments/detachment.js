@@ -14,6 +14,15 @@ export default class Detachment {
     this.upgrades = []
     this.constraints = []
     this.rules = []
+    this.errors = []
+  }
+
+  addError (error) {
+    this.errors = this.errors.concat(error)
+  }
+
+  clearErrors () {
+    this.errors = []
   }
 
   setMandatoryUnits (...units) {

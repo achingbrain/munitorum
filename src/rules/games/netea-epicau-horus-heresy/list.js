@@ -16,6 +16,15 @@ export default class NetEaEpicAuHorusHeresyList {
     this.supportDetachments = []
     this.lordsOfWar = []
     this.allies = []
+    this.errors = []
+  }
+
+  addError (error) {
+    this.errors = this.errors.concat(error)
+  }
+
+  clearErrors () {
+    this.errors = []
   }
 
   getEditor () {

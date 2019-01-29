@@ -83,7 +83,8 @@ const styles = theme => ({
     padding: 0
   },
   cardFooter: {
-    paddingLeft: 15
+    paddingLeft: 15,
+    color: 'white'
   },
   allyViewCardContent: {
     padding: 0,

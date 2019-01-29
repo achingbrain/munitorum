@@ -29,12 +29,15 @@ class ListEditor extends Component {
 
   render () {
     const {
-      list
+      list,
+      t
     } = this.props
+
+    list.army.validate(list, t)
 
     return (
       <>
-        <Validator />
+        <Validator errors={list.errors} />
         <EditDetachments
           list={list}
           type={'lineDetachments'}
@@ -65,7 +68,8 @@ const mapStateToProps = ({ list }) => ({
   lineDetachments: list.lineDetachments,
   supportDetachments: list.supportDetachments,
   lordsOfWar: list.lordsOfWar,
-  allies: list.allies
+  allies: list.allies,
+  cacheBuster: Date.now()
 })
 
 const mapDispatchToProps = {

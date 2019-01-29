@@ -5,6 +5,7 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons/) for the 
 
 ## questions
 
+- Legion Support Detachments can take up to 4 upgrades, what about Line Detachments?
 - Legion Assault Marine line detachment missing Drop Assault upgrade compared to Assault Marine Support Detachment
 - Word bearer Contemptor Dreadnought talon has Centurion & Dreadnought upgrades, regular Legion Contemptor Dreadnought Talon does not
 - Night Raptor similar to assault marines but no Drop Assault option?
@@ -16,12 +17,14 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons/) for the 
 - Raven Guard Dark Fury detachment has no drop assault option
 - Sanguinius has jump pack rule but only 15cm move
 - Leman Russ' bodyguard have the Ferocity rule but he doesn't
+- How many upgrades can Legio Titanicus units take?
 - Should Laser Burner Battle Titan Weapon be AND instead of OR like other weapons with both assault and small arms profiles?
 - Only the Warhound titan has the 'Walker' rule - Imperator, Reaver, Warlord and Warmonger titans do not
 - Can titans have a Legate and a Veteran Princeps?
 - The 'Carapace Landing Pad' titan weapon option is not marked as 'Carapace mount only'
 - Warmonger has 'Doomstrike Missles', are these the same as 'Deathstrike Missiles'?
 - Warmonger 'Head Gun' firepower rating is marked 'Head Gun'?
+- How many upgrades can Legio Custodes units take?
 - Custodes Tribune has no weapons
 - Custodes Aquilon Terminator unit has 'Teleport' special rule but detachment has 'Carrier' upgrade available
 - Ephoroi Custodes have the 'Carrier' upgrade, what do they count as for transport purposes?
@@ -30,6 +33,7 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons/) for the 
 - What are the strategy and initiative ratings for Custodes?
 - Imperial Militia Gorgon has One Shot special rule - is that the same as the Single Shot rule?
 - Imperial Militia Infantry Squad only has Heavy Transport upgrade option but command and grenedier squads also have Transport option
+- How many upgrades can Imperial Militia units take?
 - Do extra Militia Auxiliary units added via the 'Militia Auxiliary' upgrade have to have the same weapons as the other Militia Auxiliary units in the Militia Infantry Squad?
 - Imperial Militia Arvus Lighters have the Planetfall special rule but no spacecraft in the list have any transport capacity
 - Auxilia Malcador has 2xLascannon which are AT5+, Auxilia Malcador Annihalator has 2xLascannon which are AT4+
@@ -37,12 +41,13 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons/) for the 
 - Vindicator demolisher cannon has no Disrupt rule, Fellblade and Auxillia Malcador Annihalator ones do
 - Imperial Militia faction has no points limit for Lords of War detachments
 - If the army includes a Force Commander and only Rogue Psykers (not Discipline Masters), does the first Rogue Psyker have to be in the same formation as the Force Commander?
+- Mechanicum Support Detachments can take up to 4 upgrades, what about Line Detachments?
 - Mechanicum Taghmata Krios, Karacnos and Triaros have the Walker special rule but are tanks
 - Mechanicum Ordinatus Minor Volkite Culverins have both AP4+ and AP6+
 - Mechanicum Avenger Strike Fighters and Primaris Lighting have no stats - same as Imperial Militia?
 - Mechanicum Falchion has better CC and FF than Legion Falchion and better Volcano Cannon - TK(2D3) vs TK(D3+1)
 - Mechanicum Ordinatus Majoris Nova Cannon has no Fixed Forward Fire Arc rule?
-- Questoris Knight-Errant thermal cannon is MW4+ at 30cm but MW5+ at 15cm?
+- Questoris Knight-Errant thermal cannon is MW4+ at 30cm but MW5+ at 15cm? Should it be the other way round?
 - Cerastus Knight-Acheron flame cannon has no small arms range
 - Questoris Knight-Magaera/Styrix Twin Linked Rad Cleanser has 15cm range but is not Small Arms?
 - Acastas Knight Porpyhrion and Questoris Knight-Warden both have Ironstorm Missile Pods but stats are different

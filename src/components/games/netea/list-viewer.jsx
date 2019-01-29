@@ -6,10 +6,12 @@ import ViewDetachments from './view-detachments'
 import ViewAllies from './view-allies'
 import Validator from './validator'
 
-const ListViewer = ({ list }) => {
+const ListViewer = ({ list, t }) => {
+  list.army.validate(list, t)
+
   return (
     <>
-      <Validator />
+      <Validator errors={list.errors} />
       <ViewDetachments
         list={list}
         type={'lineDetachments'}
@@ -30,7 +32,8 @@ const ListViewer = ({ list }) => {
 }
 
 const mapStateToProps = ({ list }) => ({
-  list
+  list,
+  cacheBuster: Date.now()
 })
 
 const mapDispatchToProps = {}

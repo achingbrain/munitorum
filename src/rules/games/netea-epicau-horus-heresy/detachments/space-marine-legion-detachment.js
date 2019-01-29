@@ -35,4 +35,8 @@ export default class SpaceMarineLegionDetachment extends Detachment {
   getInitiativeRating () {
     return 1
   }
+
+  getRemainingUpgrades () {
+    return 4
+  }
 }

@@ -6,4 +6,8 @@ export default class LegioTitanicusDetachment extends Detachment {
   getInitiativeRating () {
     return 1
   }
+
+  getRemainingUpgrades () {
+    return '∞'
+  }
 }

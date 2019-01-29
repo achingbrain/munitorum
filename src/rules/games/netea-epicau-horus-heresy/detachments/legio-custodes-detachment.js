@@ -6,4 +6,8 @@ export default class LegioCustodesDetachment extends Detachment {
   getInitiativeRating () {
     return 1
   }
+
+  getRemainingUpgrades () {
+    return '∞'
+  }
 }

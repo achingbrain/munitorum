@@ -13,6 +13,7 @@ import TableBody from '@material-ui/core/TableBody'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
+import Validator from './validator'
 import UnitViewer from './unit-viewer'
 
 class DetachmentViewer extends Component {
@@ -55,6 +56,7 @@ class DetachmentViewer extends Component {
           titleTypographyProps={{ variant: 'subtitle1', component: 'h5' }}
         />
         <CardContent className={classes.cardContent}>
+          <Validator errors={detachment.errors} />
           <Table>
             <TableHead>
               <TableRow className={classes.tableViewRow}>

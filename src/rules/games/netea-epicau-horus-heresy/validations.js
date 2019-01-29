@@ -28,7 +28,7 @@ import {
 } from './special-rules'
 
 export class Rule {
-  reset () {
+  init () {
 
   }
 
@@ -48,13 +48,13 @@ export class Rule {
 
   }
 
-  getErrors (list, t) {
+  collect () {
     return []
   }
 }
 
 export class PointsLimitedRule extends Rule {
-  reset () {
+  init () {
     this.pointsLimited = {}
   }
 
@@ -63,32 +63,35 @@ export class PointsLimitedRule extends Rule {
       if (constraint instanceof LimitedPerPoints) {
         if (!this.pointsLimited[detachment.type]) {
           this.pointsLimited[detachment.type] = {
-            type: detachment,
+            code: detachment.code,
+            detachments: [],
             constraint,
             count: 0
           }
         }
 
         this.pointsLimited[detachment.type].count++
+        this.pointsLimited[detachment.type].detachments.push(detachment)
       }
     })
   }
 
-  getErrors (list, t) {
-    const errors = []
+  collect (list, t) {
     const cost = list.getCost()
+    let errors = false
 
-    Object.keys(this.pointsLimited).forEach(key => {
-      const type = this.pointsLimited[key]
-
+    Object.values(this.pointsLimited).forEach(type => {
       if (type.count > Math.floor(cost / type.constraint.limit)) {
+        errors = true
         const count = t(type.constraint.count)
-        const code = t(type.type.code)
+        const code = t(type.code)
         const limit = type.constraint.limit
 
-        errors.push(
-          <Trans i18nKey='limited-quantity-per-points'>Only {{ count }} {{ code }} detachment is allowed per full {{ limit }} points</Trans>
-        )
+        type.detachments.forEach(detachment => {
+          detachment.addError(
+            <Trans i18nKey='limited-quantity-per-points'>Only {{ count }} {{ code }} detachment is allowed per full {{ limit }} points</Trans>
+          )
+        })
       }
     })
 
@@ -97,7 +100,7 @@ export class PointsLimitedRule extends Rule {
 }
 
 export class UniqueRule extends Rule {
-  reset () {
+  init () {
     this.unique = {}
   }
 
@@ -107,11 +110,13 @@ export class UniqueRule extends Rule {
         if (!this.unique[detachment.type]) {
           this.unique[detachment.type] = {
             type: detachment,
+            detachments: [],
             count: 0
           }
         }
 
         this.unique[detachment.type].count++
+        this.unique[detachment.type].detachments.push(detachment)
       }
     })
 
@@ -121,28 +126,31 @@ export class UniqueRule extends Rule {
           if (!this.unique[unit.type]) {
             this.unique[unit.type] = {
               type: unit,
+              detachments: [],
               count: 0
             }
           }
 
           this.unique[unit.type].count++
+          this.unique[detachment.type].detachments.push(unit.detachment)
         }
       })
     })
   }
 
-  getErrors (list, t) {
-    const errors = []
+  collect (list, t) {
+    let errors = false
 
-    Object.keys(this.unique).forEach(key => {
-      const uniqeType = this.unique[key]
-
+    Object.values(this.unique).forEach(uniqeType => {
       if (uniqeType.count > 1) {
         const type = t(uniqeType.type.code)
+        errors = true
 
-        errors.push(
-          <Trans i18nKey='there-can-be-only-one'>Only 1 {{ type }} is allowed</Trans>
-        )
+        uniqeType.detachments.forEach(detachment => {
+          detachment.addError(
+            <Trans i18nKey='there-can-be-only-one'>Only 1 {{ type }} is allowed</Trans>
+          )
+        })
       }
     })
 
@@ -157,19 +165,32 @@ export class SingleDaemonicPatron extends Rule {
     this.patron = patron
   }
 
-  reset () {
+  init () {
     this.gods = {
-      khorne: 0,
-      tzeench: 0,
-      slaanesh: 0,
-      nurgle: 0
+      khorne: {
+        count: 0,
+        detachments: []
+      },
+      tzeench: {
+        count: 0,
+        detachments: []
+      },
+      slaanesh: {
+        count: 0,
+        detachments: []
+      },
+      nurgle: {
+        count: 0,
+        detachments: []
+      }
     }
   }
 
   walkDetachment (detachment) {
     Object.keys(this.gods).forEach(god => {
       if (detachment.code.includes(god)) {
-        this.gods[god]++
+        this.gods[god].count++
+        this.gods[god].detachments.push(detachment)
       }
     })
   }
@@ -179,41 +200,44 @@ export class SingleDaemonicPatron extends Rule {
       if (ally.army.code === 'daemonic-hordes') {
         ally.lineDetachments.forEach(detachment => {
           if (detachment.code.includes(god)) {
-            this.gods[god]++
+            this.gods[god].count++
+            this.gods[god].detachments.push(detachment)
           }
         })
 
         ally.supportDetachments.forEach(detachment => {
           if (detachment.code.includes(god)) {
-            this.gods[god]++
+            this.gods[god].count++
+            this.gods[god].detachments.push(detachment)
           }
         })
 
         ally.lordsOfWar.forEach(detachment => {
           if (detachment.code.includes(god)) {
-            this.gods[god]++
+            this.gods[god].count++
+            this.gods[god].detachments.push(detachment)
           }
         })
       }
     })
   }
 
-  getErrors (list, t) {
-    const errors = []
+  collect (list, t) {
+    let errors = false
+    const patron = t(this.patron)
 
     delete this.gods[this.patron]
 
-    const count = Object.keys(this.gods)
-      .map(key => this.gods[key])
-      .reduce((acc, curr) => acc + curr, 0)
-
-    const patron = t(this.patron)
-
-    if (count > 0) {
-      errors.push(
-        <Trans i18nKey='only-one-patron-god'>You may only include units from the patron god {{ patron }}</Trans>
-      )
-    }
+    Object.values(this.gods).forEach(god => {
+      if (god.count) {
+        errors = true
+        god.detachments.forEach(detachment => {
+          detachment.addError(
+            <Trans i18nKey='only-one-patron-god'>You may only include units from the patron god {{ patron }}</Trans>
+          )
+        })
+      }
+    })
 
     return errors
   }
@@ -226,7 +250,7 @@ export class LordsOfWarLimit extends Rule {
     this.limit = limit
   }
 
-  reset () {
+  init () {
     this.lordsOfWarCost = 0
     this.alliesCost = 0
   }
@@ -236,7 +260,7 @@ export class LordsOfWarLimit extends Rule {
     this.alliesCost = list.allies.reduce((acc, curr) => acc + curr.getCost(), 0)
   }
 
-  getErrors (list, t) {
+  collect (list, t) {
     const errors = []
     const cost = list.getCost()
 
@@ -255,7 +279,7 @@ export class SupportDetachmentsLimit extends Rule {
     this.limit = limit
   }
 
-  reset () {
+  init () {
     this.lineDetachments = 0
     this.supportDetachments = 0
   }
@@ -265,7 +289,7 @@ export class SupportDetachmentsLimit extends Rule {
     this.supportDetachments = list.supportDetachments.length
   }
 
-  getErrors (list, t) {
+  collect (list, t) {
     const errors = []
 
     if (this.supportDetachments > (this.lineDetachments * this.limit)) {
@@ -277,26 +301,34 @@ export class SupportDetachmentsLimit extends Rule {
 }
 
 export class PrimarchsOrLordCommanders extends Rule {
-  reset () {
+  init () {
     this.primarchs = 0
     this.lordCommanders = 0
+    this.detachments = []
   }
 
   walkUnit (unit) {
     if (unit instanceof LegionLordCommander) {
       this.lordCommanders++
+      this.detachments.push(unit.detachment)
     }
 
     if (unit instanceof PrimarchUnit) {
       this.primarchs++
+      this.detachments.push(unit.detachment)
     }
   }
 
-  getErrors (list, t) {
-    const errors = []
+  collect (list, t) {
+    let errors = false
 
     if (this.primarchs && this.lordCommanders) {
-      errors.push('cannot-take-primarch-and-lord-commander')
+      errors = true
+      this.detachments.forEach(detachment => {
+        detachment.addError(
+          'cannot-take-primarch-and-lord-commander'
+        )
+      })
     }
 
     return errors
@@ -304,7 +336,7 @@ export class PrimarchsOrLordCommanders extends Rule {
 }
 
 export class RequireSpacecraftForDropPods extends Rule {
-  reset () {
+  init () {
     this.spacecraft = 0
     this.planetfall = 0
   }
@@ -319,7 +351,7 @@ export class RequireSpacecraftForDropPods extends Rule {
     }
   }
 
-  getErrors (list, t) {
+  collect (list, t) {
     const errors = []
 
     if (this.planetfall && !this.spacecraft) {
@@ -331,7 +363,7 @@ export class RequireSpacecraftForDropPods extends Rule {
 }
 
 export class GreaterDaemonsRequireHordes extends Rule {
-  reset () {
+  init () {
     this.greaterDaemons = {
       khorne: 0,
       tzeench: 0,
@@ -358,7 +390,7 @@ export class GreaterDaemonsRequireHordes extends Rule {
     })
   }
 
-  getErrors (list, t) {
+  collect (list, t) {
     const errors = []
 
     Object.keys(this.greaterDaemons).forEach(god => {
@@ -372,7 +404,7 @@ export class GreaterDaemonsRequireHordes extends Rule {
 }
 
 export class FollowersRequireHordes extends Rule {
-  reset () {
+  init () {
     this.followers = {
       khorne: 0,
       tzeench: 0,
@@ -401,7 +433,7 @@ export class FollowersRequireHordes extends Rule {
     })
   }
 
-  getErrors (list, t) {
+  collect (list, t) {
     const errors = []
 
     Object.keys(this.followers).forEach(god => {
@@ -415,30 +447,33 @@ export class FollowersRequireHordes extends Rule {
 }
 
 export class OnlyOneDaemonicOverlord extends Rule {
-  reset () {
+  init () {
     this.overlords = 0
+    this.detachments = []
   }
 
   walkUnit (unit) {
-    this.overlords += unit
-      .getChosenWeapons()
-      .filter(weapon => weapon.name === 'daemonic-overlord')
-      .length
+    if (unit.getChosenWeapons().find(item => item.name === 'daemonic-overlord')) {
+      this.overlords++
+      this.detachments.push(unit.detachment)
+    }
   }
 
-  getErrors (list, t) {
-    const errors = []
-
+  collect (list, t) {
     if (this.overlords > 1) {
-      errors.push('too-many-daemonic-overlords')
+      this.detachments.forEach(detachment => {
+        detachment.addError('too-many-daemonic-overlords')
+      })
+
+      return true
     }
 
-    return errors
+    return false
   }
 }
 
 export class NoAlliedSupremeCommanders extends Rule {
-  reset () {
+  init () {
     this.alliedSupremeCommanders = 0
   }
 
@@ -460,7 +495,7 @@ export class NoAlliedSupremeCommanders extends Rule {
     test(ally.lordsOfWar)
   }
 
-  getErrors (list, t) {
+  collect (list, t) {
     const errors = []
 
     if (this.alliedSupremeCommanders > 0) {
@@ -472,7 +507,7 @@ export class NoAlliedSupremeCommanders extends Rule {
 }
 
 export class MaxTwoProvenances extends Rule {
-  reset () {
+  init () {
     this.armyProvenance = {
       warriors: 0,
       survivors: 0,
@@ -501,7 +536,7 @@ export class MaxTwoProvenances extends Rule {
     })
   }
 
-  getErrors (list, t) {
+  collect (list, t) {
     const errors = []
 
     let provenances = 0
@@ -522,7 +557,7 @@ export class MaxTwoProvenances extends Rule {
 }
 
 export class DaemonicAlliesRequireTraitorProvenance extends Rule {
-  reset () {
+  init () {
     this.daemonicAllies = false
     this.traitorProvenance = false
   }
@@ -541,7 +576,7 @@ export class DaemonicAlliesRequireTraitorProvenance extends Rule {
     }
   }
 
-  getErrors (list, t) {
+  collect (list, t) {
     const errors = []
 
     if (this.daemonicAllies && !this.traitorProvenance) {
@@ -553,89 +588,96 @@ export class DaemonicAlliesRequireTraitorProvenance extends Rule {
 }
 
 export class OneDisciplineMasterPer500Points extends Rule {
-  reset () {
+  init () {
     this.disciplineMasters = 0
+    this.detachments = {}
   }
 
-  walkUnit (unit) {
-    if (unit instanceof ImperialMilitiaDisciplineMaster) {
-      this.disciplineMasters++
-    }
+  walkDetachment (detachment) {
+    detachment.units.forEach(unit => {
+      if (unit instanceof ImperialMilitiaDisciplineMaster || unit instanceof ImperialMilitiaRoguePsyker) {
+        this.disciplineMasters++
+        this.detachments[detachment.id] = detachment
+      }
+    })
   }
 
-  getErrors (list, t) {
-    const errors = []
+  collect (list, t) {
     const cost = list.getCost()
 
     if (this.disciplineMasters > Math.ceil(cost / 500)) {
-      errors.push('too-many-discipline-masters')
+      Object.values(this.detachments).forEach(detachment => {
+        detachment.addError(
+          'too-many-discipline-masters'
+        )
+      })
+
+      return true
     }
 
-    return errors
+    return false
   }
 }
 
 export class AllUnitsInDetachmentMustSelectSameProvenance extends Rule {
-  reset () {
-    this.provenances = {}
+  init () {
+    this.errors = false
   }
 
-  walkUnit (unit) {
-    if (!this.provenances[unit.detachment.id]) {
-      this.provenances[unit.detachment.id] = {
-        eligible: 0,
-        provenances: {
-          warriors: 0,
-          survivors: 0,
-          feral: 0,
-          traitors: 0
-        }
+  walkDetachment (detachment) {
+    const stats = {
+      eligible: 0,
+      provenances: {
+        warriors: 0,
+        survivors: 0,
+        feral: 0,
+        traitors: 0
       }
     }
 
-    if (unit instanceof ImperialMilitiaUnit) {
-      this.provenances[unit.detachment.id].eligible++
+    detachment.units.forEach(unit => {
+      if (unit instanceof ImperialMilitiaUnit) {
+        stats.eligible++
 
-      unit.getChosenWeapons().forEach(weapon => {
-        if (weapon instanceof WarriorElite) {
-          this.provenances[unit.detachment.id].provenances.warriors++
-        }
+        unit.getChosenWeapons().forEach(weapon => {
+          if (weapon instanceof WarriorElite) {
+            stats.provenances.warriors++
+          }
 
-        if (weapon instanceof SurvivorsOfTheDarkAge) {
-          this.provenances[unit.detachment.id].provenances.survivors++
-        }
+          if (weapon instanceof SurvivorsOfTheDarkAge) {
+            stats.provenances.survivors++
+          }
 
-        if (weapon instanceof FeralWarriors) {
-          this.provenances[unit.detachment.id].provenances.feral++
-        }
+          if (weapon instanceof FeralWarriors) {
+            stats.provenances.feral++
+          }
 
-        if (weapon instanceof Traitors) {
-          this.provenances[unit.detachment.id].provenances.traitors++
-        }
-      })
+          if (weapon instanceof Traitors) {
+            stats.provenances.traitors++
+          }
+        })
+      }
+    })
+
+    const provenances = Object.values(stats.provenances)
+      .reduce((acc, curr) => curr > acc ? curr : acc, 0)
+
+    if (provenances && stats.eligible !== provenances) {
+      detachment.addError(
+        'all-detachment-units-must-select-provenance'
+      )
+      this.errors = true
     }
   }
 
-  getErrors (list, t) {
-    const errors = []
-
-    Object.values(this.provenances)
-      .forEach(detachment => {
-        const provenances = Object.values(detachment.provenances)
-          .reduce((acc, curr) => acc + curr, 0)
-
-        if (provenances && detachment.eligible !== provenances) {
-          errors.push('all-detachment-units-must-select-provenance')
-        }
-      })
-
-    return errors
+  collect (list, t) {
+    return this.errors
   }
 }
 
 export class UnitsWithChaosSpawnMustHaveTraitorProvenance extends Rule {
-  reset () {
-    this.errors = []
+  init () {
+    this.detachments = {}
   }
 
   walkUnit (unit) {
@@ -653,77 +695,106 @@ export class UnitsWithChaosSpawnMustHaveTraitorProvenance extends Rule {
     })
 
     if (hasChaosSpawnMutations && !hasTraitorProvenance) {
-      this.errors.push('units-with-chaos-spawn-mutations-must-have-traitor-provenance')
+      this.detachments[unit.detachment.id] = unit.detachment
     }
   }
 
-  getErrors (list, t) {
-    return this.errors.slice()
+  collect (list, t) {
+    Object.values(this.detachments).forEach(detachment => {
+      detachment.addError(
+        'units-with-chaos-spawn-mutations-must-have-traitor-provenance'
+      )
+    })
+
+    return Boolean(Object.keys(this.detachments).length)
   }
 }
 
 export class DetachmentsWithRoguePsykersMustHaveTraitorProvenance extends Rule {
-  reset () {
-    this.detachments = {}
+  init () {
+    this.errors = false
   }
 
-  walkUnit (unit) {
-    if (unit instanceof ImperialMilitiaRoguePsyker) {
-      this.detachments[unit.detachment.id] = {
-        hasPsyker: true
+  walkDetachment (detachment) {
+    let hasTraitorProvenance = false
+    let hasRoguePsykers = false
+
+    detachment.units.forEach(unit => {
+      if (unit instanceof ImperialMilitiaRoguePsyker) {
+        hasRoguePsykers = true
       }
 
-      unit.detachments.units.forEach(unit => {
-        unit.getChosenWeapons().forEach(weapon => {
-          if (weapon instanceof Traitors) {
-            this.hasTraitorProvenance = true
-
-            this.detachments[unit.detachment.id] = {
-              isTraitor: true
-            }
-          }
-        })
+      unit.getChosenWeapons().forEach(weapon => {
+        if (weapon instanceof Traitors) {
+          hasTraitorProvenance = true
+        }
       })
+    })
+
+    if (hasRoguePsykers && !hasTraitorProvenance) {
+      detachment.addError(
+        'detachment-with-rogue-psyker-must-have-traitor-provenance'
+      )
+
+      this.errors = true
     }
   }
 
-  getErrors (list, t) {
-    const errors = []
-
-    Object.values(this.detachments)
-      .forEach(detachment => {
-        if (detachment.hasPsyker && !detachment.hasTraitorProvenance) {
-          errors.push('detachment-with-rogue-psyker-must-have-traitor-provenance')
-        }
-      })
-
-    return errors
+  collect (list, t) {
+    return this.errors
   }
 }
 
 export class ForceCommanderShouldHaveFirstDisciplineMaster extends Rule {
-  reset () {
-    this.hasDisiplineMaster = false
-    this.forceCommanderHasDisciplineMaster = false
+  init () {
+    this.hasDisciplineMasters = false
+    this.forceCommandersWithoutDisciplineMasters = []
+    this.detachmentsWithDisciplineMasters = []
   }
 
-  walkUnit (unit) {
-    if (unit instanceof ImperialMilitiaForceCommander && unit.detachment.units.find(unit => unit instanceof ImperialMilitiaDisciplineMaster)) {
-      this.forceCommanderHasDisciplineMaster = true
+  walkDetachment (detachment) {
+    let hasForceCommander = false
+    let hasDisiplineMaster = false
+
+    detachment.units.forEach(unit => {
+      if (unit instanceof ImperialMilitiaForceCommander) {
+        hasForceCommander = true
+      }
+
+      if (unit instanceof ImperialMilitiaDisciplineMaster || unit instanceof ImperialMilitiaRoguePsyker) {
+        hasDisiplineMaster = true
+      }
+    })
+
+    if (hasForceCommander && !hasDisiplineMaster) {
+      this.forceCommandersWithoutDisciplineMasters.push(detachment)
     }
 
-    if (unit instanceof ImperialMilitiaDisciplineMaster) {
-      this.hasDisiplineMaster = true
+    if (hasDisiplineMaster) {
+      this.hasDisciplineMasters = true
+
+      if (!hasForceCommander) {
+        this.detachmentsWithDisciplineMasters.push(detachment)
+      }
     }
   }
 
-  getErrors (list, t) {
-    const errors = []
+  collect (list, t) {
+    if (this.hasDisciplineMasters && this.forceCommandersWithoutDisciplineMasters.length) {
+      this.forceCommandersWithoutDisciplineMasters.forEach(detachment => {
+        detachment.addError(
+          'force-commander-should-have-discipline-master'
+        )
+      })
+      this.detachmentsWithDisciplineMasters.forEach(detachment => {
+        detachment.addError(
+          'force-commander-should-have-discipline-master'
+        )
+      })
 
-    if (this.hasDisiplineMaster && !this.forceCommanderHasDisciplineMaster) {
-      errors.push('force-commander-should-have-discipline-master')
+      return true
     }
 
-    return errors
+    return false
   }
 }

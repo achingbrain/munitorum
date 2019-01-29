@@ -5,14 +5,7 @@ import ErrorIcon from '@material-ui/icons/Error'
 import component from '../../component'
 import SnackbarContent from '@material-ui/core/SnackbarContent'
 
-const Validator = ({ army, list, t, classes }) => {
-  const errors = army.validate(list, t)
-
-  if (!errors.length) {
-    return null
-  }
-
-  // dedupe
+const Validator = ({ errors, classes, t }) => {
   const dedupedErrors = {}
 
   errors.forEach(err => {
@@ -20,7 +13,7 @@ const Validator = ({ army, list, t, classes }) => {
   })
 
   return (
-    <div>
+    <>
       {
         Object.values(dedupedErrors)
           .map(err => {
@@ -38,20 +31,8 @@ const Validator = ({ army, list, t, classes }) => {
             )
           })
       }
-    </div>
+    </>
   )
 }
 
-const mapStateToProps = ({ list }) => {
-  const army = list.army
-
-  return {
-    army,
-    list,
-    cacheBuster: Math.random()
-  }
-}
-
-const mapDispatchToProps = {}
-
-export default component(Validator, mapStateToProps, mapDispatchToProps)
+export default component(Validator)

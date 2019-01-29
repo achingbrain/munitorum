@@ -16,6 +16,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import DownIcon from '@material-ui/icons/ArrowDownward'
 import UpIcon from '@material-ui/icons/ArrowUpward'
 import Confirm from '../../confirm'
+import Validator from './validator'
 import {
   addDetachment,
   moveDetachmentUp,
@@ -111,6 +112,7 @@ class AllyEditor extends Component {
           className={classes.cardHeader}
         />
         <CardContent className={classes.cardContent}>
+          <Validator errors={list.errors} />
           <EditDetachments
             list={list}
             type={'lineDetachments'}

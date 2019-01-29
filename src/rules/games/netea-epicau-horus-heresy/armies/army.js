@@ -35,10 +35,18 @@ export default class Army {
     return TopBar
   }
 
-  validate (list, t) {
-    this.validations.forEach(validation => validation.reset())
+  validate (list, t, isAllied) {
+    if (!isAllied) {
+      list.clearErrors()
+    }
+
+    this.validations.forEach(validation => validation.init())
 
     const test = (detachment) => {
+      if (!isAllied) {
+        detachment.clearErrors()
+      }
+
       this.validations.forEach(validation => {
         validation.walkDetachment(detachment)
       })
@@ -58,18 +66,54 @@ export default class Army {
     list.supportDetachments.forEach(test)
     list.lordsOfWar.forEach(test)
     list.allies.forEach(ally => {
+      ally.clearErrors()
+
+      ally.lineDetachments.forEach(detachment => {
+        detachment.clearErrors()
+      })
+      ally.supportDetachments.forEach(detachment => {
+        detachment.clearErrors()
+      })
+      ally.lordsOfWar.forEach(detachment => {
+        detachment.clearErrors()
+      })
+
       this.validations.forEach(validation => {
         validation.walkAlly(ally)
       })
     })
 
+    let globalErrors = false
+
     const errors = this.validations.reduce((acc, curr) => {
-      return acc.concat(curr.getErrors(list, t))
+      const errs = curr.collect(list, t)
+
+      if (Array.isArray(errs)) {
+        return acc.concat(errs)
+      } else if (errs === true) {
+        globalErrors = true
+      }
+
+      return acc
     }, [])
 
-    return list.allies.reduce((acc, curr) => {
-      return acc.concat(curr.army.validate(curr, t))
-    }, errors)
+    list.allies.forEach(ally => {
+      const allyErrors = ally.army.validate(ally, t, true)
+
+      globalErrors = globalErrors || Boolean(allyErrors.length)
+    })
+
+    if (!isAllied && !errors.length && globalErrors) {
+      errors.push(
+        t('list-has-errors')
+      )
+    }
+
+    errors.forEach(error => {
+      list.addError(error)
+    })
+
+    return errors
   }
 
   getStrategyRating (list) {

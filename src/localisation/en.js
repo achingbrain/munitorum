@@ -36,6 +36,8 @@ export default {
     'intitative-rating': 'Initiative Rating {{ initiativeRating }}+',
     'move-up': 'Move up',
     'move-down': 'Move down',
+    'remaining-upgrades': '{{ remainingUpgrades }} remaining upgrades',
+    'list-has-errors': 'This list has errors, please correct them before continuing',
 
     'cannot-take-primarch-and-lord-commander': 'You cannot take a Primarch and a Lord Commander in the same list',
     'spacecraft-required': 'Spacecraft are required when units have the planetfall special ability',
@@ -47,7 +49,7 @@ export default {
     'daemonic-allies-require-at-least-one-detachment-with-traitor-provenance': 'If you take daemonic allies, at least one detachment must have the Traitor provenance',
     'units-with-chaos-spawn-mutations-must-have-traitor-provenance': 'Units with Chaos Spawn Mutations must have the Traitor provenance',
     'too-many-discipline-masters': 'You may only include one Discipline Master/Rogue Psyker per 500 points',
-    'force-commander-should-have-discipline-master': 'If your army includes Discipline Master/Rogue Psykers, one must be in the same formation as the Force Commander',
+    'force-commander-should-have-discipline-master': 'If your army includes Discipline Masters/Rogue Psykers, one must be in the same formation as the Force Commander',
     'too-many-support-seneschals': 'Your army may only include one Seneschal',
     'too-many-daemonic-followers': 'Followers of Chaos detachments may only contain 9 of the Patron God\'s lesser daemons',
     'not-enough-daemon-hordes': 'For each Followers of Chaos detachment taken, one line detachment (of the same god affiliation or undivided) may be selected.',
