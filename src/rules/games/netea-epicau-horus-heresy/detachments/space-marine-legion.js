@@ -133,7 +133,10 @@ export class LegionBreacherDetachment extends SpaceMarineLegionDetachment {
       new CommanderOption(
         new Praetor(),
         new Centurion()
-      )
+      ),
+      new Hyperios(),
+      new Dreadnought(),
+      new Tank()
     )
   }
 }
