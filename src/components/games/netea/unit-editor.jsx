@@ -292,35 +292,35 @@ class UnitEditor extends Component {
 
     return (
       <>
-          <TableRow>
-            <TableCell className={classes.tableDetailsCell}>
-              {details}
-              <Hidden smUp>
-                <div className={classes.flexContainer}>
-                  <p className={classes.grow}>
-                    {costDisplay}
-                  </p>
-                  {moveUp}
-                  {moveDown}
-                  {remove}
-                </div>
-              </Hidden>
-            </TableCell>
-            <Hidden xsDown>
-              <TableCell padding='checkbox' className={classes.tablePointsCell}>
-                {costDisplay}
-              </TableCell>
-              <TableCell padding='checkbox' className={classes.tableIconCell}>
+        <TableRow>
+          <TableCell className={classes.tableDetailsCell}>
+            {details}
+            <Hidden smUp>
+              <div className={classes.flexContainer}>
+                <p className={classes.grow}>
+                  {costDisplay}
+                </p>
                 {moveUp}
-              </TableCell>
-              <TableCell padding='checkbox' className={classes.tableIconCell}>
                 {moveDown}
-              </TableCell>
-              <TableCell padding='checkbox' className={classes.tableIconCell}>
                 {remove}
-              </TableCell>
+              </div>
             </Hidden>
-          </TableRow>
+          </TableCell>
+          <Hidden xsDown>
+            <TableCell padding='checkbox' className={classes.tablePointsCell}>
+              {costDisplay}
+            </TableCell>
+            <TableCell padding='checkbox' className={classes.tableIconCell}>
+              {moveUp}
+            </TableCell>
+            <TableCell padding='checkbox' className={classes.tableIconCell}>
+              {moveDown}
+            </TableCell>
+            <TableCell padding='checkbox' className={classes.tableIconCell}>
+              {remove}
+            </TableCell>
+          </Hidden>
+        </TableRow>
       </>
     )
   }
