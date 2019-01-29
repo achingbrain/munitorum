@@ -225,69 +225,103 @@ class UnitEditor extends Component {
       isLast
     } = this.props
 
-    return (
-      <TableRow>
-        <TableCell>
-          <NameDisplay
-            name={name}
-            quantity={quantity}
-            min={min}
-            max={max}
-            unitOptions={unitOptions}
-            onChooseUnitOption={this.handleChooseUnitOption}
-            onIncreaseQuantity={this.handleIncreaseQuantity}
-            onDecreaseQuantity={this.handleDecreaseQuantity} />
-          {
-            weapons.map((weapon, weaponIndex) => {
-              if (weapon instanceof MultipleChoiceWeapon) {
-                return (
-                  <EditableMultiChoiceWeapon
-                    key={`weapon-${weaponIndex}`}
-                    unit={unit}
-                    weapon={weapon}
-                    weaponIndex={weaponIndex} />
-                )
-              }
-
+    const details = (
+      <>
+        <NameDisplay
+          name={name}
+          quantity={quantity}
+          min={min}
+          max={max}
+          unitOptions={unitOptions}
+          onChooseUnitOption={this.handleChooseUnitOption}
+          onIncreaseQuantity={this.handleIncreaseQuantity}
+          onDecreaseQuantity={this.handleDecreaseQuantity} />
+        {
+          weapons.map((weapon, weaponIndex) => {
+            if (weapon instanceof MultipleChoiceWeapon) {
               return (
-                <EditableWeaponDisplay
+                <EditableMultiChoiceWeapon
                   key={`weapon-${weaponIndex}`}
-                  name={weapon.name} />
+                  unit={unit}
+                  weapon={weapon}
+                  weaponIndex={weaponIndex} />
               )
-            })
-          }
-        </TableCell>
-        <TableCell padding='checkbox' className={classes.tablePointsCell}>
-          <CostDisplay cost={cost} />
-        </TableCell>
-        <Hidden xsDown>
-          <TableCell padding='checkbox' className={classes.tableIconCell}>
-            <IconButton
-              aria-label={t('move-up')}
-              onClick={this.handleMoveUp}
-              disabled={isFirst}
-            >
-              <UpIcon />
-            </IconButton>
-          </TableCell>
-          <TableCell padding='checkbox' className={classes.tableIconCell}>
-            <IconButton
-              aria-label={t('move-down')}
-              onClick={this.handleMoveDown}
-              disabled={isLast}
-            >
-              <DownIcon />
-            </IconButton>
-          </TableCell>
-        </Hidden>
-        <TableCell padding='checkbox' className={classes.tableIconCell}>
-          <Confirm title={'Remove this unit?'} text={'Really remove this unit?'} onConfirm={this.handleRemoveUnit} button={(onClick) => (
-            <IconButton aria-label='Remove' onClick={onClick} disabled={mandatory}>
-              <DeleteIcon />
-            </IconButton>
-          )} />
-        </TableCell>
-      </TableRow>
+            }
+
+            return (
+              <EditableWeaponDisplay
+                key={`weapon-${weaponIndex}`}
+                name={weapon.name} />
+            )
+          })
+        }
+      </>
+    )
+
+    const costDisplay = (
+      <CostDisplay cost={cost} className={classes.flexGrow} />
+    )
+
+    const moveUp = (
+      <IconButton
+        aria-label={t('move-up')}
+        onClick={this.handleMoveUp}
+        disabled={isFirst}
+      >
+        <UpIcon />
+      </IconButton>
+    )
+
+    const moveDown = (
+      <IconButton
+        aria-label={t('move-down')}
+        onClick={this.handleMoveDown}
+        disabled={isLast}
+      >
+        <DownIcon />
+      </IconButton>
+    )
+
+    const remove = (
+      <Confirm title={'Remove this unit?'} text={'Really remove this unit?'} onConfirm={this.handleRemoveUnit} button={(onClick) => (
+        <IconButton aria-label='Remove' onClick={onClick} disabled={mandatory}>
+          <DeleteIcon />
+        </IconButton>
+      )} />
+    )
+
+    return (
+      <>
+          <TableRow>
+            <TableCell className={classes.tableDetailsCell}>
+              {details}
+              <Hidden smUp>
+                <div className={classes.flexContainer}>
+                  <p className={classes.grow}>
+                    {costDisplay}
+                  </p>
+                  {moveUp}
+                  {moveDown}
+                  {remove}
+                </div>
+              </Hidden>
+            </TableCell>
+            <Hidden xsDown>
+              <TableCell padding='checkbox' className={classes.tablePointsCell}>
+                {costDisplay}
+              </TableCell>
+              <TableCell padding='checkbox' className={classes.tableIconCell}>
+                {moveUp}
+              </TableCell>
+              <TableCell padding='checkbox' className={classes.tableIconCell}>
+                {moveDown}
+              </TableCell>
+              <TableCell padding='checkbox' className={classes.tableIconCell}>
+                {remove}
+              </TableCell>
+            </Hidden>
+          </TableRow>
+      </>
     )
   }
 }

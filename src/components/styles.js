@@ -96,7 +96,7 @@ const styles = theme => ({
     marginBottom: theme.spacing.unit
   },
   cardHeader: {
-    paddingRight: 20
+    paddingRight: theme.spacing.unit * 2
   },
   cardContent: {
     padding: 0
@@ -145,12 +145,21 @@ const styles = theme => ({
   table: {
     width: '100%'
   },
+  tableDetailsCell: {
+    paddingRight: theme.spacing.unit,
+    '&:last-child': {
+      paddingRight: theme.spacing.unit
+    }
+  },
   tablePointsCell: {
     width: 100
   },
   tableIconCell: {
     width: 48,
-    padding: 0
+    padding: 0,
+    '&:last-child': {
+      paddingRight: theme.spacing.unit
+    }
   },
   tableViewCell: {
     paddingTop: theme.spacing.unit / 4,
