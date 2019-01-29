@@ -36,7 +36,7 @@ export default class SpaceWolves extends SpaceMarineLegion {
       LegioCustodes
     )
 
-    this.colour = '#2f2d34'
+    this.colour = '#605d69'
   }
 
   getStrategyRating (list) {

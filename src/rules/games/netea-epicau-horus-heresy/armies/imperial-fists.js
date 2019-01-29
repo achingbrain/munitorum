@@ -47,7 +47,8 @@ export default class ImperialFists extends SpaceMarineLegion {
       LegioCustodes
     )
 
-    this.colour = '#afaa00'
+    this.colour = '#e5e008'
+    this.textColour = '#333333'
   }
 
   getStrategyRating (list) {

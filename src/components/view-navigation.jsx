@@ -16,11 +16,20 @@ class EditNavigation extends Component {
     } = this.props
 
     const TopBar = list.getTopBar()
+    const styles = {}
+
+    if (list && list.army && list.army.colour) {
+      styles.backgroundColor = list.army.colour
+    }
+
+    if (list && list.army && list.army.textColour) {
+      styles.color = list.army.textColour
+    }
 
     return (
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar position='fixed' style={{ backgroundColor: list && list.army && list.army.colour }}>
+        <AppBar position='fixed' style={styles}>
           <Toolbar className={classes.toolBar}>
             {toolbar}
           </Toolbar>

@@ -32,7 +32,8 @@ export default class WhiteScars extends SpaceMarineLegion {
       LegioCustodes
     )
 
-    this.colour = '#9e9e9e'
+    this.colour = '#eeeeee'
+    this.textColour = '#333333'
   }
 
   getStrategyRating (list) {

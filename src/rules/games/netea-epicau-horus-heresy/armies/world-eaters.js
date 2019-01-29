@@ -43,7 +43,8 @@ export default class WorldEaters extends SpaceMarineLegion {
       new SingleDaemonicPatron('khorne')
     )
 
-    this.colour = '#8f90a2'
+    this.colour = '#dfedff'
+    this.textColour = '#333333'
   }
 
   getStrategyRating (list) {
