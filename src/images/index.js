@@ -3,6 +3,7 @@ import alphaLegionHeadHunter from './alpha-legion-head-hunter.svg'
 import alphaLegionLernaeanTerminator from './alpha-legion-lernaean-terminator.svg'
 import alphaLegionPrimarch from './alpha-legion-primarch.svg'
 import alphaLegion from './alpha-legion.svg'
+import bloodAngelsPrimarch from './blood-angels-primarch.svg'
 import bloodAngels from './blood-angels.svg'
 import daemonicHordesBeastsOfNurgle from './daemonic-hordes-beasts-of-nurgle.svg'
 import daemonicHordesBloodThirster from './daemonic-hordes-blood-thirster.svg'
@@ -306,6 +307,7 @@ const IMAGES = {
   'alpha-legion-lernaean-terminator': alphaLegionLernaeanTerminator,
   'alpha-legion-primarch': alphaLegionPrimarch,
   'alpha-legion': alphaLegion,
+  'blood-angels-primarch': bloodAngelsPrimarch,
   'blood-angels': bloodAngels,
   'daemonic-hordes-beasts-of-nurgle': daemonicHordesBeastsOfNurgle,
   'daemonic-hordes-blood-thirster': daemonicHordesBloodThirster,

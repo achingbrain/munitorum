@@ -21,14 +21,14 @@ const indexFile = (imports, images) => `
 ${
   Object.keys(imports)
     .map(key => `import ${key} from '${imports[key]}'`)
-    .join('\r\n')
+    .join('\n')
 }
 
 const IMAGES = {
 ${
   Object.keys(images)
     .map(key => `  '${key}': ${images[key]}`)
-    .join(',\r\n')
+    .join(',\n')
 }
 }
 
