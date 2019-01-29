@@ -51,8 +51,6 @@ class Page extends Component {
     } = this.state
 
     if (list) {
-      const TopBar = list.getTopBar()
-
       if (view) {
         const ListViewer = list.getViewer()
 
@@ -61,8 +59,6 @@ class Page extends Component {
             <InvalidList>
               <ViewNavigation toolbar={
                 <ViewListHeader onEdit={this.handleEditList} />
-              } topbar={
-                <TopBar />
               }>
                 <ListViewer />
               </ViewNavigation>
@@ -79,8 +75,6 @@ class Page extends Component {
           <InvalidList>
             <EditNavigation toolbar={
               <EditListHeader onView={this.handleViewList} />
-            } topbar={
-              <TopBar />
             }>
               <ListEditor />
             </EditNavigation>

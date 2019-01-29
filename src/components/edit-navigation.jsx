@@ -48,6 +48,12 @@ class Navigation extends Component {
     } = this.props
 
     const selectedListId = list && list.id
+    let topBar = null
+
+    if (list) {
+      const TopBar = list.getTopBar()
+      topBar = <TopBar />
+    }
 
     const drawer = (
       <div>
@@ -93,6 +99,7 @@ class Navigation extends Component {
             </IconButton>
             {this.props.toolbar}
           </Toolbar>
+          {topBar}
         </AppBar>
         <nav className={classes.drawer}>
           <Hidden mdUp>
@@ -121,8 +128,7 @@ class Navigation extends Component {
             </Drawer>
           </Hidden>
         </nav>
-        <main className={classes.content}>
-          {this.props.topbar}
+        <main className={topBar ? classes.contentWithTopBar : classes.content}>
           <div className={classes.contentWrapper}>
             {this.props.children}
           </div>

@@ -60,9 +60,16 @@ const styles = theme => ({
   },
   content: {
     flexGrow: 1,
-    marginTop: 64,
+    marginTop: theme.spacing.unit * 7,
     [theme.breakpoints.down('xs')]: {
-      marginTop: 56
+      marginTop: theme.spacing.unit * 6
+    }
+  },
+  contentWithTopBar: {
+    flexGrow: 1,
+    marginTop: theme.spacing.unit * 13,
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing.unit * 12
     }
   },
   contentWrapper: {

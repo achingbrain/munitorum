@@ -151,7 +151,7 @@ import legioTitanicusReaver from './legio-titanicus-reaver.svg'
 import legioTitanicusSacredIcon from './legio-titanicus-sacred-icon.svg'
 import legioTitanicusVeteranPrinceps from './legio-titanicus-veteran-princeps.svg'
 import legioTitanicusWarhound from './legio-titanicus-warhound.svg'
-import legioTitanicusWarlordTitan from './legio-titanicus-warlord-titan.svg'
+import legioTitanicusWarlord from './legio-titanicus-warlord.svg'
 import legioTitanicus from './legio-titanicus.svg'
 import legionArtilleryBattery from './legion-artillery-battery.svg'
 import legionAssault from './legion-assault.svg'
@@ -469,7 +469,7 @@ const IMAGES = {
   'legio-titanicus-sacred-icon': legioTitanicusSacredIcon,
   'legio-titanicus-veteran-princeps': legioTitanicusVeteranPrinceps,
   'legio-titanicus-warhound': legioTitanicusWarhound,
-  'legio-titanicus-warlord-titan': legioTitanicusWarlordTitan,
+  'legio-titanicus-warlord': legioTitanicusWarlord,
   'legio-titanicus': legioTitanicus,
   'legion-artillery-battery': legionArtilleryBattery,
   'legion-assault': legionAssault,

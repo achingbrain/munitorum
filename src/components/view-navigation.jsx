@@ -11,8 +11,11 @@ class EditNavigation extends Component {
     const {
       classes,
       toolbar,
-      children
+      children,
+      list
     } = this.props
+
+    const TopBar = list.getTopBar()
 
     return (
       <div className={classes.root}>
@@ -21,9 +24,9 @@ class EditNavigation extends Component {
           <Toolbar>
             {toolbar}
           </Toolbar>
+          <TopBar />
         </AppBar>
-        <main className={classes.content}>
-          {this.props.topbar}
+        <main className={classes.contentWithTopBar}>
           <div className={classes.contentWrapper}>
             {children}
           </div>
