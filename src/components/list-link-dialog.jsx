@@ -58,7 +58,7 @@ class ListLinkDialog extends Component {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color='primary'>
+            <Button onClick={this.handleClose}>
               Done
             </Button>
           </DialogActions>

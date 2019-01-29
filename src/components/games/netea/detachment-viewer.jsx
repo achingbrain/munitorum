@@ -32,7 +32,7 @@ class DetachmentViewer extends Component {
 
     // dedupe units
     detachment.units.forEach(unit => {
-      const key = `${unit.getName()}-${unit.getWeapons().map(weapon => weapon.name).join('-')}`
+      const key = `${unit.getName()}-${unit.getChosenWeapons().map(weapon => weapon.name).join('-')}`
 
       units[key] = unit
     })
