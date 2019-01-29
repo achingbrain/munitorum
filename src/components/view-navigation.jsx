@@ -20,7 +20,7 @@ class EditNavigation extends Component {
     return (
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar position='fixed' style={{backgroundColor: list && list.army && list.army.colour}}>
+        <AppBar position='fixed' style={{ backgroundColor: list && list.army && list.army.colour }}>
           <Toolbar className={classes.toolBar}>
             {toolbar}
           </Toolbar>

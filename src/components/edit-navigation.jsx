@@ -87,7 +87,7 @@ class Navigation extends Component {
     return (
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar position='fixed' className={classes.appBar} style={{backgroundColor: list && list.army && list.army.colour}}>
+        <AppBar position='fixed' className={classes.appBar} style={{ backgroundColor: list && list.army && list.army.colour }}>
           <Toolbar className={classes.toolBar}>
             <IconButton
               color='inherit'

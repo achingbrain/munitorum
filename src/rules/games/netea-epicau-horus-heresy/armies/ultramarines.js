@@ -43,7 +43,7 @@ export default class Ultramarines extends SpaceMarineLegion {
       LegioCustodes
     )
 
-    this.colour = '#0028b3'
+    this.colour = '#1b399b'
   }
 
   getStrategyRating (list) {
