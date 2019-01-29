@@ -78,7 +78,7 @@ class EditListHeader extends Component {
 
     return (
       <>
-        <Typography variant='h6' color='inherit' className={classes.grow} noWrap>
+        <Typography variant='h6' color='inherit' className={classes.listName} noWrap>
           {name}
           <ListNameDialog />
         </Typography>
@@ -112,7 +112,6 @@ class EditListHeader extends Component {
             color='inherit'
             aria-label='Open drawer'
             onClick={this.handleDrawerToggle}
-            className={classes.menuButtonLeft}
           >
             <DownIcon />
           </IconButton>

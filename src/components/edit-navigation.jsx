@@ -88,7 +88,7 @@ class Navigation extends Component {
       <div className={classes.root}>
         <CssBaseline />
         <AppBar position='fixed' className={classes.appBar}>
-          <Toolbar>
+          <Toolbar className={classes.toolBar}>
             <IconButton
               color='inherit'
               aria-label='Open drawer'

@@ -34,12 +34,24 @@ const styles = theme => ({
       width: `calc(100% - ${drawerWidth}px)`
     }
   },
+  toolBar: {
+    paddingLeft: 10,
+    paddingRight: 10
+  },
   appTitle: {
     lineHeight: 3,
     textAlign: 'center'
   },
+  listName: {
+    marginLeft: theme.spacing.unit * 2,
+    flexGrow: 1
+  },
   menuButton: {
-    marginRight: 20,
+    [theme.breakpoints.up('md')]: {
+      display: 'none'
+    }
+  },
+  menuButtonLeft: {
     [theme.breakpoints.up('md')]: {
       display: 'none'
     }

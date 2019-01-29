@@ -6,11 +6,11 @@ import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import EditIcon from '@material-ui/icons/Edit'
 
-const ViewListHeader = ({ classes, t, list, cost, onEdit }) => {
+const ViewListHeader = ({ classes, list, cost, onEdit }) => {
   return (
     <>
-      <Typography variant='h6' color='inherit' className={classes.grow} noWrap>
-        {t(list.name)}
+      <Typography variant='h6' color='inherit' className={classes.listName} noWrap>
+        {list.name}
       </Typography>
       <IconButton
         color='inherit'

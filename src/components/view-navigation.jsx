@@ -21,7 +21,7 @@ class EditNavigation extends Component {
       <div className={classes.root}>
         <CssBaseline />
         <AppBar position='fixed'>
-          <Toolbar>
+          <Toolbar className={classes.toolBar}>
             {toolbar}
           </Toolbar>
           <TopBar />
