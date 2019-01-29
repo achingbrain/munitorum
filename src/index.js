@@ -5,6 +5,10 @@ import App from './app'
 
 const root = document.getElementById('app')
 
+if (window.location.pathname !== '/') {
+  window.location.pathname = '/'
+}
+
 if (process.env.NODE_ENV === 'production') {
   render(<App />, root)
 } else {
