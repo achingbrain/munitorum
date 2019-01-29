@@ -86,12 +86,14 @@ class Navigation extends Component {
 
     const styles = {}
 
-    if (list && list.army && list.army.colour) {
-      styles.backgroundColor = list.army.colour
-    }
+    if (list && list.army) {
+      if (list.army.colour) {
+        styles.backgroundColor = list.army.colour
+      }
 
-    if (list && list.army && list.army.textColour) {
-      styles.color = list.army.textColour
+      if (list.army.textColour) {
+        styles.color = list.army.textColour
+      }
     }
 
     return (

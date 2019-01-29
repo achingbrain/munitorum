@@ -5,10 +5,12 @@ import component from './component'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import EditIcon from '@material-ui/icons/Edit'
+import Icon from './icon'
 
-const ViewListHeader = ({ classes, list, cost, onEdit }) => {
+const ViewListHeader = ({ classes, list, image, cost, onEdit }) => {
   return (
     <>
+      <Icon src={image} className={classes.headerIcon} />
       <Typography variant='h6' color='inherit' className={classes.listName} noWrap>
         {list.name}
       </Typography>
@@ -25,7 +27,8 @@ const ViewListHeader = ({ classes, list, cost, onEdit }) => {
 const mapStateToProps = ({ list }) => {
   return {
     list,
-    cost: list.getCost()
+    cost: list.getCost(),
+    image: list.army.image
   }
 }
 

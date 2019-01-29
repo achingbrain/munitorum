@@ -43,8 +43,15 @@ const styles = theme => ({
     textAlign: 'center'
   },
   listName: {
-    marginLeft: theme.spacing.unit * 2,
+    marginLeft: theme.spacing.unit,
     flexGrow: 1
+  },
+  headerIcon: {
+    marginLeft: theme.spacing.unit,
+    fontSize: 48,
+    [theme.breakpoints.down('xs')]: {
+      display: 'none'
+    }
   },
   menuButton: {
     [theme.breakpoints.up('md')]: {

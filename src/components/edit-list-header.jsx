@@ -19,6 +19,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import ShareIcon from '@material-ui/icons/Share'
+import Icon from './icon'
 
 class EditListHeader extends Component {
   static propTypes = {
@@ -73,11 +74,13 @@ class EditListHeader extends Component {
       classes,
       t,
       name,
-      theme
+      theme,
+      image
     } = this.props
 
     return (
       <>
+        <Icon src={image} className={classes.headerIcon} />
         <Typography variant='h6' color='inherit' className={classes.listName} noWrap>
           {name}
           <ListNameDialog />
@@ -163,7 +166,8 @@ class EditListHeader extends Component {
 const mapStateToProps = ({ list }) => {
   return {
     list,
-    name: list.name
+    name: list.name,
+    image: list.army.image
   }
 }
 
