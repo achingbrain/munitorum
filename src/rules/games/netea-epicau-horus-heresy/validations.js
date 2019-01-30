@@ -25,6 +25,7 @@ import PrimarchUnit from './units/primarch-unit'
 import {
   SupremeCommander
 } from './special-rules'
+import MultipleChoiceUnit from './units/multiple-choice-unit'
 
 export class Rule {
   init () {
@@ -341,6 +342,10 @@ export class RequireSpacecraftForDropPods extends Rule {
   }
 
   walkUnit (unit) {
+    if (unit instanceof MultipleChoiceUnit) {
+      unit = unit.getChoice()
+    }
+
     if (unit instanceof SpacecraftUnit) {
       this.spacecraft++
     }

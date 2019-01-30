@@ -72,6 +72,10 @@ export default class MultipleChoiceUnit extends Unit {
     return this.types
   }
 
+  getChoice () {
+    return this.types[this.choice]
+  }
+
   toJSON () {
     const json = super.toJSON()
     json.choice = this.choice
