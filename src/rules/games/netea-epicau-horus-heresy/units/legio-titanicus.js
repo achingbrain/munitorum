@@ -33,7 +33,8 @@ import {
   SecondaryTargetingProtocols,
   Walker,
   VoidShields,
-  Titanic
+  Titanic,
+  Unique
 } from '../special-rules'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit from './unit'
@@ -275,7 +276,8 @@ export class LegioTitanicusLegate extends Unit {
     super(detachment, 50, 1)
 
     this.rules = [
-      new SupremeCommander()
+      new SupremeCommander(),
+      new Unique()
     ]
     this.stats = {
       type: 'CH',
