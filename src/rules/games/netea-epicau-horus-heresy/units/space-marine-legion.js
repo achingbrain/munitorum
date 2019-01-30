@@ -174,7 +174,6 @@ export class LegionBattleBarge extends SpacecraftUnit {
       stormEagle: Infinity
     }
     this.rules = [
-      new Planetfall(),
       new SlowAndSteady()
     ]
     this.stats = {

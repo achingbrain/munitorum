@@ -17,7 +17,7 @@ const config = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]-[hash].js',
+    filename: '[name]-[chunkhash].js',
     publicPath: '/'
   },
   plugins: [
