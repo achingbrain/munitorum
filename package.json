@@ -11,7 +11,7 @@
     "deploy": "run-s build upload",
     "build": "NODE_ENV=production run-s clean bundle",
     "bundle": "webpack",
-    "upload": "s3-deploy './dist/**' --cwd './dist/' --region eu-west-2 --bucket com.munitorum --deleteRemoved --etag --gzip --invalidate --distId EITBJI2151X9C",
+    "upload": "s3-deploy './dist/**' --cwd './dist/' --region eu-west-2 --bucket com.munitorum --deleteRemoved --etag --gzip --invalidate / --distId EITBJI2151X9C",
     "invalidate": "aws cloudfront create-invalidation --distribution-id EITBJI2151X9C --invalidation-batch \"{\\\"Paths\\\":{\\\"Quantity\\\":1,\\\"Items\\\":[\\\"/*\\\"]},\\\"CallerReference\\\":\\\"`date +\"%s\"`\\\"}\"",
     "test": "echo Hello world"
   },
