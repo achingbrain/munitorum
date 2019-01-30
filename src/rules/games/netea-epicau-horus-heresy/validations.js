@@ -15,11 +15,10 @@ import {
   ImperialMilitiaDisciplineMaster,
   ImperialMilitiaForceCommander,
   ImperialMilitiaRoguePsyker,
-  ImperialMilitiaUnit,
-  WarriorElite,
-  SurvivorsOfTheDarkAge,
-  FeralWarriors,
-  Traitors
+  ImperialMilitiaWarriorEliteProvenance,
+  ImperialMilitiaSurvivorsOfTheDarkAgeProvenance,
+  ImperialMilitiaFeralWarriorsProvenance,
+  ImperialMilitiaTraitorsProvenance
 } from './units/imperial-militia'
 import SpacecraftUnit from './units/spacecraft-unit'
 import PrimarchUnit from './units/primarch-unit'
@@ -514,31 +513,32 @@ export class MaxTwoProvenances extends Rule {
       feral: 0,
       traitors: 0
     }
+    this.detatchments = {}
   }
 
   walkUnit (unit) {
-    unit.getChosenWeapons().forEach(weapon => {
-      if (weapon instanceof WarriorElite) {
-        this.armyProvenance.warriors++
-      }
+    if (unit instanceof ImperialMilitiaWarriorEliteProvenance) {
+      this.armyProvenance.warriors++
+      this.detatchments[unit.detachment.id] = unit.detachment
+    }
 
-      if (weapon instanceof SurvivorsOfTheDarkAge) {
-        this.armyProvenance.survivors++
-      }
+    if (unit instanceof ImperialMilitiaSurvivorsOfTheDarkAgeProvenance) {
+      this.armyProvenance.survivors++
+      this.detatchments[unit.detachment.id] = unit.detachment
+    }
 
-      if (weapon instanceof FeralWarriors) {
-        this.armyProvenance.feral++
-      }
+    if (unit instanceof ImperialMilitiaFeralWarriorsProvenance) {
+      this.armyProvenance.feral++
+      this.detatchments[unit.detachment.id] = unit.detachment
+    }
 
-      if (weapon instanceof Traitors) {
-        this.armyProvenance.traitors++
-      }
-    })
+    if (unit instanceof ImperialMilitiaTraitorsProvenance) {
+      this.armyProvenance.traitors++
+      this.detatchments[unit.detachment.id] = unit.detachment
+    }
   }
 
   collect (list, t) {
-    const errors = []
-
     let provenances = 0
 
     Object.values(this.armyProvenance)
@@ -549,10 +549,15 @@ export class MaxTwoProvenances extends Rule {
       })
 
     if (provenances > 2) {
-      errors.push('too-many-provenances')
+      Object.values(this.detatchments)
+        .forEach(detatchment => {
+          detatchment.addError('too-many-provenances')
+        })
+
+      return true
     }
 
-    return errors
+    return false
   }
 }
 
@@ -563,11 +568,9 @@ export class DaemonicAlliesRequireTraitorProvenance extends Rule {
   }
 
   walkUnit (unit) {
-    unit.getChosenWeapons().forEach(weapon => {
-      if (weapon instanceof Traitors) {
-        this.traitorProvenance = true
-      }
-    })
+    if (unit instanceof ImperialMilitiaTraitorsProvenance) {
+      this.traitorProvenance = true
+    }
   }
 
   walkAlly (ally) {
@@ -619,62 +622,6 @@ export class OneDisciplineMasterPer500Points extends Rule {
   }
 }
 
-export class AllUnitsInDetachmentMustSelectSameProvenance extends Rule {
-  init () {
-    this.errors = false
-  }
-
-  walkDetachment (detachment) {
-    const stats = {
-      eligible: 0,
-      provenances: {
-        warriors: 0,
-        survivors: 0,
-        feral: 0,
-        traitors: 0
-      }
-    }
-
-    detachment.units.forEach(unit => {
-      if (unit instanceof ImperialMilitiaUnit) {
-        stats.eligible++
-
-        unit.getChosenWeapons().forEach(weapon => {
-          if (weapon instanceof WarriorElite) {
-            stats.provenances.warriors++
-          }
-
-          if (weapon instanceof SurvivorsOfTheDarkAge) {
-            stats.provenances.survivors++
-          }
-
-          if (weapon instanceof FeralWarriors) {
-            stats.provenances.feral++
-          }
-
-          if (weapon instanceof Traitors) {
-            stats.provenances.traitors++
-          }
-        })
-      }
-    })
-
-    const provenances = Object.values(stats.provenances)
-      .reduce((acc, curr) => curr > acc ? curr : acc, 0)
-
-    if (provenances && stats.eligible !== provenances) {
-      detachment.addError(
-        'all-detachment-units-must-select-provenance'
-      )
-      this.errors = true
-    }
-  }
-
-  collect (list, t) {
-    return this.errors
-  }
-}
-
 export class UnitsWithChaosSpawnMustHaveTraitorProvenance extends Rule {
   init () {
     this.detachments = {}
@@ -689,9 +636,11 @@ export class UnitsWithChaosSpawnMustHaveTraitorProvenance extends Rule {
         hasChaosSpawnMutations = true
       }
 
-      if (weapon instanceof Traitors) {
-        hasTraitorProvenance = true
-      }
+      unit.detachment.units.forEach(unit => {
+        if (unit instanceof ImperialMilitiaTraitorsProvenance) {
+          hasTraitorProvenance = true
+        }
+      })
     })
 
     if (hasChaosSpawnMutations && !hasTraitorProvenance) {
@@ -724,11 +673,9 @@ export class DetachmentsWithRoguePsykersMustHaveTraitorProvenance extends Rule {
         hasRoguePsykers = true
       }
 
-      unit.getChosenWeapons().forEach(weapon => {
-        if (weapon instanceof Traitors) {
-          hasTraitorProvenance = true
-        }
-      })
+      if (unit instanceof ImperialMilitiaTraitorsProvenance) {
+        hasTraitorProvenance = true
+      }
     })
 
     if (hasRoguePsykers && !hasTraitorProvenance) {

@@ -49,7 +49,6 @@ import {
   DaemonicAlliesRequireTraitorProvenance,
   MaxTwoProvenances,
   OneDisciplineMasterPer500Points,
-  AllUnitsInDetachmentMustSelectSameProvenance,
   UnitsWithChaosSpawnMustHaveTraitorProvenance,
   DetachmentsWithRoguePsykersMustHaveTraitorProvenance,
   ForceCommanderShouldHaveFirstDisciplineMaster
@@ -112,7 +111,6 @@ export default class ImperialMilitia extends Army {
       new LordsOfWarLimit(1 / 3),
       new SupportDetachmentsLimit(2),
       new OneDisciplineMasterPer500Points(),
-      new AllUnitsInDetachmentMustSelectSameProvenance(),
       new UnitsWithChaosSpawnMustHaveTraitorProvenance(),
       new DetachmentsWithRoguePsykersMustHaveTraitorProvenance(),
       new ForceCommanderShouldHaveFirstDisciplineMaster()

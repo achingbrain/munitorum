@@ -1081,11 +1081,10 @@ export default {
     'teleport': 'Teleport',
     'chaos-gate': 'Chaos Gate',
 
-    'provenance': 'Provenance',
-    'warrior-elite': 'Warrior Elite',
-    'survivors-of-the-dark-age': 'Survivors of the Dark Age',
-    'feral-warriors': 'Feral Warriors',
-    'traitors': 'Traitors',
+    'imperial-militia-warrior-elite-provenance': 'Warrior Elite Provenance',
+    'imperial-militia-survivors-of-the-dark-age-provenance': 'Survivors of the Dark Age Provenance',
+    'imperial-militia-feral-warriors-provenance': 'Feral Warriors Provenance',
+    'imperial-militia-traitors-provenance': 'Traitors Provenance',
 
     'critical-hit-effect': 'Critical Hit: {{criticalHitEffect}}',
     'legion-cerberus-critical-hit': 'Unit is destroyed and all units within 5cm suffer a standard hit on a 6+',

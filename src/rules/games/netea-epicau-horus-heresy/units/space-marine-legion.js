@@ -1653,14 +1653,6 @@ export class LegionTeleport extends ModifierUnit {
   constructor (detachment) {
     super(detachment, 50)
   }
-
-  getCost () {
-    return this.cost
-  }
-
-  getQuantity () {
-    return NaN
-  }
 }
 
 export class LegionTerminatorSquad extends LegionUnit {

@@ -29,7 +29,11 @@ import {
   ImperialMilitiaAvengerStrikeFighter,
   ImperialMilitiaPrimarisStrikeFighter,
   ImperialMilitiaDisciplineMaster,
-  ImperialMilitiaRoguePsyker
+  ImperialMilitiaRoguePsyker,
+  ImperialMilitiaWarriorEliteProvenance,
+  ImperialMilitiaSurvivorsOfTheDarkAgeProvenance,
+  ImperialMilitiaFeralWarriorsProvenance,
+  ImperialMilitiaTraitorsProvenance
 } from '../units/imperial-militia'
 import ImperialMilitiaDetachment from './imperial-militia-detachment'
 import {
@@ -57,7 +61,13 @@ export class ImperialMilitiaCommandSquad extends ImperialMilitiaDetachment {
       new MilitiaFireSupport(),
       new MilitiaSupportAuxiliaries(),
       new MilitiaReconAuxiliaries(),
-      new MilitiaOgrynBruteSquad()
+      new MilitiaOgrynBruteSquad(),
+      new MultipleChoiceOption(
+        ImperialMilitiaWarriorEliteProvenance,
+        ImperialMilitiaSurvivorsOfTheDarkAgeProvenance,
+        ImperialMilitiaFeralWarriorsProvenance,
+        ImperialMilitiaTraitorsProvenance
+      )
     )
     this.setConstraints(
       new Unique()
@@ -84,7 +94,13 @@ export class ImperialMilitiaInfantrySquad extends ImperialMilitiaDetachment {
       new MilitiaFireSupport(),
       new MilitiaSupportAuxiliaries(),
       new MilitiaReconAuxiliaries(),
-      new MilitiaOgrynBruteSquad()
+      new MilitiaOgrynBruteSquad(),
+      new MultipleChoiceOption(
+        ImperialMilitiaWarriorEliteProvenance,
+        ImperialMilitiaSurvivorsOfTheDarkAgeProvenance,
+        ImperialMilitiaFeralWarriorsProvenance,
+        ImperialMilitiaTraitorsProvenance
+      )
     )
   }
 }
@@ -101,7 +117,13 @@ export class ImperialMilitiaLevySquad extends ImperialMilitiaDetachment {
         ImperialMilitiaDisciplineMaster,
         ImperialMilitiaRoguePsyker
       ),
-      new MilitiaOgrynBruteSquad()
+      new MilitiaOgrynBruteSquad(),
+      new MultipleChoiceOption(
+        ImperialMilitiaWarriorEliteProvenance,
+        ImperialMilitiaSurvivorsOfTheDarkAgeProvenance,
+        ImperialMilitiaFeralWarriorsProvenance,
+        ImperialMilitiaTraitorsProvenance
+      )
     )
   }
 }
@@ -118,6 +140,12 @@ export class ImperialMilitiaMotorcycleSquad extends ImperialMilitiaDetachment {
       new MultipleChoiceOption(
         ImperialMilitiaDisciplineMaster,
         ImperialMilitiaRoguePsyker
+      ),
+      new MultipleChoiceOption(
+        ImperialMilitiaWarriorEliteProvenance,
+        ImperialMilitiaSurvivorsOfTheDarkAgeProvenance,
+        ImperialMilitiaFeralWarriorsProvenance,
+        ImperialMilitiaTraitorsProvenance
       )
     )
   }
@@ -138,6 +166,12 @@ export class ImperialMilitiaGrenedierSquad extends ImperialMilitiaDetachment {
       new MultipleChoiceOption(
         ImperialMilitiaDisciplineMaster,
         ImperialMilitiaRoguePsyker
+      ),
+      new MultipleChoiceOption(
+        ImperialMilitiaWarriorEliteProvenance,
+        ImperialMilitiaSurvivorsOfTheDarkAgeProvenance,
+        ImperialMilitiaFeralWarriorsProvenance,
+        ImperialMilitiaTraitorsProvenance
       )
     )
   }

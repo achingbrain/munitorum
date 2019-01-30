@@ -16,13 +16,22 @@ import {
 } from '../store/actions'
 
 class ListNameDialog extends Component {
-  constructor (props) {
-    super(props)
+  state = {
+    prevId: null,
+    open: false,
+    value: ''
+  }
 
-    this.state = {
-      open: false,
-      value: props.list.name
+  static getDerivedStateFromProps (props, state) {
+    if (props.id !== state.prevId) {
+      return {
+        ...state,
+        prevId: props.id,
+        value: props.name
+      }
     }
+
+    return state
   }
 
   handleClickOpen = () => {
@@ -64,7 +73,7 @@ class ListNameDialog extends Component {
       t
     } = this.props
 
-    const name = this.state.value || this.props.list.name
+    const name = this.state.value
 
     return (
       <>
@@ -106,7 +115,9 @@ class ListNameDialog extends Component {
 }
 
 const mapStateToProps = ({ list }) => ({
-  list
+  list,
+  id: list.id,
+  name: list.name
 })
 
 const mapDispatchToProps = {

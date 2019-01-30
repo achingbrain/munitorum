@@ -16,13 +16,22 @@ import {
 } from '../store/actions'
 
 class DetachmentNameDialog extends Component {
-  constructor (props) {
-    super(props)
+  state = {
+    prevId: null,
+    open: false,
+    value: ''
+  }
 
-    this.state = {
-      open: false,
-      value: props.name || props.t(props.code)
+  static getDerivedStateFromProps (props, state) {
+    if (props.id !== state.prevId) {
+      return {
+        ...state,
+        prevId: props.id,
+        value: props.name || props.t(props.code)
+      }
     }
+
+    return state
   }
 
   handleClickOpen = () => {
@@ -107,6 +116,7 @@ class DetachmentNameDialog extends Component {
 
 const mapStateToProps = (state, { detachment }) => {
   return {
+    id: detachment.id,
     list: detachment.list,
     detachment,
     name: detachment.name,

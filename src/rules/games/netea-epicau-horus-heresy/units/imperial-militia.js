@@ -22,8 +22,7 @@ import {
   Or,
   FixedForwardFireArc,
   RearFireArc,
-  Disrupt,
-  WeaponBlank
+  Disrupt
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -50,105 +49,68 @@ import {
 import MultipleChoiceUnit from './multiple-choice-unit'
 import TransportUnit from './transport-unit'
 import Unit from './unit'
+import ModifierUnit from './modifier-unit'
 import SpacecraftUnit from './spacecraft-unit'
 import withType from '../../../../utils/with-type'
 
-export class Provenance extends WeaponBlank {
-  constructor (name) {
-    super()
+export class ImperialMilitiaProvenance extends ModifierUnit {
 
-    this.name = name
-  }
-
-  modifyStats (stats) {
-    return stats
-  }
-
-  modifyRules (rules) {
-    return rules
-  }
 }
 
-export class WarriorElite extends Provenance {
-  constructor () {
-    super('warrior-elite')
-  }
+export class ImperialMilitiaWarriorEliteProvenance extends ImperialMilitiaProvenance {
 
-  modifyStats (stats) {
-    return {
-      ...stats,
-      ff: stats.ff - 1
-    }
-  }
 }
 
-export class SurvivorsOfTheDarkAge extends Provenance {
-  constructor () {
-    super('survivors-of-the-dark-age')
-  }
+export class ImperialMilitiaSurvivorsOfTheDarkAgeProvenance extends ImperialMilitiaProvenance {
 
-  modifyStats (stats) {
-    return {
-      ...stats,
-      armour: stats.armour - 1
-    }
-  }
 }
 
-export class FeralWarriors extends Provenance {
-  constructor () {
-    super('feral-warriors')
-  }
+export class ImperialMilitiaFeralWarriorsProvenance extends ImperialMilitiaProvenance {
 
-  modifyStats (stats) {
-    return {
-      ...stats,
-      cc: stats.cc - 1
-    }
-  }
 }
 
-export class Traitors extends Provenance {
-  constructor () {
-    super('traitors')
-  }
+export class ImperialMilitiaTraitorsProvenance extends ImperialMilitiaProvenance {
 
-  modifyRules (rules) {
-    return rules.concat(new Beserk())
-  }
-}
-
-class ProvenanceChoice extends MultipleChoiceWeapon {
-  constructor () {
-    super(
-      new WeaponBlank(),
-      new WarriorElite(),
-      new SurvivorsOfTheDarkAge(),
-      new FeralWarriors(),
-      new Traitors()
-    )
-  }
 }
 
 export class ImperialMilitiaUnit extends Unit {
   getStats () {
-    const stats = super.getStats()
-    const provenance = this.getChosenWeapons().find(weapon => weapon instanceof Provenance)
+    let stats = super.getStats()
 
-    if (provenance) {
-      return provenance.modifyStats(stats)
-    }
+    this.detachment.units.forEach(unit => {
+      if (unit instanceof ImperialMilitiaWarriorEliteProvenance) {
+        stats = {
+          ...stats,
+          ff: stats.ff - 1
+        }
+      }
+
+      if (unit instanceof ImperialMilitiaSurvivorsOfTheDarkAgeProvenance) {
+        stats = {
+          ...stats,
+          armour: stats.armour - 1
+        }
+      }
+
+      if (unit instanceof ImperialMilitiaFeralWarriorsProvenance) {
+        stats = {
+          ...stats,
+          cc: stats.cc - 1
+        }
+      }
+    })
 
     return stats
   }
 
   getRules () {
-    const rules = super.getRules()
-    const provenance = this.getChosenWeapons().find(weapon => weapon instanceof Provenance)
+    let rules = super.getRules()
 
-    if (provenance) {
-      return provenance.modifyRules(rules)
-    }
+    this.detachment.units.forEach(unit => {
+      if (unit instanceof ImperialMilitiaTraitorsProvenance) {
+        rules = rules.concat(new Beserk())
+      }
+    })
 
     return rules
   }
@@ -172,8 +134,7 @@ export class ImperialMilitiaForceCommander extends ImperialMilitiaUnit {
     }
     this.weapons = [
       new Weapon('archaeotech-pistol', new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+1'))),
-      new Weapon('plasma-guns', new SmallArms('15cm', new MultipleShot('2x', new AntiPersonnel('5+'), new AntiTank('5+')))),
-      new ProvenanceChoice()
+      new Weapon('plasma-guns', new SmallArms('15cm', new MultipleShot('2x', new AntiPersonnel('5+'), new AntiTank('5+'))))
     ]
   }
 }
@@ -194,8 +155,7 @@ export class ImperialMilitiaPlatoonCommander extends ImperialMilitiaUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('heavy-stubbers', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('5+'), new AntiAircraft('6+')))),
-      new ProvenanceChoice()
+      new Weapon('heavy-stubbers', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('5+'), new AntiAircraft('6+'))))
     ]
   }
 }
@@ -221,8 +181,7 @@ export class ImperialMilitiaAuxiliaries extends ImperialMilitiaUnit {
         new Weapon('auxilia-pistols-and-combat-weapons', new StatsModifier({
           ff: 1
         }), new SmallArms('15cm'))
-      ),
-      new ProvenanceChoice()
+      )
     ]
   }
 }
@@ -241,8 +200,7 @@ export class ImperialMilitiaFireSupport extends ImperialMilitiaUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('heavy-stubbers', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('5+'), new AntiAircraft('6+')))),
-      new ProvenanceChoice()
+      new Weapon('heavy-stubbers', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('5+'), new AntiAircraft('6+'))))
     ]
   }
 }
@@ -268,8 +226,7 @@ export class ImperialMilitiaSupportAuxiliaries extends ImperialMilitiaUnit {
         new Weapon('auxilia-pistols-and-combat-weapons', new StatsModifier({
           ff: 1
         }), new SmallArms('15cm'))
-      ),
-      new ProvenanceChoice()
+      )
     ]
   }
 }
@@ -290,8 +247,7 @@ export class ImperialMilitiaReconAuxiliaries extends ImperialMilitiaUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('sniper-rifles', new RangedWeapon('30cm', new AntiPersonnel('5+'), new Sniper())),
-      new ProvenanceChoice()
+      new Weapon('sniper-rifles', new RangedWeapon('30cm', new AntiPersonnel('5+'), new Sniper()))
     ]
   }
 }
@@ -321,8 +277,7 @@ export class ImperialMilitiaOgrynBruteSquad extends ImperialMilitiaUnit {
           cc: -1,
           ff: 3
         }), new AssaultWeapon(new ExtraAttacks('+D3')))
-      ),
-      new ProvenanceChoice()
+      )
     ]
   }
 }
@@ -341,8 +296,7 @@ export class ImperialMilitiaLevyAuxiliaries extends ImperialMilitiaUnit {
       ff: 6
     }
     this.weapons = [
-      new Weapon('auxilia-weapons', new SmallArms('15cm')),
-      new ProvenanceChoice()
+      new Weapon('auxilia-weapons', new SmallArms('15cm'))
     ]
   }
 }
@@ -363,8 +317,7 @@ export class ImperialMilitiaMotorcycleCommander extends ImperialMilitiaUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('auxilia-pistol-and-combat-weapon', new SmallArms('15cm')),
-      new ProvenanceChoice()
+      new Weapon('auxilia-pistol-and-combat-weapon', new SmallArms('15cm'))
     ]
   }
 }
@@ -384,8 +337,7 @@ export class ImperialMilitiaMotorcycle extends ImperialMilitiaUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('auxilia-pistols-and-combat-weapons', new SmallArms('15cm')),
-      new ProvenanceChoice()
+      new Weapon('auxilia-pistols-and-combat-weapons', new SmallArms('15cm'))
     ]
   }
 }
@@ -405,8 +357,7 @@ export class ImperialMilitiaGrenedier extends ImperialMilitiaUnit {
     }
     this.weapons = [
       new Weapon('lascarbines', new SmallArms('15cm')),
-      new Weapon('plasma-guns', new RangedWeapon('15cm', new AntiPersonnel('5+'), new AntiTank('5+'))),
-      new ProvenanceChoice()
+      new Weapon('plasma-guns', new RangedWeapon('15cm', new AntiPersonnel('5+'), new AntiTank('5+')))
     ]
   }
 }
@@ -1066,3 +1017,7 @@ withType(ImperialMilitiaAvengerStrikeFighter)
 withType(ImperialMilitiaPrimarisStrikeFighter)
 withType(ImperialMilitiaDisciplineMaster)
 withType(ImperialMilitiaRoguePsyker)
+withType(ImperialMilitiaWarriorEliteProvenance)
+withType(ImperialMilitiaSurvivorsOfTheDarkAgeProvenance)
+withType(ImperialMilitiaFeralWarriorsProvenance)
+withType(ImperialMilitiaTraitorsProvenance)
