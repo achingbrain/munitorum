@@ -33,9 +33,11 @@ import {
   SecondaryTargetingProtocols,
   Walker,
   VoidShields,
-  Titanic,
-  Unique
+  Titanic
 } from '../special-rules'
+import {
+  Unique
+} from '../constraints'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit from './unit'
 import withType from '../../../../utils/with-type'

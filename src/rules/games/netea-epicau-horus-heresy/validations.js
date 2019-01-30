@@ -132,7 +132,7 @@ export class UniqueRule extends Rule {
           }
 
           this.unique[unit.type].count++
-          this.unique[detachment.type].detachments.push(unit.detachment)
+          this.unique[unit.type].detachments.push(unit.detachment)
         }
       })
     })
