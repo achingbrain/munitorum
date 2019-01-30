@@ -7,13 +7,6 @@ jobs:
     steps:
         - checkout
         - run:
-            name: install-apps
-            working_directory: /
-            command: |
-                sudo apt-get -y -qq update
-                sudo apt install python-pip python-dev
-                sudo pip install awscli
-        - run:
             name: install-dependencies
             command: npm install
         - run:
