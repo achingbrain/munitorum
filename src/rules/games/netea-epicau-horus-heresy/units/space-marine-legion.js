@@ -72,6 +72,12 @@ export class LegionUnit extends Unit {
   }
 }
 
+export class LegionPrimarchUnit extends LegionUnit {
+  constructor (detachment, cost) {
+    super(detachment, cost, 1)
+  }
+}
+
 export class LegionArtilleryUnit extends MultipleChoiceUnit {
   constructor (detachment) {
     super(detachment,

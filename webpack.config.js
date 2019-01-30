@@ -17,7 +17,7 @@ const config = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]-[chunkhash].js',
+    filename: '[name].js',
     publicPath: '/'
   },
   plugins: [
@@ -149,6 +149,7 @@ if (process.env.NODE_ENV === 'development') {
 
   config.devtool = 'source-map'
 } else {
+  config.output.filename = '[name]-[chunkhash].js'
   config.plugins.push(
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',

@@ -18,12 +18,12 @@ import {
   JumpPacks
 } from '../special-rules'
 import {
-  LegionAssaultSquad
+  LegionAssaultSquad,
+  LegionPrimarchUnit
 } from '../units/space-marine-legion'
-import PrimarchUnit from './primarch-unit'
 import withType from '../../../../utils/with-type'
 
-export class BloodAngelsPrimarch extends PrimarchUnit {
+export class BloodAngelsPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 

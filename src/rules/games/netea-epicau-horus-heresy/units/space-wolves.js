@@ -19,11 +19,13 @@ import {
   InvulnerableSave,
   Ferocity
 } from '../special-rules'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
+import {
+  LegionUnit,
+  LegionPrimarchUnit
+} from './space-marine-legion'
 import withType from '../../../../utils/with-type'
 
-export class SpaceWolvesPrimarch extends PrimarchUnit {
+export class SpaceWolvesPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -52,7 +54,7 @@ export class SpaceWolvesPrimarch extends PrimarchUnit {
   }
 }
 
-export class SpaceWolvesGreySlayerSquad extends Unit {
+export class SpaceWolvesGreySlayerSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 300, 8)
 
@@ -74,7 +76,7 @@ export class SpaceWolvesGreySlayerSquad extends Unit {
   }
 }
 
-export class SpaceWolvesDeathswornSquad extends Unit {
+export class SpaceWolvesDeathswornSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 250, 4)
 
@@ -97,7 +99,7 @@ export class SpaceWolvesDeathswornSquad extends Unit {
   }
 }
 
-export class SpaceWolvesVaragyrWolfGuardSquad extends Unit {
+export class SpaceWolvesVaragyrWolfGuardSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 340, 4)
 

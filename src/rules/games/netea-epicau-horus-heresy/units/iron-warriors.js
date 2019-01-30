@@ -29,14 +29,14 @@ import {
   LegionMedusa,
   LegionWhirlwind,
   LegionBasilisk,
-  LegionFellblade
+  LegionFellblade,
+  LegionUnit,
+  LegionPrimarchUnit
 } from './space-marine-legion'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../../../../utils/with-type'
 
-export class IronWarriorsPrimarch extends PrimarchUnit {
+export class IronWarriorsPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -79,7 +79,7 @@ export class IronWarriorsBodyguardSquad extends LegionTerminatorSquad {
   }
 }
 
-export class IronWarriorsTyrantSiegeTerminatorSquad extends Unit {
+export class IronWarriorsTyrantSiegeTerminatorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 85, 4, 6)
 
@@ -103,7 +103,7 @@ export class IronWarriorsTyrantSiegeTerminatorSquad extends Unit {
   }
 }
 
-export class IronWarriorsIronHavocSquad extends Unit {
+export class IronWarriorsIronHavocSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 250, 4)
 
@@ -162,7 +162,7 @@ export class IronWarriorsArtilleryUnit extends MultipleChoiceUnit {
   }
 }
 
-class IronWarriorsStormblade extends Unit {
+class IronWarriorsStormblade extends LegionUnit {
   constructor (detachment) {
     super(detachment, 700, 3)
 

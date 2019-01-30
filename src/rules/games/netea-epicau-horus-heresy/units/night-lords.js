@@ -18,13 +18,13 @@ import {
   Infiltrator
 } from '../special-rules'
 import {
-  LegionTacticalSquad
+  LegionTacticalSquad,
+  LegionUnit,
+  LegionPrimarchUnit
 } from '../units/space-marine-legion'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
-export class NightLordsPrimarch extends PrimarchUnit {
+export class NightLordsPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -66,7 +66,7 @@ export class NightLordsBodyguardSquad extends LegionTacticalSquad {
   }
 }
 
-export class NightLordsNightRaptorSquad extends Unit {
+export class NightLordsNightRaptorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 225, 4)
 
@@ -87,7 +87,7 @@ export class NightLordsNightRaptorSquad extends Unit {
   }
 }
 
-export class NightLordsTerrorSquad extends Unit {
+export class NightLordsTerrorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 250, 6)
 

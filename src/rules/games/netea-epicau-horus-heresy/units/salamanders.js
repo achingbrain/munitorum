@@ -17,11 +17,13 @@ import {
   Inspiring,
   InvulnerableSave
 } from '../special-rules'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
+import {
+  LegionUnit,
+  LegionPrimarchUnit
+} from './space-marine-legion'
 import withType from '../../../../utils/with-type'
 
-export class SalamandersPrimarch extends PrimarchUnit {
+export class SalamandersPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -52,7 +54,7 @@ export class SalamandersPrimarch extends PrimarchUnit {
   }
 }
 
-export class SalamandersPyroclastSquad extends Unit {
+export class SalamandersPyroclastSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 60, 4, 6)
 
@@ -74,7 +76,7 @@ export class SalamandersPyroclastSquad extends Unit {
   }
 }
 
-export class SalamandersFiredrakeTerminatorSquad extends Unit {
+export class SalamandersFiredrakeTerminatorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 85, 4, 6)
 

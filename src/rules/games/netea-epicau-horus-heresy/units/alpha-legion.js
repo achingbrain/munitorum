@@ -21,13 +21,13 @@ import {
   Scout
 } from '../special-rules'
 import {
-  LegionTacticalSquad
+  LegionTacticalSquad,
+  LegionUnit,
+  LegionPrimarchUnit
 } from './space-marine-legion'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
-export class AlphaLegionPrimarch extends PrimarchUnit {
+export class AlphaLegionPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -67,7 +67,7 @@ export class AlphaLegionBodyguardSquad extends LegionTacticalSquad {
   }
 }
 
-export class AlphaLegionLernaeanTerminatorSquad extends Unit {
+export class AlphaLegionLernaeanTerminatorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 340, 4)
 
@@ -94,7 +94,7 @@ export class AlphaLegionLernaeanTerminatorSquad extends Unit {
   }
 }
 
-export class AlphaLegionHeadHunterKillTeamSquad extends Unit {
+export class AlphaLegionHeadHunterKillTeamSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 200, 4)
 

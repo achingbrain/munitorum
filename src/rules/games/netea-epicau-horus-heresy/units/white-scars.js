@@ -19,13 +19,13 @@ import {
   LegionBike,
   LegionAttackBike,
   LegionScimitarJetbike,
-  LegionTerminatorSquad
+  LegionTerminatorSquad,
+  LegionPrimarchUnit
 } from './space-marine-legion'
-import PrimarchUnit from './primarch-unit'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../../../../utils/with-type'
 
-export class WhiteScarsPrimarch extends PrimarchUnit {
+export class WhiteScarsPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 

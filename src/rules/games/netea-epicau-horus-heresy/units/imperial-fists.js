@@ -27,13 +27,13 @@ import {
 } from '../special-rules'
 import {
   LegionTacticalSquad,
-  LegionFellblade
+  LegionFellblade,
+  LegionUnit,
+  LegionPrimarchUnit
 } from './space-marine-legion'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
-export class ImperialFistsPrimarch extends PrimarchUnit {
+export class ImperialFistsPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -75,7 +75,7 @@ export class ImperialFistsBodyguardSquad extends LegionTacticalSquad {
   }
 }
 
-export class ImperialFistsPhalanxWarderSquad extends Unit {
+export class ImperialFistsPhalanxWarderSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 350, 8)
 
@@ -97,7 +97,7 @@ export class ImperialFistsPhalanxWarderSquad extends Unit {
   }
 }
 
-export class ImperialFistsTemplarBrethrenSquad extends Unit {
+export class ImperialFistsTemplarBrethrenSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 350, 6)
 
@@ -126,7 +126,7 @@ export class ImperialFistsFellblade extends LegionFellblade {
   }
 }
 
-export class ImperialFistsCastellumStronghold extends Unit {
+export class ImperialFistsCastellumStronghold extends LegionUnit {
   constructor (detachment) {
     super(detachment, 250, 1)
 
@@ -161,7 +161,7 @@ export class ImperialFistsCastellumStronghold extends Unit {
   }
 }
 
-export class ImperialFistsPrimusRedoubt extends Unit {
+export class ImperialFistsPrimusRedoubt extends LegionUnit {
   constructor (detachment) {
     super(detachment, 300, 1)
 

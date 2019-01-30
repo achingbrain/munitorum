@@ -18,13 +18,13 @@ import {
 import {
   LegionTerminatorSquad,
   LegionFellblade,
-  LegionGlaive
+  LegionGlaive,
+  LegionPrimarchUnit
 } from './space-marine-legion'
 import MultipleChoiceUnit from './multiple-choice-unit'
-import PrimarchUnit from './primarch-unit'
 import withType from '../../../../utils/with-type'
 
-export class DarkAngelsPrimarch extends PrimarchUnit {
+export class DarkAngelsPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 

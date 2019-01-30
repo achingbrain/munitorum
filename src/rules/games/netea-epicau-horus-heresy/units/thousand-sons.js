@@ -17,11 +17,13 @@ import {
   Inspiring,
   InvulnerableSave
 } from '../special-rules'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
+import {
+  LegionUnit,
+  LegionPrimarchUnit
+} from './space-marine-legion'
 import withType from '../../../../utils/with-type'
 
-export class ThousandSonsPrimarch extends PrimarchUnit {
+export class ThousandSonsPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -52,7 +54,7 @@ export class ThousandSonsPrimarch extends PrimarchUnit {
   }
 }
 
-export class ThousandSonsSekhmetTerminatorSquad extends Unit {
+export class ThousandSonsSekhmetTerminatorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 340, 4)
 
@@ -87,7 +89,7 @@ export class ThousandSonsBodyguardSquad extends ThousandSonsSekhmetTerminatorSqu
   }
 }
 
-export class ThousandSonsAmmitaraIntercessorSquad extends Unit {
+export class ThousandSonsAmmitaraIntercessorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 275, 4)
 
@@ -106,7 +108,7 @@ export class ThousandSonsAmmitaraIntercessorSquad extends Unit {
   }
 }
 
-export class ThousandSonsKhenetaiBladesSquad extends Unit {
+export class ThousandSonsKhenetaiBladesSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 225, 4)
 

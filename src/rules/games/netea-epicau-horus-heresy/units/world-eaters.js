@@ -17,13 +17,13 @@ import {
   Beserk
 } from '../special-rules'
 import {
-  LegionTerminatorSquad
+  LegionTerminatorSquad,
+  LegionUnit,
+  LegionPrimarchUnit
 } from '../units/space-marine-legion'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
-export class WorldEatersPrimarch extends PrimarchUnit {
+export class WorldEatersPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -65,7 +65,7 @@ export class WorldEatersBodyguardSquad extends LegionTerminatorSquad {
   }
 }
 
-export class WorldEatersRampagerSquad extends Unit {
+export class WorldEatersRampagerSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 60, 4, 6)
 
@@ -87,7 +87,7 @@ export class WorldEatersRampagerSquad extends Unit {
   }
 }
 
-export class WorldEatersRedButcherSquad extends Unit {
+export class WorldEatersRedButcherSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 85, 4, 6)
 

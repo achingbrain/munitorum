@@ -27,13 +27,13 @@ import {
   JumpPacks
 } from '../special-rules'
 import {
-  LegionAssaultSquad
+  LegionAssaultSquad,
+  LegionUnit,
+  LegionPrimarchUnit
 } from '../units/space-marine-legion'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
-export class RavenGuardPrimarch extends PrimarchUnit {
+export class RavenGuardPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -74,7 +74,7 @@ export class RavenGuardBodyguardSquad extends LegionAssaultSquad {
   }
 }
 
-export class RavenGuardDarkFuryAssaultSquad extends Unit {
+export class RavenGuardDarkFuryAssaultSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 250, 4)
 
@@ -95,7 +95,7 @@ export class RavenGuardDarkFuryAssaultSquad extends Unit {
   }
 }
 
-export class RavenGuardMorDeythanStrikeSquad extends Unit {
+export class RavenGuardMorDeythanStrikeSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 225, 4)
 
@@ -117,7 +117,7 @@ export class RavenGuardMorDeythanStrikeSquad extends Unit {
   }
 }
 
-export class RavenGuardDarkwingPatternStormEagle extends Unit {
+export class RavenGuardDarkwingPatternStormEagle extends LegionUnit {
   constructor (detachment) {
     super(detachment, 125, 1, 3)
 

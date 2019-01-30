@@ -21,13 +21,13 @@ import {
   JumpPacks
 } from '../special-rules'
 import {
-  LegionTacticalSquad
+  LegionTacticalSquad,
+  LegionUnit,
+  LegionPrimarchUnit
 } from '../units/space-marine-legion'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
-export class UltramarinesPrimarch extends PrimarchUnit {
+export class UltramarinesPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -69,7 +69,7 @@ export class UltramarinesBodyguardSquad extends LegionTacticalSquad {
   }
 }
 
-export class UltramarinesFulmentarusTerminatorSquad extends Unit {
+export class UltramarinesFulmentarusTerminatorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 85, 4, 6)
 
@@ -93,7 +93,7 @@ export class UltramarinesFulmentarusTerminatorSquad extends Unit {
   }
 }
 
-export class UltramarinesLoctarusStormSquad extends Unit {
+export class UltramarinesLoctarusStormSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 300, 6)
 
@@ -115,7 +115,7 @@ export class UltramarinesLoctarusStormSquad extends Unit {
   }
 }
 
-export class UltramarinesInvictarusSuzerainSquad extends Unit {
+export class UltramarinesInvictarusSuzerainSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 250, 4)
 

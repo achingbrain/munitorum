@@ -27,14 +27,14 @@ import {
 } from '../special-rules'
 import {
   LegionTacticalSquad,
-  LegionDeredeoDreadnought
+  LegionDeredeoDreadnought,
+  LegionUnit,
+  LegionPrimarchUnit
 } from './space-marine-legion'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../../../../utils/with-type'
 
-export class WordBearersPrimarch extends PrimarchUnit {
+export class WordBearersPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -74,7 +74,7 @@ export class WordBearersBodyguardSquad extends LegionTacticalSquad {
   }
 }
 
-export class WordBearersGalVorbakDarkBrethrenSquad extends Unit {
+export class WordBearersGalVorbakDarkBrethrenSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 250, 6)
 
@@ -97,7 +97,7 @@ export class WordBearersGalVorbakDarkBrethrenSquad extends Unit {
   }
 }
 
-export class WordBearersIncendiarySquad extends Unit {
+export class WordBearersIncendiarySquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 350, 8)
 
@@ -123,7 +123,7 @@ export class WordBearersIncendiarySquad extends Unit {
   }
 }
 
-export class WordBearersMalGharaTaintedContemptorDreadnought extends Unit {
+export class WordBearersMalGharaTaintedContemptorDreadnought extends LegionUnit {
   constructor (detachment) {
     super(detachment, 70, 1)
 

@@ -22,13 +22,13 @@ import {
   Infiltrator
 } from '../special-rules'
 import {
-  LegionTerminatorSquad
+  LegionTerminatorSquad,
+  LegionUnit,
+  LegionPrimarchUnit
 } from './space-marine-legion'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
-export class DeathGuardPrimarch extends PrimarchUnit {
+export class DeathGuardPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -70,7 +70,7 @@ export class DeathGuardBodyguardSquad extends LegionTerminatorSquad {
   }
 }
 
-export class DeathGuardDeathshroudTerminatorSquad extends Unit {
+export class DeathGuardDeathshroudTerminatorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 300, 4)
 
@@ -93,7 +93,7 @@ export class DeathGuardDeathshroudTerminatorSquad extends Unit {
   }
 }
 
-export class DeathGuardGraveWardenTerminatorSquad extends Unit {
+export class DeathGuardGraveWardenTerminatorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 85, 4, 6)
 

@@ -9,7 +9,8 @@ import {
 import {
   LegionLordCommander,
   LegionDropPod,
-  LegionDreadclaw
+  LegionDreadclaw,
+  LegionPrimarchUnit
 } from './units/space-marine-legion'
 import {
   ImperialMilitiaDisciplineMaster,
@@ -21,7 +22,6 @@ import {
   ImperialMilitiaTraitorsProvenance
 } from './units/imperial-militia'
 import SpacecraftUnit from './units/spacecraft-unit'
-import PrimarchUnit from './units/primarch-unit'
 import {
   SupremeCommander
 } from './special-rules'
@@ -313,7 +313,7 @@ export class PrimarchsOrLordCommanders extends Rule {
       this.detachments.push(unit.detachment)
     }
 
-    if (unit instanceof PrimarchUnit) {
+    if (unit instanceof LegionPrimarchUnit) {
       this.primarchs++
       this.detachments.push(unit.detachment)
     }

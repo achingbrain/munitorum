@@ -22,13 +22,13 @@ import {
   InvulnerableSave
 } from '../special-rules'
 import {
-  LegionTerminatorSquad
+  LegionTerminatorSquad,
+  LegionUnit,
+  LegionPrimarchUnit
 } from '../units/space-marine-legion'
-import PrimarchUnit from './primarch-unit'
-import Unit from './unit'
 import withType from '../../../../utils/with-type'
 
-export class EmperorsChildrenPrimarch extends PrimarchUnit {
+export class EmperorsChildrenPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -67,7 +67,7 @@ export class EmperorsChildrenBodyguardSquad extends LegionTerminatorSquad {
   }
 }
 
-export class EmperorsChildrenPhoenixTerminatorSquad extends Unit {
+export class EmperorsChildrenPhoenixTerminatorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 340, 4)
 
@@ -89,7 +89,7 @@ export class EmperorsChildrenPhoenixTerminatorSquad extends Unit {
   }
 }
 
-export class EmperorsChildrenPalatineBladesSquad extends Unit {
+export class EmperorsChildrenPalatineBladesSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 60, 4, 6)
 
@@ -108,7 +108,7 @@ export class EmperorsChildrenPalatineBladesSquad extends Unit {
   }
 }
 
-export class EmperorsChildrenKakophoniSquad extends Unit {
+export class EmperorsChildrenKakophoniSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 60, 4, 6)
 
