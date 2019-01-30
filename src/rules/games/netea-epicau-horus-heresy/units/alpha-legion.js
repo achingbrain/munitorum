@@ -32,6 +32,7 @@ export class AlphaLegionPrimarch extends PrimarchUnit {
     super(detachment, 450, 1)
 
     this.transportType = 'tactical'
+    this.transportUnits = 2
     this.rules = [
       new DemiGod(),
       new ReinforcedArmour(),
