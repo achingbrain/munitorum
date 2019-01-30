@@ -20,7 +20,7 @@ class Game {
   }
 
   removeDetachment (list, detachment) {
-
+    return null
   }
 }
 
