@@ -38,6 +38,7 @@ import {
 } from '../constraints'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit from './unit'
+import ModifierUnit from './modifier-unit'
 import withType from '../../../../utils/with-type'
 
 class KnightHouseholdQuestorisKnightUnit extends Unit {
@@ -484,19 +485,9 @@ export class KnightHouseholdAspirants extends Unit {
   }
 }
 
-export class KnightHouseholdScionsOfUhlan extends Unit {
+export class KnightHouseholdScionsOfUhlan extends ModifierUnit {
   constructor (detachment) {
     super(detachment, 0)
-
-    this.rules = []
-    this.stats = {
-      type: '-',
-      speed: 0,
-      armour: 7,
-      cc: 7,
-      ff: 7
-    }
-    this.weapons = []
   }
 }
 

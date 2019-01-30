@@ -15,6 +15,7 @@ import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import Validator from './validator'
 import UnitViewer from './unit-viewer'
+import ModifierUnit from '../../../rules/games/netea-epicau-horus-heresy/units/modifier-unit'
 
 class DetachmentViewer extends Component {
   static propTypes = {
@@ -28,14 +29,16 @@ class DetachmentViewer extends Component {
       t
     } = this.props
 
-    const units = {}
-
-    // dedupe units
-    detachment.units.forEach(unit => {
+    // dedupe units by choice of weapons
+    const units = Object.values(detachment.units.reduce((acc, unit) => {
       const key = `${unit.getName()}-${unit.getChosenWeapons().map(weapon => weapon.name).join('-')}`
 
-      units[key] = unit
-    })
+      acc[key] = unit
+
+      return acc
+    }, {})
+    )
+      .filter(item => !(item instanceof ModifierUnit))
 
     const initiativeRating = detachment.getInitiativeRating()
 
@@ -91,14 +94,12 @@ class DetachmentViewer extends Component {
             </TableHead>
             <TableBody>
               {
-                Object.keys(units)
-                  .map(key => units[key])
-                  .map((unit, index) => (
-                    <UnitViewer
-                      key={`unit-${index}`}
-                      unit={unit}
-                    />
-                  ))
+                units.map((unit, index) => (
+                  <UnitViewer
+                    key={`unit-${index}`}
+                    unit={unit}
+                  />
+                ))
               }
             </TableBody>
           </Table>

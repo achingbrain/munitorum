@@ -19,7 +19,8 @@ import {
   DamageCapacity,
   CriticalHit,
   SlowAndSteady,
-  PlusTransports
+  PlusTransports,
+  Teleport
 } from '../special-rules'
 import {
   MultipleChoiceWeapon,
@@ -54,8 +55,22 @@ import {
 import MultipleChoiceUnit from './multiple-choice-unit'
 import TransportUnit from './transport-unit'
 import Unit from './unit'
+import ModifierUnit from './modifier-unit'
 import SpacecraftUnit from './spacecraft-unit'
 import withType from '../../../../utils/with-type'
+
+export class LegionUnit extends Unit {
+  getRules () {
+    const rules = super.getRules()
+    const teleport = this.detachment.units.find(item => item instanceof LegionTeleport)
+
+    if (teleport) {
+      return rules.concat(new Teleport())
+    }
+
+    return rules
+  }
+}
 
 export class LegionArtilleryUnit extends MultipleChoiceUnit {
   constructor (detachment) {
@@ -67,7 +82,7 @@ export class LegionArtilleryUnit extends MultipleChoiceUnit {
   }
 }
 
-export class LegionAssaultSquad extends Unit {
+export class LegionAssaultSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 300, 8)
 
@@ -98,7 +113,7 @@ export class LegionAssaultSupportSquad extends LegionAssaultSquad {
   }
 }
 
-export class LegionAttackBike extends Unit {
+export class LegionAttackBike extends LegionUnit {
   constructor (detachment) {
     super(detachment, 175, 5)
 
@@ -117,7 +132,7 @@ export class LegionAttackBike extends Unit {
   }
 }
 
-export class LegionBasilisk extends Unit {
+export class LegionBasilisk extends LegionUnit {
   constructor (detachment) {
     super(detachment, 325, 4)
 
@@ -175,7 +190,7 @@ export class LegionBattleBarge extends SpacecraftUnit {
   }
 }
 
-export class LegionBike extends Unit {
+export class LegionBike extends LegionUnit {
   constructor (detachment) {
     super(detachment, 175, 5)
 
@@ -196,7 +211,7 @@ export class LegionBike extends Unit {
   }
 }
 
-export class LegionBreacherSquad extends Unit {
+export class LegionBreacherSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 300, 8)
 
@@ -255,7 +270,7 @@ export class LegionCaestus extends TransportUnit {
   }
 }
 
-export class LegionCerberus extends Unit {
+export class LegionCerberus extends LegionUnit {
   constructor (detachment) {
     super(detachment, 150, 1)
 
@@ -278,7 +293,7 @@ export class LegionCerberus extends Unit {
   }
 }
 
-export class LegionChampion extends Unit {
+export class LegionChampion extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -299,7 +314,7 @@ export class LegionChampion extends Unit {
   }
 }
 
-export class LegionChaplain extends Unit {
+export class LegionChaplain extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -332,7 +347,7 @@ export class LegionContemptorDreadnoughtTalonUnit extends MultipleChoiceUnit {
   }
 }
 
-export class LegionContemptorDreadnought extends Unit {
+export class LegionContemptorDreadnought extends LegionUnit {
   constructor (detachment) {
     super(detachment, 60, 1)
 
@@ -387,7 +402,7 @@ export class LegionContemptorDreadnought extends Unit {
   }
 }
 
-export class LegionDamoclesCommandRhino extends Unit {
+export class LegionDamoclesCommandRhino extends LegionUnit {
   constructor (detachment, cost, min, max) {
     super(detachment, cost, min, max)
 
@@ -410,7 +425,7 @@ export class LegionDamoclesCommandRhino extends Unit {
   }
 }
 
-export class LegionDeredeoDreadnought extends Unit {
+export class LegionDeredeoDreadnought extends LegionUnit {
   constructor (detachment) {
     super(detachment, 100, 1)
 
@@ -438,7 +453,7 @@ export class LegionDeredeoDreadnought extends Unit {
   }
 }
 
-export class LegionDespoilerSquad extends Unit {
+export class LegionDespoilerSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 275, 8)
 
@@ -466,7 +481,7 @@ export class LegionTacticalDetachmentUnit extends MultipleChoiceUnit {
   }
 }
 
-export class LegionDestroyerSquad extends Unit {
+export class LegionDestroyerSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 225, 4)
 
@@ -526,7 +541,7 @@ export class LegionDreadclaw extends TransportUnit {
   }
 }
 
-export class LegionDreadnought extends Unit {
+export class LegionDreadnought extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -599,7 +614,7 @@ export class LegionDropPod extends TransportUnit {
   }
 }
 
-export class LegionFalchion extends Unit {
+export class LegionFalchion extends LegionUnit {
   constructor (detachment) {
     super(detachment, 300, 1)
 
@@ -622,7 +637,7 @@ export class LegionFalchion extends Unit {
   }
 }
 
-export class LegionFellblade extends Unit {
+export class LegionFellblade extends LegionUnit {
   constructor (detachment) {
     super(detachment, 300, 1)
 
@@ -647,7 +662,7 @@ export class LegionFellblade extends Unit {
   }
 }
 
-export class LegionGunship extends Unit {
+export class LegionGunship extends LegionUnit {
   constructor (detachment) {
     super(detachment, 300, 2)
 
@@ -672,7 +687,7 @@ export class LegionGunship extends Unit {
   }
 }
 
-export class LegionGlaive extends Unit {
+export class LegionGlaive extends LegionUnit {
   constructor (detachment) {
     super(detachment, 300, 1)
 
@@ -700,7 +715,7 @@ export class LegionGlaive extends Unit {
   }
 }
 
-export class LegionHeavySupportSquad extends Unit {
+export class LegionHeavySupportSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1, 4)
 
@@ -720,7 +735,7 @@ export class LegionHeavySupportSquad extends Unit {
   }
 }
 
-export class LegionJavelinAttackSpeeder extends Unit {
+export class LegionJavelinAttackSpeeder extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -777,7 +792,7 @@ export class LegionKharybdis extends TransportUnit {
   }
 }
 
-export class LegionLandRaiderAchillesTransport extends Unit {
+export class LegionLandRaiderAchillesTransport extends LegionUnit {
   constructor (detachment) {
     super(detachment, 100, 1)
 
@@ -810,7 +825,7 @@ export class LegionLandRaiderAchillesTransport extends Unit {
   }
 }
 
-export class LegionLandRaiderAchilles extends Unit {
+export class LegionLandRaiderAchilles extends LegionUnit {
   constructor (detachment) {
     super(detachment, 105, 1)
 
@@ -882,7 +897,7 @@ export class LegionLandRaiderPhobosTransport extends TransportUnit {
   }
 }
 
-export class LegionLandRaiderPhobos extends Unit {
+export class LegionLandRaiderPhobos extends LegionUnit {
   constructor (detachment) {
     super(detachment, 80, 1)
 
@@ -950,7 +965,7 @@ export class LegionLandRaiderProteusTransport extends TransportUnit {
   }
 }
 
-export class LegionLandRaiderProteus extends Unit {
+export class LegionLandRaiderProteus extends LegionUnit {
   constructor (detachment) {
     super(detachment, 80, 1)
 
@@ -972,7 +987,7 @@ export class LegionLandRaiderProteus extends Unit {
   }
 }
 
-export class LegionLandSpeeder extends Unit {
+export class LegionLandSpeeder extends LegionUnit {
   constructor (detachment) {
     super(detachment, 40, 1)
 
@@ -1002,7 +1017,7 @@ export class LegionLandSpeeder extends Unit {
   }
 }
 
-export class LegionLeviathanDreadnought extends Unit {
+export class LegionLeviathanDreadnought extends LegionUnit {
   constructor (detachment) {
     super(detachment, 100, 1)
 
@@ -1046,7 +1061,7 @@ export class LegionLeviathanSupportDreadnought extends LegionLeviathanDreadnough
   }
 }
 
-export class LegionLibrarian extends Unit {
+export class LegionLibrarian extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -1068,7 +1083,7 @@ export class LegionLibrarian extends Unit {
   }
 }
 
-export class LegionLieutenantCommander extends Unit {
+export class LegionLieutenantCommander extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -1089,7 +1104,7 @@ export class LegionLieutenantCommander extends Unit {
   }
 }
 
-export class LegionLordCommander extends Unit {
+export class LegionLordCommander extends LegionUnit {
   constructor (detachment) {
     super(detachment, 100, 1)
 
@@ -1142,7 +1157,7 @@ export class LegionMastodon extends TransportUnit {
   }
 }
 
-export class LegionMedusa extends Unit {
+export class LegionMedusa extends LegionUnit {
   constructor (detachment) {
     super(detachment, 250, 4)
 
@@ -1175,7 +1190,7 @@ export class LegionOutriderUnit extends MultipleChoiceUnit {
   }
 }
 
-export class LegionPredatorExecutioner extends Unit {
+export class LegionPredatorExecutioner extends LegionUnit {
   constructor (detachment) {
     super(detachment, 80, 1)
 
@@ -1197,7 +1212,7 @@ export class LegionPredatorExecutioner extends Unit {
   }
 }
 
-export class LegionPredatorInfernus extends Unit {
+export class LegionPredatorInfernus extends LegionUnit {
   constructor (detachment) {
     super(detachment, 80, 1)
 
@@ -1227,7 +1242,7 @@ export class LegionPredatorStrikeSquadronUnit extends MultipleChoiceUnit {
   }
 }
 
-export class LegionPredator extends Unit {
+export class LegionPredator extends LegionUnit {
   constructor (detachment) {
     super(detachment, 60, 1)
 
@@ -1258,7 +1273,7 @@ export class LegionPredator extends Unit {
   }
 }
 
-export class LegionRapier extends Unit {
+export class LegionRapier extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -1290,7 +1305,7 @@ export class LegionRapierSupport extends LegionRapier {
   }
 }
 
-export class LegionReconnaissanceSquad extends Unit {
+export class LegionReconnaissanceSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 150, 4)
 
@@ -1334,7 +1349,7 @@ export class LegionRhino extends TransportUnit {
   }
 }
 
-export class LegionScimitarJetbike extends Unit {
+export class LegionScimitarJetbike extends LegionUnit {
   constructor (detachment) {
     super(detachment, 175, 5)
 
@@ -1366,7 +1381,7 @@ export class LegionSicaranBattleTankSquadronUnit extends MultipleChoiceUnit {
   }
 }
 
-export class LegionSicaranOmega extends Unit {
+export class LegionSicaranOmega extends LegionUnit {
   constructor (detachment) {
     super(detachment, 75, 1)
 
@@ -1387,7 +1402,7 @@ export class LegionSicaranOmega extends Unit {
   }
 }
 
-export class LegionSicaranVenator extends Unit {
+export class LegionSicaranVenator extends LegionUnit {
   constructor (detachment) {
     super(detachment, 75, 1)
 
@@ -1408,7 +1423,7 @@ export class LegionSicaranVenator extends Unit {
   }
 }
 
-export class LegionSicaran extends Unit {
+export class LegionSicaran extends LegionUnit {
   constructor (detachment) {
     super(detachment, 80, 1)
 
@@ -1467,7 +1482,7 @@ export class LegionSpartan extends TransportUnit {
   }
 }
 
-export class LegionStormEagleAttackShip extends Unit {
+export class LegionStormEagleAttackShip extends LegionUnit {
   constructor (detachment) {
     super(detachment, 125, 1, 3)
 
@@ -1497,7 +1512,7 @@ export class LegionStormEagleAttackShip extends Unit {
   }
 }
 
-export class LegionStormbird extends Unit {
+export class LegionStormbird extends LegionUnit {
   constructor (detachment) {
     super(detachment, 450, 1)
 
@@ -1593,7 +1608,7 @@ export class LegionSuperHeavyTankUnit extends MultipleChoiceUnit {
   }
 }
 
-export class LegionTacticalSquad extends Unit {
+export class LegionTacticalSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 275, 8)
 
@@ -1612,7 +1627,7 @@ export class LegionTacticalSquad extends Unit {
   }
 }
 
-export class LegionTacticalSupportSquad extends Unit {
+export class LegionTacticalSupportSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1, 4)
 
@@ -1634,16 +1649,9 @@ export class LegionTacticalSupportSquad extends Unit {
   }
 }
 
-export class LegionTeleport extends TransportUnit {
+export class LegionTeleport extends ModifierUnit {
   constructor (detachment) {
     super(detachment, 50)
-
-    this.transportTypes = {
-      terminator: Infinity
-    }
-    this.rules = []
-    this.stats = {}
-    this.weapons = []
   }
 
   getCost () {
@@ -1655,7 +1663,7 @@ export class LegionTeleport extends TransportUnit {
   }
 }
 
-export class LegionTerminatorSquad extends Unit {
+export class LegionTerminatorSquad extends LegionUnit {
   constructor (detachment) {
     super(detachment, 75, 4, 6)
 
@@ -1678,7 +1686,7 @@ export class LegionTerminatorSquad extends Unit {
   }
 }
 
-export class LegionThunderhawkGunship extends Unit {
+export class LegionThunderhawkGunship extends LegionUnit {
   constructor (detachment) {
     super(detachment, 250, 1)
 
@@ -1713,7 +1721,7 @@ export class LegionThunderhawkGunship extends Unit {
   }
 }
 
-export class LegionThunderhawkTransporter extends Unit {
+export class LegionThunderhawkTransporter extends LegionUnit {
   constructor (detachment) {
     super(detachment, 250, 1, 3)
 
@@ -1745,7 +1753,7 @@ export class LegionThunderhawkTransporter extends Unit {
   }
 }
 
-export class LegionTyphon extends Unit {
+export class LegionTyphon extends LegionUnit {
   constructor (detachment) {
     super(detachment, 150, 1)
 
@@ -1771,7 +1779,7 @@ export class LegionTyphon extends Unit {
   }
 }
 
-export class LegionVindicatorLaserDestroyer extends Unit {
+export class LegionVindicatorLaserDestroyer extends LegionUnit {
   constructor (detachment) {
     super(detachment, 70, 1)
 
@@ -1798,7 +1806,7 @@ export class LegionVindicatorSquadronUnit extends MultipleChoiceUnit {
   }
 }
 
-export class LegionVindicator extends Unit {
+export class LegionVindicator extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -1828,7 +1836,7 @@ export class LegionVindicatorSquadronVindicator extends LegionVindicator {
   }
 }
 
-export class LegionWhirlwindHyperios extends Unit {
+export class LegionWhirlwindHyperios extends LegionUnit {
   constructor (detachment) {
     super(detachment, 75, 1)
 
@@ -1846,7 +1854,7 @@ export class LegionWhirlwindHyperios extends Unit {
   }
 }
 
-export class LegionWhirlwindScorpius extends Unit {
+export class LegionWhirlwindScorpius extends LegionUnit {
   constructor (detachment) {
     super(detachment, 80, 1)
 
@@ -1864,7 +1872,7 @@ export class LegionWhirlwindScorpius extends Unit {
   }
 }
 
-export class LegionWhirlwind extends Unit {
+export class LegionWhirlwind extends LegionUnit {
   constructor (detachment) {
     super(detachment, 300, 4)
 
@@ -1882,7 +1890,7 @@ export class LegionWhirlwind extends Unit {
   }
 }
 
-export class LegionXiphonInterceptor extends Unit {
+export class LegionXiphonInterceptor extends LegionUnit {
   constructor (detachment) {
     super(detachment, 250, 2)
 

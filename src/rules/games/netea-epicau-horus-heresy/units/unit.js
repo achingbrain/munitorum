@@ -16,6 +16,9 @@ export default class Unit {
     this.quantity = min
     this.detachment = detachment
     this.weaponOptions = []
+    this.rules = []
+    this.constraints = []
+    this.weapons = []
   }
 
   getWeaponOptions () {
