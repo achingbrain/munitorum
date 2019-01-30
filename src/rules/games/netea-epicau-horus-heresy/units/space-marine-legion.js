@@ -1565,9 +1565,7 @@ export class LegionStrikeCruiser extends SpacecraftUnit {
       dreadClaw: Infinity,
       stormEagle: Infinity
     }
-    this.rules = [
-      new Planetfall()
-    ]
+    this.rules = []
     this.stats = {
       type: 'SC',
       speed: 0,
