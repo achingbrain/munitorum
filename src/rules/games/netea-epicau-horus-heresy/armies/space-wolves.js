@@ -7,6 +7,9 @@ import {
   SpaceWolvesDeathswornDetachment,
   SpaceWolvesVaragyrWolfGuardDetachment
 } from '../detachments/space-wolves'
+import {
+  LegionLibrarian
+} from '../units/space-marine-legion'
 import LegioTitanicus from './legio-titanicus'
 import ImperialMilitia from './imperial-militia'
 import SolarAuxilia from './solar-auxilia'
@@ -52,6 +55,11 @@ export default class SpaceWolves extends SpaceMarineLegion {
     }
 
     return rating
+  }
+
+  filterUpgrades (upgrades) {
+    return upgrades
+      .filter(item => item.type !== LegionLibrarian.type)
   }
 }
 

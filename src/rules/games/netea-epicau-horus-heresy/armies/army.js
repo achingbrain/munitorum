@@ -119,4 +119,8 @@ export default class Army {
   getStrategyRating (list) {
     return 1
   }
+
+  filterUpgrades (upgrades) {
+    return upgrades
+  }
 }

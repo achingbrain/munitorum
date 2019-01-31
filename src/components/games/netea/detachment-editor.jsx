@@ -172,12 +172,17 @@ class DetachmentEditor extends Component {
 }
 
 const mapStateToProps = (state, { detachment }) => {
+  const army = detachment.list.army
+  const upgrades = army.filterUpgrades(
+    detachment.upgrades
+      .reduce((acc, upgrade) => acc.concat(upgrade.getAvailableUpgrades(detachment)), [])
+  )
+
   return {
     list: detachment.list,
     detachment: detachment,
     cost: detachment.getCost(),
-    upgrades: detachment.upgrades
-      .reduce((acc, upgrade) => acc.concat(upgrade.getAvailableUpgrades(detachment)), []),
+    upgrades,
     image: detachment.image,
     units: detachment.units,
     errors: detachment.errors
