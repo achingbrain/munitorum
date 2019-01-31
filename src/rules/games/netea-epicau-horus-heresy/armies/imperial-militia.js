@@ -42,7 +42,7 @@ import SolarAuxilia from './solar-auxilia'
 import MechanicumTaghmata from './mechanicum-taghmata'
 import KnightHousehold from './knight-household'
 import DaemonicHordes from './daemonic-hordes'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 import {
   LordsOfWarLimit,
   SupportDetachmentsLimit,

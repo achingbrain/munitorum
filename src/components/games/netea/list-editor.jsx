@@ -6,7 +6,7 @@ import React, {
 import component from '../../component'
 import EditDetachments from './edit-detachments'
 import EditAllies from './edit-allies'
-import Validator from './validator'
+import Validator from '../../validator'
 import {
   addDetachment
 } from '../../../store/actions'

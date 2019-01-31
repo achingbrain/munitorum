@@ -27,7 +27,7 @@ import {
   PlusTransports
 } from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class EmperorsChildrenPrimarchDetachment extends SpaceMarineLegionDetachment {
   constructor (list) {

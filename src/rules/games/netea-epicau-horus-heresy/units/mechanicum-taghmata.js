@@ -45,7 +45,7 @@ import {
 import MultipleChoiceUnit from './multiple-choice-unit'
 import TransportUnit from './transport-unit'
 import Unit from './unit'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class MechanicumTaghmataTechThrall extends Unit {
   constructor (detachment) {

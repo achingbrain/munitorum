@@ -39,7 +39,7 @@ import {
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit from './unit'
 import ModifierUnit from './modifier-unit'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 class KnightHouseholdQuestorisKnightUnit extends Unit {
   getRules () {

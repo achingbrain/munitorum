@@ -1,9 +1,9 @@
 'use strict'
 
 import shortid from 'shortid'
-import withType from '../../../utils/with-type'
-import InvalidListEditor from '../../../components/games/netea/invalid-list-editor'
-import InvalidListViewer from '../../../components/games/netea/invalid-list-viewer'
+import withType from './with-type'
+import InvalidListEditor from '../../../components/invalid-list-editor'
+import InvalidListViewer from '../../../components/invalid-list-viewer'
 
 export default class NetEaEpicAuHorusHeresyList {
   constructor (game, name, army) {

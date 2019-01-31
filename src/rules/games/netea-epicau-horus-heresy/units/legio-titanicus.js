@@ -40,7 +40,7 @@ import {
 } from '../constraints'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit from './unit'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class LegioTitanicusWarhoundScountTitan extends Unit {
   constructor (detachment) {

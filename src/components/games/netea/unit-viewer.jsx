@@ -260,7 +260,7 @@ const mapStateToProps = (state, { unit }) => {
     stats: unit.getStats(),
     weapons: unit.getChosenWeapons(),
     rules: unit.getRules(),
-    image: unit.image
+    image: unit.getImage()
   }
 }
 

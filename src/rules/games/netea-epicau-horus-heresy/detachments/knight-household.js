@@ -11,7 +11,7 @@ import {
   KnightHouseholdAcastusKnightPorphyrion
 } from '../units/knight-household'
 import KnightHouseholdDetachment from './knight-household-detachment'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 class KnightHouseholdQuestorisKnightsUpgrade extends Upgrade {
   getAvailableUpgrades (detachment) {

@@ -29,7 +29,7 @@ import MechanicumTaghmataDetachment from './mechanicum-taghmata-detachment'
 import {
   Unique
 } from '../constraints'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class MechanicumTaghmataAdsecularisCovenent extends MechanicumTaghmataDetachment {
   constructor (list) {

@@ -13,7 +13,7 @@ import TableBody from '@material-ui/core/TableBody'
 import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
-import Validator from './validator'
+import Validator from '../../validator'
 import UnitViewer from './unit-viewer'
 import ModifierUnit from '../../../rules/games/netea-epicau-horus-heresy/units/modifier-unit'
 

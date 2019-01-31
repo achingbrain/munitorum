@@ -16,7 +16,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import DownIcon from '@material-ui/icons/ArrowDownward'
 import UpIcon from '@material-ui/icons/ArrowUpward'
 import Confirm from '../../confirm'
-import Validator from './validator'
+import Validator from '../../validator'
 import {
   addDetachment,
   moveDetachmentUp,

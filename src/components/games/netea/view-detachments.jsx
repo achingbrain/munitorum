@@ -3,7 +3,7 @@
 import React from 'react'
 import component from '../../component'
 import DetachmentViewer from './detachment-viewer'
-import InvalidDetachment from './invalid-detachment-viewer'
+import InvalidDetachment from '../../invalid-detachment-viewer'
 import kebab from '../../../utils/kebab-case'
 
 const ViewDetachments = ({ army, type, detachments, classes, t }) => {

@@ -6,7 +6,7 @@ import React, {
 import component from '../../component'
 import PopOverMenu from '../../pop-over-menu'
 import DetachmentEditor from './detachment-editor'
-import InvalidDetachment from './invalid-detachment-editor'
+import InvalidDetachment from '../../invalid-detachment-editor'
 import {
   addDetachment
 } from '../../../store/actions'

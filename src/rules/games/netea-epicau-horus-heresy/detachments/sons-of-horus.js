@@ -23,7 +23,7 @@ import {
   LimitedPerPoints
 } from '../constraints'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class SonsOfHorusPrimarchDetachment extends SpaceMarineLegionDetachment {
   constructor (list) {

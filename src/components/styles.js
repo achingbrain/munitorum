@@ -264,6 +264,12 @@ const styles = theme => ({
   listListIcon: {
     marginRight: 0
   },
+  listGameListItem: {
+    backgroundColor: '#383838'
+  },
+  listGameName: {
+    fontSize: '0.8rem'
+  },
   confirmButton: {
     display: 'inline-block'
   }

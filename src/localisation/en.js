@@ -9,7 +9,7 @@ export default {
     'imperious-dominatus': 'Imperious Dominatus',
     'imperious-dominatus-description': 'Warfare in the Age of Horus',
 
-    'netea-epicau-horus-heresy': 'NetEA EpicAU Horus Heresy',
+    'netea-epicau-horus-heresy': 'EpicAU Horus Heresy',
     'netea-epicau-horus-heresy-description': 'Horus Heresy supplement for Net Epic Armageddon developed by the EpicAU community',
 
     'unit-quantity': '{{quantity}}x {{type}}',
@@ -38,6 +38,7 @@ export default {
     'move-down': 'Move down',
     'remaining-upgrades': '{{ remainingUpgrades }} remaining upgrades',
     'list-has-errors': 'This list has errors, please correct them before continuing',
+    'formations': 'Formations',
 
     'cannot-take-primarch-and-lord-commander': 'You cannot take a Primarch and a Lord Commander in the same list',
     'spacecraft-required': 'Spacecraft are required when units have the planetfall special ability',
@@ -210,6 +211,7 @@ export default {
     'legion-whirlwind-scorpius': 'Whirlwind Scorpius',
     'legion-whirlwind': 'Whirlwind',
     'legion-xiphon-interceptor': 'Xiphon Interceptor',
+    'legion-tactical-company': 'Tactical Company',
 
     'sons-of-horus-justaerin-terminator-detachment': 'Justaerin Terminator Detachment',
     'sons-of-horus-justaerin-terminator-squad': 'Justaerin Terminator Squad',
@@ -738,6 +740,7 @@ export default {
     'charnabal-sabre': 'Charnabal Sabre',
     'crozius-arcanum': 'Crozius Arcanum',
     'close-combat-weapon': 'Close Combat Weapon',
+    'close-combat-weapons': 'Close Combat Weapons',
     'twin-linked-heavy-bolters': 'Twin Linked Heavy Bolters',
     'plasma-cannon': 'Plasma Cannon',
     'heavy-conversion-beamer': 'Heavy Conversion Beamer',
@@ -1018,6 +1021,7 @@ export default {
     'neutron-beam-laser': 'Neutron Beam Laser',
     'daemonic-overlord': 'Daemonic Overlord',
     'flamers': 'Flamers',
+    'support-weapons': 'Support Weapons',
 
     'none': 'None',
     'sniper': 'Sniper',

@@ -2,13 +2,13 @@ import React, {
   Component
 } from 'react'
 import PropTypes from 'prop-types'
-import component from '../../component'
+import component from './component'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import {
   InvalidDetachment
-} from '../../../rules/games/netea-epicau-horus-heresy/detachments/detachment'
+} from '../rules/games/netea-epicau-horus-heresy/detachments/detachment'
 
 class InvalidDetachmentViewer extends Component {
   static propTypes = {

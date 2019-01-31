@@ -11,7 +11,7 @@ import {
   Unique
 } from '../constraints'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class BloodAngelsPrimarchDetachment extends SpaceMarineLegionDetachment {
   constructor (list) {

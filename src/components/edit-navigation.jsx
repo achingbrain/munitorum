@@ -55,6 +55,20 @@ class Navigation extends Component {
       topBar = <TopBar />
     }
 
+    const gameLists = {}
+
+    lists.forEach(list => {
+      if (!gameLists[list.game.name]) {
+        gameLists[list.game.name] = {
+          name: list.game.name,
+          image: list.game.image,
+          lists: []
+        }
+      }
+
+      gameLists[list.game.name].lists.push(list)
+    })
+
     const drawer = (
       <div>
         <div className={classes.appTitleWrapper}>
@@ -63,15 +77,27 @@ class Navigation extends Component {
           </Typography>
         </div>
         <Divider />
-        <List>
-          {
-            lists.map(list => {
+        {
+          Object.keys(gameLists)
+            .map(name => {
+              const game = gameLists[name]
+
               return (
-                <ListEntry key={list.id} list={list} selected={list.id === selectedListId} />
+                <List key={name}>
+                  <ListItem className={classes.listGameListItem}>
+                    <ListItemText primary={t(game.name)} className={classes.listGameName} />
+                  </ListItem>
+                  {
+                    gameLists[name].lists.map(list => {
+                      return (
+                        <ListEntry key={list.id} list={list} selected={list.id === selectedListId} />
+                      )
+                    })
+                  }
+                </List>
               )
             })
-          }
-        </List>
+        }
         <Divider />
         <List>
           <ListItem button key='New list' onClick={this.handleNewList}>

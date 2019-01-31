@@ -21,7 +21,7 @@ import {
   LegionAssaultSquad,
   LegionPrimarchUnit
 } from '../units/space-marine-legion'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class BloodAngelsPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {

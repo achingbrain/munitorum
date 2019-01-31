@@ -17,25 +17,28 @@ const hash = (string) => {
 
 const registry = {}
 
-const withType = (clazz) => {
-  const code = kebab(clazz.name)
-  const h = hash(code)
+const withType = (game) => {
+  return (clazz) => {
+    const code = kebab(clazz.name)
+    const id = `${game}-${clazz.name}`
+    const h = hash(id)
 
-  if (registry[h]) {
-    console.warn(code, 'already identified, add a disambiguator')
+    if (registry[h]) {
+      console.warn(id, 'already identified, add a disambiguator')
+    }
+
+    registry[h] = clazz
+
+    clazz.type = h
+    clazz.code = code
+    clazz.image = findImage(code)
+
+    clazz.prototype.type = h
+    clazz.prototype.code = code
+    clazz.prototype.image = findImage(code)
+
+    return clazz
   }
-
-  registry[h] = clazz
-
-  clazz.type = h
-  clazz.code = code
-  clazz.image = findImage(code)
-
-  clazz.prototype.type = h
-  clazz.prototype.code = code
-  clazz.prototype.image = findImage(code)
-
-  return clazz
 }
 
 export const find = (id) => {

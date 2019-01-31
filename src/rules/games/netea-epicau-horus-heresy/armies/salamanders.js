@@ -12,7 +12,7 @@ import SolarAuxilia from './solar-auxilia'
 import MechanicumTaghmata from './mechanicum-taghmata'
 import KnightHousehold from './knight-household'
 import LegioCustodes from './legio-custodes'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export default class Salamanders extends SpaceMarineLegion {
   constructor () {

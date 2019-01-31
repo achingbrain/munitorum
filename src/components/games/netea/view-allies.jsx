@@ -6,7 +6,7 @@ import ViewDetachments from './view-detachments'
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import CardHeader from '@material-ui/core/CardHeader'
-import Validator from './validator'
+import Validator from '../../validator'
 import Icon from '../../icon'
 
 const AlliesViewer = ({ list, classes }) => {

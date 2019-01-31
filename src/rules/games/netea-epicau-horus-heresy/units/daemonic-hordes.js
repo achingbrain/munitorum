@@ -42,7 +42,7 @@ import {
 } from '../special-rules'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit from './unit'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class DaemonicHordesFollowerUnit extends Unit {
   getDecreaseUnitQuantity (t, onUpdateUnit) {

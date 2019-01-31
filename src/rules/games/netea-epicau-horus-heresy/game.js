@@ -1,6 +1,6 @@
 'use strict'
 
-import withType from '../../../utils/with-type'
+import withType from './with-type'
 import Game from '../game'
 import NetEaEpicAuHorusHeresyList, {
   InvalidList

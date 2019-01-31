@@ -55,7 +55,7 @@ import DaemonicHordesDetachment from './daemonic-hordes-detachment'
 import {
   Unique
 } from '../constraints'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class DaemonicHordesWarpRiftDetachment extends DaemonicHordesDetachment {
   constructor (list) {

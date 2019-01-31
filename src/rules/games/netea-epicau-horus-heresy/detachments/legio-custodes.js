@@ -18,7 +18,7 @@ import {
   LegioCustodesOrionAssaultDropship
 } from '../units/legio-custodes'
 import LegioCustodesDetachment from './legio-custodes-detachment'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class LegioCustodesHykanatoiDetachment extends LegioCustodesDetachment {
   constructor (list) {

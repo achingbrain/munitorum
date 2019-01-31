@@ -14,7 +14,7 @@ import UpIcon from '@material-ui/icons/ArrowUpward'
 import { Trans } from 'react-i18next'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
-import Validator from './validator'
+import Validator from '../../validator'
 import {
   removeDetachment,
   addUnit,

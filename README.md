@@ -4,7 +4,9 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 
 ## Questions
 
-### Space Marine Legions
+### NetEA AU
+
+#### Space Marine Legions
 
 - Legion Support Detachments can take up to 4 upgrades (though none have more than 4 upgrade options), what about Line Detachments?
 - Legion Assault Marine line detachment missing Drop Assault upgrade compared to Assault Marine Support Detachment
@@ -20,7 +22,7 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 - Sanguinius has jump pack rule but only 15cm move
 - Leman Russ' bodyguard have the Ferocity rule but he doesn't
 
-### Titan Legions
+#### Titan Legions
 
 - How many upgrades can Legio Titanicus units take?
 - Should Laser Burner Battle Titan Weapon be AND instead of OR like other weapons with both assault and small arms profiles?
@@ -31,7 +33,7 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 - Warmonger has 'Doomstrike Missles', are these the same as 'Deathstrike Missiles'?
 - Warmonger 'Head Gun' firepower rating is marked 'Head Gun'?
 
-### Legio Custodes
+#### Legio Custodes
 
 - How many upgrades can Legio Custodes units take?
 - Custodes Tribune has no weapons - is this intentional?
@@ -41,7 +43,7 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 - Custodes Vehicles/War Engines have their Speed/Type columns the wrong way round
 - What are the strategy and initiative ratings for Custodes?
 
-### Imperial Militia
+#### Imperial Militia
 
 - Imperial Militia Gorgon has One Shot special rule - is that the same as the Single Shot rule?
 - Imperial Militia Infantry Squad only has Heavy Transport upgrade option but command and grenedier squads also have Transport option
@@ -54,7 +56,7 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 - Imperial Militia faction has no points limit for Lords of War detachments
 - If the army includes a Force Commander and only Rogue Psykers (not Discipline Masters), does the first Rogue Psyker have to be in the same formation as the Force Commander?
 
-### Mechanicum Taghmata
+#### Mechanicum Taghmata
 
 - Mechanicum Support Detachments can take up to 4 upgrades, what about Line Detachments?
 - Mechanicum Taghmata Krios, Karacnos and Triaros have the Walker special rule but are tanks
@@ -63,7 +65,7 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 - Mechanicum Falchion has better CC and FF than Legion Falchion and better Volcano Cannon - TK(2D3) vs TK(D3+1)
 - Mechanicum Ordinatus Majoris Nova Cannon has no Fixed Forward Fire Arc rule?
 
-### Knight Households
+#### Knight Households
 
 - Questoris Knight-Errant thermal cannon is MW4+ at 30cm but MW5+ at 15cm? Should it be the other way round?
 - Cerastus Knight-Acheron flame cannon has no small arms range
@@ -72,7 +74,7 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 - Knight Households have no limit on Lords of War points
 - Questoris is sometimes spelt Questorius
 
-### Solar Auxilia
+#### Solar Auxilia
 
 - Solar Auxilia Rapier Quad Mortar is AP(4+) but Legion Rapier Quad Mortar is AP(5+)
 - Solar Auxilia Dauntless Light Cruiser does not have the Pin Point Attack special rule like the Imperial Militia version
@@ -80,9 +82,17 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 - Solar Auxilia Super Heavy Tanks are 200 points, Imperial Militia versions are 300 points
 - Solar Auxilia Stormblade Plasma Blastgun is missing the Slow Firing rule vs the titan version
 
-### Daemonic Hordes
+#### Daemonic Hordes
 
 - Soul Grinder Harvesting Claws have a range of 15cm but are claws
 - The Khorne Horde says 'May add 1 – 6 Bloodcrushers of Khorne or Skull Cannon of Khorne' - does that mean you can't take Bloodcrushers and Skull Cannons in the same Daemonic Horde detachment?  Same question for all the other Daemon Hordes
 - Do any loyalist legions have different allies effects in the same way as traitor legions?
 - Daemonic Hordes may pick freely from the Lords Of War sections of allies - was this intentional?
+
+### Imperious Dominatus
+
+#### Legiones Astartes
+
+- What statline do Veteran Tactical Stands use?  The regular Tactical Stand with the 'Veteran' special rule?
+- What statline do Breacher Centurions/Decurions use?
+- The Grand size Legion Malcador Assault Companies, Legion Predator Assault Companies and Legion Sicaran Strike Companies have the same break points as the regular ones, was this intentional?

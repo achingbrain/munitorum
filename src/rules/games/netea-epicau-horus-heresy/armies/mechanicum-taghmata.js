@@ -41,7 +41,7 @@ import ImperialMilitia from './imperial-militia'
 import SolarAuxilia from './solar-auxilia'
 import KnightHousehold from './knight-household'
 import LegioTitanicus from './legio-titanicus'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 import {
   LordsOfWarLimit,
   SupportDetachmentsLimit

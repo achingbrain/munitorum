@@ -72,6 +72,10 @@ export default class MultipleChoiceUnit extends Unit {
     return this.types
   }
 
+  getImage () {
+    return this.types[this.choice].getImage()
+  }
+
   getChoice () {
     return this.types[this.choice]
   }

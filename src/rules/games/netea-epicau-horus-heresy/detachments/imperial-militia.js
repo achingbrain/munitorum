@@ -39,7 +39,7 @@ import ImperialMilitiaDetachment from './imperial-militia-detachment'
 import {
   Unique
 } from '../constraints'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class ImperialMilitiaCommandSquad extends ImperialMilitiaDetachment {
   constructor (list) {

@@ -4,7 +4,7 @@ import React from 'react'
 import component from '../../component'
 import ViewDetachments from './view-detachments'
 import ViewAllies from './view-allies'
-import Validator from './validator'
+import Validator from '../../validator'
 
 const ListViewer = ({ list, t }) => {
   list.army.validate(list, t)

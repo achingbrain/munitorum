@@ -2,7 +2,7 @@
 
 import React from 'react'
 import ErrorIcon from '@material-ui/icons/Error'
-import component from '../../component'
+import component from './component'
 import SnackbarContent from '@material-ui/core/SnackbarContent'
 
 const Validator = ({ errors, classes, t }) => {

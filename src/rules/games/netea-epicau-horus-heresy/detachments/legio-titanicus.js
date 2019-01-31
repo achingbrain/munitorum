@@ -15,7 +15,7 @@ import {
   LimitedPerPoints
 } from '../constraints'
 import LegioTitanicusDetachment from './legio-titanicus-detachment'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class LegioTitanicusWarhoundTitanDetachment extends LegioTitanicusDetachment {
   constructor (list) {

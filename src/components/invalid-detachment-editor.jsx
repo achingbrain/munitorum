@@ -1,7 +1,7 @@
 import React, {
   Component
 } from 'react'
-import component from '../../component'
+import component from './component'
 import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
@@ -9,11 +9,11 @@ import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import {
   removeDetachment
-} from '../../../store/actions'
-import Confirm from '../../confirm'
+} from '../store/actions'
+import Confirm from './confirm'
 import {
   InvalidDetachment
-} from '../../../rules/games/netea-epicau-horus-heresy/detachments/detachment'
+} from '../rules/games/netea-epicau-horus-heresy/detachments/detachment'
 
 class InvalidDetachmentEditor extends Component {
   state = {

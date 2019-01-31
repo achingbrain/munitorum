@@ -39,7 +39,7 @@ import MultipleChoiceUnit from './multiple-choice-unit'
 import TransportUnit from './transport-unit'
 import Unit from './unit'
 import SpacecraftUnit from './spacecraft-unit'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class SolarAuxiliaLordMarshall extends Unit {
   constructor (detachment) {

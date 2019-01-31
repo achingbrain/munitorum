@@ -34,7 +34,7 @@ import SolarAuxiliaDetachment from './solar-auxilia-detachment'
 import {
   Unique
 } from '../constraints'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class SolarAuxiliaCommandDetachment extends SolarAuxiliaDetachment {
   constructor (list) {

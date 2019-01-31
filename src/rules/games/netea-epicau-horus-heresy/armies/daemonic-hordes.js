@@ -19,7 +19,7 @@ import {
   DaemonicHordesChaosUndividedSpawnPack,
   DaemonicHordesChaosUndividedSoulGrinderManiple
 } from '../detachments/daemonic-hordes'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 import {
   GreaterDaemonsRequireHordes,
   FollowersRequireHordes,

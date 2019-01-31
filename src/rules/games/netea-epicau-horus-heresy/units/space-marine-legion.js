@@ -57,7 +57,7 @@ import TransportUnit from './transport-unit'
 import Unit from './unit'
 import ModifierUnit from './modifier-unit'
 import SpacecraftUnit from './spacecraft-unit'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class LegionUnit extends Unit {
   getRules () {

@@ -23,7 +23,7 @@ import {
   LegionUnit,
   LegionPrimarchUnit
 } from './space-marine-legion'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export class SpaceWolvesPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {

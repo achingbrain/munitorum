@@ -65,6 +65,10 @@ export default class Unit {
     return this.max
   }
 
+  getImage () {
+    return this.image
+  }
+
   setUnitOption (choice) {
 
   }

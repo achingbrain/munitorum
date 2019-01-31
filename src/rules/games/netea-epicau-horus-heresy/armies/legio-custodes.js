@@ -12,7 +12,7 @@ import {
   LegioCustodesCaladiusGravTankSquadron,
   LegioCustodesOrionAssaultDropshipSquadron
 } from '../detachments/legio-custodes'
-import withType from '../../../../utils/with-type'
+import withType from '../with-type'
 
 export default class LegioCustodes extends Army {
   constructor () {
