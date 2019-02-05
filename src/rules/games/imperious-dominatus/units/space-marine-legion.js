@@ -7,8 +7,17 @@ import {
   MeltaBombs,
   InvulnerableSave,
   Veteran,
-  JumpPacks
+  JumpPacks,
+  DeepStrike,
+  Stubborn,
+  CloseCombatBonus,
+  IgnoresCover,
+  Volkite
 } from '../notes'
+import {
+  Weapon,
+  MultipleChoiceWeapon
+} from '../weapons'
 
 export class LegionTacticalCenturionSquad extends Unit {
   constructor (card, quantity) {
@@ -23,14 +32,14 @@ export class LegionTacticalCenturionSquad extends Unit {
     this.stats = {
       move: 10,
       armour: 4,
-      caf: 8,
-      sr: 25,
-      lr: null,
-      ad: 2,
-      tsm: -1
+      caf: 8
     }
     this.weapons = [
-      'combi-weapon'
+      new Weapon('combi-weapon', {
+        sr: 25,
+        ad: 2,
+        tsm: -1
+      })
     ]
   }
 }
@@ -48,14 +57,14 @@ export class LegionTacticalDecurionSquad extends Unit {
     this.stats = {
       move: 10,
       armour: 4,
-      caf: 5,
-      sr: 25,
-      lr: null,
-      ad: 2,
-      tsm: -1
+      caf: 5
     }
     this.weapons = [
-      'combi-weapon'
+      new Weapon('combi-weapon', {
+        sr: 25,
+        ad: 2,
+        tsm: -1
+      })
     ]
   }
 }
@@ -70,14 +79,14 @@ export class LegionTacticalSquad extends Unit {
     this.stats = {
       move: 10,
       armour: 5,
-      caf: 4,
-      sr: 25,
-      lr: -1,
-      ad: 1,
-      tsm: 0
+      caf: 4
     }
     this.weapons = [
-      'bolters'
+      new Weapon('bolters', {
+        sr: 25,
+        ad: 1,
+        tsm: 0
+      })
     ]
   }
 }
@@ -102,14 +111,15 @@ export class LegionTacticalSupportSquad extends Unit {
     this.stats = {
       move: 10,
       armour: 5,
-      caf: 5,
-      sr: 25,
-      lr: -1,
-      ad: 1,
-      tsm: 0
+      caf: 5
     }
     this.weapons = [
-      'support-weapons'
+      new Weapon('support-weapons', {
+        sr: 25,
+        lr: null,
+        ad: 1,
+        tsm: 0
+      })
     ]
   }
 }
@@ -128,14 +138,14 @@ export class LegionAssaultCenturionSquad extends Unit {
     this.stats = {
       move: 15,
       armour: 4,
-      caf: 8,
-      sr: 25,
-      lr: null,
-      ad: 2,
-      tsm: -1
+      caf: 8
     }
     this.weapons = [
-      'combi-weapon'
+      new Weapon('combi-weapon', {
+        sr: 25,
+        ad: 2,
+        tsm: -1
+      })
     ]
   }
 }
@@ -154,14 +164,14 @@ export class LegionAssaultDecurionSquad extends Unit {
     this.stats = {
       move: 15,
       armour: 4,
-      caf: 5,
-      sr: 25,
-      lr: null,
-      ad: 2,
-      tsm: -1
+      caf: 5
     }
     this.weapons = [
-      'combi-weapon'
+      new Weapon('combi-weapon', {
+        sr: 25,
+        ad: 2,
+        tsm: -1
+      })
     ]
   }
 }
@@ -176,14 +186,10 @@ export class LegionAssaultSquad extends Unit {
     this.stats = {
       move: 15,
       armour: 5,
-      caf: 6,
-      sr: null,
-      lr: null,
-      ad: null,
-      tsm: null
+      caf: 6
     }
     this.weapons = [
-      'close-combat-weapons'
+      new Weapon('close-combat-weapons')
     ]
   }
 }
@@ -203,19 +209,19 @@ export class LegionAssaultSupportSquad extends Unit {
     super(card, quantity)
 
     this.notes = [
-
+      new JumpPacks()
     ]
     this.stats = {
       move: 15,
       armour: 5,
-      caf: 5,
-      sr: 25,
-      lr: null,
-      ad: 2,
-      tsm: -2
+      caf: 5
     }
     this.weapons = [
-      'support-weapons'
+      new Weapon('support-weapons', {
+        sr: 25,
+        ad: 2,
+        tsm: -2
+      })
     ]
   }
 }
@@ -233,14 +239,14 @@ export class LegionDespoilerCenturionSquad extends Unit {
     this.stats = {
       move: 10,
       armour: 4,
-      caf: 8,
-      sr: 25,
-      lr: null,
-      ad: 2,
-      tsm: -1
+      caf: 8
     }
     this.weapons = [
-      'combi-weapon'
+      new Weapon('combi-weapon', {
+        sr: 25,
+        ad: 2,
+        tsm: -1
+      })
     ]
   }
 }
@@ -258,14 +264,14 @@ export class LegionDespoilerDecurionSquad extends Unit {
     this.stats = {
       move: 10,
       armour: 4,
-      caf: 5,
-      sr: 25,
-      lr: null,
-      ad: 2,
-      tsm: -1
+      caf: 5
     }
     this.weapons = [
-      'combi-weapon'
+      new Weapon('combi-weapon', {
+        sr: 25,
+        ad: 2,
+        tsm: -1
+      })
     ]
   }
 }
@@ -280,14 +286,10 @@ export class LegionDespoilerSquad extends Unit {
     this.stats = {
       move: 10,
       armour: 5,
-      caf: 6,
-      sr: null,
-      lr: null,
-      ad: null,
-      tsm: null
+      caf: 6
     }
     this.weapons = [
-      'close-combat-weapons'
+      new Weapon('close-combat-weapons')
     ]
   }
 }
@@ -312,14 +314,14 @@ export class LegionDespoilerSupportSquad extends Unit {
     this.stats = {
       move: 10,
       armour: 5,
-      caf: 5,
-      sr: 25,
-      lr: null,
-      ad: 1,
-      tsm: 0
+      caf: 5
     }
     this.weapons = [
-      'support-weapons'
+      new Weapon('support-weapons', {
+        sr: 25,
+        ad: 1,
+        tsm: 0
+      })
     ]
   }
 }
@@ -337,14 +339,14 @@ export class LegionBreacherCenturionSquad extends Unit {
     this.stats = {
       move: 10,
       armour: 4,
-      caf: 8,
-      sr: 25,
-      lr: null,
-      ad: 2,
-      tsm: -1
+      caf: 8
     }
     this.weapons = [
-      'combi-weapon'
+      new Weapon('combi-weapon', {
+        sr: 25,
+        ad: 2,
+        tsm: -1
+      })
     ]
   }
 }
@@ -362,14 +364,14 @@ export class LegionBreacherDecurionSquad extends Unit {
     this.stats = {
       move: 10,
       armour: 4,
-      caf: 5,
-      sr: 25,
-      lr: null,
-      ad: 2,
-      tsm: -1
+      caf: 5
     }
     this.weapons = [
-      'combi-weapon'
+      new Weapon('combi-weapon', {
+        sr: 25,
+        ad: 2,
+        tsm: -1
+      })
     ]
   }
 }
@@ -379,19 +381,19 @@ export class LegionBreacherSquad extends Unit {
     super(card, quantity)
 
     this.notes = [
-
+      new InvulnerableSave(8)
     ]
     this.stats = {
       move: 10,
-      armour: 5,
-      caf: 4,
-      sr: 25,
-      lr: -1,
-      ad: 1,
-      tsm: 0
+      armour: 4,
+      caf: 4
     }
     this.weapons = [
-      'bolters'
+      new Weapon('bolters', {
+        sr: 25,
+        ad: 1,
+        tsm: 0
+      })
     ]
   }
 }
@@ -411,19 +413,19 @@ export class LegionBreacherSupportSquad extends Unit {
     super(card, quantity)
 
     this.notes = [
-
+      new InvulnerableSave(8)
     ]
     this.stats = {
       move: 10,
       armour: 5,
-      caf: 4,
-      sr: 25,
-      lr: -1,
-      ad: 1,
-      tsm: 0
+      caf: 5
     }
     this.weapons = [
-      'bolters'
+      new Weapon('support-weapons', {
+        sr: 25,
+        ad: 1,
+        tsm: 0
+      })
     ]
   }
 }
@@ -435,20 +437,23 @@ export class LegionTerminatorCenturionSquad extends Unit {
     this.notes = [
       new Commander(2),
       new MeltaBombs(),
-      new InvulnerableSave(8),
-      new Veteran()
+      new InvulnerableSave(6),
+      new Veteran(),
+      new DeepStrike(),
+      new Stubborn(),
+      new CloseCombatBonus(1)
     ]
     this.stats = {
       move: 10,
-      armour: 4,
-      caf: 8,
-      sr: 25,
-      lr: null,
-      ad: 2,
-      tsm: -1
+      armour: 3,
+      caf: 8
     }
     this.weapons = [
-      'combi-weapon'
+      new Weapon('combi-weapon', {
+        sr: 25,
+        ad: 2,
+        tsm: -1
+      })
     ]
   }
 }
@@ -460,20 +465,23 @@ export class LegionTerminatorDecurionSquad extends Unit {
     this.notes = [
       new Commander(1),
       new MeltaBombs(),
-      new InvulnerableSave(8),
-      new Veteran()
+      new InvulnerableSave(6),
+      new Veteran(),
+      new DeepStrike(),
+      new Stubborn(),
+      new CloseCombatBonus(1)
     ]
     this.stats = {
       move: 10,
-      armour: 4,
-      caf: 5,
-      sr: 25,
-      lr: null,
-      ad: 2,
-      tsm: -1
+      armour: 3,
+      caf: 6
     }
     this.weapons = [
-      'combi-weapon'
+      new Weapon('combi-weapon', {
+        sr: 25,
+        ad: 2,
+        tsm: -1
+      })
     ]
   }
 }
@@ -483,19 +491,22 @@ export class LegionTerminatorSquad extends Unit {
     super(card, quantity)
 
     this.notes = [
-
+      new InvulnerableSave(8),
+      new DeepStrike(),
+      new CloseCombatBonus(1)
     ]
     this.stats = {
       move: 10,
-      armour: 5,
-      caf: 4,
-      sr: 25,
-      lr: -1,
-      ad: 1,
-      tsm: 0
+      armour: 3,
+      caf: 7
     }
     this.weapons = [
-      'bolters'
+      new Weapon('combi-bolters', {
+        sr: 25,
+        ad: 2,
+        tsm: -1
+      }),
+      new Weapon('chainfists')
     ]
   }
 }
@@ -506,6 +517,130 @@ export class LegionTerminatorVeteranSquad extends LegionTerminatorSquad {
 
     this.notes = [
       new Veteran()
+    ]
+  }
+}
+
+export class LegionContemptorDreadnoughtType1 extends Unit {
+  constructor (card, quantity) {
+    super(card, quantity)
+
+    this.notes = [
+      new InvulnerableSave(8)
+    ]
+    this.stats = {
+      move: 15,
+      armour: 3,
+      caf: 10
+    }
+    this.weapons = [
+      new Weapon('close-combat-weapon'),
+      new Weapon('multi-melta', {
+        sr: 25,
+        ad: 1,
+        tsm: -3
+      }),
+      new MultipleChoiceWeapon(
+        new Weapon('antipersonnel', {
+          sr: 25,
+          ad: 2,
+          tsm: -1
+        }),
+        new Weapon('heavy-flamer', {
+          sr: 10,
+          ad: 2,
+          tsm: -1
+        }, [
+          new IgnoresCover()
+        ])
+      )
+    ]
+  }
+}
+
+export class LegionContemptorDreadnoughtType2 extends Unit {
+  constructor (card, quantity) {
+    super(card, quantity)
+
+    this.notes = [
+      new InvulnerableSave(8)
+    ]
+    this.stats = {
+      move: 15,
+      armour: 3,
+      caf: 7
+    }
+    this.weapons = [
+      new Weapon('twin-linked-autocannon', {
+        sr: 25,
+        lr: 50,
+        ad: 4,
+        tsm: -2
+      }),
+      new Weapon('twin-linked-volkie-culverin', {
+        sr: 25,
+        ad: 1,
+        tsm: -1
+      }, [
+        new Volkite()
+      ])
+    ]
+  }
+}
+
+export class LegionContemptorDreadnoughtType3 extends Unit {
+  constructor (card, quantity) {
+    super(card, quantity)
+
+    this.notes = [
+      new InvulnerableSave(8)
+    ]
+    this.stats = {
+      move: 15,
+      armour: 3,
+      caf: 7
+    }
+    this.weapons = [
+      new Weapon('twin-linked-lascannon', {
+        sr: 25,
+        lr: 50,
+        ad: 2,
+        tsm: -3
+      }),
+      new Weapon('kheres-pattern-assault-cannon', {
+        sr: 25,
+        ad: 3,
+        tsm: -1
+      })
+    ]
+  }
+}
+
+export class LegionContemptorDreadnoughtType4 extends Unit {
+  constructor (card, quantity) {
+    super(card, quantity)
+
+    this.notes = [
+      new InvulnerableSave(8)
+    ]
+    this.stats = {
+      move: 15,
+      armour: 3,
+      caf: 7
+    }
+    this.weapons = [
+      new Weapon('twin-linked-lascannon', {
+        sr: 25,
+        lr: 50,
+        ad: 2,
+        tsm: -3
+      }),
+      new Weapon('heavy-conversion-beamer', {
+        sr: 35,
+        lr: 70,
+        ad: 2,
+        tsm: -3
+      })
     ]
   }
 }
@@ -534,3 +669,7 @@ withType(LegionTerminatorCenturionSquad)
 withType(LegionTerminatorDecurionSquad)
 withType(LegionTerminatorSquad)
 withType(LegionTerminatorVeteranSquad)
+withType(LegionContemptorDreadnoughtType1)
+withType(LegionContemptorDreadnoughtType2)
+withType(LegionContemptorDreadnoughtType3)
+withType(LegionContemptorDreadnoughtType4)

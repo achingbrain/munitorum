@@ -272,6 +272,14 @@ const styles = theme => ({
   },
   confirmButton: {
     display: 'inline-block'
+  },
+  detachmentSubHeader: {
+    margin: theme.spacing.unit,
+    marginLeft: theme.spacing.unit * 3
+  },
+  detachmentStats: {
+    display: 'inline-block',
+    marginLeft: theme.spacing.unit * 2
   }
 })
 

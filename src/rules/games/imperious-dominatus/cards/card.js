@@ -4,17 +4,41 @@ import shortid from 'shortid'
 import { find } from '../../../../utils/with-type'
 
 export default class Card {
-  constructor (list, morale, breakPoint, cost, victoryPoints) {
+  constructor (list, morale, breakpoint, cost, victoryPoints) {
     this.id = shortid.generate()
     this.list = list
     this.morale = morale
-    this.breakPoint = breakPoint
+    this.breakpoint = breakpoint
     this.cost = cost
     this.victoryPoints = victoryPoints
     this.errors = []
     this.sections = []
     this.support = []
     this.upgrades = []
+  }
+
+  getName () {
+    return this.name
+  }
+
+  getBreakpoint () {
+    return this.breakpoint
+  }
+
+  getMorale () {
+    return this.morale
+  }
+
+  getVictoryPoints () {
+    return this.victoryPoints
+  }
+
+  getSections () {
+    return this.sections
+  }
+
+  getImage () {
+    return this.image
   }
 
   addError (error) {

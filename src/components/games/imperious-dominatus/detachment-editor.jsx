@@ -1,5 +1,5 @@
 import React, {
-  Component
+  Component, Fragment
 } from 'react'
 import component from '../../component'
 import PropTypes from 'prop-types'
@@ -30,6 +30,7 @@ import PopOverMenu from '../../pop-over-menu'
 import Confirm from '../../confirm'
 import Icon from '../../icon'
 import DetachmentNameDialog from '../../detachment-name-dialog'
+import Typography from '@material-ui/core/Typography'
 // import CardEditor from './card-editor'
 
 class DetachmentEditor extends Component {
@@ -152,16 +153,30 @@ class DetachmentEditor extends Component {
         />
         <CardContent className={classes.cardContent}>
           <Validator errors={errors} />
-          <Table>
-            <TableBody>
-              {
-                sections.map((section, unitIndex) => (
-                  <TableRow key={`section-${unitIndex}`}>
-                    <TableCell>
-                      {section.name}
-                    </TableCell>
-                  </TableRow>
-                  /*
+          {
+            sections.map((section, sectionIndex) => (
+              <Fragment key={`section-${sectionIndex}`}>
+                <Typography variant='h6' className={classes.detachmentSubHeader}>
+                  {t(section.name)}
+                </Typography>
+                <Table>
+                  <TableBody>
+                    {
+                      section.units.map((unit, unitIndex) => {
+                        return (
+                          <TableRow key={`unit-${unit.id}`}>
+                            <TableCell>
+                              {unit.quantity}x {t(unit.code)}
+                            </TableCell>
+                          </TableRow>
+                        )
+                      })
+                    }
+                  </TableBody>
+                </Table>
+              </Fragment>
+
+              /*
                   <CardEditor
                     key={`section-${unitIndex}`}
                     section={section}
@@ -169,10 +184,9 @@ class DetachmentEditor extends Component {
                     isLast={unitIndex === sections.length - 1}
                   />
 */
-                ))
-              }
-            </TableBody>
-          </Table>
+            ))
+          }
+
           <Table>
             <TableBody>
               {

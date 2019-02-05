@@ -318,6 +318,28 @@ export class LegionTacticalGrandCompany extends Card {
 export class LegionAssaultGrandCompany extends Card {
   constructor (list) {
     super(list, 5, 23, 1250, 13)
+
+    this.sections.push(
+      new Section('legion-command-section', [
+        new LegionAssaultCenturionSquad(this, 1),
+        new LegionAssaultVeteranSquad(this, 4)
+      ]),
+      new Section('legion-assault-detachment', [
+        new LegionAssaultDecurionSquad(this, 1),
+        new LegionAssaultSquad(this, 8),
+        new LegionAssaultSupportSquad(this, 2)
+      ]),
+      new Section('legion-assault-detachment', [
+        new LegionAssaultDecurionSquad(this, 1),
+        new LegionAssaultSquad(this, 8),
+        new LegionAssaultSupportSquad(this, 2)
+      ]),
+      new Section('legion-assault-detachment', [
+        new LegionAssaultDecurionSquad(this, 1),
+        new LegionAssaultSquad(this, 8),
+        new LegionAssaultSupportSquad(this, 2)
+      ])
+    )
   }
 }
 
