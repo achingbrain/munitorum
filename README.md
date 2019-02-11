@@ -4,7 +4,7 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 
 ## Questions
 
-### NetEA AU
+### NetEA AU
 
 #### Space Marine Legions
 
