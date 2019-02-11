@@ -2,13 +2,13 @@ import {
   Noble,
   Seneschal,
   Aspirants,
-  ScionsofUhlan,
   Upgrade
 } from '../upgrades'
 import {
   KnightHouseholdQuestorisKnight,
   KnightHouseholdCerastusKnight,
-  KnightHouseholdAcastusKnightPorphyrion
+  KnightHouseholdAcastusKnightPorphyrion,
+  KnightHouseholdArmigerKnightUnit
 } from '../units/knight-household'
 import KnightHouseholdDetachment from './knight-household-detachment'
 import withType from '../with-type'
@@ -38,7 +38,6 @@ export class KnightHouseholdQuestorisKnights extends KnightHouseholdDetachment {
       new Aspirants(),
       new Seneschal(),
       new Noble(),
-      new ScionsofUhlan(),
       new KnightHouseholdQuestorisKnightsUpgrade()
     )
   }
@@ -74,8 +73,6 @@ export class KnightHouseholdCerastusKnights extends KnightHouseholdDetachment {
 }
 
 export class KnightHouseholdAcastusKnightPorphyrions extends KnightHouseholdDetachment {
-  KnightHouseholdAcastusKnightPorphyrion
-
   constructor (list) {
     super(list)
 
@@ -88,6 +85,20 @@ export class KnightHouseholdAcastusKnightPorphyrions extends KnightHouseholdDeta
   }
 }
 
+export class KnightHouseholdArmigerKnights extends KnightHouseholdDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new KnightHouseholdArmigerKnightUnit(this)
+    )
+    this.setUpgrades(
+      new Aspirants()
+    )
+  }
+}
+
 withType(KnightHouseholdQuestorisKnights)
 withType(KnightHouseholdCerastusKnights)
 withType(KnightHouseholdAcastusKnightPorphyrions)
+withType(KnightHouseholdArmigerKnights)

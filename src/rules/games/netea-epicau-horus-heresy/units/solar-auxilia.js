@@ -956,7 +956,7 @@ export class SolarAuxiliaAvengerStrikeFighter extends Unit {
     this.rules = []
     this.stats = {
       type: 'AC',
-      speed: 0,
+      speed: 'fighter-bomber',
       armour: 5,
       cc: 7,
       ff: 7
@@ -976,7 +976,7 @@ export class SolarAuxiliaPrimarisStrikeFighter extends Unit {
     this.rules = []
     this.stats = {
       type: 'AC',
-      speed: 0,
+      speed: 'fighter',
       armour: 6,
       cc: 7,
       ff: 7

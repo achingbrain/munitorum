@@ -21,6 +21,7 @@ import {
   Fearless,
   Inspiring,
   InvulnerableSave,
+  InvulnerableSaveCCOnly,
   Scout,
   Skimmer,
   Commander,
@@ -84,6 +85,27 @@ export class LegioCustodesHykanatoiUnit extends MultipleChoiceUnit {
       new LegioCustodesSentinelGuard(detachment),
       new LegioCustodesCustodianGuard(detachment)
     )
+  }
+}
+
+class LegioCustodesVenatariSquad extends Unit {
+  constructor (detachment) {
+    super(detachment, 350, 6)
+
+    this.transportType = 'sentinel'
+    this.rules = [
+      new InvulnerableSaveCCOnly()
+    ]
+    this.stats = {
+      type: 'INF',
+      speed: 35,
+      armour: 3,
+      cc: 4,
+      ff: 3
+    }
+    this.weapons = [
+      new Weapon('kinetic-destroyer', new SmallArms())
+    ]
   }
 }
 
@@ -412,6 +434,7 @@ export class LegioCustodesOrionAssaultDropship extends Unit {
 withType(LegioCustodesSentinelGuard)
 withType(LegioCustodesCustodianGuard)
 withType(LegioCustodesHykanatoiUnit)
+withType(LegioCustodesVenatariSquad)
 withType(LegioCustodesCaptainGeneral)
 withType(LegioCustodesTribune)
 withType(LegioCustodesCoronusGravCarrier)

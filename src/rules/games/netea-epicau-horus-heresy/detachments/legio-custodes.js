@@ -84,8 +84,7 @@ export class LegioCustodesEphoroiCustodesDetachment extends LegioCustodesDetachm
     )
     this.setUpgrades(
       new TransportOption(
-        new Carrier(),
-        new Teleport()
+        new Carrier()
       )
     )
   }

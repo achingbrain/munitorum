@@ -676,7 +676,7 @@ export class LegionGunship extends LegionUnit {
     ]
     this.stats = {
       type: 'AC',
-      speed: 0,
+      speed: 'fighter-bomber',
       armour: 5,
       cc: 7,
       ff: 7
@@ -1504,7 +1504,7 @@ export class LegionStormEagleAttackShip extends LegionUnit {
     ]
     this.stats = {
       type: 'AC/WE',
-      speed: 0,
+      speed: 'fighter-bomber',
       armour: 5,
       cc: 6,
       ff: 5
@@ -1536,7 +1536,7 @@ export class LegionStormbird extends LegionUnit {
     ]
     this.stats = {
       type: 'AC/WE',
-      speed: 0,
+      speed: 'bomber',
       armour: 4,
       cc: 6,
       ff: 4
@@ -1699,7 +1699,7 @@ export class LegionThunderhawkGunship extends LegionUnit {
     ]
     this.stats = {
       type: 'AC/WE',
-      speed: 0,
+      speed: 'bomber',
       armour: 4,
       cc: 6,
       ff: 4
@@ -1737,7 +1737,7 @@ export class LegionThunderhawkTransporter extends LegionUnit {
     ]
     this.stats = {
       type: 'AC/WE',
-      speed: 0,
+      speed: 'bomber',
       armour: 4,
       cc: 6,
       ff: 4
@@ -1892,7 +1892,7 @@ export class LegionXiphonInterceptor extends LegionUnit {
     this.rules = []
     this.stats = {
       type: 'AC',
-      speed: 0,
+      speed: 'fighter',
       armour: 5,
       cc: 7,
       ff: 7

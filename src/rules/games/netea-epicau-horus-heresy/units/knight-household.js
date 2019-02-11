@@ -38,25 +38,9 @@ import {
 } from '../constraints'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit from './unit'
-import ModifierUnit from './modifier-unit'
 import withType from '../with-type'
 
-class KnightHouseholdQuestorisKnightUnit extends Unit {
-  getRules () {
-    const isScionOfUhlan = this.detachment.units.find(unit => unit instanceof KnightHouseholdScionsOfUhlan)
-    const rules = super.getRules()
-
-    if (isScionOfUhlan) {
-      return rules
-        .filter(rule => !(rule instanceof ReinforcedArmour))
-        .concat(new Scout())
-    }
-
-    return rules
-  }
-}
-
-class KnightHouseholdQuestorisKnightPaladin extends KnightHouseholdQuestorisKnightUnit {
+class KnightHouseholdQuestorisKnightPaladin extends Unit {
   constructor (detachment) {
     super(detachment, 110, 1)
 
@@ -81,7 +65,7 @@ class KnightHouseholdQuestorisKnightPaladin extends KnightHouseholdQuestorisKnig
   }
 }
 
-class KnightHouseholdQuestorisKnightErrant extends KnightHouseholdQuestorisKnightUnit {
+class KnightHouseholdQuestorisKnightErrant extends Unit {
   constructor (detachment) {
     super(detachment, 110, 1)
 
@@ -109,7 +93,7 @@ class KnightHouseholdQuestorisKnightErrant extends KnightHouseholdQuestorisKnigh
   }
 }
 
-class KnightHouseholdQuestorisKnightCrusader extends KnightHouseholdQuestorisKnightUnit {
+class KnightHouseholdQuestorisKnightCrusader extends Unit {
   constructor (detachment) {
     super(detachment, 125, 1)
 
@@ -135,7 +119,7 @@ class KnightHouseholdQuestorisKnightCrusader extends KnightHouseholdQuestorisKni
   }
 }
 
-class KnightHouseholdQuestorisKnightGallant extends KnightHouseholdQuestorisKnightUnit {
+class KnightHouseholdQuestorisKnightGallant extends Unit {
   constructor (detachment) {
     super(detachment, 125, 1)
 
@@ -161,7 +145,7 @@ class KnightHouseholdQuestorisKnightGallant extends KnightHouseholdQuestorisKnig
   }
 }
 
-class KnightHouseholdQuestorisKnightMagera extends KnightHouseholdQuestorisKnightUnit {
+class KnightHouseholdQuestorisKnightMagera extends Unit {
   constructor (detachment) {
     super(detachment, 125, 1)
 
@@ -191,7 +175,7 @@ class KnightHouseholdQuestorisKnightMagera extends KnightHouseholdQuestorisKnigh
   }
 }
 
-class KnightHouseholdQuestorisKnightStyrix extends KnightHouseholdQuestorisKnightUnit {
+class KnightHouseholdQuestorisKnightStyrix extends Unit {
   constructor (detachment) {
     super(detachment, 125, 1)
 
@@ -221,7 +205,7 @@ class KnightHouseholdQuestorisKnightStyrix extends KnightHouseholdQuestorisKnigh
   }
 }
 
-class KnightHouseholdQuestorisKnightWarden extends KnightHouseholdQuestorisKnightUnit {
+class KnightHouseholdQuestorisKnightWarden extends Unit {
   constructor (detachment) {
     super(detachment, 125, 1)
 
@@ -280,7 +264,7 @@ class KnightHouseholdCerastusKnightLancer extends Unit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('cerastus-shock-lance', new AssaultWeapon(new ExtraAttacks('+1'), new FirstStrike(), new TitanKiller())),
+      new Weapon('cerastus-shock-lance', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'), new FirstStrike(), new TitanKiller())),
       new Weapon('shock-blast', new RangedWeapon('15cm', new AntiPersonnel('4+'), new AntiTank('5+'), new Disrupt()))
     ]
   }
@@ -360,10 +344,10 @@ class KnightHouseholdCerastusKnightAcheron extends Unit {
     this.weapons = [
       new Weapon('flame-cannon',
         new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('3+'), new AntiTank('6+')), new IgnoreCover()),
-        new SmallArms('15cm', new IgnoreCover())
+        new SmallArms('30cm', new IgnoreCover())
       ),
       new Weapon('twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
-      new Weapon('destroyer-chainfist', new AssaultWeapon(new ExtraAttacks('+1'), new TitanKiller()))
+      new Weapon('destroyer-chainfist', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'), new TitanKiller()))
     ]
   }
 }
@@ -485,9 +469,109 @@ export class KnightHouseholdAspirants extends Unit {
   }
 }
 
-export class KnightHouseholdScionsOfUhlan extends ModifierUnit {
+export class KnightHouseholdDominusKnightCastellan extends Unit {
   constructor (detachment) {
-    super(detachment, 0)
+    super(detachment, 250, 1, 2)
+
+    this.rules = [
+      new DamageCapacity(2),
+      new IonShield(),
+      new ReinforcedArmour(),
+      new Walker(),
+      new CriticalHit('knight-critical-hit')
+    ]
+    this.stats = {
+      type: 'WE',
+      speed: 15,
+      armour: 4,
+      cc: 4,
+      ff: 4
+    }
+    this.weapons = [
+
+    ]
+  }
+}
+
+export class KnightHouseholdDominusKnightVallant extends Unit {
+  constructor (detachment) {
+    super(detachment, 250, 1, 2)
+
+    this.rules = [
+      new DamageCapacity(2),
+      new IonShield(),
+      new ReinforcedArmour(),
+      new Walker(),
+      new CriticalHit('knight-critical-hit')
+    ]
+    this.stats = {
+      type: 'WE',
+      speed: 15,
+      armour: 4,
+      cc: 4,
+      ff: 4
+    }
+    this.weapons = [
+
+    ]
+  }
+}
+
+export class KnightHouseholdArmigerKnightHelverin extends Unit {
+  constructor (detachment) {
+    super(detachment, 250, 3)
+
+    this.rules = [
+      new DamageCapacity(2),
+      new IonShield(),
+      new Scout(),
+      new Walker(),
+      new CriticalHit('knight-critical-hit')
+    ]
+    this.stats = {
+      type: 'WE',
+      speed: 25,
+      armour: 5,
+      cc: 5,
+      ff: 5
+    }
+    this.weapons = [
+      new Weapon('2-armiger-autocannon', new RangedWeapon('45cm', new AntiPersonnel('3+'), new AntiTank('5+')))
+    ]
+  }
+}
+
+export class KnightHouseholdArmigerKnightWarglaive extends Unit {
+  constructor (detachment) {
+    super(detachment, 250, 3)
+
+    this.rules = [
+      new DamageCapacity(2),
+      new IonShield(),
+      new Scout(),
+      new Walker(),
+      new CriticalHit('knight-critical-hit')
+    ]
+    this.stats = {
+      type: 'WE',
+      speed: 25,
+      armour: 5,
+      cc: 4,
+      ff: 4
+    }
+    this.weapons = [
+      new Weapon('reaper-chain-cleaver', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
+      new Weapon('thermal-spear', new SmallArms('15cm', new MacroWeapon()))
+    ]
+  }
+}
+
+export class KnightHouseholdArmigerKnightUnit extends MultipleChoiceUnit {
+  constructor (detachment) {
+    super(detachment,
+      new KnightHouseholdArmigerKnightWarglaive(detachment),
+      new KnightHouseholdArmigerKnightHelverin(detachment)
+    )
   }
 }
 
@@ -509,4 +593,8 @@ withType(KnightHouseholdPreceptor)
 withType(KnightHouseholdSeneschal)
 withType(KnightHouseholdAspirants)
 withType(KnightHouseholdAcastusKnightPorphyrion)
-withType(KnightHouseholdScionsOfUhlan)
+withType(KnightHouseholdDominusKnightCastellan)
+withType(KnightHouseholdDominusKnightVallant)
+withType(KnightHouseholdArmigerKnightUnit)
+withType(KnightHouseholdArmigerKnightHelverin)
+withType(KnightHouseholdArmigerKnightWarglaive)

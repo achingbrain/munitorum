@@ -68,8 +68,7 @@ import {
   KnightHouseholdLordScion,
   KnightHouseholdPreceptor,
   KnightHouseholdSeneschal,
-  KnightHouseholdAspirants,
-  KnightHouseholdScionsOfUhlan
+  KnightHouseholdAspirants
 } from './units/knight-household'
 import {
   SolarAuxiliaOgrynCharoniteSquad,
@@ -547,12 +546,6 @@ export class Noble extends MultipleChoiceOption {
 export class Aspirants extends AdditionalUnitOption {
   constructor () {
     super(KnightHouseholdAspirants)
-  }
-}
-
-export class ScionsofUhlan extends AdditionalUnitOption {
-  constructor () {
-    super(KnightHouseholdScionsOfUhlan)
   }
 }
 

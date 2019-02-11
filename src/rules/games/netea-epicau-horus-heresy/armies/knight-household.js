@@ -4,7 +4,8 @@ import Army from './army'
 import {
   KnightHouseholdQuestorisKnights,
   KnightHouseholdCerastusKnights,
-  KnightHouseholdAcastusKnightPorphyrions
+  KnightHouseholdAcastusKnightPorphyrions,
+  KnightHouseholdArmigerKnights
 } from '../detachments/knight-household'
 import AlphaLegion from './alpha-legion'
 import BloodAngels from './blood-angels'
@@ -43,7 +44,8 @@ export default class KnightHousehold extends Army {
       KnightHouseholdQuestorisKnights
     ]
     this.supportDetachments = [
-      KnightHouseholdCerastusKnights
+      KnightHouseholdCerastusKnights,
+      KnightHouseholdArmigerKnights
     ]
     this.lordsOfWar = [
       KnightHouseholdAcastusKnightPorphyrions

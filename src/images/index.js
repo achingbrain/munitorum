@@ -113,6 +113,7 @@ import ironWarriorsTyrantSiegeTerminator from './iron-warriors-tyrant-siege-term
 import ironWarriors from './iron-warriors.svg'
 import knightHouseholdAcastusKnightPorphyrion from './knight-household-acastus-knight-porphyrion.svg'
 import knightHouseholdAcastusKnightPorphyrions from './knight-household-acastus-knight-porphyrions.svg'
+import knightHouseholdArmiger from './knight-household-armiger.svg'
 import knightHouseholdAspirants from './knight-household-aspirants.svg'
 import knightHouseholdCerastusKnightAcheron from './knight-household-cerastus-knight-acheron.svg'
 import knightHouseholdCerastusKnightAtropos from './knight-household-cerastus-knight-atropos.svg'
@@ -427,6 +428,7 @@ const IMAGES = {
   'iron-warriors': ironWarriors,
   'knight-household-acastus-knight-porphyrion': knightHouseholdAcastusKnightPorphyrion,
   'knight-household-acastus-knight-porphyrions': knightHouseholdAcastusKnightPorphyrions,
+  'knight-household-armiger': knightHouseholdArmiger,
   'knight-household-aspirants': knightHouseholdAspirants,
   'knight-household-cerastus-knight-acheron': knightHouseholdCerastusKnightAcheron,
   'knight-household-cerastus-knight-atropos': knightHouseholdCerastusKnightAtropos,
@@ -544,6 +546,7 @@ const IMAGES = {
   'legion-whirlwind-hyperios': legionWhirlwindHyperios,
   'legion-whirlwind-scorpius': ironHandsWhirlwindScorpius,
   'legion-whirlwind': legionWhirlwind,
+  'legion-xiphon': legionInterceptor,
   'legion': legion,
   'mechanicum-taghmata-adsecularis': mechanicumTaghmataAdsecularis,
   'mechanicum-taghmata-archmagos-prime': mechanicumTaghmataArchmagosPrime,

@@ -228,7 +228,7 @@ class UnitViewer extends Component {
             {stats.type}
           </TableCell>
           <TableCell padding='dense' rowSpan={weaponCount} className={classes.tableViewCell}>
-            {stats.speed === 0 ? '-' : `${stats.speed}cm`}
+            {stats.speed === 0 ? '-' : typeof stats.speed === 'string' ? t(stats.speed) : `${stats.speed}cm`}
           </TableCell>
           <TableCell padding='dense' rowSpan={weaponCount} className={classes.tableViewCell}>
             {stats.armour === 7 ? '-' : `${stats.armour}+`}

@@ -107,6 +107,14 @@ export class InvulnerableSave {
   }
 }
 
+export class InvulnerableSaveCCOnly {
+  constructor (amount) {
+    this.name = 'invulnerable-save-cc-only'
+    this.type = `Invulnerable Save Against CC Generated Hits${amount ? ` (${amount})` : ''}`
+    this.link = 'http://tp.net-armageddon.org/tournament-pack#invulnerable-saves'
+  }
+}
+
 export class Walker {
   constructor () {
     this.name = 'walker'
