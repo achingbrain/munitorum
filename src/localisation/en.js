@@ -11,6 +11,7 @@ export default {
 
     'netea-epicau-horus-heresy': 'EpicAU Horus Heresy',
     'netea-epicau-horus-heresy-description': 'Horus Heresy supplement for Net Epic Armageddon developed by the EpicAU community',
+    'is-unofficial': 'This website is unofficial and is in no way endorsed by Games Workshop Limited',
 
     'unit-quantity': '{{quantity}}x {{type}}',
     'unit-upgrade': 'Replace 1x {{defaultType}} with 1x {{upgradeType}}',

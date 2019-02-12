@@ -280,6 +280,17 @@ const styles = theme => ({
   detachmentStats: {
     display: 'inline-block',
     marginLeft: theme.spacing.unit * 2
+  },
+  smallPrint: {
+    paddingLeft: theme.spacing.unit * 2,
+    paddingRight: theme.spacing.unit * 2,
+    fontSize: '0.8rem',
+    color: '#7d7d7d'
+  },
+  drawerPaperMenu: {
+    width: drawerWidth,
+    display: 'flex',
+    flexDirection: 'column'
   }
 })
 

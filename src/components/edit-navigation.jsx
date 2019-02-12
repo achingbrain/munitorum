@@ -70,44 +70,47 @@ class Navigation extends Component {
     })
 
     const drawer = (
-      <div>
-        <div className={classes.appTitleWrapper}>
-          <Typography component='h1' variant='h6' className={classes.appTitle}>
-            {t('app-name')}
-          </Typography>
-        </div>
-        <Divider />
-        {
-          Object.keys(gameLists)
-            .map(name => {
-              const game = gameLists[name]
+      <>
+        <div className={classes.grow}>
+          <div className={classes.appTitleWrapper}>
+            <Typography component='h1' variant='h6' className={classes.appTitle}>
+              {t('app-name')}
+            </Typography>
+          </div>
+          <Divider />
+          {
+            Object.keys(gameLists)
+              .map(name => {
+                const game = gameLists[name]
 
-              return (
-                <List key={name}>
-                  <ListItem className={classes.listGameListItem}>
-                    <ListItemText primary={t(game.name)} className={classes.listGameName} />
-                  </ListItem>
-                  {
-                    gameLists[name].lists.map(list => {
-                      return (
-                        <ListEntry key={list.id} list={list} selected={list.id === selectedListId} />
-                      )
-                    })
-                  }
-                </List>
-              )
-            })
-        }
-        <Divider />
-        <List>
-          <ListItem button key='New list' onClick={this.handleNewList}>
-            <ListItemIcon className={classes.listListIcon}>
-              <PlaylistAddIcon className={classes.avatar} />
-            </ListItemIcon>
-            <ListItemText primary='New list' />
-          </ListItem>
-        </List>
-      </div>
+                return (
+                  <List key={name}>
+                    <ListItem className={classes.listGameListItem}>
+                      <ListItemText primary={t(game.name)} className={classes.listGameName} />
+                    </ListItem>
+                    {
+                      gameLists[name].lists.map(list => {
+                        return (
+                          <ListEntry key={list.id} list={list} selected={list.id === selectedListId} />
+                        )
+                      })
+                    }
+                  </List>
+                )
+              })
+          }
+          <Divider />
+          <List>
+            <ListItem button key='New list' onClick={this.handleNewList}>
+              <ListItemIcon className={classes.listListIcon}>
+                <PlaylistAddIcon className={classes.avatar} />
+              </ListItemIcon>
+              <ListItemText primary='New list' />
+            </ListItem>
+          </List>
+        </div>
+        <p className={classes.smallPrint}>{t('is-unofficial')}</p>
+      </>
     )
 
     const styles = {}
@@ -157,7 +160,7 @@ class Navigation extends Component {
           <Hidden smDown>
             <Drawer
               classes={{
-                paper: classes.drawerPaper
+                paper: classes.drawerPaperMenu
               }}
               variant='permanent'
               open
