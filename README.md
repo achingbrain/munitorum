@@ -19,8 +19,9 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 - Stats are given for Damocles Command Rhino but no detachment can take one as an upgrade
 - Stats are given for Iron Warriors Tormentor but no rules for adding to detachments
 - White Scars Destroyer Detachment is identical to generic Legion Destroyer Detachment
-- Sanguinius has jump pack rule but only 15cm move
+- Sanguinius has jump pack rule but only 15cm move - other jump pack troops have a 30cm move
 - Leman Russ' bodyguard have the Ferocity rule but he doesn't
+- Traitor legion cohesive/disruptive allies vary legion by legion but loyalist legions seem to be missing that so just fall back to the generic Legion Astartes ally types?
 
 #### Titan Legions
 
@@ -31,13 +32,13 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 - If just one, what about the Warhound Scout Pack detachment (which comes with 2x titans)?
 - The 'Carapace Landing Pad' titan weapon option is not marked as 'Carapace mount only'
 - Warmonger has 'Doomstrike Missles', are these the same as 'Deathstrike Missiles'?
-- Warmonger 'Head Gun' firepower rating is marked 'Head Gun'?
+- Warmonger 'Head Gun' firepower rating is marked 'Head Gun' - what is the firepower?
 
 #### Legio Custodes
 
 - How many upgrades can Legio Custodes units take?
 - Custodes Tribune has no weapons - is this intentional?
-- Custodes Aquilon Terminator unit has 'Teleport' special rule but detachment has 'Carrier' upgrade available
+- Custodes Aquilon Terminator unit has 'Teleport' special rule on the reference sheet but the Tharanatoi Detachment only has 'Carrier' upgrade available and not 'Transport'
 - Ephoroi Custodes have the 'Carrier' upgrade, what do they count as for transport purposes?
 - Custodes Telemon Heavy Dreadnought does not have the 'Walker' special rule
 - Custodes Vehicles/War Engines have their Speed/Type columns the wrong way round
@@ -46,9 +47,9 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 #### Imperial Militia
 
 - Imperial Militia Gorgon has One Shot special rule - is that the same as the Single Shot rule?
-- Imperial Militia Infantry Squad only has Heavy Transport upgrade option but command and grenedier squads also have Transport option
+- Imperial Militia Infantry Squad seems to be missing the 'Transport' upgrade - it only has the 'Heavy Transport' upgrade but command and grenadier squads also have 'Transport' option
 - How many upgrades can Imperial Militia units take?
-- Do extra Militia Auxiliary units added via the 'Militia Auxiliary' upgrade have to have the same weapons as the other Militia Auxiliary units in the Militia Infantry Squad?
+- Do extra Militia Auxiliary units added via the 'Militia Auxiliary' upgrade have to have the same weapons as the other Militia Auxiliary units in the Militia Infantry Squad (eg. rifles or pistols/cc weapons)?
 - Imperial Militia Arvus Lighters have the Planetfall special rule but no spacecraft in the list have any transport capacity
 - Auxilia Malcador has 2xLascannon which are AT5+, Auxilia Malcador Annihalator has 2xLascannon which are AT4+
 - Fellblade demolisher cannon has no Small Arms profile, Auxillia Malcador Annihalator and Vindicator ones do
@@ -59,8 +60,8 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 #### Mechanicum Taghmata
 
 - Mechanicum Support Detachments can take up to 4 upgrades, what about Line Detachments?
-- Mechanicum Taghmata Krios, Karacnos and Triaros have the Walker special rule but are tanks
-- Mechanicum Ordinatus Minor Volkite Culverins have both AP4+ and AP6+
+- Mechanicum Taghmata Krios, Karacnos and Triaros have the Walker special rule but are tanks - is this intentional?
+- Mechanicum Ordinatus Minor Volkite Culverins have both AP4+ and AP6+ - which is correct?
 - Mechanicum Avenger Strike Fighters and Primaris Lighting have no stats - same as Imperial Militia?
 - Mechanicum Falchion has better CC and FF than Legion Falchion and better Volcano Cannon - TK(2D3) vs TK(D3+1)
 - Mechanicum Ordinatus Majoris Nova Cannon has no Fixed Forward Fire Arc rule?
@@ -84,9 +85,8 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 
 #### Daemonic Hordes
 
-- Soul Grinder Harvesting Claws have a range of 15cm but are claws
-- The Khorne Horde says 'May add 1 – 6 Bloodcrushers of Khorne or Skull Cannon of Khorne' - does that mean you can't take Bloodcrushers and Skull Cannons in the same Daemonic Horde detachment?  Same question for all the other Daemon Hordes
-- Do any loyalist legions have different allies effects in the same way as traitor legions?
+- Soul Grinder Harvesting Claws have a range of 15cm but are claws - big claws!
+- The Khorne Horde says 'May add 1 – 6 Bloodcrushers of Khorne or Skull Cannon of Khorne' - does that mean you can't take Bloodcrushers AND Skull Cannons in the same Daemonic Horde detachment or say, 2x Bloodcrushers and 4x Skull Cannons?  Same question for all the other Daemon Hordes..
 - Daemonic Hordes may pick freely from the Lords Of War sections of allies - was this intentional?
 
 ### Imperious Dominatus
