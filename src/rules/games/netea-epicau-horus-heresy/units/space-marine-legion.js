@@ -644,7 +644,7 @@ export class LegionFalchion extends LegionUnit {
 
 export class LegionFellblade extends LegionUnit {
   constructor (detachment) {
-    super(detachment, 300, 1)
+    super(detachment, 250, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -694,7 +694,7 @@ export class LegionGunship extends LegionUnit {
 
 export class LegionGlaive extends LegionUnit {
   constructor (detachment) {
-    super(detachment, 300, 1)
+    super(detachment, 250, 1)
 
     this.rules = [
       new ReinforcedArmour(),
