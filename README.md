@@ -83,11 +83,11 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 - Solar Auxilia Super Heavy Tanks are 200 points, Imperial Militia versions are 300 points
 - Solar Auxilia Stormblade Plasma Blastgun is missing the Slow Firing rule vs the titan version
 
-#### Daemonic Hordes
+#### Daemons Of The Ruinstorm
 
 - Soul Grinder Harvesting Claws have a range of 15cm but are claws - big claws!
 - The Khorne Horde says 'May add 1 – 6 Bloodcrushers of Khorne or Skull Cannon of Khorne' - does that mean you can't take Bloodcrushers AND Skull Cannons in the same Daemonic Horde detachment or say, 2x Bloodcrushers and 4x Skull Cannons?  Same question for all the other Daemon Hordes..
-- Daemonic Hordes may pick freely from the Lords Of War sections of allies - was this intentional?
+- Daemons Of The Ruinstorm may pick freely from the Lords Of War sections of allies - was this intentional?
 
 ### Imperious Dominatus
 

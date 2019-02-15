@@ -64,7 +64,7 @@ export default {
 
     'alpha-legion': 'Alpha Legion',
     'blood-angels': 'Blood Angels',
-    'daemonic-hordes': 'Daemonic Hordes',
+    'daemonic-hordes': 'Daemons Of The Ruinstorm',
     'khorne': 'Khorne',
     'slaanesh': 'Slaanesh',
     'tzeench': 'Tzeench',
