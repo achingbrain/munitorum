@@ -45,21 +45,6 @@ export default class Ultramarines extends SpaceMarineLegion {
 
     this.colour = '#1b399b'
   }
-
-  getStrategyRating (list) {
-    const rating = super.getStrategyRating(list)
-
-    if (list.allies.find(item =>
-      item.army.type === ImperialMilitia.type ||
-      item.army.type === SolarAuxilia.type ||
-      item.army.type === MechanicumTaghmata.type ||
-      item.army.type === KnightHousehold.type
-    )) {
-      return rating - 1
-    }
-
-    return rating
-  }
 }
 
 withType(Ultramarines)

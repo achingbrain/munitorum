@@ -201,7 +201,7 @@ class LegioTitanicusImperatorSupportTitan extends Unit {
       ff: 3
     }
     this.weapons = [
-      new Weapon('plasma-annihalator', new RangedWeapon('90cm', new MultipleShot('4x', new MacroWeapon('2+'), new TitanKiller('D3'), new SlowFiring(), new ForwardFireArc()))),
+      new Weapon('plasma-annihilator', new RangedWeapon('90cm', new MultipleShot('4x', new MacroWeapon('2+'), new TitanKiller('D3'), new SlowFiring(), new ForwardFireArc()))),
       new Weapon('hellstorm-cannon', new RangedWeapon('60cm', new BarragePoints(10), new ForwardFireArc())),
       new Weapon('defence-laser', new RangedWeapon('90cm', new MacroWeapon('4+'), new AntiAircraft('4+'), new TitanKiller('D3'))),
       new Weapon('4-battle-cannons', new RangedWeapon('75cm', new AntiPersonnel('4+'), new AntiTank('4+'))),
@@ -238,7 +238,7 @@ class LegioTitanicusWarmongerSupportTitan extends Unit {
       new Weapon('vengence-cannon', new RangedWeapon('90cm', new MultipleShot('2x', new MacroWeapon('2+'), new TitanKiller('D3')))),
       new Weapon('4-hydra-autocannon', new RangedWeapon('45cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+'), new AntiAircraft('5+')))),
       new SpecialWeapon('fire-control-centre', 'fire-control-notes'),
-      new Weapon('head-gun', new RangedWeapon('45cm', new AntiPersonnel('4+'), new AntiTank('4+'))),
+      new Weapon('head-gun', new RangedWeapon('45cm', new AntiPersonnel('4+'), new AntiTank('4+'), new FixedForwardFireArc())),
       new Weapon('tertiary-armament', new SmallArms('15cm', new ExtraAttacks('+2'))),
       new SpecialWeapon('leg-bastions', 'corvus-assault-pod-notes')
     ]

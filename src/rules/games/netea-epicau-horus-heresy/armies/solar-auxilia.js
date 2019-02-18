@@ -7,7 +7,6 @@ import {
   SolarAuxiliaInfantryTercio,
   SolarAuxiliaStrikeCompany,
   SolarAuxiliaOrbitalSupport,
-  SolarAuxiliaAssaultGunPlatoon,
   SolarAuxiliaArtilleryTankBattery,
   SolarAuxiliaMalcadorSquadron,
   SolarAuxiliaSuperHeavyTank,
@@ -58,7 +57,6 @@ export default class SolarAuxilia extends Army {
     ]
     this.supportDetachments = [
       SolarAuxiliaOrbitalSupport,
-      SolarAuxiliaAssaultGunPlatoon,
       SolarAuxiliaArtilleryTankBattery,
       SolarAuxiliaMalcadorSquadron,
       SolarAuxiliaSuperHeavyTank,

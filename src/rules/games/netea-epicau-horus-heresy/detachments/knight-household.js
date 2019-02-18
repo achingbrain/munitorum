@@ -10,6 +10,9 @@ import {
   KnightHouseholdAcastusKnightPorphyrion,
   KnightHouseholdArmigerKnightUnit
 } from '../units/knight-household'
+import {
+  LimitedPerPoints
+} from '../constraints'
 import KnightHouseholdDetachment from './knight-household-detachment'
 import withType from '../with-type'
 
@@ -94,6 +97,9 @@ export class KnightHouseholdArmigerKnights extends KnightHouseholdDetachment {
     )
     this.setUpgrades(
       new Aspirants()
+    )
+    this.setConstraints(
+      new LimitedPerPoints(1, 2000)
     )
   }
 }

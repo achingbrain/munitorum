@@ -40,10 +40,7 @@ export default class WhiteScars extends SpaceMarineLegion {
     const rating = super.getStrategyRating(list)
 
     if (list.allies.find(item =>
-      item.army.type === ImperialMilitia.type ||
-      item.army.type === SolarAuxilia.type ||
-      item.army.type === MechanicumTaghmata.type ||
-      item.army.type === KnightHousehold.type
+      item.army.type === ImperialMilitia.type
     )) {
       return rating - 1
     }

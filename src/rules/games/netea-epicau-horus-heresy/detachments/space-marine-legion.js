@@ -93,6 +93,9 @@ export class LegionAssaultDetachment extends SpaceMarineLegionDetachment {
       new CommanderOption(
         new Praetor(),
         new Centurion()
+      ),
+      new TransportOption(
+        new DropAssault()
       )
     )
   }

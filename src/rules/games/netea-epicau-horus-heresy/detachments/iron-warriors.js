@@ -109,6 +109,9 @@ export class IronWarriorsArtilleryBatteryDetachment extends SpaceMarineLegionDet
   constructor (list) {
     super(list)
 
+    this.setUpgrades(
+      new Hyperios()
+    )
     this.setMandatoryUnits(
       new IronWarriorsArtilleryUnit(this)
     )

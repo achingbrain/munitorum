@@ -55,11 +55,11 @@ import {
   ImperialMilitiaOgrynBruteSquad
 } from './units/imperial-militia'
 import {
-  MechanicumTaghmataKriosUpgrade,
   MechanicumTaghmataArchmagosPrime,
   MechanicumTaghmataMagosPrime,
   MechanicumTaghmataScyllax,
   MechanicumTaghmataTriaros,
+  MechanicumTaghmataKriosUpgrade,
   MechanicumTaghmataLandRaider,
   MechanicumTaghmataTechPriestUpgrade,
   MechanicumTaghmataThanatarUpgrade
@@ -488,7 +488,7 @@ export class MilitiaOgrynBruteSquad extends AdditionalUnitOption {
 
 export class Krios extends AdditionalUnitOption {
   constructor () {
-    super(MechanicumTaghmataKriosUpgrade)
+    super(MechanicumTaghmataKriosUpgrade, 3)
   }
 }
 

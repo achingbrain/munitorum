@@ -279,7 +279,7 @@ export class MechanicumTaghmataThanatarUpgrade extends MechanicumTaghmataThanata
 
 export class MechanicumTaghmataKrios extends Unit {
   constructor (detachment) {
-    super(detachment, 300, 5)
+    super(detachment, 60, 1)
 
     this.rules = [
       new InvulnerableSave(),
@@ -294,7 +294,10 @@ export class MechanicumTaghmataKrios extends Unit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('plasma-fusil', new RangedWeapon('30cm', new MacroWeapon('5+')))
+      new MultipleChoiceWeapon(
+        new Weapon('lightning-cannon', new RangedWeapon('45cm', new MacroWeapon('5+'))),
+        new Weapon('pulsar-fusil', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('3+')))
+      )
     ]
   }
 }
@@ -305,7 +308,6 @@ export class MechanicumTaghmataKriosUpgrade extends MechanicumTaghmataKrios {
 
     this.cost = 50
     this.min = 1
-    this.max = 3
     this.quantity = 1
   }
 }

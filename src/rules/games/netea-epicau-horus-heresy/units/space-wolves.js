@@ -37,7 +37,8 @@ export class SpaceWolvesPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave()
+      new InvulnerableSave(),
+      new Ferocity()
     ]
     this.stats = {
       type: 'INF',

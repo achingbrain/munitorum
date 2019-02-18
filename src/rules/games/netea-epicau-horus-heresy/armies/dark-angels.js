@@ -47,7 +47,6 @@ export default class DarkAngels extends SpaceMarineLegion {
 
     if (list.allies.find(item =>
       item.army.type === ImperialMilitia.type ||
-      item.army.type === SolarAuxilia.type ||
       item.army.type === MechanicumTaghmata.type ||
       item.army.type === KnightHousehold.type
     )) {

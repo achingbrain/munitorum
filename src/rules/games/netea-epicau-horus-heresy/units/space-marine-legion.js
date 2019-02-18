@@ -1212,7 +1212,7 @@ export class LegionPredatorExecutioner extends LegionUnit {
         new Weapon('plasma-destroyer', new RangedWeapon('45cm', new MacroWeapon('4+'))),
         new Weapon('heavy-conversion-beamer', new RangedWeapon('75cm', new AntiTank('2+')))
       ),
-      new Weapon('sponson-lascannons', new RangedWeapon('15cm', new AntiPersonnel('5+')))
+      new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiPersonnel('5+')))
     ]
   }
 }
@@ -1269,7 +1269,7 @@ export class LegionPredator extends LegionUnit {
         new Weapon('sponson-heavy-bolters', new StatsModifier({
           ff: -2
         }), new SmallArms('15cm', new AntiPersonnel('5+'))),
-        new Weapon('sponson-lascannons', new RangedWeapon('15cm', new AntiPersonnel('5+'))),
+        new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiPersonnel('5+'))),
         new Weapon('sponson-heavy-flamers', new StatsModifier({
           ff: -2
         }), new SmallArms('15cm', new AntiPersonnel('4+'), new IgnoreCover('5+')))
@@ -1622,7 +1622,7 @@ export class LegionTacticalSquad extends LegionUnit {
       speed: 15,
       armour: 4,
       cc: 4,
-      ff: 5
+      ff: 4
     }
     this.weapons = [
       new Weapon('bolters', new SmallArms('15cm'))
@@ -1641,7 +1641,7 @@ export class LegionTacticalSupportSquad extends LegionUnit {
       speed: 15,
       armour: 4,
       cc: 4,
-      ff: 5
+      ff: 4
     }
     this.weapons = [
       new Weapon('special-weapons',

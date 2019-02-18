@@ -54,6 +54,9 @@ export class RavenGuardDarkFuryAssaultDetachment extends SpaceMarineLegionDetach
     this.setUpgrades(
       new CommanderOption(
         new Centurion()
+      ),
+      new TransportOption(
+        new DropAssault()
       )
     )
     this.setConstraints(

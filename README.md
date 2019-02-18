@@ -8,31 +8,29 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 
 #### Space Marine Legions
 
-- Legion Support Detachments can take up to 4 upgrades (though none have more than 4 upgrade options), what about Line Detachments?
-- Legion Assault Marine line detachment missing Drop Assault upgrade compared to Assault Marine Support Detachment
+- Legion Tactical Detachments have no Drop Assault upgrade but can take Assault Claws
+- Kharybdis Assault Claws have Tactical, Assault, Dreadnought & Rapier transport capacities but Tactical/Assault detachments do not have the 'Assault Claw' upgrade, neither do Assault Support, the various Dreadnought Talons or Rapier Batteries - e.g. should everything with the 'Drop Assault' upgrade also have the 'Assault Claw' upgrade?
 - Legion Terminator Detachments can take the Teleport Upgrade but also include Tanks and Dreadnoughts, do these get the Teleport special rule too?
 - Should taking the Teleport upgrade require Spacecraft in the same way as taking Drop Pods/Dreadclaws?
-- Word Bearer Contemptor Dreadnought talon has Centurion & Dreadnought upgrades, regular Legion Contemptor Dreadnought Talon does not
-- Night Lords Night Raptor and Raven Guard Dark Fury detachments are similar to assault marines but have no Drop Assault option?
-- Iron Warriors Artillery Battery has no Hyperios upgrade but Legion Artillery Battery does
+- Night Lords Night Raptor detachments are similar to assault marines but have no Drop Assault option?
 - Magnus the Red, Vulkan, Ferrus Manus and Leman Russ take legion-specific Terminator bodyguard, all other Primarchs use generic legion types - is this intentional?
 - Stats are given for Damocles Command Rhino but no detachment can take one as an upgrade
 - Stats are given for Iron Warriors Tormentor but no rules for adding to detachments
 - White Scars Destroyer Detachment is identical to generic Legion Destroyer Detachment
-- Sanguinius has jump pack rule but only 15cm move - other jump pack troops have a 30cm move
-- Leman Russ' bodyguard have the Ferocity rule but he doesn't
-- Traitor legion cohesive/disruptive allies vary legion by legion but loyalist legions seem to be missing that so just fall back to the generic Legion Astartes ally types?
+- No loyalist legions have Custodes in their ally lists
+- White Scar allies table has 'Dark Angel Allies' as the title
+- Legion Dreadnought Talons have the 'Centurion' upgrade but Leviathan & Contemptor Talons do not
+- Word Bearer Contemptor Talons have the 'Centurion' upgrade but the Legion version does not
+- How does adding a Centurion to a Dreadnought Talon work? Replace one Dreadnought stand with something like the 40k Blood Angels Librarian Dreadnought or an additional stand of power armoured marines, one of which is a character?
 
 #### Titan Legions
 
 - How many upgrades can Legio Titanicus units take?
 - Should Laser Burner Battle Titan Weapon be AND instead of OR like other weapons with both assault and small arms profiles?
-- Only the Warhound titan has the 'Walker' rule - Imperator, Reaver, Warlord and Warmonger titans do not
 - Can titans have a Legate and a Veteran Princeps or just one of them?
 - If just one, what about the Warhound Scout Pack detachment (which comes with 2x titans)?
 - The 'Carapace Landing Pad' titan weapon option is not marked as 'Carapace mount only'
 - Warmonger has 'Doomstrike Missles', are these the same as 'Deathstrike Missiles'?
-- Warmonger 'Head Gun' firepower rating is marked 'Head Gun' - what is the firepower?
 
 #### Legio Custodes
 
@@ -51,9 +49,9 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 - How many upgrades can Imperial Militia units take?
 - Do extra Militia Auxiliary units added via the 'Militia Auxiliary' upgrade have to have the same weapons as the other Militia Auxiliary units in the Militia Infantry Squad (eg. rifles or pistols/cc weapons)?
 - Imperial Militia Arvus Lighters have the Planetfall special rule but no spacecraft in the list have any transport capacity
-- Auxilia Malcador has 2xLascannon which are AT5+, Auxilia Malcador Annihalator has 2xLascannon which are AT4+
-- Fellblade demolisher cannon has no Small Arms profile, Auxillia Malcador Annihalator and Vindicator ones do
-- Vindicator demolisher cannon has no Disrupt rule, Fellblade and Auxillia Malcador Annihalator ones do
+- Auxilia Malcador has 2xLascannon which are AT5+, Auxilia Malcador Annihilator has 2xLascannon which are AT4+
+- Fellblade demolisher cannon has no Small Arms profile, Auxillia Malcador Annihilator and Vindicator ones do
+- Vindicator demolisher cannon has no Disrupt rule, Fellblade and Auxillia Malcador Annihilator ones do
 - Imperial Militia faction has no points limit for Lords of War detachments
 - If the army includes a Force Commander and only Rogue Psykers (not Discipline Masters), does the first Rogue Psyker have to be in the same formation as the Force Commander?
 

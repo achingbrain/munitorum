@@ -245,8 +245,9 @@ export class ImplacableAdvance {
 }
 
 export class IonShield {
-  constructor () {
+  constructor (num) {
     this.name = 'ion-shield'
+    this.type = `Ion Shield(${num})`
     this.link = 'http://epicau.com/mw/index.php/Knight_Household#Special_Rules'
   }
 }

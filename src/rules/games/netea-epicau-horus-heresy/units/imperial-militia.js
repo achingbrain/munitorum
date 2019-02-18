@@ -607,7 +607,7 @@ class ImperialMilitiaMalcador extends Unit {
   }
 }
 
-class ImperialMilitiaMalcadorAnnihalator extends Unit {
+class ImperialMilitiaMalcadorAnnihilator extends Unit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -636,7 +636,7 @@ export class ImperialMilitiaMalcadorUnit extends MultipleChoiceUnit {
   constructor (detachment) {
     super(detachment,
       new ImperialMilitiaMalcador(detachment),
-      new ImperialMilitiaMalcadorAnnihalator(detachment)
+      new ImperialMilitiaMalcadorAnnihilator(detachment)
     )
   }
 }
@@ -997,7 +997,7 @@ withType(ImperialMilitiaBasiliskArtilleryCarriage)
 withType(ImperialMilitiaMedusaArtilleryCarriage)
 withType(ImperialMilitiaHeavyOrdnanceBatteryUnit)
 withType(ImperialMilitiaMalcador)
-withType(ImperialMilitiaMalcadorAnnihalator)
+withType(ImperialMilitiaMalcadorAnnihilator)
 withType(ImperialMilitiaMalcadorUnit)
 withType(ImperialMilitiaRapier)
 withType(ImperialMilitiaSentinel)

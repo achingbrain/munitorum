@@ -519,18 +519,16 @@ export class KnightHouseholdDominusKnightVallant extends Unit {
 
 export class KnightHouseholdArmigerKnightHelverin extends Unit {
   constructor (detachment) {
-    super(detachment, 250, 3)
+    super(detachment, 200, 5)
 
     this.rules = [
-      new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('5+'),
       new Scout(),
-      new Walker(),
-      new CriticalHit('knight-critical-hit')
+      new Walker()
     ]
     this.stats = {
-      type: 'WE',
-      speed: 25,
+      type: 'LV',
+      speed: 30,
       armour: 5,
       cc: 5,
       ff: 5
@@ -543,18 +541,16 @@ export class KnightHouseholdArmigerKnightHelverin extends Unit {
 
 export class KnightHouseholdArmigerKnightWarglaive extends Unit {
   constructor (detachment) {
-    super(detachment, 250, 3)
+    super(detachment, 200, 5)
 
     this.rules = [
-      new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('5+'),
       new Scout(),
-      new Walker(),
-      new CriticalHit('knight-critical-hit')
+      new Walker()
     ]
     this.stats = {
-      type: 'WE',
-      speed: 25,
+      type: 'LV',
+      speed: 30,
       armour: 5,
       cc: 4,
       ff: 4

@@ -55,8 +55,7 @@ export default class IronHands extends SpaceMarineLegion {
 
     if (list.allies.find(item =>
       item.army.type === ImperialMilitia.type ||
-      item.army.type === SolarAuxilia.type ||
-      item.army.type === KnightHousehold.type
+      item.army.type === SolarAuxilia.type
     )) {
       return rating - 1
     }

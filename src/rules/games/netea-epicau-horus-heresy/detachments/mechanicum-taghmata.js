@@ -128,6 +128,10 @@ export class MechanicumTaghmataKriosSquadron extends MechanicumTaghmataDetachmen
     super(list)
 
     this.setMandatoryUnits(
+      new MechanicumTaghmataKrios(this),
+      new MechanicumTaghmataKrios(this),
+      new MechanicumTaghmataKrios(this),
+      new MechanicumTaghmataKrios(this),
       new MechanicumTaghmataKrios(this)
     )
     this.setUpgrades(

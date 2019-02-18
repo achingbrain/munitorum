@@ -40,7 +40,7 @@ export class BloodAngelsPrimarch extends LegionPrimarchUnit {
     ]
     this.stats = {
       type: 'INF',
-      speed: 15,
+      speed: 30,
       armour: 3,
       cc: 2,
       ff: 3
