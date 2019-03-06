@@ -120,7 +120,6 @@ export class KnightHouseholdCerastusLancerKnights extends KnightHouseholdDetachm
   }
 }
 
-
 export class KnightHouseholdCerastusCastigatorKnights extends KnightHouseholdDetachment {
   constructor (list) {
     super(list)
