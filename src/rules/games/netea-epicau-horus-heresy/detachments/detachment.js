@@ -63,7 +63,7 @@ export default class Detachment {
   }
 
   getCost () {
-    return this.units.reduce((acc, unit) => {
+    const cost = this.units.reduce((acc, unit) => {
       const cost = unit.getCost(this)
 
       if (!isNaN(cost)) {
@@ -72,6 +72,8 @@ export default class Detachment {
 
       return acc
     }, 0)
+
+    return Math.round(cost)
   }
 
   getInitiativeRating () {
