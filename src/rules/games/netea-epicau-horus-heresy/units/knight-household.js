@@ -46,7 +46,7 @@ class KnightHouseholdQuestorisKnightPaladin extends Unit {
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CriticalHit('knight-critical-hit')
@@ -71,6 +71,10 @@ class KnightHouseholdQuestorisKnightPaladinExtra extends KnightHouseholdQuestori
 
     this.cost = 100
   }
+
+  getName () {
+    return KnightHouseholdQuestorisKnightPaladin.code
+  }
 }
 
 class KnightHouseholdQuestorisKnightErrant extends Unit {
@@ -79,7 +83,7 @@ class KnightHouseholdQuestorisKnightErrant extends Unit {
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CriticalHit('knight-critical-hit')
@@ -107,15 +111,19 @@ class KnightHouseholdQuestorisKnightErrantExtra extends KnightHouseholdQuestoris
 
     this.cost = 100
   }
+
+  getName () {
+    return KnightHouseholdQuestorisKnightErrant.code
+  }
 }
 
 class KnightHouseholdQuestorisKnightCrusader extends Unit {
   constructor (detachment) {
-    super(detachment, 125, 1)
+    super(detachment, (325 / 3) + 25, 1)
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CriticalHit('knight-critical-hit')
@@ -135,13 +143,25 @@ class KnightHouseholdQuestorisKnightCrusader extends Unit {
   }
 }
 
+class KnightHouseholdQuestorisKnightCrusaderExtra extends KnightHouseholdQuestorisKnightCrusader {
+  constructor (detachment) {
+    super(detachment)
+
+    this.cost = 125
+  }
+
+  getName () {
+    return KnightHouseholdQuestorisKnightCrusader.code
+  }
+}
+
 class KnightHouseholdQuestorisKnightGallant extends Unit {
   constructor (detachment) {
-    super(detachment, 125, 1)
+    super(detachment, (325 / 3) + 25, 1)
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CriticalHit('knight-critical-hit')
@@ -161,13 +181,25 @@ class KnightHouseholdQuestorisKnightGallant extends Unit {
   }
 }
 
+class KnightHouseholdQuestorisKnightGallantExtra extends KnightHouseholdQuestorisKnightGallant {
+  constructor (detachment) {
+    super(detachment)
+
+    this.cost = 125
+  }
+
+  getName () {
+    return KnightHouseholdQuestorisKnightGallant.code
+  }
+}
+
 class KnightHouseholdQuestorisKnightMagera extends Unit {
   constructor (detachment) {
-    super(detachment, 125, 1)
+    super(detachment, (325 / 3) + 25, 1)
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CortexController(),
@@ -191,13 +223,25 @@ class KnightHouseholdQuestorisKnightMagera extends Unit {
   }
 }
 
+class KnightHouseholdQuestorisKnightMageraExtra extends KnightHouseholdQuestorisKnightMagera {
+  constructor (detachment) {
+    super(detachment)
+
+    this.cost = 125
+  }
+
+  getName () {
+    return KnightHouseholdQuestorisKnightMagera.code
+  }
+}
+
 class KnightHouseholdQuestorisKnightStyrix extends Unit {
   constructor (detachment) {
-    super(detachment, 125, 1)
+    super(detachment, (325 / 3) + 25, 1)
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CortexController(),
@@ -221,13 +265,25 @@ class KnightHouseholdQuestorisKnightStyrix extends Unit {
   }
 }
 
+class KnightHouseholdQuestorisKnightStyrixExtra extends KnightHouseholdQuestorisKnightStyrix {
+  constructor (detachment) {
+    super(detachment)
+
+    this.cost = 125
+  }
+
+  getName () {
+    return KnightHouseholdQuestorisKnightStyrix.code
+  }
+}
+
 class KnightHouseholdQuestorisKnightWarden extends Unit {
   constructor (detachment) {
-    super(detachment, 125, 1)
+    super(detachment, (325 / 3) + 25, 1)
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CriticalHit('knight-critical-hit')
@@ -244,6 +300,18 @@ class KnightHouseholdQuestorisKnightWarden extends Unit {
       new Weapon('thunderstrike-gauntlet', new AssaultWeapon(new ExtraAttacks('+1'), new TitanKiller())),
       new Weapon('ironstorm-missile-pod', new RangedWeapon('60cm', new BarragePoints(1), new IndirectFire()))
     ]
+  }
+}
+
+class KnightHouseholdQuestorisKnightWardenExtra extends KnightHouseholdQuestorisKnightWarden {
+  constructor (detachment) {
+    super(detachment)
+
+    this.cost = 125
+  }
+
+  getName () {
+    return KnightHouseholdQuestorisKnightWarden.code
   }
 }
 
@@ -264,11 +332,11 @@ export class KnightHouseholdQuestorisPaladinKnightExtra extends MultipleChoiceUn
   constructor (detachment) {
     super(detachment,
       new KnightHouseholdQuestorisKnightPaladinExtra(detachment),
-      new KnightHouseholdQuestorisKnightCrusader(detachment),
-      new KnightHouseholdQuestorisKnightGallant(detachment),
-      new KnightHouseholdQuestorisKnightMagera(detachment),
-      new KnightHouseholdQuestorisKnightStyrix(detachment),
-      new KnightHouseholdQuestorisKnightWarden(detachment)
+      new KnightHouseholdQuestorisKnightCrusaderExtra(detachment),
+      new KnightHouseholdQuestorisKnightGallantExtra(detachment),
+      new KnightHouseholdQuestorisKnightMageraExtra(detachment),
+      new KnightHouseholdQuestorisKnightStyrixExtra(detachment),
+      new KnightHouseholdQuestorisKnightWardenExtra(detachment)
     )
   }
 }
@@ -282,6 +350,7 @@ export class KnightHouseholdQuestorisErrantKnight extends MultipleChoiceUnit {
       new KnightHouseholdQuestorisKnightMagera(detachment),
       new KnightHouseholdQuestorisKnightStyrix(detachment),
       new KnightHouseholdQuestorisKnightWarden(detachment)
+
     )
   }
 }
@@ -290,11 +359,11 @@ export class KnightHouseholdQuestorisErrantKnightExtra extends MultipleChoiceUni
   constructor (detachment) {
     super(detachment,
       new KnightHouseholdQuestorisKnightErrantExtra(detachment),
-      new KnightHouseholdQuestorisKnightCrusader(detachment),
-      new KnightHouseholdQuestorisKnightGallant(detachment),
-      new KnightHouseholdQuestorisKnightMagera(detachment),
-      new KnightHouseholdQuestorisKnightStyrix(detachment),
-      new KnightHouseholdQuestorisKnightWarden(detachment)
+      new KnightHouseholdQuestorisKnightCrusaderExtra(detachment),
+      new KnightHouseholdQuestorisKnightGallantExtra(detachment),
+      new KnightHouseholdQuestorisKnightMageraExtra(detachment),
+      new KnightHouseholdQuestorisKnightStyrixExtra(detachment),
+      new KnightHouseholdQuestorisKnightWardenExtra(detachment)
     )
   }
 }
@@ -330,7 +399,7 @@ class KnightHouseholdCerastusKnightCastigator extends Unit {
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CriticalHit('knight-critical-hit')
@@ -355,7 +424,7 @@ class KnightHouseholdCerastusKnightAtropos extends Unit {
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CriticalHit('knight-critical-hit')
@@ -383,7 +452,7 @@ class KnightHouseholdCerastusKnightAcheron extends Unit {
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CriticalHit('knight-critical-hit')
@@ -493,7 +562,7 @@ export class KnightHouseholdAcastusKnightPorphyrion extends Unit {
 
     this.rules = [
       new DamageCapacity(3),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CriticalHit('knight-critical-hit')
@@ -538,7 +607,7 @@ export class KnightHouseholdDominusKnightCastellan extends Unit {
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CriticalHit('knight-critical-hit')
@@ -562,7 +631,7 @@ export class KnightHouseholdDominusKnightVallant extends Unit {
 
     this.rules = [
       new DamageCapacity(2),
-      new IonShield(),
+      new IonShield('4+'),
       new ReinforcedArmour(),
       new Walker(),
       new CriticalHit('knight-critical-hit')
@@ -641,6 +710,11 @@ withType(KnightHouseholdQuestorisKnightGallant)
 withType(KnightHouseholdQuestorisKnightMagera)
 withType(KnightHouseholdQuestorisKnightStyrix)
 withType(KnightHouseholdQuestorisKnightWarden)
+withType(KnightHouseholdQuestorisKnightCrusaderExtra)
+withType(KnightHouseholdQuestorisKnightGallantExtra)
+withType(KnightHouseholdQuestorisKnightMageraExtra)
+withType(KnightHouseholdQuestorisKnightStyrixExtra)
+withType(KnightHouseholdQuestorisKnightWardenExtra)
 withType(KnightHouseholdQuestorisPaladinKnight)
 withType(KnightHouseholdQuestorisPaladinKnightExtra)
 withType(KnightHouseholdQuestorisErrantKnight)
