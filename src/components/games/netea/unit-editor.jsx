@@ -114,6 +114,12 @@ const CostDisplay = component(({ cost, t }) => {
   if (!cost) {
     return t('free')
   } else {
+    const asInt = parseInt(cost)
+
+    if (cost !== asInt) {
+      cost = parseFloat(cost).toFixed(1)
+    }
+
     return (
       <Trans i18nKey='cost'>{{ cost }} pts</Trans>
     )

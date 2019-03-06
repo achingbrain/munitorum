@@ -115,9 +115,9 @@ import knightHouseholdAcastusKnightPorphyrion from './knight-household-acastus-k
 import knightHouseholdAcastusKnightPorphyrions from './knight-household-acastus-knight-porphyrions.svg'
 import knightHouseholdArmiger from './knight-household-armiger.svg'
 import knightHouseholdAspirants from './knight-household-aspirants.svg'
+import knightHouseholdCerastusCastigatorKnight from './knight-household-cerastus-castigator-knight.svg'
 import knightHouseholdCerastusKnightAcheron from './knight-household-cerastus-knight-acheron.svg'
 import knightHouseholdCerastusKnightAtropos from './knight-household-cerastus-knight-atropos.svg'
-import knightHouseholdCerastusKnightCastigator from './knight-household-cerastus-knight-castigator.svg'
 import knightHouseholdCerastusKnightLancer from './knight-household-cerastus-knight-lancer.svg'
 import knightHouseholdLordScion from './knight-household-lord-scion.svg'
 import knightHouseholdPreceptor from './knight-household-preceptor.svg'
@@ -430,12 +430,16 @@ const IMAGES = {
   'knight-household-acastus-knight-porphyrions': knightHouseholdAcastusKnightPorphyrions,
   'knight-household-armiger': knightHouseholdArmiger,
   'knight-household-aspirants': knightHouseholdAspirants,
+  'knight-household-cerastus-castigator-knight': knightHouseholdCerastusCastigatorKnight,
+  'knight-household-cerastus-castigator-knights': knightHouseholdCerastusCastigatorKnight,
   'knight-household-cerastus-knight-acheron': knightHouseholdCerastusKnightAcheron,
   'knight-household-cerastus-knight-atropos': knightHouseholdCerastusKnightAtropos,
-  'knight-household-cerastus-knight-castigator': knightHouseholdCerastusKnightCastigator,
+  'knight-household-cerastus-knight-castigator': knightHouseholdCerastusCastigatorKnight,
   'knight-household-cerastus-knight-lancer': knightHouseholdCerastusKnightLancer,
   'knight-household-cerastus-knight': knightHouseholdCerastusKnightLancer,
   'knight-household-cerastus-knights': knightHouseholdCerastusKnightLancer,
+  'knight-household-cerastus-lancer-knight': knightHouseholdCerastusKnightLancer,
+  'knight-household-cerastus-lancer-knights': knightHouseholdCerastusKnightLancer,
   'knight-household-lord-scion': knightHouseholdLordScion,
   'knight-household-preceptor': knightHouseholdPreceptor,
   'knight-household-questoris-knight-crusader': knightHouseholdQuestorisKnightCrusader,

@@ -42,7 +42,7 @@ import withType from '../with-type'
 
 class KnightHouseholdQuestorisKnightPaladin extends Unit {
   constructor (detachment) {
-    super(detachment, 110, 1)
+    super(detachment, 325 / 3, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -65,9 +65,17 @@ class KnightHouseholdQuestorisKnightPaladin extends Unit {
   }
 }
 
+class KnightHouseholdQuestorisKnightPaladinExtra extends KnightHouseholdQuestorisKnightPaladin {
+  constructor (detachment) {
+    super(detachment)
+
+    this.cost = 100
+  }
+}
+
 class KnightHouseholdQuestorisKnightErrant extends Unit {
   constructor (detachment) {
-    super(detachment, 110, 1)
+    super(detachment, 325 / 3, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -90,6 +98,14 @@ class KnightHouseholdQuestorisKnightErrant extends Unit {
       ),
       new Weapon('reaper-chainsword', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1')))
     ]
+  }
+}
+
+class KnightHouseholdQuestorisKnightErrantExtra extends KnightHouseholdQuestorisKnightErrant {
+  constructor (detachment) {
+    super(detachment)
+
+    this.cost = 100
   }
 }
 
@@ -231,11 +247,49 @@ class KnightHouseholdQuestorisKnightWarden extends Unit {
   }
 }
 
-export class KnightHouseholdQuestorisKnight extends MultipleChoiceUnit {
+export class KnightHouseholdQuestorisPaladinKnight extends MultipleChoiceUnit {
   constructor (detachment) {
     super(detachment,
       new KnightHouseholdQuestorisKnightPaladin(detachment),
+      new KnightHouseholdQuestorisKnightCrusader(detachment),
+      new KnightHouseholdQuestorisKnightGallant(detachment),
+      new KnightHouseholdQuestorisKnightMagera(detachment),
+      new KnightHouseholdQuestorisKnightStyrix(detachment),
+      new KnightHouseholdQuestorisKnightWarden(detachment)
+    )
+  }
+}
+
+export class KnightHouseholdQuestorisPaladinKnightExtra extends MultipleChoiceUnit {
+  constructor (detachment) {
+    super(detachment,
+      new KnightHouseholdQuestorisKnightPaladinExtra(detachment),
+      new KnightHouseholdQuestorisKnightCrusader(detachment),
+      new KnightHouseholdQuestorisKnightGallant(detachment),
+      new KnightHouseholdQuestorisKnightMagera(detachment),
+      new KnightHouseholdQuestorisKnightStyrix(detachment),
+      new KnightHouseholdQuestorisKnightWarden(detachment)
+    )
+  }
+}
+
+export class KnightHouseholdQuestorisErrantKnight extends MultipleChoiceUnit {
+  constructor (detachment) {
+    super(detachment,
       new KnightHouseholdQuestorisKnightErrant(detachment),
+      new KnightHouseholdQuestorisKnightCrusader(detachment),
+      new KnightHouseholdQuestorisKnightGallant(detachment),
+      new KnightHouseholdQuestorisKnightMagera(detachment),
+      new KnightHouseholdQuestorisKnightStyrix(detachment),
+      new KnightHouseholdQuestorisKnightWarden(detachment)
+    )
+  }
+}
+
+export class KnightHouseholdQuestorisErrantKnightExtra extends MultipleChoiceUnit {
+  constructor (detachment) {
+    super(detachment,
+      new KnightHouseholdQuestorisKnightErrantExtra(detachment),
       new KnightHouseholdQuestorisKnightCrusader(detachment),
       new KnightHouseholdQuestorisKnightGallant(detachment),
       new KnightHouseholdQuestorisKnightMagera(detachment),
@@ -247,7 +301,7 @@ export class KnightHouseholdQuestorisKnight extends MultipleChoiceUnit {
 
 class KnightHouseholdCerastusKnightLancer extends Unit {
   constructor (detachment) {
-    super(detachment, 105, 1)
+    super(detachment, 125, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -272,7 +326,7 @@ class KnightHouseholdCerastusKnightLancer extends Unit {
 
 class KnightHouseholdCerastusKnightCastigator extends Unit {
   constructor (detachment) {
-    super(detachment, 105, 1)
+    super(detachment, 125, 1)
 
     this.rules = [
       new DamageCapacity(2),
@@ -352,10 +406,19 @@ class KnightHouseholdCerastusKnightAcheron extends Unit {
   }
 }
 
-export class KnightHouseholdCerastusKnight extends MultipleChoiceUnit {
+export class KnightHouseholdCerastusLancerKnight extends MultipleChoiceUnit {
   constructor (detachment) {
     super(detachment,
       new KnightHouseholdCerastusKnightLancer(detachment),
+      new KnightHouseholdCerastusKnightAtropos(detachment),
+      new KnightHouseholdCerastusKnightAcheron(detachment)
+    )
+  }
+}
+
+export class KnightHouseholdCerastusCastigatorKnight extends MultipleChoiceUnit {
+  constructor (detachment) {
+    super(detachment,
       new KnightHouseholdCerastusKnightCastigator(detachment),
       new KnightHouseholdCerastusKnightAtropos(detachment),
       new KnightHouseholdCerastusKnightAcheron(detachment)
@@ -578,12 +641,16 @@ withType(KnightHouseholdQuestorisKnightGallant)
 withType(KnightHouseholdQuestorisKnightMagera)
 withType(KnightHouseholdQuestorisKnightStyrix)
 withType(KnightHouseholdQuestorisKnightWarden)
-withType(KnightHouseholdQuestorisKnight)
+withType(KnightHouseholdQuestorisPaladinKnight)
+withType(KnightHouseholdQuestorisPaladinKnightExtra)
+withType(KnightHouseholdQuestorisErrantKnight)
+withType(KnightHouseholdQuestorisErrantKnightExtra)
 withType(KnightHouseholdCerastusKnightLancer)
 withType(KnightHouseholdCerastusKnightCastigator)
 withType(KnightHouseholdCerastusKnightAtropos)
 withType(KnightHouseholdCerastusKnightAcheron)
-withType(KnightHouseholdCerastusKnight)
+withType(KnightHouseholdCerastusLancerKnight)
+withType(KnightHouseholdCerastusCastigatorKnight)
 withType(KnightHouseholdLordScion)
 withType(KnightHouseholdPreceptor)
 withType(KnightHouseholdSeneschal)

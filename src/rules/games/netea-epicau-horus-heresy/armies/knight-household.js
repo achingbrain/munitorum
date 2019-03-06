@@ -2,8 +2,10 @@
 
 import Army from './army'
 import {
-  KnightHouseholdQuestorisKnights,
-  KnightHouseholdCerastusKnights,
+  KnightHouseholdQuestorisPaladinKnights,
+  KnightHouseholdQuestorisErrantKnights,
+  KnightHouseholdCerastusLancerKnights,
+  KnightHouseholdCerastusCastigatorKnights,
   KnightHouseholdAcastusKnightPorphyrions,
   KnightHouseholdArmigerKnights
 } from '../detachments/knight-household'
@@ -41,10 +43,12 @@ export default class KnightHousehold extends Army {
     super()
 
     this.lineDetachments = [
-      KnightHouseholdQuestorisKnights
+      KnightHouseholdQuestorisPaladinKnights,
+      KnightHouseholdQuestorisErrantKnights
     ]
     this.supportDetachments = [
-      KnightHouseholdCerastusKnights,
+      KnightHouseholdCerastusLancerKnights,
+      KnightHouseholdCerastusCastigatorKnights,
       KnightHouseholdArmigerKnights
     ]
     this.lordsOfWar = [
