@@ -163,7 +163,7 @@ export class SolarAuxiliaInfantrySection extends Unit {
 
 class SolarAuxiliaLemanRuss extends Unit {
   constructor (detachment) {
-    super(detachment, 50, 1)
+    super(detachment, 350 / 6, 1)
 
     this.rules = [
       new ReinforcedArmour()
@@ -213,13 +213,13 @@ class SolarAuxiliaCloseSupportLemanRussDemolisher extends SolarAuxiliaLemanRussD
   constructor (detachment) {
     super(detachment)
 
-    this.cost = 70
+    this.cost = 200 / 3
   }
 }
 
 class SolarAuxiliaLemanRussExterminator extends Unit {
   constructor (detachment) {
-    super(detachment, 70, 1)
+    super(detachment, 350 / 6, 1)
 
     this.rules = [
       new ReinforcedArmour()
@@ -241,7 +241,7 @@ class SolarAuxiliaLemanRussExterminator extends Unit {
 
 class SolarAuxiliaLemanRussVanquisher extends Unit {
   constructor (detachment) {
-    super(detachment, 75, 1)
+    super(detachment, (350 / 6) + 25, 1)
 
     this.rules = [
       new ReinforcedArmour()
@@ -263,7 +263,7 @@ class SolarAuxiliaLemanRussVanquisher extends Unit {
 
 class SolarAuxiliaLemanRussIncinerator extends Unit {
   constructor (detachment) {
-    super(detachment, 70, 1)
+    super(detachment, 200 / 3, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -285,7 +285,7 @@ class SolarAuxiliaLemanRussIncinerator extends Unit {
 
 class SolarAuxiliaLemanRussExecutioner extends Unit {
   constructor (detachment) {
-    super(detachment, 95, 1)
+    super(detachment, (200 / 3) + 25, 1)
 
     this.rules = [
       new ReinforcedArmour(),
@@ -447,7 +447,7 @@ export class SolarAuxiliaDracosan extends TransportUnit {
 
 export class SolarAuxiliaStormlordTransport extends TransportUnit {
   constructor (detachment) {
-    super(detachment, 150)
+    super(detachment, 200)
 
     this.transportTypes = {
       infantry: 4,
@@ -550,7 +550,7 @@ export class SolarAuxiliaOrbitalSupportUnit extends MultipleChoiceUnit {
 
 export class SolarAuxiliaMedusa extends Unit {
   constructor (detachment) {
-    super(detachment, 200, 4)
+    super(detachment, 250, 3)
 
     this.rules = []
     this.stats = {
@@ -572,7 +572,7 @@ export class SolarAuxiliaMedusa extends Unit {
 
 class SolarAuxiliaBasilisk extends Unit {
   constructor (detachment) {
-    super(detachment, 275, 4)
+    super(detachment, 250, 3)
 
     this.rules = []
     this.stats = {
@@ -591,7 +591,7 @@ class SolarAuxiliaBasilisk extends Unit {
 
 class SolarAuxiliaBombard extends Unit {
   constructor (detachment) {
-    super(detachment, 275, 4)
+    super(detachment, 250, 3)
 
     this.rules = []
     this.stats = {
@@ -612,7 +612,8 @@ export class SolarAuxiliaArtilleryTankBatteryUnit extends MultipleChoiceUnit {
   constructor (detachment) {
     super(detachment,
       new SolarAuxiliaBasilisk(detachment),
-      new SolarAuxiliaBombard(detachment)
+      new SolarAuxiliaBombard(detachment),
+      new SolarAuxiliaMedusa(detachment)
     )
   }
 }

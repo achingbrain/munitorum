@@ -17,7 +17,6 @@ import {
   SolarAuxiliaStormlordTransport,
   SolarAuxiliaArvusLighter,
   SolarAuxiliaOrbitalSupportUnit,
-  SolarAuxiliaMedusa,
   SolarAuxiliaArtilleryTankBatteryUnit,
   SolarAuxiliaMalcadorUnit,
   SolarAuxiliaSuperHeavyTankUnit,
@@ -118,10 +117,6 @@ export class SolarAuxiliaStrikeCompany extends SolarAuxiliaDetachment {
       new SolarAuxiliaBattleTankUnit(this),
       new SolarAuxiliaBattleTankUnit(this),
       new SolarAuxiliaBattleTankUnit(this),
-      new SolarAuxiliaBattleTankUnit(this),
-      new SolarAuxiliaBattleTankUnit(this),
-      new SolarAuxiliaBattleTankUnit(this),
-      new SolarAuxiliaBattleTankUnit(this),
       new SolarAuxiliaBattleTankUnit(this)
     )
   }
@@ -136,16 +131,6 @@ export class SolarAuxiliaOrbitalSupport extends SolarAuxiliaDetachment {
     )
     this.setConstraints(
       new Unique()
-    )
-  }
-}
-
-export class SolarAuxiliaAssaultGunPlatoon extends SolarAuxiliaDetachment {
-  constructor (list) {
-    super(list)
-
-    this.setMandatoryUnits(
-      new SolarAuxiliaMedusa(this)
     )
   }
 }
@@ -201,8 +186,6 @@ export class SolarAuxiliaCloseSupportSquadron extends SolarAuxiliaDetachment {
     this.setMandatoryUnits(
       new SolarAuxiliaCloseSupportTankUnitWithExecutioner(this),
       new SolarAuxiliaCloseSupportTankUnit(this),
-      new SolarAuxiliaCloseSupportTankUnit(this),
-      new SolarAuxiliaCloseSupportTankUnit(this),
       new SolarAuxiliaCloseSupportTankUnit(this)
     )
   }
@@ -254,7 +237,6 @@ withType(SolarAuxiliaVeletarisStormCohort)
 withType(SolarAuxiliaInfantryTercio)
 withType(SolarAuxiliaStrikeCompany)
 withType(SolarAuxiliaOrbitalSupport)
-withType(SolarAuxiliaAssaultGunPlatoon)
 withType(SolarAuxiliaArtilleryTankBattery)
 withType(SolarAuxiliaMalcadorSquadron)
 withType(SolarAuxiliaSuperHeavyTank)
