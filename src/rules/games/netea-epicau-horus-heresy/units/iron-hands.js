@@ -33,7 +33,6 @@ import {
 } from './space-marine-legion'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../with-type'
-import { LegionTerminatorDetachment } from '../detachments/space-marine-legion';
 
 export class IronHandsPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {

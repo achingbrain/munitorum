@@ -23,7 +23,6 @@ import {
 } from '../special-rules'
 import {
   LegionTerminatorSquad,
-  LegionUnit,
   LegionPrimarchUnit
 } from './space-marine-legion'
 import withType from '../with-type'
