@@ -87,17 +87,18 @@ export class WorldEatersRampagerSquad extends LegionUnit {
   }
 }
 
-export class WorldEatersRedButcherSquad extends LegionUnit {
+export class WorldEatersRedButcherSquad extends LegionTerminatorSquad {
   constructor (detachment) {
-    super(detachment, 85, 4, 6)
+    super(detachment)
 
-    this.transportType = 'terminator'
-    this.rules = [
+    this.cost = 85
+    this.min = 4
+    this.max = 6
+    this.quantity = 4
+    this.rules.push(
       new Fearless(),
-      new Beserk(),
-      new ReinforcedArmour(),
-      new ThickRearArmour()
-    ]
+      new Beserk()
+    )
     this.stats = {
       type: 'INF',
       speed: 15,

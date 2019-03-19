@@ -29,14 +29,31 @@ import {
   Walker,
   Infiltrator,
   DamageCapacity,
-  CriticalHit
+  CriticalHit,
+  Teleport
 } from '../special-rules'
+import {
+  LegionTeleport
+} from './space-marine-legion'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import TransportUnit from './transport-unit'
 import Unit from './unit'
 import withType from '../with-type'
 
-class LegioCustodesSentinelGuard extends Unit {
+class LegioCustodesUnit extends Unit {
+  getRules () {
+    const rules = super.getRules()
+    const teleport = this.detachment.units.find(item => item instanceof LegionTeleport)
+
+    if (teleport && (this.stats.type === 'INF' || this.stats.type === 'CH')) {
+      return rules.concat(new Teleport())
+    }
+
+    return rules
+  }
+}
+
+class LegioCustodesSentinelGuard extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 350, 6)
 
@@ -57,7 +74,7 @@ class LegioCustodesSentinelGuard extends Unit {
   }
 }
 
-class LegioCustodesCustodianGuard extends Unit {
+class LegioCustodesCustodianGuard extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 350, 6)
 
@@ -88,7 +105,7 @@ export class LegioCustodesHykanatoiUnit extends MultipleChoiceUnit {
   }
 }
 
-class LegioCustodesVenatariSquad extends Unit {
+class LegioCustodesVenatariSquad extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 350, 6)
 
@@ -109,7 +126,7 @@ class LegioCustodesVenatariSquad extends Unit {
   }
 }
 
-export class LegioCustodesCaptainGeneral extends Unit {
+export class LegioCustodesCaptainGeneral extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 100, 1)
 
@@ -131,7 +148,7 @@ export class LegioCustodesCaptainGeneral extends Unit {
   }
 }
 
-export class LegioCustodesTribune extends Unit {
+export class LegioCustodesTribune extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -180,7 +197,7 @@ export class LegioCustodesCoronusGravCarrier extends TransportUnit {
   }
 }
 
-export class LegioCustodesAgamatus extends Unit {
+export class LegioCustodesAgamatus extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 300, 6)
 
@@ -202,7 +219,7 @@ export class LegioCustodesAgamatus extends Unit {
   }
 }
 
-export class LegioCustodesAquilionTerminator extends Unit {
+export class LegioCustodesAquilionTerminator extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 375, 4)
 
@@ -226,7 +243,7 @@ export class LegioCustodesAquilionTerminator extends Unit {
   }
 }
 
-export class LegioCustodesEphoroiCustodes extends Unit {
+export class LegioCustodesEphoroiCustodes extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 375, 4)
 
@@ -251,7 +268,7 @@ export class LegioCustodesEphoroiCustodes extends Unit {
   }
 }
 
-export class LegioCustodesSistersOfSilence extends Unit {
+export class LegioCustodesSistersOfSilence extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 250, 4)
 
@@ -272,7 +289,7 @@ export class LegioCustodesSistersOfSilence extends Unit {
   }
 }
 
-class LegioCustodesContemptorAchillusDreadnought extends Unit {
+class LegioCustodesContemptorAchillusDreadnought extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 87.5, 1)
 
@@ -294,7 +311,7 @@ class LegioCustodesContemptorAchillusDreadnought extends Unit {
   }
 }
 
-class LegioCustodesContemptorGalatusDreadnought extends Unit {
+class LegioCustodesContemptorGalatusDreadnought extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 87.5, 1)
 
@@ -320,7 +337,7 @@ class LegioCustodesContemptorGalatusDreadnought extends Unit {
   }
 }
 
-class LegioCustodesTelemonHeavyDreadnought extends Unit {
+class LegioCustodesTelemonHeavyDreadnought extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 87.5, 1)
 
@@ -360,7 +377,7 @@ export class LegioCustodesDreadnoughtUnit extends MultipleChoiceUnit {
   }
 }
 
-export class LegioCustodesPallasGravAttackVehicle extends Unit {
+export class LegioCustodesPallasGravAttackVehicle extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 250, 3)
 
@@ -381,7 +398,7 @@ export class LegioCustodesPallasGravAttackVehicle extends Unit {
   }
 }
 
-export class LegioCustodesCaladiusGravTank extends Unit {
+export class LegioCustodesCaladiusGravTank extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 325, 3)
 
@@ -403,7 +420,7 @@ export class LegioCustodesCaladiusGravTank extends Unit {
   }
 }
 
-export class LegioCustodesOrionAssaultDropship extends Unit {
+export class LegioCustodesOrionAssaultDropship extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 300, 1, 2)
 

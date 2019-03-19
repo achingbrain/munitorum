@@ -22,6 +22,7 @@ import {
 } from '../special-rules'
 import {
   LegionTacticalSquad,
+  LegionTerminatorSquad,
   LegionUnit,
   LegionPrimarchUnit
 } from './space-marine-legion'
@@ -29,7 +30,7 @@ import withType from '../with-type'
 
 export class AlphaLegionPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
-    super(detachment, 450, 1)
+    super(detachment, 450)
 
     this.transportType = 'tactical'
     this.transportUnits = 2
@@ -67,16 +68,17 @@ export class AlphaLegionBodyguardSquad extends LegionTacticalSquad {
   }
 }
 
-export class AlphaLegionLernaeanTerminatorSquad extends LegionUnit {
+export class AlphaLegionLernaeanTerminatorSquad extends LegionTerminatorSquad {
   constructor (detachment) {
-    super(detachment, 340, 4)
+    super(detachment)
 
-    this.transportType = 'terminator'
-    this.rules = [
-      new ReinforcedArmour(),
-      new ThickRearArmour(),
+    this.cost = 340
+    this.min = 4
+    this.max = undefined
+    this.quantity = 4
+    this.rules.push(
       new Scout()
-    ]
+    )
     this.stats = {
       type: 'INF',
       speed: 15,

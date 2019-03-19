@@ -21,7 +21,8 @@ import {
 } from '../special-rules'
 import {
   LegionUnit,
-  LegionPrimarchUnit
+  LegionPrimarchUnit,
+  LegionTerminatorSquad
 } from './space-marine-legion'
 import withType from '../with-type'
 
@@ -100,16 +101,15 @@ export class SpaceWolvesDeathswornSquad extends LegionUnit {
   }
 }
 
-export class SpaceWolvesVaragyrWolfGuardSquad extends LegionUnit {
+export class SpaceWolvesVaragyrWolfGuardSquad extends LegionTerminatorSquad {
   constructor (detachment) {
     super(detachment, 340, 4)
 
-    this.transportType = 'terminator'
-    this.rules = [
-      new Ferocity(),
-      new ReinforcedArmour(),
-      new ThickRearArmour()
-    ]
+    this.cost = 340
+    this.min = 4
+    this.max = undefined
+    this.quantity = 4
+    this.rules.push(new Ferocity())
     this.stats = {
       type: 'INF',
       speed: 15,

@@ -8,10 +8,6 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 
 #### Space Marine Legions
 
-- Legion Tactical Detachments have no Drop Assault upgrade but can take Assault Claws
-- Kharybdis Assault Claws have Tactical, Assault, Dreadnought & Rapier transport capacities but Tactical/Assault detachments do not have the 'Assault Claw' upgrade, neither do Assault Support, the various Dreadnought Talons or Rapier Batteries - e.g. should everything with the 'Drop Assault' upgrade also have the 'Assault Claw' upgrade?
-- Legion Terminator Detachments can take the Teleport Upgrade but also include Tanks and Dreadnoughts, do these get the Teleport special rule too?
-- Should taking the Teleport upgrade require Spacecraft in the same way as taking Drop Pods/Dreadclaws?
 - Night Lords Night Raptor detachments are similar to assault marines but have no Drop Assault option?
 - Magnus the Red, Vulkan, Ferrus Manus and Leman Russ take legion-specific Terminator bodyguard, all other Primarchs use generic legion types - is this intentional?
 - Stats are given for Damocles Command Rhino but no detachment can take one as an upgrade

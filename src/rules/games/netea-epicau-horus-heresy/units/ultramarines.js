@@ -23,7 +23,8 @@ import {
 import {
   LegionTacticalSquad,
   LegionUnit,
-  LegionPrimarchUnit
+  LegionPrimarchUnit,
+  LegionTerminatorSquad
 } from '../units/space-marine-legion'
 import withType from '../with-type'
 
@@ -69,15 +70,14 @@ export class UltramarinesBodyguardSquad extends LegionTacticalSquad {
   }
 }
 
-export class UltramarinesFulmentarusTerminatorSquad extends LegionUnit {
+export class UltramarinesFulmentarusTerminatorSquad extends LegionTerminatorSquad {
   constructor (detachment) {
-    super(detachment, 85, 4, 6)
+    super(detachment)
 
-    this.transportType = 'terminator'
-    this.rules = [
-      new ReinforcedArmour(),
-      new ThickRearArmour()
-    ]
+    this.cost = 85
+    this.min = 4
+    this.max = 6
+    this.quantity = 4
     this.stats = {
       type: 'INF',
       speed: 15,

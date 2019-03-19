@@ -10,7 +10,8 @@ import {
   LegionLordCommander,
   LegionDropPod,
   LegionDreadclaw,
-  LegionPrimarchUnit
+  LegionPrimarchUnit,
+  LegionTeleport
 } from './units/space-marine-legion'
 import {
   ImperialMilitiaDisciplineMaster,
@@ -748,5 +749,36 @@ export class ForceCommanderShouldHaveFirstDisciplineMaster extends Rule {
     }
 
     return false
+  }
+}
+
+export class AllUnitsMustHaveTeleportAbility extends Rule {
+  init () {
+    this.errors = false
+  }
+
+  walkDetachment (detachment) {
+    let hasTeleport = false
+    let hasNonInfantryOrCharacters = false
+
+    detachment.units.forEach(unit => {
+      if (unit instanceof LegionTeleport) {
+        hasTeleport = true
+      } else {
+        hasNonInfantryOrCharacters = hasNonInfantryOrCharacters || (unit.getStats().type !== 'INF' && unit.getStats().type !== 'CH')
+      }
+    })
+
+    if (hasTeleport && hasNonInfantryOrCharacters) {
+      detachment.addError(
+        'only-inf-and-ch-units-can-teleport'
+      )
+
+      this.errors = true
+    }
+  }
+
+  collect (list, t) {
+    return this.errors
   }
 }

@@ -64,7 +64,7 @@ export class LegionUnit extends Unit {
     const rules = super.getRules()
     const teleport = this.detachment.units.find(item => item instanceof LegionTeleport)
 
-    if (teleport) {
+    if (teleport && (this.stats.type === 'INF' || this.stats.type === 'CH')) {
       return rules.concat(new Teleport())
     }
 
@@ -72,7 +72,13 @@ export class LegionUnit extends Unit {
   }
 }
 
-export class LegionPrimarchUnit extends LegionUnit {
+export class LegionCharacterUnit extends LegionUnit {
+  constructor (detachment, cost) {
+    super(detachment, cost, 1)
+  }
+}
+
+export class LegionPrimarchUnit extends LegionCharacterUnit {
   constructor (detachment, cost) {
     super(detachment, cost, 1)
   }
@@ -298,7 +304,7 @@ export class LegionCerberus extends LegionUnit {
   }
 }
 
-export class LegionChampion extends LegionUnit {
+export class LegionChampion extends LegionCharacterUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -319,7 +325,7 @@ export class LegionChampion extends LegionUnit {
   }
 }
 
-export class LegionChaplain extends LegionUnit {
+export class LegionChaplain extends LegionCharacterUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -1066,7 +1072,7 @@ export class LegionLeviathanSupportDreadnought extends LegionLeviathanDreadnough
   }
 }
 
-export class LegionLibrarian extends LegionUnit {
+export class LegionLibrarian extends LegionCharacterUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -1088,7 +1094,7 @@ export class LegionLibrarian extends LegionUnit {
   }
 }
 
-export class LegionLieutenantCommander extends LegionUnit {
+export class LegionLieutenantCommander extends LegionCharacterUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -1109,7 +1115,7 @@ export class LegionLieutenantCommander extends LegionUnit {
   }
 }
 
-export class LegionLordCommander extends LegionUnit {
+export class LegionLordCommander extends LegionCharacterUnit {
   constructor (detachment) {
     super(detachment, 100, 1)
 

@@ -59,7 +59,7 @@ export class AlphaLegionLernaeanTerminatorDetachment extends SpaceMarineLegionDe
     super(list)
 
     this.setMandatoryUnits(
-      new AlphaLegionLernaeanTerminatorSquad()
+      new AlphaLegionLernaeanTerminatorSquad(this)
     )
     this.setUpgrades(
       new TransportOption(
@@ -81,7 +81,7 @@ export class AlphaLegionHeadHunterKillTeamDetachment extends SpaceMarineLegionDe
     super(list)
 
     this.setMandatoryUnits(
-      new AlphaLegionHeadHunterKillTeamSquad()
+      new AlphaLegionHeadHunterKillTeamSquad(this)
     )
     this.setUpgrades(
       new TransportOption(

@@ -63,7 +63,8 @@ export class IronWarriorsTyrantSiegeTerminatorDetachment extends SpaceMarineLegi
       new TransportOption(
         new DropAssault(),
         new AssaultRam(),
-        new HeavyTransport()
+        new HeavyTransport(),
+        new Teleport()
       ),
       new CommanderOption(
         new Praetor(),

@@ -28,14 +28,16 @@ import {
   LegionPredatorExecutioner,
   LegionWhirlwindScorpius,
   LegionUnit,
-  LegionPrimarchUnit
+  LegionPrimarchUnit,
+  LegionTerminatorSquad
 } from './space-marine-legion'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../with-type'
+import { LegionTerminatorDetachment } from '../detachments/space-marine-legion';
 
 export class IronHandsPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
-    super(detachment, 450, 1)
+    super(detachment, 450)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -86,15 +88,14 @@ export class IronHandsMedusanImmortalsSquad extends LegionUnit {
   }
 }
 
-export class IronHandsGorgonTerminatorSquad extends LegionUnit {
+export class IronHandsGorgonTerminatorSquad extends LegionTerminatorSquad {
   constructor (detachment) {
-    super(detachment, 85, 4, 6)
+    super(detachment)
 
-    this.transportType = 'terminator'
-    this.rules = [
-      new ReinforcedArmour(),
-      new ThickRearArmour()
-    ]
+    this.cost = 85
+    this.min = 4
+    this.max = 6
+    this.quantity = 4
     this.stats = {
       type: 'INF',
       speed: 15,

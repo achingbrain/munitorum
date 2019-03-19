@@ -30,7 +30,7 @@ import withType from '../with-type'
 
 export class SonsOfHorusPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
-    super(detachment, 450, 1)
+    super(detachment, 450)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -92,15 +92,14 @@ export class SonsOfHorusReaverAttackSquad extends LegionUnit {
   }
 }
 
-export class SonsOfHorusJustaerinTerminatorSquad extends LegionUnit {
+export class SonsOfHorusJustaerinTerminatorSquad extends LegionTerminatorSquad {
   constructor (detachment) {
-    super(detachment, 350, 4)
+    super(detachment)
 
-    this.transportType = 'terminator'
-    this.rules = [
-      new ReinforcedArmour(),
-      new ThickRearArmour()
-    ]
+    this.cost = 350
+    this.min = 4
+    this.max = undefined
+    this.quantity = 4
     this.stats = {
       type: 'INF',
       speed: 15,

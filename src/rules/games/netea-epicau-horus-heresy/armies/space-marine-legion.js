@@ -39,7 +39,8 @@ import {
   LordsOfWarLimit,
   SupportDetachmentsLimit,
   PrimarchsOrLordCommanders,
-  RequireSpacecraftForDropPods
+  RequireSpacecraftForDropPods,
+  AllUnitsMustHaveTeleportAbility
 } from '../validations'
 
 export default class SpaceMarineLegion extends Army {
@@ -89,7 +90,8 @@ export default class SpaceMarineLegion extends Army {
       new LordsOfWarLimit(1 / 3),
       new SupportDetachmentsLimit(3),
       new PrimarchsOrLordCommanders(),
-      new RequireSpacecraftForDropPods()
+      new RequireSpacecraftForDropPods(),
+      new AllUnitsMustHaveTeleportAbility()
     )
   }
 

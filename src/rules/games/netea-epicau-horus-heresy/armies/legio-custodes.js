@@ -12,6 +12,9 @@ import {
   LegioCustodesCaladiusGravTankSquadron,
   LegioCustodesOrionAssaultDropshipSquadron
 } from '../detachments/legio-custodes'
+import {
+  AllUnitsMustHaveTeleportAbility
+} from '../validations'
 import withType from '../with-type'
 
 export default class LegioCustodes extends Army {
@@ -33,6 +36,9 @@ export default class LegioCustodes extends Army {
     this.lordsOfWar = [
       LegioCustodesOrionAssaultDropshipSquadron
     ]
+    this.validations.push(
+      new AllUnitsMustHaveTeleportAbility()
+    )
 
     this.colour = '#bd8301'
   }

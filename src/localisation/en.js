@@ -42,7 +42,7 @@ export default {
     'formations': 'Formations',
 
     'cannot-take-primarch-and-lord-commander': 'You cannot take a Primarch and a Lord Commander in the same list',
-    'spacecraft-required': 'Spacecraft are required when units that cannot self-planetfall',
+    'spacecraft-required': 'Spacecraft are required when units that cannot self-planetfall are present',
     'too-many-lords-of-war-or-allies': 'Too many points have been spent on Lords of War and/or Allies',
     'too-many-support-detachments': 'You have too many support detachments',
     'all-detachment-units-must-select-provenance': 'All eligible units in a detachment must select the same provenance',
@@ -61,6 +61,7 @@ export default {
     'there-can-be-only-one': 'Only one {{ type }} is allowed',
     'limited-quantity-per-points': 'Only {{ count }} {{ code }} detachment is allowed per full {{ limit }} points',
     'no-allied-supreme-commanders': 'Supreme Commanders may only come from the primary army list',
+    'only-inf-and-ch-units-can-teleport': 'Only detachments made up of infantry and characters can have the teleport ability',
 
     'alpha-legion': 'Alpha Legion',
     'blood-angels': 'Blood Angels',

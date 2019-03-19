@@ -19,7 +19,8 @@ import {
 } from '../special-rules'
 import {
   LegionUnit,
-  LegionPrimarchUnit
+  LegionPrimarchUnit,
+  LegionTerminatorSquad
 } from './space-marine-legion'
 import withType from '../with-type'
 
@@ -54,16 +55,15 @@ export class ThousandSonsPrimarch extends LegionPrimarchUnit {
   }
 }
 
-export class ThousandSonsSekhmetTerminatorSquad extends LegionUnit {
+export class ThousandSonsSekhmetTerminatorSquad extends LegionTerminatorSquad {
   constructor (detachment) {
-    super(detachment, 340, 4)
+    super(detachment)
 
-    this.transportType = 'terminator'
-    this.rules = [
-      new ReinforcedArmour(),
-      new ThickRearArmour(),
-      new InvulnerableSave('5+')
-    ]
+    this.cost = 340
+    this.min = 4
+    this.max = undefined
+    this.quantity = 4
+    this.rules.push(new InvulnerableSave('5+'))
     this.stats = {
       type: 'INF',
       speed: 15,

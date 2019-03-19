@@ -81,7 +81,7 @@ export class SonsOfHorusJustaerinTerminatorDetachment extends SpaceMarineLegionD
     super(list)
 
     this.setMandatoryUnits(
-      new SonsOfHorusJustaerinTerminatorSquad()
+      new SonsOfHorusJustaerinTerminatorSquad(this)
     )
     this.setUpgrades(
       new TransportOption(

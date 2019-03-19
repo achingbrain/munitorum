@@ -30,7 +30,7 @@ import withType from '../with-type'
 
 export class DeathGuardPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
-    super(detachment, 450, 1)
+    super(detachment, 450)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -70,15 +70,14 @@ export class DeathGuardBodyguardSquad extends LegionTerminatorSquad {
   }
 }
 
-export class DeathGuardDeathshroudTerminatorSquad extends LegionUnit {
+export class DeathGuardDeathshroudTerminatorSquad extends LegionTerminatorSquad {
   constructor (detachment) {
-    super(detachment, 300, 4)
+    super(detachment)
 
-    this.transportType = 'terminator'
-    this.rules = [
-      new ReinforcedArmour(),
-      new ThickRearArmour()
-    ]
+    this.cost = 300
+    this.min = 4
+    this.max = undefined
+    this.quantity = 4
     this.stats = {
       type: 'INF',
       speed: 15,
@@ -93,15 +92,14 @@ export class DeathGuardDeathshroudTerminatorSquad extends LegionUnit {
   }
 }
 
-export class DeathGuardGraveWardenTerminatorSquad extends LegionUnit {
+export class DeathGuardGraveWardenTerminatorSquad extends LegionTerminatorSquad {
   constructor (detachment) {
-    super(detachment, 85, 4, 6)
+    super(detachment)
 
-    this.transportType = 'terminator'
-    this.rules = [
-      new ReinforcedArmour(),
-      new ThickRearArmour()
-    ]
+    this.cost = 85
+    this.min = 4
+    this.max = 6
+    this.quantity = 4
     this.stats = {
       type: 'INF',
       speed: 15,
