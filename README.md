@@ -10,8 +10,6 @@ Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [faba
 
 - Night Lords Night Raptor detachments are similar to assault marines but have no Drop Assault option?
 - Magnus the Red, Vulkan, Ferrus Manus and Leman Russ take legion-specific Terminator bodyguard, all other Primarchs use generic legion types - is this intentional?
-- Stats are given for Damocles Command Rhino but no detachment can take one as an upgrade
-- Stats are given for Iron Warriors Tormentor but no rules for adding to detachments
 - White Scars Destroyer Detachment is identical to generic Legion Destroyer Detachment
 - No loyalist legions have Custodes in their ally lists
 - White Scar allies table has 'Dark Angel Allies' as the title

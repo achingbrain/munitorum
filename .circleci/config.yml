@@ -2,19 +2,48 @@ version: 2
 jobs:
   build:
     docker:
-        - image: circleci/node:8-browsers
+      - image: circleci/node:8-browsers
     working_directory: ~/repo
     steps:
-        - checkout
-        - run:
-            name: install-dependencies
-            command: npm install
-        - run:
-            name: lint
-            command: npm run lint
-        - run:
-            name: test
-            command: npm run test
-        - run:
-            name: deploy
-            command: npm run deploy
+      - checkout
+      - run:
+          name: install-dependencies
+          command: npm install
+      - run:
+          name: lint
+          command: npm run lint
+      - run:
+          name: test
+          command: npm run test
+  deploy:
+    docker:
+      - image: circleci/node:8-browsers
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: install-dependencies
+          command: npm install
+      - run:
+          name: lint
+          command: npm run lint
+      - run:
+          name: test
+          command: npm run test
+      - deploy:
+          command: npm run deploy
+
+workflows:
+  version: 2
+  master:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only: master
+  pr:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore: master
