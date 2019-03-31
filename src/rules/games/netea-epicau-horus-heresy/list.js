@@ -1,46 +1,20 @@
 'use strict'
 
-import shortid from 'shortid'
 import withType from './with-type'
-import InvalidListEditor from '../../../components/invalid-list-editor'
-import InvalidListViewer from '../../../components/invalid-list-viewer'
+import List, { InvalidList } from '../list'
 
-export default class NetEaEpicAuHorusHeresyList {
+export default class NetEaEpicAuHorusHeresyList extends List {
   constructor (game, name, army) {
-    this.id = shortid.generate()
-    this.name = name
-    this.game = game
-    this.army = army
+    super(game, name, army)
 
     this.lineDetachments = []
     this.supportDetachments = []
     this.lordsOfWar = []
     this.allies = []
-    this.errors = []
-  }
-
-  addError (error) {
-    this.errors = this.errors.concat(error)
-  }
-
-  clearErrors () {
-    this.errors = []
-  }
-
-  getEditor () {
-    return this.army.getEditor()
-  }
-
-  getViewer () {
-    return this.army.getViewer()
-  }
-
-  getTopBar () {
-    return this.army.getTopBar()
   }
 
   getCost () {
-    let cost = 0
+    let cost = super.getCost()
 
     cost += this.lineDetachments.reduce((curr, detachment) => curr + detachment.getCost(), 0)
     cost += this.supportDetachments.reduce((curr, detachment) => curr + detachment.getCost(), 0)
@@ -128,10 +102,8 @@ export default class NetEaEpicAuHorusHeresyList {
 
   toJSON () {
     return {
-      id: this.id,
-      name: this.name,
-      game: this.game.type,
-      army: this.army.type,
+      ...super.toJSON(),
+
       lineDetachments: this.lineDetachments.map(item => item.toJSON()),
       supportDetachments: this.supportDetachments.map(item => item.toJSON()),
       lordsOfWar: this.lordsOfWar.map(item => item.toJSON()),
@@ -140,39 +112,16 @@ export default class NetEaEpicAuHorusHeresyList {
   }
 }
 
-export class InvalidList extends NetEaEpicAuHorusHeresyList {
+export class InvalidNetEaEpicAuHorusHeresyList extends InvalidList {
   constructor (json, error) {
-    super()
+    super(json, error)
 
-    Object.assign(this, json)
-
-    this.json = json
-    this.error = error
-
-    this.id = json.id
-    this.name = json.name
     this.lineDetachments = []
     this.supportDetachments = []
     this.lordsOfWar = []
     this.allies = []
   }
-
-  getEditor () {
-    return InvalidListEditor
-  }
-
-  getViewer () {
-    return InvalidListViewer
-  }
-
-  getCost () {
-    return 0
-  }
-
-  toJSON () {
-    return this.json
-  }
 }
 
 withType(NetEaEpicAuHorusHeresyList)
-withType(InvalidList)
+withType(InvalidNetEaEpicAuHorusHeresyList)

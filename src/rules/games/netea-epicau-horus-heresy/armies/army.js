@@ -1,5 +1,6 @@
 'use strict'
 
+import Army from '../../army'
 import ListEditor from '../../../../components/games/netea/list-editor'
 import ListViewer from '../../../../components/games/netea/list-viewer'
 import TopBar from '../../../../components/games/netea/top-bar'
@@ -9,8 +10,10 @@ import {
   NoAlliedSupremeCommanders
 } from '../validations'
 
-export default class Army {
-  constructor () {
+export default class NetEaEpicAuHorusHeresyArmy extends Army {
+  constructor (game) {
+    super(game)
+
     this.lineDetachments = []
     this.supportDetachments = []
     this.lordsOfWar = []

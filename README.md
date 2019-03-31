@@ -2,6 +2,14 @@
 
 Thanks to [bakadesign.dk](http://bakadesign.dk/warhammer-40-000-icons) and [fabalah](https://fabalah.com) for the faction icons.
 
+## Supported games
+
+* [NetEpic Au](http://epicau.com/mw/index.php/Main_Page)
+
+## Adding new games
+
+Multiple game systems are supported. See [docs/adding-games](./docs/adding-games.md) for how to add yours.
+
 ## Questions
 
 ### NetEA AU

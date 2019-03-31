@@ -1,12 +1,14 @@
 'use strict'
 
+import Army from '../../army'
 import ListEditor from '../../../../components/games/imperious-dominatus/list-editor'
 import ListViewer from '../../../../components/games/imperious-dominatus/list-viewer'
 import TopBar from '../../../../components/games/imperious-dominatus/top-bar'
 
-export default class Army {
+export default class ImperiousDominatusArmy extends Army {
   constructor (game) {
-    this.game = game
+    super(game)
+
     this.formations = []
   }
 

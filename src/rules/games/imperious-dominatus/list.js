@@ -1,39 +1,13 @@
 'use strict'
 
-import shortid from 'shortid'
 import withType from './with-type'
-import InvalidListEditor from '../../../components/invalid-list-editor'
-import InvalidListViewer from '../../../components/invalid-list-viewer'
+import List, { InvalidList } from '../list'
 
-export default class ImperiousDominatusList {
+export default class ImperiousDominatusList extends List {
   constructor (game, name, army) {
-    this.id = shortid.generate()
-    this.name = name
-    this.game = game
-    this.army = army
+    super(game, name, army)
 
     this.detachments = []
-    this.errors = []
-  }
-
-  addError (error) {
-    this.errors = this.errors.concat(error)
-  }
-
-  clearErrors () {
-    this.errors = []
-  }
-
-  getEditor () {
-    return this.army.getEditor()
-  }
-
-  getViewer () {
-    return this.army.getViewer()
-  }
-
-  getTopBar () {
-    return this.army.getTopBar()
   }
 
   getCost () {
@@ -85,45 +59,20 @@ export default class ImperiousDominatusList {
 
   toJSON () {
     return {
-      id: this.id,
-      name: this.name,
-      game: this.game.type,
-      army: this.army.type,
+      ...super.toJSON(),
+
       detachments: this.detachments.map(item => item.toJSON())
     }
   }
 }
 
-export class InvalidList extends ImperiousDominatusList {
+export class InvalidImperiousDominatusList extends InvalidList {
   constructor (json, error) {
-    super()
+    super(json, error)
 
-    Object.assign(this, json)
-
-    this.json = json
-    this.error = error
-
-    this.id = json.id
-    this.name = json.name
     this.detachments = []
-  }
-
-  getEditor () {
-    return InvalidListEditor
-  }
-
-  getViewer () {
-    return InvalidListViewer
-  }
-
-  getCost () {
-    return 0
-  }
-
-  toJSON () {
-    return this.json
   }
 }
 
 withType(ImperiousDominatusList)
-withType(InvalidList)
+withType(InvalidImperiousDominatusList)

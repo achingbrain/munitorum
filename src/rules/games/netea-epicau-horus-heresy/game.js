@@ -3,7 +3,7 @@
 import withType from './with-type'
 import Game from '../game'
 import NetEaEpicAuHorusHeresyList, {
-  InvalidList
+  InvalidNetEaEpicAuHorusHeresyList
 } from './list'
 import Detachment from './detachments/detachment'
 import DarkAngels from './armies/dark-angels'
@@ -105,7 +105,7 @@ export default class NetEaEpicAuHorusHeresy extends Game {
       return list
     } catch (error) {
       console.error(error)
-      return new InvalidList(json, error)
+      return new InvalidNetEaEpicAuHorusHeresyList(json, error)
     }
   }
 

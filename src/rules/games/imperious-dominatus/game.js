@@ -2,7 +2,7 @@
 
 import Game from '../game'
 import ImperiousDominatusList, {
-  InvalidList
+  InvalidImperiousDominatusList
 } from './list'
 import DarkAngels from './armies/dark-angels'
 import Card from './cards/card'
@@ -36,7 +36,7 @@ export default class ImperiousDominatus extends Game {
       return list
     } catch (error) {
       console.error(error)
-      return new InvalidList(json, error)
+      return new InvalidImperiousDominatusList(json, error)
     }
   }
 
