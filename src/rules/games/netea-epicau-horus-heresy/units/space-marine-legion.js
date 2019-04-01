@@ -53,8 +53,7 @@ import {
   RightFireArc
 } from '../weapons'
 import MultipleChoiceUnit from './multiple-choice-unit'
-import TransportUnit from './transport-unit'
-import Unit from './unit'
+import Unit, { TransportUnit } from './unit'
 import ModifierUnit from './modifier-unit'
 import SpacecraftUnit from './spacecraft-unit'
 import withType from '../with-type'

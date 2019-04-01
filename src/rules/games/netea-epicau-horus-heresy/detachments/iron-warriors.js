@@ -14,7 +14,7 @@ import {
 } from '../upgrades'
 import {
   IronWarriorsPrimarch,
-  IronWarriorsBodyguardSquad,
+  IronWarriorsBodyguardUnit,
   IronWarriorsTyrantSiegeTerminatorSquad,
   IronWarriorsIronHavocSquad,
   IronWarriorsArtilleryUnit,
@@ -36,7 +36,7 @@ export class IronWarriorsPrimarchDetachment extends SpaceMarineLegionDetachment 
 
     this.setMandatoryUnits(
       new IronWarriorsPrimarch(this),
-      new IronWarriorsBodyguardSquad(this)
+      new IronWarriorsBodyguardUnit(this)
     )
     this.setUpgrades(
       new TransportOption(

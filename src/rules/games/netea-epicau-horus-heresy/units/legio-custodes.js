@@ -36,8 +36,7 @@ import {
   LegionTeleport
 } from './space-marine-legion'
 import MultipleChoiceUnit from './multiple-choice-unit'
-import TransportUnit from './transport-unit'
-import Unit from './unit'
+import Unit, { TransportUnit } from './unit'
 import withType from '../with-type'
 
 class LegioCustodesUnit extends Unit {

@@ -18,14 +18,17 @@ import {
   SupremeCommander,
   Inspiring,
   InvulnerableSave,
-  JumpPacks
+  JumpPacks,
+  Commander
 } from '../special-rules'
 import {
   LegionTacticalSquad,
   LegionUnit,
   LegionPrimarchUnit,
-  LegionTerminatorSquad
+  LegionTerminatorSquad,
+  LegionRhino
 } from '../units/space-marine-legion'
+import { TransportUnit, MultipleUnit } from './unit'
 import withType from '../with-type'
 
 export class UltramarinesPrimarch extends LegionPrimarchUnit {
@@ -135,8 +138,64 @@ export class UltramarinesInvictarusSuzerainSquad extends LegionUnit {
   }
 }
 
+export class UltramarinesDamoclesRhino extends TransportUnit {
+  constructor (detachment) {
+    super(detachment, 0)
+
+    this.transportTypes = {
+      tactical: 2
+    }
+    this.rules = [
+      new Commander()
+    ]
+    this.stats = {
+      type: 'AV',
+      speed: 30,
+      armour: 5,
+      cc: 6,
+      ff: 6
+    }
+    this.weapons = [
+      new Weapon('combi-bolter', new SmallArms('15cm'))
+    ]
+  }
+
+  getQuantity () {
+    return 1
+  }
+}
+
+export class UltramarinesRhino extends LegionRhino {
+  getQuantity () {
+    const quantity = super.getQuantity()
+    let damocles = Boolean(
+      this.detachment.units.find(unit => unit instanceof UltramarinesDamoclesRhino)
+    )
+
+    if (damocles) {
+      return quantity - 1
+    }
+
+    return quantity
+  }
+}
+
+export class UltramarinesRhinoTransports extends MultipleUnit {
+  constructor () {
+    super()
+
+    this.types = [
+      UltramarinesDamoclesRhino,
+      UltramarinesRhino
+    ]
+  }
+}
+
 withType(UltramarinesPrimarch)
 withType(UltramarinesBodyguardSquad)
 withType(UltramarinesFulmentarusTerminatorSquad)
 withType(UltramarinesLoctarusStormSquad)
 withType(UltramarinesInvictarusSuzerainSquad)
+withType(UltramarinesDamoclesRhino)
+withType(UltramarinesRhino)
+withType(UltramarinesRhinoTransports)

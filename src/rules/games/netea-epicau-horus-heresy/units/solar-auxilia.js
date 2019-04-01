@@ -19,7 +19,8 @@ import {
   Or,
   FixedForwardFireArc,
   RearFireArc,
-  Disrupt
+  Disrupt,
+  SlowFiring
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -36,8 +37,7 @@ import {
   Teleport
 } from '../special-rules'
 import MultipleChoiceUnit from './multiple-choice-unit'
-import TransportUnit from './transport-unit'
-import Unit from './unit'
+import Unit, { TransportUnit } from './unit'
 import SpacecraftUnit from './spacecraft-unit'
 import withType from '../with-type'
 
@@ -493,7 +493,7 @@ export class SolarAuxiliaRapier extends Unit {
     this.weapons = [
       new MultipleChoiceWeapon(
         new Weapon('laser-destroyer', new RangedWeapon('45cm', new AntiPersonnel('6+'), new AntiTank('4+'))),
-        new Weapon('quad-mortar', new RangedWeapon('45cm', new AntiPersonnel('4+'), new AntiTank('6+'), new IndirectFire(), new Disrupt())),
+        new Weapon('quad-mortar', new RangedWeapon('45cm', new AntiPersonnel('4+'), new AntiTank('6+'), new IndirectFire())),
         new Weapon('quad-heavy-bolters', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'))))
       )
     ]
@@ -694,8 +694,8 @@ class SolarAuxiliaBaneblade extends Unit {
       new Weapon('autocannon', new RangedWeapon('45cm', new AntiPersonnel('5+'), new AntiTank('6+'))),
       new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiTank('5+'))),
       new Weapon('demolisher-cannon',
-        new RangedWeapon('30cm', new AntiPersonnel('3+'), new AntiTank('4+'), new IgnoreCover()),
-        new SmallArms('15cm', new IgnoreCover())
+        new RangedWeapon('30cm', new AntiPersonnel('3+'), new AntiTank('4+'), new IgnoreCover(), new FixedForwardFireArc()),
+        new SmallArms('15cm', new IgnoreCover(), new FixedForwardFireArc())
       )
     ]
   }
@@ -741,7 +741,7 @@ class SolarAuxiliaStormblade extends Unit {
       ff: 6
     }
     this.weapons = [
-      new Weapon('plasma-blastgun', new RangedWeapon('45cm', new MultipleShot('2x', new MacroWeapon('2+'), new FixedForwardFireArc()))),
+      new Weapon('plasma-blastgun', new RangedWeapon('45cm', new MultipleShot('2x', new MacroWeapon('2+'), new SlowFiring(), new FixedForwardFireArc()))),
       new Weapon('2-twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
       new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiTank('4+'))),
       new Weapon('heavy-bolter', new RangedWeapon('30cm', new AntiPersonnel('5+'), new FixedForwardFireArc()))

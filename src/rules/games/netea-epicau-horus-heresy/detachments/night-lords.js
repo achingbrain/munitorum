@@ -91,6 +91,12 @@ export class NightLordsNightRaptorDetachment extends SpaceMarineLegionDetachment
     this.setMandatoryUnits(
       new NightLordsNightRaptorSquad(this)
     )
+    this.setUpgrades(
+      new TransportOption(
+        new DropAssault(),
+        new AssaultClaw()
+      )
+    )
     this.setConstraints(
       new LimitedPerPoints(1, 1000)
     )

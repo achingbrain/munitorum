@@ -43,8 +43,7 @@ import {
   ImplacableAdvance
 } from '../special-rules'
 import MultipleChoiceUnit from './multiple-choice-unit'
-import TransportUnit from './transport-unit'
-import Unit from './unit'
+import Unit, { TransportUnit } from './unit'
 import withType from '../with-type'
 
 export class MechanicumTaghmataTechThrall extends Unit {
@@ -544,11 +543,11 @@ export class MechanicumTaghmataFalchion extends Unit {
       type: 'WE',
       speed: 20,
       armour: 4,
-      cc: 5,
-      ff: 5
+      cc: 6,
+      ff: 6
     }
     this.weapons = [
-      new Weapon('twin-linked-volcano-cannon', new RangedWeapon('90cm', new MacroWeapon('3+'), new TitanKiller('2D3'), new FixedForwardFireArc())),
+      new Weapon('twin-linked-volcano-cannon', new RangedWeapon('90cm', new MacroWeapon('3+'), new TitanKiller('D3+1'), new FixedForwardFireArc())),
       new Weapon('sponson-quad-lascannons', new RangedWeapon('45cm', new MultipleShot('2x', new AntiTank('4+'))))
     ]
   }
@@ -575,7 +574,7 @@ export class MechanicumTaghmataOrdinatusMajoris extends Unit {
       new MultipleChoiceWeapon(
         new Weapon('sonic-disruptor', new RangedWeapon('100cm', new BarragePoints(10), new IgnoreCover(), new Disrupt(), new FixedForwardFireArc())),
         new Weapon('6-golgothan-missiles', new RangedWeapon('Unlimited', new BarragePoints(2), new MacroWeapon(), new IndirectFire(), new SingleShot(), new FixedForwardFireArc())),
-        new Weapon('nova-cannon', new RangedWeapon('100cm', new MultipleShot('3x', new MacroWeapon('3+'), new TitanKiller('D3'), new Singularity())))
+        new Weapon('nova-cannon', new RangedWeapon('100cm', new MultipleShot('3x', new MacroWeapon('3+'), new TitanKiller('D3'), new Singularity(), new FixedForwardFireArc())))
       ),
       new Weapon('3-volkite-culverins', new RangedWeapon('45cm', new AntiPersonnel('4+'), new AntiTank('6+'), new Disrupt())),
       new Weapon('2-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+')))

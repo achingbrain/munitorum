@@ -15,7 +15,8 @@ import {
   Lance,
   Disrupt,
   FirstStrike,
-  IndirectFire
+  IndirectFire,
+  Or
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -93,7 +94,7 @@ class KnightHouseholdQuestorisKnightErrant extends Unit {
       speed: 25,
       armour: 5,
       cc: 4,
-      ff: 5
+      ff: 4
     }
     this.weapons = [
       new Weapon('thermal-cannon',
@@ -217,7 +218,7 @@ class KnightHouseholdQuestorisKnightMagera extends Unit {
       new Weapon('lightning-cannon', new RangedWeapon('45cm', new MacroWeapon('5+'))),
       new Weapon('twin-linked-rad-cleanser', new RangedWeapon('15cm', new AntiPersonnel('3+'), new IgnoreCover())),
       new Weapon('hekaton-siege-claw',
-        new AssaultWeapon(new ExtraAttacks('+1'), new MacroWeapon())
+        new AssaultWeapon(new ExtraAttacks('+1'), new Or(), new MacroWeapon(), new ExtraAttacks('+2'))
       )
     ]
   }
@@ -259,7 +260,7 @@ class KnightHouseholdQuestorisKnightStyrix extends Unit {
       new Weapon('volkite-chieorovile', new RangedWeapon('45cm', new MultipleShot('2x', new AntiPersonnel('3+'), new AntiTank('6+')), new Disrupt())),
       new Weapon('twin-linked-rad-cleanser', new RangedWeapon('15cm', new AntiPersonnel('3+'), new IgnoreCover())),
       new Weapon('hekaton-siege-claw',
-        new AssaultWeapon(new ExtraAttacks('+1'), new MacroWeapon())
+        new AssaultWeapon(new ExtraAttacks('+1'), new Or(), new MacroWeapon(), new ExtraAttacks('+2'))
       )
     ]
   }

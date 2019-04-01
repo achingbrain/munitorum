@@ -1,7 +1,7 @@
 'use strict'
 
 import shortid from 'shortid'
-import Unit, { InvalidUnit } from '../units/unit'
+import Unit, { MultipleUnit, InvalidUnit } from '../units/unit'
 import {
   find
 } from '../../../../utils/with-type'
@@ -52,7 +52,11 @@ export default class Detachment {
   }
 
   addUnit (UnitType) {
-    const unit = new UnitType(this)
+    let unit = new UnitType(this)
+
+    if (unit instanceof MultipleUnit) {
+      unit = unit.getUnits(this)
+    }
 
     this.units = this.units.concat(unit)
   }

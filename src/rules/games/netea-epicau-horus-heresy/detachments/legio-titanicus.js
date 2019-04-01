@@ -1,15 +1,16 @@
 import {
-  Legate,
-  VeteranPrinceps,
   SacredIcon,
-  AirDefence
+  AirDefence,
+  MultipleChoiceOption
 } from '../upgrades'
 import {
   LegioTitanicusWarhoundScountTitan,
   LegioTitanicusWarhoundScountTitanPackUnit,
   LegioTitanicusReaverBattleTitan,
   LegioTitanicusWarlordBattleTitan,
-  LegioTitanicusEmperorClassTitanUnit
+  LegioTitanicusEmperorClassTitanUnit,
+  LegioTitanicusLegate,
+  LegioTitanicusVeteranPrinceps
 } from '../units/legio-titanicus'
 import {
   LimitedPerPoints
@@ -25,7 +26,9 @@ export class LegioTitanicusWarhoundTitanDetachment extends LegioTitanicusDetachm
       new LegioTitanicusWarhoundScountTitan(this)
     )
     this.setUpgrades(
-      new VeteranPrinceps()
+      new MultipleChoiceOption(
+        LegioTitanicusVeteranPrinceps
+      )
     )
     this.setConstraints(
       new LimitedPerPoints(1, 4000)
@@ -42,7 +45,9 @@ export class LegioTitanicusWarhoundTitanPackDetachment extends LegioTitanicusDet
       new LegioTitanicusWarhoundScountTitanPackUnit(this)
     )
     this.setUpgrades(
-      new VeteranPrinceps()
+      new MultipleChoiceOption(
+        LegioTitanicusVeteranPrinceps
+      )
     )
   }
 }
@@ -55,8 +60,10 @@ export class LegioTitanicusReaverTitanDetachment extends LegioTitanicusDetachmen
       new LegioTitanicusReaverBattleTitan(this)
     )
     this.setUpgrades(
-      new Legate(),
-      new VeteranPrinceps(),
+      new MultipleChoiceOption(
+        LegioTitanicusLegate,
+        LegioTitanicusVeteranPrinceps
+      ),
       new AirDefence(),
       new SacredIcon()
     )
@@ -71,8 +78,10 @@ export class LegioTitanicusWarlordTitanDetachment extends LegioTitanicusDetachme
       new LegioTitanicusWarlordBattleTitan(this)
     )
     this.setUpgrades(
-      new Legate(),
-      new VeteranPrinceps(),
+      new MultipleChoiceOption(
+        LegioTitanicusLegate,
+        LegioTitanicusVeteranPrinceps
+      ),
       new AirDefence(),
       new SacredIcon()
     )
@@ -87,8 +96,10 @@ export class LegioTitanicusEmperorClassTitanDetachment extends LegioTitanicusDet
       new LegioTitanicusEmperorClassTitanUnit(this)
     )
     this.setUpgrades(
-      new Legate(),
-      new VeteranPrinceps()
+      new MultipleChoiceOption(
+        LegioTitanicusLegate,
+        LegioTitanicusVeteranPrinceps
+      )
     )
   }
 }

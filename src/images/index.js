@@ -286,6 +286,7 @@ import thousandSonsKhenetai from './thousand-sons-khenetai.svg'
 import thousandSonsPrimarch from './thousand-sons-primarch.svg'
 import thousandSonsSekhmetTerminator from './thousand-sons-sekhmet-terminator.svg'
 import thousandSons from './thousand-sons.svg'
+import ultramarinesDamocles from './ultramarines-damocles.svg'
 import ultramarinesInvictarusSuzerain from './ultramarines-invictarus-suzerain.svg'
 import ultramarinesPrimarch from './ultramarines-primarch.svg'
 import ultramarines from './ultramarines.svg'
@@ -647,11 +648,14 @@ const IMAGES = {
   'thousand-sons-primarch': thousandSonsPrimarch,
   'thousand-sons-sekhmet-terminator': thousandSonsSekhmetTerminator,
   'thousand-sons': thousandSons,
+  'ultramarines-damocles': ultramarinesDamocles,
   'ultramarines-destroyer': darkAngelsDestroyer,
   'ultramarines-fulmentarus-terminator': ironWarriorsTyrantSiegeTerminator,
   'ultramarines-invictarus-suzerain': ultramarinesInvictarusSuzerain,
   'ultramarines-loctarus': legionAssault,
   'ultramarines-primarch': ultramarinesPrimarch,
+  'ultramarines-rhino': ultramarinesDamocles,
+  'ultramarines-tactical': legionTactical,
   'ultramarines': ultramarines,
   'white-scars-attack-bike': whiteScarsAttackBike,
   'white-scars-bike': whiteScarsAttackBike,

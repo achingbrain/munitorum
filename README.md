@@ -16,21 +16,14 @@ Multiple game systems are supported. See [docs/adding-games](./docs/adding-games
 
 #### Space Marine Legions
 
-- Night Lords Night Raptor detachments are similar to assault marines but have no Drop Assault option?
 - Magnus the Red, Vulkan, Ferrus Manus and Leman Russ take legion-specific Terminator bodyguard, all other Primarchs use generic legion types - is this intentional?
-- White Scars Destroyer Detachment is identical to generic Legion Destroyer Detachment
-- No loyalist legions have Custodes in their ally lists
-- White Scar allies table has 'Dark Angel Allies' as the title
-- Legion Dreadnought Talons have the 'Centurion' upgrade but Leviathan & Contemptor Talons do not
-- Word Bearer Contemptor Talons have the 'Centurion' upgrade but the Legion version does not
 - How does adding a Centurion to a Dreadnought Talon work? Replace one Dreadnought stand with something like the 40k Blood Angels Librarian Dreadnought or an additional stand of power armoured marines, one of which is a character?
+- Iron Warriors Iron Circle stats are missing
 
 #### Titan Legions
 
 - How many upgrades can Legio Titanicus units take?
 - Should Laser Burner Battle Titan Weapon be AND instead of OR like other weapons with both assault and small arms profiles?
-- Can titans have a Legate and a Veteran Princeps or just one of them?
-- If just one, what about the Warhound Scout Pack detachment (which comes with 2x titans)?
 - The 'Carapace Landing Pad' titan weapon option is not marked as 'Carapace mount only'
 - Warmonger has 'Doomstrike Missles', are these the same as 'Deathstrike Missiles'?
 
@@ -59,35 +52,28 @@ Multiple game systems are supported. See [docs/adding-games](./docs/adding-games
 
 #### Mechanicum Taghmata
 
-- Mechanicum Support Detachments can take up to 4 upgrades, what about Line Detachments?
-- Mechanicum Taghmata Krios, Karacnos and Triaros have the Walker special rule but are tanks - is this intentional?
-- Mechanicum Ordinatus Minor Volkite Culverins have both AP4+ and AP6+ - which is correct?
-- Mechanicum Avenger Strike Fighters and Primaris Lighting have no stats - same as Imperial Militia?
-- Mechanicum Falchion has better CC and FF than Legion Falchion and better Volcano Cannon - TK(2D3) vs TK(D3+1)
-- Mechanicum Ordinatus Majoris Nova Cannon has no Fixed Forward Fire Arc rule?
+- Mechanicum Avenger Strike Fighters and Primaris Lighting have no entry in the Mechanicum Taghmata Reference List - are they same as Imperial Militia/Solar Auxilia?
 
 #### Knight Households
 
 - Questoris Knight-Errant thermal cannon is MW4+ at 30cm but MW5+ at 15cm? Should it be the other way round?
-- Cerastus Knight-Acheron flame cannon has no small arms range
+- Cerastus Knight-Acheron flame cannon has no small arms rule
 - Questoris Knight-Magaera/Styrix Twin Linked Rad Cleanser has 15cm range but is not Small Arms?
 - Acastas Knight Porpyhrion and Questoris Knight-Warden both have Ironstorm Missile Pods but stats are different
 - Knight Households have no limit on Lords of War points
 - Questoris is sometimes spelt Questorius
+- Can the various (base contact) weapons be used in assaults? They are all missing the Assault Weapons firepower entry
 
 #### Solar Auxilia
 
 - Solar Auxilia Rapier Quad Mortar is AP(4+) but Legion Rapier Quad Mortar is AP(5+)
 - Solar Auxilia Dauntless Light Cruiser does not have the Pin Point Attack special rule like the Imperial Militia version
-- Solar Auxilia Baneblade Demolisher Cannon does not have Disrupt of Fixed FixedForwardFireArc rules like the Imperial Militia version
+- Solar Auxilia Baneblade Demolisher Cannon has different profile to the Imperial Militia version
 - Solar Auxilia Super Heavy Tanks are 200 points, Imperial Militia versions are 300 points
-- Solar Auxilia Stormblade Plasma Blastgun is missing the Slow Firing rule vs the titan version
 
 #### Daemons Of The Ruinstorm
 
-- Soul Grinder Harvesting Claws have a range of 15cm but are claws - big claws!
-- The Khorne Horde says 'May add 1 – 6 Bloodcrushers of Khorne or Skull Cannon of Khorne' - does that mean you can't take Bloodcrushers AND Skull Cannons in the same Daemonic Horde detachment or say, 2x Bloodcrushers and 4x Skull Cannons?  Same question for all the other Daemon Hordes..
-- Daemons Of The Ruinstorm may pick freely from the Lords Of War sections of allies - was this intentional?
+- Soul Grinder Harvester Claws have a small arms profile with a range of 15cm - should they just be Assault Weapons instead?
 
 ### Imperious Dominatus
 

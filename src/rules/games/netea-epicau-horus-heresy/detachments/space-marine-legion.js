@@ -191,7 +191,10 @@ export class LegionContemptorDreadnoughtTalon extends SpaceMarineLegionDetachmen
       new TransportOption(
         new DropAssault()
       ),
-      new ContemptorDreadnoughtUpgrade()
+      new ContemptorDreadnoughtUpgrade(),
+      new CommanderOption(
+        new Centurion()
+      )
     )
   }
 }
@@ -379,6 +382,9 @@ export class LegionLeviathanDreadnoughtTalon extends SpaceMarineLegionDetachment
     this.setUpgrades(
       new TransportOption(
         new DropAssault()
+      ),
+      new CommanderOption(
+        new Centurion()
       )
     )
   }

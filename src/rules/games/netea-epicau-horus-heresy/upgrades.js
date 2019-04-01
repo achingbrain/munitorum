@@ -34,8 +34,10 @@ import {
   LegionLieutenantCommander
 } from './units/space-marine-legion'
 import {
-  LegioTitanicusVeteranPrinceps,
-  LegioTitanicusLegate,
+  UltramarinesDamoclesRhino,
+  UltramarinesRhinoTransports
+} from './units/ultramarines'
+import {
   LegioTitanicusAirDefence,
   LegioTitanicusSacredIcon
 } from './units/legio-titanicus'
@@ -133,18 +135,6 @@ export class RapierBattery extends AdditionalUnitOption {
 export class Hyperios extends AdditionalUnitOption {
   constructor () {
     super(LegionWhirlwindHyperios)
-  }
-}
-
-export class VeteranPrinceps extends AdditionalUnitOption {
-  constructor () {
-    super(LegioTitanicusVeteranPrinceps)
-  }
-}
-
-export class Legate extends AdditionalUnitOption {
-  constructor () {
-    super(LegioTitanicusLegate)
   }
 }
 
@@ -305,7 +295,7 @@ export class Tank extends Upgrade {
 export class TransportOption extends MultipleChoiceOption {
   getAvailableUpgrades (detachment) {
     let upgrades = this.options.reduce((acc, curr) => {
-      return acc.concat(curr.options)
+      return acc.concat(curr.getAvailableUpgrades(detachment))
     }, [])
 
     if (detachment.units.find(unit => upgrades.find(upgrade => upgrade.type === unit.type))) {
@@ -578,5 +568,39 @@ export class InfantrySupportTank extends Upgrade {
 export class SolarAuxiliaRapierBattery extends AdditionalUnitOption {
   constructor () {
     super(SolarAuxiliaRapier)
+  }
+}
+
+export class UltramarinesDamoclesRhinoUpgrade extends AdditionalUnitOption {
+  constructor () {
+    super(
+      UltramarinesDamoclesRhino,
+      LegionRhino
+    )
+  }
+}
+
+export class UltramarinesRhinos extends MultipleChoiceOption {
+  getAvailableUpgrades (detachment) {
+    let rhinos = false
+    let damocles = false
+
+    detachment.units.forEach(unit => {
+      if (unit instanceof LegionRhino) {
+        rhinos = true
+      }
+
+      if (unit instanceof UltramarinesDamoclesRhino) {
+        damocles = true
+      }
+    })
+
+    if (rhinos || damocles) {
+      return []
+    }
+
+    return [
+      UltramarinesRhinoTransports
+    ]
   }
 }

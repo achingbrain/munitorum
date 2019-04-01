@@ -10,7 +10,8 @@ import {
   AntiTank,
   IgnoreCover,
   SlowFiring,
-  FixedForwardFireArc
+  FixedForwardFireArc,
+  TitanKiller
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -38,7 +39,7 @@ import withType from '../with-type'
 
 export class IronWarriorsPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
-    super(detachment, 450)
+    super(detachment, 400)
 
     this.transportType = 'terminator'
     this.rules = [
@@ -72,10 +73,55 @@ export class IronWarriorsBodyguardSquad extends LegionTerminatorSquad {
   constructor (detachment) {
     super(detachment)
 
-    this.cost = 0
+    this.cost = 50
     this.min = 3
     this.max = undefined
     this.quantity = 3
+  }
+}
+
+class IronWarriorsTormentor extends LegionUnit {
+  constructor (detachment) {
+    super(detachment, 0, 1)
+
+    this.rules = [
+      new ReinforcedArmour(),
+      new DamageCapacity(3),
+      new CriticalHit('iron-warriors-stormblade-critical-hit')
+    ]
+    this.stats = {
+      type: 'WE',
+      speed: 20,
+      armour: 4,
+      cc: 5,
+      ff: 5
+    }
+    this.weapons = [
+      new Weapon('volcano-cannon', new RangedWeapon('90cm', new MacroWeapon('2+'), new TitanKiller('D3'), new FixedForwardFireArc())),
+      new Weapon('2-twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
+      new Weapon('heavy-bolter', new RangedWeapon('30cm', new AntiPersonnel('5+')))
+    ]
+  }
+}
+
+export class IronWarriorsIronCircle extends LegionTerminatorSquad {
+  constructor (detachment) {
+    super(detachment)
+
+    this.cost = 0
+    this.min = 4
+    this.max = undefined
+    this.quantity = 4
+  }
+}
+
+export class IronWarriorsBodyguardUnit extends MultipleChoiceUnit {
+  constructor (detachment) {
+    super(detachment,
+      new IronWarriorsBodyguardSquad(detachment),
+      new IronWarriorsTormentor(detachment),
+      new IronWarriorsIronCircle(detachment)
+    )
   }
 }
 
@@ -206,7 +252,10 @@ export class IronWarriorsSuperHeavyTankSquadronUnit extends MultipleChoiceUnit {
 }
 
 withType(IronWarriorsPrimarch)
+withType(IronWarriorsBodyguardUnit)
 withType(IronWarriorsBodyguardSquad)
+withType(IronWarriorsTormentor)
+withType(IronWarriorsIronCircle)
 withType(IronWarriorsTyrantSiegeTerminatorSquad)
 withType(IronWarriorsIronHavocSquad)
 withType(IronWarriorsArtilleryUnit)
