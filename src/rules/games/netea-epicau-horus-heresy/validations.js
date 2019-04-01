@@ -27,6 +27,29 @@ import {
   SupremeCommander
 } from './special-rules'
 import MultipleChoiceUnit from './units/multiple-choice-unit'
+import {
+  DaemonicHordesBloodletters,
+  DaemonicHordesFleshHounds,
+  DaemonicHordesBloodcrushers,
+  DaemonicHordesSkullCannonOfKhorne,
+  DaemonicHordesPlagueBearers,
+  DaemonicHordesNurglings,
+  DaemonicHordesBeastsOfNurgle,
+  DaemonicHordesPlagueDrones,
+  DaemonicHordesDaemonettes,
+  DaemonicHordesSeekersOfSlaanesh,
+  DaemonicHordesSeekerChariot,
+  DaemonicHordesFiendsOfSlaanesh,
+  DaemonicHordesHorrorsOfTzeench,
+  DaemonicHordesFlamersOfTzeench,
+  DaemonicHordesScreamersOfTzeench
+} from './units/daemonic-hordes'
+import {
+  DaemonicHordesKhorneHorde,
+  DaemonicHordesNurgleHorde,
+  DaemonicHordesTzeenchHorde,
+  DaemonicHordesSlaaneshHorde
+} from './detachments/daemonic-hordes'
 
 export class Rule {
   init () {
@@ -474,6 +497,148 @@ export class OnlyOneDaemonicOverlord extends Rule {
     }
 
     return false
+  }
+}
+
+export class RestrictedMinorDaemonQuanities extends Rule {
+  init () {
+    this.errors = false
+  }
+
+  walkDetachment (detachment) {
+    if (detachment instanceof DaemonicHordesKhorneHorde) {
+      let bloodletters = 0
+      let fleshHounds = 0
+      let bloodcrushers = 0
+      let skullCannon = 0
+
+      detachment.units.forEach(unit => {
+        if (unit instanceof DaemonicHordesBloodletters) {
+          bloodletters += unit.getQuantity()
+        }
+
+        if (unit instanceof DaemonicHordesFleshHounds) {
+          fleshHounds += unit.getQuantity()
+        }
+
+        if (unit instanceof DaemonicHordesBloodcrushers) {
+          bloodcrushers += unit.getQuantity()
+        }
+
+        if (unit instanceof DaemonicHordesSkullCannonOfKhorne) {
+          skullCannon += unit.getQuantity()
+        }
+      })
+
+      if (bloodletters + fleshHounds > 12) {
+        this.errors = true
+        detachment.addError('too-many-extra-bloodletters-or-fleshhounds')
+      }
+
+      if (bloodcrushers + skullCannon > 6) {
+        this.errors = true
+        detachment.addError('too-many-extra-bloodcrushers-or-skull-cannon')
+      }
+    }
+
+    if (detachment instanceof DaemonicHordesNurgleHorde) {
+      let plaguebearers = 0
+      let nurglings = 0
+      let beastsOfNurgle = 0
+      let plagueDrones = 0
+
+      detachment.units.forEach(unit => {
+        if (unit instanceof DaemonicHordesPlagueBearers) {
+          plaguebearers += unit.getQuantity()
+        }
+
+        if (unit instanceof DaemonicHordesNurglings) {
+          nurglings += unit.getQuantity()
+        }
+
+        if (unit instanceof DaemonicHordesBeastsOfNurgle) {
+          beastsOfNurgle += unit.getQuantity()
+        }
+
+        if (unit instanceof DaemonicHordesPlagueDrones) {
+          plagueDrones += unit.getQuantity()
+        }
+      })
+
+      if (plaguebearers + nurglings > 12) {
+        this.errors = true
+        detachment.addError('too-many-extra-plaguebearers-or-nurglings')
+      }
+
+      if (beastsOfNurgle + plagueDrones > 6) {
+        this.errors = true
+        detachment.addError('too-many-extra-beasts-of-nurgle-or-plague-drones')
+      }
+    }
+
+    if (detachment instanceof DaemonicHordesSlaaneshHorde) {
+      let daemonettes = 0
+      let seekers = 0
+      let seekerChariots = 0
+      let fiends = 0
+
+      detachment.units.forEach(unit => {
+        if (unit instanceof DaemonicHordesDaemonettes) {
+          daemonettes += unit.getQuantity()
+        }
+
+        if (unit instanceof DaemonicHordesSeekersOfSlaanesh) {
+          seekers += unit.getQuantity()
+        }
+
+        if (unit instanceof DaemonicHordesSeekerChariot) {
+          seekerChariots += unit.getQuantity()
+        }
+
+        if (unit instanceof DaemonicHordesFiendsOfSlaanesh) {
+          fiends += unit.getQuantity()
+        }
+      })
+
+      if (daemonettes + seekers > 12) {
+        this.errors = true
+        detachment.addError('too-many-extra-daemonettes-or-seekers-of-slaanesh')
+      }
+
+      if (seekerChariots + fiends > 6) {
+        this.errors = true
+        detachment.addError('too-many-extra-seeker-chariots-or-fiends-of-slaanesh')
+      }
+    }
+
+    if (detachment instanceof DaemonicHordesTzeenchHorde) {
+      let horrors = 0
+      let flamers = 0
+      let screamers = 0
+
+      detachment.units.forEach(unit => {
+        if (unit instanceof DaemonicHordesHorrorsOfTzeench) {
+          horrors += unit.getQuantity()
+        }
+
+        if (unit instanceof DaemonicHordesFlamersOfTzeench) {
+          flamers += unit.getQuantity()
+        }
+
+        if (unit instanceof DaemonicHordesScreamersOfTzeench) {
+          screamers += unit.getQuantity()
+        }
+      })
+
+      if (horrors + flamers + screamers > 12) {
+        this.errors = true
+        detachment.addError('too-many-extra-horrors-or-flamers-or-screamers-of-tzeench')
+      }
+    }
+  }
+
+  collect (list, t) {
+    return this.errors
   }
 }
 

@@ -12,6 +12,7 @@ import daemonicHordesBloodletters from './daemonic-hordes-bloodletters.svg'
 import daemonicHordesBurningChariotOfTzeench from './daemonic-hordes-burning-chariot-of-tzeench.svg'
 import daemonicHordesChaosFury from './daemonic-hordes-chaos-fury.svg'
 import daemonicHordesChaosSpawn from './daemonic-hordes-chaos-spawn.svg'
+import daemonicHordesChaosUndividedSoulGrinder from './daemonic-hordes-chaos-undivided-soul-grinder.svg'
 import daemonicHordesDaemonPrinceOfKhorne from './daemonic-hordes-daemon-prince-of-khorne.svg'
 import daemonicHordesDaemonPrinceOfNurgle from './daemonic-hordes-daemon-prince-of-nurgle.svg'
 import daemonicHordesDaemonPrinceOfSlaanesh from './daemonic-hordes-daemon-prince-of-slaanesh.svg'
@@ -38,7 +39,6 @@ import daemonicHordesSeekerChariot from './daemonic-hordes-seeker-chariot.svg'
 import daemonicHordesSeekersOfSlaanesh from './daemonic-hordes-seekers-of-slaanesh.svg'
 import daemonicHordesSkullCannonOfKhorne from './daemonic-hordes-skull-cannon-of-khorne.svg'
 import daemonicHordesSlaanesh from './daemonic-hordes-slaanesh.svg'
-import daemonicHordesSoulGrinder from './daemonic-hordes-soul-grinder.svg'
 import daemonicHordesTzeench from './daemonic-hordes-tzeench.svg'
 import daemonicHordes from './daemonic-hordes.svg'
 import darkAngelsDestroyer from './dark-angels-destroyer.svg'
@@ -318,6 +318,9 @@ const IMAGES = {
   'daemonic-hordes-burning-chariot-of-tzeench': daemonicHordesBurningChariotOfTzeench,
   'daemonic-hordes-chaos-fury': daemonicHordesChaosFury,
   'daemonic-hordes-chaos-spawn': daemonicHordesChaosSpawn,
+  'daemonic-hordes-chaos-undivided-fury': daemonicHordesChaosFury,
+  'daemonic-hordes-chaos-undivided-soul-grinder': daemonicHordesChaosUndividedSoulGrinder,
+  'daemonic-hordes-chaos-undivided-spawn': daemonicHordesChaosSpawn,
   'daemonic-hordes-daemon-prince-of-khorne': daemonicHordesDaemonPrinceOfKhorne,
   'daemonic-hordes-daemon-prince-of-nurgle': daemonicHordesDaemonPrinceOfNurgle,
   'daemonic-hordes-daemon-prince-of-slaanesh': daemonicHordesDaemonPrinceOfSlaanesh,
@@ -344,7 +347,7 @@ const IMAGES = {
   'daemonic-hordes-seekers-of-slaanesh': daemonicHordesSeekersOfSlaanesh,
   'daemonic-hordes-skull-cannon-of-khorne': daemonicHordesSkullCannonOfKhorne,
   'daemonic-hordes-slaanesh': daemonicHordesSlaanesh,
-  'daemonic-hordes-soul-grinder': daemonicHordesSoulGrinder,
+  'daemonic-hordes-soul-grinder': daemonicHordesChaosUndividedSoulGrinder,
   'daemonic-hordes-tzeench': daemonicHordesTzeench,
   'daemonic-hordes': daemonicHordes,
   'dark-angels-destroyer': darkAngelsDestroyer,

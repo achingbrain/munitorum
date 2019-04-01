@@ -23,7 +23,8 @@ import withType from '../with-type'
 import {
   GreaterDaemonsRequireHordes,
   FollowersRequireHordes,
-  OnlyOneDaemonicOverlord
+  OnlyOneDaemonicOverlord,
+  RestrictedMinorDaemonQuanities
 } from '../validations'
 import AlphaLegion from './alpha-legion'
 import DeathGuard from './death-guard'
@@ -85,7 +86,8 @@ export default class DaemonicHordes extends Army {
     this.validations.push(
       new GreaterDaemonsRequireHordes(),
       new FollowersRequireHordes(),
-      new OnlyOneDaemonicOverlord()
+      new OnlyOneDaemonicOverlord(),
+      new RestrictedMinorDaemonQuanities()
     )
 
     this.colour = '#c00014'

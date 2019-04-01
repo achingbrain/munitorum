@@ -62,6 +62,13 @@ export default {
     'limited-quantity-per-points': 'Only {{ count }} {{ code }} detachment is allowed per full {{ limit }} points',
     'no-allied-supreme-commanders': 'Supreme Commanders may only come from the primary army list',
     'only-inf-and-ch-units-can-teleport': 'Only detachments made up of infantry and characters can have the teleport ability',
+    'too-many-extra-bloodletters-or-fleshhounds': 'You may only take 1-6 extra Bloodletters and/or Flesh Hounds',
+    'too-many-extra-bloodcrushers-or-skull-cannon': 'You may only take 1-6 extra Bloodcrushers and/or Skull Cannon',
+    'too-many-extra-plaguebearers-or-nurglings': 'You may only take 1-6 extra Plaguebearers and/or Nurglings',
+    'too-many-extra-beasts-of-nurgle-or-plague-drones': 'You may only take 1-6 extra Beasts of Nurgle and/or Plague Drones',
+    'too-many-extra-daemonettes-or-seekers-of-slaanesh': 'You may only take 1-6 extra Daemonettes and/or Seekers of Slaanesh',
+    'too-many-extra-seeker-chariots-or-fiends-of-slaanesh': 'You may only take 1-6 extra Seeker Chariots and/or Fiends of Slaanesh',
+    'too-many-extra-horrors-or-flamers-or-screamers-of-tzeench': 'You may only take 1-6 extra Horror, Flamer and/or Screamers of Tzeench',
 
     'alpha-legion': 'Alpha Legion',
     'blood-angels': 'Blood Angels',

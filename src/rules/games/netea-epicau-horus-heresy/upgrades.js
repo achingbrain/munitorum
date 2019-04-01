@@ -77,6 +77,9 @@ import {
   SolarAuxiliaInfantrySupportTankUnit,
   SolarAuxiliaRapier
 } from './units/solar-auxilia'
+import {
+  TransportUnit
+} from './units/unit'
 
 export class Upgrade {
   getAvailableUpgrades (detachment) {
@@ -298,7 +301,7 @@ export class TransportOption extends MultipleChoiceOption {
       return acc.concat(curr.getAvailableUpgrades(detachment))
     }, [])
 
-    if (detachment.units.find(unit => upgrades.find(upgrade => upgrade.type === unit.type))) {
+    if (detachment.units.find(unit => unit instanceof TransportUnit)) {
       // a transport option is already present
       upgrades = []
     }

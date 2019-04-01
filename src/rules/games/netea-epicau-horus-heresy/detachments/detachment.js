@@ -48,7 +48,7 @@ export default class Detachment {
   }
 
   getName () {
-    return this.code
+    return this.code || 'invalid'
   }
 
   addUnit (UnitType) {
