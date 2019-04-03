@@ -113,8 +113,8 @@ export default class NetEaEpicAuHorusHeresyList extends List {
 }
 
 export class InvalidNetEaEpicAuHorusHeresyList extends InvalidList {
-  constructor (json, error) {
-    super(json, error)
+  constructor (game, json, error) {
+    super(game, json, error)
 
     this.lineDetachments = []
     this.supportDetachments = []

@@ -6,6 +6,7 @@ import {
   LegioCustodesAgamatusDetachment,
   LegioCustodesAquilionTerminatorDetachment,
   LegioCustodesEphoroiCustodesDetachment,
+  LegioCustodesVenatariDetachment,
   LegioCustodesSistersOfSilenceDetachment,
   LegioCustodesMorotoiDetachment,
   LegioCustodesPallasGravAttackSquadron,
@@ -28,6 +29,7 @@ export default class LegioCustodes extends Army {
     this.supportDetachments = [
       LegioCustodesAquilionTerminatorDetachment,
       LegioCustodesEphoroiCustodesDetachment,
+      LegioCustodesVenatariDetachment,
       LegioCustodesSistersOfSilenceDetachment,
       LegioCustodesMorotoiDetachment,
       LegioCustodesPallasGravAttackSquadron,

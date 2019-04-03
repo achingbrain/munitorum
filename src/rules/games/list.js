@@ -3,6 +3,7 @@
 import shortid from 'shortid'
 import InvalidListEditor from '../../components/invalid-list-editor'
 import InvalidListViewer from '../../components/invalid-list-viewer'
+import InvalidListTopBar from '../../components/invalid-list-top-bar'
 
 export default class List {
   constructor (game, name, army) {
@@ -50,11 +51,12 @@ export default class List {
 }
 
 export class InvalidList extends List {
-  constructor (json, error) {
+  constructor (game, json, error) {
     super()
 
     Object.assign(this, json)
 
+    this.game = game
     this.json = json
     this.error = error
 
@@ -70,6 +72,10 @@ export class InvalidList extends List {
   // should return a React component
   getViewer () {
     return InvalidListViewer
+  }
+
+  getTopBar () {
+    return InvalidListTopBar
   }
 
   getCost () {

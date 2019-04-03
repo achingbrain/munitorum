@@ -234,7 +234,7 @@ class LegioTitanicusWarmongerSupportTitan extends Unit {
       ff: 3
     }
     this.weapons = [
-      new Weapon('8-doomstrike-missiles', new RangedWeapon('Unlimited', new MacroWeapon('2+'), new TitanKiller('D6'))),
+      new Weapon('8-support-missiles', new RangedWeapon('Unlimited', new MacroWeapon('2+'), new TitanKiller('D6'))),
       new Weapon('vengence-cannon', new RangedWeapon('90cm', new MultipleShot('2x', new MacroWeapon('2+'), new TitanKiller('D3')))),
       new Weapon('4-hydra-autocannon', new RangedWeapon('45cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+'), new AntiAircraft('5+')))),
       new SpecialWeapon('fire-control-centre', 'fire-control-notes'),

@@ -11,6 +11,7 @@ import {
   LegioCustodesAgamatus,
   LegioCustodesAquilionTerminator,
   LegioCustodesEphoroiCustodes,
+  LegioCustodesVenatariSquad,
   LegioCustodesSistersOfSilence,
   LegioCustodesDreadnoughtUnit,
   LegioCustodesPallasGravAttackVehicle,
@@ -90,6 +91,16 @@ export class LegioCustodesEphoroiCustodesDetachment extends LegioCustodesDetachm
   }
 }
 
+export class LegioCustodesVenatariDetachment extends LegioCustodesDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegioCustodesVenatariSquad(this)
+    )
+  }
+}
+
 export class LegioCustodesSistersOfSilenceDetachment extends LegioCustodesDetachment {
   constructor (list) {
     super(list)
@@ -152,6 +163,7 @@ withType(LegioCustodesHykanatoiDetachment)
 withType(LegioCustodesAgamatusDetachment)
 withType(LegioCustodesAquilionTerminatorDetachment)
 withType(LegioCustodesEphoroiCustodesDetachment)
+withType(LegioCustodesVenatariDetachment)
 withType(LegioCustodesSistersOfSilenceDetachment)
 withType(LegioCustodesMorotoiDetachment)
 withType(LegioCustodesPallasGravAttackSquadron)

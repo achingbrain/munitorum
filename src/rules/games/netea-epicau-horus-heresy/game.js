@@ -55,7 +55,6 @@ export default class NetEaEpicAuHorusHeresy extends Game {
       new Salamanders(this),
       new RavenGuard(this),
       new AlphaLegion(this),
-      new LegioCustodes(this),
       new ImperialMilitia(this),
       new LegioTitanicus(this),
       new MechanicumTaghmata(this),
@@ -63,6 +62,11 @@ export default class NetEaEpicAuHorusHeresy extends Game {
       new SolarAuxilia(this),
       new DaemonicHordes(this)
     ]
+
+    // custodes can only be allies
+    this._armiesAndAllies = this.armies.concat(
+      new LegioCustodes(this)
+    )
   }
 
   newList (name, army) {
@@ -71,7 +75,11 @@ export default class NetEaEpicAuHorusHeresy extends Game {
 
   listFromJSON (json) {
     try {
-      const army = this.armies.find(item => item.type === json.army)
+      const army = this._armiesAndAllies.find(item => item.type === json.army)
+
+      if (!army) {
+        return new InvalidNetEaEpicAuHorusHeresyList(this, json, new Error(`Invalid army ${json.army}`))
+      }
 
       const list = new NetEaEpicAuHorusHeresyList(this, json.name, army)
       list.id = json.id
@@ -105,7 +113,7 @@ export default class NetEaEpicAuHorusHeresy extends Game {
       return list
     } catch (error) {
       console.error(error)
-      return new InvalidNetEaEpicAuHorusHeresyList(json, error)
+      return new InvalidNetEaEpicAuHorusHeresyList(this, json, error)
     }
   }
 

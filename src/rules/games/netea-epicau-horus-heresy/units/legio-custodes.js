@@ -104,23 +104,24 @@ export class LegioCustodesHykanatoiUnit extends MultipleChoiceUnit {
   }
 }
 
-class LegioCustodesVenatariSquad extends LegioCustodesUnit {
+export class LegioCustodesVenatariSquad extends LegioCustodesUnit {
   constructor (detachment) {
-    super(detachment, 350, 6)
+    super(detachment, 350, 4)
 
-    this.transportType = 'sentinel'
+    this.transportType = 'aquilon'
     this.rules = [
+      new Scout(),
       new InvulnerableSaveCCOnly()
     ]
     this.stats = {
       type: 'INF',
-      speed: 35,
+      speed: 30,
       armour: 3,
       cc: 4,
       ff: 3
     }
     this.weapons = [
-      new Weapon('kinetic-destroyer', new SmallArms())
+      new Weapon('kinetic-destroyer', new SmallArms('15cm'))
     ]
   }
 }
@@ -149,7 +150,7 @@ export class LegioCustodesCaptainGeneral extends LegioCustodesUnit {
 
 export class LegioCustodesTribune extends LegioCustodesUnit {
   constructor (detachment) {
-    super(detachment, 50, 1)
+    super(detachment, 25, 1)
 
     this.rules = [
       new InvulnerableSave(),

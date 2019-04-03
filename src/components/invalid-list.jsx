@@ -15,8 +15,11 @@ import Confirm from './confirm'
 import {
   deleteList
 } from '../store/actions'
+import {
+  InvalidList
+} from '../rules/games/list'
 
-class InvalidList extends Component {
+class InvalidListView extends Component {
   static propTypes = {
     classes: PropTypes.object.isRequired
   }
@@ -52,7 +55,7 @@ class InvalidList extends Component {
       hasError
     } = this.state
 
-    if (hasError) {
+    if (hasError || list instanceof InvalidList) {
       return (
         <EditNavigation toolbar={
           <Typography variant='h6' color='inherit' className={classes.grow} noWrap>
@@ -87,4 +90,4 @@ const mapDispatchToProps = {
   deleteList
 }
 
-export default component(InvalidList, mapStateToProps, mapDispatchToProps)
+export default component(InvalidListView, mapStateToProps, mapDispatchToProps)

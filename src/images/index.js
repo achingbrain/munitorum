@@ -145,6 +145,7 @@ import legioCustodesPallas from './legio-custodes-pallas.svg'
 import legioCustodesSentinelGuard from './legio-custodes-sentinel-guard.svg'
 import legioCustodesSistersOfSilence from './legio-custodes-sisters-of-silence.svg'
 import legioCustodesTribune from './legio-custodes-tribune.svg'
+import legioCustodesVenatari from './legio-custodes-venatari.svg'
 import legioCustodes from './legio-custodes.svg'
 import legioTitanicusAirDefence from './legio-titanicus-air-defence.svg'
 import legioTitanicusEmperor from './legio-titanicus-emperor.svg'
@@ -473,6 +474,7 @@ const IMAGES = {
   'legio-custodes-sisters-of-silence': legioCustodesSistersOfSilence,
   'legio-custodes-telemon-heavy-dreadnought': legioCustodesMorotoi,
   'legio-custodes-tribune': legioCustodesTribune,
+  'legio-custodes-venatari': legioCustodesVenatari,
   'legio-custodes': legioCustodes,
   'legio-titanicus-air-defence': legioTitanicusAirDefence,
   'legio-titanicus-emperor': legioTitanicusEmperor,

@@ -16,26 +16,17 @@ Multiple game systems are supported. See [docs/adding-games](./docs/adding-games
 
 #### Space Marine Legions
 
-- Magnus the Red, Vulkan, Ferrus Manus and Leman Russ take legion-specific Terminator bodyguard, all other Primarchs use generic legion types - is this intentional?
-- How does adding a Centurion to a Dreadnought Talon work? Replace one Dreadnought stand with something like the 40k Blood Angels Librarian Dreadnought or an additional stand of power armoured marines, one of which is a character?
 - Iron Warriors Iron Circle stats are missing
 
 #### Titan Legions
 
-- How many upgrades can Legio Titanicus units take?
 - Should Laser Burner Battle Titan Weapon be AND instead of OR like other weapons with both assault and small arms profiles?
 - The 'Carapace Landing Pad' titan weapon option is not marked as 'Carapace mount only'
-- Warmonger has 'Doomstrike Missles', are these the same as 'Deathstrike Missiles'?
 
 #### Legio Custodes
 
-- How many upgrades can Legio Custodes units take?
-- Custodes Tribune has no weapons - is this intentional?
-- Custodes Aquilon Terminator unit has 'Teleport' special rule on the reference sheet but the Tharanatoi Detachment only has 'Carrier' upgrade available and not 'Transport'
-- Ephoroi Custodes have the 'Carrier' upgrade, what do they count as for transport purposes?
-- Custodes Telemon Heavy Dreadnought does not have the 'Walker' special rule
-- Custodes Vehicles/War Engines have their Speed/Type columns the wrong way round
-- What are the strategy and initiative ratings for Custodes?
+- Ephoroi Custodes have the 'Carrier' upgrade, what do they count as for transport purposes? Sentinel Guard?
+- Legio Custodes are missing from the main index
 
 #### Imperial Militia
 
@@ -70,10 +61,6 @@ Multiple game systems are supported. See [docs/adding-games](./docs/adding-games
 - Solar Auxilia Dauntless Light Cruiser does not have the Pin Point Attack special rule like the Imperial Militia version
 - Solar Auxilia Baneblade Demolisher Cannon has different profile to the Imperial Militia version
 - Solar Auxilia Super Heavy Tanks are 200 points, Imperial Militia versions are 300 points
-
-#### Daemons Of The Ruinstorm
-
-- Soul Grinder Harvester Claws have a small arms profile with a range of 15cm - should they just be Assault Weapons instead?
 
 ### Imperious Dominatus
 
