@@ -27,6 +27,7 @@ Multiple game systems are supported. See [docs/adding-games](./docs/adding-games
 
 - Ephoroi Custodes have the 'Carrier' upgrade, what do they count as for transport purposes? Sentinel Guard?
 - Legio Custodes are missing from the main index
+- Ventari Squads should have the Jump Pack special rule
 
 #### Imperial Militia
 

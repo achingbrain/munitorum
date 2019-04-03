@@ -30,7 +30,8 @@ import {
   Infiltrator,
   DamageCapacity,
   CriticalHit,
-  Teleport
+  Teleport,
+  JumpPacks
 } from '../special-rules'
 import {
   LegionTeleport
@@ -111,7 +112,8 @@ export class LegioCustodesVenatariSquad extends LegioCustodesUnit {
     this.transportType = 'aquilon'
     this.rules = [
       new Scout(),
-      new InvulnerableSaveCCOnly()
+      new InvulnerableSaveCCOnly(),
+      new JumpPacks()
     ]
     this.stats = {
       type: 'INF',
