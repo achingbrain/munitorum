@@ -1783,7 +1783,9 @@ export class LegionVindicatorLaserDestroyer extends LegionUnit {
   constructor (detachment) {
     super(detachment, 70, 1)
 
-    this.rules = []
+    this.rules = [
+      new Walker()
+    ]
     this.stats = {
       type: 'AV',
       speed: 25,
@@ -1810,7 +1812,9 @@ export class LegionVindicator extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
-    this.rules = []
+    this.rules = [
+      new Walker()
+    ]
     this.stats = {
       type: 'AV',
       speed: 25,

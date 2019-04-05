@@ -85,7 +85,8 @@ export class ImperialMilitiaInfantrySquad extends ImperialMilitiaDetachment {
     )
     this.setUpgrades(
       new TransportOption(
-        new ImperialMilitiaHeavyTransport()
+        new ImperialMilitiaHeavyTransport(),
+        new ImperialMilitiaTransport()
       ),
       new MultipleChoiceOption(
         ImperialMilitiaDisciplineMaster,

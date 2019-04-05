@@ -708,7 +708,7 @@ class ImperialMilitiaBaneblade extends Unit {
       new Weapon('autocannon', new RangedWeapon('45cm', new AntiPersonnel('5+'), new AntiTank('6+'))),
       new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiTank('5+'))),
       new Weapon('demolisher-cannon',
-        new RangedWeapon('30cm', new AntiPersonnel('3+'), new AntiTank('4+'), new IgnoreCover(), new Disrupt(), new FixedForwardFireArc()),
+        new RangedWeapon('30cm', new AntiPersonnel('3+'), new AntiTank('4+'), new IgnoreCover(), new FixedForwardFireArc()),
         new SmallArms('15cm', new IgnoreCover())
       )
     ]

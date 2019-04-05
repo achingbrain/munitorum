@@ -17,30 +17,20 @@ Multiple game systems are supported. See [docs/adding-games](./docs/adding-games
 #### Space Marine Legions
 
 - Iron Warriors Iron Circle stats are missing
+- Vindicator Demolisher Cannon is missing Disrupt rule compared to Leman Russ Demolishers, Legion Fellblades etc
 
 #### Titan Legions
 
-- Should Laser Burner Battle Titan Weapon be AND instead of OR like other weapons with both assault and small arms profiles?
-- The 'Carapace Landing Pad' titan weapon option is not marked as 'Carapace mount only'
-
-#### Legio Custodes
-
-- Ephoroi Custodes have the 'Carrier' upgrade, what do they count as for transport purposes? Sentinel Guard?
-- Legio Custodes are missing from the main index
-- Ventari Squads should have the Jump Pack special rule
+- The Laser Burner Battle Titan Weapon should be AND instead of OR like other weapons with both assault and small arms profiles
 
 #### Imperial Militia
 
-- Imperial Militia Gorgon has One Shot special rule - is that the same as the Single Shot rule?
-- Imperial Militia Infantry Squad seems to be missing the 'Transport' upgrade - it only has the 'Heavy Transport' upgrade but command and grenadier squads also have 'Transport' option
 - How many upgrades can Imperial Militia units take?
 - Do extra Militia Auxiliary units added via the 'Militia Auxiliary' upgrade have to have the same weapons as the other Militia Auxiliary units in the Militia Infantry Squad (eg. rifles or pistols/cc weapons)?
 - Imperial Militia Arvus Lighters have the Planetfall special rule but no spacecraft in the list have any transport capacity
-- Auxilia Malcador has 2xLascannon which are AT5+, Auxilia Malcador Annihilator has 2xLascannon which are AT4+
-- Fellblade demolisher cannon has no Small Arms profile, Auxillia Malcador Annihilator and Vindicator ones do
-- Vindicator demolisher cannon has no Disrupt rule, Fellblade and Auxillia Malcador Annihilator ones do
-- Imperial Militia faction has no points limit for Lords of War detachments
 - If the army includes a Force Commander and only Rogue Psykers (not Discipline Masters), does the first Rogue Psyker have to be in the same formation as the Force Commander?
+- Auxilia Baneblade Demolisher Cannon has no Small Arms firepower (though has AND (15 cm) range so looks like it's just been missed off)
+- Auxilia Baneblade Demolisher Cannon is missing the Disrupt rule compared to the ones on Auxilia Malcador Annihalators and Leman Russ Demolishers
 
 #### Mechanicum Taghmata
 
