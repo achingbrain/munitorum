@@ -468,7 +468,7 @@ class KnightHouseholdCerastusKnightAcheron extends Unit {
     this.weapons = [
       new Weapon('flame-cannon',
         new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('3+'), new AntiTank('6+')), new IgnoreCover()),
-        new SmallArms('30cm', new IgnoreCover())
+        new SmallArms('15cm', new IgnoreCover())
       ),
       new Weapon('twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
       new Weapon('destroyer-chainfist', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'), new TitanKiller()))

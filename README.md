@@ -27,7 +27,6 @@ Multiple game systems are supported. See [docs/adding-games](./docs/adding-games
 
 - How many upgrades can Imperial Militia units take?
 - Do extra Militia Auxiliary units added via the 'Militia Auxiliary' upgrade have to have the same weapons as the other Militia Auxiliary units in the Militia Infantry Squad (eg. rifles or pistols/cc weapons)?
-- Imperial Militia Arvus Lighters have the Planetfall special rule but no spacecraft in the list have any transport capacity
 - If the army includes a Force Commander and only Rogue Psykers (not Discipline Masters), does the first Rogue Psyker have to be in the same formation as the Force Commander?
 - Auxilia Baneblade Demolisher Cannon has no Small Arms firepower (though has AND (15 cm) range so looks like it's just been missed off)
 - Auxilia Baneblade Demolisher Cannon is missing the Disrupt rule compared to the ones on Auxilia Malcador Annihalators and Leman Russ Demolishers
@@ -38,19 +37,15 @@ Multiple game systems are supported. See [docs/adding-games](./docs/adding-games
 
 #### Knight Households
 
-- Questoris Knight-Errant thermal cannon is MW4+ at 30cm but MW5+ at 15cm? Should it be the other way round?
-- Cerastus Knight-Acheron flame cannon has no small arms rule
-- Questoris Knight-Magaera/Styrix Twin Linked Rad Cleanser has 15cm range but is not Small Arms?
-- Acastas Knight Porpyhrion and Questoris Knight-Warden both have Ironstorm Missile Pods but stats are different
+- Since the Questoris Knight-Magaera/Styrix's Twin Linked Rad Cleansers have 15cm range should they be Small Arms?
 - Knight Households have no limit on Lords of War points
 - Questoris is sometimes spelt Questorius
-- Can the various (base contact) weapons be used in assaults? They are all missing the Assault Weapons firepower entry
 
 #### Solar Auxilia
 
-- Solar Auxilia Rapier Quad Mortar is AP(4+) but Legion Rapier Quad Mortar is AP(5+)
-- Solar Auxilia Dauntless Light Cruiser does not have the Pin Point Attack special rule like the Imperial Militia version
+- Solar Auxilia Rapier Quad Mortar is AP(4+) but Legion Rapier Quad Mortar is AP(5+), seems weird that it's better than the Legion version
 - Solar Auxilia Baneblade Demolisher Cannon has different profile to the Imperial Militia version
+- Solar Auxilia Baneblade Demolisher Cannon is missing the Disrupt rule compared to the ones on Auxilia Malcador Annihalators and Leman Russ Demolishers
 - Solar Auxilia Super Heavy Tanks are 200 points, Imperial Militia versions are 300 points
 
 ### Imperious Dominatus

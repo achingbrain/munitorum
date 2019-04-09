@@ -500,7 +500,7 @@ class ImperialMilitiaDauntlessClassLightCruiser extends SpacecraftUnit {
     }
     this.weapons = [
       new Weapon('orbital-bombardment', new RangedWeapon('-', new BarragePoints(3), new MacroWeapon())),
-      new Weapon('pin-point-attack', new RangedWeapon('-', new MacroWeapon('2+'), new TitanKiller('D3')))
+      new Weapon('lance-battery', new RangedWeapon('-', new MacroWeapon('2+'), new TitanKiller('D3')))
     ]
   }
 }
@@ -550,8 +550,7 @@ class ImperialMilitiaBasiliskArtilleryCarriage extends Unit {
       ff: 6
     }
     this.weapons = [
-      new Weapon('earthshaker-cannon', new RangedWeapon('120cm', new AntiPersonnel('4+'), new AntiTank('4+'), new Or(), new BarragePoints(1), new IndirectFire())),
-      new Weapon('crew-lascarbines', new SmallArms('15cm'))
+      new Weapon('earthshaker-cannon', new RangedWeapon('120cm', new AntiPersonnel('4+'), new AntiTank('4+'), new Or(), new BarragePoints(1), new IndirectFire()))
     ]
   }
 }
@@ -569,8 +568,7 @@ class ImperialMilitiaMedusaArtilleryCarriage extends Unit {
       ff: 6
     }
     this.weapons = [
-      new Weapon('medusa-siege-gun', new RangedWeapon('30cm', new MacroWeapon('4+'), new IgnoreCover())),
-      new Weapon('crew-lascarbines', new SmallArms('15cm'))
+      new Weapon('medusa-siege-gun', new RangedWeapon('30cm', new MacroWeapon('4+'), new IgnoreCover()))
     ]
   }
 }
