@@ -3,7 +3,7 @@
 import SpaceMarineLegion from './space-marine-legion'
 import {
   IronWarriorsIronHavocDetachment,
-  IronWarriorsTyrantSiegeTerminatorDetachment,
+  IronWarriorsTerminatorDetachment,
   IronWarriorsArtilleryBatteryDetachment,
   IronWarriorsSuperHeavyTankSquadron,
   IronWarriorsPrimarchDetachment
@@ -11,7 +11,8 @@ import {
 import {
   LegionLandRaiderProteusSquadron,
   LegionLandRaiderPhobosSquadron,
-  LegionArtilleryBattery
+  LegionArtilleryBattery,
+  LegionTerminatorDetachment
 } from '../detachments/space-marine-legion'
 import LegioTitanicus from './legio-titanicus'
 import ImperialMilitia from './imperial-militia'
@@ -20,14 +21,20 @@ import MechanicumTaghmata from './mechanicum-taghmata'
 import KnightHousehold from './knight-household'
 import DaemonicHordes from './daemonic-hordes'
 import withType from '../with-type'
+import {
+  IronWarriorsTerminatorUnitSize
+} from '../validations'
 
 export default class IronWarriors extends SpaceMarineLegion {
   constructor () {
     super()
 
+    this.lineDetachments = this.lineDetachments.filter(type => {
+      return type !== LegionTerminatorDetachment
+    })
     this.lineDetachments.push(
       IronWarriorsIronHavocDetachment,
-      IronWarriorsTyrantSiegeTerminatorDetachment,
+      IronWarriorsTerminatorDetachment,
       LegionLandRaiderProteusSquadron,
       LegionLandRaiderPhobosSquadron
     )
@@ -48,6 +55,9 @@ export default class IronWarriors extends SpaceMarineLegion {
       MechanicumTaghmata,
       KnightHousehold,
       DaemonicHordes
+    )
+    this.validations.push(
+      new IronWarriorsTerminatorUnitSize()
     )
 
     this.colour = '#2d2d2d'

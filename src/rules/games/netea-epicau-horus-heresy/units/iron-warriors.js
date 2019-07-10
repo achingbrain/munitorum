@@ -125,14 +125,23 @@ export class IronWarriorsBodyguardUnit extends MultipleChoiceUnit {
   }
 }
 
+export class IronWarriorsTerminatorSquad extends LegionTerminatorSquad {
+  constructor (detachment) {
+    super(detachment)
+
+    this.cost = 75
+    this.min = 0
+  }
+}
+
 export class IronWarriorsTyrantSiegeTerminatorSquad extends LegionTerminatorSquad {
   constructor (detachment) {
     super(detachment)
 
     this.cost = 85
-    this.min = 4
+    this.min = 0
     this.max = 6
-    this.quantity = 4
+    this.quantity = 0
     this.stats = {
       type: 'INF',
       speed: 15,
@@ -256,6 +265,7 @@ withType(IronWarriorsBodyguardUnit)
 withType(IronWarriorsBodyguardSquad)
 withType(IronWarriorsTormentor)
 withType(IronWarriorsIronCircle)
+withType(IronWarriorsTerminatorSquad)
 withType(IronWarriorsTyrantSiegeTerminatorSquad)
 withType(IronWarriorsIronHavocSquad)
 withType(IronWarriorsArtilleryUnit)

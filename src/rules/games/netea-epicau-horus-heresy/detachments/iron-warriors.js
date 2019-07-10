@@ -15,6 +15,7 @@ import {
 import {
   IronWarriorsPrimarch,
   IronWarriorsBodyguardUnit,
+  IronWarriorsTerminatorSquad,
   IronWarriorsTyrantSiegeTerminatorSquad,
   IronWarriorsIronHavocSquad,
   IronWarriorsArtilleryUnit,
@@ -52,12 +53,13 @@ export class IronWarriorsPrimarchDetachment extends SpaceMarineLegionDetachment 
   }
 }
 
-export class IronWarriorsTyrantSiegeTerminatorDetachment extends SpaceMarineLegionDetachment {
+export class IronWarriorsTerminatorDetachment extends SpaceMarineLegionDetachment {
   constructor (list) {
     super(list)
 
     this.setMandatoryUnits(
-      new IronWarriorsTyrantSiegeTerminatorSquad(this)
+      new IronWarriorsTyrantSiegeTerminatorSquad(this),
+      new IronWarriorsTerminatorSquad(this)
     )
     this.setUpgrades(
       new TransportOption(
@@ -73,9 +75,6 @@ export class IronWarriorsTyrantSiegeTerminatorDetachment extends SpaceMarineLegi
       new Tank(),
       new Dreadnought(),
       new Hyperios()
-    )
-    this.setConstraints(
-      new LimitedPerPoints(1, 2000)
     )
   }
 }
@@ -138,7 +137,7 @@ export class IronWarriorsSuperHeavyTankSquadron extends SpaceMarineLegionDetachm
 }
 
 withType(IronWarriorsPrimarchDetachment)
-withType(IronWarriorsTyrantSiegeTerminatorDetachment)
+withType(IronWarriorsTerminatorDetachment)
 withType(IronWarriorsIronHavocDetachment)
 withType(IronWarriorsArtilleryBatteryDetachment)
 withType(IronWarriorsSuperHeavyTankSquadron)
