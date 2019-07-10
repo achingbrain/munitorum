@@ -132,7 +132,7 @@ export class IronWarriorsArtilleryBatteryDetachment extends SpaceMarineLegionDet
       new IronWarriorsArtilleryUnit(this)
     )
     this.setConstraints(
-      new LimitedPerPoints(1, 2000)
+      new LimitedPerPoints(1, 1000)
     )
   }
 }
