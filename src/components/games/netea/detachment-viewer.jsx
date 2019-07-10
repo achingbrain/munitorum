@@ -42,7 +42,7 @@ class DetachmentViewer extends Component {
           acc[key] = unit
 
           return acc
-      }, {})
+        }, {})
     )
 
     const initiativeRating = detachment.getInitiativeRating()
