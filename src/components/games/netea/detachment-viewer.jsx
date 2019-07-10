@@ -29,16 +29,21 @@ class DetachmentViewer extends Component {
       t
     } = this.props
 
-    // dedupe units by choice of weapons
-    const units = Object.values(detachment.units.reduce((acc, unit) => {
-      const key = `${unit.getName()}-${unit.getChosenWeapons().map(weapon => weapon.name).join('-')}`
+    const units = Object.values(
+      detachment.units
+        // remove modifier units
+        .filter(item => !(item instanceof ModifierUnit))
+        // remove empty units
+        .filter(unit => unit.getQuantity())
+        // dedupe units by choice of weapons
+        .reduce((acc, unit) => {
+          const key = `${unit.getName()}-${unit.getChosenWeapons().map(weapon => weapon.name).join('-')}`
 
-      acc[key] = unit
+          acc[key] = unit
 
-      return acc
-    }, {})
+          return acc
+      }, {})
     )
-      .filter(item => !(item instanceof ModifierUnit))
 
     const initiativeRating = detachment.getInitiativeRating()
 
