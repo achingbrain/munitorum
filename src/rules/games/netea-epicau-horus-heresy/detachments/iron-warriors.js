@@ -10,13 +10,14 @@ import {
   CommanderOption,
   Centurion,
   Praetor,
-  Rhinos
+  Rhinos,
+  Upgrade
 } from '../upgrades'
 import {
   IronWarriorsPrimarch,
   IronWarriorsBodyguardUnit,
-  IronWarriorsTerminatorSquad,
-  IronWarriorsTyrantSiegeTerminatorSquad,
+  IronWarriorsTerminatorSquadUnit,
+  IronWarriorsTerminatorSquadExtra,
   IronWarriorsIronHavocSquad,
   IronWarriorsArtilleryUnit,
   IronWarriorsSuperHeavyTankSquadronUnit
@@ -30,6 +31,18 @@ import {
 } from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
+
+class IronHandsTerminatorDetachmentUpgrade extends Upgrade {
+  getAvailableUpgrades (detachment) {
+    if (detachment.units.filter(item => item.type === IronWarriorsTerminatorSquadUnit.type).length === 6) {
+      return []
+    }
+
+    return [
+      IronWarriorsTerminatorSquadExtra
+    ]
+  }
+}
 
 export class IronWarriorsPrimarchDetachment extends SpaceMarineLegionDetachment {
   constructor (list) {
@@ -58,8 +71,10 @@ export class IronWarriorsTerminatorDetachment extends SpaceMarineLegionDetachmen
     super(list)
 
     this.setMandatoryUnits(
-      new IronWarriorsTyrantSiegeTerminatorSquad(this),
-      new IronWarriorsTerminatorSquad(this)
+      new IronWarriorsTerminatorSquadUnit(this),
+      new IronWarriorsTerminatorSquadUnit(this),
+      new IronWarriorsTerminatorSquadUnit(this),
+      new IronWarriorsTerminatorSquadUnit(this)
     )
     this.setUpgrades(
       new TransportOption(
@@ -74,7 +89,8 @@ export class IronWarriorsTerminatorDetachment extends SpaceMarineLegionDetachmen
       ),
       new Tank(),
       new Dreadnought(),
-      new Hyperios()
+      new Hyperios(),
+      new IronHandsTerminatorDetachmentUpgrade()
     )
   }
 }

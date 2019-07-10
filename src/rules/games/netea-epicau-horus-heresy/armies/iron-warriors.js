@@ -21,9 +21,6 @@ import MechanicumTaghmata from './mechanicum-taghmata'
 import KnightHousehold from './knight-household'
 import DaemonicHordes from './daemonic-hordes'
 import withType from '../with-type'
-import {
-  IronWarriorsTerminatorUnitSize
-} from '../validations'
 
 export default class IronWarriors extends SpaceMarineLegion {
   constructor () {
@@ -55,9 +52,6 @@ export default class IronWarriors extends SpaceMarineLegion {
       MechanicumTaghmata,
       KnightHousehold,
       DaemonicHordes
-    )
-    this.validations.push(
-      new IronWarriorsTerminatorUnitSize()
     )
 
     this.colour = '#2d2d2d'

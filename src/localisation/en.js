@@ -69,8 +69,6 @@ export default {
     'too-many-extra-daemonettes-or-seekers-of-slaanesh': 'You may only take 1-6 extra Daemonettes and/or Seekers of Slaanesh',
     'too-many-extra-seeker-chariots-or-fiends-of-slaanesh': 'You may only take 1-6 extra Seeker Chariots and/or Fiends of Slaanesh',
     'too-many-extra-horrors-or-flamers-or-screamers-of-tzeench': 'You may only take 1-6 extra Horror, Flamer and/or Screamers of Tzeench',
-    'too-many-iron-warriors-terminators': 'Iron Warriors terminator detachments should have between 4-6 terminator units',
-    'not-enough-iron-warriors-terminators': 'Iron Warriors terminator detachments should have between 4-6 terminator units',
 
     'alpha-legion': 'Alpha Legion',
     'blood-angels': 'Blood Angels',
@@ -286,7 +284,8 @@ export default {
     'iron-warriors-iron-havoc-squad': 'Iron Havoc Support Squad',
     'iron-warriors-terminator-detachment': 'Terminator Detachment',
     'iron-warriors-tyrant-siege-terminator-squad': 'Tyrant Siege Terminator Squad',
-    'iron-warriors-terminator-squad': 'Legion Terminator Squad',
+    'iron-warriors-terminator-squad-extra': 'Terminator Squad',
+    'iron-warriors-terminator-squad': 'Terminator Squad',
     'iron-warriors-artillery-battery-detachment': 'Artillery Battery',
     'iron-warriors-medusa': 'Medusa',
     'iron-warriors-whirlwind': 'Whirlwind',

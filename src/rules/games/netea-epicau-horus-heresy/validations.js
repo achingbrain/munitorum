@@ -50,13 +50,6 @@ import {
   DaemonicHordesTzeenchHorde,
   DaemonicHordesSlaaneshHorde
 } from './detachments/daemonic-hordes'
-import {
-  IronWarriorsTyrantSiegeTerminatorSquad,
-  IronWarriorsTerminatorSquad
-} from './units/iron-warriors'
-import {
-  IronWarriorsTerminatorDetachment
-} from './detachments/iron-warriors'
 
 export class Rule {
   init () {
@@ -394,42 +387,6 @@ export class RequireSpacecraftForDropPods extends Rule {
     }
 
     return errors
-  }
-}
-
-export class IronWarriorsTerminatorUnitSize extends Rule {
-  init () {
-    this.errors = false
-  }
-
-  walkDetachment (detachment) {
-    if (detachment instanceof IronWarriorsTerminatorDetachment) {
-      let terminators = 0
-
-      detachment.units.forEach(unit => {
-        if (unit instanceof IronWarriorsTyrantSiegeTerminatorSquad) {
-          terminators += unit.getQuantity()
-        }
-
-        if (unit instanceof IronWarriorsTerminatorSquad) {
-          terminators += unit.getQuantity()
-        }
-      })
-
-      if (terminators > 6) {
-        this.errors = true
-        detachment.addError('too-many-iron-warriors-terminators')
-      }
-
-      if (terminators < 4) {
-        this.errors = true
-        detachment.addError('not-enough-iron-warriors-terminators')
-      }
-    }
-  }
-
-  collect (list, t) {
-    return this.errors
   }
 }
 

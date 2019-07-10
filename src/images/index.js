@@ -109,6 +109,7 @@ import ironWarriorsIronHavoc from './iron-warriors-iron-havoc.svg'
 import ironWarriorsPrimarch from './iron-warriors-primarch.svg'
 import ironWarriorsStormblade from './iron-warriors-stormblade.svg'
 import ironWarriorsSuperHeavyTankSquadron from './iron-warriors-super-heavy-tank-squadron.svg'
+import ironWarriorsTerminator from './iron-warriors-terminator.svg'
 import ironWarriorsTyrantSiegeTerminator from './iron-warriors-tyrant-siege-terminator.svg'
 import ironWarriors from './iron-warriors.svg'
 import knightHouseholdAcastusKnightPorphyrion from './knight-household-acastus-knight-porphyrion.svg'
@@ -206,7 +207,6 @@ import legionStormbird from './legion-stormbird.svg'
 import legionStrikeCruiser from './legion-strike-cruiser.svg'
 import legionSuperHeavyTankDestroyer from './legion-super-heavy-tank-destroyer.svg'
 import legionTactical from './legion-tactical.svg'
-import legionTerminator from './legion-terminator.svg'
 import legionThunderhawkTransporter from './legion-thunderhawk-transporter.svg'
 import legionThunderhawk from './legion-thunderhawk.svg'
 import legionTyphon from './legion-typhon.svg'
@@ -429,6 +429,7 @@ const IMAGES = {
   'iron-warriors-primarch': ironWarriorsPrimarch,
   'iron-warriors-stormblade': ironWarriorsStormblade,
   'iron-warriors-super-heavy-tank-squadron': ironWarriorsSuperHeavyTankSquadron,
+  'iron-warriors-terminator': ironWarriorsTerminator,
   'iron-warriors-tyrant-siege-terminator': ironWarriorsTyrantSiegeTerminator,
   'iron-warriors': ironWarriors,
   'knight-household-acastus-knight-porphyrion': knightHouseholdAcastusKnightPorphyrion,
@@ -547,7 +548,7 @@ const IMAGES = {
   'legion-super-heavy-tank-destroyer': legionSuperHeavyTankDestroyer,
   'legion-super-heavy-tank': ironWarriorsSuperHeavyTankSquadron,
   'legion-tactical': legionTactical,
-  'legion-terminator': legionTerminator,
+  'legion-terminator': ironWarriorsTerminator,
   'legion-thunderhawk-transporter': legionThunderhawkTransporter,
   'legion-thunderhawk': legionThunderhawk,
   'legion-typhon': legionTyphon,
