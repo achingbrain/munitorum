@@ -430,7 +430,6 @@ const IMAGES = {
   'iron-warriors-stormblade': ironWarriorsStormblade,
   'iron-warriors-super-heavy-tank-squadron': ironWarriorsSuperHeavyTankSquadron,
   'iron-warriors-tyrant-siege-terminator': ironWarriorsTyrantSiegeTerminator,
-  'iron-warriors-terminator': legionTerminator,
   'iron-warriors': ironWarriors,
   'knight-household-acastus-knight-porphyrion': knightHouseholdAcastusKnightPorphyrion,
   'knight-household-acastus-knight-porphyrions': knightHouseholdAcastusKnightPorphyrions,
