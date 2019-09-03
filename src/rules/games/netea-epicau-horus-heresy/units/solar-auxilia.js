@@ -450,9 +450,9 @@ export class SolarAuxiliaStormlordTransport extends TransportUnit {
     super(detachment, 200)
 
     this.transportTypes = {
-      infantry: 4,
-      ogryn: 2,
-      rapier: 2
+      infantry: 8,
+      ogryn: 4,
+      rapier: 4
     }
     this.rules = [
       new DamageCapacity(2),
