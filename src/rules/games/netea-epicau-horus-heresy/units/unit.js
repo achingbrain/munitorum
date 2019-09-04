@@ -51,6 +51,10 @@ export default class Unit {
     return this.transportType
   }
 
+  getTransportCost () {
+    return this.transportCost
+  }
+
   getRules () {
     return this.rules
   }
@@ -242,5 +246,26 @@ export class TransportUnit extends Unit {
         {quantity}x {type}
       </Typography>
     )
+  }
+}
+
+export class InfantryTransportUnit extends TransportUnit {
+  getQuantity () {
+    // need to calculate number of transports required to transport
+    // all eligible units in the detachment
+    let requirement = 0
+
+    this.detachment.units.forEach(unit => {
+      if (unit === this || unit instanceof TransportUnit || !unit.getTransportCost()) {
+        return
+      }
+
+      const quantity = unit.getQuantity()
+      const cost = unit.getTransportCost()
+
+      requirement += quantity * cost
+    })
+
+    return Math.ceil(requirement / this.transportCapacity)
   }
 }

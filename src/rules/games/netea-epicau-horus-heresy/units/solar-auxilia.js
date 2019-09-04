@@ -37,7 +37,7 @@ import {
   Teleport
 } from '../special-rules'
 import MultipleChoiceUnit from './multiple-choice-unit'
-import Unit, { TransportUnit } from './unit'
+import Unit, { InfantryTransportUnit } from './unit'
 import SpacecraftUnit from './spacecraft-unit'
 import withType from '../with-type'
 
@@ -45,7 +45,7 @@ export class SolarAuxiliaLordMarshall extends Unit {
   constructor (detachment) {
     super(detachment, 150, 1)
 
-    this.transportType = 'infantry'
+    this.transportCost = 1
     this.rules = [
       new SupremeCommander(),
       new InvulnerableSave()
@@ -68,7 +68,7 @@ export class SolarAuxiliaTacticalCommmandSection extends Unit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
-    this.transportType = 'infantry'
+    this.transportCost = 1
     this.rules = [
       new Commander()
     ]
@@ -89,7 +89,7 @@ export class SolarAuxiliaVeletarisStormSection extends Unit {
   constructor (detachment) {
     super(detachment, 150, 7)
 
-    this.transportType = 'infantry'
+    this.transportCost = 1
     this.rules = []
     this.stats = {
       type: 'INF',
@@ -124,7 +124,7 @@ export class SolarAuxiliaCloseSupportSection extends Unit {
   constructor (detachment) {
     super(detachment, 75, 4)
 
-    this.transportType = 'infantry'
+    this.transportCost = 1
     this.rules = []
     this.stats = {
       type: 'INF',
@@ -146,7 +146,7 @@ export class SolarAuxiliaInfantrySection extends Unit {
   constructor (detachment) {
     super(detachment, 100, 7)
 
-    this.transportType = 'infantry'
+    this.transportCost = 1
     this.rules = []
     this.stats = {
       type: 'INF',
@@ -377,7 +377,7 @@ export class SolarAuxiliaOgrynCharoniteSquad extends Unit {
   constructor (detachment) {
     super(detachment, 75, 2)
 
-    this.transportType = 'ogryn'
+    this.transportCost = 2
     this.rules = []
     this.stats = {
       type: 'INF',
@@ -392,15 +392,11 @@ export class SolarAuxiliaOgrynCharoniteSquad extends Unit {
   }
 }
 
-export class SolarAuxiliaArvusLighter extends TransportUnit {
+export class SolarAuxiliaArvusLighter extends InfantryTransportUnit {
   constructor (detachment) {
     super(detachment, 25)
 
-    this.transportTypes = {
-      infantry: 2,
-      ogryn: 1,
-      rapier: 1
-    }
+    this.transportCapacity = 2
     this.rules = [
       new Skimmer(),
       new Planetfall()
@@ -418,15 +414,11 @@ export class SolarAuxiliaArvusLighter extends TransportUnit {
   }
 }
 
-export class SolarAuxiliaDracosan extends TransportUnit {
+export class SolarAuxiliaDracosan extends InfantryTransportUnit {
   constructor (detachment) {
     super(detachment, 75)
 
-    this.transportTypes = {
-      infantry: 4,
-      ogryn: 2,
-      rapier: 2
-    }
+    this.transportCapacity = 4
     this.rules = [
       new DamageCapacity(2),
       new ReinforcedArmour(),
@@ -445,15 +437,11 @@ export class SolarAuxiliaDracosan extends TransportUnit {
   }
 }
 
-export class SolarAuxiliaStormlordTransport extends TransportUnit {
+export class SolarAuxiliaStormlordTransport extends InfantryTransportUnit {
   constructor (detachment) {
     super(detachment, 200)
 
-    this.transportTypes = {
-      infantry: 8,
-      ogryn: 4,
-      rapier: 4
-    }
+    this.transportCapacity = 8
     this.rules = [
       new DamageCapacity(2),
       new ReinforcedArmour(),
@@ -481,7 +469,7 @@ export class SolarAuxiliaRapier extends Unit {
   constructor (detachment) {
     super(detachment, 100, 4)
 
-    this.transportType = 'rapier'
+    this.transportCost = 2
     this.rules = []
     this.stats = {
       type: 'INF',
@@ -774,30 +762,6 @@ class SolarAuxiliaStormhammer extends Unit {
   }
 }
 
-class SolarAuxiliaStormlord extends Unit {
-  constructor (detachment) {
-    super(detachment, 200, 1)
-
-    this.rules = [
-      new DamageCapacity(2),
-      new ReinforcedArmour(),
-      new CriticalHit('solar-auxilia-stormlord-critical-hit')
-    ]
-    this.stats = {
-      type: 'WE',
-      speed: 15,
-      armour: 4,
-      cc: 6,
-      ff: 3
-    }
-    this.weapons = [
-      new Weapon('vulcan-mega-bolter', new RangedWeapon('45cm', new MultipleShot('3x', new AntiPersonnel('3+'), new AntiTank('5+')), new FixedForwardFireArc())),
-      new Weapon('3-twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
-      new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiTank('4+')))
-    ]
-  }
-}
-
 class SolarAuxiliaStormsword extends Unit {
   constructor (detachment) {
     super(detachment, 200, 1)
@@ -829,7 +793,6 @@ export class SolarAuxiliaSuperHeavyTankUnit extends MultipleChoiceUnit {
       new SolarAuxiliaShadowsword(detachment),
       new SolarAuxiliaStormblade(detachment),
       new SolarAuxiliaStormhammer(detachment),
-      new SolarAuxiliaStormlord(detachment),
       new SolarAuxiliaStormsword(detachment)
     )
   }
@@ -875,16 +838,6 @@ class SolarAuxiliaStormhammerSquadronUnit extends SolarAuxiliaStormhammer {
   }
 }
 
-class SolarAuxiliaStormlordSquadronUnit extends SolarAuxiliaStormlord {
-  constructor (detachment) {
-    super(detachment)
-
-    this.cost = 500
-    this.min = 3
-    this.quantity = 3
-  }
-}
-
 class SolarAuxiliaStormswordSquadronUnit extends SolarAuxiliaStormsword {
   constructor (detachment) {
     super(detachment)
@@ -902,7 +855,6 @@ export class SolarAuxiliaSuperHeavyTankSquadronUnit extends MultipleChoiceUnit {
       new SolarAuxiliaShadowswordSquadronUnit(detachment),
       new SolarAuxiliaStormbladeSquadronUnit(detachment),
       new SolarAuxiliaStormhammerSquadronUnit(detachment),
-      new SolarAuxiliaStormlordSquadronUnit(detachment),
       new SolarAuxiliaStormswordSquadronUnit(detachment)
     )
   }
@@ -1027,14 +979,12 @@ withType(SolarAuxiliaBaneblade)
 withType(SolarAuxiliaShadowsword)
 withType(SolarAuxiliaStormblade)
 withType(SolarAuxiliaStormhammer)
-withType(SolarAuxiliaStormlord)
 withType(SolarAuxiliaStormsword)
 withType(SolarAuxiliaSuperHeavyTankSquadronUnit)
 withType(SolarAuxiliaBanebladeSquadronUnit)
 withType(SolarAuxiliaShadowswordSquadronUnit)
 withType(SolarAuxiliaStormbladeSquadronUnit)
 withType(SolarAuxiliaStormhammerSquadronUnit)
-withType(SolarAuxiliaStormlordSquadronUnit)
 withType(SolarAuxiliaStormswordSquadronUnit)
 withType(SolarAuxiliaValdor)
 withType(SolarAuxiliaTarantula)

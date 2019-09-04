@@ -14,6 +14,10 @@ export default class MultipleChoiceUnit extends Unit {
     return this.types[this.choice].getTransportType()
   }
 
+  getTransportCost () {
+    return this.types[this.choice].getTransportCost()
+  }
+
   getRules () {
     return this.types[this.choice].getRules()
   }
