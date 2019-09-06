@@ -779,7 +779,7 @@ export class LegionKharybdis extends TransportUnit {
       breacher: 4,
       assault: 4,
       terminator: 2,
-      rapier: 1,
+      rapier: 4,
       dreadnought: 1
     }
     this.rules = [

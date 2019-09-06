@@ -43,7 +43,6 @@ Multiple game systems are supported. See [docs/adding-games](./docs/adding-games
 
 #### Solar Auxilia
 
-- Solar Auxilia Rapier Quad Mortar is AP(4+) but Legion Rapier Quad Mortar is AP(5+), seems weird that it's better than the Legion version
 - Solar Auxilia Baneblade Demolisher Cannon has different profile to the Imperial Militia version
 - Solar Auxilia Baneblade Demolisher Cannon is missing the Disrupt rule compared to the ones on Auxilia Malcador Annihalators and Leman Russ Demolishers
 - Solar Auxilia Super Heavy Tanks are 200 points, Imperial Militia versions are 300 points
