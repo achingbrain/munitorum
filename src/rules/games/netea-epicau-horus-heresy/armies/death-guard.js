@@ -2,6 +2,7 @@
 
 import SpaceMarineLegion from './space-marine-legion'
 import {
+  LegionAssaultDetachment,
   LegionDestroyerDetachment
 } from '../detachments/space-marine-legion'
 import {
@@ -25,6 +26,8 @@ export default class DeathGuard extends SpaceMarineLegion {
   constructor () {
     super()
 
+    this.lineDetachments = this.lineDetachments
+      .filter(detachment => detachment !== LegionAssaultDetachment)
     this.lineDetachments.push(DeathGuardGraveWardenTerminatorDetachment)
     this.supportDetachments.push(DeathGuardDeathshroudTerminatorDetachment)
     this.supportDetachments.push(DeathGuardDestroyerDetachment)
