@@ -304,7 +304,7 @@ export class ScoutTitanWeapons {
   constructor () {
     this.options = [
       new Weapon('vulcan-mega-bolter', new RangedWeapon('45cm', new MultipleShot('4x', new AntiPersonnel('3+'), new AntiTank('5+')))),
-      new Weapon('plasma-blastgun', new RangedWeapon('45cm', new MultipleShot('4x', new MacroWeapon('2+')), new SlowFiring())),
+      new Weapon('plasma-blastgun', new RangedWeapon('45cm', new MultipleShot('2x', new MacroWeapon('2+')), new SlowFiring())),
       new Weapon('turbolaser-destructor', new PointsModifier(25), new RangedWeapon('60cm', new MultipleShot('4x', new AntiPersonnel('5+'), new AntiTank('3+')))),
       new Weapon('inferno-gun', new RangedWeapon('30cm', new BarragePoints(3), new IgnoreCover()))
     ]
