@@ -10,7 +10,8 @@ import {
   Teleport,
   CommanderOption,
   Centurion,
-  Praetor
+  Praetor,
+  ArmouryAssets
 } from '../upgrades'
 import {
   SonsOfHorusPrimarch,
@@ -41,7 +42,8 @@ export class SonsOfHorusPrimarchDetachment extends SpaceMarineLegionDetachment {
         new Teleport()
       ),
       new Hyperios(),
-      new Tank()
+      new Tank(),
+      new ArmouryAssets()
     )
     this.setConstraints(
       new Unique(this)
@@ -60,7 +62,6 @@ export class SonsOfHorusReaverAttackDetachment extends SpaceMarineLegionDetachme
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
-        new AssaultRam(),
         new AssaultClaw(),
         new HeavyTransport()
       ),

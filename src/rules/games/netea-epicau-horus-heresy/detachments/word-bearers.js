@@ -10,7 +10,8 @@ import {
   CommanderOption,
   Centurion,
   Praetor,
-  Dreadnought
+  Dreadnought,
+  ArmouryAssets
 } from '../upgrades'
 import {
   LegionDestroyerSquad
@@ -48,6 +49,7 @@ export class WordBearersPrimarchDetachment extends SpaceMarineLegionDetachment {
         new HeavyTransport()
       ),
       new Tank(),
+      new ArmouryAssets(),
       new Hyperios()
     )
     this.setConstraints(

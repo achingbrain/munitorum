@@ -11,7 +11,8 @@ import {
   Centurion,
   Praetor,
   Rhinos,
-  Upgrade
+  Upgrade,
+  ArmouryAssets
 } from '../upgrades'
 import {
   IronWarriorsPrimarch,
@@ -88,6 +89,7 @@ export class IronWarriorsTerminatorDetachment extends SpaceMarineLegionDetachmen
         new Centurion()
       ),
       new Tank(),
+      new ArmouryAssets(),
       new Dreadnought(),
       new Hyperios(),
       new IronHandsTerminatorDetachmentUpgrade()
@@ -105,14 +107,12 @@ export class IronWarriorsIronHavocDetachment extends SpaceMarineLegionDetachment
     this.setUpgrades(
       new TransportOption(
         new Rhinos(),
-        new DropAssault()
+        new DropAssault(),
+        new HeavyTransport()
       ),
       new CommanderOption(
-        new Praetor(),
         new Centurion()
       ),
-      new Tank(),
-      new Dreadnought(),
       new Hyperios()
     )
     this.setConstraints(

@@ -55,7 +55,8 @@ import {
   HeavyTransport,
   Teleport,
   Dreadnought,
-  Tank
+  Tank,
+  ArmouryAssets
 } from '../upgrades'
 import {
   LimitedPerPoints
@@ -139,7 +140,8 @@ export class LegionBreacherDetachment extends SpaceMarineLegionDetachment {
       ),
       new Hyperios(),
       new Dreadnought(),
-      new Tank()
+      new Tank(),
+      new ArmouryAssets()
     )
   }
 }
@@ -605,6 +607,7 @@ export class LegionTacticalDetachment extends SpaceMarineLegionDetachment {
       new Hyperios(),
       new Dreadnought(),
       new Tank(),
+      new ArmouryAssets(),
       new MultipleChoiceOption(
         LegionTacticalSupportSquad,
         LegionHeavySupportSquad
@@ -638,7 +641,8 @@ export class LegionTerminatorDetachment extends SpaceMarineLegionDetachment {
       ),
       new Hyperios(),
       new Dreadnought(),
-      new Tank()
+      new Tank(),
+      new ArmouryAssets()
     )
   }
 }

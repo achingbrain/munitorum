@@ -8,7 +8,8 @@ import {
   Centurion,
   Teleport,
   Tank,
-  Hyperios
+  Hyperios,
+  ArmouryAssets
 } from '../upgrades'
 import {
   LegionDestroyerSquad,
@@ -44,6 +45,7 @@ export class ImperialFistsPrimarchDetachment extends SpaceMarineLegionDetachment
         new HeavyTransport()
       ),
       new Tank(),
+      new ArmouryAssets(),
       new Hyperios()
     )
     this.setConstraints(

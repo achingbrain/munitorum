@@ -6,7 +6,8 @@ import {
   HeavyTransport,
   Teleport,
   CommanderOption,
-  Centurion
+  Centurion,
+  ArmouryAssets
 } from '../upgrades'
 import {
   LegionDestroyerSquad
@@ -38,6 +39,7 @@ export class DarkAngelsPrimarchDetachment extends SpaceMarineLegionDetachment {
         new Teleport()
       ),
       new Tank(),
+      new ArmouryAssets(),
       new Hyperios()
     )
     this.setConstraints(

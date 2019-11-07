@@ -1,10 +1,9 @@
 import {
-  Hyperios,
-  Tank,
   TransportOption,
   Rhinos,
   DropAssault,
   AssaultRam,
+  AssaultClaw,
   HeavyTransport,
   Teleport,
   CommanderOption,
@@ -40,11 +39,11 @@ export class WorldEatersPrimarchDetachment extends SpaceMarineLegionDetachment {
     this.setUpgrades(
       new TransportOption(
         new DropAssault(),
+        new AssaultClaw(),
         new AssaultRam(),
-        new HeavyTransport()
-      ),
-      new Hyperios(),
-      new Tank()
+        new HeavyTransport(),
+        new Teleport()
+      )
     )
     this.setConstraints(
       new Unique()

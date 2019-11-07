@@ -14,7 +14,8 @@ import {
   Dreadnought,
   RapierBattery,
   MultipleChoiceOption,
-  UltramarinesRhinos
+  UltramarinesRhinos,
+  ArmouryAssets
 } from '../upgrades'
 import {
   LegionDestroyerSquad,
@@ -55,6 +56,7 @@ export class UltramarinesPrimarchDetachment extends SpaceMarineLegionDetachment 
         new HeavyTransport()
       ),
       new Tank(),
+      new ArmouryAssets(),
       new Hyperios()
     )
     this.setConstraints(

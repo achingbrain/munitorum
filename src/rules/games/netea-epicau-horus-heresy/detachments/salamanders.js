@@ -8,7 +8,8 @@ import {
   Centurion,
   Teleport,
   Tank,
-  Hyperios
+  Hyperios,
+  ArmouryAssets
 } from '../upgrades'
 import {
   SalamandersPrimarch,
@@ -39,6 +40,7 @@ export class SalamandersPrimarchDetachment extends SpaceMarineLegionDetachment {
         new Teleport()
       ),
       new Tank(),
+      new ArmouryAssets(),
       new Hyperios()
     )
     this.setConstraints(

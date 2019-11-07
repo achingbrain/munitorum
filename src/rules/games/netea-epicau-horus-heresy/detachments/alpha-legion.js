@@ -10,7 +10,8 @@ import {
   Teleport,
   CommanderOption,
   Centurion,
-  Praetor
+  Praetor,
+  ArmouryAssets
 } from '../upgrades'
 import {
   AlphaLegionPrimarch,
@@ -31,10 +32,10 @@ export class AlphaLegionPrimarchDetachment extends SpaceMarineLegionDetachment {
   constructor (list) {
     super(list)
 
-    this.setMandatoryUnits([
+    this.setMandatoryUnits(
       new AlphaLegionPrimarch(this),
       new AlphaLegionBodyguardSquad(this)
-    ])
+    )
     this.setUpgrades(
       new TransportOption(
         new Rhinos(),
@@ -43,6 +44,7 @@ export class AlphaLegionPrimarchDetachment extends SpaceMarineLegionDetachment {
         new HeavyTransport()
       ),
       new Tank(),
+      new ArmouryAssets(),
       new Hyperios()
     )
     this.setConstraints(

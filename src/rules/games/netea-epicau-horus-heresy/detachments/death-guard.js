@@ -9,7 +9,8 @@ import {
   Teleport,
   CommanderOption,
   Centurion,
-  Praetor
+  Praetor,
+  ArmouryAssets
 } from '../upgrades'
 import {
   LegionDestroyerSquad
@@ -42,6 +43,7 @@ export class DeathGuardPrimarchDetachment extends SpaceMarineLegionDetachment {
         new Teleport()
       ),
       new Tank(),
+      new ArmouryAssets(),
       new Hyperios()
     )
     this.setConstraints(

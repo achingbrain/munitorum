@@ -254,11 +254,7 @@ export class Tank extends Upgrade {
     if (total === 0) {
       return [
         LegionVindicator,
-        LegionVindicatorLaserDestroyer,
         LegionPredator,
-        LegionPredatorInfernus,
-        LegionPredatorExecutioner,
-        LegionWhirlwindScorpius,
         LegionSicaran,
         LegionTyphon,
         LegionCerberus
@@ -269,14 +265,10 @@ export class Tank extends Upgrade {
 
     if (count.vindicator) {
       upgrades.push(LegionVindicator)
-      upgrades.push(LegionVindicatorLaserDestroyer)
     }
 
     if (count.predator) {
       upgrades.push(LegionPredator)
-      upgrades.push(LegionPredatorInfernus)
-      upgrades.push(LegionPredatorExecutioner)
-      upgrades.push(LegionWhirlwindScorpius)
     }
 
     if (count.sicaran) {
@@ -289,6 +281,56 @@ export class Tank extends Upgrade {
 
     if (count.cerberus) {
       upgrades.push(LegionCerberus)
+    }
+
+    return upgrades
+  }
+}
+
+export class ArmouryAssets extends Upgrade {
+  getAvailableUpgrades (detachment) {
+    const count = {
+      vindicator: 0,
+      predator: 0
+    }
+
+    detachment.units.forEach(unit => {
+      if (unit.type === LegionVindicator.type || unit.type === LegionVindicatorLaserDestroyer.type) {
+        count.vindicator++
+      }
+
+      if (unit.type === LegionPredator.type || unit.type === LegionPredatorInfernus.type || unit.type === LegionPredatorExecutioner.type || unit.type === LegionWhirlwindScorpius.type) {
+        count.predator++
+      }
+    })
+
+    const total = Object.keys(count)
+      .map(key => count[key])
+      .reduce((acc, curr) => acc + curr, 0)
+
+    if (total === 2) {
+      return []
+    }
+
+    if (total === 0) {
+      return [
+        LegionVindicatorLaserDestroyer,
+        LegionPredatorInfernus,
+        LegionPredatorExecutioner,
+        LegionWhirlwindScorpius
+      ]
+    }
+
+    const upgrades = []
+
+    if (count.vindicator) {
+      upgrades.push(LegionVindicatorLaserDestroyer)
+    }
+
+    if (count.predator) {
+      upgrades.push(LegionPredatorInfernus)
+      upgrades.push(LegionPredatorExecutioner)
+      upgrades.push(LegionWhirlwindScorpius)
     }
 
     return upgrades

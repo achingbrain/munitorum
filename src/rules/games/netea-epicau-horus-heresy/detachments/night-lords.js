@@ -9,7 +9,8 @@ import {
   HeavyTransport,
   CommanderOption,
   Centurion,
-  Praetor
+  Praetor,
+  ArmouryAssets
 } from '../upgrades'
 import {
   LegionDestroyerSquad
@@ -46,7 +47,8 @@ export class NightLordsPrimarchDetachment extends SpaceMarineLegionDetachment {
         new HeavyTransport()
       ),
       new Hyperios(),
-      new Tank()
+      new Tank(),
+      new ArmouryAssets()
     )
     this.setConstraints(
       new Unique()
