@@ -51,9 +51,7 @@ export default class Detachment {
     return this.code || 'invalid'
   }
 
-  addUnit (UnitType) {
-    let unit = new UnitType(this)
-
+  addUnit (unit) {
     if (unit instanceof MultipleUnit) {
       unit = unit.getUnits(this)
     }

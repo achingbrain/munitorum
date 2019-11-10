@@ -13,22 +13,19 @@ import {
 import kebab from '../../../utils/kebab-case'
 
 class EditDetachments extends Component {
-  handleAddDetachment = (Detachment) => {
+  handleAddDetachment = (detachment) => {
     const {
       type,
-      list,
       onAddDetachment
     } = this.props
-
-    const detachment = new Detachment(list)
 
     onAddDetachment(type, detachment)
   }
 
   render () {
     const {
-      army,
       type,
+      available,
       detachments,
       classes,
       t,
@@ -42,7 +39,7 @@ class EditDetachments extends Component {
           text={t(kebab(type))}
           textClassName={titleTextClassName || classes.detachmentType}
           textVariant={titleTextVariant}
-          items={army[type]}
+          items={available}
           onSelect={this.handleAddDetachment} />
         {
           detachments.map((detachment, index) => (
@@ -62,11 +59,12 @@ class EditDetachments extends Component {
   }
 }
 
-const mapStateToProps = (state, { type, list }) => {
+const mapStateToProps = (state, { list, type, detachments, available }) => {
   return {
     list,
-    army: list.army,
-    detachments: list[type]
+    type,
+    detachments,
+    available
   }
 }
 

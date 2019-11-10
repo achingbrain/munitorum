@@ -40,7 +40,7 @@ class IronHandsTerminatorDetachmentUpgrade extends Upgrade {
     }
 
     return [
-      IronWarriorsTerminatorSquadExtra
+      new IronWarriorsTerminatorSquadExtra(detachment)
     ]
   }
 }

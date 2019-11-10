@@ -50,7 +50,8 @@ import {
   Feedback,
   ForwardFireArc,
   LeftFireArc,
-  RightFireArc
+  RightFireArc,
+  PointsModifier
 } from '../weapons'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit, { TransportUnit } from './unit'
@@ -395,20 +396,9 @@ export class LegionContemptorDreadnought extends LegionUnit {
         new Weapon('twin-linked-lascannon', new RangedWeapon('45cm', new AntiTank('4+')))
       ),
       new OptionalWeapons(
-        new Weapon('havoc-launcher', new RangedWeapon('45cm', new AntiPersonnel('5+')))
+        new Weapon('havoc-launcher', new PointsModifier(5), new RangedWeapon('45cm', new AntiPersonnel('5+')))
       )
     ]
-  }
-
-  getCost () {
-    const cost = super.getCost()
-
-    // Havoc launcher adds 5 points to cost
-    if (this.weaponOptions[2] === 1) {
-      return cost + 5
-    }
-
-    return cost
   }
 }
 

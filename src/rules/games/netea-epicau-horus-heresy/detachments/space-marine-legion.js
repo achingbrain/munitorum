@@ -174,7 +174,7 @@ class ContemptorDreadnoughtUpgrade extends Upgrade {
     }
 
     return [
-      LegionContemptorDreadnought
+      new LegionContemptorDreadnought(detachment)
     ]
   }
 }
@@ -226,7 +226,7 @@ class DreadnoughtUpgrade extends Upgrade {
     }
 
     return [
-      LegionDreadnought
+      new LegionDreadnought(detachment)
     ]
   }
 }
@@ -296,7 +296,7 @@ class LegionLandRaiderPhobosSquadronUpgrade extends Upgrade {
     }
 
     return [
-      LegionLandRaiderPhobos
+      new LegionLandRaiderPhobos(detachment)
     ]
   }
 }
@@ -328,7 +328,7 @@ class LegionLandRaiderProteusSquadronUpgrade extends Upgrade {
     }
 
     return [
-      LegionLandRaiderProteus
+      new LegionLandRaiderProteus(detachment)
     ]
   }
 }
@@ -414,7 +414,7 @@ class PredatorUpgrade extends Upgrade {
     }
 
     return [
-      LegionPredator
+      new LegionPredator(detachment)
     ]
   }
 }
@@ -486,7 +486,7 @@ class LegionSicaranBattleTankSquadronUnitUpgrade extends Upgrade {
     }
 
     return [
-      LegionSicaranBattleTankSquadronUnit
+      new LegionSicaranBattleTankSquadronUnit(detachment)
     ]
   }
 }

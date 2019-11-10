@@ -93,13 +93,26 @@ class PopOverMenu extends Component {
               })
               .map((item, index) => {
                 const name = typeof item.code === 'string' ? t(item.code) : t(item.name)
+                let cost = typeof item.getCost === 'function' ? item.getCost() : undefined
+
+                if (cost === 0) {
+                  cost = t('free')
+                } else if (cost !== undefined) {
+                  const asInt = parseInt(cost)
+
+                  if (cost !== asInt) {
+                    cost = parseFloat(cost).toFixed(1)
+                  }
+
+                  cost = `${cost} pts`
+                }
 
                 return (
                   <MenuItem onClick={() => this.handleSelect(item)} key={`${name.toString()}-${index}`}>
                     <ListItemIcon className={classes.listListIcon}>
                       <Icon className={classes.avatar} src={item.image} />
                     </ListItemIcon>
-                    <ListItemText primary={name} />
+                    <ListItemText primary={name} secondary={cost} />
                   </MenuItem>
                 )
               })

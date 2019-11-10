@@ -18,11 +18,23 @@ export class Weapon {
     this.profiles = profiles
       .filter(profile => !(profile instanceof PointsModifier) && !(profile instanceof StatsModifier))
   }
+
+  getCost () {
+    if (this.pointsModifier) {
+      return this.pointsModifier.points
+    }
+
+    return 0
+  }
 }
 
 export class WeaponSet {
   constructor (...options) {
     this.options = options
+  }
+
+  getCost () {
+    return 0
   }
 }
 

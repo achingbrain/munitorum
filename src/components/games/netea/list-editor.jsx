@@ -41,16 +41,22 @@ class ListEditor extends Component {
         <EditDetachments
           list={list}
           type={'lineDetachments'}
+          detachments={list.lineDetachments}
+          available={list.army.getAvailableLineDetachments(list)}
           onAddDetachment={this.handleAddDetachment}
         />
         <EditDetachments
           list={list}
           type={'supportDetachments'}
+          detachments={list.supportDetachments}
+          available={list.army.getAvailableSupportDetachments(list)}
           onAddDetachment={this.handleAddDetachment}
         />
         <EditDetachments
           list={list}
           type={'lordsOfWar'}
+          detachments={list.lordsOfWar}
+          available={list.army.getAvailableLordOfWarDetachments(list)}
           onAddDetachment={this.handleAddDetachment}
         />
         <EditAllies

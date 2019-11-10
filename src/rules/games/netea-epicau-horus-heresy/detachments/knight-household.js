@@ -27,7 +27,7 @@ class KnightHouseholdQuestorisPaladinKnightsUpgrade extends Upgrade {
     }
 
     return [
-      KnightHouseholdQuestorisPaladinKnightExtra
+      new KnightHouseholdQuestorisPaladinKnightExtra(detachment)
     ]
   }
 }
@@ -39,7 +39,7 @@ class KnightHouseholdQuestorisErrantKnightsUpgrade extends Upgrade {
     }
 
     return [
-      KnightHouseholdQuestorisErrantKnightExtra
+      new KnightHouseholdQuestorisErrantKnightExtra(detachment)
     ]
   }
 }
@@ -87,7 +87,7 @@ class KnightHouseholdCerastusLancerKnightsUpgrade extends Upgrade {
     }
 
     return [
-      KnightHouseholdCerastusLancerKnight
+      new KnightHouseholdCerastusLancerKnight(detachment)
     ]
   }
 }
@@ -99,7 +99,7 @@ class KnightHouseholdCerastusCastigatorKnightsUpgrade extends Upgrade {
     }
 
     return [
-      KnightHouseholdCerastusCastigatorKnight
+      new KnightHouseholdCerastusCastigatorKnight(detachment)
     ]
   }
 }

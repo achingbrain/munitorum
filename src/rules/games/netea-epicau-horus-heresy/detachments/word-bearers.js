@@ -140,7 +140,7 @@ class WordBearersMharaGalTainedDreadnoughtUpgrade extends Upgrade {
     }
 
     return [
-      WordBearersMalGharaTaintedContemptorDreadnought
+      new WordBearersMalGharaTaintedContemptorDreadnought(detachment)
     ]
   }
 }

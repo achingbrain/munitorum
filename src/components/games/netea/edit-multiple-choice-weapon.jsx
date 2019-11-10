@@ -42,13 +42,15 @@ class EditableMultiChoiceWeapon extends Component {
       if (option instanceof WeaponSet) {
         return {
           name: option.options.map(option => t(option.name)).join(', '),
-          index
+          index,
+          getCost: option.getCost.bind(option)
         }
       }
 
       return {
         name: t(option.name),
-        index
+        index,
+        getCost: option.getCost.bind(option)
       }
     })
 

@@ -13,13 +13,11 @@ import {
 } from '../../../store/actions'
 
 class ListEditor extends Component {
-  handleAddDetachment = (Detachment) => {
+  handleAddDetachment = (detachment) => {
     const {
       list,
       addDetachment
     } = this.props
-
-    const detachment = new Detachment(list)
 
     addDetachment({
       list,

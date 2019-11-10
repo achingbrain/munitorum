@@ -102,7 +102,7 @@ export class MultipleChoiceOption extends Upgrade {
       return []
     }
 
-    return this.options.slice()
+    return this.options.map(Type => new Type(detachment))
   }
 }
 
@@ -123,8 +123,10 @@ export class AdditionalUnitOption extends Upgrade {
       return []
     }
 
+    const Type = this.unit
+
     return [
-      this.unit
+      new Type(detachment)
     ]
   }
 }
@@ -185,26 +187,26 @@ export class Dreadnought extends Upgrade {
 
     if (total === 0) {
       return [
-        LegionDreadnought,
-        LegionContemptorDreadnought,
-        LegionDeredeoDreadnought,
-        LegionLeviathanDreadnought
+        new LegionDreadnought(detachment),
+        new LegionContemptorDreadnought(detachment),
+        new LegionDeredeoDreadnought(detachment),
+        new LegionLeviathanDreadnought(detachment)
       ]
     }
 
     const upgrades = []
 
     if (dreadCount.legion) {
-      upgrades.push(LegionDreadnought)
+      upgrades.push(new LegionDreadnought(detachment))
     }
 
     if (dreadCount.contemptor) {
-      upgrades.push(LegionContemptorDreadnought)
-      upgrades.push(LegionDeredeoDreadnought)
+      upgrades.push(new LegionContemptorDreadnought(detachment))
+      upgrades.push(new LegionDeredeoDreadnought(detachment))
     }
 
     if (dreadCount.leviathan) {
-      upgrades.push(LegionLeviathanDreadnought)
+      upgrades.push(new LegionLeviathanDreadnought(detachment))
     }
 
     return upgrades
@@ -253,34 +255,34 @@ export class Tank extends Upgrade {
 
     if (total === 0) {
       return [
-        LegionVindicator,
-        LegionPredator,
-        LegionSicaran,
-        LegionTyphon,
-        LegionCerberus
+        new LegionVindicator(detachment),
+        new LegionPredator(detachment),
+        new LegionSicaran(detachment),
+        new LegionTyphon(detachment),
+        new LegionCerberus(detachment)
       ]
     }
 
     const upgrades = []
 
     if (count.vindicator) {
-      upgrades.push(LegionVindicator)
+      upgrades.push(new LegionVindicator(detachment))
     }
 
     if (count.predator) {
-      upgrades.push(LegionPredator)
+      upgrades.push(new LegionPredator(detachment))
     }
 
     if (count.sicaran) {
-      upgrades.push(LegionSicaran)
+      upgrades.push(new LegionSicaran(detachment))
     }
 
     if (count.typhon) {
-      upgrades.push(LegionTyphon)
+      upgrades.push(new LegionTyphon(detachment))
     }
 
     if (count.cerberus) {
-      upgrades.push(LegionCerberus)
+      upgrades.push(new LegionCerberus(detachment))
     }
 
     return upgrades
@@ -314,23 +316,23 @@ export class ArmouryAssets extends Upgrade {
 
     if (total === 0) {
       return [
-        LegionVindicatorLaserDestroyer,
-        LegionPredatorInfernus,
-        LegionPredatorExecutioner,
-        LegionWhirlwindScorpius
+        new LegionVindicatorLaserDestroyer(detachment),
+        new LegionPredatorInfernus(detachment),
+        new LegionPredatorExecutioner(detachment),
+        new LegionWhirlwindScorpius(detachment)
       ]
     }
 
     const upgrades = []
 
     if (count.vindicator) {
-      upgrades.push(LegionVindicatorLaserDestroyer)
+      upgrades.push(new LegionVindicatorLaserDestroyer(detachment))
     }
 
     if (count.predator) {
-      upgrades.push(LegionPredatorInfernus)
-      upgrades.push(LegionPredatorExecutioner)
-      upgrades.push(LegionWhirlwindScorpius)
+      upgrades.push(new LegionPredatorInfernus(detachment))
+      upgrades.push(new LegionPredatorExecutioner(detachment))
+      upgrades.push(new LegionWhirlwindScorpius(detachment))
     }
 
     return upgrades
@@ -367,7 +369,7 @@ export class TransportOption extends MultipleChoiceOption {
     })
 
     if (landRaiders && achilles < 2) {
-      upgrades.push(LegionLandRaiderAchillesTransport)
+      upgrades.push(new LegionLandRaiderAchillesTransport(detachment))
     }
 
     return upgrades
@@ -605,7 +607,7 @@ export class InfantrySupportTank extends Upgrade {
     }
 
     return [
-      SolarAuxiliaInfantrySupportTankUnit
+      new SolarAuxiliaInfantrySupportTankUnit(detachment)
     ]
   }
 }
@@ -645,7 +647,7 @@ export class UltramarinesRhinos extends MultipleChoiceOption {
     }
 
     return [
-      UltramarinesRhinoTransports
+      new UltramarinesRhinoTransports(detachment)
     ]
   }
 }

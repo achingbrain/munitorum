@@ -126,4 +126,16 @@ export default class NetEaEpicAuHorusHeresyArmy extends Army {
   filterUpgrades (upgrades) {
     return upgrades
   }
+
+  getAvailableLineDetachments (list) {
+    return this.lineDetachments.map(Type => new Type(list))
+  }
+
+  getAvailableSupportDetachments (list) {
+    return this.supportDetachments.map(Type => new Type(list))
+  }
+
+  getAvailableLordOfWarDetachments (list) {
+    return this.lordsOfWar.map(Type => new Type(list))
+  }
 }

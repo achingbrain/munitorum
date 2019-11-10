@@ -116,6 +116,8 @@ class AllyEditor extends Component {
           <EditDetachments
             list={list}
             type={'lineDetachments'}
+            detachments={list.lineDetachments}
+            available={list.army.getAvailableLineDetachments(list)}
             textComponent='h6'
             titleTextVariant='h6'
             titleTextClassName={classes.allyEditorAddDetachment}
@@ -124,6 +126,8 @@ class AllyEditor extends Component {
           <EditDetachments
             list={list}
             type={'supportDetachments'}
+            detachments={list.supportDetachments}
+            available={list.army.getAvailableSupportDetachments(list)}
             textComponent='h6'
             titleTextVariant='h6'
             titleTextClassName={classes.allyEditorAddDetachment}
@@ -132,6 +136,8 @@ class AllyEditor extends Component {
           <EditDetachments
             list={list}
             type={'lordsOfWar'}
+            detachments={list.lordsOfWar}
+            available={list.army.getAvailableLordOfWarDetachments(list)}
             textComponent='h6'
             titleTextVariant='h6'
             titleTextClassName={classes.allyEditorAddDetachment}
