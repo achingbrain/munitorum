@@ -105,6 +105,7 @@ import ironHandsWhirlwindScorpius from './iron-hands-whirlwind-scorpius.svg'
 import ironHands from './iron-hands.svg'
 import ironWarriorsArtilleryBattery from './iron-warriors-artillery-battery.svg'
 import ironWarriorsFellblade from './iron-warriors-fellblade.svg'
+import ironWarriorsIronCircle from './iron-warriors-iron-circle.svg'
 import ironWarriorsIronHavoc from './iron-warriors-iron-havoc.svg'
 import ironWarriorsPrimarch from './iron-warriors-primarch.svg'
 import ironWarriorsStormblade from './iron-warriors-stormblade.svg'
@@ -292,6 +293,8 @@ import ultramarinesInvictarusSuzerain from './ultramarines-invictarus-suzerain.s
 import ultramarinesPrimarch from './ultramarines-primarch.svg'
 import ultramarines from './ultramarines.svg'
 import whiteScarsAttackBike from './white-scars-attack-bike.svg'
+import whiteScarsEbonKeshig from './white-scars-ebon-keshig.svg'
+import whiteScarsGoldenKeshig from './white-scars-golden-keshig.svg'
 import whiteScarsOutrider from './white-scars-outrider.svg'
 import whiteScarsSkyHunter from './white-scars-sky-hunter.svg'
 import whiteScars from './white-scars.svg'
@@ -425,6 +428,7 @@ const IMAGES = {
   'iron-hands': ironHands,
   'iron-warriors-artillery-battery': ironWarriorsArtilleryBattery,
   'iron-warriors-fellblade': ironWarriorsFellblade,
+  'iron-warriors-iron-circle': ironWarriorsIronCircle,
   'iron-warriors-iron-havoc': ironWarriorsIronHavoc,
   'iron-warriors-primarch': ironWarriorsPrimarch,
   'iron-warriors-stormblade': ironWarriorsStormblade,
@@ -665,6 +669,13 @@ const IMAGES = {
   'ultramarines': ultramarines,
   'white-scars-attack-bike': whiteScarsAttackBike,
   'white-scars-bike': whiteScarsAttackBike,
+  'white-scars-bodyguard': ironWarriorsTerminator,
+  'white-scars-chogorian-brotherhood-attack-bike': legionAttackBike,
+  'white-scars-chogorian-brotherhood-bike': legionOutrider,
+  'white-scars-chogorian-brotherhood': legionOutrider,
+  'white-scars-destroyer': darkAngelsDestroyer,
+  'white-scars-ebon-keshig': whiteScarsEbonKeshig,
+  'white-scars-golden-keshig': whiteScarsGoldenKeshig,
   'white-scars-outrider': whiteScarsOutrider,
   'white-scars-sky-hunter': whiteScarsSkyHunter,
   'white-scars': whiteScars,

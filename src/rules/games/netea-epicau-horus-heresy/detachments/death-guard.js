@@ -92,6 +92,7 @@ export class DeathGuardGraveWardenTerminatorDetachment extends SpaceMarineLegion
         new Teleport()
       ),
       new CommanderOption(
+        new Praetor(),
         new Centurion()
       )
     )

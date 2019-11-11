@@ -4,7 +4,11 @@ import {
   MacroWeapon,
   ExtraAttacks,
   SmallArms,
-  FirstStrike
+  FirstStrike,
+  SingleShot,
+  RangedWeapon,
+  AntiPersonnel,
+  Disrupt
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -108,9 +112,111 @@ export class WhiteScarsScimitarJetbike extends LegionScimitarJetbike {
   }
 }
 
+export class WhiteScarsEbonKeshig extends LegionTerminatorSquad {
+  constructor (detachment) {
+    super(detachment)
+
+    this.cost = 300
+    this.min = 4
+    this.max = undefined
+    this.quantity = 4
+
+    this.stats.ff = 4
+
+    this.rules.push(new Fearless())
+    this.rules.push(new InvulnerableSave())
+
+    this.weapons = [
+      new Weapon('power-glaive', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'), new FirstStrike()))
+    ]
+  }
+}
+
+export class WhiteScarsChogorianBrotherhoodBike extends LegionBike {
+  constructor (detachment) {
+    super(detachment)
+
+    this.min = 4
+    this.max = undefined
+    this.quantity = 4
+
+    this.cost = 135
+  }
+}
+
+export class WhiteScarsChogorianBrotherhoodAttackBike extends LegionAttackBike {
+  constructor (detachment) {
+    super(detachment)
+
+    this.min = 4
+    this.max = undefined
+    this.quantity = 4
+
+    this.cost = 135
+  }
+}
+
+export class WhiteScarsChogorianBrotherhoodBikeUnit extends MultipleChoiceUnit {
+  constructor (detachment) {
+    super(detachment,
+      new WhiteScarsChogorianBrotherhoodBike(detachment),
+      new WhiteScarsChogorianBrotherhoodAttackBike(detachment)
+    )
+  }
+}
+
+export class WhiteScarsChogorianBrotherhoodJetbike extends LegionScimitarJetbike {
+  constructor (detachment) {
+    super(detachment)
+
+    this.min = 4
+    this.max = undefined
+    this.quantity = 4
+
+    this.cost = 140
+  }
+}
+
+export class WhiteScarsGoldenKeshig extends LegionScimitarJetbike {
+  constructor (detachment) {
+    super(detachment)
+
+    this.cost = 215
+    this.min = 4
+    this.max = undefined
+    this.quantity = 4
+
+    this.stats.cc = 4
+
+    this.rules.push(new Fearless())
+    this.rules.push(new InvulnerableSave())
+
+    this.weapons = [
+      new Weapon('scatterbolt-launcher', new RangedWeapon('15cm', new AntiPersonnel('5+'), new Disrupt())),
+      new Weapon('kontos-power-lance', new AssaultWeapon(new MacroWeapon(), new SingleShot(), new FirstStrike())),
+      new Weapon('power-weapons', new AssaultWeapon(new ExtraAttacks('+1')))
+    ]
+  }
+}
+
+export class WhiteScarsChogorianBrotherhoodJetBikeUnit extends MultipleChoiceUnit {
+  constructor (detachment) {
+    super(detachment,
+      new WhiteScarsChogorianBrotherhoodJetbike(detachment),
+      new WhiteScarsGoldenKeshig(detachment)
+    )
+  }
+}
+
 withType(WhiteScarsPrimarch)
 withType(WhiteScarsBodyguardSquad)
 withType(WhiteScarsOutriderUnit)
 withType(WhiteScarsBike)
 withType(WhiteScarsAttackBike)
 withType(WhiteScarsScimitarJetbike)
+withType(WhiteScarsEbonKeshig)
+withType(WhiteScarsChogorianBrotherhoodBike)
+withType(WhiteScarsChogorianBrotherhoodAttackBike)
+withType(WhiteScarsChogorianBrotherhoodBikeUnit)
+withType(WhiteScarsChogorianBrotherhoodJetBikeUnit)
+withType(WhiteScarsGoldenKeshig)

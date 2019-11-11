@@ -32,7 +32,8 @@ import {
   LegionBasilisk,
   LegionFellblade,
   LegionUnit,
-  LegionPrimarchUnit
+  LegionPrimarchUnit,
+  LegionDreadnought
 } from './space-marine-legion'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../with-type'
@@ -104,14 +105,22 @@ class IronWarriorsTormentor extends LegionUnit {
   }
 }
 
-export class IronWarriorsIronCircle extends LegionTerminatorSquad {
+export class IronWarriorsIronCircle extends LegionDreadnought {
   constructor (detachment) {
     super(detachment)
+
+    this.rules.push(new Fearless())
+    this.rules.push(new InvulnerableSave())
 
     this.cost = 0
     this.min = 4
     this.max = undefined
     this.quantity = 4
+
+    this.weapons = [
+      new Weapon('olympia-bolt-cannon', new RangedWeapon('15cm', new AntiPersonnel('3+'), new AntiTank('6+'))),
+      new Weapon('graviton-maul', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1')))
+    ]
   }
 }
 

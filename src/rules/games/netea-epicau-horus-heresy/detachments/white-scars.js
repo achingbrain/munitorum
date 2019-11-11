@@ -11,11 +11,16 @@ import {
 import {
   WhiteScarsPrimarch,
   WhiteScarsBodyguardSquad,
-  WhiteScarsOutriderUnit,
-  WhiteScarsScimitarJetbike
+  WhiteScarsChogorianBrotherhoodBikeUnit,
+  WhiteScarsChogorianBrotherhoodJetBikeUnit,
+  WhiteScarsEbonKeshig
 } from '../units/white-scars'
 import {
-  Unique
+  LegionDestroyerSquad
+} from '../units/space-marine-legion'
+import {
+  Unique,
+  LimitedPerPoints
 } from '../constraints'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
@@ -42,12 +47,13 @@ export class WhiteScarsPrimarchDetachment extends SpaceMarineLegionDetachment {
   }
 }
 
-export class WhiteScarsOutriderDetachment extends SpaceMarineLegionDetachment {
+export class WhiteScarsChogorianBrotherhood extends SpaceMarineLegionDetachment {
   constructor (list) {
     super(list)
 
     this.setMandatoryUnits(
-      new WhiteScarsOutriderUnit(this)
+      new WhiteScarsChogorianBrotherhoodBikeUnit(this),
+      new WhiteScarsChogorianBrotherhoodJetBikeUnit(this)
     )
     this.setUpgrades(
       new CommanderOption(
@@ -58,22 +64,47 @@ export class WhiteScarsOutriderDetachment extends SpaceMarineLegionDetachment {
   }
 }
 
-export class WhiteScarsSkyHunterAttackSquadron extends SpaceMarineLegionDetachment {
+export class WhiteScarsEbonKeshigDetachment extends SpaceMarineLegionDetachment {
   constructor (list) {
     super(list)
 
     this.setMandatoryUnits(
-      new WhiteScarsScimitarJetbike(this)
+      new WhiteScarsEbonKeshig(this)
     )
     this.setUpgrades(
+      new TransportOption(
+        new DropAssault(),
+        new AssaultClaw(),
+        new HeavyTransport(),
+        new Teleport()
+      )
+    )
+  }
+}
+
+export class WhiteScarsDestroyerDetachment extends SpaceMarineLegionDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionDestroyerSquad(this)
+    )
+    this.setUpgrades(
+      new TransportOption(
+        new DropAssault(),
+        new AssaultClaw()
+      ),
       new CommanderOption(
-        new Praetor(),
         new Centurion()
       )
+    )
+    this.setConstraints(
+      new LimitedPerPoints(1, 2000)
     )
   }
 }
 
 withType(WhiteScarsPrimarchDetachment)
-withType(WhiteScarsOutriderDetachment)
-withType(WhiteScarsSkyHunterAttackSquadron)
+withType(WhiteScarsChogorianBrotherhood)
+withType(WhiteScarsEbonKeshigDetachment)
+withType(WhiteScarsDestroyerDetachment)

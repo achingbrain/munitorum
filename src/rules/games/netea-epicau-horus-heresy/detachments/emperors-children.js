@@ -10,7 +10,8 @@ import {
   Teleport,
   CommanderOption,
   Centurion,
-  Praetor
+  Praetor,
+  ArmouryAssets
 } from '../upgrades'
 import {
   EmperorsChildrenPrimarch,
@@ -117,6 +118,7 @@ export class EmperorsChildrenKakophoniDetachment extends SpaceMarineLegionDetach
         new HeavyTransport()
       ),
       new Tank(),
+      new ArmouryAssets(),
       new Hyperios()
     )
     this.setConstraints(
