@@ -549,6 +549,7 @@ const IMAGES = {
   'legion-storm-eagle': legionStormEagle,
   'legion-stormbird': legionStormbird,
   'legion-strike-cruiser': legionStrikeCruiser,
+  'legion-super-heavy-tank-battery': legionCerberus,
   'legion-super-heavy-tank-destroyer': legionSuperHeavyTankDestroyer,
   'legion-super-heavy-tank': ironWarriorsSuperHeavyTankSquadron,
   'legion-tactical': legionTactical,

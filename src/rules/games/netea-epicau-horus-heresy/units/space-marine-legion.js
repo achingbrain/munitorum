@@ -1825,6 +1825,7 @@ export class LegionVindicatorSquadronVindicator extends LegionVindicator {
   constructor (detachment) {
     super(detachment)
 
+    this.quantity = 2
     this.min = 2
     this.max = 4
   }

@@ -193,7 +193,7 @@ export default {
     'legion-sky-hunter-attack-squadron': 'Sky Hunter Attack Squadron',
     'legion-spacecraft': 'Spacecraft',
     'legion-storm-eagle-attack-wing': 'Storm Eagle Attack Wing',
-    'legion-storm-eagle': 'Storm Eagle Attack Ship',
+    'legion-storm-eagle-attack-ship': 'Storm Eagle Attack Ship',
     'legion-stormbird': 'Storm Bird Heavy Attack Ship',
     'legion-stormbird-wing': 'Stormbird Wing',
     'legion-strike-cruiser': 'Strike Cruiser',
