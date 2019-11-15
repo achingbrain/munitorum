@@ -9,7 +9,8 @@ import {
   Teleport,
   Tank,
   Hyperios,
-  ArmouryAssets
+  ArmouryAssets,
+  Rhinos
 } from '../upgrades'
 import {
   LegionDestroyerSquad,
@@ -41,6 +42,7 @@ export class ImperialFistsPrimarchDetachment extends SpaceMarineLegionDetachment
     )
     this.setUpgrades(
       new TransportOption(
+        new Rhinos(),
         new DropAssault(),
         new HeavyTransport()
       ),
@@ -87,6 +89,7 @@ export class ImperialFistsTemplarBrethrenDetachment extends SpaceMarineLegionDet
     )
     this.setUpgrades(
       new TransportOption(
+        new Rhinos(),
         new DropAssault(),
         new AssaultClaw()
       )

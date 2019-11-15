@@ -28,9 +28,6 @@ import {
   Unique,
   LimitedPerPoints
 } from '../constraints'
-import {
-  PlusTransports
-} from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
 
@@ -55,9 +52,6 @@ export class WordBearersPrimarchDetachment extends SpaceMarineLegionDetachment {
     this.setConstraints(
       new Unique()
     )
-    this.setRules(
-      new PlusTransports()
-    )
   }
 }
 
@@ -80,9 +74,6 @@ export class WordBearersGalVorbakDarkBrethrenDetachment extends SpaceMarineLegio
     )
     this.setConstraints(
       new LimitedPerPoints(1, 1000)
-    )
-    this.setRules(
-      new PlusTransports()
     )
   }
 }
@@ -120,8 +111,7 @@ export class WordBearersDestroyerDetachment extends SpaceMarineLegionDetachment 
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
-        new AssaultClaw()
+        new DropAssault()
       ),
       new CommanderOption(
         new Centurion()
@@ -158,6 +148,9 @@ export class WordBearersMharaGalTaintedDreadnoughtTalon extends SpaceMarineLegio
     this.setUpgrades(
       new TransportOption(
         new DropAssault()
+      ),
+      new CommanderOption(
+        new Centurion()
       ),
       new WordBearersMharaGalTainedDreadnoughtUpgrade()
     )

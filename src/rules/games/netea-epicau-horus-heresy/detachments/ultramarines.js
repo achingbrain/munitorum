@@ -35,9 +35,6 @@ import {
   Unique,
   LimitedPerPoints
 } from '../constraints'
-import {
-  PlusTransports
-} from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
 
@@ -74,7 +71,6 @@ export class UltramarinesFulmentarusTerminatorDetachment extends SpaceMarineLegi
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()
@@ -117,8 +113,12 @@ export class UltramarinesInvictarusSuzerainDetachment extends SpaceMarineLegionD
     this.setUpgrades(
       new TransportOption(
         new DropAssault(),
-        new AssaultClaw()
-      )
+        new AssaultClaw(),
+        new HeavyTransport()
+      ),
+      new Tank(),
+      new ArmouryAssets(),
+      new Hyperios()
     )
     this.setConstraints(
       new LimitedPerPoints(1, 4000)
@@ -168,14 +168,12 @@ export class UltramarinesTacticalDetachment extends SpaceMarineLegionDetachment 
       new Hyperios(),
       new Dreadnought(),
       new Tank(),
+      new ArmouryAssets(),
       new MultipleChoiceOption(
         LegionTacticalSupportSquad,
         LegionHeavySupportSquad
       ),
       new RapierBattery()
-    )
-    this.setConstraints(
-      new PlusTransports()
     )
   }
 }

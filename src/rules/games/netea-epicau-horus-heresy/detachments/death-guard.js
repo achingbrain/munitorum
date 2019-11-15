@@ -61,7 +61,6 @@ export class DeathGuardDeathshroudTerminatorDetachment extends SpaceMarineLegion
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()
@@ -86,7 +85,6 @@ export class DeathGuardGraveWardenTerminatorDetachment extends SpaceMarineLegion
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()

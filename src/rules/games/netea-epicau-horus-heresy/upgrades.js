@@ -18,7 +18,6 @@ import {
   LegionCerberus,
   LegionRhino,
   LegionDropPod,
-  LegionDreadclaw,
   LegionCaestus,
   LegionKharybdis,
   LegionLandRaiderProteusTransport,
@@ -387,8 +386,7 @@ export class Rhinos extends MultipleChoiceOption {
 export class DropAssault extends MultipleChoiceOption {
   constructor () {
     super(
-      LegionDropPod,
-      LegionDreadclaw
+      LegionDropPod
     )
   }
 }

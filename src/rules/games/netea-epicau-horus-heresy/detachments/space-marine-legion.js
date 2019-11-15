@@ -61,9 +61,6 @@ import {
 import {
   LimitedPerPoints
 } from '../constraints'
-import {
-  PlusTransports
-} from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
 
@@ -613,9 +610,6 @@ export class LegionTacticalDetachment extends SpaceMarineLegionDetachment {
         LegionHeavySupportSquad
       ),
       new RapierBattery()
-    )
-    this.setConstraints(
-      new PlusTransports()
     )
   }
 }

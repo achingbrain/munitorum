@@ -19,7 +19,6 @@ import {
   DamageCapacity,
   CriticalHit,
   SlowAndSteady,
-  PlusTransports,
   Teleport
 } from '../special-rules'
 import {
@@ -182,7 +181,6 @@ export class LegionBattleBarge extends SpacecraftUnit {
       assaultRam: Infinity,
       assaultClaw: Infinity,
       dropPod: Infinity,
-      dreadClaw: Infinity,
       stormEagle: Infinity
     }
     this.rules = [
@@ -253,7 +251,7 @@ export class LegionBreacherSupportSquad extends LegionBreacherSquad {
 
 export class LegionCaestus extends TransportUnit {
   constructor (detachment) {
-    super(detachment, 75)
+    super(detachment, 50)
 
     this.transportTypes = {
       breacher: 2,
@@ -502,45 +500,6 @@ export class LegionDestroyerSquad extends LegionUnit {
   }
 }
 
-export class LegionDreadclaw extends TransportUnit {
-  constructor (detachment) {
-    super(detachment, 50)
-
-    this.transportTypes = {
-      tactical: 2,
-      breacher: 2,
-      assault: 2,
-      terminator: 1,
-      rapier: 1,
-      dreadnought: 1
-    }
-    this.rules = [
-      new Planetfall()
-    ]
-    this.stats = {
-      type: 'Special',
-      speed: 0,
-      armour: 7,
-      cc: 7,
-      ff: 7
-    }
-    this.weapons = [
-
-    ]
-  }
-
-  getCost () {
-    const plusTransport = this.detachment.rules.find(rule => rule instanceof PlusTransports)
-
-    // detachments with the PlusTransports special rule can have rhinos or drop pods/dread claws for free
-    if (plusTransport) {
-      return 0
-    }
-
-    return this.cost
-  }
-}
-
 export class LegionDreadnought extends LegionUnit {
   constructor (detachment) {
     super(detachment, 50, 1)
@@ -577,13 +536,12 @@ export class LegionDreadnought extends LegionUnit {
 
 export class LegionDropPod extends TransportUnit {
   constructor (detachment) {
-    super(detachment, 50)
+    super(detachment, 0)
 
     this.transportTypes = {
       tactical: 2,
       breacher: 2,
       assault: 2,
-      terminator: 1,
       rapier: 1,
       dreadnought: 1
     }
@@ -600,17 +558,6 @@ export class LegionDropPod extends TransportUnit {
     this.weapons = [
       new Weapon('deathstorm-bombardment', new RangedWeapon('15cm', new AntiPersonnel('5+'), new AntiTank('5+')))
     ]
-  }
-
-  getCost () {
-    const plusTransport = this.detachment.rules.find(rule => rule instanceof PlusTransports)
-
-    // detachments with the PlusTransports special rule can have rhinos or drop pods/dread claws for free
-    if (plusTransport) {
-      return 0
-    }
-
-    return this.cost
   }
 }
 
@@ -762,7 +709,7 @@ export class LegionJavelinAttackSpeeder extends LegionUnit {
 
 export class LegionKharybdis extends TransportUnit {
   constructor (detachment) {
-    super(detachment, 100)
+    super(detachment, 75)
 
     this.transportTypes = {
       tactical: 4,
@@ -785,7 +732,7 @@ export class LegionKharybdis extends TransportUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('storm-launcher', new RangedWeapon('30cm', new MultipleShot('3x', new AntiPersonnel('5+'), new AntiTank('5+')))),
+      new Weapon('storm-launcher', new RangedWeapon('30cm', new MultipleShot('3x', new AntiPersonnel('5+'), new AntiTank('5+')), new SingleShot())),
       new Weapon('melta-ram', new AssaultWeapon(new MacroWeapon())),
       new Weapon('heat-blast', new SmallArms('15cm', new IgnoreCover()))
     ]
@@ -1312,8 +1259,7 @@ export class LegionReconnaissanceSquad extends LegionUnit {
     this.transportType = 'tactical'
     this.rules = [
       new Scout(),
-      new Infiltrator(),
-      new PlusTransports()
+      new Infiltrator()
     ]
     this.stats = {
       type: 'INF',
@@ -1563,7 +1509,6 @@ export class LegionStrikeCruiser extends SpacecraftUnit {
       assaultRam: Infinity,
       assaultClaw: Infinity,
       dropPod: Infinity,
-      dreadClaw: Infinity,
       stormEagle: Infinity
     }
     this.rules = []
@@ -1713,7 +1658,7 @@ export class LegionThunderhawkGunship extends LegionUnit {
 
 export class LegionThunderhawkTransporter extends LegionUnit {
   constructor (detachment) {
-    super(detachment, 250, 1, 3)
+    super(detachment, 100, 1, 3)
 
     this.transportTypes = {
       rhino: 2,
@@ -1923,7 +1868,6 @@ withType(LegionDamoclesCommandRhino)
 withType(LegionDeredeoDreadnought)
 withType(LegionDespoilerSquad)
 withType(LegionDestroyerSquad)
-withType(LegionDreadclaw)
 withType(LegionDreadnought)
 withType(LegionDropPod)
 withType(LegionFalchion)

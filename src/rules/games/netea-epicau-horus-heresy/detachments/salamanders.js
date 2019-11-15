@@ -1,6 +1,5 @@
 import {
   TransportOption,
-  DropAssault,
   AssaultRam,
   HeavyTransport,
   CommanderOption,
@@ -34,7 +33,6 @@ export class SalamandersPrimarchDetachment extends SpaceMarineLegionDetachment {
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()
@@ -77,7 +75,6 @@ export class SalamandersFiredrakeTerminatorDetachment extends SpaceMarineLegionD
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()

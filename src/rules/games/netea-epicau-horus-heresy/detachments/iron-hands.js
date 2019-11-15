@@ -4,7 +4,6 @@ import {
   TransportOption,
   DropAssault,
   AssaultRam,
-  AssaultClaw,
   HeavyTransport,
   Teleport,
   CommanderOption,
@@ -41,9 +40,7 @@ export class IronHandsPrimarchDetachment extends SpaceMarineLegionDetachment {
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
-        new AssaultClaw(),
         new HeavyTransport(),
         new Teleport()
       ),
@@ -66,7 +63,6 @@ export class IronHandsGorgonTerminatorDetachment extends SpaceMarineLegionDetach
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()

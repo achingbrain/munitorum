@@ -17,9 +17,6 @@ import {
 import {
   Unique
 } from '../constraints'
-import {
-  PlusTransports
-} from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
 
@@ -33,7 +30,7 @@ export class ThousandSonsPrimarchDetachment extends SpaceMarineLegionDetachment 
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
+        new Teleport(),
         new AssaultClaw(),
         new HeavyTransport()
       )
@@ -53,7 +50,6 @@ export class ThousandSonsSekhmetTerminatorDetachment extends SpaceMarineLegionDe
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()
@@ -76,9 +72,6 @@ export class ThousandSonsAmmitaraIntercessorDetachment extends SpaceMarineLegion
         new Teleport()
       )
     )
-    this.setRules(
-      new PlusTransports()
-    )
   }
 }
 
@@ -94,9 +87,6 @@ export class ThousandSonsKhenetaiBladesDetachment extends SpaceMarineLegionDetac
         new Rhinos(),
         new DropAssault()
       )
-    )
-    this.setRules(
-      new PlusTransports()
     )
   }
 }

@@ -22,9 +22,6 @@ import {
 import {
   Unique
 } from '../constraints'
-import {
-  PlusTransports
-} from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
 
@@ -50,9 +47,6 @@ export class AlphaLegionPrimarchDetachment extends SpaceMarineLegionDetachment {
     this.setConstraints(
       new Unique()
     )
-    this.setRules(
-      new PlusTransports()
-    )
   }
 }
 
@@ -65,7 +59,6 @@ export class AlphaLegionLernaeanTerminatorDetachment extends SpaceMarineLegionDe
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()
@@ -96,9 +89,6 @@ export class AlphaLegionHeadHunterKillTeamDetachment extends SpaceMarineLegionDe
         new Centurion()
       ),
       new Tank()
-    )
-    this.setRules(
-      new PlusTransports()
     )
   }
 }

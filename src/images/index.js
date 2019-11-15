@@ -172,7 +172,6 @@ import legionContemptorDreadnought from './legion-contemptor-dreadnought.svg'
 import legionDamoclesCommandRhino from './legion-damocles-command-rhino.svg'
 import legionDeredeoDreadnought from './legion-deredeo-dreadnought.svg'
 import legionDespoiler from './legion-despoiler.svg'
-import legionDreadclaw from './legion-dreadclaw.svg'
 import legionDreadnought from './legion-dreadnought.svg'
 import legionDropPod from './legion-drop-pod.svg'
 import legionFalchion from './legion-falchion.svg'
@@ -506,7 +505,6 @@ const IMAGES = {
   'legion-deredeo-dreadnought': legionDeredeoDreadnought,
   'legion-despoiler': legionDespoiler,
   'legion-destroyer': darkAngelsDestroyer,
-  'legion-dreadclaw': legionDreadclaw,
   'legion-dreadnought': legionDreadnought,
   'legion-drop-pod': legionDropPod,
   'legion-falchion': legionFalchion,

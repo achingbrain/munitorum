@@ -7,7 +7,8 @@ import {
   Teleport,
   CommanderOption,
   Centurion,
-  Praetor
+  Praetor,
+  AssaultClaw
 } from '../upgrades'
 import {
   SpaceWolvesPrimarch,
@@ -19,9 +20,6 @@ import {
 import {
   Unique
 } from '../constraints'
-import {
-  PlusTransports
-} from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
 
@@ -35,6 +33,7 @@ export class SpaceWolvesPrimarchDetachment extends SpaceMarineLegionDetachment {
     )
     this.setUpgrades(
       new TransportOption(
+        new AssaultClaw(),
         new HeavyTransport()
       )
     )
@@ -61,9 +60,6 @@ export class SpaceWolvesGreySlayerDetachment extends SpaceMarineLegionDetachment
         new Centurion()
       )
     )
-    this.setRules(
-      new PlusTransports()
-    )
   }
 }
 
@@ -81,9 +77,6 @@ export class SpaceWolvesDeathswornDetachment extends SpaceMarineLegionDetachment
         new HeavyTransport()
       )
     )
-    this.setRules(
-      new PlusTransports()
-    )
   }
 }
 
@@ -96,7 +89,6 @@ export class SpaceWolvesVaragyrWolfGuardDetachment extends SpaceMarineLegionDeta
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()

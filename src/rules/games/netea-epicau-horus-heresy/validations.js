@@ -9,7 +9,6 @@ import {
 import {
   LegionLordCommander,
   LegionDropPod,
-  LegionDreadclaw,
   LegionPrimarchUnit,
   LegionTeleport
 } from './units/space-marine-legion'
@@ -374,7 +373,7 @@ export class RequireSpacecraftForDropPods extends Rule {
       this.spacecraft++
     }
 
-    if (unit instanceof LegionDropPod || unit instanceof LegionDreadclaw) {
+    if (unit instanceof LegionDropPod) {
       this.planetfall++
     }
   }

@@ -136,7 +136,6 @@ export default {
     'legion-despoiler-squad': 'Despoiler Squad',
     'legion-destroyer-detachment': 'Destroyer Detachment',
     'legion-destroyer-squad': 'Destroyer Squad',
-    'legion-dreadclaw': 'Dreadclaw',
     'legion-dreadnought': 'Dreadnought',
     'legion-dreadnought-talon': 'Dreadnought Talon',
     'legion-drop-pod': 'Drop Pod',

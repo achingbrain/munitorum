@@ -34,7 +34,6 @@ export class DarkAngelsPrimarchDetachment extends SpaceMarineLegionDetachment {
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new HeavyTransport(),
         new Teleport()
       ),

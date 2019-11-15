@@ -36,8 +36,7 @@ export class SonsOfHorusPrimarchDetachment extends SpaceMarineLegionDetachment {
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
-        new AssaultRam(),
+        new AssaultClaw(),
         new HeavyTransport(),
         new Teleport()
       ),
@@ -86,7 +85,6 @@ export class SonsOfHorusJustaerinTerminatorDetachment extends SpaceMarineLegionD
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()

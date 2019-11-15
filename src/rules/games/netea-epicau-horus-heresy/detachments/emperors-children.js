@@ -24,9 +24,6 @@ import {
   Unique,
   LimitedPerPoints
 } from '../constraints'
-import {
-  PlusTransports
-} from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
 
@@ -62,7 +59,6 @@ export class EmperorsChildrenPhoenixTerminatorDetachment extends SpaceMarineLegi
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()
@@ -98,9 +94,6 @@ export class EmperorsChildrenPalatineBladesDetachment extends SpaceMarineLegionD
     this.setConstraints(
       new LimitedPerPoints(1, 2000)
     )
-    this.setRules(
-      new PlusTransports()
-    )
   }
 }
 
@@ -123,9 +116,6 @@ export class EmperorsChildrenKakophoniDetachment extends SpaceMarineLegionDetach
     )
     this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    )
-    this.setRules(
-      new PlusTransports()
     )
   }
 }

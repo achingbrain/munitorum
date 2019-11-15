@@ -73,7 +73,6 @@ export class WhiteScarsEbonKeshigDetachment extends SpaceMarineLegionDetachment 
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultClaw(),
         new HeavyTransport(),
         new Teleport()
@@ -91,8 +90,7 @@ export class WhiteScarsDestroyerDetachment extends SpaceMarineLegionDetachment {
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
-        new AssaultClaw()
+        new DropAssault()
       ),
       new CommanderOption(
         new Centurion()

@@ -163,10 +163,6 @@ export class SlowAndSteady {
   }
 }
 
-export class PlusTransports {
-
-}
-
 export class CortexController {
   constructor () {
     this.name = 'cortex-controller'

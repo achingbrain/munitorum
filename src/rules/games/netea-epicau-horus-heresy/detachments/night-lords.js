@@ -25,9 +25,6 @@ import {
   Unique,
   LimitedPerPoints
 } from '../constraints'
-import {
-  PlusTransports
-} from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
 
@@ -53,9 +50,6 @@ export class NightLordsPrimarchDetachment extends SpaceMarineLegionDetachment {
     this.setConstraints(
       new Unique()
     )
-    this.setRules(
-      new PlusTransports()
-    )
   }
 }
 
@@ -79,9 +73,6 @@ export class NightLordsTerrorDetachment extends SpaceMarineLegionDetachment {
     )
     this.setConstraints(
       new LimitedPerPoints(1, 2000)
-    )
-    this.setRules(
-      new PlusTransports()
     )
   }
 }

@@ -27,9 +27,6 @@ import {
   Unique,
   LimitedPerPoints
 } from '../constraints'
-import {
-  PlusTransports
-} from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
 
@@ -55,7 +52,6 @@ export class IronWarriorsPrimarchDetachment extends SpaceMarineLegionDetachment 
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()
@@ -79,7 +75,6 @@ export class IronWarriorsTerminatorDetachment extends SpaceMarineLegionDetachmen
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()
@@ -114,9 +109,6 @@ export class IronWarriorsIronHavocDetachment extends SpaceMarineLegionDetachment
         new Centurion()
       ),
       new Hyperios()
-    )
-    this.setConstraints(
-      new PlusTransports()
     )
   }
 }

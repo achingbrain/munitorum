@@ -22,9 +22,6 @@ import {
   Unique,
   LimitedPerPoints
 } from '../constraints'
-import {
-  PlusTransports
-} from '../special-rules'
 import SpaceMarineLegionDetachment from './space-marine-legion-detachment'
 import withType from '../with-type'
 
@@ -38,7 +35,6 @@ export class WorldEatersPrimarchDetachment extends SpaceMarineLegionDetachment {
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultClaw(),
         new AssaultRam(),
         new HeavyTransport(),
@@ -89,9 +85,6 @@ export class WorldEatersRampagerDetachment extends SpaceMarineLegionDetachment {
         new Centurion()
       )
     )
-    this.setRules(
-      new PlusTransports()
-    )
   }
 }
 
@@ -104,7 +97,6 @@ export class WorldEatersRedButcherDetachment extends SpaceMarineLegionDetachment
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new HeavyTransport(),
         new Teleport()

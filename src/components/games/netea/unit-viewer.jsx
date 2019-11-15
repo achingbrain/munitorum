@@ -14,7 +14,6 @@ import {
   WeaponBlank
 } from '../../../rules/games/netea-epicau-horus-heresy/weapons'
 import {
-  PlusTransports,
   Notes
 } from '../../../rules/games/netea-epicau-horus-heresy/special-rules'
 import {
@@ -27,7 +26,7 @@ const RulesDisplay = component(({ rules, classes, t }) => {
       {
         rules
           .filter(rule => {
-            return !(rule instanceof Notes) && !(rule instanceof PlusTransports) && !(rule instanceof Unique)
+            return !(rule instanceof Notes) && !(rule instanceof Unique)
           })
           .map((rule, ruleIndex) => {
             const output = rule.type || t(rule.name)

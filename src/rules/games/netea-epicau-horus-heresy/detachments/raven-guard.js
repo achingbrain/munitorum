@@ -5,7 +5,8 @@ import {
   AssaultClaw,
   HeavyTransport,
   CommanderOption,
-  Centurion
+  Centurion,
+  Rhinos
 } from '../upgrades'
 import {
   LegionDestroyerSquad
@@ -74,6 +75,8 @@ export class RavenGuardMorDeythanStrikeDetachment extends SpaceMarineLegionDetac
     )
     this.setUpgrades(
       new TransportOption(
+        new Rhinos(),
+        new DropAssault(),
         new HeavyTransport(),
         new AssaultRam()
       )

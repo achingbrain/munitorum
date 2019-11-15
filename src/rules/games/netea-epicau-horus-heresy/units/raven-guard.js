@@ -35,7 +35,7 @@ import withType from '../with-type'
 
 export class RavenGuardPrimarch extends LegionPrimarchUnit {
   constructor (detachment) {
-    super(detachment, 450)
+    super(detachment, 400)
 
     this.transportType = 'assault'
     this.rules = [
