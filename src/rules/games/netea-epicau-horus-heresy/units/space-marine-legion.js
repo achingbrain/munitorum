@@ -34,7 +34,6 @@ import {
   AntiPersonnel,
   AntiTank,
   AntiAircraft,
-  Radiation,
   RangedWeapon,
   AssaultWeapon,
   SmallArms,
@@ -50,7 +49,8 @@ import {
   ForwardFireArc,
   LeftFireArc,
   RightFireArc,
-  PointsModifier
+  PointsModifier,
+  Fleshbane
 } from '../weapons'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit, { TransportUnit } from './unit'
@@ -495,7 +495,7 @@ export class LegionDestroyerSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('assault-launcher', new RangedWeapon('15cm', new AntiPersonnel('4+'), new Radiation()))
+      new Weapon('assault-launcher', new RangedWeapon('15cm', new AntiPersonnel('4+'), new Fleshbane()))
     ]
   }
 }

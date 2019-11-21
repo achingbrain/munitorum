@@ -1163,6 +1163,7 @@ export default {
     'fighter': 'Fighter',
     'bomber': 'Bomber',
     'fighter-bomber': 'Fighter-Bomber',
+    'fleshbane': 'Fleshbane',
 
     'imperial-militia-warrior-elite-provenance': 'Warrior Elite Provenance',
     'imperial-militia-survivors-of-the-dark-age-provenance': 'Survivors of the Dark Age Provenance',

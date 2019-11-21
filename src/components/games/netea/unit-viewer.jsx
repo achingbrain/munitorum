@@ -132,31 +132,44 @@ class UnitViewer extends Component {
                       .map((fp, fpIndex) => {
                         const output = fp.type || t(fp.name)
 
-                        if (fp.link) {
+                        function displayFirepower (type, fp, index) {
+                          if (!type) {
+                            return null
+                          }
+
+                          if (type.type) {
+                            type = type.type
+                          }
+
+                          if (typeof fp.link === 'string') {
+                            return (
+                              <a
+                                key={`fp-${profileIndex}-${index}`}
+                                href={fp.link}
+                                target='_blank'
+                                rel='noreferrer'
+                                className={classes.fpLink}
+                                title={t(fp.name)}>
+                                {type}
+                              </a>
+                            )
+                          }
+
                           return (
-                            <a
-                              key={`fp-${profileIndex}-${fpIndex}`}
-                              href={fp.link}
-                              target='_blank'
-                              rel='noreferrer'
-                              className={classes.fpLink}
-                              title={t(fp.name)}>
-                              {output}
-                            </a>
+                            <Typography key={`fp-${profileIndex}-${index}`} component='span' title={t(fp.name)} className={classes.fp}>
+                              {type}
+                            </Typography>
                           )
                         }
 
-                        if (!output) {
-                          return null
+                        if (Array.isArray(output)) {
+                          return output.map((fp, index) => displayFirepower(fp, fp, index))
                         }
 
-                        return (
-                          <Typography key={`fp-${profileIndex}-${fpIndex}`} component='span' title={t(fp.name)} className={classes.fp}>
-                            {output}
-                          </Typography>
-                        )
+                        return displayFirepower(output, fp, fpIndex)
                       })
                       .filter(Boolean)
+                      .flat()
                       .reduce((prev, curr) => {
                         if (prev.length) {
                           return [prev, ', ', curr]

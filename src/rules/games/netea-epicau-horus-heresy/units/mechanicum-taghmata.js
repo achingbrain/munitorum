@@ -20,7 +20,8 @@ import {
   RearFireArc,
   Disrupt,
   Lance,
-  Radiation
+  Fleshbane,
+  Singularity
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -38,7 +39,6 @@ import {
   CortexController,
   JumpPacks,
   CyberneticaCortex,
-  Singularity,
   VoidShields,
   ImplacableAdvance
 } from '../special-rules'
@@ -231,7 +231,7 @@ export class MechanicumTaghmataCastellax extends Unit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('mauler-bolt-cannon', new RangedWeapon('15cm', new AntiPersonnel('4+'), new AntiTank('+6'))),
+      new Weapon('mauler-bolt-cannon', new RangedWeapon('30cm', new AntiPersonnel('4+'), new AntiTank('+6'))),
       new Weapon('power-blade', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1')))
     ]
   }
@@ -328,7 +328,7 @@ export class MechanicumTaghmataKaracnos extends Unit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('karacnos-mortar-battery', new RangedWeapon('45cm', new BarragePoints(1), new IgnoreCover(), new Radiation())),
+      new Weapon('karacnos-mortar-battery', new RangedWeapon('45cm', new BarragePoints(1), new IgnoreCover(), new Fleshbane())),
       new Weapon('lighting-blaster-sentinels', new RangedWeapon('15cm', new AntiPersonnel('5+'), new Disrupt())),
       new Weapon('shock-ram', new AssaultWeapon(new Disrupt()))
     ]

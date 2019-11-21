@@ -184,13 +184,6 @@ export class CyberneticaCortex {
   }
 }
 
-export class Singularity {
-  constructor () {
-    this.name = 'singularity'
-    this.link = 'http://epicau.com/mw/index.php/Mechanicum_Taghmata#Special_Rules'
-  }
-}
-
 export class Fortifications {
   constructor () {
     this.name = 'fortifications'

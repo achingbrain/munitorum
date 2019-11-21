@@ -101,6 +101,8 @@ export default class MechanicumTaghmata extends Army {
       new LordsOfWarLimit(1 / 3),
       new SupportDetachmentsLimit(3)
     )
+
+    this.colour = '#4c0404'
   }
 
   getStrategyRating (list) {

@@ -83,7 +83,7 @@ export class OptionalWeapons extends MultipleChoiceWeapon {
 
 export class MultipleShot {
   constructor (quantity, ...firepower) {
-    this.type = `${quantity} ${firepower.map(fp => fp.type).join('/')}`
+    this.type = [quantity].concat(firepower)
   }
 }
 
@@ -309,6 +309,22 @@ export class IgnoreShields {
   constructor () {
     this.type = 'Ignore Shields'
     this.name = 'ignore-shields'
+  }
+}
+
+export class Fleshbane {
+  constructor () {
+    this.type = 'Fb'
+    this.name = 'fleshbane'
+    this.link = 'http://epicau.com/mw/index.php/Legion_Astartes'
+  }
+}
+
+export class Singularity {
+  constructor () {
+    this.type = 'Sg'
+    this.name = 'singularity'
+    this.link = 'http://epicau.com/mw/index.php/Mechanicum_Taghmata#Special_Rules'
   }
 }
 

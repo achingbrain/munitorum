@@ -16,7 +16,8 @@ import {
   Disrupt,
   FirstStrike,
   IndirectFire,
-  Or
+  Or,
+  Singularity
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -26,7 +27,6 @@ import {
   Walker,
   IonShield,
   IonGauntlet,
-  Singularity,
   Leader,
   SupremeCommander,
   InvulnerableSave,
