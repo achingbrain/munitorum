@@ -224,7 +224,7 @@ export class MechanicumTaghmataCastellax extends Unit {
       new Walker()
     ]
     this.stats = {
-      type: 'INF',
+      type: 'AV',
       speed: 15,
       armour: 3,
       cc: 4,
