@@ -40,28 +40,28 @@ class ListEditor extends Component {
         <Validator errors={list.errors} />
         <EditDetachments
           list={list}
-          type={'lineDetachments'}
+          type='lineDetachments'
           detachments={list.lineDetachments}
           available={list.army.getAvailableLineDetachments(list)}
           onAddDetachment={this.handleAddDetachment}
         />
         <EditDetachments
           list={list}
-          type={'supportDetachments'}
+          type='supportDetachments'
           detachments={list.supportDetachments}
           available={list.army.getAvailableSupportDetachments(list)}
           onAddDetachment={this.handleAddDetachment}
         />
         <EditDetachments
           list={list}
-          type={'lordsOfWar'}
+          type='lordsOfWar'
           detachments={list.lordsOfWar}
           available={list.army.getAvailableLordOfWarDetachments(list)}
           onAddDetachment={this.handleAddDetachment}
         />
         <EditAllies
           list={list}
-          type={'allies'}
+          type='allies'
           onAddAlly={this.handleAddDetachment}
         />
       </>

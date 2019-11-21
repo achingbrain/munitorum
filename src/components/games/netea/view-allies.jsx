@@ -25,15 +25,15 @@ const AlliesViewer = ({ list, classes }) => {
             <Validator errors={ally.errors} />
             <ViewDetachments
               list={ally}
-              type={'lineDetachments'}
+              type='lineDetachments'
             />
             <ViewDetachments
               list={ally}
-              type={'supportDetachments'}
+              type='supportDetachments'
             />
             <ViewDetachments
               list={ally}
-              type={'lordsOfWar'}
+              type='lordsOfWar'
             />
           </CardContent>
         </Card>

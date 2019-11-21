@@ -100,7 +100,7 @@ export default class SolarAuxilia extends Army {
   }
 
   getStrategyRating (list) {
-    let rating = 3
+    const rating = 3
 
     if (list.allies.find(item =>
       item.army.type === MechanicumTaghmata.type ||

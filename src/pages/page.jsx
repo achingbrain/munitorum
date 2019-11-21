@@ -59,7 +59,8 @@ class Page extends Component {
             <InvalidList>
               <ViewNavigation toolbar={
                 <ViewListHeader onEdit={this.handleEditList} />
-              }>
+              }
+              >
                 <ListViewer />
               </ViewNavigation>
             </InvalidList>
@@ -75,7 +76,8 @@ class Page extends Component {
           <InvalidList>
             <EditNavigation toolbar={
               <EditListHeader onView={this.handleViewList} />
-            }>
+            }
+            >
               <ListEditor />
             </EditNavigation>
           </InvalidList>

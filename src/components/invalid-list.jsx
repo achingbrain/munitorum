@@ -61,7 +61,8 @@ class InvalidListView extends Component {
           <Typography variant='h6' color='inherit' className={classes.grow} noWrap>
             {t('invalid-list')}
           </Typography>
-        }>
+        }
+        >
           <Card className={classes.card}>
             <CardContent>
               <Typography component='p'>
@@ -69,9 +70,11 @@ class InvalidListView extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <Confirm title={'Remove this list?'} text={'Really remove this list?'} onConfirm={this.handleRemoveList} button={(onClick) => (
-                <Button size='small' onClick={onClick}>Remove</Button>
-              )} />
+              <Confirm
+                title='Remove this list?' text='Really remove this list?' onConfirm={this.handleRemoveList} button={(onClick) => (
+                  <Button size='small' onClick={onClick}>Remove</Button>
+                )}
+              />
             </CardActions>
           </Card>
         </EditNavigation>

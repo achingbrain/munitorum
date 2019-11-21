@@ -49,7 +49,8 @@ class EditAllies extends Component {
           text={t('allies')}
           textClassName={classes.detachmentType}
           items={army.allies}
-          onSelect={this.handleAddAlly} />
+          onSelect={this.handleAddAlly}
+        />
         {
           list.allies.map((ally, index) => (
             <AllyEditor

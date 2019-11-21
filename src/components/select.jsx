@@ -49,11 +49,13 @@ class Select extends Component {
     return (
       <div>
         <Typography component='p'>
-          {text}<IconButton
+          {text}
+          <IconButton
             aria-owns={anchorEl ? 'simple-menu' : undefined}
             aria-haspopup='true'
             onClick={this.handleClick}
-          ><ExpandIcon /></IconButton>
+          ><ExpandIcon />
+          </IconButton>
         </Typography>
         <Menu
           id='simple-menu'

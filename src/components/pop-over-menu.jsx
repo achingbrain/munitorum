@@ -69,12 +69,14 @@ class PopOverMenu extends Component {
           onClick={this.handleClick}
           noWrap
         >
-          {text}<InlineButton
+          {text}
+          <InlineButton
             aria-owns={anchorEl ? 'simple-menu' : undefined}
             aria-haspopup='true'
             disabled={!items.length}
             size={buttonSize}
-          >{button || <AddIcon />}</InlineButton>
+          >{button || <AddIcon />}
+          </InlineButton>
         </Typography>
         <Menu
           id='simple-menu'

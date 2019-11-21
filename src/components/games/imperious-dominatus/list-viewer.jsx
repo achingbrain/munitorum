@@ -22,7 +22,8 @@ const ListViewer = ({ list, detachments, t, classes }) => {
               <DetachmentViewer
                 detachment={detachment}
                 isFirst={index === 0}
-                isLast={index === detachments.length - 1} />
+                isLast={index === detachments.length - 1}
+              />
             </InvalidDetachment>
           )
         })

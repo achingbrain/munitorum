@@ -138,11 +138,13 @@ class DetachmentEditor extends Component {
               >
                 <DownIcon />
               </IconButton>
-              <Confirm title={t('remove-detachment')} text={t('really-remove-detachment')} onConfirm={this.handleRemoveDetachment} button={(onClick) => (
-                <IconButton aria-label='Delete' onClick={onClick}>
-                  <DeleteIcon />
-                </IconButton>
-              )} />
+              <Confirm
+                title={t('remove-detachment')} text={t('really-remove-detachment')} onConfirm={this.handleRemoveDetachment} button={(onClick) => (
+                  <IconButton aria-label='Delete' onClick={onClick}>
+                    <DeleteIcon />
+                  </IconButton>
+                )}
+              />
             </>
           }
           title={(
@@ -198,7 +200,8 @@ class DetachmentEditor extends Component {
                     <DetachmentEditor
                       detachment={card}
                       isFirst={index === 0}
-                      isLast={index === support.length - 1} />
+                      isLast={index === support.length - 1}
+                    />
                   </InvalidDetachment>
                 ))
               }

@@ -98,11 +98,13 @@ class AllyEditor extends Component {
               >
                 <DownIcon />
               </IconButton>
-              <Confirm title={'Remove this ally?'} text={'Really remove this ally?'} onConfirm={this.handleRemoveAlly} button={(onClick) => (
-                <IconButton aria-label='Delete' onClick={onClick}>
-                  <DeleteIcon />
-                </IconButton>
-              )} />
+              <Confirm
+                title='Remove this ally?' text='Really remove this ally?' onConfirm={this.handleRemoveAlly} button={(onClick) => (
+                  <IconButton aria-label='Delete' onClick={onClick}>
+                    <DeleteIcon />
+                  </IconButton>
+                )}
+              />
             </>
           }
           title={(
@@ -115,7 +117,7 @@ class AllyEditor extends Component {
           <Validator errors={list.errors} />
           <EditDetachments
             list={list}
-            type={'lineDetachments'}
+            type='lineDetachments'
             detachments={list.lineDetachments}
             available={list.army.getAvailableLineDetachments(list)}
             textComponent='h6'
@@ -125,7 +127,7 @@ class AllyEditor extends Component {
           />
           <EditDetachments
             list={list}
-            type={'supportDetachments'}
+            type='supportDetachments'
             detachments={list.supportDetachments}
             available={list.army.getAvailableSupportDetachments(list)}
             textComponent='h6'
@@ -135,7 +137,7 @@ class AllyEditor extends Component {
           />
           <EditDetachments
             list={list}
-            type={'lordsOfWar'}
+            type='lordsOfWar'
             detachments={list.lordsOfWar}
             available={list.army.getAvailableLordOfWarDetachments(list)}
             textComponent='h6'

@@ -63,9 +63,12 @@ class NewList extends Component {
             <Button
               color='inherit'
               size='small'
-              onClick={this.handleBack}>Back</Button>
+              onClick={this.handleBack}
+            >Back
+            </Button>
           </>
-        }>
+        }
+        >
           <List component='nav'>
             {
               game.armies.map((army) => {
@@ -86,7 +89,8 @@ class NewList extends Component {
             {t('select-game-system')}
           </Typography>
         </>
-      }>
+      }
+      >
         <List component='nav'>
           {
             games.map((game) => {

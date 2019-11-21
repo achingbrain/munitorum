@@ -168,7 +168,7 @@ export class UltramarinesDamoclesRhino extends TransportUnit {
 export class UltramarinesRhino extends LegionRhino {
   getQuantity () {
     const quantity = super.getQuantity()
-    let damocles = Boolean(
+    const damocles = Boolean(
       this.detachment.units.find(unit => unit instanceof UltramarinesDamoclesRhino)
     )
 

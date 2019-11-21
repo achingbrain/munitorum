@@ -19,7 +19,7 @@ import { Trans } from 'react-i18next'
 
 class DetachmentViewer extends Component {
   render () {
-    let {
+    const {
       detachment,
       name,
       sections,

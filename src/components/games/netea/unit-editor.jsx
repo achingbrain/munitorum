@@ -81,12 +81,14 @@ const NameDisplay = component(({ name, quantity, min, max, unitOptions, onIncrea
         quantity={quantity}
         min={min}
         max={max}
-        onIncreaseQuantity={onIncreaseQuantity} />
+        onIncreaseQuantity={onIncreaseQuantity}
+      />
       <DecreaseQuantity
         quantity={quantity}
         min={min}
         max={max}
-        onDecreaseQuantity={onDecreaseQuantity} />
+        onDecreaseQuantity={onDecreaseQuantity}
+      />
     </>
   )
 
@@ -99,7 +101,8 @@ const NameDisplay = component(({ name, quantity, min, max, unitOptions, onIncrea
         items={unitOptions}
         onSelect={onChooseUnitOption}
         button={<MoreIcon fontSize='small' />}
-        buttonSize='small' />
+        buttonSize='small'
+      />
     )
   }
 
@@ -241,7 +244,8 @@ class UnitEditor extends Component {
           unitOptions={unitOptions}
           onChooseUnitOption={this.handleChooseUnitOption}
           onIncreaseQuantity={this.handleIncreaseQuantity}
-          onDecreaseQuantity={this.handleDecreaseQuantity} />
+          onDecreaseQuantity={this.handleDecreaseQuantity}
+        />
         {
           weapons.map((weapon, weaponIndex) => {
             if (weapon instanceof MultipleChoiceWeapon) {
@@ -250,14 +254,16 @@ class UnitEditor extends Component {
                   key={`weapon-${weaponIndex}`}
                   unit={unit}
                   weapon={weapon}
-                  weaponIndex={weaponIndex} />
+                  weaponIndex={weaponIndex}
+                />
               )
             }
 
             return (
               <EditableWeaponDisplay
                 key={`weapon-${weaponIndex}`}
-                name={weapon.name} />
+                name={weapon.name}
+              />
             )
           })
         }
@@ -289,11 +295,13 @@ class UnitEditor extends Component {
     )
 
     const remove = (
-      <Confirm title={'Remove this unit?'} text={'Really remove this unit?'} onConfirm={this.handleRemoveUnit} button={(onClick) => (
-        <IconButton aria-label='Remove' onClick={onClick} disabled={mandatory}>
-          <DeleteIcon />
-        </IconButton>
-      )} />
+      <Confirm
+        title='Remove this unit?' text='Really remove this unit?' onConfirm={this.handleRemoveUnit} button={(onClick) => (
+          <IconButton aria-label='Remove' onClick={onClick} disabled={mandatory}>
+            <DeleteIcon />
+          </IconButton>
+        )}
+      />
     )
 
     return (

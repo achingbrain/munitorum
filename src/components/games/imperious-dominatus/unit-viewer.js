@@ -19,7 +19,7 @@ const RulesDisplay = component(({ rules, classes, t }) => {
 
             if (rule.link) {
               return (
-                <a key={`rule-${ruleIndex}`} href={rule.link} target='_blank' className={classes.rulesLink}>{output}</a>
+                <a key={`rule-${ruleIndex}`} href={rule.link} target='_blank' rel='noopener noreferrer' className={classes.rulesLink}>{output}</a>
               )
             }
 
@@ -92,7 +92,7 @@ class UnitViewer extends Component {
     const weaponCount = weaponsDisplay.length
 
     return (
-      <Fragment>
+      <>
         <TableRow>
           <TableCell padding='dense' rowSpan={weaponCount} className={classes.tableViewIconCell}>
             <Icon src={image} className={classes.unitAvatar} />
@@ -121,7 +121,7 @@ class UnitViewer extends Component {
             </TableRow>
           )
         })}
-      </Fragment>
+      </>
     )
   }
 }

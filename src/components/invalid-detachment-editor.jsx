@@ -67,9 +67,11 @@ class InvalidDetachmentEditor extends Component {
           </CardContent>
           {}
           <CardActions>
-            <Confirm title={'Remove this detachment?'} text={'Really remove this detachment?'} onConfirm={this.handleRemoveDetachment} button={(onClick) => (
-              <Button size='small' onClick={onClick}>Remove</Button>
-            )} />
+            <Confirm
+              title='Remove this detachment?' text='Really remove this detachment?' onConfirm={this.handleRemoveDetachment} button={(onClick) => (
+                <Button size='small' onClick={onClick}>Remove</Button>
+              )}
+            />
           </CardActions>
         </Card>
       )

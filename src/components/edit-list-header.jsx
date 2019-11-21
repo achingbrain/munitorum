@@ -92,21 +92,24 @@ class EditListHeader extends Component {
             </IconButton>
           </ListLinkDialog>
           <Confirm
-            title={'Delete this list?'}
-            text={'Really delete this list?'}
+            title='Delete this list?'
+            text='Really delete this list?'
             onConfirm={this.handleDelete}
             button={(onClick) => (
               <IconButton
                 color='inherit'
                 aria-label='Delete'
-                onClick={onClick}>
+                onClick={onClick}
+              >
                 <DeleteIcon />
               </IconButton>
-            )} />
+            )}
+          />
           <IconButton
             color='inherit'
             aria-label='View'
-            onClick={this.handleView}>
+            onClick={this.handleView}
+          >
             <ViewIcon />
           </IconButton>
         </Hidden>
@@ -138,8 +141,8 @@ class EditListHeader extends Component {
                 </ListItem>
               </ListLinkDialog>
               <Confirm
-                title={'Delete this list?'}
-                text={'Really delete this list?'}
+                title='Delete this list?'
+                text='Really delete this list?'
                 onConfirm={this.handleDelete}
                 button={(onClick) => (
                   <ListItem button onClick={onClick}>
@@ -148,7 +151,8 @@ class EditListHeader extends Component {
                     </ListItemIcon>
                     <ListItemText primary={t('delete-list')} />
                   </ListItem>
-                )} />
+                )}
+              />
               <ListItem button onClick={this.handleView}>
                 <ListItemIcon className={classes.listListIcon}>
                   <ViewIcon />

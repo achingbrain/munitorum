@@ -43,7 +43,8 @@ class ListEditor extends Component {
             text={t('formations')}
             textClassName={classes.detachmentType}
             items={list.army.formations}
-            onSelect={this.handleAddDetachment} />
+            onSelect={this.handleAddDetachment}
+          />
           {
             detachments.map((detachment, index) => (
               <InvalidDetachment
@@ -53,7 +54,8 @@ class ListEditor extends Component {
                 <DetachmentEditor
                   detachment={detachment}
                   isFirst={index === 0}
-                  isLast={index === detachments.length - 1} />
+                  isLast={index === detachments.length - 1}
+                />
               </InvalidDetachment>
             ))
           }

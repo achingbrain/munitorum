@@ -33,7 +33,7 @@ const RulesDisplay = component(({ rules, classes, t }) => {
 
             if (rule.link) {
               return (
-                <a key={`rule-${ruleIndex}`} href={rule.link} target='_blank' className={classes.rulesLink}>{output}</a>
+                <a key={`rule-${ruleIndex}`} href={rule.link} target='_blank' rel='noopener noreferrer' className={classes.rulesLink}>{output}</a>
               )
             }
 
@@ -53,7 +53,7 @@ const RulesDisplay = component(({ rules, classes, t }) => {
 
 const NotesDisplay = component(({ rules, t, classes }) => {
   return (
-    <Fragment>
+    <>
       {
         rules
           .filter(rule => rule instanceof Notes)
@@ -72,7 +72,7 @@ const NotesDisplay = component(({ rules, t, classes }) => {
             )
           })
       }
-    </Fragment>
+    </>
   )
 })
 
@@ -147,9 +147,10 @@ class UnitViewer extends Component {
                                 key={`fp-${profileIndex}-${index}`}
                                 href={fp.link}
                                 target='_blank'
-                                rel='noreferrer'
+                                rel='noopener noreferrer'
                                 className={classes.fpLink}
-                                title={t(fp.name)}>
+                                title={t(fp.name)}
+                              >
                                 {type}
                               </a>
                             )
@@ -191,7 +192,7 @@ class UnitViewer extends Component {
       if (notes.length) {
         // we are just a notes entry
         return (
-          <TableRow key={`notes-0`}>
+          <TableRow key='notes-0'>
             <TableCell padding='dense' className={classes.tableViewIconCell}>
               <Icon src={image} className={classes.unitAvatar} />
             </TableCell>
@@ -207,7 +208,7 @@ class UnitViewer extends Component {
       }
 
       weaponsDisplay.push((
-        <Fragment key={`weapon-0`}>
+        <Fragment key='weapon-0'>
           <TableCell padding='dense' className={classes.tableViewCell}>
             -
           </TableCell>
@@ -224,7 +225,7 @@ class UnitViewer extends Component {
     const weaponCount = weaponsDisplay.length
 
     return (
-      <Fragment>
+      <>
         <TableRow>
           <TableCell padding='dense' rowSpan={weaponCount} className={classes.tableViewIconCell}>
             <Icon src={image} className={classes.unitAvatar} />
@@ -260,7 +261,7 @@ class UnitViewer extends Component {
             </TableRow>
           )
         })}
-      </Fragment>
+      </>
     )
   }
 }

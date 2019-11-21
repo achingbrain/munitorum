@@ -48,9 +48,9 @@ export class StatsModifier {
       ...stats
     }
 
-    for (let key in this.mods) {
+    Object.keys(this.mods).forEach(key => {
       output[key] += this.mods[key]
-    }
+    })
 
     return output
   }

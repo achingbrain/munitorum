@@ -2,7 +2,7 @@
 
 const kebab = (string) => {
   let output = ''
-  let upper = string.toUpperCase()
+  const upper = string.toUpperCase()
 
   for (let i = 0; i < string.length; i++) {
     if (i > 0 && string[i] === upper[i]) {

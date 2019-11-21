@@ -40,7 +40,8 @@ class EditDetachments extends Component {
           textClassName={titleTextClassName || classes.detachmentType}
           textVariant={titleTextVariant}
           items={available}
-          onSelect={this.handleAddDetachment} />
+          onSelect={this.handleAddDetachment}
+        />
         {
           detachments.map((detachment, index) => (
             <InvalidDetachment
@@ -50,7 +51,8 @@ class EditDetachments extends Component {
               <DetachmentEditor
                 detachment={detachment}
                 isFirst={index === 0}
-                isLast={index === detachments.length - 1} />
+                isLast={index === detachments.length - 1}
+              />
             </InvalidDetachment>
           ))
         }

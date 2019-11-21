@@ -14,15 +14,15 @@ const ListViewer = ({ list, t }) => {
       <Validator errors={list.errors} />
       <ViewDetachments
         list={list}
-        type={'lineDetachments'}
+        type='lineDetachments'
       />
       <ViewDetachments
         list={list}
-        type={'supportDetachments'}
+        type='supportDetachments'
       />
       <ViewDetachments
         list={list}
-        type={'lordsOfWar'}
+        type='lordsOfWar'
       />
       <ViewAllies
         list={list}

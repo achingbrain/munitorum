@@ -65,9 +65,11 @@ class InvalidListEditor extends Component {
           {message}
         </CardContent>
         <CardActions>
-          <Confirm title={t('remove-list')} text={t('really-remove-list')} onConfirm={this.handleRemove} button={(onClick) => (
-            <Button size='small' onClick={onClick}>{t('remove')}</Button>
-          )} />
+          <Confirm
+            title={t('remove-list')} text={t('really-remove-list')} onConfirm={this.handleRemove} button={(onClick) => (
+              <Button size='small' onClick={onClick}>{t('remove')}</Button>
+            )}
+          />
         </CardActions>
       </Card>
     )

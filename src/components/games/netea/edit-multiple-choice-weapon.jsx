@@ -69,7 +69,8 @@ class EditableMultiChoiceWeapon extends Component {
         items={weapons}
         onSelect={this.handleWeaponChoice}
         button={<MoreIcon fontSize='small' />}
-        buttonSize='small' />
+        buttonSize='small'
+      />
     )
   }
 }
