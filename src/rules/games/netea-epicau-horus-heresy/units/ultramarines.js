@@ -8,7 +8,8 @@ import {
   AntiPersonnel,
   AntiTank,
   MultipleShot,
-  IgnoreCover
+  IgnoreCover,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -43,7 +44,7 @@ export class UltramarinesPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'INF',
@@ -91,7 +92,7 @@ export class UltramarinesFulmentarusTerminatorSquad extends LegionTerminatorSqua
     this.weapons = [
       new Weapon('reaper-autocannon', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+')), new IgnoreCover())),
       new Weapon('cyclone-missile-launcher', new RangedWeapon('45cm', new AntiPersonnel('5+'), new AntiTank('6+'), new IgnoreCover())),
-      new Weapon('power-axes', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1')))
+      new Weapon('power-axes', new AssaultWeapon(new Fleshbane(), new ExtraAttacks('+1')))
     ]
   }
 }
@@ -112,8 +113,7 @@ export class UltramarinesLoctarusStormSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('power-weapons', new AssaultWeapon(new MacroWeapon())),
-      new Weapon('bolt-pistols', new SmallArms('15cm', new ExtraAttacks('+1')))
+      new Weapon('power-weapons', new AssaultWeapon(new Fleshbane()))
     ]
   }
 }
@@ -133,7 +133,7 @@ export class UltramarinesInvictarusSuzerainSquad extends LegionUnit {
     }
     this.weapons = [
       new Weapon('legatine-axes', new AssaultWeapon(new MacroWeapon())),
-      new Weapon('plasma-pistols', new SmallArms('15cm', new MacroWeapon()))
+      new Weapon('plasma-pistols', new SmallArms('15cm', new Fleshbane()))
     ]
   }
 }

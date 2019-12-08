@@ -7,15 +7,24 @@ import {
   Teleport,
   CommanderOption,
   Centurion,
-  ArmouryAssets
+  ArmouryAssets,
+  AssaultClaw,
+  Praetor,
+  Rhinos,
+  Dreadnought,
+  RapierBattery,
+  MultipleChoiceOption
 } from '../upgrades'
 import {
-  LegionDestroyerSquad
+  LegionDestroyerSquad,
+  LegionTacticalDetachmentUnit
 } from '../units/space-marine-legion'
 import {
   DarkAngelsPrimarch,
   DarkAngelsBodyguardSquad,
-  DarkAngelsSuperHeavyTankSquadronUnit
+  DarkAngelsSuperHeavyTankSquadronUnit,
+  DarkAngelsTacticalSupportSquad,
+  DarkAngelsHeavySupportSquad
 } from '../units/dark-angels'
 import {
   Unique,
@@ -83,6 +92,38 @@ export class DarkAngelsSuperHeavyTankSquadron extends SpaceMarineLegionDetachmen
   }
 }
 
+export class DarkAngelsTacticalDetachment extends SpaceMarineLegionDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionTacticalDetachmentUnit(this)
+    )
+    this.setUpgrades(
+      new TransportOption(
+        new Rhinos(),
+        new DropAssault(),
+        new AssaultClaw(),
+        new HeavyTransport()
+      ),
+      new CommanderOption(
+        new Praetor(),
+        new Centurion()
+      ),
+      new Hyperios(),
+      new Dreadnought(),
+      new Tank(),
+      new ArmouryAssets(),
+      new MultipleChoiceOption(
+        DarkAngelsTacticalSupportSquad,
+        DarkAngelsHeavySupportSquad
+      ),
+      new RapierBattery()
+    )
+  }
+}
+
 withType(DarkAngelsPrimarchDetachment)
 withType(DarkAngelsSuperHeavyTankSquadron)
 withType(DarkAngelsDestroyerDetachment)
+withType(DarkAngelsTacticalDetachment)

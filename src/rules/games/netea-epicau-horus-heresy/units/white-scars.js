@@ -8,7 +8,8 @@ import {
   SingleShot,
   RangedWeapon,
   AntiPersonnel,
-  Disrupt
+  Disrupt,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -41,7 +42,7 @@ export class WhiteScarsPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'INF',
@@ -124,7 +125,6 @@ export class WhiteScarsEbonKeshig extends LegionTerminatorSquad {
     this.stats.ff = 4
 
     this.rules.push(new Fearless())
-    this.rules.push(new InvulnerableSave())
 
     this.weapons = [
       new Weapon('power-glaive', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'), new FirstStrike()))
@@ -194,7 +194,7 @@ export class WhiteScarsGoldenKeshig extends LegionScimitarJetbike {
     this.weapons = [
       new Weapon('scatterbolt-launcher', new RangedWeapon('15cm', new AntiPersonnel('5+'), new Disrupt())),
       new Weapon('kontos-power-lance', new AssaultWeapon(new MacroWeapon(), new SingleShot(), new FirstStrike())),
-      new Weapon('power-weapons', new AssaultWeapon(new ExtraAttacks('+1')))
+      new Weapon('power-weapons', new AssaultWeapon(new Fleshbane(), new ExtraAttacks('+1')))
     ]
   }
 }

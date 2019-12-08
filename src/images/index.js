@@ -44,7 +44,9 @@ import daemonicHordes from './daemonic-hordes.svg'
 import darkAngelsDestroyer from './dark-angels-destroyer.svg'
 import darkAngelsFellblade from './dark-angels-fellblade.svg'
 import darkAngelsGlaive from './dark-angels-glaive.svg'
+import darkAngelsHeavySupport from './dark-angels-heavy-support.svg'
 import darkAngelsSuperHeavyTankSquadron from './dark-angels-super-heavy-tank-squadron.svg'
+import darkAngelsTactical from './dark-angels-tactical.svg'
 import darkAngels from './dark-angels.svg'
 import deathGuardDeathshroud from './death-guard-deathshroud.svg'
 import deathGuardGraveWarden from './death-guard-grave-warden.svg'
@@ -106,7 +108,6 @@ import ironHands from './iron-hands.svg'
 import ironWarriorsArtilleryBattery from './iron-warriors-artillery-battery.svg'
 import ironWarriorsFellblade from './iron-warriors-fellblade.svg'
 import ironWarriorsIronCircle from './iron-warriors-iron-circle.svg'
-import ironWarriorsIronHavoc from './iron-warriors-iron-havoc.svg'
 import ironWarriorsPrimarch from './iron-warriors-primarch.svg'
 import ironWarriorsStormblade from './iron-warriors-stormblade.svg'
 import ironWarriorsSuperHeavyTankSquadron from './iron-warriors-super-heavy-tank-squadron.svg'
@@ -206,7 +207,6 @@ import legionStormEagle from './legion-storm-eagle.svg'
 import legionStormbird from './legion-stormbird.svg'
 import legionStrikeCruiser from './legion-strike-cruiser.svg'
 import legionSuperHeavyTankDestroyer from './legion-super-heavy-tank-destroyer.svg'
-import legionTactical from './legion-tactical.svg'
 import legionThunderhawkTransporter from './legion-thunderhawk-transporter.svg'
 import legionThunderhawk from './legion-thunderhawk.svg'
 import legionTyphon from './legion-typhon.svg'
@@ -356,7 +356,9 @@ const IMAGES = {
   'dark-angels-destroyer': darkAngelsDestroyer,
   'dark-angels-fellblade': darkAngelsFellblade,
   'dark-angels-glaive': darkAngelsGlaive,
+  'dark-angels-heavy-support': darkAngelsHeavySupport,
   'dark-angels-super-heavy-tank-squadron': darkAngelsSuperHeavyTankSquadron,
+  'dark-angels-tactical': darkAngelsTactical,
   'dark-angels': darkAngels,
   'death-guard-deathshroud': deathGuardDeathshroud,
   'death-guard-destroyer': darkAngelsDestroyer,
@@ -428,7 +430,7 @@ const IMAGES = {
   'iron-warriors-artillery-battery': ironWarriorsArtilleryBattery,
   'iron-warriors-fellblade': ironWarriorsFellblade,
   'iron-warriors-iron-circle': ironWarriorsIronCircle,
-  'iron-warriors-iron-havoc': ironWarriorsIronHavoc,
+  'iron-warriors-iron-havoc': darkAngelsHeavySupport,
   'iron-warriors-primarch': ironWarriorsPrimarch,
   'iron-warriors-stormblade': ironWarriorsStormblade,
   'iron-warriors-super-heavy-tank-squadron': ironWarriorsSuperHeavyTankSquadron,
@@ -511,7 +513,7 @@ const IMAGES = {
   'legion-fellblade': legionFellblade,
   'legion-glaive': ironHandsGlaive,
   'legion-gunship': legionGunship,
-  'legion-heavy-support': ironWarriorsIronHavoc,
+  'legion-heavy-support': darkAngelsHeavySupport,
   'legion-interceptor': legionInterceptor,
   'legion-javelin': legionJavelin,
   'legion-kharybdis': legionKharybdis,
@@ -550,7 +552,7 @@ const IMAGES = {
   'legion-super-heavy-tank-battery': legionCerberus,
   'legion-super-heavy-tank-destroyer': legionSuperHeavyTankDestroyer,
   'legion-super-heavy-tank': ironWarriorsSuperHeavyTankSquadron,
-  'legion-tactical': legionTactical,
+  'legion-tactical': darkAngelsTactical,
   'legion-terminator': ironWarriorsTerminator,
   'legion-thunderhawk-transporter': legionThunderhawkTransporter,
   'legion-thunderhawk': legionThunderhawk,
@@ -664,7 +666,7 @@ const IMAGES = {
   'ultramarines-loctarus': legionAssault,
   'ultramarines-primarch': ultramarinesPrimarch,
   'ultramarines-rhino': ultramarinesDamocles,
-  'ultramarines-tactical': legionTactical,
+  'ultramarines-tactical': darkAngelsTactical,
   'ultramarines': ultramarines,
   'white-scars-attack-bike': whiteScarsAttackBike,
   'white-scars-bike': whiteScarsAttackBike,

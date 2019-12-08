@@ -6,7 +6,9 @@ import {
   SmallArms,
   RangedWeapon,
   Or,
-  TitanKiller
+  TitanKiller,
+  AntiPersonnel,
+  AntiTank
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -48,7 +50,7 @@ export class SalamandersPrimarch extends LegionPrimarchUnit {
     this.weapons = [
       new Weapon('dawnbringer', new AssaultWeapon(new TitanKiller(1), new Or(), new MacroWeapon(), new ExtraAttacks('+2'))),
       new Weapon('the-furnaces-heart',
-        new RangedWeapon('15cm', new MacroWeapon('4+')),
+        new RangedWeapon('15cm', new AntiPersonnel('4+'), new AntiTank('4+'), new MacroWeapon()),
         new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+1'))
       )
     ]
@@ -93,8 +95,7 @@ export class SalamandersFiredrakeTerminatorSquad extends LegionTerminatorSquad {
       ff: 3
     }
     this.weapons = [
-      new Weapon('thunder-hammer-and-shield', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
-      new Weapon('combi-bolters', new SmallArms('15cm'))
+      new Weapon('thunder-hammer-and-shield', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1')))
     ]
   }
 }

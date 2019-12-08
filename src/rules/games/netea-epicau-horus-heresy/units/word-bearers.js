@@ -10,7 +10,8 @@ import {
   AntiTank,
   AntiAircraft,
   Disrupt,
-  IgnoreCover
+  IgnoreCover,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -46,7 +47,7 @@ export class WordBearersPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave()
+      new InvulnerableSave('4+')
     ]
     this.stats = {
       type: 'INF',
@@ -58,7 +59,7 @@ export class WordBearersPrimarch extends LegionPrimarchUnit {
     this.weapons = [
       new Weapon('illuminarum', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
       new Weapon('volkite-pistol', new SmallArms('15cm', new ExtraAttacks('+1'))),
-      new Weapon('burning-lore', new RangedWeapon('30cm', new MacroWeapon('4+'), new AntiAircraft('+4')))
+      new Weapon('burning-lore', new RangedWeapon('30cm', new AntiPersonnel('4+'), new AntiTank('4+'), new AntiAircraft('+4'), new Fleshbane()))
     ]
   }
 }
@@ -82,7 +83,7 @@ export class WordBearersGalVorbakDarkBrethrenSquad extends LegionUnit {
     this.rules = [
       new Infiltrator(),
       new Scout(),
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'INF',
@@ -130,7 +131,7 @@ export class WordBearersMalGharaTaintedContemptorDreadnought extends LegionUnit 
     this.transportType = 'tactical'
     this.rules = [
       new Walker(),
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'AV',

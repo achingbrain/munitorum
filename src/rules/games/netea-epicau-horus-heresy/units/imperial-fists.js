@@ -9,7 +9,9 @@ import {
   AntiPersonnel,
   AntiTank,
   Lance,
-  AntiAircraft
+  AntiAircraft,
+  Armourbane,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -81,7 +83,7 @@ export class ImperialFistsPhalanxWarderSquad extends LegionUnit {
 
     this.transportType = 'breacher'
     this.rules = [
-      new Fearless()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'INF',
@@ -91,8 +93,7 @@ export class ImperialFistsPhalanxWarderSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('las-cutters', new AssaultWeapon(new Lance())),
-      new Weapon('bolters', new SmallArms('15cm'))
+      new Weapon('las-cutters', new AssaultWeapon(new Lance()))
     ]
   }
 }
@@ -111,7 +112,7 @@ export class ImperialFistsTemplarBrethrenSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('power-weapons', new AssaultWeapon(new MacroWeapon()))
+      new Weapon('power-weapons', new AssaultWeapon(new Fleshbane()))
     ]
   }
 }
@@ -156,7 +157,7 @@ export class ImperialFistsCastellumStronghold extends LegionUnit {
     }
     this.weapons = [
       new Weapon('2-hyperios-battery', new RangedWeapon('30cm', new AntiAircraft('6+'))),
-      new Weapon('2-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+')))
+      new Weapon('2-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+'), new Armourbane()))
     ]
   }
 }

@@ -19,7 +19,8 @@ import {
   DamageCapacity,
   CriticalHit,
   SlowAndSteady,
-  Teleport
+  Teleport,
+  VoidShields
 } from '../special-rules'
 import {
   MultipleChoiceWeapon,
@@ -40,7 +41,6 @@ import {
   Disrupt,
   Sniper,
   IgnoreCover,
-  Lance,
   IndirectFire,
   BarragePoints,
   FixedForwardFireArc,
@@ -50,7 +50,10 @@ import {
   LeftFireArc,
   RightFireArc,
   PointsModifier,
-  Fleshbane
+  Fleshbane,
+  Armourbane,
+  Siege,
+  Lance
 } from '../weapons'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit, { TransportUnit } from './unit'
@@ -234,7 +237,7 @@ export class LegionBreacherSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('las-cutters', new AssaultWeapon(new Lance()))
+      new Weapon('las-cutters', new AssaultWeapon(new Armourbane()))
     ]
   }
 }
@@ -272,7 +275,7 @@ export class LegionCaestus extends TransportUnit {
     this.weapons = [
       new Weapon('firefury-missile', new RangedWeapon('30cm', new BarragePoints(1), new SingleShot())),
       new Weapon('magna-melta',
-        new RangedWeapon('15cm', new MacroWeapon('3+')),
+        new RangedWeapon('15cm', new AntiPersonnel('3+'), new AntiTank('3+'), new MacroWeapon()),
         new SmallArms('15cm', new MacroWeapon())
       )
     ]
@@ -285,8 +288,7 @@ export class LegionCerberus extends LegionUnit {
 
     this.rules = [
       new ReinforcedArmour(),
-      new DamageCapacity(2),
-      new CriticalHit('legion-cerberus-critical-hit')
+      new DamageCapacity(2)
     ]
     this.stats = {
       type: 'WE',
@@ -296,7 +298,7 @@ export class LegionCerberus extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('neutron-laser-battery', new RangedWeapon('60cm', new MultipleShot('2x', new MacroWeapon('3+')), new Disrupt(), new Feedback(), new FixedForwardFireArc())),
+      new Weapon('neutron-laser-battery', new RangedWeapon('60cm', new MultipleShot('2x', new AntiTank('3+')), new Armourbane(), new Disrupt(), new Feedback(), new FixedForwardFireArc())),
       new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiTank('5+')))
     ]
   }
@@ -318,7 +320,7 @@ export class LegionChampion extends LegionCharacterUnit {
       ff: 7
     }
     this.weapons = [
-      new Weapon('charnabal-sabre', new AssaultWeapon(new MacroWeapon(), new Sniper(), new ExtraAttacks('+1')))
+      new Weapon('charnabal-sabre', new AssaultWeapon(new Fleshbane(), new Sniper(), new ExtraAttacks('+1')))
     ]
   }
 }
@@ -340,7 +342,7 @@ export class LegionChaplain extends LegionCharacterUnit {
       ff: 7
     }
     this.weapons = [
-      new Weapon('crozius-arcanum', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1')))
+      new Weapon('crozius-arcanum', new AssaultWeapon(new Fleshbane(), new ExtraAttacks('+1')))
     ]
   }
 }
@@ -376,21 +378,21 @@ export class LegionContemptorDreadnought extends LegionUnit {
       new MultipleChoiceWeapon(
         new Weapon('close-combat-weapon', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
         new Weapon('twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
-        new Weapon('plasma-cannon', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+'))),
+        new Weapon('plasma-cannon', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+'), new Fleshbane())),
         new Weapon('heavy-conversion-beamer', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('6+'), new Disrupt())),
         new Weapon('kheres-assault-cannon', new RangedWeapon('30cm', new AntiPersonnel('4+'), new AntiTank('5+'))),
         new Weapon('twin-linked-autocannon', new RangedWeapon('45cm', new AntiPersonnel('5+'), new AntiTank('6+'))),
-        new Weapon('multi-melta', new RangedWeapon('15cm', new MacroWeapon('5+'))),
+        new Weapon('multi-melta', new RangedWeapon('15cm', new AntiPersonnel('5+'), new AntiTank('5+'), new MacroWeapon())),
         new Weapon('twin-linked-lascannon', new RangedWeapon('45cm', new AntiTank('4+')))
       ),
       new MultipleChoiceWeapon(
         new Weapon('close-combat-weapon', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
         new Weapon('twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
-        new Weapon('plasma-cannon', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+'))),
+        new Weapon('plasma-cannon', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+'), new Fleshbane())),
         new Weapon('heavy-conversion-beamer', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('6+'), new Disrupt())),
         new Weapon('kheres-assault-cannon', new RangedWeapon('30cm', new AntiPersonnel('4+'), new AntiTank('5+'))),
         new Weapon('twin-linked-autocannon', new RangedWeapon('45cm', new AntiPersonnel('5+'), new AntiTank('6+'))),
-        new Weapon('multi-melta', new RangedWeapon('15cm', new MacroWeapon('5+'))),
+        new Weapon('multi-melta', new RangedWeapon('15cm', new AntiPersonnel('5+'), new AntiTank('5+'), new MacroWeapon())),
         new Weapon('twin-linked-lascannon', new RangedWeapon('45cm', new AntiTank('4+')))
       ),
       new OptionalWeapons(
@@ -445,7 +447,7 @@ export class LegionDeredeoDreadnought extends LegionUnit {
       new Weapon('helitical-targeting-array', new RangedWeapon('30cm', new MultipleShot('2x', new AntiAircraft('5+')))),
       new MultipleChoiceWeapon(
         new Weapon('anvilus-autocannon-battery', new RangedWeapon('45cm', new MultipleShot('2x', new AntiPersonnel('5+'), new AntiTank('2+')))),
-        new Weapon('hellfire-plasma-cannon', new RangedWeapon('30cm', new MacroWeapon('4+')))
+        new Weapon('hellfire-plasma-cannon', new RangedWeapon('30cm', new AntiPersonnel('4+'), new AntiTank('4+'), new Fleshbane()))
       )
     ]
   }
@@ -465,7 +467,7 @@ export class LegionDespoilerSquad extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('chainswords', new AssaultWeapon())
+      new Weapon('chainswords-and-bolt-pistols', new AssaultWeapon())
     ]
   }
 }
@@ -567,8 +569,7 @@ export class LegionFalchion extends LegionUnit {
 
     this.rules = [
       new ReinforcedArmour(),
-      new DamageCapacity(4),
-      new CriticalHit('legion-falchion-critical-hit')
+      new DamageCapacity(4)
     ]
     this.stats = {
       type: 'WE',
@@ -578,7 +579,7 @@ export class LegionFalchion extends LegionUnit {
       ff: 6
     }
     this.weapons = [
-      new Weapon('twin-linked-volcano-cannon', new RangedWeapon('90cm', new MacroWeapon('3+'), new TitanKiller('D3+1'), new FixedForwardFireArc())),
+      new Weapon('twin-linked-volcano-cannon', new RangedWeapon('90cm', new AntiPersonnel('2+'), new AntiTank('2+'), new MacroWeapon(), new TitanKiller('D3+1'), new FixedForwardFireArc())),
       new Weapon('sponson-quad-lascannons', new RangedWeapon('45cm', new MultipleShot('2x', new AntiTank('4+'))))
     ]
   }
@@ -590,8 +591,7 @@ export class LegionFellblade extends LegionUnit {
 
     this.rules = [
       new ReinforcedArmour(),
-      new DamageCapacity(4),
-      new CriticalHit('legion-fellblade-critical-hit')
+      new DamageCapacity(4)
     ]
     this.stats = {
       type: 'WE',
@@ -601,8 +601,8 @@ export class LegionFellblade extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('fellblade-cannon', new RangedWeapon('75cm', new MacroWeapon('2+'), new TitanKiller())),
-      new Weapon('sponson-quad-lascannons', new RangedWeapon('45cm', new MultipleShot('2x', new AntiTank('4+')))),
+      new Weapon('fellblade-cannon', new RangedWeapon('75cm', new AntiPersonnel('2+'), new AntiTank('2+'), new MacroWeapon(), new TitanKiller())),
+      new Weapon('sponson-quad-lascannons', new RangedWeapon('45cm', new MultipleShot('2x', new AntiTank('4+')), new Armourbane())),
       new Weapon('twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('3+'), new FixedForwardFireArc())),
       new Weapon('demolisher-cannon', new RangedWeapon('30cm', new AntiPersonnel('3+'), new AntiTank('4+'), new Disrupt(), new IgnoreCover(), new FixedForwardFireArc()))
     ]
@@ -641,8 +641,7 @@ export class LegionGlaive extends LegionUnit {
     this.rules = [
       new ReinforcedArmour(),
       new ThickRearArmour(),
-      new DamageCapacity(4),
-      new CriticalHit('legion-glaive-critical-hit')
+      new DamageCapacity(4)
     ]
     this.stats = {
       type: 'WE',
@@ -763,7 +762,7 @@ export class LegionLandRaiderAchillesTransport extends LegionUnit {
       new Weapon('achilles-quad-mortar', new RangedWeapon('45cm', new AntiPersonnel('4+'), new AntiTank('4+'))),
       new MultipleChoiceWeapon(
         new Weapon('sponson-twin-linked-multi-meltas',
-          new RangedWeapon('15cm', new MacroWeapon('4+')),
+          new RangedWeapon('15cm', new AntiPersonnel('4+'), new AntiTank('4+'), new MacroWeapon()),
           new SmallArms('15cm', new MacroWeapon())
         ),
         new Weapon('sponson-twin-linked-volkite-culverins', new RangedWeapon('45cm', new AntiPersonnel('4+'), new Disrupt()))
@@ -832,7 +831,7 @@ export class LegionLandRaiderPhobosTransport extends TransportUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('sponson-twin-linked-lascannons', new RangedWeapon('45cm', new MultipleShot('2x', new AntiTank('4+')))),
+      new Weapon('sponson-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+'))),
       new Weapon('heavy-bolter', new RangedWeapon('30cm', new AntiPersonnel('5+')))
     ]
   }
@@ -860,7 +859,7 @@ export class LegionLandRaiderPhobos extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('sponson-twin-linked-lascannons', new RangedWeapon('45cm', new MultipleShot('2x', new AntiTank('4+')))),
+      new Weapon('sponson-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+'))),
       new Weapon('heavy-bolter', new RangedWeapon('30cm', new AntiPersonnel('5+')))
     ]
   }
@@ -901,7 +900,7 @@ export class LegionLandRaiderProteusTransport extends TransportUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('sponson-twin-linked-lascannons', new RangedWeapon('45cm', new MultipleShot('2x', new AntiTank('4+'))))
+      new Weapon('sponson-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+')))
     ]
   }
 
@@ -929,7 +928,7 @@ export class LegionLandRaiderProteus extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('sponson-twin-linked-lascannons', new RangedWeapon('45cm', new MultipleShot('2x', new AntiTank('4+'))))
+      new Weapon('sponson-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+')))
     ]
   }
 }
@@ -952,11 +951,11 @@ export class LegionLandSpeeder extends LegionUnit {
     this.weapons = [
       new MultipleChoiceWeapon(
         new Weapon('multi-melta',
-          new RangedWeapon('15cm', new MacroWeapon('5+')),
+          new RangedWeapon('15cm', new AntiPersonnel('5+'), new AntiTank('5+'), new MacroWeapon()),
           new SmallArms('15cm', new MacroWeapon())
         ),
         new WeaponSet(
-          new Weapon('plasma-cannon', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+'))),
+          new Weapon('plasma-cannon', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+'), new Fleshbane())),
           new Weapon('heavy-bolter', new RangedWeapon('30cm', new AntiPersonnel('5+')))
         )
       )
@@ -983,15 +982,15 @@ export class LegionLeviathanDreadnought extends LegionUnit {
     }
     this.weapons = [
       new MultipleChoiceWeapon(
-        new Weapon('siege-claw', new AssaultWeapon(new MacroWeapon())),
-        new Weapon('siege-drill', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+2'))),
+        new Weapon('siege-claw', new AssaultWeapon(new Armourbane(), new Siege())),
+        new Weapon('siege-drill', new AssaultWeapon(new Armourbane(), new Siege(), new ExtraAttacks('+2'))),
         new Weapon('cyclonic-melta-lance', new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+1'))),
         new Weapon('storm-cannon', new SmallArms('15cm', new AntiPersonnel('4+'), new AntiTank('5+'))),
         new Weapon('grav-flux-bombard', new RangedWeapon('15cm', new AntiPersonnel('3+'), new AntiTank('3+'), new Disrupt()))
       ),
       new MultipleChoiceWeapon(
-        new Weapon('siege-claw', new AssaultWeapon(new MacroWeapon())),
-        new Weapon('siege-drill', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+2'))),
+        new Weapon('siege-claw', new AssaultWeapon(new Armourbane(), new Siege())),
+        new Weapon('siege-drill', new AssaultWeapon(new Armourbane(), new Siege(), new ExtraAttacks('+2'))),
         new Weapon('cyclonic-melta-lance', new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+1'))),
         new Weapon('storm-cannon', new SmallArms('15cm', new AntiPersonnel('4+'), new AntiTank('5+'))),
         new Weapon('grav-flux-bombard', new RangedWeapon('15cm', new AntiPersonnel('3+'), new AntiTank('3+'), new Disrupt()))
@@ -1046,7 +1045,7 @@ export class LegionLieutenantCommander extends LegionCharacterUnit {
       ff: 7
     }
     this.weapons = [
-      new Weapon('paragon-blade', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1')))
+      new Weapon('paragon-blade', new AssaultWeapon(new Fleshbane(), new ExtraAttacks('+1')))
     ]
   }
 }
@@ -1067,7 +1066,7 @@ export class LegionLordCommander extends LegionCharacterUnit {
       ff: 7
     }
     this.weapons = [
-      new Weapon('paragon-blade', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1')))
+      new Weapon('paragon-blade', new AssaultWeapon(new Fleshbane(), new ExtraAttacks('+1')))
     ]
   }
 }
@@ -1084,9 +1083,9 @@ export class LegionMastodon extends TransportUnit {
     }
     this.rules = [
       new ReinforcedArmour(),
-      new DamageCapacity(2),
       new ThickRearArmour(),
-      new CriticalHit('legion-mastodon-critical-hit')
+      new DamageCapacity(4),
+      new VoidShields(2)
     ]
     this.stats = {
       type: 'WE',
@@ -1151,10 +1150,10 @@ export class LegionPredatorExecutioner extends LegionUnit {
     }
     this.weapons = [
       new MultipleChoiceWeapon(
-        new Weapon('plasma-destroyer', new RangedWeapon('45cm', new MacroWeapon('4+'))),
+        new Weapon('plasma-destroyer', new RangedWeapon('45cm', new AntiPersonnel('4+'), new AntiTank('4+'), new Fleshbane())),
         new Weapon('heavy-conversion-beamer', new RangedWeapon('75cm', new AntiTank('2+')))
       ),
-      new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiPersonnel('5+')))
+      new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiTank('5+')))
     ]
   }
 }
@@ -1172,7 +1171,7 @@ export class LegionPredatorInfernus extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('magma-melta', new RangedWeapon('15cm', new MacroWeapon('3+'))),
+      new Weapon('magma-melta', new RangedWeapon('15cm', new AntiPersonnel('3+'), new AntiTank('3+'), new MacroWeapon())),
       new Weapon('sponson-heavy-bolters', new SmallArms('15cm', new AntiPersonnel('5+')))
     ]
   }
@@ -1211,7 +1210,7 @@ export class LegionPredator extends LegionUnit {
         new Weapon('sponson-heavy-bolters', new StatsModifier({
           ff: -2
         }), new SmallArms('15cm', new AntiPersonnel('5+'))),
-        new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiPersonnel('5+'))),
+        new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiTank('5+'))),
         new Weapon('sponson-heavy-flamers', new StatsModifier({
           ff: -2
         }), new SmallArms('15cm', new AntiPersonnel('4+'), new IgnoreCover('5+')))
@@ -1269,7 +1268,7 @@ export class LegionReconnaissanceSquad extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('sniper-rifles', new SmallArms('30cm', new AntiPersonnel('5+'), new Sniper()))
+      new Weapon('sniper-rifles', new RangedWeapon('30cm', new AntiPersonnel('5+'), new Sniper(), new Fleshbane()))
     ]
   }
 }
@@ -1310,7 +1309,7 @@ export class LegionScimitarJetbike extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('plasma-cannon', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+')))
+      new Weapon('plasma-cannon', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+'), new Fleshbane()))
     ]
   }
 }
@@ -1342,7 +1341,7 @@ export class LegionSicaranOmega extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('omega-plasma-array', new RangedWeapon('30cm', new MultipleShot('x2', new AntiTank('3+')))),
+      new Weapon('omega-plasma-array', new RangedWeapon('30cm', new MultipleShot('x2', new AntiTank('3+'), new Armourbane(), new Lance()))),
       new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiTank('5+')))
     ]
   }
@@ -1363,7 +1362,7 @@ export class LegionSicaranVenator extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('neutron-beam', new RangedWeapon('30cm', new MacroWeapon('4+'), new Disrupt(), new FixedForwardFireArc())),
+      new Weapon('neutron-beam', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('4+'), new Armourbane(), new Disrupt(), new FixedForwardFireArc())),
       new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiTank('5+')))
     ]
   }
@@ -1463,17 +1462,17 @@ export class LegionStormbird extends LegionUnit {
     super(detachment, 450, 1)
 
     this.transportTypes = {
-      tactical: 16,
-      breacher: 16,
-      assault: 16,
-      terminator: 8,
-      dreadnought: 8
+      tactical: 10,
+      breacher: 10,
+      assault: 10,
+      terminator: 5,
+      dreadnought: 5,
+      outrider: 10
     }
     this.rules = [
       new DamageCapacity(4),
       new Planetfall(),
-      new ReinforcedArmour(),
-      new CriticalHit('legion-stormbird-critical-hit')
+      new ReinforcedArmour()
     ]
     this.stats = {
       type: 'AC/WE',
@@ -1626,16 +1625,16 @@ export class LegionThunderhawkGunship extends LegionUnit {
     super(detachment, 250, 1)
 
     this.transportTypes = {
-      tactical: 4,
-      breacher: 4,
-      assault: 4,
-      terminator: 2
+      tactical: 8,
+      breacher: 8,
+      assault: 8,
+      terminator: 4,
+      outrider: 5
     }
     this.rules = [
       new DamageCapacity(2),
       new Planetfall(),
-      new ReinforcedArmour(),
-      new CriticalHit('legion-thunderhawk-gunship-critical-hit')
+      new ReinforcedArmour()
     ]
     this.stats = {
       type: 'AC/WE',
@@ -1647,8 +1646,9 @@ export class LegionThunderhawkGunship extends LegionUnit {
     this.weapons = [
       new MultipleChoiceWeapon(
         new Weapon('thunderhawk-cannon', new RangedWeapon('60cm', new AntiPersonnel('3+'), new AntiTank('3+'))),
-        new Weapon('thunderhawk-laser-destroyer', new RangedWeapon('45cm', new MultipleShot('2x', new AntiPersonnel('6+'), new AntiTank('3+')), new FixedForwardFireArc()))
+        new Weapon('thunderhawk-laser-destroyer', new RangedWeapon('45cm', new MultipleShot('2x', new AntiPersonnel('6+'), new AntiTank('3+')), new Armourbane(), new FixedForwardFireArc()))
       ),
+      new Weapon('twin-linked-lascannon', new RangedWeapon('45cm', new AntiTank('4+'), new AntiAircraft('5+'), new FixedForwardFireArc())),
       new Weapon('2-twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+'), new FixedForwardFireArc())),
       new Weapon('twin-linked-heavy-bolters', new RangedWeapon('15cm', new AntiPersonnel('4+'), new LeftFireArc())),
       new Weapon('twin-linked-heavy-bolters', new RangedWeapon('15cm', new AntiPersonnel('4+'), new RightFireArc()))
@@ -1672,8 +1672,7 @@ export class LegionThunderhawkTransporter extends LegionUnit {
     this.rules = [
       new DamageCapacity(2),
       new Planetfall(),
-      new ReinforcedArmour(),
-      new CriticalHit('legion-thunderhawk-transporter-critical-hit')
+      new ReinforcedArmour()
     ]
     this.stats = {
       type: 'AC/WE',
@@ -1694,8 +1693,7 @@ export class LegionTyphon extends LegionUnit {
 
     this.rules = [
       new ReinforcedArmour(),
-      new DamageCapacity(2),
-      new CriticalHit('legion-typhon-critical-hit')
+      new DamageCapacity(2)
     ]
     this.stats = {
       type: 'WE',

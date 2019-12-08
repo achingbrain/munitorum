@@ -13,7 +13,8 @@ import {
   WeaponBlank,
   MultipleChoiceWeapon,
   TitanKiller,
-  IgnoreCover
+  IgnoreCover,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -29,7 +30,6 @@ import {
   Walker,
   Infiltrator,
   DamageCapacity,
-  CriticalHit,
   Teleport,
   JumpPacks
 } from '../special-rules'
@@ -69,7 +69,7 @@ class LegioCustodesSentinelGuard extends LegioCustodesUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('sentinel-warblade', new AssaultWeapon(new MacroWeapon()))
+      new Weapon('sentinel-warblade', new AssaultWeapon(new Fleshbane()))
     ]
   }
 }
@@ -112,7 +112,7 @@ export class LegioCustodesVenatariSquad extends LegioCustodesUnit {
     this.transportType = 'aquilon'
     this.rules = [
       new Scout(),
-      new InvulnerableSaveCCOnly(),
+      new InvulnerableSaveCCOnly('6+'),
       new JumpPacks()
     ]
     this.stats = {
@@ -133,7 +133,7 @@ export class LegioCustodesCaptainGeneral extends LegioCustodesUnit {
     super(detachment, 100, 1)
 
     this.rules = [
-      new InvulnerableSave(),
+      new InvulnerableSave('6+'),
       new Commander(),
       new Inspiring()
     ]
@@ -155,7 +155,7 @@ export class LegioCustodesTribune extends LegioCustodesUnit {
     super(detachment, 25, 1)
 
     this.rules = [
-      new InvulnerableSave(),
+      new InvulnerableSave('6+'),
       new Commander()
     ]
     this.stats = {
@@ -193,7 +193,7 @@ export class LegioCustodesCoronusGravCarrier extends TransportUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('iliastus-accelerator-cannon', new RangedWeapon('45cm', new MacroWeapon('4+'))),
+      new Weapon('iliastus-accelerator-cannon', new RangedWeapon('45cm', new Fleshbane())),
       new Weapon('arachnus-blaze-cannon', new RangedWeapon('30cm', new AntiPersonnel('4+'), new AntiTank('5+')))
     ]
   }
@@ -229,7 +229,7 @@ export class LegioCustodesAquilionTerminator extends LegioCustodesUnit {
     this.rules = [
       new ReinforcedArmour(),
       new ThickRearArmour(),
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'INF',
@@ -346,7 +346,7 @@ class LegioCustodesTelemonHeavyDreadnought extends LegioCustodesUnit {
     this.transportType = 'dreadnought'
     this.rules = [
       new ReinforcedArmour(),
-      new InvulnerableSave(),
+      new InvulnerableSave('6+'),
       new Walker()
     ]
     this.stats = {
@@ -362,7 +362,7 @@ class LegioCustodesTelemonHeavyDreadnought extends LegioCustodesUnit {
           new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))
         ),
         new Weapon('arachnus-storm-cannon',
-          new RangedWeapon('15cm', new MacroWeapon('4+'), new TitanKiller())
+          new RangedWeapon('15cm', new AntiPersonnel('4+'), new AntiTank('4+'), new MacroWeapon(), new TitanKiller())
         )
       )
     ]
@@ -395,7 +395,7 @@ export class LegioCustodesPallasGravAttackVehicle extends LegioCustodesUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('arachnus-blaze-cannon', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+'))))
+      new Weapon('arachnus-blaze-cannon', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+')), new Fleshbane()))
     ]
   }
 }
@@ -417,7 +417,7 @@ export class LegioCustodesCaladiusGravTank extends LegioCustodesUnit {
     }
     this.weapons = [
       new Weapon('lastrum-bolt-cannon', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
-      new Weapon('iliastus-accelerator-cannon', new RangedWeapon('45cm', new MacroWeapon('4+')))
+      new Weapon('iliastus-accelerator-cannon', new RangedWeapon('45cm', new AntiPersonnel('4+'), new AntiTank('4+'), new Fleshbane()))
     ]
   }
 }
@@ -432,8 +432,7 @@ export class LegioCustodesOrionAssaultDropship extends LegioCustodesUnit {
     }
     this.rules = [
       new DamageCapacity(2),
-      new InvulnerableSave(),
-      new CriticalHit('custodes-orion-assault-dropship-critical-hit')
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'AV',

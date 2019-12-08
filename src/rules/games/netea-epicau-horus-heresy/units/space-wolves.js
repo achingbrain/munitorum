@@ -7,7 +7,8 @@ import {
   RangedWeapon,
   AntiPersonnel,
   MultipleShot,
-  AntiTank
+  AntiTank,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -72,8 +73,7 @@ export class SpaceWolvesGreySlayerSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('chainswords', new AssaultWeapon()),
-      new Weapon('bolt-pistols', new SmallArms('15cm'))
+      new Weapon('chainswords-and-bolt-pistols', new AssaultWeapon())
     ]
   }
 }
@@ -95,8 +95,7 @@ export class SpaceWolvesDeathswornSquad extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('power-axes', new AssaultWeapon(new MacroWeapon())),
-      new Weapon('bolt-pistols', new SmallArms('15cm'))
+      new Weapon('power-axes', new AssaultWeapon(new Fleshbane()))
     ]
   }
 }

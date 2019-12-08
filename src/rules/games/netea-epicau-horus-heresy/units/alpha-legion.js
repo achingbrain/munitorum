@@ -41,7 +41,7 @@ export class AlphaLegionPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave()
+      new InvulnerableSave('4+')
     ]
     this.stats = {
       type: 'INF',

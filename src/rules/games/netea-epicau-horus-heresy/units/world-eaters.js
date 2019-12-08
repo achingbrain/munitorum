@@ -3,7 +3,8 @@ import {
   AssaultWeapon,
   MacroWeapon,
   ExtraAttacks,
-  SmallArms
+  SmallArms,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -35,7 +36,7 @@ export class WorldEatersPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave(),
+      new InvulnerableSave('6+'),
       new Infiltrator()
     ]
     this.stats = {
@@ -107,7 +108,7 @@ export class WorldEatersRedButcherSquad extends LegionTerminatorSquad {
       ff: 6
     }
     this.weapons = [
-      new Weapon('power-axes', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+2'))),
+      new Weapon('power-axes', new AssaultWeapon(new Fleshbane(), new ExtraAttacks('+2'))),
       new Weapon('combi-bolter', new SmallArms('15cm'))
     ]
   }

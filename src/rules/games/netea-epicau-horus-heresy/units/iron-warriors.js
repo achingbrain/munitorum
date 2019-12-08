@@ -22,8 +22,7 @@ import {
   Inspiring,
   InvulnerableSave,
   CortexController,
-  DamageCapacity,
-  CriticalHit
+  DamageCapacity
 } from '../special-rules'
 import {
   LegionTerminatorSquad,
@@ -50,7 +49,7 @@ export class IronWarriorsPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave(),
+      new InvulnerableSave('6+'),
       new CortexController()
     ]
     this.stats = {
@@ -87,8 +86,7 @@ class IronWarriorsTormentor extends LegionUnit {
 
     this.rules = [
       new ReinforcedArmour(),
-      new DamageCapacity(3),
-      new CriticalHit('iron-warriors-stormblade-critical-hit')
+      new DamageCapacity(3)
     ]
     this.stats = {
       type: 'WE',
@@ -98,7 +96,7 @@ class IronWarriorsTormentor extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('volcano-cannon', new RangedWeapon('90cm', new MacroWeapon('2+'), new TitanKiller('D3'), new FixedForwardFireArc())),
+      new Weapon('volcano-cannon', new RangedWeapon('90cm', new AntiPersonnel('2+'), new AntiTank('2+'), new MacroWeapon(), new TitanKiller('D3'), new FixedForwardFireArc())),
       new Weapon('2-twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
       new Weapon('heavy-bolter', new RangedWeapon('30cm', new AntiPersonnel('5+')))
     ]
@@ -251,8 +249,7 @@ class IronWarriorsStormblade extends LegionUnit {
 
     this.rules = [
       new ReinforcedArmour(),
-      new DamageCapacity(3),
-      new CriticalHit('iron-warriors-stormblade-critical-hit')
+      new DamageCapacity(3)
     ]
     this.stats = {
       type: 'WE',
@@ -262,7 +259,7 @@ class IronWarriorsStormblade extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('plasma-blastgun', new RangedWeapon('45cm', new MacroWeapon('2+'), new SlowFiring(), new FixedForwardFireArc())),
+      new Weapon('plasma-blastgun', new RangedWeapon('45cm', new AntiPersonnel('2+'), new AntiTank('2+'), new MacroWeapon(), new SlowFiring(), new FixedForwardFireArc())),
       new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiTank('5+'))),
       new Weapon('2-twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
       new Weapon('heavy-bolter', new RangedWeapon('30cm', new AntiPersonnel('5+')))

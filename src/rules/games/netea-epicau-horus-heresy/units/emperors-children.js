@@ -40,7 +40,7 @@ export class EmperorsChildrenPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave()
+      new InvulnerableSave('5+')
     ]
     this.stats = {
       type: 'INF',
@@ -123,10 +123,7 @@ export class EmperorsChildrenKakophoniSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('the-cacophony',
-        new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('6+')), new Disrupt()),
-        new AssaultWeapon(new FirstStrike(), new ExtraAttacks('+2'))
-      )
+      new Weapon('the-cacophony', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('6+')), new Disrupt()))
     ]
   }
 }

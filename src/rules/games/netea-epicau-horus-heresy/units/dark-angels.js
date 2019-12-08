@@ -4,7 +4,12 @@ import {
   MacroWeapon,
   ExtraAttacks,
   SmallArms,
-  FirstStrike
+  FirstStrike,
+  AntiTank,
+  RangedWeapon,
+  MultipleShot,
+  AntiPersonnel,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -19,7 +24,9 @@ import {
   LegionTerminatorSquad,
   LegionFellblade,
   LegionGlaive,
-  LegionPrimarchUnit
+  LegionPrimarchUnit,
+  LegionTacticalSupportSquad,
+  LegionHeavySupportSquad
 } from './space-marine-legion'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../with-type'
@@ -93,8 +100,33 @@ export class DarkAngelsSuperHeavyTankSquadronUnit extends MultipleChoiceUnit {
   }
 }
 
+export class DarkAngelsTacticalSupportSquad extends LegionTacticalSupportSquad {
+  constructor (detachment) {
+    super(detachment)
+
+    this.weapons = [
+      new Weapon('plasma-guns',
+        new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('4+')), new Fleshbane()),
+        new SmallArms('15cm', new Fleshbane(), new ExtraAttacks('+1'))
+      )
+    ]
+  }
+}
+
+export class DarkAngelsHeavySupportSquad extends LegionHeavySupportSquad {
+  constructor (detachment) {
+    super(detachment)
+
+    this.weapons = [
+      new Weapon('plasma-weapons', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+')), new Fleshbane()))
+    ]
+  }
+}
+
 withType(DarkAngelsPrimarch)
 withType(DarkAngelsBodyguardSquad)
 withType(DarkAngelsFellblade)
 withType(DarkAngelsGlaive)
 withType(DarkAngelsSuperHeavyTankSquadronUnit)
+withType(DarkAngelsTacticalSupportSquad)
+withType(DarkAngelsHeavySupportSquad)

@@ -2,12 +2,14 @@
 
 import SpaceMarineLegion from './space-marine-legion'
 import {
-  LegionDestroyerDetachment
+  LegionDestroyerDetachment,
+  LegionTacticalDetachment
 } from '../detachments/space-marine-legion'
 import {
   DarkAngelsPrimarchDetachment,
   DarkAngelsDestroyerDetachment,
-  DarkAngelsSuperHeavyTankSquadron
+  DarkAngelsSuperHeavyTankSquadron,
+  DarkAngelsTacticalDetachment
 } from '../detachments/dark-angels'
 import LegioTitanicus from './legio-titanicus'
 import ImperialMilitia from './imperial-militia'
@@ -21,6 +23,12 @@ export default class DarkAngels extends SpaceMarineLegion {
   constructor () {
     super()
 
+    this.lineDetachments.push(
+      DarkAngelsTacticalDetachment
+    )
+    this.lineDetachments = this.lineDetachments.filter(
+      detachment => detachment !== LegionTacticalDetachment
+    )
     this.supportDetachments.push(
       DarkAngelsDestroyerDetachment
     )

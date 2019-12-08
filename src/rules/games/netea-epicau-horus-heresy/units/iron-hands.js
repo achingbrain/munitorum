@@ -9,7 +9,8 @@ import {
   AntiPersonnel,
   AntiTank,
   Disrupt,
-  Lance
+  Lance,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -46,7 +47,7 @@ export class IronHandsPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'INF',
@@ -58,8 +59,8 @@ export class IronHandsPrimarch extends LegionPrimarchUnit {
     this.weapons = [
       new Weapon('forgebreaker', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+2'))),
       new Weapon('the-medusan-carapace',
-        new RangedWeapon('15cm', new MacroWeapon('4+')),
-        new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+1'))
+        new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('4+')), new Fleshbane()),
+        new SmallArms('15cm', new Fleshbane(), new ExtraAttacks('+1'))
       )
     ]
   }
@@ -103,7 +104,7 @@ export class IronHandsGorgonTerminatorSquad extends LegionTerminatorSquad {
       ff: 3
     }
     this.weapons = [
-      new Weapon('power-axes', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
+      new Weapon('power-axes', new AssaultWeapon(new Fleshbane(), new ExtraAttacks('+1'))),
       new Weapon('graviton-weapons', new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('5+'), new AntiTank('6+')), new Disrupt()))
     ]
   }

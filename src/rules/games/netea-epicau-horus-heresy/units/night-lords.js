@@ -4,7 +4,8 @@ import {
   MacroWeapon,
   ExtraAttacks,
   SmallArms,
-  FirstStrike
+  FirstStrike,
+  Fleshbane
 } from '../weapons'
 import {
   JumpPacks,
@@ -15,7 +16,8 @@ import {
   SupremeCommander,
   Inspiring,
   InvulnerableSave,
-  Infiltrator
+  Infiltrator,
+  ATalentForMurder
 } from '../special-rules'
 import {
   LegionTacticalSquad,
@@ -36,8 +38,9 @@ export class NightLordsPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave(),
-      new Infiltrator()
+      new InvulnerableSave('5+'),
+      new Infiltrator(),
+      new ATalentForMurder()
     ]
     this.stats = {
       type: 'INF',
@@ -82,7 +85,7 @@ export class NightLordsNightRaptorSquad extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('power-weapons', new AssaultWeapon(new MacroWeapon()))
+      new Weapon('power-weapons', new AssaultWeapon(new Fleshbane()))
     ]
   }
 }
@@ -93,7 +96,8 @@ export class NightLordsTerrorSquad extends LegionUnit {
 
     this.transportType = 'tactical'
     this.rules = [
-      new Infiltrator()
+      new Infiltrator(),
+      new ATalentForMurder()
     ]
     this.stats = {
       type: 'INF',

@@ -39,7 +39,7 @@ export class DeathGuardPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave(),
+      new InvulnerableSave('5+'),
       new Infiltrator()
     ]
     this.stats = {
@@ -107,7 +107,7 @@ export class DeathGuardGraveWardenTerminatorSquad extends LegionTerminatorSquad 
       ff: 3
     }
     this.weapons = [
-      new Weapon('power-fist', new AssaultWeapon(new ExtraAttacks('+2'))),
+      new Weapon('power-fist', new AssaultWeapon(new ExtraAttacks('+1'))),
       new Weapon('assault-grenade-launchers',
         new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('6+')), new Disrupt(), new IgnoreCover()),
         new SmallArms('15cm', new IgnoreCover(), new ExtraAttacks('+1'))

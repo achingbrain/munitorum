@@ -320,6 +320,22 @@ export class Fleshbane {
   }
 }
 
+export class Armourbane {
+  constructor () {
+    this.type = 'Ab'
+    this.name = 'armourbane'
+    this.link = 'http://epicau.com/mw/index.php/Legion_Astartes'
+  }
+}
+
+export class Siege {
+  constructor () {
+    this.type = 'Si'
+    this.name = 'siege'
+    this.link = 'http://epicau.com/mw/index.php/Legion_Astartes'
+  }
+}
+
 export class Singularity {
   constructor () {
     this.type = 'Sg'

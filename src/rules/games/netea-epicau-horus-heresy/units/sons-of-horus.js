@@ -7,7 +7,6 @@ import {
   SmallArms,
   Sniper,
   RangedWeapon,
-  MultipleShot,
   AntiPersonnel,
   AntiTank
 } from '../weapons'
@@ -40,7 +39,7 @@ export class SonsOfHorusPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'INF',
@@ -50,7 +49,7 @@ export class SonsOfHorusPrimarch extends LegionPrimarchUnit {
       ff: 3
     }
     this.weapons = [
-      new Weapon('world-breaker', new AssaultWeapon(new TitanKiller(1))),
+      new Weapon('world-breaker', new AssaultWeapon(new MacroWeapon(), new TitanKiller(1))),
       new Weapon('warmasters-talon',
         new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+2')),
         new SmallArms('15cm', new ExtraAttacks('+2'))
@@ -86,7 +85,6 @@ export class SonsOfHorusReaverAttackSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('chainswords', new AssaultWeapon(new Sniper(), new ExtraAttacks('+1'))),
       new Weapon('signum-bolt-pistols', new SmallArms('15cm', new Sniper()))
     ]
   }
@@ -108,9 +106,11 @@ export class SonsOfHorusJustaerinTerminatorSquad extends LegionTerminatorSquad {
       ff: 4
     }
     this.weapons = [
-      new Weapon('power-axes', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
-      new Weapon('multi-melta', new RangedWeapon('15cm', new MacroWeapon(), new ExtraAttacks('+1'))),
-      new Weapon('reaper-autocannon', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('6+'))))
+      new Weapon('power-fists', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
+      new Weapon('multi-melta',
+        new RangedWeapon('15cm', new AntiPersonnel('4+'), new AntiTank('4+'), new MacroWeapon()),
+        new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+1'))
+      )
     ]
   }
 }

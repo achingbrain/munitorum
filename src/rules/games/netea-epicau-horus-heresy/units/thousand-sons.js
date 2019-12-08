@@ -6,7 +6,8 @@ import {
   SmallArms,
   Sniper,
   RangedWeapon,
-  AntiPersonnel
+  AntiPersonnel,
+  AntiTank
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -15,7 +16,9 @@ import {
   Fearless,
   SupremeCommander,
   Inspiring,
-  InvulnerableSave
+  InvulnerableSave,
+  Scout,
+  Infiltrator
 } from '../special-rules'
 import {
   LegionUnit,
@@ -48,7 +51,7 @@ export class ThousandSonsPrimarch extends LegionPrimarchUnit {
     this.weapons = [
       new Weapon('blade-of-ahn-nunurta', new AssaultWeapon(new MacroWeapon())),
       new Weapon('psyfire-serpenta',
-        new RangedWeapon('15cm', new MacroWeapon('4+')),
+        new RangedWeapon('30cm', new AntiPersonnel('4+'), new AntiTank('4+'), new MacroWeapon()),
         new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+2'))
       )
     ]
@@ -94,7 +97,11 @@ export class ThousandSonsAmmitaraIntercessorSquad extends LegionUnit {
     super(detachment, 275, 4)
 
     this.transportType = 'tactical'
-    this.rules = []
+    this.rules = [
+      new Scout(),
+      new Infiltrator(),
+      new InvulnerableSave('6+')
+    ]
     this.stats = {
       type: 'INF',
       speed: 15,
@@ -114,7 +121,7 @@ export class ThousandSonsKhenetaiBladesSquad extends LegionUnit {
 
     this.transportType = 'tactical'
     this.rules = [
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'INF',

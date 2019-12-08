@@ -1,7 +1,6 @@
 import {
   Weapon,
   AssaultWeapon,
-  MacroWeapon,
   ExtraAttacks,
   SmallArms,
   FirstStrike,
@@ -12,7 +11,9 @@ import {
   Disrupt,
   FixedForwardFireArc,
   AntiTank,
-  AntiAircraft
+  AntiAircraft,
+  Armourbane,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -57,8 +58,8 @@ export class RavenGuardPrimarch extends LegionPrimarchUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('power-whip', new AssaultWeapon(new FirstStrike(), new MacroWeapon(), new ExtraAttacks('+2'))),
-      new Weapon('modified-archeotech-pistols', new SmallArms('15cm', new FirstStrike(), new MacroWeapon(), new ExtraAttacks('+1')))
+      new Weapon('power-whip', new AssaultWeapon(new FirstStrike(), new Fleshbane(), new ExtraAttacks('+2'))),
+      new Weapon('modified-archeotech-pistols', new SmallArms('15cm', new FirstStrike(), new Fleshbane(), new ExtraAttacks('+1')))
     ]
   }
 }
@@ -129,7 +130,7 @@ export class RavenGuardDarkwingPatternStormEagle extends LegionUnit {
     }
     this.rules = [
       new ReinforcedArmour(),
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'AC',
@@ -140,7 +141,7 @@ export class RavenGuardDarkwingPatternStormEagle extends LegionUnit {
     }
     this.weapons = [
       new Weapon('eclipse-missiles', new RangedWeapon('45cm', new BarragePoints(1), new Disrupt(), new FixedForwardFireArc())),
-      new Weapon('2-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+'), new AntiAircraft('5+'), new FixedForwardFireArc())),
+      new Weapon('2-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+'), new AntiAircraft('5+'), new Armourbane(), new FixedForwardFireArc())),
       new Weapon('twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+')))
     ]
   }

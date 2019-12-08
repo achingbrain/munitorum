@@ -268,3 +268,10 @@ export class ChaosGate {
     this.link = 'http://epicau.com/mw/index.php/Daemonic_Hordes#Special_Rules'
   }
 }
+
+export class ATalentForMurder {
+  constructor () {
+    this.name = 'a-talent-for-murder'
+    this.link = 'http://epicau.com/mw/index.php/Special_Rules'
+  }
+}
