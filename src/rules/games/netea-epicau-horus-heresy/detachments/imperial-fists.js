@@ -122,7 +122,7 @@ export class ImperialFistsDestroyerDetachment extends SpaceMarineLegionDetachmen
         new Centurion()
       )
     )
-    this.setMandatoryUnits(
+    this.setConstraints(
       new LimitedPerPoints(1, 2000)
     )
   }
