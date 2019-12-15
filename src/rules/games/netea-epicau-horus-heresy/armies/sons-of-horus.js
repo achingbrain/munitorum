@@ -15,8 +15,8 @@ import DaemonicHordes from './daemonic-hordes'
 import withType from '../with-type'
 
 export default class SonsOfHorus extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'sons-of-horus')
 
     this.lineDetachments.push(SonsOfHorusReaverAttackDetachment)
     this.supportDetachments.push(SonsOfHorusJustaerinTerminatorDetachment)

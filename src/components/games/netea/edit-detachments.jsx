@@ -41,6 +41,7 @@ class EditDetachments extends Component {
           textVariant={titleTextVariant}
           items={available}
           onSelect={this.handleAddDetachment}
+          identifier={`add-${kebab(type)}`}
         />
         {
           detachments.map((detachment, index) => (

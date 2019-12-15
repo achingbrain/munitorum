@@ -39,8 +39,8 @@ import {
 } from '../validations'
 
 export default class KnightHousehold extends Army {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'knight-household')
 
     this.lineDetachments = [
       KnightHouseholdQuestorisPaladinKnights,

@@ -46,8 +46,8 @@ import {
 } from '../validations'
 
 export default class SolarAuxilia extends Army {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'solar-auxilia')
 
     this.lineDetachments = [
       SolarAuxiliaCommandDetachment,

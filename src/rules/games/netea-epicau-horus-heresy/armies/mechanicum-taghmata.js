@@ -48,8 +48,8 @@ import {
 } from '../validations'
 
 export default class MechanicumTaghmata extends Army {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'mechanicum-taghmata')
 
     this.lineDetachments = [
       MechanicumTaghmataAdsecularisCovenent,

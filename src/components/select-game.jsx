@@ -27,7 +27,7 @@ class SelectGame extends Component {
     } = this.props
 
     return (
-      <ListItem key={game.name} onClick={this.handleSelect} button>
+      <ListItem key={game.name} onClick={this.handleSelect} data-test={`select-game-${game.name}`} button>
         <ListItemIcon className={classes.listListIcon}>
           <Icon src={game.image} className={classes.avatar} />
         </ListItemIcon>

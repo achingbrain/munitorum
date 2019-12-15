@@ -20,8 +20,8 @@ import DaemonicHordes from './daemonic-hordes'
 import withType from '../with-type'
 
 export default class WordBearers extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'word-bearers')
 
     this.supportDetachments.push(
       WordBearersGalVorbakDarkBrethrenDetachment,

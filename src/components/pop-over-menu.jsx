@@ -56,7 +56,8 @@ class PopOverMenu extends Component {
       textClassName,
       button,
       buttonSize,
-      classes
+      classes,
+      identifier
     } = this.props
 
     return (
@@ -75,7 +76,7 @@ class PopOverMenu extends Component {
             aria-haspopup='true'
             disabled={!items.length}
             size={buttonSize}
-          >{button || <AddIcon />}
+          >{button || <AddIcon data-test={`${identifier}-button`} />}
           </InlineButton>
         </Typography>
         <Menu
@@ -83,6 +84,7 @@ class PopOverMenu extends Component {
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
+          data-test={`${identifier}-list`}
         >
           {
             items
@@ -110,7 +112,7 @@ class PopOverMenu extends Component {
                 }
 
                 return (
-                  <MenuItem onClick={() => this.handleSelect(item)} key={`${name.toString()}-${index}`}>
+                  <MenuItem onClick={() => this.handleSelect(item)} key={`${name.toString()}-${index}`} data-test={`${identifier}-list-item-${item.code}`}>
                     <ListItemIcon className={classes.listListIcon}>
                       <Icon className={classes.avatar} src={item.image} />
                     </ListItemIcon>

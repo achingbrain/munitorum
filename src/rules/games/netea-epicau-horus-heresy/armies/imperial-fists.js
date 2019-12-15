@@ -22,8 +22,8 @@ import LegioCustodes from './legio-custodes'
 import withType from '../with-type'
 
 export default class ImperialFists extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'imperial-fists')
 
     this.supportDetachments.push(
       ImperialFistsPhalanxWarderDetachment,

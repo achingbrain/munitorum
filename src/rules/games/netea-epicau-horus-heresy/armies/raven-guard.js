@@ -20,8 +20,8 @@ import LegioCustodes from './legio-custodes'
 import withType from '../with-type'
 
 export default class RavenGuard extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'raven-guard')
 
     this.supportDetachments.push(
       RavenGuardDarkFuryAssaultDetachment,

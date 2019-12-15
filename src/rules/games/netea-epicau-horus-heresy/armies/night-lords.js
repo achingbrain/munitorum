@@ -19,8 +19,8 @@ import DaemonicHordes from './daemonic-hordes'
 import withType from '../with-type'
 
 export default class NightLords extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'night-lords')
 
     this.supportDetachments.push(
       NightLordsNightRaptorDetachment,

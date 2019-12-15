@@ -55,8 +55,8 @@ import {
 } from '../validations'
 
 export default class ImperialMilitia extends Army {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'imperial-militia')
 
     this.lineDetachments = [
       ImperialMilitiaCommandSquad,

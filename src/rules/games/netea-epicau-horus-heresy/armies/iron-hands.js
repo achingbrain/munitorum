@@ -21,8 +21,8 @@ import LegioCustodes from './legio-custodes'
 import withType from '../with-type'
 
 export default class IronHands extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'iron-hands')
 
     this.lineDetachments.push(
       IronHandsGorgonTerminatorDetachment,

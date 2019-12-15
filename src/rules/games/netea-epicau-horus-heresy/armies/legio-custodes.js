@@ -19,8 +19,8 @@ import {
 import withType from '../with-type'
 
 export default class LegioCustodes extends Army {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'legio-custodes')
 
     this.lineDetachments = [
       LegioCustodesHykanatoiDetachment,

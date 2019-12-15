@@ -19,8 +19,8 @@ import {
 } from '../validations'
 
 export default class ThousandSons extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'thousand-sons')
 
     this.supportDetachments.push(
       ThousandSonsSekhmetTerminatorDetachment,

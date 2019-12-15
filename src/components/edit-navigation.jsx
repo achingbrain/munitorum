@@ -101,7 +101,7 @@ class Navigation extends Component {
           }
           <Divider />
           <List>
-            <ListItem button key='New list' onClick={this.handleNewList}>
+            <ListItem button key='New list' onClick={this.handleNewList} data-test='new-list-button'>
               <ListItemIcon className={classes.listListIcon}>
                 <PlaylistAddIcon className={classes.avatar} />
               </ListItemIcon>

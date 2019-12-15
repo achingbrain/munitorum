@@ -15,8 +15,8 @@ import LegioCustodes from './legio-custodes'
 import withType from '../with-type'
 
 export default class Salamanders extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'salamanders')
 
     this.lineDetachments.push(SalamandersFiredrakeTerminatorDetachment)
     this.supportDetachments.push(SalamandersPyroclastDetachment)

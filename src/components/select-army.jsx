@@ -27,7 +27,7 @@ class SelectArmy extends Component {
     } = this.props
 
     return (
-      <ListItem onClick={this.handleSelect} button>
+      <ListItem onClick={this.handleSelect} data-test={`select-army-${army.name}`} button>
         <ListItemIcon className={classes.listListIcon}>
           <Icon src={army.image} className={classes.avatar} />
         </ListItemIcon>

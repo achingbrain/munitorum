@@ -34,8 +34,8 @@ import DaemonicHordes from './daemonic-hordes'
 import withType from '../with-type'
 
 export default class LegioTitanicus extends Army {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'legio-titanicus')
 
     this.lineDetachments = [
       LegioTitanicusWarhoundTitanDetachment,

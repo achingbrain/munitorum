@@ -13,8 +13,8 @@ import LegioCustodes from './legio-custodes'
 import withType from '../with-type'
 
 export default class BloodAngels extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'blood-angels')
 
     this.lordsOfWar.push(
       BloodAngelsPrimarchDetachment

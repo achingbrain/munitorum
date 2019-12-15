@@ -19,8 +19,8 @@ import {
 } from '../validations'
 
 export default class EmperorsChildren extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'emperors-children')
 
     this.supportDetachments.push(
       EmperorsChildrenPalatineBladesDetachment,

@@ -1,8 +1,9 @@
 'use strict'
 
 export default class Army {
-  constructor (game) {
+  constructor (game, name) {
     this.game = game
+    this.name = name
   }
 
   getEditor () {

@@ -15,8 +15,8 @@ import DaemonicHordes from './daemonic-hordes'
 import withType from '../with-type'
 
 export default class AlphaLegion extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'alpha-legion')
 
     this.supportDetachments.push(
       AlphaLegionHeadHunterKillTeamDetachment,

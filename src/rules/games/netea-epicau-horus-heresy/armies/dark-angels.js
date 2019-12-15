@@ -20,8 +20,8 @@ import LegioCustodes from './legio-custodes'
 import withType from '../with-type'
 
 export default class DarkAngels extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'dark-angels')
 
     this.lineDetachments.push(
       DarkAngelsTacticalDetachment

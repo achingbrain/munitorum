@@ -22,8 +22,8 @@ import {
 } from '../validations'
 
 export default class WorldEaters extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'world-eaters')
 
     this.lineDetachments.push(WorldEatersRampagerDetachment)
     this.supportDetachments.push(WorldEatersRedButcherDetachment)

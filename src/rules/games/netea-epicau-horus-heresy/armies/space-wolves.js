@@ -19,8 +19,8 @@ import LegioCustodes from './legio-custodes'
 import withType from '../with-type'
 
 export default class SpaceWolves extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'space-wolves')
 
     this.lineDetachments.push(
       SpaceWolvesGreySlayerDetachment

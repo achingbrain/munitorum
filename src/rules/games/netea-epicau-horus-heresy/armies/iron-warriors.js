@@ -23,8 +23,8 @@ import DaemonicHordes from './daemonic-hordes'
 import withType from '../with-type'
 
 export default class IronWarriors extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'iron-warriors')
 
     this.lineDetachments = this.lineDetachments.filter(type => {
       return type !== LegionTerminatorDetachment

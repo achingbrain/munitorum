@@ -42,8 +42,8 @@ import KnightHousehold from './knight-household'
 import LegioTitanicus from './legio-titanicus'
 
 export default class DaemonicHordes extends Army {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'daemonic-hordes')
 
     this.lineDetachments = [
       DaemonicHordesWarpRiftDetachment,

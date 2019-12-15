@@ -23,8 +23,8 @@ import {
 } from '../validations'
 
 export default class DeathGuard extends SpaceMarineLegion {
-  constructor () {
-    super()
+  constructor (game) {
+    super(game, 'death-guard')
 
     this.lineDetachments = this.lineDetachments
       .filter(detachment => detachment !== LegionAssaultDetachment)

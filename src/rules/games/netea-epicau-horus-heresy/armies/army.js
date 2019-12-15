@@ -11,8 +11,8 @@ import {
 } from '../validations'
 
 export default class NetEaEpicAuHorusHeresyArmy extends Army {
-  constructor (game) {
-    super(game)
+  constructor (game, name) {
+    super(game, name)
 
     this.lineDetachments = []
     this.supportDetachments = []
