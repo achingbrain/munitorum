@@ -9,7 +9,7 @@ import {
   createList
 } from '../store/actions'
 import EditNavigation from './edit-navigation'
-import games from '../rules/games'
+import games from '../rules'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import SelectGame from './select-game'

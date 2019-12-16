@@ -50,6 +50,7 @@ class EditDetachments extends Component {
               detachment={detachment}
             >
               <DetachmentEditor
+                type={type}
                 detachment={detachment}
                 isFirst={index === 0}
                 isLast={index === detachments.length - 1}

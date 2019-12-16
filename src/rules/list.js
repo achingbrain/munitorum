@@ -1,9 +1,9 @@
 'use strict'
 
 import shortid from 'shortid'
-import InvalidListEditor from '../../components/invalid-list-editor'
-import InvalidListViewer from '../../components/invalid-list-viewer'
-import InvalidListTopBar from '../../components/invalid-list-top-bar'
+import InvalidListEditor from '../components/invalid-list-editor'
+import InvalidListViewer from '../components/invalid-list-viewer'
+import InvalidListTopBar from '../components/invalid-list-top-bar'
 
 export default class List {
   constructor (game, name, army) {
@@ -22,18 +22,6 @@ export default class List {
 
   clearErrors () {
     this.errors = []
-  }
-
-  getEditor () {
-    return this.army.getEditor()
-  }
-
-  getViewer () {
-    return this.army.getViewer()
-  }
-
-  getTopBar () {
-    return this.army.getTopBar()
   }
 
   getCost () {

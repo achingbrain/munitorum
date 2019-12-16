@@ -17,7 +17,7 @@ import {
 } from '../store/actions'
 import {
   InvalidList
-} from '../rules/games/list'
+} from '../rules/list'
 
 class InvalidListView extends Component {
   static propTypes = {

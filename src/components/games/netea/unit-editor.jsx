@@ -22,7 +22,7 @@ import Confirm from '../../confirm'
 import PopOverMenu from '../../pop-over-menu'
 import {
   MultipleChoiceWeapon
-} from '../../../rules/games/netea-epicau-horus-heresy/weapons'
+} from '../../../rules/netea-epicau-horus-heresy/weapons'
 import {
   removeUnit,
   updateUnit,

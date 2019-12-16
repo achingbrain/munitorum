@@ -20,7 +20,7 @@ import {
 import {
   LegionAssaultSquad,
   LegionPrimarchUnit
-} from '../units/space-marine-legion'
+} from './space-marine-legion'
 import withType from '../with-type'
 
 export class BloodAngelsPrimarch extends LegionPrimarchUnit {

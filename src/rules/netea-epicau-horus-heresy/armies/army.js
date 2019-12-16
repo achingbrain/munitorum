@@ -1,9 +1,6 @@
 'use strict'
 
 import Army from '../../army'
-import ListEditor from '../../../../components/games/netea/list-editor'
-import ListViewer from '../../../../components/games/netea/list-viewer'
-import TopBar from '../../../../components/games/netea/top-bar'
 import {
   PointsLimitedRule,
   UniqueRule,
@@ -24,18 +21,6 @@ export default class NetEaEpicAuHorusHeresyArmy extends Army {
       new UniqueRule(),
       new NoAlliedSupremeCommanders()
     ]
-  }
-
-  getEditor () {
-    return ListEditor
-  }
-
-  getViewer () {
-    return ListViewer
-  }
-
-  getTopBar () {
-    return TopBar
   }
 
   validate (list, t, isAllied) {

@@ -30,6 +30,17 @@ const theme = createMuiTheme({
   },
   typography: {
     useNextVariants: true
+  },
+  overrides: {
+    MuiCssBaseline: {
+      // Name of the rule
+      '@global': {
+        '*, *::before, *::after': {
+          transition: 'none !important',
+          animation: 'none !important'
+        }
+      }
+    }
   }
 })
 

@@ -28,6 +28,7 @@ import Confirm from '../../confirm'
 import Icon from '../../icon'
 import DetachmentNameDialog from '../../detachment-name-dialog'
 import UnitEditor from './unit-editor'
+import kebab from '../../../utils/kebab-case'
 
 class DetachmentEditor extends Component {
   static propTypes = {
@@ -108,11 +109,12 @@ class DetachmentEditor extends Component {
       t,
       isFirst,
       isLast,
-      errors
+      errors,
+      type
     } = this.props
 
     return (
-      <Card className={classes.card}>
+      <Card className={classes.card} data-test={`${kebab(type)}-${detachment.code}-editor`}>
         <CardHeader
           avatar={
             <Icon src={image} className={classes.detachmentAvatar} />

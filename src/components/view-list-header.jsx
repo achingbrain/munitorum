@@ -17,6 +17,7 @@ const ViewListHeader = ({ classes, list, image, cost, onEdit }) => {
       <IconButton
         color='inherit'
         onClick={onEdit}
+        data-test='edit-list-button'
       >
         <EditIcon />
       </IconButton>

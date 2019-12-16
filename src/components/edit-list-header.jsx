@@ -109,6 +109,7 @@ class EditListHeader extends Component {
             color='inherit'
             aria-label='View'
             onClick={this.handleView}
+            data-test='view-list-button'
           >
             <ViewIcon />
           </IconButton>
@@ -153,7 +154,7 @@ class EditListHeader extends Component {
                   </ListItem>
                 )}
               />
-              <ListItem button onClick={this.handleView}>
+              <ListItem button onClick={this.handleView} data-test='view-list-button'>
                 <ListItemIcon className={classes.listListIcon}>
                   <ViewIcon />
                 </ListItemIcon>

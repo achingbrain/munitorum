@@ -13,7 +13,7 @@ import {
 import Confirm from './confirm'
 import {
   InvalidDetachment
-} from '../rules/games/netea-epicau-horus-heresy/detachments/detachment'
+} from '../rules/netea-epicau-horus-heresy/detachments/detachment'
 
 class InvalidDetachmentEditor extends Component {
   state = {

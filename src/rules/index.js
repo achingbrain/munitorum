@@ -1,8 +1,9 @@
-'use strict'
+import netEAEpicAuHorusHeresy from './netea-epicau-horus-heresy'
+// import imperiousDominatus from './imperious-dominatus'
 
-export { default as armies } from './armies'
-export { default as constraints } from './constraints.js'
-export { default as detachments } from './detachments'
-export { default as units } from './units'
-export { default as upgrades } from './upgrades.js'
-export { default as weapons } from './weapons.js'
+const games = [
+  // imperiousDominatus,
+  netEAEpicAuHorusHeresy
+]
+
+export default games

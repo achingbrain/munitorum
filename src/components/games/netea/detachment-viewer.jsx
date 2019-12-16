@@ -15,7 +15,8 @@ import TableCell from '@material-ui/core/TableCell'
 import TableHead from '@material-ui/core/TableHead'
 import Validator from '../../validator'
 import UnitViewer from './unit-viewer'
-import ModifierUnit from '../../../rules/games/netea-epicau-horus-heresy/units/modifier-unit'
+import ModifierUnit from '../../../rules/netea-epicau-horus-heresy/units/modifier-unit'
+import kebab from '../../../utils/kebab-case'
 
 class DetachmentViewer extends Component {
   static propTypes = {
@@ -26,7 +27,8 @@ class DetachmentViewer extends Component {
     const {
       classes,
       detachment,
-      t
+      t,
+      type
     } = this.props
 
     const units = Object.values(
@@ -48,7 +50,7 @@ class DetachmentViewer extends Component {
     const initiativeRating = detachment.getInitiativeRating()
 
     return (
-      <Card className={classes.card}>
+      <Card className={classes.card} data-test={`${kebab(type)}-${detachment.code}-viewer`}>
         <CardHeader
           title={
             <div className={classes.flexContainer}>

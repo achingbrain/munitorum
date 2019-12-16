@@ -70,7 +70,11 @@ export default class NetEaEpicAuHorusHeresy extends Game {
   }
 
   newList (name, army) {
-    return new NetEaEpicAuHorusHeresyList(this, name, army)
+    const list = new NetEaEpicAuHorusHeresyList(this, name, army)
+
+    this.addEditors(list)
+
+    return list
   }
 
   listFromJSON (json) {
@@ -109,6 +113,8 @@ export default class NetEaEpicAuHorusHeresy extends Game {
       } else {
         list.allies = []
       }
+
+      this.addEditors(list)
 
       return list
     } catch (error) {

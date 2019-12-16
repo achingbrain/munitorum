@@ -6,7 +6,7 @@ import React, {
 import component from '../../component'
 import PopOverMenu from '../../pop-over-menu'
 import AllyEditor from './ally-editor'
-import game from '../../../rules/games/netea-epicau-horus-heresy'
+import game from '../../../rules/netea-epicau-horus-heresy'
 import {
   removeDetachment
 } from '../../../store/actions'

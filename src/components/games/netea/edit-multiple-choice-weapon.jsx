@@ -9,7 +9,7 @@ import PopOverMenu from '../../pop-over-menu'
 import {
   WeaponSet,
   TitanWeapon
-} from '../../../rules/games/netea-epicau-horus-heresy/weapons'
+} from '../../../rules/netea-epicau-horus-heresy/weapons'
 import {
   updateUnit
 } from '../../../store/actions'

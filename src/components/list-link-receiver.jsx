@@ -7,7 +7,7 @@ import component from './component'
 import {
   importList
 } from '../store/actions'
-import games from '../rules/games'
+import games from '../rules'
 import cbor from 'cbor'
 
 class ListLinkReceiver extends Component {

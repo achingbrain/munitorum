@@ -12,13 +12,13 @@ import { Trans } from 'react-i18next'
 import {
   SpecialWeapon,
   WeaponBlank
-} from '../../../rules/games/netea-epicau-horus-heresy/weapons'
+} from '../../../rules/netea-epicau-horus-heresy/weapons'
 import {
   Notes
-} from '../../../rules/games/netea-epicau-horus-heresy/special-rules'
+} from '../../../rules/netea-epicau-horus-heresy/special-rules'
 import {
   Unique
-} from '../../../rules/games/netea-epicau-horus-heresy/constraints'
+} from '../../../rules/netea-epicau-horus-heresy/constraints'
 
 const RulesDisplay = component(({ rules, classes, t }) => {
   return (

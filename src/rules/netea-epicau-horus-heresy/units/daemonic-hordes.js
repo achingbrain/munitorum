@@ -1,5 +1,5 @@
 import React from 'react'
-import InlineButton from '../../../../components/inline-button'
+import InlineButton from '../../../components/inline-button'
 import AddIcon from '@material-ui/icons/Add'
 import RemoveIcon from '@material-ui/icons/Remove'
 import {

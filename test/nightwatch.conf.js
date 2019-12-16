@@ -8,12 +8,12 @@ const WEBRIVER_PORT = ephemeralPort()
 
 // config used to test examples
 module.exports = {
-  src_folders: ['test/epic-au'],
-  output_folder: './reports/nightwatch',
+  src_folders: ['epic-au'],
+  output_folder: '../reports/nightwatch',
 
   webdriver: {
     start_process: true,
-    server_path: 'node_modules/.bin/chromedriver',
+    server_path: '../node_modules/.bin/chromedriver',
     port: WEBRIVER_PORT,
     cli_args: [
       `--port=${WEBRIVER_PORT}`
@@ -26,21 +26,21 @@ module.exports = {
         browserName: 'chrome',
         chromeOptions: {
           args: [
-            // 'headless',
+            'headless',
             'window-size=1280,1024'
           ]
         }
       },
       screenshots: {
         enabled: true,
-        path: './reports/nightwatch',
+        path: '../reports/nightwatch',
         on_failure: true,
         on_error: true
       }
     }
   },
 
-  globals_path: './test/setup.js',
+  globals_path: './setup.js',
 
   globals: {
     asyncHookTimeout: 120000,

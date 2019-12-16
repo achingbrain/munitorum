@@ -17,6 +17,7 @@ const ViewDetachments = ({ army, type, detachments, classes, t }) => {
           >
             <DetachmentViewer
               detachment={detachment}
+              type={type}
             />
           </InvalidDetachment>
         ))

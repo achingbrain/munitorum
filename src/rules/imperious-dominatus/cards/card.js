@@ -1,7 +1,7 @@
 'use strict'
 
 import shortid from 'shortid'
-import { find } from '../../../../utils/with-type'
+import { find } from '../../../utils/with-type'
 
 export default class Card {
   constructor (list, morale, breakpoint, cost, victoryPoints) {

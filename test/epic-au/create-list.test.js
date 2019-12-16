@@ -1,67 +1,73 @@
 'use strict'
 
-const armies = [
-  'alpha-legion',
-  'blood-angels',
-  'daemonic-hordes',
-  'dark-angels',
-  'death-guard',
-  'emperors-children',
-  'imperial-fists',
-  'imperial-militia',
-  'iron-hands',
-  'iron-warriors',
-  'knight-household',
-  'legio-titanicus',
-  'mechanicum-taghmata',
-  'night-lords',
-  'raven-guard',
-  'salamanders',
-  'solar-auxilia',
-  'sons-of-horus',
-  'space-wolves',
-  'thousand-sons',
-  'ultramarines',
-  'white-scars',
-  'word-bearers',
-  'world-eaters'
-]
+const games = require('../dist/rules')
+const lang = require('../dist/lang')
+const EpicAU = games[0]
+const suite = {}
 
-const detachmentTypes = [
-  'line-detachments',
-  'support-detachments',
-  'lords-of-war'
-]
-
-module.exports = {
-  'Creates lists': function (browser) {
-    browser.url(process.env.APPLICATION_URL)
-      .waitForElementVisible('[data-test=new-list-button]')
-
-    armies.forEach(army => {
-      browser.click('[data-test=new-list-button]')
+EpicAU.armies.forEach(army => {
+  army.lineDetachments.forEach(detachment => {
+    suite[`Adds ${lang.translation[detachment.code]} line detachment to ${lang.translation[army.code]} list`] = function (browser) {
+      browser.url(process.env.APPLICATION_URL)
+        .waitForElementVisible('[data-test=new-list-button]')
+        .click('[data-test=new-list-button]')
         .waitForElementVisible('[data-test=select-game-netea-epicau-horus-heresy')
         .click('[data-test=select-game-netea-epicau-horus-heresy]')
-        .waitForElementVisible(`[data-test=select-army-${army}]`)
-        .click(`[data-test=select-army-${army}]`)
+        .waitForElementVisible(`[data-test=select-army-${army.name}]`)
+        .click(`[data-test=select-army-${army.name}]`)
+        .waitForElementVisible('[data-test=add-line-detachments-button]')
+        .click('[data-test=add-line-detachments-button]')
+        .waitForElementVisible(`[data-test=add-line-detachments-list-item-${detachment.code}]`)
+        .click(`[data-test=add-line-detachments-list-item-${detachment.code}]`)
+        .waitForElementVisible(`[data-test=line-detachments-${detachment.code}-editor]`)
+        .click('[data-test=view-list-button]')
+        .waitForElementVisible(`[data-test=line-detachments-${detachment.code}-viewer]`)
 
-      // add one of every detachment type
-      detachmentTypes.forEach(detachmentType => {
-        browser.waitForElementVisible(`[data-test=add-${detachmentType}-button]`)
-          .click(`[data-test=add-${detachmentType}-button]`)
-          .waitForElementVisible(`[data-test=add-${detachmentType}-list]`)
-          .elements('css selector', `[data-test^=add-${detachmentType}-list-item-]`, ({ value }) => {
-            value.forEach(({ ELEMENT: element }) => {
-              browser.elementIdAttribute(element, 'data-test', ({ value }) => {
-                const name = value.replace(`add-${detachmentType}-list-item-`, '')
+      browser.end()
+    }
+  })
 
-                console.info('Adding', name)
-              })
-            })
-          })
-      })
-    })
+  army.supportDetachments.forEach(detachment => {
+    suite[`Adds ${lang.translation[detachment.code]} support detachment to ${lang.translation[army.code]} list`] = function (browser) {
+      browser.url(process.env.APPLICATION_URL)
+        .waitForElementVisible('[data-test=new-list-button]')
+        .click('[data-test=new-list-button]')
+        .waitForElementVisible('[data-test=select-game-netea-epicau-horus-heresy')
+        .click('[data-test=select-game-netea-epicau-horus-heresy]')
+        .waitForElementVisible(`[data-test=select-army-${army.name}]`)
+        .click(`[data-test=select-army-${army.name}]`)
+        .waitForElementVisible('[data-test=add-support-detachments-button]')
+        .click('[data-test=add-support-detachments-button]')
+        .waitForElementVisible(`[data-test=add-support-detachments-list-item-${detachment.code}]`)
+        .click(`[data-test=add-support-detachments-list-item-${detachment.code}]`)
+        .waitForElementVisible(`[data-test=support-detachments-${detachment.code}-editor]`)
+        .click('[data-test=view-list-button]')
+        .waitForElementVisible(`[data-test=support-detachments-${detachment.code}-viewer]`)
 
-    browser.end()
-  }
-}
+      browser.end()
+    }
+  })
+
+  army.lordsOfWar.forEach(detachment => {
+    suite[`Adds ${lang.translation[detachment.code]} lord of war to ${lang.translation[army.code]} list`] = function (browser) {
+      browser.url(process.env.APPLICATION_URL)
+        .waitForElementVisible('[data-test=new-list-button]')
+        .click('[data-test=new-list-button]')
+        .waitForElementVisible('[data-test=select-game-netea-epicau-horus-heresy')
+        .click('[data-test=select-game-netea-epicau-horus-heresy]')
+        .waitForElementVisible(`[data-test=select-army-${army.name}]`)
+        .click(`[data-test=select-army-${army.name}]`)
+        .waitForElementVisible('[data-test=add-lords-of-war-button]')
+        .click('[data-test=add-lords-of-war-button]')
+        .waitForElementVisible(`[data-test=add-lords-of-war-list-item-${detachment.code}]`)
+        .click(`[data-test=add-lords-of-war-list-item-${detachment.code}]`)
+        .waitForElementVisible(`[data-test=lords-of-war-${detachment.code}-editor]`)
+        .click('[data-test=view-list-button]')
+        .waitForElementVisible(`[data-test=lords-of-war-${detachment.code}-viewer]`)
+
+      browser.end()
+    }
+  })
+})
+
+module.exports = suite

@@ -1,6 +1,6 @@
 import { createStore, compose } from 'redux'
 import persistState from 'redux-localstorage'
-import games from '../rules/games'
+import games from '../components/games'
 
 const config = {
   deserialize: (serializedData) => {

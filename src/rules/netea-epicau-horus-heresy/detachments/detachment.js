@@ -4,7 +4,7 @@ import shortid from 'shortid'
 import Unit, { MultipleUnit, InvalidUnit } from '../units/unit'
 import {
   find
-} from '../../../../utils/with-type'
+} from '../../../utils/with-type'
 
 export default class Detachment {
   constructor (list) {

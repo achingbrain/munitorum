@@ -85,7 +85,7 @@ export class ImperialFistsTemplarBrethrenDetachment extends SpaceMarineLegionDet
 
     this.setMandatoryUnits(
       new ImperialFistsTemplarBrethrenSquad(this),
-      new LegionChampion()
+      new LegionChampion(this)
     )
     this.setUpgrades(
       new TransportOption(

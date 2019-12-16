@@ -24,7 +24,7 @@ import {
   LegionTerminatorSquad,
   LegionUnit,
   LegionPrimarchUnit
-} from '../units/space-marine-legion'
+} from './space-marine-legion'
 import withType from '../with-type'
 
 export class SonsOfHorusPrimarch extends LegionPrimarchUnit {

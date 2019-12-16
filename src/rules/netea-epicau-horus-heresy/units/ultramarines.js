@@ -28,7 +28,7 @@ import {
   LegionPrimarchUnit,
   LegionTerminatorSquad,
   LegionRhino
-} from '../units/space-marine-legion'
+} from './space-marine-legion'
 import { TransportUnit, MultipleUnit } from './unit'
 import withType from '../with-type'
 
