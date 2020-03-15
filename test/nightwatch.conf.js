@@ -45,5 +45,10 @@ module.exports = {
   globals: {
     asyncHookTimeout: 120000,
     waitForConditionTimeout: 60000
+  },
+
+  test_workers: {
+    enabled: false,
+    workers: 'auto'
   }
 }
