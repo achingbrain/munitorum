@@ -29,7 +29,6 @@ import {
   LegionScimitarJetbike,
   LegionTerminatorSquad,
   LegionPrimarchUnit,
-  LegionLandSpeeder,
   LegionJavelinAttackSpeeder
 } from './space-marine-legion'
 import MultipleChoiceUnit from './multiple-choice-unit'
