@@ -9,7 +9,8 @@ import {
   RangedWeapon,
   MultipleShot,
   AntiPersonnel,
-  Fleshbane
+  Fleshbane,
+  IgnoreCover
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -25,8 +26,7 @@ import {
   LegionFellblade,
   LegionGlaive,
   LegionPrimarchUnit,
-  LegionTacticalSupportSquad,
-  LegionHeavySupportSquad
+  LegionTacticalSquad
 } from './space-marine-legion'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../with-type'
@@ -43,7 +43,7 @@ export class DarkAngelsPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'INF',
@@ -100,25 +100,19 @@ export class DarkAngelsSuperHeavyTankSquadronUnit extends MultipleChoiceUnit {
   }
 }
 
-export class DarkAngelsTacticalSupportSquad extends LegionTacticalSupportSquad {
+export class DarkAngelsDreadwingInteremptorSquad extends LegionTacticalSquad {
   constructor (detachment) {
     super(detachment)
 
+    this.cost = 250
+    this.min = 4
+    this.quantity = 4
+
     this.weapons = [
-      new Weapon('plasma-guns',
-        new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('4+')), new Fleshbane()),
+      new Weapon('plasma-burners',
+        new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('4+')), new Fleshbane(), new IgnoreCover()),
         new SmallArms('15cm', new Fleshbane(), new ExtraAttacks('+1'))
       )
-    ]
-  }
-}
-
-export class DarkAngelsHeavySupportSquad extends LegionHeavySupportSquad {
-  constructor (detachment) {
-    super(detachment)
-
-    this.weapons = [
-      new Weapon('plasma-weapons', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+')), new Fleshbane()))
     ]
   }
 }
@@ -128,5 +122,4 @@ withType(DarkAngelsBodyguardSquad)
 withType(DarkAngelsFellblade)
 withType(DarkAngelsGlaive)
 withType(DarkAngelsSuperHeavyTankSquadronUnit)
-withType(DarkAngelsTacticalSupportSquad)
-withType(DarkAngelsHeavySupportSquad)
+withType(DarkAngelsDreadwingInteremptorSquad)

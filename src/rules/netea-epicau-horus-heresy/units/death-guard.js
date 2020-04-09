@@ -9,7 +9,8 @@ import {
   AntiPersonnel,
   AntiTank,
   Disrupt,
-  IgnoreCover
+  IgnoreCover,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -85,8 +86,8 @@ export class DeathGuardDeathshroudTerminatorSquad extends LegionTerminatorSquad 
       ff: 5
     }
     this.weapons = [
-      new Weapon('power-scythes', new AssaultWeapon(new ExtraAttacks('+2'))),
-      new Weapon('chem-flamers', new SmallArms('15cm', new IgnoreCover()))
+      new Weapon('power-scythes', new AssaultWeapon(new ExtraAttacks('+2'), new Fleshbane())),
+      new Weapon('chem-flamers', new SmallArms('15cm', new IgnoreCover(), new Fleshbane()))
     ]
   }
 }
@@ -107,7 +108,7 @@ export class DeathGuardGraveWardenTerminatorSquad extends LegionTerminatorSquad 
       ff: 3
     }
     this.weapons = [
-      new Weapon('power-fist', new AssaultWeapon(new ExtraAttacks('+1'))),
+      new Weapon('power-fist', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
       new Weapon('assault-grenade-launchers',
         new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('6+')), new Disrupt(), new IgnoreCover()),
         new SmallArms('15cm', new IgnoreCover(), new ExtraAttacks('+1'))

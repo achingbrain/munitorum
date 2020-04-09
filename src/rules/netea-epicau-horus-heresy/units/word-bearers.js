@@ -115,7 +115,7 @@ export class WordBearersIncendiarySquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('axe-rakes', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
+      new Weapon('axe-rakes', new AssaultWeapon(new Fleshbane(), new ExtraAttacks('+1'))),
       new Weapon('inferno-pistols',
         new RangedWeapon('15cm', new AntiPersonnel('3+'), new IgnoreCover()),
         new SmallArms('15cm', new FirstStrike(), new IgnoreCover(), new ExtraAttacks('+1'))
@@ -143,8 +143,8 @@ export class WordBearersMalGharaTaintedContemptorDreadnought extends LegionUnit 
     this.weapons = [
       new Weapon('tainted-power-claw', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
       new Weapon('warpfire-plasma-cannon',
-        new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('+5'), new Disrupt()),
-        new SmallArms('15cm', new MacroWeapon())
+        new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('+5'), new Fleshbane(), new Disrupt()),
+        new SmallArms('15cm', new Fleshbane())
       )
     ]
   }

@@ -23,7 +23,8 @@ import {
   MechanicumTaghmataAvengerStrikeFighter,
   MechanicumTaghmataPrimarisStrikeFighter,
   MechanicumTaghmataFalchion,
-  MechanicumTaghmataOrdinatusMajoris
+  MechanicumTaghmataOrdinatusMajoris,
+  MechanicumTaghmataVultaraxStratosAutomata
 } from '../units/mechanicum-taghmata'
 import MechanicumTaghmataDetachment from './mechanicum-taghmata-detachment'
 import {
@@ -245,6 +246,16 @@ export class MechanicumTaghmataOrdinatusMajorisDetachment extends MechanicumTagh
   }
 }
 
+export class MechanicumTaghmataVultaraxStratosAutomataDetachment extends MechanicumTaghmataDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new MechanicumTaghmataVultaraxStratosAutomata(this)
+    )
+  }
+}
+
 withType(MechanicumTaghmataAdsecularisCovenent)
 withType(MechanicumTaghmataThallaxCohort)
 withType(MechanicumTaghmataUrsaraxCohort)
@@ -261,3 +272,4 @@ withType(MechanicumTaghmataAvengerWing)
 withType(MechanicumTaghmataPrimarisWing)
 withType(MechanicumTaghmataSuperHeavyTankDestroyer)
 withType(MechanicumTaghmataOrdinatusMajorisDetachment)
+withType(MechanicumTaghmataVultaraxStratosAutomataDetachment)

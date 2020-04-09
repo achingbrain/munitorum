@@ -40,7 +40,8 @@ import {
   JumpPacks,
   CyberneticaCortex,
   VoidShields,
-  ImplacableAdvance
+  ImplacableAdvance,
+  Skimmer
 } from '../special-rules'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import Unit, { TransportUnit } from './unit'
@@ -664,6 +665,27 @@ export class MechanicumTaghmataLandRaider extends TransportUnit {
   }
 }
 
+export class MechanicumTaghmataVultaraxStratosAutomata extends Unit {
+  constructor (detachment) {
+    super(detachment, 250, 6, 6)
+
+    this.rules = [
+      new Skimmer()
+    ]
+    this.stats = {
+      type: 'INF',
+      speed: 30,
+      armour: 4,
+      cc: 6,
+      ff: 4
+    }
+    this.weapons = [
+      new Weapon('vultarax-arc-blaster', new RangedWeapon('15cm', new AntiPersonnel('3+'), new AntiTank('6+'))),
+      new Weapon('2x-setheno-havoc-launcher', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+'), new IgnoreCover()))
+    ]
+  }
+}
+
 withType(MechanicumTaghmataTechThrall)
 withType(MechanicumTaghmataTechPriest)
 withType(MechanicumTaghmataTechPriestUpgrade)
@@ -693,3 +715,4 @@ withType(MechanicumTaghmataOrdinatusMajoris)
 withType(MechanicumTaghmataScyllax)
 withType(MechanicumTaghmataTriaros)
 withType(MechanicumTaghmataLandRaider)
+withType(MechanicumTaghmataVultaraxStratosAutomata)

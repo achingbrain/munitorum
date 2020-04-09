@@ -17,7 +17,8 @@ import {
   MechanicumTaghmataAvengerWing,
   MechanicumTaghmataPrimarisWing,
   MechanicumTaghmataSuperHeavyTankDestroyer,
-  MechanicumTaghmataOrdinatusMajorisDetachment
+  MechanicumTaghmataOrdinatusMajorisDetachment,
+  MechanicumTaghmataVultaraxStratosAutomataDetachment
 } from '../detachments/mechanicum-taghmata'
 import AlphaLegion from './alpha-legion'
 import BloodAngels from './blood-angels'
@@ -65,7 +66,8 @@ export default class MechanicumTaghmata extends Army {
       MechanicumTaghmataMyrmidonSect,
       MechanicumTaghmataTarantulaBattery,
       MechanicumTaghmataMinotaurBattery,
-      MechanicumTaghmataOrdinatusMinorisTormenta
+      MechanicumTaghmataOrdinatusMinorisTormenta,
+      MechanicumTaghmataVultaraxStratosAutomataDetachment
     ]
     this.lordsOfWar = [
       MechanicumTaghmataAvengerWing,

@@ -17,7 +17,7 @@ import {
   Inspiring,
   InvulnerableSave,
   Infiltrator,
-  ATalentForMurder
+  Brutal
 } from '../special-rules'
 import {
   LegionTacticalSquad,
@@ -40,7 +40,7 @@ export class NightLordsPrimarch extends LegionPrimarchUnit {
       new Inspiring(),
       new InvulnerableSave('5+'),
       new Infiltrator(),
-      new ATalentForMurder()
+      new Brutal()
     ]
     this.stats = {
       type: 'INF',
@@ -75,7 +75,8 @@ export class NightLordsNightRaptorSquad extends LegionUnit {
 
     this.transportType = 'assault'
     this.rules = [
-      new JumpPacks()
+      new JumpPacks(),
+      new Brutal()
     ]
     this.stats = {
       type: 'INF',
@@ -97,7 +98,7 @@ export class NightLordsTerrorSquad extends LegionUnit {
     this.transportType = 'tactical'
     this.rules = [
       new Infiltrator(),
-      new ATalentForMurder()
+      new Brutal()
     ]
     this.stats = {
       type: 'INF',
@@ -107,8 +108,7 @@ export class NightLordsTerrorSquad extends LegionUnit {
       ff: 3
     }
     this.weapons = [
-      new Weapon('chainglaives', new AssaultWeapon(new ExtraAttacks('+1'))),
-      new Weapon('bolt-pistols', new SmallArms('15cm'))
+      new Weapon('chainglaives', new AssaultWeapon(new ExtraAttacks('+1')))
     ]
   }
 }

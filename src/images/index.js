@@ -3,6 +3,9 @@ import alphaLegionHeadHunter from './alpha-legion-head-hunter.svg'
 import alphaLegionLernaeanTerminator from './alpha-legion-lernaean-terminator.svg'
 import alphaLegionPrimarch from './alpha-legion-primarch.svg'
 import alphaLegion from './alpha-legion.svg'
+import bloodAngelsAngelsTears from './blood-angels-angels-tears.svg'
+import bloodAngelsCrimsonPaladins from './blood-angels-crimson-paladins.svg'
+import bloodAngelsDawnbreaker from './blood-angels-dawnbreaker.svg'
 import bloodAngelsPrimarch from './blood-angels-primarch.svg'
 import bloodAngels from './blood-angels.svg'
 import daemonicHordesBeastsOfNurgle from './daemonic-hordes-beasts-of-nurgle.svg'
@@ -42,6 +45,7 @@ import daemonicHordesSlaanesh from './daemonic-hordes-slaanesh.svg'
 import daemonicHordesTzeench from './daemonic-hordes-tzeench.svg'
 import daemonicHordes from './daemonic-hordes.svg'
 import darkAngelsDestroyer from './dark-angels-destroyer.svg'
+import darkAngelsDreadwingInteremptor from './dark-angels-dreadwing-interemptor.svg'
 import darkAngelsFellblade from './dark-angels-fellblade.svg'
 import darkAngelsGlaive from './dark-angels-glaive.svg'
 import darkAngelsHeavySupport from './dark-angels-heavy-support.svg'
@@ -159,6 +163,7 @@ import legioTitanicusVeteranPrinceps from './legio-titanicus-veteran-princeps.sv
 import legioTitanicusWarhound from './legio-titanicus-warhound.svg'
 import legioTitanicusWarlord from './legio-titanicus-warlord.svg'
 import legioTitanicus from './legio-titanicus.svg'
+import legionArquitorBombard from './legion-arquitor-bombard.svg'
 import legionArtilleryBattery from './legion-artillery-battery.svg'
 import legionAssault from './legion-assault.svg'
 import legionAttackBike from './legion-attack-bike.svg'
@@ -238,6 +243,7 @@ import mechanicumTaghmataThanatar from './mechanicum-taghmata-thanatar.svg'
 import mechanicumTaghmataTriaros from './mechanicum-taghmata-triaros.svg'
 import mechanicumTaghmataUrsarax from './mechanicum-taghmata-ursarax.svg'
 import mechanicumTaghmataVorax from './mechanicum-taghmata-vorax.svg'
+import mechanicumTaghmataVultaraxStratosAutomata from './mechanicum-taghmata-vultarax-stratos-automata.svg'
 import mechanicumTaghmata from './mechanicum-taghmata.svg'
 import nightLordsNightRaptor from './night-lords-night-raptor.svg'
 import nightLordsPrimarch from './night-lords-primarch.svg'
@@ -294,6 +300,7 @@ import ultramarines from './ultramarines.svg'
 import whiteScarsAttackBike from './white-scars-attack-bike.svg'
 import whiteScarsEbonKeshig from './white-scars-ebon-keshig.svg'
 import whiteScarsGoldenKeshig from './white-scars-golden-keshig.svg'
+import whiteScarsKyzaganAssaultSpeeder from './white-scars-kyzagan-assault-speeder.svg'
 import whiteScarsOutrider from './white-scars-outrider.svg'
 import whiteScarsSkyHunter from './white-scars-sky-hunter.svg'
 import whiteScars from './white-scars.svg'
@@ -312,6 +319,9 @@ const IMAGES = {
   'alpha-legion-lernaean-terminator': alphaLegionLernaeanTerminator,
   'alpha-legion-primarch': alphaLegionPrimarch,
   'alpha-legion': alphaLegion,
+  'blood-angels-angels-tears': bloodAngelsAngelsTears,
+  'blood-angels-crimson-paladins': bloodAngelsCrimsonPaladins,
+  'blood-angels-dawnbreaker': bloodAngelsDawnbreaker,
   'blood-angels-primarch': bloodAngelsPrimarch,
   'blood-angels': bloodAngels,
   'daemonic-hordes-beasts-of-nurgle': daemonicHordesBeastsOfNurgle,
@@ -354,6 +364,7 @@ const IMAGES = {
   'daemonic-hordes-tzeench': daemonicHordesTzeench,
   'daemonic-hordes': daemonicHordes,
   'dark-angels-destroyer': darkAngelsDestroyer,
+  'dark-angels-dreadwing-interemptor': darkAngelsDreadwingInteremptor,
   'dark-angels-fellblade': darkAngelsFellblade,
   'dark-angels-glaive': darkAngelsGlaive,
   'dark-angels-heavy-support': darkAngelsHeavySupport,
@@ -491,6 +502,7 @@ const IMAGES = {
   'legio-titanicus-warhound': legioTitanicusWarhound,
   'legio-titanicus-warlord': legioTitanicusWarlord,
   'legio-titanicus': legioTitanicus,
+  'legion-arquitor-bombard': legionArquitorBombard,
   'legion-artillery-battery': legionArtilleryBattery,
   'legion-assault': legionAssault,
   'legion-attack-bike': legionAttackBike,
@@ -590,6 +602,7 @@ const IMAGES = {
   'mechanicum-taghmata-triaros': mechanicumTaghmataTriaros,
   'mechanicum-taghmata-ursarax': mechanicumTaghmataUrsarax,
   'mechanicum-taghmata-vorax': mechanicumTaghmataVorax,
+  'mechanicum-taghmata-vultarax-stratos-automata': mechanicumTaghmataVultaraxStratosAutomata,
   'mechanicum-taghmata': mechanicumTaghmata,
   'night-lords-destroyer': darkAngelsDestroyer,
   'night-lords-night-raptor': nightLordsNightRaptor,
@@ -677,6 +690,8 @@ const IMAGES = {
   'white-scars-destroyer': darkAngelsDestroyer,
   'white-scars-ebon-keshig': whiteScarsEbonKeshig,
   'white-scars-golden-keshig': whiteScarsGoldenKeshig,
+  'white-scars-javelin': legionJavelin,
+  'white-scars-kyzagan-assault-speeder': whiteScarsKyzaganAssaultSpeeder,
   'white-scars-outrider': whiteScarsOutrider,
   'white-scars-sky-hunter': whiteScarsSkyHunter,
   'white-scars': whiteScars,

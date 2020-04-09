@@ -1,11 +1,16 @@
 import {
   TransportOption,
   DropAssault,
-  AssaultClaw
+  AssaultClaw,
+  HeavyTransport,
+  Teleport
 } from '../upgrades'
 import {
   BloodAngelsPrimarch,
-  BloodAngelsBodyguardSquad
+  BloodAngelsBodyguardSquad,
+  BloodAngelsDawnbreakerSquad,
+  BloodAngelsCrimsonPaladinsSquad,
+  BloodAngelsAngelsTearsSquad
 } from '../units/blood-angels'
 import {
   Unique
@@ -33,4 +38,55 @@ export class BloodAngelsPrimarchDetachment extends SpaceMarineLegionDetachment {
   }
 }
 
+export class BloodAngelsDawnbreakerDetachment extends SpaceMarineLegionDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new BloodAngelsDawnbreakerSquad(this)
+    )
+    this.setUpgrades(
+      new TransportOption(
+        new DropAssault(),
+        new AssaultClaw()
+      )
+    )
+  }
+}
+
+export class BloodAngelsAngelsTearsDetachment extends SpaceMarineLegionDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new BloodAngelsAngelsTearsSquad(this)
+    )
+    this.setUpgrades(
+      new TransportOption(
+        new DropAssault(),
+        new AssaultClaw()
+      )
+    )
+  }
+}
+
+export class BloodAngelsCrimsonPaladinsDetachment extends SpaceMarineLegionDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new BloodAngelsCrimsonPaladinsSquad(this)
+    )
+    this.setUpgrades(
+      new TransportOption(
+        new Teleport(),
+        new HeavyTransport()
+      )
+    )
+  }
+}
+
 withType(BloodAngelsPrimarchDetachment)
+withType(BloodAngelsDawnbreakerDetachment)
+withType(BloodAngelsAngelsTearsDetachment)
+withType(BloodAngelsCrimsonPaladinsDetachment)

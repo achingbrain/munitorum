@@ -15,7 +15,8 @@ import {
   Inspiring,
   InvulnerableSave,
   Infiltrator,
-  Beserk
+  Beserk,
+  Brutal
 } from '../special-rules'
 import {
   LegionTerminatorSquad,
@@ -73,7 +74,8 @@ export class WorldEatersRampagerSquad extends LegionUnit {
     this.transportType = 'tactical'
     this.rules = [
       new Fearless(),
-      new Beserk()
+      new Beserk(),
+      new Brutal()
     ]
     this.stats = {
       type: 'INF',
@@ -98,7 +100,8 @@ export class WorldEatersRedButcherSquad extends LegionTerminatorSquad {
     this.quantity = 4
     this.rules.push(
       new Fearless(),
-      new Beserk()
+      new Beserk(),
+      new Brutal()
     )
     this.stats = {
       type: 'INF',

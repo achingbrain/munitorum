@@ -193,8 +193,8 @@ export class LegioCustodesCoronusGravCarrier extends TransportUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('iliastus-accelerator-cannon', new RangedWeapon('45cm', new Fleshbane())),
-      new Weapon('arachnus-blaze-cannon', new RangedWeapon('30cm', new AntiPersonnel('4+'), new AntiTank('5+')))
+      new Weapon('iliastus-accelerator-cannon', new RangedWeapon('45cm', new AntiPersonnel('4+'), new AntiTank('4+'), new Fleshbane())),
+      new Weapon('arachnus-blaze-cannon', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+'))))
     ]
   }
 }
@@ -297,7 +297,7 @@ class LegioCustodesContemptorAchillusDreadnought extends LegioCustodesUnit {
 
     this.transportType = 'dreadnought'
     this.rules = [
-      new InvulnerableSave(),
+      new InvulnerableSave('6+'),
       new Walker()
     ]
     this.stats = {
@@ -320,7 +320,7 @@ class LegioCustodesContemptorGalatusDreadnought extends LegioCustodesUnit {
     this.transportType = 'dreadnought'
     this.rules = [
       new ReinforcedArmour(),
-      new InvulnerableSave(),
+      new InvulnerableSave('6+'),
       new Walker()
     ]
     this.stats = {
@@ -442,7 +442,7 @@ export class LegioCustodesOrionAssaultDropship extends LegioCustodesUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('2-arachnus-blaze-cannon', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+')))),
+      new Weapon('2-arachnus-blaze-cannon', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+')), new Fleshbane())),
       new Weapon('2-lastrum-bolt-cannon', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
       new Weapon('2-spiculus-heavy-bolt-launchers', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+')))
     ]

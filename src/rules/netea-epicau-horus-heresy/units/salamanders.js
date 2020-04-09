@@ -8,7 +8,8 @@ import {
   Or,
   TitanKiller,
   AntiPersonnel,
-  AntiTank
+  AntiTank,
+  Armourbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -73,7 +74,7 @@ export class SalamandersPyroclastSquad extends LegionUnit {
     this.weapons = [
       new Weapon('flame-projector',
         new SmallArms('15cm', new ExtraAttacks('+1')),
-        new AssaultWeapon(new MacroWeapon())
+        new AssaultWeapon(new Armourbane())
       )
     ]
   }
@@ -92,7 +93,7 @@ export class SalamandersFiredrakeTerminatorSquad extends LegionTerminatorSquad {
       speed: 15,
       armour: 3,
       cc: 3,
-      ff: 3
+      ff: 5
     }
     this.weapons = [
       new Weapon('thunder-hammer-and-shield', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1')))

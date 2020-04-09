@@ -5,10 +5,12 @@ import {
   WhiteScarsPrimarchDetachment,
   WhiteScarsChogorianBrotherhood,
   WhiteScarsEbonKeshigDetachment,
-  WhiteScarsDestroyerDetachment
+  WhiteScarsDestroyerDetachment,
+  WhiteScarsJavelinAttackDetachment
 } from '../detachments/white-scars'
 import {
-  LegionDestroyerDetachment
+  LegionDestroyerDetachment,
+  LegionJavelinAttackSpeederSquadron
 } from '../detachments/space-marine-legion'
 import LegioTitanicus from './legio-titanicus'
 import ImperialMilitia from './imperial-militia'
@@ -26,8 +28,9 @@ export default class WhiteScars extends SpaceMarineLegion {
       WhiteScarsChogorianBrotherhood
     )
     this.supportDetachments.push(WhiteScarsDestroyerDetachment)
+    this.supportDetachments.push(WhiteScarsJavelinAttackDetachment)
     this.supportDetachments = this.supportDetachments
-      .filter(detachment => detachment !== LegionDestroyerDetachment)
+      .filter(detachment => detachment !== LegionDestroyerDetachment && detachment !== LegionJavelinAttackSpeederSquadron)
     this.lordsOfWar.push(WhiteScarsPrimarchDetachment)
     this.lordsOfWar.push(WhiteScarsEbonKeshigDetachment)
     this.allies.push(

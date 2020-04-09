@@ -4,7 +4,6 @@ import {
   TransportOption,
   Rhinos,
   DropAssault,
-  AssaultRam,
   AssaultClaw,
   HeavyTransport,
   CommanderOption,
@@ -40,8 +39,8 @@ export class NightLordsPrimarchDetachment extends SpaceMarineLegionDetachment {
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
-        new AssaultRam(),
-        new HeavyTransport()
+        new HeavyTransport(),
+        new AssaultClaw()
       ),
       new Hyperios(),
       new Tank(),
@@ -64,7 +63,7 @@ export class NightLordsTerrorDetachment extends SpaceMarineLegionDetachment {
       new TransportOption(
         new Rhinos(),
         new DropAssault(),
-        new AssaultClaw()
+        new HeavyTransport()
       ),
       new CommanderOption(
         new Praetor(),

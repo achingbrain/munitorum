@@ -140,7 +140,6 @@ export class LegionAttackBike extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('chainswords', new AssaultWeapon()),
       new Weapon('heavy-bolter', new RangedWeapon('30cm', new AntiPersonnel('5+')))
     ]
   }
@@ -153,7 +152,7 @@ export class LegionBasilisk extends LegionUnit {
     this.rules = []
     this.stats = {
       type: 'AV',
-      speed: 20,
+      speed: 35,
       armour: 5,
       cc: 6,
       ff: 5
@@ -237,7 +236,7 @@ export class LegionBreacherSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('las-cutters', new AssaultWeapon(new Armourbane()))
+      new Weapon('melta-cutters', new AssaultWeapon(new Armourbane()))
     ]
   }
 }
@@ -1097,7 +1096,7 @@ export class LegionMastodon extends TransportUnit {
     this.weapons = [
       new Weapon('siege-melta-array', new SmallArms('15cm', new ExtraAttacks('+1'), new MacroWeapon())),
       new Weapon('sponson-lascannons', new RangedWeapon('45cm', new AntiTank('5+'), new LeftFireArc(), new RightFireArc())),
-      new Weapon('sponson-heavy-flamers', new RangedWeapon('15cm', new AntiPersonnel('4+'), new LeftFireArc(), new RightFireArc())),
+      new Weapon('sponson-heavy-flamers', new RangedWeapon('15cm', new AntiPersonnel('4+'), new LeftFireArc(), new RightFireArc(), new IgnoreCover())),
       new Weapon('skyreaper-battery', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('4+'), new AntiAircraft('5+'))))
     ]
   }
@@ -1117,8 +1116,8 @@ export class LegionMedusa extends LegionUnit {
     }
     this.weapons = [
       new Weapon('medusa-siege-cannon',
-        new RangedWeapon('30cm', new MacroWeapon('4+'), new IgnoreCover(), new IndirectFire()),
-        new SmallArms('15cm', new MacroWeapon(), new IgnoreCover())
+        new RangedWeapon('30cm', new MacroWeapon(), new AntiPersonnel('4+'), new AntiTank('4+'), new IndirectFire()),
+        new SmallArms('15cm', new MacroWeapon())
       ),
       new Weapon('heavy-bolter',
         new RangedWeapon('30cm', new AntiPersonnel('5+'))
@@ -1482,7 +1481,7 @@ export class LegionStormbird extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('dreadstrike-missile-array', new RangedWeapon('45cm', new MultipleShot('6x', new AntiTank('4+')), new SingleShot())),
+      new Weapon('dreadstrike-missile-array', new RangedWeapon('45cm', new MultipleShot('4x', new AntiTank('4+')))),
       new Weapon('4-twin-linked-lascannons', new RangedWeapon('30cm', new AntiTank('4+'), new AntiAircraft('4+'))),
       new Weapon('3-twin-linked-heavy-bolters', new RangedWeapon('15cm', new AntiPersonnel('4+'), new FixedForwardFireArc()))
     ]
@@ -1727,7 +1726,7 @@ export class LegionVindicatorLaserDestroyer extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('laser-destroyer-array', new RangedWeapon('60cm', new AntiPersonnel('6+'), new AntiTank('3+')))
+      new Weapon('laser-destroyer-array', new RangedWeapon('60cm', new AntiPersonnel('6+'), new AntiTank('3+'), new Armourbane()))
     ]
   }
 }
@@ -1842,7 +1841,28 @@ export class LegionXiphonInterceptor extends LegionUnit {
     }
     this.weapons = [
       new Weapon('2-twin-linked-lascannons', new RangedWeapon('30cm', new AntiTank('4+'), new AntiAircraft('5+'), new FixedForwardFireArc())),
-      new Weapon('rotary-missile-launcher', new RangedWeapon('45cm', new AntiTank('5+'), new AntiAircraft('5+'), new FixedForwardFireArc()))
+      new Weapon('rotary-missile-launcher', new RangedWeapon('45cm', new AntiTank('5+'), new FixedForwardFireArc()))
+    ]
+  }
+}
+
+export class LegionArquitorBombard extends LegionUnit {
+  constructor (detachment) {
+    super(detachment, 250, 2)
+
+    this.rules = [
+      new ReinforcedArmour()
+    ]
+    this.stats = {
+      type: 'AV',
+      speed: 35,
+      armour: 6,
+      cc: 6,
+      ff: 5
+    }
+    this.weapons = [
+      new Weapon('spicular-rocket-system', new RangedWeapon('30cm', new MultipleShot('D3', new AntiPersonnel('5+'), new AntiTank('5+')))),
+      new Weapon('heavy-bolter', new RangedWeapon('30cm', new AntiPersonnel('5+')))
     ]
   }
 }
@@ -1928,3 +1948,4 @@ withType(LegionWhirlwindScorpius)
 withType(LegionWhirlwind)
 withType(LegionXiphonInterceptor)
 withType(LegionTacticalDetachmentUnit)
+withType(LegionArquitorBombard)

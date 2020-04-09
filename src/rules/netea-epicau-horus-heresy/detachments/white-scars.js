@@ -13,7 +13,8 @@ import {
   WhiteScarsBodyguardSquad,
   WhiteScarsChogorianBrotherhoodBikeUnit,
   WhiteScarsChogorianBrotherhoodJetBikeUnit,
-  WhiteScarsEbonKeshig
+  WhiteScarsEbonKeshig,
+  WhiteScarsJavelinAttackUnit
 } from '../units/white-scars'
 import {
   LegionDestroyerSquad
@@ -53,6 +54,9 @@ export class WhiteScarsChogorianBrotherhood extends SpaceMarineLegionDetachment 
 
     this.setMandatoryUnits(
       new WhiteScarsChogorianBrotherhoodBikeUnit(this),
+      new WhiteScarsChogorianBrotherhoodJetBikeUnit(this),
+      new WhiteScarsChogorianBrotherhoodJetBikeUnit(this),
+      new WhiteScarsChogorianBrotherhoodJetBikeUnit(this),
       new WhiteScarsChogorianBrotherhoodJetBikeUnit(this)
     )
     this.setUpgrades(
@@ -102,7 +106,30 @@ export class WhiteScarsDestroyerDetachment extends SpaceMarineLegionDetachment {
   }
 }
 
+export class WhiteScarsJavelinAttackDetachment extends SpaceMarineLegionDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new WhiteScarsJavelinAttackUnit(this),
+      new WhiteScarsJavelinAttackUnit(this),
+      new WhiteScarsJavelinAttackUnit(this),
+      new WhiteScarsJavelinAttackUnit(this),
+      new WhiteScarsJavelinAttackUnit(this)
+    )
+    this.setUpgrades(
+      new TransportOption(
+        new DropAssault()
+      ),
+      new CommanderOption(
+        new Centurion()
+      )
+    )
+  }
+}
+
 withType(WhiteScarsPrimarchDetachment)
 withType(WhiteScarsChogorianBrotherhood)
 withType(WhiteScarsEbonKeshigDetachment)
 withType(WhiteScarsDestroyerDetachment)
+withType(WhiteScarsJavelinAttackDetachment)

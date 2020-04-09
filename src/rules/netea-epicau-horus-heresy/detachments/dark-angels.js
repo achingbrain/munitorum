@@ -7,24 +7,16 @@ import {
   Teleport,
   CommanderOption,
   Centurion,
-  ArmouryAssets,
-  AssaultClaw,
-  Praetor,
-  Rhinos,
-  Dreadnought,
-  RapierBattery,
-  MultipleChoiceOption
+  ArmouryAssets
 } from '../upgrades'
 import {
-  LegionDestroyerSquad,
-  LegionTacticalDetachmentUnit
+  LegionDestroyerSquad
 } from '../units/space-marine-legion'
 import {
   DarkAngelsPrimarch,
   DarkAngelsBodyguardSquad,
   DarkAngelsSuperHeavyTankSquadronUnit,
-  DarkAngelsTacticalSupportSquad,
-  DarkAngelsHeavySupportSquad
+  DarkAngelsDreadwingInteremptorSquad
 } from '../units/dark-angels'
 import {
   Unique,
@@ -77,6 +69,28 @@ export class DarkAngelsDestroyerDetachment extends SpaceMarineLegionDetachment {
   }
 }
 
+export class DarkAngelsDreadwingInteremptorDetachment extends SpaceMarineLegionDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new DarkAngelsDreadwingInteremptorSquad(this)
+    )
+    this.setUpgrades(
+      new TransportOption(
+        new DropAssault(),
+        new HeavyTransport()
+      ),
+      new CommanderOption(
+        new Centurion()
+      )
+    )
+    this.setConstraints(
+      new LimitedPerPoints(1, 2000)
+    )
+  }
+}
+
 export class DarkAngelsSuperHeavyTankSquadron extends SpaceMarineLegionDetachment {
   constructor (list) {
     super(list)
@@ -92,38 +106,7 @@ export class DarkAngelsSuperHeavyTankSquadron extends SpaceMarineLegionDetachmen
   }
 }
 
-export class DarkAngelsTacticalDetachment extends SpaceMarineLegionDetachment {
-  constructor (list) {
-    super(list)
-
-    this.setMandatoryUnits(
-      new LegionTacticalDetachmentUnit(this)
-    )
-    this.setUpgrades(
-      new TransportOption(
-        new Rhinos(),
-        new DropAssault(),
-        new AssaultClaw(),
-        new HeavyTransport()
-      ),
-      new CommanderOption(
-        new Praetor(),
-        new Centurion()
-      ),
-      new Hyperios(),
-      new Dreadnought(),
-      new Tank(),
-      new ArmouryAssets(),
-      new MultipleChoiceOption(
-        DarkAngelsTacticalSupportSquad,
-        DarkAngelsHeavySupportSquad
-      ),
-      new RapierBattery()
-    )
-  }
-}
-
 withType(DarkAngelsPrimarchDetachment)
-withType(DarkAngelsSuperHeavyTankSquadron)
 withType(DarkAngelsDestroyerDetachment)
-withType(DarkAngelsTacticalDetachment)
+withType(DarkAngelsDreadwingInteremptorDetachment)
+withType(DarkAngelsSuperHeavyTankSquadron)

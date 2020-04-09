@@ -269,9 +269,9 @@ export class ChaosGate {
   }
 }
 
-export class ATalentForMurder {
+export class Brutal {
   constructor () {
-    this.name = 'a-talent-for-murder'
+    this.name = 'brutal'
     this.link = 'http://epicau.com/mw/index.php/Special_Rules'
   }
 }

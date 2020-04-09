@@ -47,7 +47,7 @@ export class ImperialFistsPrimarch extends LegionPrimarchUnit {
       new Fearless(),
       new SupremeCommander(),
       new Inspiring(),
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'INF',
@@ -82,9 +82,6 @@ export class ImperialFistsPhalanxWarderSquad extends LegionUnit {
     super(detachment, 350, 8)
 
     this.transportType = 'breacher'
-    this.rules = [
-      new InvulnerableSave('6+')
-    ]
     this.stats = {
       type: 'INF',
       speed: 15,
@@ -93,7 +90,7 @@ export class ImperialFistsPhalanxWarderSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('las-cutters', new AssaultWeapon(new Lance()))
+      new Weapon('melta-cutters', new AssaultWeapon(new Lance()))
     ]
   }
 }

@@ -105,7 +105,7 @@ export class ThousandSonsAmmitaraIntercessorSquad extends LegionUnit {
     this.stats = {
       type: 'INF',
       speed: 15,
-      armour: 4,
+      armour: 3,
       cc: 4,
       ff: 4
     }

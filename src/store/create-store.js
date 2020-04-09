@@ -12,7 +12,7 @@ const config = {
       console.error(error)
     }
 
-    if (!data) {
+    if (!data || !data.lists) {
       return
     }
 

@@ -37,7 +37,6 @@ export class EmperorsChildrenPrimarchDetachment extends SpaceMarineLegionDetachm
     )
     this.setUpgrades(
       new TransportOption(
-        new DropAssault(),
         new AssaultRam(),
         new AssaultClaw(),
         new HeavyTransport(),

@@ -1,14 +1,14 @@
 import {
   Weapon,
   AssaultWeapon,
-  MacroWeapon,
   ExtraAttacks,
   SmallArms,
   FirstStrike,
   Sniper,
   RangedWeapon,
   MultipleShot,
-  AntiPersonnel
+  AntiPersonnel,
+  Fleshbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -87,7 +87,7 @@ export class AlphaLegionLernaeanTerminatorSquad extends LegionTerminatorSquad {
       ff: 3
     }
     this.weapons = [
-      new Weapon('power-axes', new AssaultWeapon(new FirstStrike(), new MacroWeapon(), new ExtraAttacks('+1'))),
+      new Weapon('power-axes', new AssaultWeapon(new Fleshbane(), new ExtraAttacks('+1'))),
       new Weapon('volkite-chargers',
         new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('3+'))),
         new SmallArms('15cm', new ExtraAttacks('+1'))

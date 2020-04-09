@@ -10,7 +10,8 @@ import {
   AntiTank,
   Disrupt,
   Lance,
-  Fleshbane
+  Fleshbane,
+  Armourbane
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -82,7 +83,7 @@ export class IronHandsMedusanImmortalsSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('las-cutters', new AssaultWeapon(new Lance())),
+      new Weapon('melta-cutters', new AssaultWeapon(new Armourbane(), new Lance())),
       new Weapon('bolters', new SmallArms('15cm'))
     ]
   }
@@ -92,6 +93,9 @@ export class IronHandsGorgonTerminatorSquad extends LegionTerminatorSquad {
   constructor (detachment) {
     super(detachment)
 
+    this.rules.push(
+      new InvulnerableSave('6+')
+    )
     this.cost = 85
     this.min = 4
     this.max = 6

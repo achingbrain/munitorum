@@ -9,7 +9,9 @@ import {
   RangedWeapon,
   AntiPersonnel,
   Disrupt,
-  Fleshbane
+  Fleshbane,
+  MultipleShot,
+  AntiTank
 } from '../weapons'
 import {
   ReinforcedArmour,
@@ -18,14 +20,17 @@ import {
   Fearless,
   SupremeCommander,
   Inspiring,
-  InvulnerableSave
+  InvulnerableSave,
+  Skimmer
 } from '../special-rules'
 import {
   LegionBike,
   LegionAttackBike,
   LegionScimitarJetbike,
   LegionTerminatorSquad,
-  LegionPrimarchUnit
+  LegionPrimarchUnit,
+  LegionLandSpeeder,
+  LegionJavelinAttackSpeeder
 } from './space-marine-legion'
 import MultipleChoiceUnit from './multiple-choice-unit'
 import withType from '../with-type'
@@ -169,11 +174,11 @@ export class WhiteScarsChogorianBrotherhoodJetbike extends LegionScimitarJetbike
   constructor (detachment) {
     super(detachment)
 
-    this.min = 4
+    this.min = 1
     this.max = undefined
-    this.quantity = 4
+    this.quantity = 1
 
-    this.cost = 140
+    this.cost = 35
   }
 }
 
@@ -181,10 +186,10 @@ export class WhiteScarsGoldenKeshig extends LegionScimitarJetbike {
   constructor (detachment) {
     super(detachment)
 
-    this.cost = 215
-    this.min = 4
+    this.cost = 85
+    this.min = 1
     this.max = undefined
-    this.quantity = 4
+    this.quantity = 1
 
     this.stats.cc = 4
 
@@ -208,6 +213,37 @@ export class WhiteScarsChogorianBrotherhoodJetBikeUnit extends MultipleChoiceUni
   }
 }
 
+export class WhiteScarsKyzaganAssaultSpeeder extends LegionJavelinAttackSpeeder {
+  constructor (detachment) {
+    super(detachment)
+
+    this.rules = [
+      new Skimmer()
+    ]
+    this.stats = {
+      type: 'AV',
+      speed: 35,
+      armour: 4,
+      cc: 6,
+      ff: 5
+    }
+    this.weapons = [
+      new Weapon('kheres-assault-cannon', new RangedWeapon('30cm', new AntiPersonnel('4+'), new AntiTank('5+'))),
+      new Weapon('2-reaper-autocannon', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('6+'))))
+    ]
+  }
+}
+
+export class WhiteScarsJavelinAttackUnit extends MultipleChoiceUnit {
+  constructor (detachment) {
+    super(
+      detachment,
+      new LegionJavelinAttackSpeeder(detachment),
+      new WhiteScarsKyzaganAssaultSpeeder(detachment)
+    )
+  }
+}
+
 withType(WhiteScarsPrimarch)
 withType(WhiteScarsBodyguardSquad)
 withType(WhiteScarsOutriderUnit)
@@ -220,3 +256,5 @@ withType(WhiteScarsChogorianBrotherhoodAttackBike)
 withType(WhiteScarsChogorianBrotherhoodBikeUnit)
 withType(WhiteScarsChogorianBrotherhoodJetBikeUnit)
 withType(WhiteScarsGoldenKeshig)
+withType(WhiteScarsKyzaganAssaultSpeeder)
+withType(WhiteScarsJavelinAttackUnit)

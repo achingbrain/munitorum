@@ -2,7 +2,10 @@
 
 import SpaceMarineLegion from './space-marine-legion'
 import {
-  BloodAngelsPrimarchDetachment
+  BloodAngelsPrimarchDetachment,
+  BloodAngelsDawnbreakerDetachment,
+  BloodAngelsAngelsTearsDetachment,
+  BloodAngelsCrimsonPaladinsDetachment
 } from '../detachments/blood-angels'
 import LegioTitanicus from './legio-titanicus'
 import ImperialMilitia from './imperial-militia'
@@ -18,6 +21,11 @@ export default class BloodAngels extends SpaceMarineLegion {
 
     this.lordsOfWar.push(
       BloodAngelsPrimarchDetachment
+    )
+    this.supportDetachments.push(
+      BloodAngelsDawnbreakerDetachment,
+      BloodAngelsAngelsTearsDetachment,
+      BloodAngelsCrimsonPaladinsDetachment
     )
     this.allies.push(
       LegioTitanicus,
