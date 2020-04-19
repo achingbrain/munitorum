@@ -1,4 +1,4 @@
-# How to add new game systems
+# How to add new game systems
 
 N.b assumes you are comfortable with [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [React](https://reactjs.org/).
 
