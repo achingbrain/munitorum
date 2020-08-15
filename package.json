@@ -75,7 +75,7 @@
     "responsive-loader": "^1.1.0",
     "s3-deploy": "^1.2.1",
     "serve-static": "^1.14.1",
-    "sharp": "^0.23.3",
+    "sharp": "^0.22.1",
     "standard": "^14.3.1",
     "style-loader": "^1.0.0",
     "svg-inline-loader": "^0.8.0",
