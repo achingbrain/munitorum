@@ -970,12 +970,12 @@ export class LegionLeviathanDreadnought extends LegionUnit {
     this.rules = [
       new Walker(),
       new ReinforcedArmour(),
-      new InvulnerableSave()
+      new InvulnerableSave('6+')
     ]
     this.stats = {
       type: 'AV',
       speed: 15,
-      armour: 3,
+      armour: 4,
       cc: 4,
       ff: 4
     }
@@ -983,14 +983,20 @@ export class LegionLeviathanDreadnought extends LegionUnit {
       new MultipleChoiceWeapon(
         new Weapon('siege-claw', new AssaultWeapon(new Armourbane(), new Siege())),
         new Weapon('siege-drill', new AssaultWeapon(new Armourbane(), new Siege(), new ExtraAttacks('+2'))),
-        new Weapon('cyclonic-melta-lance', new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+1'))),
+        new Weapon('cyclonic-melta-lance',
+          new RangedWeapon('15cm', new AntiPersonnel('5+'), new AntiTank('3+'), new MacroWeapon('5+')),
+          new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+1'))
+        ),
         new Weapon('storm-cannon', new SmallArms('15cm', new AntiPersonnel('4+'), new AntiTank('5+'))),
         new Weapon('grav-flux-bombard', new RangedWeapon('15cm', new AntiPersonnel('3+'), new AntiTank('3+'), new Disrupt()))
       ),
       new MultipleChoiceWeapon(
         new Weapon('siege-claw', new AssaultWeapon(new Armourbane(), new Siege())),
         new Weapon('siege-drill', new AssaultWeapon(new Armourbane(), new Siege(), new ExtraAttacks('+2'))),
-        new Weapon('cyclonic-melta-lance', new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+1'))),
+        new Weapon('cyclonic-melta-lance',
+          new RangedWeapon('15cm', new AntiPersonnel('5+'), new AntiTank('3+'), new MacroWeapon('5+')),
+          new SmallArms('15cm', new MacroWeapon(), new ExtraAttacks('+1'))
+        ),
         new Weapon('storm-cannon', new SmallArms('15cm', new AntiPersonnel('4+'), new AntiTank('5+'))),
         new Weapon('grav-flux-bombard', new RangedWeapon('15cm', new AntiPersonnel('3+'), new AntiTank('3+'), new Disrupt()))
       )
@@ -1867,6 +1873,27 @@ export class LegionArquitorBombard extends LegionUnit {
   }
 }
 
+export class LegionSabreStrikeTank extends LegionUnit {
+  constructor (detachment) {
+    super(detachment, 275, 4)
+
+    this.rules = [
+      new ReinforcedArmour()
+    ]
+    this.stats = {
+      type: 'AV',
+      speed: 35,
+      armour: 5,
+      cc: 6,
+      ff: 5
+    }
+    this.weapons = [
+      new Weapon('volkite-saker', new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('3+'), new Fleshbane(), new FixedForwardFireArc()))),
+      new Weapon('sabre-missiles', new RangedWeapon('30cm', new AntiTank('4+'), new FixedForwardFireArc()))
+    ]
+  }
+}
+
 withType(LegionArtilleryUnit)
 withType(LegionAssaultSquad)
 withType(LegionAssaultSupportSquad)
@@ -1949,3 +1976,4 @@ withType(LegionWhirlwind)
 withType(LegionXiphonInterceptor)
 withType(LegionTacticalDetachmentUnit)
 withType(LegionArquitorBombard)
+withType(LegionSabreStrikeTank)

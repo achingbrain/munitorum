@@ -16,7 +16,8 @@ import {
   LegioCustodesDreadnoughtUnit,
   LegioCustodesPallasGravAttackVehicle,
   LegioCustodesCaladiusGravTank,
-  LegioCustodesOrionAssaultDropship
+  LegioCustodesOrionAssaultDropship,
+  LegioCustodesAresGunship
 } from '../units/legio-custodes'
 import LegioCustodesDetachment from './legio-custodes-detachment'
 import withType from '../with-type'
@@ -149,6 +150,16 @@ export class LegioCustodesCaladiusGravTankSquadron extends LegioCustodesDetachme
   }
 }
 
+export class LegioCustodesAresStrikeSquadron extends LegioCustodesDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegioCustodesAresGunship(this)
+    )
+  }
+}
+
 export class LegioCustodesOrionAssaultDropshipSquadron extends LegioCustodesDetachment {
   constructor (list) {
     super(list)
@@ -169,3 +180,4 @@ withType(LegioCustodesMorotoiDetachment)
 withType(LegioCustodesPallasGravAttackSquadron)
 withType(LegioCustodesCaladiusGravTankSquadron)
 withType(LegioCustodesOrionAssaultDropshipSquadron)
+withType(LegioCustodesAresStrikeSquadron)

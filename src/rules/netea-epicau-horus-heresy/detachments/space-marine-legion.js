@@ -37,7 +37,8 @@ import {
   LegionThunderhawkGunship,
   LegionThunderhawkTransporter,
   LegionVindicatorSquadronUnit,
-  LegionVindicatorSquadronVindicator
+  LegionVindicatorSquadronVindicator,
+  LegionSabreStrikeTank
 } from '../units/space-marine-legion'
 import {
   Upgrade,
@@ -682,6 +683,21 @@ export class LegionVindicatorSquadron extends SpaceMarineLegionDetachment {
   }
 }
 
+export class LegionSabreStrikeSquadron extends SpaceMarineLegionDetachment {
+  constructor (list) {
+    super(list)
+
+    this.setMandatoryUnits(
+      new LegionSabreStrikeTank(this)
+    )
+    this.setUpgrades(
+      new CommanderOption(
+        new Centurion()
+      )
+    )
+  }
+}
+
 withType(LegionArtilleryBattery)
 withType(LegionAssaultDetachment)
 withType(LegionAssaultSupportDetachment)
@@ -714,3 +730,4 @@ withType(LegionTerminatorDetachment)
 withType(LegionThunderhawkGunshipWing)
 withType(LegionThunderhawkTransporterWing)
 withType(LegionVindicatorSquadron)
+withType(LegionSabreStrikeSquadron)

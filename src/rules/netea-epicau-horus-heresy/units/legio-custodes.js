@@ -31,7 +31,8 @@ import {
   Infiltrator,
   DamageCapacity,
   Teleport,
-  JumpPacks
+  JumpPacks,
+  SupremeCommander
 } from '../special-rules'
 import {
   LegionTeleport
@@ -96,11 +97,33 @@ class LegioCustodesCustodianGuard extends LegioCustodesUnit {
   }
 }
 
+class LegioCustodesSagittarumCustodes extends LegioCustodesUnit {
+  constructor (detachment) {
+    super(detachment, 350, 6)
+
+    this.transportType = 'sentinel'
+    this.rules = []
+    this.stats = {
+      type: 'INF',
+      speed: 15,
+      armour: 3,
+      cc: 4,
+      ff: 4
+    }
+    this.weapons = [
+      new Weapon('adrastus-bolt-caliver',
+        new RangedWeapon('15cm', new AntiPersonnel('4+'))
+      )
+    ]
+  }
+}
+
 export class LegioCustodesHykanatoiUnit extends MultipleChoiceUnit {
   constructor (detachment) {
     super(detachment,
       new LegioCustodesSentinelGuard(detachment),
-      new LegioCustodesCustodianGuard(detachment)
+      new LegioCustodesCustodianGuard(detachment),
+      new LegioCustodesSagittarumCustodes(detachment)
     )
   }
 }
@@ -134,7 +157,7 @@ export class LegioCustodesCaptainGeneral extends LegioCustodesUnit {
 
     this.rules = [
       new InvulnerableSave('6+'),
-      new Commander(),
+      new SupremeCommander(),
       new Inspiring()
     ]
     this.stats = {
@@ -422,6 +445,25 @@ export class LegioCustodesCaladiusGravTank extends LegioCustodesUnit {
   }
 }
 
+export class LegioCustodesAresGunship extends LegioCustodesUnit {
+  constructor (detachment) {
+    super(detachment, 275, 2)
+
+    this.rules = []
+    this.stats = {
+      type: 'AC',
+      speed: 'fighter',
+      armour: 4,
+      cc: 6,
+      ff: 6
+    }
+    this.weapons = [
+      new Weapon('2-arachnus-heavy-blaze-cannon', new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+')), new Fleshbane())),
+      new Weapon('arachnus-magna-blaze-cannon', new RangedWeapon('30cm', new AntiPersonnel('4+'), new AntiTank('4+'), new Fleshbane()))
+    ]
+  }
+}
+
 export class LegioCustodesOrionAssaultDropship extends LegioCustodesUnit {
   constructor (detachment) {
     super(detachment, 300, 1, 2)
@@ -435,14 +477,14 @@ export class LegioCustodesOrionAssaultDropship extends LegioCustodesUnit {
       new InvulnerableSave('6+')
     ]
     this.stats = {
-      type: 'AV',
-      speed: 0,
+      type: 'AC',
+      speed: 'bomber',
       armour: 4,
       cc: 6,
       ff: 4
     }
     this.weapons = [
-      new Weapon('2-arachnus-blaze-cannon', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+')), new Fleshbane())),
+      new Weapon('2-arachnus-heavy-blaze-cannon', new RangedWeapon('15cm', new MultipleShot('2x', new AntiPersonnel('4+'), new AntiTank('5+')), new Fleshbane())),
       new Weapon('2-lastrum-bolt-cannon', new RangedWeapon('30cm', new AntiPersonnel('4+'))),
       new Weapon('2-spiculus-heavy-bolt-launchers', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+')))
     ]
@@ -451,6 +493,7 @@ export class LegioCustodesOrionAssaultDropship extends LegioCustodesUnit {
 
 withType(LegioCustodesSentinelGuard)
 withType(LegioCustodesCustodianGuard)
+withType(LegioCustodesSagittarumCustodes)
 withType(LegioCustodesHykanatoiUnit)
 withType(LegioCustodesVenatariSquad)
 withType(LegioCustodesCaptainGeneral)
@@ -467,3 +510,4 @@ withType(LegioCustodesDreadnoughtUnit)
 withType(LegioCustodesPallasGravAttackVehicle)
 withType(LegioCustodesCaladiusGravTank)
 withType(LegioCustodesOrionAssaultDropship)
+withType(LegioCustodesAresGunship)

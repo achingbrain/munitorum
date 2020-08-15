@@ -140,6 +140,7 @@ import knightHouseholdSeneschal from './knight-household-seneschal.svg'
 import knightHousehold from './knight-household.svg'
 import legioCustodesAgamatus from './legio-custodes-agamatus.svg'
 import legioCustodesAquilionTerminator from './legio-custodes-aquilion-terminator.svg'
+import legioCustodesAres from './legio-custodes-ares.svg'
 import legioCustodesCaladiusGravTank from './legio-custodes-caladius-grav-tank.svg'
 import legioCustodesCaptainGeneral from './legio-custodes-captain-general.svg'
 import legioCustodesContemptorAchillus from './legio-custodes-contemptor-achillus.svg'
@@ -149,6 +150,7 @@ import legioCustodesCustodianGuard from './legio-custodes-custodian-guard.svg'
 import legioCustodesMorotoi from './legio-custodes-morotoi.svg'
 import legioCustodesOrionAssaultDropship from './legio-custodes-orion-assault-dropship.svg'
 import legioCustodesPallas from './legio-custodes-pallas.svg'
+import legioCustodesSagittarumCustodes from './legio-custodes-sagittarum-custodes.svg'
 import legioCustodesSentinelGuard from './legio-custodes-sentinel-guard.svg'
 import legioCustodesSistersOfSilence from './legio-custodes-sisters-of-silence.svg'
 import legioCustodesTribune from './legio-custodes-tribune.svg'
@@ -202,6 +204,7 @@ import legionPredator from './legion-predator.svg'
 import legionRapierMortar from './legion-rapier-mortar.svg'
 import legionRapier from './legion-rapier.svg'
 import legionReconnaissance from './legion-reconnaissance.svg'
+import legionSabre from './legion-sabre.svg'
 import legionScimitar from './legion-scimitar.svg'
 import legionSicaranOmega from './legion-sicaran-omega.svg'
 import legionSicaranPunisher from './legion-sicaran-punisher.svg'
@@ -476,6 +479,7 @@ const IMAGES = {
   'knight-household': knightHousehold,
   'legio-custodes-agamatus': legioCustodesAgamatus,
   'legio-custodes-aquilion-terminator': legioCustodesAquilionTerminator,
+  'legio-custodes-ares': legioCustodesAres,
   'legio-custodes-caladius-grav-tank': legioCustodesCaladiusGravTank,
   'legio-custodes-captain-general': legioCustodesCaptainGeneral,
   'legio-custodes-contemptor-achillus': legioCustodesContemptorAchillus,
@@ -487,6 +491,7 @@ const IMAGES = {
   'legio-custodes-morotoi': legioCustodesMorotoi,
   'legio-custodes-orion-assault-dropship': legioCustodesOrionAssaultDropship,
   'legio-custodes-pallas': legioCustodesPallas,
+  'legio-custodes-sagittarum-custodes': legioCustodesSagittarumCustodes,
   'legio-custodes-sentinel-guard': legioCustodesSentinelGuard,
   'legio-custodes-sisters-of-silence': legioCustodesSistersOfSilence,
   'legio-custodes-telemon-heavy-dreadnought': legioCustodesMorotoi,
@@ -534,6 +539,7 @@ const IMAGES = {
   'legion-land-raider-proteus': imperialMilitiaLandRaiderProteus,
   'legion-land-speeder': legionLandSpeeder,
   'legion-leviathan-dreadnought': legionLeviathanDreadnought,
+  'legion-leviathan-support-dreadnought': legionLeviathanDreadnought,
   'legion-librarian': legionLibrarian,
   'legion-lieutenant-commander': legionLieutenantCommander,
   'legion-lord-champion': legionLieutenantCommander,
@@ -550,6 +556,7 @@ const IMAGES = {
   'legion-rapier': legionRapier,
   'legion-reconnaissance': legionReconnaissance,
   'legion-rhino': imperialMilitiaRhino,
+  'legion-sabre': legionSabre,
   'legion-scimitar': legionScimitar,
   'legion-sicaran-omega': legionSicaranOmega,
   'legion-sicaran-punisher': legionSicaranPunisher,

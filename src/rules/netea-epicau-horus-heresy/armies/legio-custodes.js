@@ -11,9 +11,12 @@ import {
   LegioCustodesMorotoiDetachment,
   LegioCustodesPallasGravAttackSquadron,
   LegioCustodesCaladiusGravTankSquadron,
-  LegioCustodesOrionAssaultDropshipSquadron
+  LegioCustodesOrionAssaultDropshipSquadron,
+  LegioCustodesAresStrikeSquadron
 } from '../detachments/legio-custodes'
 import {
+  LordsOfWarLimit,
+  SupportDetachmentsLimit,
   AllUnitsMustHaveTeleportAbility
 } from '../validations'
 import withType from '../with-type'
@@ -36,9 +39,12 @@ export default class LegioCustodes extends Army {
       LegioCustodesCaladiusGravTankSquadron
     ]
     this.lordsOfWar = [
-      LegioCustodesOrionAssaultDropshipSquadron
+      LegioCustodesOrionAssaultDropshipSquadron,
+      LegioCustodesAresStrikeSquadron
     ]
     this.validations.push(
+      new LordsOfWarLimit(1 / 3),
+      new SupportDetachmentsLimit(3),
       new AllUnitsMustHaveTeleportAbility()
     )
 

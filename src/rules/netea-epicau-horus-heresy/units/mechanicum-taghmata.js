@@ -680,8 +680,8 @@ export class MechanicumTaghmataVultaraxStratosAutomata extends Unit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('vultarax-arc-blaster', new RangedWeapon('15cm', new AntiPersonnel('3+'), new AntiTank('6+'))),
-      new Weapon('2x-setheno-havoc-launcher', new RangedWeapon('30cm', new AntiPersonnel('5+'), new AntiTank('5+'), new IgnoreCover()))
+      new Weapon('vultarax-arc-blaster', new RangedWeapon('15cm', new AntiPersonnel('5+'), new AntiTank('4+'))),
+      new Weapon('2x-setheno-havoc-launcher', new RangedWeapon('30cm', new AntiPersonnel('4+'), new AntiTank('6+'), new IgnoreCover()))
     ]
   }
 }

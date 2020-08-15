@@ -3,7 +3,9 @@ import {
   DropAssault,
   AssaultClaw,
   HeavyTransport,
-  Teleport
+  Teleport,
+  CommanderOption,
+  Centurion
 } from '../upgrades'
 import {
   BloodAngelsPrimarch,
@@ -65,6 +67,9 @@ export class BloodAngelsAngelsTearsDetachment extends SpaceMarineLegionDetachmen
       new TransportOption(
         new DropAssault(),
         new AssaultClaw()
+      ),
+      new CommanderOption(
+        new Centurion()
       )
     )
   }
@@ -81,6 +86,9 @@ export class BloodAngelsCrimsonPaladinsDetachment extends SpaceMarineLegionDetac
       new TransportOption(
         new Teleport(),
         new HeavyTransport()
+      ),
+      new CommanderOption(
+        new Centurion()
       )
     )
   }

@@ -60,13 +60,9 @@ export default class NetEaEpicAuHorusHeresy extends Game {
       new MechanicumTaghmata(this),
       new KnightHousehold(this),
       new SolarAuxilia(this),
-      new DaemonicHordes(this)
-    ]
-
-    // custodes can only be allies
-    this._armiesAndAllies = this.armies.concat(
+      new DaemonicHordes(this),
       new LegioCustodes(this)
-    )
+    ]
   }
 
   newList (name, army) {
@@ -79,7 +75,7 @@ export default class NetEaEpicAuHorusHeresy extends Game {
 
   listFromJSON (json) {
     try {
-      const army = this._armiesAndAllies.find(item => item.type === json.army)
+      const army = this.armies.find(item => item.type === json.army)
 
       if (!army) {
         return new InvalidNetEaEpicAuHorusHeresyList(this, json, new Error(`Invalid army ${json.army}`))

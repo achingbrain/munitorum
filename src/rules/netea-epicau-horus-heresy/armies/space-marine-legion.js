@@ -33,7 +33,8 @@ import {
   LegionStormbirdWing,
   LegionSuperHeavyTank,
   LegionSuperHeavyTankDestroyer,
-  LegionSuperHeavyTankBattery
+  LegionSuperHeavyTankBattery,
+  LegionSabreStrikeSquadron
 } from '../detachments/space-marine-legion'
 import {
   LordsOfWarLimit,
@@ -75,7 +76,8 @@ export default class SpaceMarineLegion extends Army {
       LegionSpacecraft,
       LegionThunderhawkGunshipWing,
       LegionThunderhawkTransporterWing,
-      LegionVindicatorSquadron
+      LegionVindicatorSquadron,
+      LegionSabreStrikeSquadron
     ]
     this.lordsOfWar = [
       LegionGunshipWing,
