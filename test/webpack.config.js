@@ -1,6 +1,5 @@
 const path = require('path')
 const webpack = require('webpack')
-const ImageBuilderPlugin = require('../plugins/image-builder')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const TerserPlugin = require('terser-webpack-plugin')
 const WrapperPlugin = require('wrapper-webpack-plugin')
@@ -24,7 +23,6 @@ const config = {
       }
     }),
     new webpack.NoEmitOnErrorsPlugin(),
-    new ImageBuilderPlugin(),
     new WrapperPlugin({
       test: /\.js$/,
       header (fileName, args) {
@@ -98,18 +96,14 @@ const config = {
       exclude: /node_modules/
     }, {
       test: /\.(jpe?g|png)$/i,
-      loader: 'responsive-loader',
-      options: {
-        adapter: require('responsive-loader/sharp')
-      }
+      loader: 'file-loader'
     }, {
       test: /\.svg$/,
       loader: 'svg-inline-loader'
     }, {
       test: /\.(gif)$/i,
       loaders: [
-        'file-loader?digest=hex&name=[name].[ext]',
-        'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false'
+        'file-loader'
       ]
     }, {
       test: /\.(ttf|eot|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,

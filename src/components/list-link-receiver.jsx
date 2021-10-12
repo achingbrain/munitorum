@@ -8,7 +8,7 @@ import {
   importList
 } from '../store/actions'
 import games from '../rules'
-import cbor from 'cbor'
+import cbor from 'cbor-web'
 
 class ListLinkReceiver extends Component {
   state = {}

@@ -5,7 +5,6 @@ import {
   Route
 } from 'react-router-dom'
 import Page from './pages/page'
-import { hot } from 'react-hot-loader'
 import configureStore from './store/configure-store'
 import i18n from 'i18next'
 import { withI18n, reactI18nextModule } from 'react-i18next'
@@ -58,4 +57,4 @@ const App = () => {
   )
 }
 
-export default hot(module)(withI18n()(App))
+export default withI18n()(App)

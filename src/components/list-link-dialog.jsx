@@ -14,7 +14,7 @@ import {
 import {
   updateList
 } from '../store/actions'
-import cbor from 'cbor'
+import cbor from 'cbor-web'
 
 class ListLinkDialog extends Component {
   constructor (props) {

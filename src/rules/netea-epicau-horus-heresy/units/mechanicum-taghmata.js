@@ -667,7 +667,7 @@ export class MechanicumTaghmataLandRaider extends TransportUnit {
 
 export class MechanicumTaghmataVultaraxStratosAutomata extends Unit {
   constructor (detachment) {
-    super(detachment, 250, 6, 6)
+    super(detachment, 250, 6)
 
     this.rules = [
       new Skimmer()

@@ -1,6 +1,5 @@
-'use strict'
 
-const kebab = (string) => {
+export default (string) => {
   let output = ''
   const upper = string.toUpperCase()
 
@@ -14,5 +13,3 @@ const kebab = (string) => {
 
   return output
 }
-
-module.exports = kebab

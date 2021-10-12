@@ -1,5 +1,3 @@
-'use strict'
-
 export default {
   translation: {
     'app-name': 'Departmento Munitorum',

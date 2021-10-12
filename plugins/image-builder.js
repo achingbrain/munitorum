@@ -1,6 +1,6 @@
-const fs = require('fs')
-const path = require('path')
-const crypto = require('crypto')
+import fs from 'fs'
+import path from 'path'
+import crypto from 'crypto'
 
 const camel = (kebab) => {
   return kebab
@@ -15,7 +15,7 @@ const camel = (kebab) => {
     .join('')
 }
 
-const INPUT_DIR = path.resolve(path.join(__dirname, '..', 'src', 'images'))
+const INPUT_DIR = path.resolve(path.join(process.cwd(), 'src', 'images'))
 
 const indexFile = (imports, images) => `
 ${
@@ -51,36 +51,27 @@ const findImage = (name) => {
 export default findImage
 `
 
-class ImageBuilderPlugin {
-  apply (compiler) {
-    compiler.hooks.afterPlugins.tap(
-      'ImageBuilderPlugin',
-      (compilation) => {
-        const imageIndexPath = path.resolve(path.join(INPUT_DIR, 'index.js'))
-        const contents = {}
-        const images = {}
-        const imports = {}
+export const buildImages = async () => {
+  const imageIndexPath = path.resolve(path.join(INPUT_DIR, 'index.js'))
+  const contents = {}
+  const images = {}
+  const imports = {}
 
-        fs.readdirSync(INPUT_DIR)
-          .filter(fileName => fileName.endsWith('.svg'))
-          .map(fileName => {
-            const hash = crypto.createHmac('sha1', 'super secret')
-              .update(fs.readFileSync(path.join(INPUT_DIR, fileName), 'utf8'))
-              .digest('hex')
-            const name = fileName.replace(/\.svg$/, '')
+  fs.readdirSync(INPUT_DIR)
+    .filter(fileName => fileName.endsWith('.svg'))
+    .map(fileName => {
+      const hash = crypto.createHmac('sha1', 'super secret')
+        .update(fs.readFileSync(path.join(INPUT_DIR, fileName), 'utf8'))
+        .digest('hex')
+      const name = fileName.replace(/\.svg$/, '')
 
-            if (!contents[hash]) {
-              contents[hash] = camel(name)
-              imports[contents[hash]] = `./${fileName}`
-            }
-
-            images[name] = contents[hash]
-          })
-
-        fs.writeFileSync(imageIndexPath, indexFile(imports, images))
+      if (!contents[hash]) {
+        contents[hash] = camel(name)
+        imports[contents[hash]] = `./${fileName}`
       }
-    )
-  }
-}
 
-module.exports = ImageBuilderPlugin
+      images[name] = contents[hash]
+    })
+
+  fs.writeFileSync(imageIndexPath, indexFile(imports, images))
+}
