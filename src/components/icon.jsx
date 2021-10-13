@@ -22,11 +22,14 @@ const Icon = ({ src, className }) => {
   }
 
   return (
-    <SvgIcon className={className} dangerouslySetInnerHTML={{ __html: src
-        .replace(/\sfill="[#0-9]+"/g, '')
-        .replace(/\swidth="[0-9]+"/g, '')
-        .replace(/\sheight="[0-9]+"/g, '')
-    }} component='div' />
+    <SvgIcon
+      className={className} dangerouslySetInnerHTML={{
+        __html: src
+          .replace(/\sfill="[#0-9]+"/g, '')
+          .replace(/\swidth="[0-9]+"/g, '')
+          .replace(/\sheight="[0-9]+"/g, '')
+      }} component='div'
+    />
   )
 }
 
