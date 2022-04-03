@@ -673,7 +673,7 @@ export class MechanicumTaghmataVultaraxStratosAutomata extends Unit {
       new Skimmer()
     ]
     this.stats = {
-      type: 'INF',
+      type: 'AV',
       speed: 30,
       armour: 4,
       cc: 6,
