@@ -12,7 +12,6 @@ import {
   FixedForwardFireArc,
   AntiTank,
   AntiAircraft,
-  Armourbane,
   Fleshbane
 } from '../weapons'
 import {
@@ -141,7 +140,7 @@ export class RavenGuardDarkwingPatternStormEagle extends LegionUnit {
     }
     this.weapons = [
       new Weapon('eclipse-missiles', new RangedWeapon('45cm', new BarragePoints(1), new Disrupt(), new FixedForwardFireArc())),
-      new Weapon('2-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+'), new AntiAircraft('5+'), new Armourbane(), new FixedForwardFireArc())),
+      new Weapon('2-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+'), new AntiAircraft('5+'), new FixedForwardFireArc())),
       new Weapon('twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('4+')))
     ]
   }

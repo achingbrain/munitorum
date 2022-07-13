@@ -90,7 +90,7 @@ export class ImperialFistsPhalanxWarderSquad extends LegionUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('melta-cutters', new AssaultWeapon(new Lance()))
+      new Weapon('melta-cutters', new AssaultWeapon(new Lance(), new Armourbane()))
     ]
   }
 }
@@ -154,7 +154,7 @@ export class ImperialFistsCastellumStronghold extends LegionUnit {
     }
     this.weapons = [
       new Weapon('2-hyperios-battery', new RangedWeapon('30cm', new AntiAircraft('6+'))),
-      new Weapon('2-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+'), new Armourbane()))
+      new Weapon('2-twin-linked-lascannons', new RangedWeapon('45cm', new AntiTank('4+')))
     ]
   }
 }
