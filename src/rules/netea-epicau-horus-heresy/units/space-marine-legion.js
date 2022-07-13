@@ -601,7 +601,7 @@ export class LegionFellblade extends LegionUnit {
     }
     this.weapons = [
       new Weapon('fellblade-cannon', new RangedWeapon('75cm', new AntiPersonnel('2+'), new AntiTank('2+'), new MacroWeapon(), new TitanKiller())),
-      new Weapon('sponson-quad-lascannons', new RangedWeapon('45cm', new MultipleShot('2x', new AntiTank('4+')), new Armourbane())),
+      new Weapon('sponson-quad-lascannons', new RangedWeapon('45cm', new MultipleShot('2x', new AntiTank('4+')))),
       new Weapon('twin-linked-heavy-bolters', new RangedWeapon('30cm', new AntiPersonnel('3+'), new FixedForwardFireArc())),
       new Weapon('demolisher-cannon', new RangedWeapon('30cm', new AntiPersonnel('3+'), new AntiTank('4+'), new Disrupt(), new IgnoreCover(), new FixedForwardFireArc()))
     ]
