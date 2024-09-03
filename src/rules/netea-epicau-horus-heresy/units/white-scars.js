@@ -56,7 +56,7 @@ export class WhiteScarsPrimarch extends LegionPrimarchUnit {
       ff: 4
     }
     this.weapons = [
-      new Weapon('vengence-lance', new AssaultWeapon(new FirstStrike(), new MacroWeapon(), new ExtraAttacks('+1'))),
+      new Weapon('vengeance-lance', new AssaultWeapon(new FirstStrike(), new MacroWeapon(), new ExtraAttacks('+1'))),
       new Weapon('sabre-of-unity', new AssaultWeapon(new MacroWeapon(), new ExtraAttacks('+1'))),
       new Weapon('bolt-pistol', new SmallArms('15cm', new ExtraAttacks('+1')))
     ]

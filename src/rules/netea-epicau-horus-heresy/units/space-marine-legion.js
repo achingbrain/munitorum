@@ -1828,7 +1828,7 @@ export class LegionWhirlwind extends LegionUnit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('vengence-castellan-missiles', new RangedWeapon('45cm', new BarragePoints(1), new IgnoreCover(), new IndirectFire()))
+      new Weapon('vengeance-castellan-missiles', new RangedWeapon('45cm', new BarragePoints(1), new IgnoreCover(), new IndirectFire()))
     ]
   }
 }
