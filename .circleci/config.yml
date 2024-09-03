@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: cimg/node:21.6.1-browsers
+      - image: circleci/node:16.10-browsers
     working_directory: ~/repo
     steps:
       - checkout
@@ -18,7 +18,7 @@ jobs:
     resource_class: large
   deploy:
     docker:
-      - image: cimg/node:21.6.1-browsers
+      - image: circleci/node:16.10-browsers
     working_directory: ~/repo
     steps:
       - checkout
@@ -39,15 +39,15 @@ jobs:
 
 workflows:
   version: 2
-  master:
+  main:
     jobs:
       - deploy:
           filters:
             branches:
-              only: master
+              only: main
   pr:
     jobs:
       - build:
           filters:
             branches:
-              ignore: master
+              ignore: main
