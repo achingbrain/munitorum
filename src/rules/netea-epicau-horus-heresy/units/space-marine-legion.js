@@ -719,7 +719,6 @@ export class LegionKharybdis extends TransportUnit {
     }
     this.rules = [
       new Planetfall(),
-      new ReinforcedArmour(),
       new Skimmer()
     ]
     this.stats = {
