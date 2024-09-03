@@ -1477,7 +1477,8 @@ export class LegionStormbird extends LegionUnit {
     this.rules = [
       new DamageCapacity(4),
       new Planetfall(),
-      new ReinforcedArmour()
+      new ReinforcedArmour(),
+      new VoidShields(1)
     ]
     this.stats = {
       type: 'AC/WE',
