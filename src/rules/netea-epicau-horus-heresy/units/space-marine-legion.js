@@ -623,7 +623,7 @@ export class LegionGunship extends LegionUnit {
       ff: 7
     }
     this.weapons = [
-      new Weapon('twin-linked-avenger-bolt-cannon', new RangedWeapon('30cm', new AntiPersonnel('2+'), new AntiTank('5+'), new FixedForwardFireArc())),
+      new Weapon('twin-linked-avenger-bolt-cannon', new RangedWeapon('30cm', new MultipleShot('2x', new AntiPersonnel('2+'), new AntiTank('5+')), new FixedForwardFireArc())),
       new Weapon('hellstrike-missile-pod', new RangedWeapon('45cm', new MultipleShot('2x', new AntiTank('4+')), new ForwardFireArc())),
       new MultipleChoiceWeapon(
         new Weapon('sponson-quad-heavy-bolters', new RangedWeapon('15cm', new AntiPersonnel('4+'), new AntiAircraft('6+'), new LeftFireArc(), new RightFireArc())),
