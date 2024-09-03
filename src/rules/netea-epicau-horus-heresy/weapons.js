@@ -406,19 +406,19 @@ export class BattleTitanCarapaceWeapons {
       new SpecialWeapon('carapace-landing-pad', 'carapace-landing-pad-notes'),
       new Weapon('support-missile-vortex',
         new PointsModifier(75),
-        new RangedWeapon('Unlimited', new BarragePoints(3), new MacroWeapon(), new TitanKiller(), new IgnoreCover())
+        new RangedWeapon('Unlimited', new BarragePoints(3), new MacroWeapon(), new TitanKiller(), new IgnoreCover(), new SingleShot(), new IndirectFire())
       ),
       new Weapon('support-missile-warp',
         new PointsModifier(75),
-        new RangedWeapon('Unlimited', new MacroWeapon('2+'), new TitanKiller('D3'), new IgnoreShields())
+        new RangedWeapon('Unlimited', new MacroWeapon('2+'), new TitanKiller('D3'), new IgnoreShields(), new SingleShot(), new IndirectFire())
       ),
       new Weapon('support-missile-deathstrike',
         new PointsModifier(75),
-        new RangedWeapon('Unlimited', new MacroWeapon('2+'), new TitanKiller('D6'))
+        new RangedWeapon('Unlimited', new MacroWeapon('2+'), new TitanKiller('D6'), new SingleShot(), new IndirectFire())
       ),
       new Weapon('support-missile-barrage',
         new PointsModifier(75),
-        new RangedWeapon('Unlimited', new BarragePoints(10), new Disrupt())
+        new RangedWeapon('Unlimited', new BarragePoints(10), new Disrupt(), new SingleShot(), new IndirectFire())
       )
     ]
   }
