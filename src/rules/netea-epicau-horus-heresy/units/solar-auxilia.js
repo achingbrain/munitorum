@@ -77,7 +77,7 @@ export class SolarAuxiliaTacticalCommandSection extends Unit {
       speed: 15,
       armour: 5,
       cc: 6,
-      ff: 7
+      ff: 5
     }
     this.weapons = [
       new Weapon('plasma-guns', new SmallArms('15cm', new AntiPersonnel('5+'), new AntiTank('5+')))
