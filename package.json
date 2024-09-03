@@ -15,7 +15,7 @@
     "build": "NODE_ENV=production run-s clean bundle",
     "bundle": "node esbuild.js",
     "upload": "s3-deploy './dist/**' --cwd './dist/' --region eu-west-2 --bucket com.munitorum --deleteRemoved --etag --gzip --invalidate / --distId EITBJI2151X9C",
-    "test": "npm run build && cd test && webpack && nightwatch"
+    "test": "NODE_OPTIONS=--openssl-legacy-provider npm run build && cd test && webpack && nightwatch"
   },
   "repository": {
     "type": "git",
@@ -55,7 +55,7 @@
     "babel-plugin-istanbul": "^5.1.0",
     "babel-register": "^6.26.0",
     "case-sensitive-paths-webpack-plugin": "^2.2.0",
-    "chromedriver": "*",
+    "chromedriver": "^128.0.1",
     "copy": "^0.3.2",
     "create-index": "^2.3.0",
     "css-loader": "^3.2.0",
