@@ -64,7 +64,7 @@ export class SolarAuxiliaLordMarshall extends Unit {
   }
 }
 
-export class SolarAuxiliaTacticalCommmandSection extends Unit {
+export class SolarAuxiliaTacticalCommandSection extends Unit {
   constructor (detachment) {
     super(detachment, 50, 1)
 
@@ -943,7 +943,7 @@ export class SolarAuxiliaPrimarisStrikeFighter extends Unit {
 }
 
 withType(SolarAuxiliaLordMarshall)
-withType(SolarAuxiliaTacticalCommmandSection)
+withType(SolarAuxiliaTacticalCommandSection)
 withType(SolarAuxiliaVeletarisStormSection)
 withType(SolarAuxiliaInfantrySection)
 withType(SolarAuxiliaInfantrySupportTankUnit)

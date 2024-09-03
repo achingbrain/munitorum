@@ -6,7 +6,7 @@ import {
 } from '../upgrades'
 import {
   SolarAuxiliaLordMarshall,
-  SolarAuxiliaTacticalCommmandSection,
+  SolarAuxiliaTacticalCommandSection,
   SolarAuxiliaVeletarisStormSection,
   SolarAuxiliaInfantrySection,
   SolarAuxiliaBattleTankUnit,
@@ -67,7 +67,7 @@ export class SolarAuxiliaVeletarisStormCohort extends SolarAuxiliaDetachment {
     super(list)
 
     this.setMandatoryUnits(
-      new SolarAuxiliaTacticalCommmandSection(this),
+      new SolarAuxiliaTacticalCommandSection(this),
       new SolarAuxiliaVeletarisStormSection(this)
     )
     this.setUpgrades(
@@ -87,7 +87,7 @@ export class SolarAuxiliaInfantryTercio extends SolarAuxiliaDetachment {
     super(list)
 
     this.setMandatoryUnits(
-      new SolarAuxiliaTacticalCommmandSection(this),
+      new SolarAuxiliaTacticalCommandSection(this),
       new SolarAuxiliaInfantrySection(this)
     )
     this.setUpgrades(

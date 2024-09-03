@@ -640,7 +640,7 @@ export default {
 
     'solar-auxilia-command-detachment': 'Command Section',
     'solar-auxilia-lord-marshall': 'Lord Marshall',
-    'solar-auxilia-tactical-commmand-section': 'Tactical Command Section',
+    'solar-auxilia-tactical-command-section': 'Tactical Command Section',
     'solar-auxilia-veletaris-storm-section': 'Veletaris Storm Section',
     'solar-auxilia-veletaris-storm-cohort': 'Veletaris Storm Cohort',
     'solar-auxilia-infantry-tercio': 'Infantry Tercio',

@@ -277,7 +277,7 @@ import solarAuxiliaShadowsword from './solar-auxilia-shadowsword.svg'
 import solarAuxiliaStormblade from './solar-auxilia-stormblade.svg'
 import solarAuxiliaStormlord from './solar-auxilia-stormlord.svg'
 import solarAuxiliaStormsword from './solar-auxilia-stormsword.svg'
-import solarAuxiliaTacticalCommmand from './solar-auxilia-tactical-commmand.svg'
+import solarAuxiliaTacticalCommand from './solar-auxilia-tactical-command.svg'
 import solarAuxiliaTankHunter from './solar-auxilia-tank-hunter.svg'
 import solarAuxiliaTarantula from './solar-auxilia-tarantula.svg'
 import solarAuxiliaVeletaris from './solar-auxilia-veletaris.svg'
@@ -658,7 +658,7 @@ const IMAGES = {
   'solar-auxilia-stormsword': solarAuxiliaStormsword,
   'solar-auxilia-strike-company': imperialMilitiaBattleTank,
   'solar-auxilia-super-heavy-tank': imperialMilitiaBaneblade,
-  'solar-auxilia-tactical-commmand': solarAuxiliaTacticalCommmand,
+  'solar-auxilia-tactical-command': solarAuxiliaTacticalCommand,
   'solar-auxilia-tank-hunter': solarAuxiliaTankHunter,
   'solar-auxilia-tarantula-hyperios': mechanicumTaghmataHyperios,
   'solar-auxilia-tarantula': solarAuxiliaTarantula,
