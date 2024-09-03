@@ -289,7 +289,7 @@ export class LegionJavelinAttackSpeederSquadron extends SpaceMarineLegionDetachm
 
 class LegionLandRaiderPhobosSquadronUpgrade extends Upgrade {
   getAvailableUpgrades (detachment) {
-    if (detachment.units.filter(item => item.type === LegionLandRaiderPhobosSquadronUnit.type || item.type === LegionLandRaiderPhobos).length === 6) {
+    if (detachment.units.filter(item => item.type === LegionLandRaiderPhobosSquadronUnit.type || item.type === LegionLandRaiderPhobos.type).length === 6) {
       return []
     }
 
@@ -321,7 +321,7 @@ export class LegionLandRaiderPhobosSquadron extends SpaceMarineLegionDetachment 
 
 class LegionLandRaiderProteusSquadronUpgrade extends Upgrade {
   getAvailableUpgrades (detachment) {
-    if (detachment.units.filter(item => item.type === LegionLandRaiderProteusSquadronUnit.type || item.type === LegionLandRaiderProteus).length === 6) {
+    if (detachment.units.filter(item => item.type === LegionLandRaiderProteusSquadronUnit.type || item.type === LegionLandRaiderProteus.type).length === 6) {
       return []
     }
 
