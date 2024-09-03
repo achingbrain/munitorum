@@ -39,15 +39,15 @@ jobs:
 
 workflows:
   version: 2
-  master:
+  main:
     jobs:
       - deploy:
           filters:
             branches:
-              only: master
+              only: main
   pr:
     jobs:
       - build:
           filters:
             branches:
-              ignore: master
+              ignore: main
