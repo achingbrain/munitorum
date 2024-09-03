@@ -367,7 +367,7 @@ export class SolarAuxiliaValdor extends Unit {
       ff: 5
     }
     this.weapons = [
-      new Weapon('neutron-beam-laser', new RangedWeapon('45cm', new MacroWeapon(), new Disrupt())),
+      new Weapon('neutron-beam-laser', new RangedWeapon('45cm', new MacroWeapon('3+'), new Disrupt())),
       new Weapon('lascannon', new RangedWeapon('45cm', new AntiTank('5+')))
     ]
   }
