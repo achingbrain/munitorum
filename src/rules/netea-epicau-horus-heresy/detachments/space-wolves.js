@@ -34,7 +34,8 @@ export class SpaceWolvesPrimarchDetachment extends SpaceMarineLegionDetachment {
     this.setUpgrades(
       new TransportOption(
         new AssaultClaw(),
-        new HeavyTransport()
+        new HeavyTransport(),
+        new Teleport()
       )
     )
     this.setConstraints(
