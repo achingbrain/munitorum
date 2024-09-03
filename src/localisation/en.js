@@ -180,6 +180,7 @@ export default {
     'legion-reconnaissance-detachment': 'Reconnaissance Detachment',
     'legion-reconnaissance-squad': 'Reconnaissance Squad',
     'legion-rhino': 'Rhino Armoured Carrier',
+    'legion-sabre-strike-squadron': 'Sabre Strike Squadron',
     'legion-scimitar-jetbike': 'Scimitar Jetbike',
     'legion-sicaran': 'Sicaran Battle Tank',
     'legion-sicaran-venator': 'Sicaran Venator',
