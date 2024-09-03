@@ -1,3 +1,7 @@
 {
-  "type": "commonjs"
+  "type": "commonjs",
+  "scripts": {
+    "test": "npm run test:webpack && nightwatch",
+    "test:webpack": "NODE_OPTIONS=--openssl-legacy-provider webpack"
+  }
 }

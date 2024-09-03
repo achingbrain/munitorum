@@ -15,7 +15,7 @@
     "build": "NODE_ENV=production run-s clean bundle",
     "bundle": "node esbuild.js",
     "upload": "s3-deploy './dist/**' --cwd './dist/' --region eu-west-2 --bucket com.munitorum --deleteRemoved --etag --gzip --invalidate / --distId EITBJI2151X9C",
-    "test": "export NODE_OPTIONS=--openssl-legacy-provider && npm run build && cd test && webpack && nightwatch"
+    "test": "npm run build && cd test && npm run test"
   },
   "repository": {
     "type": "git",
