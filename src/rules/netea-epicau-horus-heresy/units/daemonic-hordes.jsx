@@ -33,7 +33,7 @@ import {
   Fearless,
   JumpPacks,
   Inspiring,
-  Beserk,
+  Berserk,
   Mounted,
   Infiltrator,
   Notes,
@@ -257,7 +257,7 @@ export class DaemonicHordesBloodcrushers extends Unit {
     super(detachment, 50, 1, 6)
 
     this.rules = [
-      new Beserk(),
+      new Berserk(),
       new InvulnerableSave(),
       new Mounted(),
       new Walker()
@@ -280,7 +280,7 @@ export class DaemonicHordesBloodcrushersFollowerUnit extends DaemonicHordesFollo
     super(detachment, 50, 3, 9)
 
     this.rules = [
-      new Beserk(),
+      new Berserk(),
       new InvulnerableSave(),
       new Mounted(),
       new Walker()
@@ -347,7 +347,7 @@ export class DaemonicHordesBloodThirster extends Unit {
       new Commander(),
       new Leader(),
       new ReinforcedArmour(),
-      new Beserk(),
+      new Berserk(),
       new InvulnerableSave(),
       new Walker(),
       new JumpPacks(),
@@ -1237,7 +1237,7 @@ export class DaemonicHordesSoulGrinder extends Unit {
 
     this.rules = [
       new InvulnerableSave(),
-      new Beserk(),
+      new Berserk(),
       new Walker()
     ]
     this.stats = {

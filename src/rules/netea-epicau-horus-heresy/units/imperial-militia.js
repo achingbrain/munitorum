@@ -41,7 +41,7 @@ import {
   ExploratoryAuguryWeb,
   SlowAndSteady,
   PinPointAttack,
-  Beserk,
+  Berserk,
   Inspiring,
   Leader,
   Fearless
@@ -107,7 +107,7 @@ export class ImperialMilitiaUnit extends Unit {
 
     this.detachment.units.forEach(unit => {
       if (unit instanceof ImperialMilitiaTraitorsProvenance) {
-        rules = rules.concat(new Beserk())
+        rules = rules.concat(new Berserk())
       }
     })
 

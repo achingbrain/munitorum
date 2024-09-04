@@ -19,6 +19,7 @@ import {
 import {
   Unique
 } from '../../../rules/netea-epicau-horus-heresy/constraints'
+import Details from '../../details'
 
 const RulesDisplay = component(({ rules, classes, t }) => {
   return (
@@ -34,6 +35,19 @@ const RulesDisplay = component(({ rules, classes, t }) => {
             if (rule.link) {
               return (
                 <a key={`rule-${ruleIndex}`} href={rule.link} target='_blank' rel='noopener noreferrer' className={classes.rulesLink}>{output}</a>
+              )
+            }
+
+            if (rule.title && rule.text) {
+              return (
+                <Details
+                  key={`rule-${ruleIndex}`}
+                  title={rule.title}
+                  text={rule.text}
+                  button={(onClick) => (
+                    <a onClick={onClick} className={classes.rulesLink}>{output}</a>
+                  )}
+                />
               )
             }
 
@@ -153,6 +167,19 @@ class UnitViewer extends Component {
                               >
                                 {type}
                               </a>
+                            )
+                          }
+
+                          if (fp.title && fp.text) {
+                            return (
+                              <Details
+                                key={`fp-${profileIndex}-${index}`}
+                                title={fp.title}
+                                text={fp.text}
+                                button={(onClick) => (
+                                  <a onClick={onClick} className={classes.fpLink}>{type}</a>
+                                )}
+                              />
                             )
                           }
 
