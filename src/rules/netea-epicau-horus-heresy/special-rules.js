@@ -11,35 +11,35 @@ export class Notes {
 export class ReinforcedArmour {
   constructor () {
     this.name = 'reinforced-armour'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#reinforced-armour'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#reinforced-armour'
   }
 }
 
 export class ThickRearArmour {
   constructor () {
     this.name = 'thick-rear-armour'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#thick-rear-armour'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#thick-rear-armour'
   }
 }
 
 export class JumpPacks {
   constructor () {
     this.name = 'jump-packs'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#jump-packs'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#jump-packs'
   }
 }
 
 export class Scout {
   constructor () {
     this.name = 'scout'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#scouts'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#scouts'
   }
 }
 
 export class Skimmer {
   constructor () {
     this.name = 'skimmer'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#skimmers'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#skimmers'
   }
 }
 
@@ -53,14 +53,14 @@ export class ExploratoryAuguryWeb {
 export class Mounted {
   constructor () {
     this.name = 'mounted'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#mounted'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#mounted'
   }
 }
 
 export class Infiltrator {
   constructor () {
     this.name = 'infiltrator'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#infiltrators'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#infiltrators'
   }
 }
 
@@ -74,7 +74,7 @@ export class DemiGod {
 export class Fearless {
   constructor () {
     this.name = 'fearless'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#fearless'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#fearless'
   }
 }
 
@@ -88,14 +88,14 @@ export class Beserk {
 export class SupremeCommander {
   constructor () {
     this.name = 'supreme-commander'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#supreme-commanders'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#supreme-commanders'
   }
 }
 
 export class Inspiring {
   constructor () {
     this.name = 'inspiring'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#inspiring'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#inspiring'
   }
 }
 
@@ -103,7 +103,7 @@ export class InvulnerableSave {
   constructor (amount) {
     this.name = 'invulnerable-save'
     this.type = `Invulnerable Save${amount ? `(${amount})` : ''}`
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#invulnerable-saves'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#invulnerable-saves'
   }
 }
 
@@ -111,55 +111,55 @@ export class InvulnerableSaveCCOnly {
   constructor (amount) {
     this.name = 'invulnerable-save-cc-only'
     this.type = `Invulnerable Save Against CC Generated Hits${amount ? ` (${amount})` : ''}`
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#invulnerable-saves'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#invulnerable-saves'
   }
 }
 
 export class Walker {
   constructor () {
     this.name = 'walker'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#walkers'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#walkers'
   }
 }
 
 export class Planetfall {
   constructor () {
     this.name = 'planetfall'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#planetfall'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#planetfall'
   }
 }
 
 export class Commander {
   constructor () {
     this.name = 'commander'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#commanders'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#commanders'
   }
 }
 
 export class Leader {
   constructor () {
     this.name = 'leader'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#leaders'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#leaders'
   }
 }
 
 export class DamageCapacity {
   constructor (capacity) {
     this.type = `Damage Capacity(${capacity})`
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#war-engine-damage-capacity'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#war-engine-damage-capacity'
   }
 }
 
 export class CriticalHit extends Notes {
   constructor (effect) {
-    super('critical-hit', effect, 'https://www.net-armageddon.org/tp/tournament-pack/#critical-hits')
+    super('critical-hit', effect, 'https://tp.net-armageddon.org/tournament-pack/#critical-hits')
   }
 }
 
 export class SlowAndSteady {
   constructor () {
     this.name = 'slow-and-steady'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#slow-and-steady'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#slow-and-steady'
   }
 }
 
@@ -187,7 +187,7 @@ export class CyberneticaCortex {
 export class Fortifications {
   constructor () {
     this.name = 'fortifications'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#terrain-effects'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#terrain-effects'
   }
 }
 
@@ -195,7 +195,7 @@ export class VoidShields {
   constructor (num) {
     this.name = 'void-shields'
     this.type = `Void Shields(${num})`
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#imperial-void-shields'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#imperial-void-shields'
   }
 }
 
@@ -222,14 +222,14 @@ export class Titanic extends Notes {
 export class PinPointAttack {
   constructor () {
     this.name = 'pin-point-attack'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#pin-point-attacks'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#pin-point-attacks'
   }
 }
 
 export class ImplacableAdvance {
   constructor () {
     this.name = 'implacable-advance'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#implacable-advance'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#implacable-advance'
   }
 }
 
@@ -251,7 +251,7 @@ export class IonGauntlet {
 export class Teleport {
   constructor () {
     this.name = 'teleport'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#teleport'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#teleport'
   }
 }
 

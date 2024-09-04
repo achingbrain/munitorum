@@ -91,7 +91,7 @@ export class MacroWeapon {
   constructor (toHit) {
     this.type = 'MW' + (toHit ? `(${toHit})` : '')
     this.name = 'macro-weapon'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#macro-weapons'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#macro-weapons'
   }
 }
 
@@ -99,7 +99,7 @@ export class TitanKiller {
   constructor (quantity = 1) {
     this.type = `TK(${quantity})`
     this.name = 'titan-killer'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#titan-killers'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#titan-killers'
   }
 }
 
@@ -107,7 +107,7 @@ export class ExtraAttacks {
   constructor (quantity = '+1') {
     this.type = `EA(${quantity})`
     this.name = 'extra-attacks'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#extra-attacks'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#extra-attacks'
   }
 }
 
@@ -129,7 +129,7 @@ export class AntiAircraft {
   constructor (toHit) {
     this.type = `AA(${toHit})`
     this.name = 'anti-aircraft'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#anti-aircraft-weapons'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#anti-aircraft-weapons'
   }
 }
 
@@ -153,7 +153,7 @@ export class AssaultWeapon {
     this.range = 'Base contact'
     this.firepower = firepower
     this.type = '(assault weapons)'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#faq-resolve-attacks'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#resolve-attacks'
   }
 }
 
@@ -167,7 +167,7 @@ export class SmallArms {
 
     this.firepower = firepower
     this.type = '(small arms)'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#faq-resolve-attacks'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#resolve-attacks'
   }
 }
 
@@ -175,7 +175,7 @@ export class Disrupt {
   constructor () {
     this.type = 'D'
     this.name = 'disrupt'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#disrupt'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#disrupt'
   }
 }
 
@@ -183,7 +183,7 @@ export class Sniper {
   constructor () {
     this.type = 'S'
     this.name = 'sniper'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#sniper'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#sniper'
   }
 }
 
@@ -191,7 +191,7 @@ export class IgnoreCover {
   constructor () {
     this.type = 'IC'
     this.name = 'ignore-cover'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#ignore-cover'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#ignore-cover'
   }
 }
 
@@ -199,7 +199,7 @@ export class Lance {
   constructor () {
     this.type = 'L'
     this.name = 'lance'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#eldar-technology'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#eldar-technology'
   }
 }
 
@@ -207,14 +207,14 @@ export class IndirectFire {
   constructor () {
     this.type = 'Ind'
     this.name = 'indirect-fire'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#indirect-fire'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#indirect-fire'
   }
 }
 
 export class BarragePoints {
   constructor (points) {
     this.type = `BP(${points})`
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#barrages'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#barrages'
   }
 }
 
@@ -223,7 +223,7 @@ export class FixedForwardFireArc {
   constructor () {
     this.type = 'FxF'
     this.name = 'fixed-forward-fire-arc'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#weapon-fire-arcs'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#weapon-fire-arcs'
   }
 }
 
@@ -231,7 +231,7 @@ export class SingleShot {
   constructor () {
     this.type = 'SS'
     this.name = 'single-shot'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#single-shot'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#single-shot'
   }
 }
 
@@ -247,7 +247,7 @@ export class ForwardFireArc {
   constructor () {
     this.type = 'FwA'
     this.name = 'forward-fire-arc'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#weapon-fire-arcs'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#weapon-fire-arcs'
   }
 }
 
@@ -255,7 +255,7 @@ export class LeftFireArc {
   constructor () {
     this.type = 'Left'
     this.name = 'left-fire-arc'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#weapon-fire-arcs'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#weapon-fire-arcs'
   }
 }
 
@@ -263,7 +263,7 @@ export class RightFireArc {
   constructor () {
     this.type = 'Right'
     this.name = 'right-fire-arc'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#weapon-fire-arcs'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#weapon-fire-arcs'
   }
 }
 
@@ -271,7 +271,7 @@ export class RearFireArc {
   constructor () {
     this.type = 'Rear'
     this.name = 'rear-fire-arc'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#weapon-fire-arcs'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#weapon-fire-arcs'
   }
 }
 
@@ -279,7 +279,7 @@ export class FirstStrike {
   constructor () {
     this.type = 'FS'
     this.name = 'first-strike'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#first-strike'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#first-strike'
   }
 }
 
@@ -287,7 +287,7 @@ export class SlowFiring {
   constructor () {
     this.type = 'Slw'
     this.name = 'slow-firing'
-    this.link = 'https://www.net-armageddon.org/tp/tournament-pack/#slow-firing'
+    this.link = 'https://tp.net-armageddon.org/tournament-pack/#slow-firing'
   }
 }
 
